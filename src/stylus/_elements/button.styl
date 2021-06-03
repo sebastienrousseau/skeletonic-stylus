@@ -1,0 +1,252 @@
+/* @group Button */
+
+// TODO: Optimize unit consistency
+-highlight($strength = .3)
+  box-shadow: s("inset 0 1px 0 %s", rgba(255,255,255,$strength))
+
+button, .button, [type=submit]
+  -highlight()
+  background: var(--bg-disable);
+  border:0
+  color: var(--cl-white)
+  cursor: pointer
+  display inline-block
+  font-size: golden-font-size-base rem
+  margin-bottom: golden-ratio rem
+  padding: golden-ratio rem
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  transition: all 150ms linear
+  user-select: none
+  vertical-align: middle
+  white-space nowrap
+      min-width: 27rem
+  &:link, &:visited
+    background: var(--cl-grey-700)
+    color: var(--cl-white)
+  &:active,
+  &.active
+    background: var(--cl-grey-700)
+    color: var(--cl-white)
+    opacity: 0.85
+    text-decoration: none
+    transition: all 150ms linear
+  &:hover
+    opacity: 0.9
+    text-decoration: none
+    transition: all 150ms linear
+  &:focus
+    background: var(--cl-grey-200)
+    opacity: 0.7
+    text-decoration: none
+    transition: all 150ms linear
+  &:disabled
+    color: var(--cl-grey-700)
+    cursor: not-allowed
+    opacity: .5
+    pointer-events: none
+    transition: all 150ms linear
+  &.primary
+    background: var(--cl-primary)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      text-decoration: none
+      transition: all 150ms linear
+  &.secondary
+    background: var(--cl-secondary)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      text-decoration: none
+      transition: all 150ms linear
+  &.info
+    background: var(--cl-info)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      text-decoration: none
+      transition: all 150ms linear
+  &.success
+    background: var(--cl-success)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      text-decoration: none
+      transition: all 150ms linear
+  &.error
+    background: var(--cl-danger)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      transition: all 150ms linear
+      text-decoration: none
+  &.warning
+    background: var(--cl-warning)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: 0.5
+      transition: all 150ms linear
+      text-decoration: none
+  &.link
+    background: 0 0
+    border-color: transparent
+    box-shadow: none
+    color: var(--link-color)
+    cursor: pointer
+    transition: all 150ms linear
+    text-decoration: none
+    &:visited
+      color: var(--link-color-visited)
+    &:hover,&:active
+      color: var(--link-color-hover)
+      text-decoration: underline
+    &:focus
+      color: var(--link-color-focus)
+      outline: thin dotted
+      outline: 1px auto -webkit-focus-ring-color
+      outline-offset: -2px
+
+.button-group
+  *letter-spacing: normal
+  *word-spacing: -0.43em
+  border: 0
+  border-radius: 0
+  letter-spacing: -0.31em
+  text-rendering: optimizespeed
+
+.btn
+  border-radius: .3rem
+  cursor: pointer
+  display: inline-block
+  font-size: golden-font-size-base rem
+  line-height: 60px
+  min-height: 60px
+  min-width: 60px
+  position: relative
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  transition: all 150ms linear
+  user-select: none
+  vertical-align: middle
+  white-space: nowrap
+  z-index: 1
+  &:hover
+    opacity: 0.5
+    transition: all 150ms linear
+    text-decoration: none
+  &-round
+    border-radius: 50%
+    &:hover
+      opacity: 0.5
+      transition: all 150ms linear
+      text-decoration: none
+  &-oval
+    border-radius: 61.25rem
+    min-width: 9rem
+    &:hover
+      opacity: 0.5
+      transition: all 150ms linear
+      text-decoration: none
+  &-outline
+    border: 2px solid transparent
+    &:hover
+      opacity: 0.5
+      transition: all 150ms linear
+      text-decoration: none
+
+.block
+  border: none
+  display: block
+  height: 60px
+  padding: .6rem
+  width: 98.7%
+  line-height: 60px
+
+button.primary-outline,
+    .button.primary-outline,
+    [type=submit].primary-outline
+	color var(--cl-primary)
+	background-color var(--cl-white)
+	border 1px solid var(--cl-primary)
+button.primary-outline:hover,
+    .button.primary-outline:hover,
+    [type=submit].primary-outline:hover
+	background-color var(--bg-primary)
+	color var(--cl-white)
+	transition all 150ms linear
+	text-decoration none
+	opacity 1
+button.secondary-outline,
+    .button.secondary-outline,
+    [type=submit].secondary-outline
+	color var(--cl-secondary)
+	background-color var(--cl-white)
+	border 1px solid var(--cl-secondary)
+button.secondary-outline:hover,
+    .button.secondary-outline:hover,
+    [type=submit].secondary-outline:hover
+	background-color var(--bg-secondary)
+	color var(--cl-white)
+	transition all 150ms linear
+	text-decoration none
+	opacity 1
+button.success-outline,
+    .button.success-outline,
+    [type=submit].success-outline
+	color var(--cl-success)
+	background-color var(--cl-white)
+	border 1px solid var(--cl-success)
+button.success-outline:hover,
+    .button.success-outline:hover,
+    [type=submit].success-outline:hover
+	background-color var(--bg-success)
+	color var(--cl-white)
+	transition all 150ms linear
+	text-decoration none
+	opacity 1
+button.error-outline,
+    .button.error-outline,
+    [type=submit].error-outline
+	color var(--cl-danger)
+	background-color var(--cl-white)
+	border 1px solid var(--cl-danger)
+button.error-outline:hover,
+    .button.error-outline:hover,
+    [type=submit].error-outline:hover
+	background-color var(--bg-danger)
+	color var(--cl-white)
+	transition all 150ms linear
+	text-decoration none
+	opacity 1
+button.warning-outline,
+    .button.warning-outline,
+    [type=submit].warning-outline
+	color var(--cl-warning)
+	background-color var(--cl-white)
+	border 1px solid var(--cl-warning)
+button.warning-outline:hover,
+    .button.warning-outline:hover,
+    [type=submit].warning-outline:hover
+	background-color var(--bg-warning)
+	color var(--cl-white)
+	transition all 150ms linear
+	text-decoration none
+	opacity 1
+
+
+/* @end */

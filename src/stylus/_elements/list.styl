@@ -1,0 +1,38 @@
+/* @group Lists */
+ul, ol
+  margin: (golden-ratio) 0 rem
+
+ul
+  list-style: none outside
+
+ol
+  list-style: decimal
+
+li
+  line-height: golden-font-size-base
+  margin-bottom: golden-font-size-base
+
+ol,
+ul.square,
+ul.circle,
+ul.disc
+
+    margin: (golden-ratio) 0 rem (1.5*golden-ratio)rem
+
+ul.square
+    list-style: square outside
+
+ul.circle
+    list-style: circle outside
+
+ul.disc
+    list-style: disc outside
+
+ul ul,
+ul ol,
+ol ol,
+ol ul
+    font-size: 100%
+    margin: (2 * golden-ratio) 0 (3 * golden-ratio) (20 * golden-ratio)
+
+/* @end */
