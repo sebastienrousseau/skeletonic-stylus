@@ -1,0 +1,37 @@
+/* @group Grid */
+.grid-flex
+    display: -webkit-box
+    display: flex
+    flex-wrap: wrap
+
+.row
+  position relative
+  width 100%
+  $:after
+    clear: both
+    content: ''
+    display: table
+  &-wrap
+    padding 0
+  &-top
+    align-items flex-start
+  &-bottom
+    align-items flex-end
+  &-center
+    align-items center
+  &-stretch
+    align-items stretch
+  &-baseline
+    align-items baseline
+  &-no-padding
+    padding 0
+
+for i in (1..12)
+  .flex-{i}
+    -webkit-box-flex:i
+    -moz-box-flex:i
+    -ms-box-flex:i
+    flex:i
+    margin: 0 (golden-ratio)rem
+
+/* @end */
