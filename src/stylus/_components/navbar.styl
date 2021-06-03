@@ -1,0 +1,155 @@
+/* @group Navigation */
+
+.header
+	box-shadow none
+	display block
+	height 60px
+	margin 0 auto
+	max-width 100%
+	overflow hidden
+	width 100%
+	z-index 10
+	span
+		display none
+
+.main
+	display block
+	height 100%
+	margin 0 auto
+	margin-top 60px
+
+.mainInner
+	display table
+	height 100%
+	position absolute
+	text-align center
+	width 100%
+	div
+		display table-cell
+		font-size 3em
+		font-weight bold
+		letter-spacing 1.25px
+		vertical-align middle
+
+#sidebar
+  margin-top 60px
+  background var(--color-reverse)
+  height 100%
+  left 0
+  position fixed
+  transform translateX(-250px)
+  transition transform 250ms ease-in-out
+  width 250px
+  z-index 1
+
+.nav
+	border-top 1px solid var(--color)
+	margin 0
+	padding 0
+	li
+		border-bottom 1px solid var(--color)
+		color var(--color-reverse)
+		cursor pointer
+		list-style none
+		margin-bottom 0
+		padding 20px
+		text-transform uppercase
+		a
+			color var(--color)
+			cursor pointer
+			padding 20px
+			text-decoration none
+			text-transform uppercase
+		&:hover
+			background var(--color)
+			a
+				color var(--color-reverse)
+			& > ul
+				display block
+		& > ul
+			display none
+			& > li
+				margin 0
+				padding 20px
+				border-bottom none
+				a
+					text-transform none
+					color var(--color-reverse)
+					&:hover
+						color var(--color)
+				&:hover
+					background var(--color-reverse)
+					a
+						color var(--color)
+	ul
+		padding-left golden-ratio rem
+
+input[type="checkbox"]:checked
+	& ~ #sidebar
+		transform translateX(0)
+
+input[type=checkbox]
+	box-sizing border-box
+	display none
+	transition all 0.3s
+
+.hamburger-toggle
+	box-sizing border-box
+	cursor pointer
+	height 100%
+	height 22px
+	left 15px
+	position absolute
+	top 22px
+	transition all 0.3s
+	width 100%
+	width 22px
+	z-index 99
+
+.spinner
+	background-color var(--color)
+	box-sizing border-box
+	height 3px
+	position absolute
+	transition all 0.3s
+	width 100%
+
+.horizontal
+	box-sizing border-box
+	float left
+	margin-top 3px
+	position relative
+	transition all 0.3s
+
+.diagonal
+	&.part-1
+		box-sizing border-box
+		float left
+		position relative
+		transition all 0.3s
+	&.part-2
+		box-sizing border-box
+		float left
+		margin-top 3px
+		position relative
+		transition all 0.3s
+
+input[type=checkbox]:checked
+	& ~ .hamburger-toggle
+		& > .horizontal
+			box-sizing border-box
+			opacity 0
+			transition all 0.3s
+		& > .diagonal
+			&.part-1
+				box-sizing border-box
+				margin-top 8px
+				transform rotate(135deg)
+				transition all 0.3s
+			&.part-2
+				box-sizing border-box
+				margin-top -9px
+				transform rotate(-135deg)
+				transition all 0.3s
+
+/* @end */
