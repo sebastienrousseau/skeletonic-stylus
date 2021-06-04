@@ -14,7 +14,7 @@
     "stylus-mixin"
   ],
   "main": "src/stylus/skeletonic.styl",
-  "style": "dist/skeletonic.css",
+  "style": "dist/skeletonic.min.css",
   "unpkg": "dist/skeletonic.css",
   "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
   "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
