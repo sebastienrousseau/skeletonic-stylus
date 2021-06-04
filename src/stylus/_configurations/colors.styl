@@ -1,130 +1,140 @@
 /* @group Colors */
-$primary = #0047dd;
-$secondary = #0057a8;
-$tertiary = #777777;
-$disable = #F1F3F4;
-$info = #008196;
-$inverse = #ffffff;
-$link = #1b6ec2;
-$danger = #b2081a;
-$success = #2e6430;
-$warning = #993900;
-// Main background colors
-$bg-primary = #c6cdff;
-$bg-secondary = #a9d2ff;
-$bg-tertiary = #777777;
-$bg-disable = #F1F3F4;
-$bg-info = #f7ffff;
-$bg-inverse = #ffffff;
-$bg-link = #1b6ec2;
-$bg-danger = #ffc0ad;
-$bg-success = #a5dfa2;
-$bg-warning = #ffc286;
-// Basic grey colors
-$grey-100 = #F6F6F9;
-$grey-200 = #DDDDE0;
-$grey-300 = #C3C3C6;
-$grey-400 = #AAAAAD;
-$grey-500 = #909093;
-$grey-600 = #77777A;
-$grey-700 = #5E5E61;
-$grey-800 = #444447;
-$grey-900 = #2B2B2E;
-$grey-1000 = #111114;
-// Basic color keyword
-$aqua = #00FFFF;
-$black = #000000;
-$blue = #0000FF;
-$fuchsia = #FF00FF;
-$green = #008000;
-$grey = #808080;
-$lime = #00FF00;
-$maroon = #800000;
-$navy = #000080;
-$olive = #808000;
-$purple = #800080;
-$red = #FF0000;
-$silver = #C0C0C0;
-$teal = #008080;
-$white = #FFFFFF;
-$yellow = #FFFF00;
+
+  // Main colors
+  $primary      = #0047dd
+  $secondary    = #0057a8
+  $tertiary     = #777777
+  $disable      = #F1F3F4
+  $info         = #008196
+  $inverse      = #ffffff
+  $link         = #1b6ec2
+  $danger       = #b2081a
+  $success      = #2e6430
+  $warning      = #993900
+
+  // Main background colors
+  $bg-primary   = #c6cdff
+  $bg-secondary = #a9d2ff
+  $bg-tertiary  = #777777
+  $bg-disable   = #F1F3F4
+  $bg-info      = #f7ffff
+  $bg-inverse   = #ffffff
+  $bg-link      = #1b6ec2
+  $bg-danger    = #ffc0ad
+  $bg-success   = #a5dfa2
+  $bg-warning   = #ffc286
+
+  // Basic grey colors
+  $grey-100     = #F6F6F9
+  $grey-200     = #DDDDE0
+  $grey-300     = #C3C3C6
+  $grey-400     = #AAAAAD
+  $grey-500     = #909093
+  $grey-600     = #77777A
+  $grey-700     = #5E5E61
+  $grey-800     = #444447
+  $grey-900     = #2B2B2E
+  $grey-1000    = #111114
+
+  // Basic color keyword
+  $aqua	        = #00FFFF
+  $black	      = #000000
+  $blue	        = #0000FF
+  $fuchsia	    = #FF00FF
+  $green	      = #008000
+  $grey	        = #808080
+  $lime	        = #00FF00
+  $maroon	      = #800000
+  $navy	        = #000080
+  $olive	      = #808000
+  $purple	      = #800080
+  $red	        = #FF0000
+  $silver	      = #C0C0C0
+  $teal	        = #008080
+  $white	      = #FFFFFF
+  $yellow	      = #FFFF00
+
+
 colors = {
-	primary: $primary,
-	secondary: $secondary,
-	tertiary: $tertiary,
-	disable: $disable,
-	info: $info,
-	inverse: $white,
-	link: $link,
-	danger: $danger,
-	success: $success,
-	warning: $warning
-};
+
+  primary      : $primary
+  secondary    : $secondary
+  tertiary     : $tertiary
+  disable      : $disable
+  info         : $info
+  inverse      : $white
+  link         : $link
+  danger       : $danger
+  success      : $success
+  warning      : $warning
+
+}
+
 backgrounds = {
-	primary: $bg-primary,
-	secondary: $bg-secondary,
-	tertiary: $bg-tertiary,
-	disable: $bg-disable,
-	info: $bg-info,
-	inverse: $bg-inverse,
-	link: $bg-link,
-	danger: $bg-danger,
-	success: $bg-success,
-	warning: $bg-warning
-};
+
+  primary   : $bg-primary
+  secondary : $bg-secondary
+  tertiary  : $bg-tertiary
+  disable   : $bg-disable
+  info      : $bg-info
+  inverse   : $bg-inverse
+  link      : $bg-link
+  danger    : $bg-danger
+  success   : $bg-success
+  warning   : $bg-warning
+
+}
+
 greys = {
-	grey-100: $grey-100,
-	grey-200: $grey-200,
-	grey-300: $grey-300,
-	grey-400: $grey-400,
-	grey-500: $grey-500,
-	grey-600: $grey-600,
-	grey-700: $grey-700,
-	grey-800: $grey-800,
-	grey-900: $grey-900,
-	grey-1000: $grey-1000
-};
+
+  grey-100  : $grey-100
+  grey-200  : $grey-200
+  grey-300  : $grey-300
+  grey-400  : $grey-400
+  grey-500  : $grey-500
+  grey-600  : $grey-600
+  grey-700  : $grey-700
+  grey-800  : $grey-800
+  grey-900  : $grey-900
+  grey-1000 : $grey-1000
+
+}
+
 keywords = {
-	aqua: $aqua,
-	black: $black,
-	blue: $blue,
-	fuchsia: $fuchsia,
-	green: $green,
-	grey: $grey,
-	lime: $lime,
-	maroon: $maroon,
-	navy: $navy,
-	olive: $olive,
-	purple: $purple,
-	red: $red,
-	silver: $silver,
-	teal: $teal,
-	white: $white,
-	yellow: $yellow
-};
 
-for name, color in colors {
-	:root {
-		--cl-{name}: color;
-	}
+aqua        : $aqua
+black       : $black
+blue        : $blue
+fuchsia     : $fuchsia
+green       : $green
+grey        : $grey
+lime        : $lime
+maroon      : $maroon
+navy        : $navy
+olive       : $olive
+purple      : $purple
+red         : $red
+silver      : $silver
+teal        : $teal
+white       : $white
+yellow      : $yellow
+
 }
 
-for bgname, background in backgrounds {
-	:root {
-		--bg-{bgname}: background;
-	}
-}
+for name, color in colors
+    :root
+        --cl-{name}(color)
 
-for greyname, grey in greys {
-	:root {
-		--cl-{greyname}: grey;
-	}
-}
+for bgname, background in backgrounds
+    :root
+        --bg-{bgname}(background)
 
-for keywordname, keyword in keywords {
-	:root {
-		--cl-{keywordname}: keyword;
-	}
-}
+for greyname, grey in greys
+    :root
+        --cl-{greyname}(grey)
+
+for keywordname, keyword in keywords
+    :root
+        --cl-{keywordname}(keyword)
 
 /* @end */
