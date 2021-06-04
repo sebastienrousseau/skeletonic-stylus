@@ -1,107 +1,103 @@
 /* @group Divider */
 hr
-  background-color: var(--cl-grey-100)
-  border-top: 1px solid var(--cl-grey-200)
-  width: (100% - (golden-ratio))
-
-hr
-	border 0
-	background-color var(--cl-black)
+  background-color var(--cl-white)
+  border 0
+  width: (100% - ($golden-ratio))
 	&.hr-dashed
-		background var(--cl-white)
-		border 2px dashed var(--cl-grey-700)
-		position relative
+		background: var(--cl-white)
+		border: 2px dashed var(--cl-grey-700)
+		position: relative
 		&:after
-			content ''
-			position absolute
-			left -1px
-			top -1px
-			right -1px
-			bottom -1px
-			border 1px solid var(--cl-grey-200)
-			pointer-events none
+			border: 1px solid var(--cl-grey-200)
+			bottom: -1px
+			content: ''
+			left: -1px
+			pointer-events: none
+			position: absolute
+			right: -1px
+			top: -1px
 	&.hr-dotted
-		border-top 2px dotted var(--cl-grey-700)
-		background-color transparent
+		background-color: transparent
+		border-top: 2px dotted var(--cl-grey-700)
 	&.hr-solid
-		border-top 2px solid var(--cl-grey-700)
-		background-color transparent
+		background-color: transparent
+		border-top: 2px solid var(--cl-grey-700)
 	&.hr-text
-		background var(--cl-white)
-		border 0
-		color var(--color)
-		height 1.5em
-		line-height 1em
-		opacity .5
-		outline 0
-		position relative
-		text-align center
+		background: var(--cl-white)
+		border: 0
+		color: var(--color)
+		height: 1.5em
+		line-height: 1em
+		opacity: .5
+		outline: 0
+		position: relative
+		text-align: center
 		&:before
-			background linear-gradient(to right, transparent, var(--cl-black), transparent)
-			content ''
-			height 1px
-			left 0
-			position absolute
-			top 50%
-			width 100%
+			background: linear-gradient(to right, transparent, var(--cl-black), transparent)
+			content: ''
+			height: 1px
+			left: 0
+			position: absolute
+			top: 50%
+			width: 100%
 		&:after
-			background-color var(--cl-white)
-			color var(--cl-black)
-			content attr(data-content)
-			display inline-block
-			line-height 1.5em
-			padding 0 .5em
-			position relative
+			background-color: var(--cl-white)
+			color: var(--cl-black)
+			content: attr(data-content)
+			display: inline-block
+			line-height: 1.5em
+			padding: 0 .5em
+			position: relative
 	&.hr-icon
-		position relative
-		height 20px
-		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22none%22%20stroke%3D%22%23e5e5e5%22%20stroke-width%3D%222%22%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%227%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
-		background-repeat no-repeat
-		background-position 50% 50%
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22none%22%20stroke%3D%22%23e5e5e5%22%20stroke-width%3D%222%22%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%227%22%20%2F%3E%0A%3C%2Fsvg%3E%0A")
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		height: 20px
+		position: relative
 		&::before
-			right calc(50%+25px)
-			width 100%
+			right: calc(50%+25px)
+			width: 100%
 		&::after
-			width 100%
+			width: 100%
 	&.hr-rounded
-		border-top 8px solid var(--cl-grey-700)
-		border-radius 5px
-		background-color transparent
+		background-color: transparent
+		border-radius: 5px
+		border-top: 8px solid var(--cl-grey-700)
 	&.hr-small
-		line-height 0
-		background-color transparent
-		border-style none
+		background-color: transparent
+		border-style: none
+		line-height: 0
 		&::after
-			content ""
-			display inline-block
-			width 100px
-			max-width 100%
-			border-top 1px solid var(--cl-grey-700)
-			background-color transparent
-			vertical-align top
+			background-color: transparent
+			border-top: 1px solid var(--cl-grey-700)
+			content: ""
+			display: inline-block
+			max-width: 100%
+			vertical-align: top
+			width: 100px
 	&.hr-vertical
-		width 1px
-		height 100px
-		margin-left auto
-		margin-right auto
-		border-left 1px solid var(--cl-grey-700)
-		background-color transparent
+		background-color: transparent
+		border-left: 1px solid var(--cl-grey-700)
+		height: 100px
+		margin-left: auto
+		margin-right: auto
+		width: 1px
 	&.hr-doubled
-		border-top double var(--cl-grey-700) 2px
-		background-color transparent
+		background-color: transparent
+		border-top: double var(--cl-grey-700) 2px
 	&.hr-blurred
-		border 0
-		height 0
-		box-shadow 0 0 10px 1px var(--color)
-		background-color transparent
+		background-color: transparent
+		border: 0
+		box-shadow: 0 0 10px 1px var(--color)
+		height: 0
 		&:after
-			content "\00a0"
+			content: "\00a0"
 
 hr.hr-icon::before,
     hr.hr-icon::after
-	content ""
-	position absolute
-	top 50%
-	border-bottom 1px solid var(--cl-grey-700)
+	border-bottom: 1px solid var(--cl-grey-700)
+	content: ""
+	position: absolute
+	top: 50%
 
 /* @end */

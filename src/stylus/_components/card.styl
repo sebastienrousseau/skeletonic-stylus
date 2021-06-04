@@ -1,64 +1,60 @@
 /* @group Cards */
 
 .card
-	margin-bottom golden-ratio rem
-	box-shadow 0 3px 9px 0 var(--cl-grey-200)
-	transition 0.3s
-	border-radius golden-ratio rem
-	background
-		transparent
-			background 0 0
-	position
-		relative
-			border 1px solid var(--cl-grey-300)
+	background: transparent
+  border: 1px solid var(--cl-grey-300)
+	border-radius: $golden-ratio rem
+	box-shadow: 0 3px 9px 0 var(--cl-grey-200)
+	margin-bottom: $golden-ratio rem
+	position: relative
+	transition: .3s
 	a
-		color var(--cl-black)
-		text-decoration none
+		color: var(--cl-black)
+		text-decoration: none
 		&:hover
-			text-decoration none
+			text-decoration: none
 	img
-		margin-bottom 0
-		border-radius golden-ratio rem
+		border-radius: $golden-ratio rem
+		margin-bottom: 0
 	&.primary
-		background var(--bg-primary)
-		border 0.0625rem solid var(--cl-primary)
-		color var(--cl-primary)
+		background: var(--bg-primary)
+		border: .0625rem solid var(--cl-primary)
+		color: var(--cl-primary)
 	&.secondary
-		background var(--bg-secondary)
-		border 0.0625rem solid var(--cl-secondary)
-		color var(--cl-secondary)
+		background: var(--bg-secondary)
+		border: .0625rem solid var(--cl-secondary)
+		color: var(--cl-secondary)
 	&.success
-		background var(--bg-success)
-		border 0.0625rem solid var(--cl-success)
-		color var(--cl-success)
+		background: var(--bg-success)
+		border: .0625rem solid var(--cl-success)
+		color: var(--cl-success)
 	&.info
-		background var(--bg-info)
-		border 0.0625rem solid var(--cl-info)
-		color var(--cl-info)
+		background: var(--bg-info)
+		border: .0625rem solid var(--cl-info)
+		color: var(--cl-info)
 	&.warning
-		background var(--bg-warning)
-		border 0.0625rem solid var(--cl-warning)
-		color var(--cl-warning)
+		background: var(--bg-warning)
+		border: .0625rem solid var(--cl-warning)
+		color: var(--cl-warning)
 	&.error
-		background var(--bg-danger)
-		border 0.0625rem solid var(--cl-danger)
-		color var(--cl-danger)
+		background: var(--bg-danger)
+		border: .0625rem solid var(--cl-danger)
+		color: var(--cl-danger)
 .card-content
-	padding golden-ratio -1 rem golden-ratio rem golden-ratio -1 rem golden-ratio rem
+	padding: $golden-ratio -1 rem $golden-ratio rem $golden-ratio -1 rem $golden-ratio rem
 .card-body
-	flex 1 1 auto
-	padding golden-ratio rem golden-ratio rem
+	flex: 1 1 auto
+	padding: $golden-ratio rem
 .card-title
-	margin-bottom golden-ratio rem
+	margin-bottom: $golden-ratio rem
 .card-subtitle
-	margin-top -1
-	margin-bottom 0
+	margin-bottom: 0
+	margin-top: -1
 .cards
-	display flex
-	flex-wrap wrap
-	justify-content space-between
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
 .card,
 .card strong
-	color var(--cl-black)
-
+	color: var(--cl-black)
 /* @end */

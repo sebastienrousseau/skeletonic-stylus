@@ -1,16 +1,14 @@
 /* @group Container */
 .container
-  box-sizing border-box
-  margin 0 auto
-  position relative
-  width 96%
+  box-sizing: border-box
+  margin: 0 auto
+  position: relative
+  width: 96%
+  &:after
+        clear: both
 
-.container:after,.container:before
-    display table
-    content ""
-
-.container
-    &:after
-        clear both
+.container:after, .container:before
+    content: ""
+    display: table
 
 /* @end */

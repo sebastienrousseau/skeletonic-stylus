@@ -1,15 +1,15 @@
 /* @group Input */
-input[type=text], input[type=password], input[type=email], input[type=search], input[type=number], input[type=file], input[type=tel], input[type=url], select, textarea
+input[type=email], input[type=file], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea
   background: var(--inverted-color)
-  border-radius: 2px
   border: 1px solid var(--cl-grey-200)
+  border-radius: 2px
   color: var(--color)
   display: block
   font-family: "Consolas", "Monaco", "Menlo", monospace
-  font-size: golden-font-size-large rem
-  margin: (golden-ratio)rem  0
-  outline: none
-  padding 1.618rem 0 1.618rem 0.618rem
+  font-size: $golden-font-size-large rem
+  margin: ($golden-ratio)rem  0
+  outline: 0
+  padding: 1.618rem 0 1.618rem .618rem
   transition: all 150ms linear
   width: 100%
 
@@ -18,7 +18,7 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
 
   &:focus
     border-color: var(--cl-black)
-    outline: none
+    outline: 0
 
 .input-primary[type=email],
     .input-primary[type=file],
@@ -30,8 +30,8 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-primary[type=url],
     select.input-primary,
     textarea.input-primary
-    border-color var(--cl-primary)
     background var(--bg-primary)
+    border-color var(--cl-primary)
 
 .input-secondary[type=email],
     .input-secondary[type=file],
@@ -43,8 +43,8 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-secondary[type=url],
     select.input-secondary,
     textarea.input-secondary
-    border-color var(--cl-secondary)
     background var(--bg-secondary)
+    border-color var(--cl-secondary)
 
 
 .input-success[type=email],
@@ -57,8 +57,8 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-success[type=url],
     select.input-success,
     textarea.input-success
-    border-color var(--cl-success)
     background var(--bg-success)
+    border-color var(--cl-success)
 
 .input-info[type=email],
     .input-info[type=file],
@@ -70,8 +70,8 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-info[type=url],
     select.input-info,
     textarea.input-info
-    border-color var(--cl-info)
     background var(--bg-info)
+    border-color var(--cl-info)
 
 .input-warning[type=email],
     .input-warning[type=file],
@@ -83,8 +83,8 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-warning[type=url],
     select.input-warning,
     textarea.input-warning
-    border-color var(--cl-warning)
     background var(--bg-warning)
+    border-color var(--cl-warning)
 
 .input-error[type=email],
     .input-error[type=file],
@@ -96,6 +96,6 @@ input[type=text], input[type=password], input[type=email], input[type=search], i
     .input-error[type=url],
     select.input-error,
     textarea.input-error
-    border-color var(--cl-danger)
     background var(--bg-danger)
+    border-color var(--cl-danger)
 /* @end */
