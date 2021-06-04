@@ -1,98 +1,108 @@
 /* @group Code */
-code.error,
-code.info,
-code.primary,
-code.secondary,
-code.success,
-code.tertiary,
-code.warning
-  border 0
-  margin-top 0
-  position relative
+code.error, code.info, code.primary, code.secondary, code.success, code.tertiary, code.warning {
+	border: 0;
+	margin-top: 0;
+	position: relative;
+}
 
-code,
-kbd,
-pre,
-samp
-  font-family "Consolas", "Monaco", "Menlo", monospace
-  font-size golden-font-size-base rem
-  margin (golden-ratio)rem
-  padding (golden-ratio)rem
+code, kbd, pre, samp {
+	font-family: 'Consolas', 'Monaco', 'Menlo', monospace;
+	font-size: golden-font-size-base rem;
+	margin: golden-ratio rem;
+	padding: golden-ratio rem;
+}
 
-pre
-  margin-bottom 0
-  overflow auto
+pre {
+	margin-bottom: 0;
+	overflow: auto;
+}
 
-pre, code
-  direction ltr
-  display block
-  text-align left
-  page-break-inside avoid
-  white-space pre-wrap
-  word-wrap break-word
+pre, code {
+	direction: ltr;
+	display: block;
+	text-align: left;
+	page-break-inside: avoid;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
 
-code
-  border-bottom 0.1rem solid var(--cl-black)
-  border-left: 0.9rem solid var(--cl-black)
-  border-right 0.1rem solid var(--cl-black)
-  border-top 0.1rem solid var(--cl-black)
-  box-shadow 0 12px 30px -9px var(--cl-grey-200)
-  &.primary
-      background var(--bg-primary)
-      border-bottom 0.1rem solid var(--cl-primary)
-      border-left 0.9rem solid var(--cl-primary)
-      border-right 0.1rem solid var(--cl-primary)
-      border-top 0.1rem solid var(--cl-primary)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-primary)
-  &.secondary
-      background var(--bg-secondary)
-      border-bottom 0.1rem solid var(--cl-secondary)
-      border-left 0.9rem solid var(--cl-secondary)
-      border-right 0.1rem solid var(--cl-secondary)
-      border-top 0.1rem solid var(--cl-secondary)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-secondary)
-  &.tertiary
-      background var(--bg-tertiary)
-      border-bottom 0.1rem solid var(--cl-tertiary)
-      border-left 0.9rem solid var(--cl-tertiary)
-      border-right 0.1rem solid var(--cl-tertiary)
-      border-top 0.1rem solid var(--cl-tertiary)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-tertiary)
-  &.success
-      background var(--bg-success)
-      border-bottom 0.1rem solid var(--cl-success)
-      border-color var(--cl-success)
-      border-left 0.9rem solid var(--cl-success)
-      border-right 0.1rem solid var(--cl-success)
-      border-top 0.1rem solid var(--cl-success)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-success)
-  &.info
-      background var(--bg-info)
-      border-bottom 0.1rem solid var(--cl-info)
-      border-left 0.9rem solid var(--cl-info)
-      border-right 0.1rem solid var(--cl-info)
-      border-top 0.1rem solid var(--cl-info)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-info)
-  &.warning
-      background var(--bg-warning)
-      border-bottom 0.1rem solid var(--cl-warning)
-      border-left 0.9rem solid var(--cl-warning)
-      border-right 0.1rem solid var(--cl-warning)
-      border-top 0.1rem solid var(--cl-warning)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-warning)
-  &.error
-      background var(--bg-danger)
-      border-bottom 0.1rem solid var(--cl-danger)
-      border-left 0.9rem solid var(--cl-danger)
-      border-right 0.1rem solid var(--cl-danger)
-      border-top 0.1rem solid var(--cl-danger)
-      box-shadow 0 12px 30px -9px var(--cl-grey-200)
-      color var(--cl-danger)
+code {
+	border-bottom: 0.1rem solid var(--cl-black);
+	border-left: 0.9rem solid var(--cl-black);
+	border-right: 0.1rem solid var(--cl-black);
+	border-top: 0.1rem solid var(--cl-black);
+	box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+
+	&.primary {
+		background: var(--bg-primary);
+		border-bottom: 0.1rem solid var(--cl-primary);
+		border-left: 0.9rem solid var(--cl-primary);
+		border-right: 0.1rem solid var(--cl-primary);
+		border-top: 0.1rem solid var(--cl-primary);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-primary);
+	}
+
+	&.secondary {
+		background: var(--bg-secondary);
+		border-bottom: 0.1rem solid var(--cl-secondary);
+		border-left: 0.9rem solid var(--cl-secondary);
+		border-right: 0.1rem solid var(--cl-secondary);
+		border-top: 0.1rem solid var(--cl-secondary);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-secondary);
+	}
+
+	&.tertiary {
+		background: var(--bg-tertiary);
+		border-bottom: 0.1rem solid var(--cl-tertiary);
+		border-left: 0.9rem solid var(--cl-tertiary);
+		border-right: 0.1rem solid var(--cl-tertiary);
+		border-top: 0.1rem solid var(--cl-tertiary);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-tertiary);
+	}
+
+	&.success {
+		background: var(--bg-success);
+		border-bottom: 0.1rem solid var(--cl-success);
+		border-color: var(--cl-success);
+		border-left: 0.9rem solid var(--cl-success);
+		border-right: 0.1rem solid var(--cl-success);
+		border-top: 0.1rem solid var(--cl-success);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-success);
+	}
+
+	&.info {
+		background: var(--bg-info);
+		border-bottom: 0.1rem solid var(--cl-info);
+		border-left: 0.9rem solid var(--cl-info);
+		border-right: 0.1rem solid var(--cl-info);
+		border-top: 0.1rem solid var(--cl-info);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-info);
+	}
+
+	&.warning {
+		background: var(--bg-warning);
+		border-bottom: 0.1rem solid var(--cl-warning);
+		border-left: 0.9rem solid var(--cl-warning);
+		border-right: 0.1rem solid var(--cl-warning);
+		border-top: 0.1rem solid var(--cl-warning);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-warning);
+	}
+
+	&.error {
+		background: var(--bg-danger);
+		border-bottom: 0.1rem solid var(--cl-danger);
+		border-left: 0.9rem solid var(--cl-danger);
+		border-right: 0.1rem solid var(--cl-danger);
+		border-top: 0.1rem solid var(--cl-danger);
+		box-shadow: 0 12px 30px -9px var(--cl-grey-200);
+		color: var(--cl-danger);
+	}
+}
 
 /* @end */

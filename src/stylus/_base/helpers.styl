@@ -1,44 +1,46 @@
-.clearfix
-  &:before,
-  &:after
-    content: " "
-    display: table
-  &:after
-    clear: both
+.clearfix {
+	&:before, &:after {
+		content: ' ';
+		display: table;
+	}
 
-.left,
-[left]
-  float: left !important
+	&:after {
+		clear: both;
+	}
+}
 
-.right,
-[right]
-  float: right !important
+.left, [left] {
+	float: left !important;
+}
 
-.capitalized,
-[capitalized]
-  text-transform: capitalize !important
+.right, [right] {
+	float: right !important;
+}
 
-.lowercase,
-[lowercase]
-  text-transform: lowercase !important
+.capitalized, [capitalized] {
+	text-transform: capitalize !important;
+}
 
-.uppercase,
-[uppercase]
-  text-transform: uppercase !important
+.lowercase, [lowercase] {
+	text-transform: lowercase !important;
+}
 
-.italic,
-[italic]
-  font-style: italic !important
+.uppercase, [uppercase] {
+	text-transform: uppercase !important;
+}
 
-.nomargin,
-[nomargin]
-  margin: 0 !important
+.italic, [italic] {
+	font-style: italic !important;
+}
 
-.nopadding,
-[nopadding]
-  padding: 0 !important
+.nomargin, [nomargin] {
+	margin: 0 !important;
+}
 
-.hidden,
-[hidden]
-    display: none !important
+.nopadding, [nopadding] {
+	padding: 0 !important;
+}
 
+.hidden, [hidden] {
+	display: none !important;
+}
