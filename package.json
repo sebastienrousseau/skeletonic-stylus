@@ -1,6 +1,6 @@
 {
   "name": "skeletonic-stylus",
-  "version": "0.0.1",
+  "version": "1.2.1",
   "description": "Skeletonic Stylus is a lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework written in Stylus to streamline your Digital and Mobile Web development needs.",
   "keywords": [
     "css",
@@ -27,7 +27,7 @@
   "scripts": {
     "build": "npm run format && npm run lint && npm run clean && npm run stylus && npm run autoprefix && npm run csso && npm run cssstats",
     "clean": "rimraf dist/css",
-    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/skeletonic.css dist/css/skeletonic.css",
+    "autoprefix": "postcss -u autoprefixer --no-map.inline --autoprefixer.browsers \"last 1 versions\" --output dist/css/skeletonic.css dist/css/skeletonic.css",
     "csso": "csso -o dist/css/skeletonic.min.css -i dist/css/skeletonic.css --debug --stat",
     "cssstats": "cssstats dist/css/skeletonic.css dist/css/skeletonic.json",
     "cleancss": "cleancss -o dist/css/skeletonic.min.css dist/css/skeletonic.css",
