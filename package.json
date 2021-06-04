@@ -1,21 +1,27 @@
 {
-  "name": "skeletonic",
+  "name": "skeletonic-stylus",
   "version": "0.0.1",
-  "description": "Skeletonic CSS is a lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework to streamline your Digital and Mobile Web development needs.",
+  "description": "Skeletonic Stylus is a lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework written in Stylus to streamline your Digital and Mobile Web development needs.",
   "keywords": [
+    "css",
+    "mit-license",
+    "open-source",
+    "preprocessor",
+    "skeletonic-css",
     "skeletonic-stylus",
-    "skeletonic.css",
-    "stylus"
+    "stylus",
+    "stylus-css",
+    "stylus-mixin"
   ],
   "main": "src/stylus/skeletonic.styl",
   "style": "dist/skeletonic.css",
   "unpkg": "dist/skeletonic.css",
-  "repository": "git+https://github.com/sebastienrousseau/skeletonic.git",
-  "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic)",
+  "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
+  "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
   "license": "MIT",
   "license_URI": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/sebastienrousseau/skeletonic/issues"
+    "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
   },
   "homepage": "https://skeletonic.io",
   "scripts": {
