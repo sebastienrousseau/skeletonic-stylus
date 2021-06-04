@@ -1,7 +1,9 @@
 /* @group Media Queries */
 
-// TODO: #5 Migrate pxtorem into a mixin
+golden-ratio = round((1.6180339887498948482), 3)
+mq-ratio = (0.71804697157 * golden-ratio)
 // Convert px to rem/em
+// TODO: #5 Migrate pxtorem into a mixin
 $base--font-size ?= 16px
 
 pxtorem($px, $base)
@@ -15,9 +17,9 @@ pxtorem($px, $base)
 
 // Media queries
 for size in 220 240 320 375 414 480 576 600 640 648 720 768 800 900 960 1024 1050 1080 1152 1200 1280 1366 1392 1400 1440 1536 1600 1680 1856 1920 2048 2160 2560 3384 3840 4320 6016 7680
-  @media only screen and (max-width : pxtorem(size,16)em )
+  @media only screen and (max-width : pxtorem(size,16) )
     .container
-      width pxtorem((size / (golden-ratio*0.71804697157)),16)em
+      width pxtorem((size / mq-ratio) , 16) em
       margin 0 auto
 
   @media (prefers-reduced-motion: no-preference)
