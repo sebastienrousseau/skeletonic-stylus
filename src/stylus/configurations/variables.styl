@@ -1,17 +1,18 @@
 /* @group Variables */
 
+// TODO: #7 Fix Stylus lint warnings
   // Font Family
-  font = 'Open Sans', sans-serif
+  $font = 'Open Sans'
 
-  // Golden Ratio Variables
+  // Golden Ratio
   $golden-ratio = round((1.6180339887498948482), 3)
   $golden-large = round((1 / $golden-ratio), 3)
   $golden-small = round((1 - $golden-large), 3)
 
   // Golden Ratio Font Sizes
-  $golden-font-size-base = round( $golden-ratio * .9888543819998318, 3)rem
-  $golden-font-size-large= round(2 * $golden-font-size-base * $golden-large, 3)rem
-  $golden-font-size-small= round(2 * $golden-font-size-base * $golden-small, 3)rem
+  $golden-font-size-base  = round( $golden-ratio * .9888543819998318, 3)rem
+  $golden-font-size-large = round(2 * $golden-font-size-base * $golden-large, 3)rem
+  $golden-font-size-small = round(2 * $golden-font-size-base * $golden-small, 3)rem
 
   // Golden Ratio Headers
   $golden-h1 = round($golden-font-size-base * ($golden-ratio ** 6), 3)
@@ -30,19 +31,17 @@
   $golden-line-height-h5 = round($golden-font-size-base * ($golden-ratio ** 6), 3)
   $golden-line-height-h6 = round($golden-font-size-base * ($golden-ratio ** 7), 3)
 
-:root
-
   // Link Colors
-  --link-color-active:             var(--cl-red)
-  --link-color-focus:              var(--cl-red)
-  --link-color-hover:              var(--cl-red)
-  --link-color-visited:            var(--cl-purple)
-  --link-color:                    var(--cl-blue)
+  $link-color            = var(--cl-blue)
+  $link-color-active     = var(--cl-red)
+  $link-color-focus      = var(--cl-red)
+  $link-color-hover      = var(--cl-red)
+  $link-color-visited    = var(--cl-purple)
 
-  // Golden ratio variables
-  --golden-ratio-font-size-large:  $golden-font-size-large
-  --golden-ratio-font-size-small:  $golden-font-size-small
-  --golden-ratio-font-size:        $golden-font-size-base
-  --golden-ratio-line-height:      $golden-line-height
-
+  // Golden Ratio variables
+  $golden-ratio-font-size       =  $golden-font-size-base
+  $golden-ratio-line-height     =  $golden-line-height
+  $golden-ratio-font-size-large =  $golden-font-size-large
+  $golden-ratio-font-size-small =  $golden-font-size-small
+  
 /* @end */
