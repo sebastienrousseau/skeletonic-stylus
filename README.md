@@ -8,6 +8,8 @@
 
 > [Download the Skeletonic Stylus library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
+⭐ We appreciate your star, it helps!
+
 [![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
 
 [![npm version](https://badge.fury.io/js/skeletonic-stylus.svg)](https://badge.fury.io/js/skeletonic-stylus)
@@ -28,32 +30,28 @@
   - [Getting Started](#getting-started)
     - [Local Setup](#local-setup)
   - [What's included](#whats-included)
-  - [Extend](#extend)
-    - [CSS Responsive Grid-View](#css-responsive-grid-view)
-    - [CSS Colours](#css-colours)
-    - [CSS Animations](#css-animations)
   - [Alternate CDN locations](#alternate-cdn-locations)
   - [Versioning](#versioning)
   - [Built With](#built-with)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
   - [Our Values](#our-values)
-  - [Old History](#old-history)
+  - [Releases](#releases)
   - [License](#license)
   - [Acknowledgements](#acknowledgements)
 
 ## Getting Started
 
-[The Skeletonic Stylus library](https://skeletonic.app) is a [Stylus](https://github.com/stylus/stylus) Open Source code library built for the [Skeletonic CSS](https://skeletonic.app) framework.
+[The Skeletonic Stylus library](https://skeletonic.app) is a collection of modules built on [Stylus](https://github.com/stylus/stylus) and modern Web Standards, designed to help you efficiently tackle some of the most common challenges in mobile and web application design and development.
 
 ### Local Setup
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/sebastienrousseau/skeletonic/archive/v1.2.1.zip)
-- Install with [Npm](https://www.npmjs.com/package/skeletonic) to get the pre-built CSS and sourcemaps. This is recommended when using Skeletonic for a typical web project: ```npm install skeletonic```
-- Install with [Yarn](https://yarnpkg.com/en/package/skeletonic) to get the pre-built CSS and sourcemaps. This is recommended when using Skeletonic for a typical web project: ```yarn add skeletonic```
-- Clone the main repository to get all source files including build scripts: `git clone https://github.com/sebastienrousseau/skeletonic.git`
+- [Download the latest release](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
+- Install with [Npm](https://www.npmjs.com/package/skeletonic-stylus) to get the pre-built CSS and sourcemaps. This is recommended when using the Skeletonic Stylus library for a typical web project: `npm install skeletonic-stylus`
+- Install with [Yarn](https://yarnpkg.com/en/package/skeletonic-stylus) to get the pre-built CSS and sourcemaps. This is recommended when using the Skeletonic Stylus library for a typical web project: `yarn add skeletonic-stylus`
+- Clone the main repository to get all source files including build scripts: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
 
 ## What's included
 
@@ -62,7 +60,7 @@ Within the download you'll find all the source files, compiled and minified CSS 
 You'll see something like this:
 
 ```text  
-skeletonic-1.2.1
+skeletonic-0.0.1
 ├── skeletonic-animations.css
 ├── skeletonic-animations.css.map
 ├── skeletonic-animations.min.css
@@ -80,50 +78,18 @@ skeletonic-1.2.1
 └── skeletonic.min.css
 ```
 
-Now simply link one of these CSS in your HTML document. In that case, the quickest and easiest way to start using skeletonic is to include a reference to the minified CSS file.
-
-`<link rel="stylesheet" type="text/css" href="skeletonic.min.css" />`
-
-The link consists of just a simple line of HTML code that you will need to put in the ```<head>```  section of your HTML document.
-
-We also provide production-ready versions and use **[unpkg](https://unpkg.com/)** as our preferred CDN to link to the latest production version. **[unpkg](https://unpkg.com/)** is a fast, global content delivery network for everything on npm.  
-
-Please feel free to grab the latest:
-
-`<link rel="stylesheet" type="text/css" href="https://unpkg.com/skeletonic/dist/skeletonic.min.css" />`
-
-You can also specify a specific version as per below. The latest version as of today is 1.2.1.
-
-`<link rel="stylesheet" type="text/css" href="https://unpkg.com/skeletonic@1.2.1/dist/skeletonic.min.css" />`
-
-## Extend
-
-We provide a growing library of extensible CSS module files, utilities, themes and components ready to use as is to fit your web needs.
-
-### CSS Responsive Grid-View
-
-`<link rel="stylesheet" type="text/css" href="skeletonic-pattern.min.css" />`
-
-### CSS Colours
-
-`<link rel="stylesheet" type="text/css" href="skeletonic-colours.min.css" />`
-
-### CSS Animations
-
-`<link rel="stylesheet" type="text/css" href="skeletonic-animations.min.css" />`
-
 ## Alternate CDN locations
 
 The following table lists alternate CDN locations where Skeletonic is hosted.
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic@1.2.1/dist/skeletonic.min.css> | Yes | No |
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic@0.0.1/dist/skeletonic.min.css> | Yes | No |
 | [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic/dist/skeletonic.min.css>  | Yes | Yes |
 
 ## Versioning
 
-For transparency into our release cycle and in striving to maintain backward compatibility, Skeletonic is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
+For transparency into our release cycle and in striving to maintain backward compatibility, the Skeletonic Stylus library is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
 
 ## Built With
 
@@ -137,7 +103,7 @@ Please read carefully through our [Contributing Guidelines](https://github.com/s
 
 ## Code of Conduct
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic/blob/master/CODE_OF_CONDUCT.md).
+We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/CODE_OF_CONDUCT.md).
 
 ## Our Values
 
@@ -145,26 +111,20 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 2. We take our passion beyond Code into our daily practices.
 3. We are just obsessed about creating and delivering exceptional solutions.
 
-## Old History
+## Releases
 
-- See [Skeletonic Release](https://github.com/sebastienrousseau/skeletonic/releases) list.
+- See [Skeletonic Release](https://github.com/sebastienrousseau/skeletonic-stylus/releases) list.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/LICENSE) file for details
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Freedia%2Fskeletonic.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Freedia%2Fskeletonic?ref=badge_large)
 
 ## Acknowledgements
 
-[Skeletonic](https://skeletonic.app) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic/graphs/contributors)
+[The Skeletonic Stylus library](https://skeletonic.app) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
 |:---:
 [Sebastien Rousseau](https://github.com/sebastienrousseau) |
-
-Credit also goes to the following source code libraries:
-
-- [Normalize.css](http://necolas.github.io/normalize.css/) - A modern, HTML5-ready alternative to CSS resets to fix cross-browser compatibility issues.
-- [Skeleton](http://www.getskeleton.com) - A Dead Simple, Responsive Boilerplate
-- [Wing](https://kbrsh.github.io/wing/) - A beautiful CSS framework designed for minimalists.
