@@ -1,7 +1,7 @@
 {
     "name": "skeletonic-stylus",
     "version": "0.0.1",
-    "description": "A lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework made with Stylus.",
+    "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
         "css",
         "mit-license",
@@ -23,7 +23,7 @@
     "bugs": {
         "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
     },
-    "homepage": "https://skeletonic.io",
+    "homepage": "https://skeletonic.app",
     "scripts": {
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:autoprefix:directory && npm run dev:minify-css",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",

@@ -2,6 +2,6 @@
 
 [logo]: ../../../images/skeletonic-stylus.svg "Skeletonic Stylus Banner"
 
-# Skeletonic Stylus Elements
+# The Skeletonic Stylus library Elements
 
 Each of the files in this folder are individual elements.

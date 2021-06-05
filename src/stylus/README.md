@@ -2,6 +2,6 @@
 
 [logo]: ../../images/skeletonic-stylus.svg "Skeletonic Stylus Banner"
 
-# Skeletonic Stylus Categories
+# The Skeletonic Stylus library Categories
 
 Each of the folders are Stylus Categories.
