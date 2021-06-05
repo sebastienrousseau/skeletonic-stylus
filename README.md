@@ -4,9 +4,9 @@
 
 [logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus library banner"
 
-> **[The Skeletonic Stylus library](https://github.com/sebastienrousseau/skeletonic-stylus)** - A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
+**[The Skeletonic Stylus library](https://github.com/sebastienrousseau/skeletonic-stylus)** - A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
 
-[Download the Skeletonic Stylus library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
+> [Download the Skeletonic Stylus library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
 [![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
 
@@ -19,6 +19,7 @@
 | Date        | Version | Notes                                     |
 | ----------- | ------- | ----------------------------------------- |
 | 2021-Jun-05 | v0.1    | First public release of Skeletonic Stylus |
+
 ## Table of contents
 
 - [The Skeletonic Stylus library](#the-skeletonic-stylus-library)
@@ -37,7 +38,7 @@
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
   - [Our Values](#our-values)
-  - [History](#history-1)
+  - [Old History](#old-history)
   - [License](#license)
   - [Acknowledgements](#acknowledgements)
 
@@ -144,7 +145,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 2. We take our passion beyond Code into our daily practices.
 3. We are just obsessed about creating and delivering exceptional solutions.
 
-## History
+## Old History
 
 - See [Skeletonic Release](https://github.com/sebastienrousseau/skeletonic/releases) list.
 
