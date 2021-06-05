@@ -1,4 +1,4 @@
-# [The Skeletonic Stylus library](https://skeletonic.app)
+# [The Skeletonic Stylus library](https://skeletonic-stylus.io)
 
 ![alt text][logo]
 
@@ -42,7 +42,7 @@
 
 ## Getting Started
 
-[The Skeletonic Stylus library](https://skeletonic.app) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
+[The Skeletonic Stylus library](https://skeletonic-stylus.io) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
 ### Installation
 
@@ -117,13 +117,13 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE.md) file for details
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Freedia%2Fskeletonic.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Freedia%2Fskeletonic?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%skeletonic-stylus?ref=badge_large)
 
 ## Acknowledgements
 
-[The Skeletonic Stylus library](https://skeletonic.app) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic/graphs/contributors)
+[The Skeletonic Stylus library](https://skeletonic-stylus.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
 |:---:

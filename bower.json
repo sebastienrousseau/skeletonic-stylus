@@ -1,7 +1,7 @@
 {
     "name": "skeletonic-stylus",
     "version": "0.0.1",
-    "homepage": "https://skeletonic.app",
+    "homepage": "https://skeletonic-stylus.io",
     "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "main": "src/stylus/skeletonic.styl",
