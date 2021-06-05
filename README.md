@@ -13,7 +13,7 @@
 [![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
 
 [![npm version](https://badge.fury.io/js/skeletonic-stylus.svg)](https://badge.fury.io/js/skeletonic-stylus)
-[![Build Status](https://travis-ci.org/sebastienrousseau/skeletonic-stylus.svg?branch=master)](https://travis-ci.org/sebastienrousseau/skeletonic-stylus)
+[![Build Status](https://travis-ci.org/sebastienrousseau/skeletonic-stylus.svg?branch=main)](https://travis-ci.org/sebastienrousseau/skeletonic-stylus)
 [![Packagist](https://img.shields.io/badge/license-MIT-blue.svg)](https://skeletonic-stylus.github.io/license)
 
 ## History
@@ -99,11 +99,11 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Contributing
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
 
 ## Code of Conduct
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/CODE_OF_CONDUCT.md).
+We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CODE_OF_CONDUCT.md).
 
 ## Our Values
 
@@ -117,7 +117,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE) file for details
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Freedia%2Fskeletonic.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Freedia%2Fskeletonic?ref=badge_large)
 
