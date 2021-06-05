@@ -20,7 +20,7 @@
 
 | Date        | Version | Notes                                     |
 | ----------- | ------- | ----------------------------------------- |
-| 2021-Jun-05 | v0.1    | First public release of Skeletonic Stylus |
+| 2021-Jun-05 | v0.0.1  | First public release of Skeletonic Stylus |
 
 ## Table of contents
 
@@ -99,7 +99,7 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Contributing
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic/blob/master/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
 
 ## Code of Conduct
 
