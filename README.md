@@ -4,11 +4,11 @@
 
 [logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus library banner"
 
-**[The Skeletonic Stylus library](https://github.com/sebastienrousseau/skeletonic-stylus)** - A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
+**[The Skeletonic Stylus library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
 
 > [Download the Skeletonic Stylus library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
-⭐ We appreciate your star, it helps!
+⭐ We appreciate your star rating and valuable feedback.
 
 [![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
 
@@ -42,16 +42,16 @@
 
 ## Getting Started
 
-[The Skeletonic Stylus library](https://skeletonic.app) is a collection of modules built on [Stylus](https://github.com/stylus/stylus) and modern Web Standards, designed to help you efficiently tackle some of the most common challenges in mobile and web application design and development.
+[The Skeletonic Stylus library](https://skeletonic.app) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
-### Local Setup
+### Installation
 
-Several quick start options are available:
+To install the Skeletonic Stylus library, use either npm or yarn as follows:
 
-- [Download the latest release](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
-- Install with [Npm](https://www.npmjs.com/package/skeletonic-stylus) to get the pre-built CSS and sourcemaps. This is recommended when using the Skeletonic Stylus library for a typical web project: `npm install skeletonic-stylus`
-- Install with [Yarn](https://yarnpkg.com/en/package/skeletonic-stylus) to get the pre-built CSS and sourcemaps. This is recommended when using the Skeletonic Stylus library for a typical web project: `yarn add skeletonic-stylus`
-- Clone the main repository to get all source files including build scripts: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
+- `npm install skeletonic-stylus`
+- `yarn add skeletonic-stylus`
+
+> Looking for a setup that integrates with a particular front-end framework or bundler? Check out our integration docs.
 
 ## What's included
 
@@ -59,7 +59,7 @@ Within the download you'll find all the source files, compiled and minified CSS 
 
 You'll see something like this:
 
-```text  
+```bash
 skeletonic-0.0.1
 ├── skeletonic-animations.css
 ├── skeletonic-animations.css.map
