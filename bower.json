@@ -1,0 +1,29 @@
+{
+    "name": "skeletonic-stylus",
+    "version": "0.0.1",
+    "homepage": "https://skeletonic.io",
+    "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
+    "description": "A lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework made with Stylus.",
+    "main": "src/stylus/skeletonic.styl",
+    "keywords": [
+        "css",
+        "mit-license",
+        "open-source",
+        "preprocessor",
+        "skeletonic-css",
+        "skeletonic-stylus",
+        "stylus",
+        "stylus-css",
+        "stylus-mixin"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "docs",
+        "images"
+    ]
+}

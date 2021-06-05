@@ -1,49 +1,49 @@
 {
-  "name": "skeletonic-stylus",
-  "version": "1.2.1",
-  "description": "Skeletonic Stylus is a lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework written in Stylus to streamline your Digital and Mobile Web development needs.",
-  "keywords": [
-    "css",
-    "mit-license",
-    "open-source",
-    "preprocessor",
-    "skeletonic-css",
-    "skeletonic-stylus",
-    "stylus",
-    "stylus-css",
-    "stylus-mixin"
-  ],
-  "main": "src/stylus/skeletonic.styl",
-  "style": "dist/skeletonic.min.css",
-  "unpkg": "dist/skeletonic.css",
-  "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
-  "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
-  "license": "MIT",
-  "license_URI": "http://www.opensource.org/licenses/mit-license.php",
-  "bugs": {
-    "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
-  },
-  "homepage": "https://skeletonic.io",
-  "scripts": {
-    "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:autoprefix:directory && npm run dev:minify-css",
-    "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
-    "dev:clean:css": "cleancss -o dist/css/skeletonic.min.css dist/css/skeletonic.css",
-    "dev:clean:directory": "rimraf dist/css",
-    "dev:compile:animations" : "stylus src/stylus/_animations/_contents.styl -o dist/css/skeletonic.animations.css",
-    "dev:compile:core": "stylus src/stylus/skeletonic.styl -o dist/css/skeletonic.css",
-    "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json",
-    "dev:lint:stylus": "stylint src/stylus --strict",
-    "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "clean-css-cli": "^5.3.0",
-    "csso-cli": "^3.0.0",
-    "cssstats-cli": "^4.0.2",
-    "postcss": "^8.3.0",
-    "postcss-cli": "^8.3.1",
-    "rimraf": "^3.0.2",
-    "stylus": "^0.54.8",
-    "stylus-supremacy": "^2.15.0"
-  }
+    "name": "skeletonic-stylus",
+    "version": "0.0.1",
+    "description": "A lightweight, intuitive, accessible and ultra-responsive cascading style sheets framework made with Stylus.",
+    "keywords": [
+        "css",
+        "mit-license",
+        "open-source",
+        "preprocessor",
+        "skeletonic-css",
+        "skeletonic-stylus",
+        "stylus",
+        "stylus-css",
+        "stylus-mixin"
+    ],
+    "main": "src/stylus/skeletonic.styl",
+    "style": "dist/skeletonic.min.css",
+    "unpkg": "dist/skeletonic.css",
+    "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
+    "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
+    "license": "MIT",
+    "license_URI": "http://www.opensource.org/licenses/mit-license.php",
+    "bugs": {
+        "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
+    },
+    "homepage": "https://skeletonic.io",
+    "scripts": {
+        "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:autoprefix:directory && npm run dev:minify-css",
+        "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
+        "dev:clean:css": "cleancss -o dist/css/skeletonic.min.css dist/css/skeletonic.css",
+        "dev:clean:directory": "rimraf dist/css",
+        "dev:compile:animations": "stylus src/stylus/animations/_contents.styl -o dist/css/skeletonic.animations.css",
+        "dev:compile:core": "stylus src/stylus/skeletonic.styl -o dist/css/skeletonic.css",
+        "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json",
+        "dev:lint:stylus": "stylint src/stylus --strict",
+        "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.6",
+        "clean-css-cli": "^5.3.0",
+        "csso-cli": "^3.0.0",
+        "cssstats-cli": "^4.0.2",
+        "postcss": "^8.3.0",
+        "postcss-cli": "^8.3.1",
+        "rimraf": "^3.0.2",
+        "stylus": "^0.54.8",
+        "stylus-supremacy": "^2.15.0"
+    }
 }
