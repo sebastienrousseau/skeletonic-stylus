@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Layout
+# Skeletonic Stylus Library - Layout
 
 ![alt text][logo]
 

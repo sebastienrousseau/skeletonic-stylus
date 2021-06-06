@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Animations and Transitions
+# Skeletonic Stylus Library - Animations
 
 ![alt text][logo]
 

@@ -1,10 +1,10 @@
-# Contributing to the Skeletonic Stylus library
+# Contributing to the Skeletonic Stylus Library
 
-Thank you so much for wanting to contribute to the Skeletonic Stylus library! There are a couple ways to help out.
+Thank you so much for wanting to contribute to the Skeletonic Stylus Library! There are a couple ways to help out.
 
 ## Evangelise
 
-Just tell people about the Skeletonic Stylus library. We believe that a bigger, more involved community makes for a better framework, and that better frameworks make the world a better place. We can always use more feedback.
+Just tell people about the Skeletonic Stylus Library. We believe that a bigger, more involved community makes for a better framework, and that better frameworks make the world a better place. We can always use more feedback.
 
 ## How to Contribute
 
@@ -14,7 +14,7 @@ Here are guides for submitting issues and pull requests.
 
 If you encounter a bug that hasn't already been filed, please file a bug report. Let us know of things we should fix, things we should add, questions, etc.
 
-Warning us of a bug is possibly the single most valuable contribution you can make to the Skeletonic Stylus library.
+Warning us of a bug is possibly the single most valuable contribution you can make to the Skeletonic Stylus Library.
 
 1) Head [here](https://github.com/sebastienrousseau/skeletonic-stylus/issues/new) to submit a new issue.
 
@@ -28,27 +28,27 @@ Warning us of a bug is possibly the single most valuable contribution you can ma
 
 ### Code Contributions
 
-Contributing code is one of the more difficult ways to contribute to the Skeletonic Stylus library.
+Contributing code is one of the more difficult ways to contribute to the Skeletonic Stylus Library.
 
 #### Feature Requests
 
-Filing feature requests is one of the most popular ways to contribute to the Skeletonic Stylus library.
+Filing feature requests is one of the most popular ways to contribute to the Skeletonic Stylus Library.
 
 Is there some feature request that you'd like to code up yourself? Is there a feature you asked for yourself that you'd like to code?
 
-Here's how to contribute code for a new feature to the Skeletonic Stylus library. Pull Requests allow you to share your own code with us, and we can merge it into the main repo.
+Here's how to contribute code for a new feature to the Skeletonic Stylus Library. Pull Requests allow you to share your own code with us, and we can merge it into the main repo.
 
 #### Adding Code
 
 1) Fork the repo.
 
-2) Clone the Skeletonic Stylus library repo by running
+2) Clone the Skeletonic Stylus Library repo by running
 
 ```sh
 git clone https://github.com/sebastienrousseau/skeletonic-stylus.git
 ```
 
-3) Install Node.js if you haven't already, and run `npm install`. This installs the required dependencies for building the Skeletonic Stylus library.
+3) Install Node.js if you haven't already, and run `npm install`. This installs the required dependencies for building the Skeletonic Stylus Library.
 
 4) Edit files in the `src/` folder. Don't edit any files in the `dist/` folder, this is only for distribution builds, which are automated.
 
@@ -56,7 +56,7 @@ git clone https://github.com/sebastienrousseau/skeletonic-stylus.git
 
 #### Fixing an Issue
 
-Have you found a solution to an issue? Here is how you can submit your code to the Skeletonic Stylus library.
+Have you found a solution to an issue? Here is how you can submit your code to the Skeletonic Stylus Library.
 
 1) Fork the repo, and refer above for how to change up code.
 

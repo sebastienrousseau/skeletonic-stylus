@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Components
+# Skeletonic Stylus Library - Components
 
 ![alt text][logo]
 

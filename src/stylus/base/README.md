@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Base
+# Skeletonic Stylus Library - Base
 
 ![alt text][logo]
 

@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Fonts
+# Skeletonic Stylus Library - Fonts
 
 ![alt text][logo]
 

@@ -1,4 +1,4 @@
-# The Skeletonic Stylus library Color Palettes
+# Skeletonic Stylus Library - Color Palettes
 
 ![alt text][logo]
 

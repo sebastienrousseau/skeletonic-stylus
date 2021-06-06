@@ -1,12 +1,12 @@
-# [The Skeletonic Stylus library](https://skeletonic-stylus.io)
+# [The Skeletonic Stylus Library](https://skeletonic-stylus.io)
 
 ![alt text][logo]
 
-[logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus library banner"
+[logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus Library banner"
 
-**[The Skeletonic Stylus library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
+**[The Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
 
-> [Download the Skeletonic Stylus library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
+> [Download the Skeletonic Stylus Library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
 ⭐ We appreciate your star rating and valuable feedback.
 
@@ -24,7 +24,7 @@
 
 ## Table of contents
 
-- [The Skeletonic Stylus library](#the-skeletonic-stylus-library)
+- [The Skeletonic Stylus Library](#the-skeletonic-stylus-library)
   - [History](#history)
   - [Table of contents](#table-of-contents)
   - [Getting Started](#getting-started)
@@ -42,11 +42,11 @@
 
 ## Getting Started
 
-[The Skeletonic Stylus library](https://skeletonic-stylus.io) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
+[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
 ### Installation
 
-To install the Skeletonic Stylus library, use either npm or yarn as follows:
+To install the Skeletonic Stylus Library, use either npm or yarn as follows:
 
 - `npm install skeletonic-stylus`
 - `yarn add skeletonic-stylus`
@@ -159,7 +159,7 @@ The following table lists alternate CDN locations where Skeletonic is hosted.
 
 ## Versioning
 
-For transparency into our release cycle and in striving to maintain backward compatibility, the Skeletonic Stylus library is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
+For transparency into our release cycle and in striving to maintain backward compatibility, the Skeletonic Stylus Library is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
 
 ## Built With
 
@@ -193,7 +193,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Acknowledgements
 
-[The Skeletonic Stylus library](https://skeletonic-stylus.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
+[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
 |:---:
