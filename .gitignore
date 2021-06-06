@@ -1,5 +1,6 @@
-# Exclude Directories
+# Exclude Directories and package
 dist/*
+*.tgz
 
 # Logs
 logs
