@@ -130,6 +130,12 @@ for bgname, background in backgrounds
         --bg-{bgname}(background)
 
 for greyname, grey in greys
+    .background-color-{greyname}
+        background-color: (grey)
+
+    .border-color-{greyname}
+        border: 1px solid (grey)
+
     :root
         --cl-{greyname}(grey)
 
