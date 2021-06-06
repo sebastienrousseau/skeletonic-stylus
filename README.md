@@ -61,21 +61,91 @@ You'll see something like this:
 
 ```bash
 skeletonic-0.0.1
-├── skeletonic-animations.css
-├── skeletonic-animations.css.map
-├── skeletonic-animations.min.css
-├── skeletonic-colours.css
-├── skeletonic-colours.css.map
-├── skeletonic-colours.min.css
-├── skeletonic-fonts.css
-├── skeletonic-fonts.css.map
-├── skeletonic-fonts.min.css
-├── skeletonic-pattern.css
-├── skeletonic-pattern.css.map
-├── skeletonic-pattern.min.css
-├── skeletonic.css
-├── skeletonic.css.map
-└── skeletonic.min.css
+├── css
+│   ├── skeletonic.animations.css
+│   ├── skeletonic.animations.css.map
+│   ├── skeletonic.animations.min.css
+│   ├── skeletonic.colors.css
+│   ├── skeletonic.colors.css.map
+│   ├── skeletonic.colors.min.css
+│   ├── skeletonic.css
+│   ├── skeletonic.css.map
+│   ├── skeletonic.fonts.css
+│   ├── skeletonic.fonts.css.map
+│   ├── skeletonic.fonts.min.css
+│   └── skeletonic.min.css
+├── package.json
+└── stylus
+    ├── README.md
+    ├── animations
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── bounce.styl
+    │   ├── chameleon.styl
+    │   ├── fade-in.styl
+    │   ├── fade-out.styl
+    │   ├── flash.styl
+    │   ├── pop-in.styl
+    │   ├── pulse.styl
+    │   ├── rotation.styl
+    │   ├── shake.styl
+    │   ├── vanish-in.styl
+    │   ├── vanish-out.styl
+    │   ├── wobble.styl
+    │   └── zoom-in.styl
+    ├── base
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── helpers.styl
+    │   ├── reset.styl
+    │   └── utilities.styl
+    ├── components
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── card.styl
+    │   ├── header.styl
+    │   └── navbar.styl
+    ├── configurations
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── colors.styl
+    │   ├── media-queries.styl
+    │   └── variables.styl
+    ├── debugging
+    │   ├── base64
+    │   └── images
+    ├── elements
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── button.styl
+    │   ├── code.styl
+    │   ├── divider.styl
+    │   ├── fieldset.styl
+    │   ├── form.styl
+    │   ├── image.styl
+    │   ├── label.styl
+    │   ├── link-effects.styl
+    │   ├── link.styl
+    │   ├── list.styl
+    │   ├── margin.styl
+    │   ├── padding.styl
+    │   └── table.styl
+    ├── fonts
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   └── font-face.styl
+    ├── layout
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── container.styl
+    │   └── grid.styl
+    ├── palettes
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   ├── material.styl
+    │   ├── tachyons.styl
+    │   └── websafe.styl
+    └── skeletonic.styl
 ```
 
 ## Alternate CDN locations
