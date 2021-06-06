@@ -1,6 +1,6 @@
 ![alt text][logo]
 
-[logo]: ../images/skeletonic-stylus.svg "Skeletonic Stylus Banner"
+[logo]: ../images/skeletonic-stylus-readme.svg "Skeletonic Stylus Banner"
 
 # The Skeletonic Stylus Library Source Code
 

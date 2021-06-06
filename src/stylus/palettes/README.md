@@ -1,7 +1,7 @@
-# Skeletonic Stylus Library - Color Palettes
+# Color Palettes
 
 ![alt text][logo]
 
-[logo]: ../../../images/skeletonic-stylus.svg "Skeletonic Stylus Banner"
+[logo]: ../../../images/skeletonic-stylus-readme.svg "Skeletonic Stylus Banner"
 
 Each of the files in this folder are Stylus Color Palettes files.

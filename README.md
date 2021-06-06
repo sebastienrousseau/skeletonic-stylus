@@ -1,26 +1,20 @@
-# [The Skeletonic Stylus Library](https://skeletonic-stylus.io)
+# Welcome to Skeletonic Stylus
 
 ![alt text][logo]
 
 [logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus Library banner"
 
-**[The Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
+**The [Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
 
-> [Download the Skeletonic Stylus Library v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
+> [Download Skeletonic Stylus v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
 ⭐ We appreciate your star rating and valuable feedback.
 
 [![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
 
-[![npm version](https://badge.fury.io/js/skeletonic-stylus.svg)](https://badge.fury.io/js/skeletonic-stylus)
-[![Build Status](https://travis-ci.org/sebastienrousseau/skeletonic-stylus.svg?branch=main)](https://travis-ci.org/sebastienrousseau/skeletonic-stylus)
+[![npm version](https://badge.fury.io/js/skeletonic-stylus-readme.svg)](https://badge.fury.io/js/skeletonic-stylus)
+[![Build Status](https://travis-ci.org/sebastienrousseau/skeletonic-stylus-readme.svg?branch=main)](https://travis-ci.org/sebastienrousseau/skeletonic-stylus)
 [![Packagist](https://img.shields.io/badge/license-MIT-blue.svg)](https://skeletonic-stylus.github.io/license)
-
-## History
-
-| Date        | Version | Notes                                     |
-| ----------- | ------- | ----------------------------------------- |
-| 2021-Jun-05 | v0.0.1  | First public release of Skeletonic Stylus |
 
 ## Table of contents
 
@@ -46,16 +40,31 @@
 
 ### Installation
 
+#### From NPM or YARN
+
 To install the Skeletonic Stylus Library, use either npm or yarn as follows:
 
 - `npm install skeletonic-stylus`
 - `yarn add skeletonic-stylus`
 
-> Looking for a setup that integrates with a particular front-end framework or bundler? Check out our integration docs.
+#### From CDN
+
+A pre-bundled package that contains all compiled CSS, components and mixins needed to use is available on CDN.
+
+The following table lists alternate CDN locations where Skeletonic Stylus is hosted.
+
+| CDN | URL | HTTPS | Combo |
+|---|---|---|---|
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@0.0.1/dist/skeletonic.min.css> | Yes | No |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus/dist/skeletonic.min.css>  | Yes | Yes |
+
+#### From GitHub
+
+Clone the main repository to get all source files including build scripts: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
 
 ## What's included
 
-Within the download you'll find all the source files, compiled and minified CSS bundles as well as the [CSS sourcemaps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) grouped into the *dist* folder.
+Within the download you'll find all the Stylus source files, compiled and minified CSS bundles as well as [CSS sourcemaps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) grouped into the *dist* folder.
 
 You'll see something like this:
 
@@ -147,25 +156,19 @@ skeletonic-0.0.1
     │   └── websafe.styl
     └── skeletonic.styl
 ```
-
-## Alternate CDN locations
-
-The following table lists alternate CDN locations where Skeletonic is hosted.
-
-| CDN | URL | HTTPS | Combo |
-|---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic@0.0.1/dist/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic/dist/skeletonic.min.css>  | Yes | Yes |
-
 ## Versioning
 
 For transparency into our release cycle and in striving to maintain backward compatibility, the Skeletonic Stylus Library is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
 
-## Built With
+## Built with
 
-- [Gulp](https://gulpjs.com/) - The streaming build system
+- [CleanCSS](https://github.com/jakubpawlowicz/clean-css) - CleanCSS is a fast and efficient CSS optimizer for Node.js platform and any modern browser.
+- [CSSO](https://github.com/css/csso) - CSSO (CSS Optimizer) is a CSS minifier with structural optimizations.
+- [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [NPM](https://www.npmjs.com/about) - npm is the package manager for Node.js.
+- [PostCSS](https://github.com/postcss/postcss) - PostCSS is a tool for transforming styles with JS plugins.
+- [Stylus Supremacy](https://thisismanta.github.io/stylus-supremacy/) - Stylus Supremacy is a JavaScript library for formatting Stylus files.
 - [Stylus](http://stylus-lang.com/) - Expressive, robust, feature-rich CSS language built for nodejs
-- [CSScomb](http://csscomb.com/) - CSS coding style formatter
 
 ## Contributing
 
@@ -189,7 +192,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE.md) file for details
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%skeletonic-stylus?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus-readme.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%skeletonic-stylus?ref=badge_large)
 
 ## Acknowledgements
 
