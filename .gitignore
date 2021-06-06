@@ -1,3 +1,6 @@
+# Exclude Directories
+dist/*
+
 # Logs
 logs
 *.log
