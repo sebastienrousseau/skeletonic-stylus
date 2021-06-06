@@ -42,11 +42,7 @@ Here's how to contribute code for a new feature to the Skeletonic Stylus Library
 
 1) Fork the repo.
 
-2) Clone the Skeletonic Stylus Library repo by running
-
-```sh
-git clone https://github.com/sebastienrousseau/skeletonic-stylus.git
-```
+2) Clone the Skeletonic Stylus Library repo by running: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
 
 3) Install Node.js if you haven't already, and run `npm install`. This installs the required dependencies for building the Skeletonic Stylus Library.
 
@@ -60,8 +56,8 @@ Have you found a solution to an issue? Here is how you can submit your code to t
 
 1) Fork the repo, and refer above for how to change up code.
 
-1) Head to your local fork of the repo, and click the "New Pull Request" button.
+2) Head to your local fork of the repo, and click the "New Pull Request" button.
 
-2) Include a title that is straight to the point.
+3) Include a title that is straight to the point.
 
-3) Wait for someone to review the pull request, and then merge your pull request!
+4) Wait for someone to review the pull request, and then merge your pull request!
