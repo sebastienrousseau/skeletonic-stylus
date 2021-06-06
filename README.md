@@ -36,7 +36,7 @@
 
 ## Getting Started
 
-[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components and mixins made with [Stylus](https://github.com/stylus/stylus) and modern Web Standards. The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
+[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components, functions, and mixins made with [Stylus](https://github.com/stylus/stylus). The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
 ### Installation
 
