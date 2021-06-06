@@ -39,7 +39,7 @@
         "dev:copy:stylus": "cp -R src/stylus dist/",
         "dev:copy:readme": "cp README.md dist/",
         "dev:copy:logo": "cp -R images/ dist/images/",
-        "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json",
+        "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json > debug/stylus-supremacy-output.log &",
         "dev:lint:stylus": "stylint src/stylus --strict",
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "// Production": " --- Production Scripts --- ",
