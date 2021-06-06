@@ -77,19 +77,25 @@ You'll see something like this:
 
 ```bash
 skeletonic-0.0.1
+├── README.md
 ├── css
-│   ├── skeletonic.animations.css
-│   ├── skeletonic.animations.css.map
-│   ├── skeletonic.animations.min.css
-│   ├── skeletonic.colors.css
-│   ├── skeletonic.colors.css.map
-│   ├── skeletonic.colors.min.css
+│   ├── skeletonic-animations.css
+│   ├── skeletonic-animations.css.map
+│   ├── skeletonic-animations.min.css
+│   ├── skeletonic-colors.css
+│   ├── skeletonic-colors.css.map
+│   ├── skeletonic-colors.min.css
+│   ├── skeletonic-fonts.css
+│   ├── skeletonic-fonts.css.map
+│   ├── skeletonic-fonts.min.css
 │   ├── skeletonic.css
 │   ├── skeletonic.css.map
-│   ├── skeletonic.fonts.css
-│   ├── skeletonic.fonts.css.map
-│   ├── skeletonic.fonts.min.css
 │   └── skeletonic.min.css
+├── images
+│   ├── button-primary.svg
+│   ├── button-secondary.svg
+│   ├── skeletonic-stylus-readme.svg
+│   └── skeletonic-stylus.svg
 ├── package.json
 └── stylus
     ├── README.md
