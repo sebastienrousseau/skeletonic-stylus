@@ -27,7 +27,7 @@
     "scripts": {
         "// Build": " --- Build Scripts --- ",
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:compile:fonts && npm run dev:compile:colors && npm run dev:autoprefix:directory && npm run dev:minify-css",
-        "build:skeletonic:package": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
+        "build:skeletonic:package": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && npm run dev:copy:readme && npm run dev:copy:logo && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
         "// Development": " --- Development Scripts --- ",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
         "dev:clean:css": "foreach -g \"dist/css/*.css\" -x \"cleancss #{path} -o #{path}\" --no-c",
@@ -37,12 +37,14 @@
         "dev:compile:core": "stylus skeletonic.styl -o dist/css/skeletonic.css",
         "dev:compile:fonts": "stylus src/stylus/fonts/_contents.styl -o dist/css/skeletonic.fonts.css",
         "dev:copy:stylus": "cp -R src/stylus dist/",
+        "dev:copy:readme": "cp README.md dist/",
+        "dev:copy:logo": "cp -R images/ dist/images/",
         "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json",
         "dev:lint:stylus": "stylint src/stylus --strict",
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "// Production": " --- Production Scripts --- ",
         "prepare:skeletonic": "npm run build:skeletonic:package",
-        "publish:skeletonic:stylus": "npm publish --dry-run $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")"
+        "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.6",
