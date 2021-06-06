@@ -31,7 +31,7 @@
         "// Development": " --- Development Scripts --- ",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
         "dev:clean:css": "foreach -g \"dist/css/*.css\" -x \"cleancss #{path} -o #{path}\" --no-c",
-        "dev:clean:directory": "rimraf dist/css",
+        "dev:clean:directory": "rimraf dist/css && rimraf debug/",
         "dev:compile:animations": "stylus src/stylus/animations/_contents.styl -o dist/css/skeletonic-animations.css",
         "dev:compile:colors": "stylus src/stylus/palettes/_contents.styl -o dist/css/skeletonic-colors.css",
         "dev:compile:core": "stylus skeletonic.styl -o dist/css/skeletonic.css",
