@@ -1,4 +1,4 @@
-# Welcome!
+# Welcome
 
 ![alt text][logo]
 
@@ -12,7 +12,7 @@
 
 ## What is Skeletonic Stylus?
 
-**[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library. 
+**[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library.
 
 The library provides modular components built for speed, higher performance, with the aim of helping you come to grips with common pain points in mobile and web application design and development.
 
@@ -23,7 +23,7 @@ Whether you're looking to integrate a common set of components into an existing 
 
 ## Table of contents
 
-- [Welcome!](#welcome)
+- [Welcome](#welcome)
   - [What is Skeletonic Stylus?](#what-is-skeletonic-stylus)
   - [Table of contents](#table-of-contents)
   - [Getting Started](#getting-started)
@@ -163,6 +163,7 @@ skeletonic-0.0.1
     │   └── websafe.styl
     └── skeletonic.styl
 ```
+
 ## Versioning
 
 For transparency into our release cycle and in striving to maintain backward compatibility, the Skeletonic Stylus Library is maintained under the [Semantic Versioning](https://semver.org/) guidelines.
