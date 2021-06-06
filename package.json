@@ -44,7 +44,8 @@
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "// Production": " --- Production Scripts --- ",
         "prepare:skeletonic": "npm run build:skeletonic:package",
-        "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")"
+        "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
+        "test": "echo \"No tests at the moment specified\""
     },
     "devDependencies": {
         "autoprefixer": "^10.2.6",

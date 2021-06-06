@@ -1,32 +1,39 @@
-# Welcome to Skeletonic Stylus
+# Welcome!
 
 ![alt text][logo]
 
-[logo]: ./images/skeletonic-stylus.svg "The Skeletonic Stylus Library banner"
+[logo]: ./images/skeletonic-stylus.svg "Banner representing the Skeletonic Stylus Library"
 
-**The [Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤
+> ⭐ We appreciate your star rating and valuable feedback.
 
-> [Download Skeletonic Stylus v0.0.1](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
-
-⭐ We appreciate your star rating and valuable feedback.
-
-[![NPM](https://nodei.co/npm/skeletonic-stylus.png)](https://nodei.co/npm/skeletonic-stylus/)
-
-[![npm version](https://badge.fury.io/js/skeletonic-stylus-readme.svg)](https://badge.fury.io/js/skeletonic-stylus)
-[![Build Status](https://travis-ci.org/sebastienrousseau/skeletonic-stylus-readme.svg?branch=main)](https://travis-ci.org/sebastienrousseau/skeletonic-stylus)
+[![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
+[![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![Packagist](https://img.shields.io/badge/license-MIT-blue.svg)](https://skeletonic-stylus.github.io/license)
+
+## What is Skeletonic Stylus?
+
+**[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library. 
+
+The library provides modular components built for speed, higher performance, with the aim of helping you come to grips with common pain points in mobile and web application design and development.
+
+Whether you're looking to integrate a common set of components into an existing website or mobile app, or need more control over the components, we've got you covered.
+
+[![Getting Started](./images/button-primary.svg)](#getting-started)
+[![Download Skeletonic Stylus v0.0.1](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v0.0.1.zip)
 
 ## Table of contents
 
-- [The Skeletonic Stylus Library](#the-skeletonic-stylus-library)
-  - [History](#history)
+- [Welcome!](#welcome)
+  - [What is Skeletonic Stylus?](#what-is-skeletonic-stylus)
   - [Table of contents](#table-of-contents)
   - [Getting Started](#getting-started)
-    - [Local Setup](#local-setup)
+    - [Installation](#installation)
+      - [From NPM or YARN](#from-npm-or-yarn)
+      - [From CDN](#from-cdn)
+      - [From GitHub](#from-github)
   - [What's included](#whats-included)
-  - [Alternate CDN locations](#alternate-cdn-locations)
   - [Versioning](#versioning)
-  - [Built With](#built-with)
+  - [Built with](#built-with)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
   - [Our Values](#our-values)
@@ -36,7 +43,7 @@
 
 ## Getting Started
 
-[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components, functions, and mixins made with [Stylus](https://github.com/stylus/stylus). The library is designed for better performance, higher productivity and aims to help you come to grips with some of the most common challenges in mobile and web application design and development. The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
+[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components, functions, and mixins made with [Stylus](https://stylus-lang.com/). The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
 ### Installation
 
@@ -201,3 +208,5 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
 |:---:
 [Sebastien Rousseau](https://github.com/sebastienrousseau) |
+
+Made with ❤ in London. Powered by [Stylus](https://stylus-lang.com/).
