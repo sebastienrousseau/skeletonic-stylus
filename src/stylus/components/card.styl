@@ -1,7 +1,7 @@
 /* @group Cards */
 
 .card-content
-  padding: ($gr - 1)rem ($gr)rem ($gr - 1)rem ($gr)rem
+  padding: ($gr)rem
 
 .card-body
   flex: 1 1 auto
@@ -21,16 +21,13 @@
 
 .card
   background: transparent
-  border: 1px solid var(--cl-grey-300)
+  border: round($gr, 1) px solid var(--cl-grey-300)
   border-radius: ($gr)rem
   box-shadow: 0 3px 9px 0 var(--cl-grey-200)
   color: var(--cl-black)
   margin-bottom: ($gr)rem
   position: relative
   transition: .30s
-
-  img
-    margin-bottom: 0
 
 .error
   background: var(--bg-danger)
