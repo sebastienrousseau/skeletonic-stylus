@@ -1,18 +1,113 @@
-.clearfix
-  &:before,
-  &:after
-    content: " "
-    display: table
-  &:after
-    clear: both
+/**
+ * Stylesheet
+ *
+ * @namespace Skeletonic CSS
+ * @version 0.0.1
+ * @class Helpers
+ *
+ * @author Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic)
+ * @license MIT
+ */
+
+// Clearfix
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// CSS Layout
+.center,
+[center]
+  align-items: center
+  flex-direction: column
+  justify-content: center
 
 .left,
 [left]
-  float: left
+  align-items: flex-start
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
 
 .right,
 [right]
-  float: right
+  align-items: flex-end
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+
+// Text
+.text-left
+  text-align: left
+  align-self: flex-start
+
+.text-center
+  text-align: center
+  align-self: center
+
+.text-right
+  text-align: right
+  align-self: flex-end
+
+.text-uppercase
+  text-transform: uppercase
+
+.text-lowercase
+  text-transform: lowercase
+
+// Sizing
+.size-full-height
+  min-height: 100vh
+
+.size-full-width
+  width: 100%
+
+.size-full
+  min-height: 100vh
+  width: 100%
+
+// Visibility
+.hidden,
+[hidden]
+    display: none
+
+// Flexbox Utilities
+.flex,
+[flex]
+  display: flex
+
+.justify-start,
+[justify-start]
+  justify-content: flex-start
+
+.justify-center,
+[justify-center]
+  justify-content: center
+
+.justify-end,
+[justify-end]
+  justify-content: flex-end
+
+.align-start,
+[align-start]
+  align-items: flex-start
+
+.align-center,
+[align-center]
+  align-items: center
+
+.align-end,
+[align-end]
+  align-items: flex-end
+
+.direction-vertical,
+[direction-vertical]
+  flex-direction: column
+
+.direction-horizontal,
+[direction-horizontal]
+  flex-direction: row
 
 .capitalized,
 [capitalized]
@@ -38,18 +133,13 @@
 [nopadding]
   padding: 0
 
-.hidden,
-[hidden]
-    display: none
+.radius,
+[radius]
+  border-radius: round(gr, 1) rem
 
-.rd,
-[rd]
-  border-radius: 1.618033988749895rem
+.radius-top,
+[radius-top]
 
-.rdt,
-[rdt]
-  border-radius: 1.618033988749895rem 1.618033988749895rem 0 0
-
-.rdb,
-[rdb]
-  border-radius: 0 0 1.618033988749895rem 1.618033988749895rem
+.radius-bottom,
+[radius-bottom]
+  border-radius: 0 0 round(gr, 1) rem round(gr, 1) rem
