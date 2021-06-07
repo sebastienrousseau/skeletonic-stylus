@@ -1,23 +1,23 @@
 /* @group Button */
 
-// TODO: Optimize unit consistency
 -highlight($strength = .3)
-  box-shadow: s("inset 0 1px 0 %s", rgba(255, 255, 255, $strength))
+  box-shadow: s("inset 0 round($gr, 1) px 0 %s", rgba(255, 255, 255, $strength))
 
 button, .button, [type=submit]
   -highlight()
   background: var(--bg-disable)
   border:0
+  box-shadow: 0 0 0 $gr px var(--cl-white)
   cursor: pointer
   display: inline-block
   font-size: $gr-fsb rem
-  margin-bottom: $gr rem
+  margin-bottom: round($gr, 1) rem
   min-width: 27rem
-  padding: $gr rem
+  padding: round($gr, 1) rem
   text-align: center
   text-decoration: none
   text-transform: uppercase
-  transition: all 150ms linear
+  transition: all 150ms linear ease-in-out
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -219,6 +219,5 @@ button.warning-outline:hover, .button.warning-outline:hover, [type=submit].warni
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
-
 
 /* @end */
