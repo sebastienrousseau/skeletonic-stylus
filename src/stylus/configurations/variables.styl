@@ -1,35 +1,41 @@
 /* @group Variables */
 
-// TODO: #7 Fix Stylus lint warnings
   // Font Family
   $font = 'Open Sans'
 
-  // Golden Ratio
-  $golden-ratio = round((1.6180339887498948482), 3)
-  $golden-large = round((1 / $golden-ratio), 3)
-  $golden-small = round((1 - $golden-large), 3)
+  // Golden Ratios
+  $gr         = 1.6180339887498948482 // The $gr (Golden Ratio) number is used to produce a scale of numbers that is proportionally related.
+  $gr-large   = round(1 / $gr, 3) // 0.618 ratio value
+  $gr-small   = round(1 - $gr-large, 3) // 0.5 ratio value
+  $gr-medium  = round((($gr-large + $gr-small) / 2), 3) // 0.382 ratio value
 
-  // Golden Ratio Font Sizes
-  $golden-font-size-base  = round( $golden-ratio * .9888543819998318, 3)rem
-  $golden-font-size-large = round(2 * $golden-font-size-base * $golden-large, 3)rem
-  $golden-font-size-small = round(2 * $golden-font-size-base * $golden-small, 3)rem
+  // Golden Ratio Font Sizes (base,large,small,medium)
+  $gr-fsb     = round($gr, 3)rem // 1.618rem - the $gr-fsb (Golden Ratio Font Size Base) is the scale’s root number.
+  $gr-fsl     = round(2 * $gr-fsb * $gr-large, 3)rem //  2rem
+  $gr-fsm     = round(2 * $gr-fsb * $gr-medium, 3)rem // 1.618rem
+  $gr-fss     = round(2 * $gr-fsb * $gr-small, 3)rem //  1.236rem
 
-  // Golden Ratio Headers
-  $golden-h1 = round($golden-font-size-base * ($golden-ratio ** 6), 3)
-  $golden-h2 = round($golden-font-size-base * ($golden-ratio ** 5), 3)
-  $golden-h3 = round($golden-font-size-base * ($golden-ratio ** 4), 3)
-  $golden-h4 = round($golden-font-size-base * ($golden-ratio ** 3), 3)
-  $golden-h5 = round($golden-font-size-base * ($golden-ratio ** 2), 3)
-  $golden-h6 = round($golden-font-size-base * ($golden-ratio ** 1), 3)
+  // Golden Ratio Headers (h1, h2, h3, h4, h5, h6)
+  $gr-h1      = round($gr-fsb * ($gr ** 6), 3)rem // 29.034rem
+  $gr-h2      = round($gr-fsb * ($gr ** 5), 3)rem // 17.944rem
+  $gr-h3      = round($gr-fsb * ($gr ** 4), 3)rem // 11.09rem
+  $gr-h4      = round($gr-fsb * ($gr ** 3), 3)rem // 6.854rem
+  $gr-h5      = round($gr-fsb * ($gr ** 2), 3)rem // 4.236rem
+  $gr-h6      = round($gr-fsb * ($gr ** 1), 3)rem // 2.618rem
 
-  // Golden Ratio Line Height
-  $golden-line-height    = round($golden-font-size-base * ($golden-ratio ** 1), 3)
-  $golden-line-height-h1 = round($golden-font-size-base * ($golden-ratio ** 2), 3)
-  $golden-line-height-h2 = round($golden-font-size-base * ($golden-ratio ** 3), 3)
-  $golden-line-height-h3 = round($golden-font-size-base * ($golden-ratio ** 4), 3)
-  $golden-line-height-h4 = round($golden-font-size-base * ($golden-ratio ** 5), 3)
-  $golden-line-height-h5 = round($golden-font-size-base * ($golden-ratio ** 6), 3)
-  $golden-line-height-h6 = round($golden-font-size-base * ($golden-ratio ** 7), 3)
+  // Golden Ratio Line Heights
+  $gr-lh      = round($gr-fsb * ($gr ** 1), 3)rem // 2.618rem
+  $gr-lhl     = round($gr-fsl * ($gr ** 1), 3)rem // 3.236rem
+  $gr-lhm     = round($gr-fsm * ($gr ** 1), 3)rem // 2.618rem
+  $gr-lhs     = round($gr-fss * ($gr ** 1), 3)rem // 2rem
+
+  // Golden Ratio Line Height Headers
+  $gr-lh-h1   = round($gr-fsb * ($gr ** 2), 3)rem // 4.236rem
+  $gr-lh-h2   = round($gr-fsb * ($gr ** 3), 3)rem // 6.854rem
+  $gr-lh-h3   = round($gr-fsb * ($gr ** 4), 3)rem // 11.09rem
+  $gr-lh-h4   = round($gr-fsb * ($gr ** 5), 3)rem // 17.944rem
+  $gr-lh-h5   = round($gr-fsb * ($gr ** 6), 3)rem // 29.034rem
+  $gr-lh-h6   = round($gr-fsb * ($gr ** 7), 3)rem // 46.978rem
 
   // Link Colors
   :root
@@ -38,11 +44,5 @@
     --link-color-focus: $red
     --link-color-hover: $red
     --link-color-visited: $purple
-
-  // Golden Ratio variables
-  $golden-ratio-font-size       =  $golden-font-size-base
-  $golden-ratio-line-height     =  $golden-line-height
-  $golden-ratio-font-size-large =  $golden-font-size-large
-  $golden-ratio-font-size-small =  $golden-font-size-small
 
 /* @end */
