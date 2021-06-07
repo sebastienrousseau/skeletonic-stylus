@@ -22,11 +22,11 @@ button, .button, [type=submit]
   vertical-align: middle
   white-space: nowrap
   &:link, &:visited
-    background: var(--cl-grey-700)
+    background: var(--cl-grey-900)
     color: var(--cl-white)
   &:active,
   &.active
-    background: var(--cl-grey-700)
+    background: var(--cl-grey-1000)
     color: var(--cl-white)
     opacity: .85
     text-decoration: none
@@ -41,11 +41,12 @@ button, .button, [type=submit]
     text-decoration: none
     transition: all 150ms linear
   &:disabled
-    color: var(--cl-grey-700)
+    background: var(--cl-grey-700)
+    color: var(--cl-white)
     cursor: not-allowed
-    opacity: .5
-    pointer-events: none
+    outline: 0
     transition: all 150ms linear
+    user-select: none
   &.primary
     background: var(--cl-primary)
     color: var(--cl-white)
@@ -175,7 +176,7 @@ button.primary-outline, .button.primary-outline, [type=submit].primary-outline
 	color: var(--cl-primary)
 button.primary-outline:hover, .button.primary-outline:hover, [type=submit].primary-outline:hover
 	background-color: var(--bg-primary)
-	color: var(--cl-white)
+	color: var(--cl-primary)
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
@@ -185,7 +186,7 @@ button.secondary-outline, .button.secondary-outline, [type=submit].secondary-out
 	color: var(--cl-secondary)
 button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].secondary-outline:hover
 	background-color: var(--bg-secondary)
-	color: var(--cl-white)
+	color: var(--cl-secondary)
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
@@ -195,7 +196,7 @@ button.success-outline, .button.success-outline, [type=submit].success-outline
 	color: var(--cl-success)
 button.success-outline:hover, .button.success-outline:hover, [type=submit].success-outline:hover
 	background-color: var(--bg-success)
-	color: var(--cl-white)
+	color: var(--cl-success)
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
@@ -205,7 +206,7 @@ button.error-outline, .button.error-outline, [type=submit].error-outline
 	color: var(--cl-danger)
 button.error-outline:hover, .button.error-outline:hover, [type=submit].error-outline:hover
 	background-color: var(--bg-danger)
-	color: var(--cl-white)
+	color: var(--cl-danger)
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
@@ -215,7 +216,7 @@ button.warning-outline, .button.warning-outline, [type=submit].warning-outline
 	color: var(--cl-warning)
 button.warning-outline:hover, .button.warning-outline:hover, [type=submit].warning-outline:hover
 	background-color: var(--bg-warning)
-	color: var(--cl-white)
+	color: var(--cl-warning)
 	opacity: 1
 	text-decoration: none
 	transition: all 150ms linear
