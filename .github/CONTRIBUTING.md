@@ -1,5 +1,9 @@
 # Contributing to the Skeletonic Stylus Library
 
+![alt text][logo]
+
+[logo]: ../images/skeletonic-stylus-readme.svg "Skeletonic Stylus Banner"
+
 Thank you so much for wanting to contribute to the Skeletonic Stylus Library! There are a couple ways to help out.
 
 ## Evangelise

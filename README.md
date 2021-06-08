@@ -186,11 +186,11 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Contributing
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/.github/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
 
 ## Code of Conduct
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CODE_OF_CONDUCT.md).
+We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/.github/CODE_OF_CONDUCT.md).
 
 ## Our Values
 
