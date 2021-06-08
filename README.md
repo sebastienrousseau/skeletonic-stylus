@@ -43,7 +43,7 @@ Whether you're looking to integrate a common set of components into an existing 
 
 ## Getting Started
 
-[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is a collection of components, functions, and mixins made with [Stylus](https://stylus-lang.com/). The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
+[The Skeletonic Stylus Library](https://skeletonicstylus.com) is a collection of components, functions, and mixins made with [Stylus](https://stylus-lang.com/). The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
 ### Installation
 
@@ -210,7 +210,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Acknowledgements
 
-[The Skeletonic Stylus Library](https://skeletonic-stylus.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
+[The Skeletonic Stylus Library](https://skeletonicstylus.com) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
 |:---:

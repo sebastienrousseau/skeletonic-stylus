@@ -23,7 +23,7 @@
     "bugs": {
         "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
     },
-    "homepage": "https://skeletonic-stylus.io",
+    "homepage": "https://skeletonicstylus.com",
     "scripts": {
         "// Build": " --- Build Scripts --- ",
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:compile:fonts && npm run dev:compile:colors && npm run dev:autoprefix:directory && npm run dev:minify-css",
