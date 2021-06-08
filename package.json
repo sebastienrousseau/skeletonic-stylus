@@ -62,9 +62,6 @@
         "stylus-supremacy": "^2.15.0",
         "tablemark-cli": "^2.0.0"
     },
-    "dependencies": {
-        "npm": "^7.16.0"
-    },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
     }
