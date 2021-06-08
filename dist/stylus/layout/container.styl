@@ -1,0 +1,15 @@
+/* @group Container */
+.container
+  box-sizing: border-box
+  margin: 0 auto
+  overflow-x: hidden
+  position: relative
+  width: 96%
+  &:after
+        clear: both
+
+.container:after, .container:before
+    content: ""
+    display: table
+
+/* @end */

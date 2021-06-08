@@ -1,0 +1,23 @@
+/* @group Links */
+a
+  &:link
+    color: var(--link-color)
+    text-decoration: none
+  &:visited
+    color: var(--link-color-visited)
+  &:active, &:hover
+    color: var(--link-color-hover)
+    text-decoration: underline
+  &:focus
+    color: var(--link-color-focus)
+    outline: 1px thin dotted auto -webkit-focus-ring-color
+    outline-offset: -2px
+a, a > span
+    color: inherit
+    position: relative
+    text-decoration: none
+a:before, a:after, a > span:before, a > span:after
+    content: ''
+    position: absolute
+    transition: transform .5s ease
+/* @end */
