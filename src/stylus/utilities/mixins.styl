@@ -1,0 +1,13 @@
+/* @group Utilities */
+
+// Variables
+$base--font-size ?= 17px
+
+// Convert px to rem/em
+pxtorem($px, $base)
+  if ((unit($px) == '' || unit($px) == 'px') && ($px != 0))
+    return (round($px / $base))em
+  else
+    return 0
+
+/* @end */
