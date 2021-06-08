@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
-[![Packagist](https://img.shields.io/badge/license-MIT-blue.svg)](https://skeletonic-stylus.github.io/license)
+[![license](https://img.shields.io/github/license/sebastienrousseau/skeletonic-stylus.svg)](https://skeletonic-stylus.github.io/license)
 
 ## What is Skeletonic Stylus?
 
@@ -77,6 +77,7 @@ You'll see something like this:
 
 ```bash
 skeletonic-1.0.2
+dist
 ├── README.md
 ├── css
 │   ├── skeletonic-animations.css
@@ -91,6 +92,7 @@ skeletonic-1.0.2
 │   ├── skeletonic.css
 │   ├── skeletonic.css.map
 │   └── skeletonic.min.css
+├── filesize-report.txt
 ├── images
 │   ├── button-primary.svg
 │   ├── button-secondary.svg
@@ -130,7 +132,6 @@ skeletonic-1.0.2
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── colors.styl
-    │   ├── media-queries.styl
     │   └── variables.styl
     ├── debugging
     │   ├── base64
@@ -160,14 +161,20 @@ skeletonic-1.0.2
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── container.styl
-    │   └── grid.styl
+    │   ├── grid.styl
+    │   └── media-queries.styl
     ├── palettes
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── material.styl
     │   ├── tachyons.styl
     │   └── websafe.styl
-    └── skeletonic.styl
+    ├── skeletonic.styl
+    └── utilities
+        ├── README.md
+        ├── _contents.styl
+        └── mixins.styl
+15 directories, 81 files
 ```
 
 ## Versioning

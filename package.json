@@ -26,8 +26,8 @@
     "homepage": "https://skeletonicstylus.com",
     "scripts": {
         "// Build": " --- Build Scripts --- ",
+        "build": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && npm run dev:copy:readme && npm run dev:copy:logo && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:compile:fonts && npm run dev:compile:colors && npm run dev:autoprefix:directory && npm run dev:minify-css && npm run dev:filesizes:package",
-        "build:skeletonic:package": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && npm run dev:copy:readme && npm run dev:copy:logo && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
         "// Development": " --- Development Scripts --- ",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
         "dev:clean:css": "foreach -g \"dist/css/*.css\" -x \"cleancss #{path} -o #{path}\" --no-c",
