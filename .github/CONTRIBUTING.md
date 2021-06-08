@@ -1,4 +1,4 @@
-# Contributing to the Skeletonic Stylus Library
+# Contributing
 
 ![alt text][logo]
 
