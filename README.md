@@ -119,8 +119,7 @@ skeletonic-0.0.1
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── helpers.styl
-    │   ├── reset.styl
-    │   └── utilities.styl
+    │   └── reset.styl
     ├── components
     │   ├── README.md
     │   ├── _contents.styl
@@ -140,6 +139,7 @@ skeletonic-0.0.1
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── button.styl
+    │   ├── clipboard.styl
     │   ├── code.styl
     │   ├── divider.styl
     │   ├── fieldset.styl
