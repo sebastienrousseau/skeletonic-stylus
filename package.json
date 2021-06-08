@@ -15,20 +15,30 @@
     ],
     "main": "src/stylus/skeletonic.styl",
     "style": "dist/skeletonic.min.css",
-    "unpkg": "dist/skeletonic.css",
+    "filename": "dist/skeletonic.css",
     "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
     "author": "Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic-stylus)",
     "license": "MIT",
     "license_URI": "http://www.opensource.org/licenses/mit-license.php",
     "bugs": {
-        "url": "https://github.com/sebastienrousseau/skeletonic-stylus.git/issues"
+        "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
     },
     "homepage": "https://skeletonicstylus.com",
+    "autoupdate": {
+      "source": "git",
+      "target": "git://github.com/sebastienrousseau/skeletonic-stylus.git",
+      "fileMap": [
+        {
+          "basePath": "dist",
+          "files": [
+            "**/*"
+          ]
+        }
+      ]
+    },
     "scripts": {
-        "// Build": " --- Build Scripts --- ",
         "build": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && npm run dev:copy:readme && npm run dev:copy:logo && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:compile:fonts && npm run dev:compile:colors && npm run dev:autoprefix:directory && npm run dev:minify-css && npm run dev:filesizes:package",
-        "// Development": " --- Development Scripts --- ",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
         "dev:clean:css": "foreach -g \"dist/css/*.css\" -x \"cleancss #{path} -o #{path}\" --no-c",
         "dev:clean:directory": "rimraf dist/css && rimraf debug/",
@@ -43,7 +53,6 @@
         "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json > debug/stylus-supremacy-output.log &",
         "dev:lint:stylus": "stylint src/stylus --strict",
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
-        "// Production": " --- Production Scripts --- ",
         "prepare:skeletonic": "npm run build:skeletonic:package",
         "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
         "test": "echo \"No tests at the moment specified\""
