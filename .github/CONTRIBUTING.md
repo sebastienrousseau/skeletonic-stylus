@@ -2,7 +2,7 @@
 
 ![alt text][logo]
 
-[logo]: ../images/skeletonic-stylus-readme.svg "Skeletonic Stylus Library Banner"
+[logo]: ../images/skeletonic-stylus-readme.svg "Banner representing the Skeletonic Stylus Library"
 
 Thank you so much for wanting to contribute to the Skeletonic Stylus Library! There are a couple ways to help out.
 

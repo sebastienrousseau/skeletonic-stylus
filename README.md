@@ -10,7 +10,7 @@
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![license](https://img.shields.io/github/license/sebastienrousseau/skeletonic-stylus.svg)](https://skeletonic-stylus.github.io/license)
 
-## What is Skeletonic Stylus?
+## What is the Skeletonic Stylus Library?
 
 **[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library.
 
@@ -19,12 +19,12 @@ The library provides modular components built for speed, higher performance, wit
 Whether you're looking to integrate a common set of components into an existing website or mobile app, or need more control over the components, we've got you covered.
 
 [![Getting Started](./images/button-primary.svg)](#getting-started)
-[![Download Skeletonic Stylus v1.0.2](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.2.zip)
+[![Download Skeletonic Stylus v1.0.3](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.3.zip)
 
 ## Table of contents
 
 - [Welcome](#welcome)
-  - [What is Skeletonic Stylus?](#what-is-skeletonic-stylus)
+  - [What is the Skeletonic Stylus Library?](#what-is-the-skeletonic-stylus-library)
   - [Table of contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Installation](#installation)
@@ -62,8 +62,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/browse/skeletonic-stylus@1.0.2/css/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.2/css/skeletonic.min.css>  | Yes | Yes |
+| [unpkg](https://unpkg.com/) | < https://unpkg.com/skeletonic-stylus@1.0.3/css/skeletonic.min.css> | Yes | No |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.3/css/skeletonic.min.css>  | Yes | Yes |
 
 #### From GitHub
 
@@ -76,7 +76,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.0.2
+skeletonic-1.0.3
 dist
 ├── README.md
 ├── css
@@ -211,7 +211,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE) file for details
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_large)
 

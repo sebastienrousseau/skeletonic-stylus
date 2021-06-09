@@ -1,6 +1,6 @@
 {
     "name": "skeletonic-stylus",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
         "css",
@@ -50,7 +50,7 @@
         "// Development": " --- Development Scripts --- ",
         "dev:autoprefix:directory": "postcss -u autoprefixer --verbose --no-map.inline --autoprefixer.browsers \"last 1 versions\" --dir dist/css/ dist/css/*.css",
         "dev:clean:css": "foreach -g \"dist/css/*.css\" -x \"cleancss #{path} -o #{path}\" --no-c",
-        "dev:clean:directory": "rimraf dist/css && rimraf debug/",
+        "dev:clean:directory": "rimraf dist/css",
         "dev:compile:animations": "stylus src/stylus/animations/_contents.styl -o dist/css/skeletonic-animations.css",
         "dev:compile:colors": "stylus src/stylus/palettes/_contents.styl -o dist/css/skeletonic-colors.css",
         "dev:compile:core": "stylus src/stylus/skeletonic.styl -o dist/css/skeletonic.css",
@@ -59,7 +59,7 @@
         "dev:copy:readme": "cp README.md dist/",
         "dev:copy:logo": "cp -R images/ dist/images/",
         "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",
-        "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json > debug/stylus-supremacy-output.log &",
+        "dev:format-stylus": "stylus-supremacy format ./src/stylus/**/*.styl --options ./.stylelintrc.json > ./debug/stylus-supremacy-output.log &",
         "dev:lint:stylus": "stylint src/stylus --strict",
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "dev:copyright:insert": "find src/stylus/**/* -name \"*.styl\" -exec sh -c \"cat COPYRIGHT.txt {} >> $$.tmp && mv $$.tmp {}\" \\;",
