@@ -15,12 +15,6 @@ updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/dist"
+    target-branch: "master"
     schedule:
-      interval: "weekly"
-
-  # Maintain dependencies for npm
-  - package-ecosystem: "npm"
-    directory: "/dist"
-    schedule:
-      interval: "weekly"
-
+      interval: "daily"
