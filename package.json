@@ -1,6 +1,6 @@
 {
     "name": "skeletonic-stylus",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
         "css",
@@ -64,7 +64,7 @@
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "dev:copyright:insert": "find src/stylus/**/* -name \"*.styl\" -exec sh -c \"cat COPYRIGHT.txt {} >> $$.tmp && mv $$.tmp {}\" \\;",
         "// Production": " --- Production Scripts --- ",
-        "prepare:skeletonic": "npm run build:skeletonic:package",
+        "prepare:skeletonic": "npm run build",
         "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
         "test": "echo \"No tests at the moment specified\""
     },
@@ -80,25 +80,12 @@
         "cssstats-cli": "^4.0.2",
         "filesizes": "^0.1.2",
         "foreach-cli": "^1.8.1",
-        "postcss-cli": "^8.3.1",
         "postcss": "^8.3.0",
+        "postcss-cli": "^8.3.1",
         "rimraf": "^3.0.2",
-        "stylus-supremacy": "^2.15.0",
         "stylus": "^0.54.8",
+        "stylus-supremacy": "^2.15.0",
         "tablemark-cli": "^2.0.0"
     },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
-    "release": {
-      "plugins": [
-       "@semantic-release/changelog",
-       "@semantic-release/commit-analyzer",
-       "@semantic-release/git",
-       "@semantic-release/release-notes-generator",
-       ["@semantic-release/npm",{"npmPublish":false}]
-     ],
-     "branch": "master"
-   },
     "pre-commit": "dev:lint:stylus"
 }
