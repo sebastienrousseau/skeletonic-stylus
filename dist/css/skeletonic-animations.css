@@ -1,3 +1,10 @@
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .bounce {
   -webkit-animation-name: bounce;
           animation-name: bounce;
@@ -43,6 +50,13 @@
     transform: translate3d(0, -4px, 0);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .chameleon-txt {
   -webkit-animation-duration: 5s;
           animation-duration: 5s;
@@ -315,6 +329,13 @@
     color: var(--cl-white);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -339,6 +360,13 @@
             animation-name: fade-in;
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .fade-out {
   -webkit-animation-name: fade-out;
           animation-name: fade-out;
@@ -359,6 +387,13 @@
     opacity: 0;
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .flash {
   -webkit-animation-name: flash;
           animation-name: flash;
@@ -379,6 +414,13 @@
     opacity: 1;
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .pop-in {
   -webkit-animation-name: pop-in 2s;
           animation-name: pop-in 2s;
@@ -405,6 +447,13 @@
     transform: scale(1);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .pulse {
   overflow: visible;
   position: relative;
@@ -452,6 +501,13 @@
     transform: scale(1.5);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .rotation {
   -webkit-animation: rotation 2s linear infinite;
           animation: rotation 2s linear infinite;
@@ -472,6 +528,13 @@
     transform: rotate(360deg);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .shake {
   -webkit-animation-name: shake;
           animation-name: shake;
@@ -498,6 +561,13 @@
     transform: translate3d(10px, 0, 0);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .vanish-in {
   -webkit-animation-name: vanish-in 1s;
           animation-name: vanish-in 1s;
@@ -530,6 +600,13 @@
     transform: scale(1, 1);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .vanish-out {
   -webkit-animation-name: vanish-out 1s;
           animation-name: vanish-out 1s;
@@ -562,6 +639,13 @@
     transform: scale(2, 2);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .wobble {
   -webkit-animation-name: wobble;
           animation-name: wobble;
@@ -612,6 +696,13 @@
     transform: translate3d(0, 0, 0);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .wobble {
   -webkit-animation-name: wobble;
           animation-name: wobble;
@@ -662,6 +753,13 @@
     transform: translate3d(0, 0, 0);
   }
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .zoom-in {
   -webkit-animation: zoom-in 1s;
           animation: zoom-in 1s;

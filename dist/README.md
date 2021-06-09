@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
-[![Packagist](https://img.shields.io/badge/license-MIT-blue.svg)](https://skeletonic-stylus.github.io/license)
+[![license](https://img.shields.io/github/license/sebastienrousseau/skeletonic-stylus.svg)](https://skeletonic-stylus.github.io/license)
 
 ## What is Skeletonic Stylus?
 
@@ -77,6 +77,7 @@ You'll see something like this:
 
 ```bash
 skeletonic-1.0.2
+dist
 ├── README.md
 ├── css
 │   ├── skeletonic-animations.css
@@ -91,6 +92,7 @@ skeletonic-1.0.2
 │   ├── skeletonic.css
 │   ├── skeletonic.css.map
 │   └── skeletonic.min.css
+├── filesize-report.txt
 ├── images
 │   ├── button-primary.svg
 │   ├── button-secondary.svg
@@ -130,7 +132,6 @@ skeletonic-1.0.2
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── colors.styl
-    │   ├── media-queries.styl
     │   └── variables.styl
     ├── debugging
     │   ├── base64
@@ -160,14 +161,20 @@ skeletonic-1.0.2
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── container.styl
-    │   └── grid.styl
+    │   ├── grid.styl
+    │   └── media-queries.styl
     ├── palettes
     │   ├── README.md
     │   ├── _contents.styl
     │   ├── material.styl
     │   ├── tachyons.styl
     │   └── websafe.styl
-    └── skeletonic.styl
+    ├── skeletonic.styl
+    └── utilities
+        ├── README.md
+        ├── _contents.styl
+        └── mixins.styl
+15 directories, 81 files
 ```
 
 ## Versioning
@@ -186,11 +193,11 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Contributing
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/.github/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
 
 ## Code of Conduct
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CODE_OF_CONDUCT.md).
+We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/.github/CODE_OF_CONDUCT.md).
 
 ## Our Values
 
@@ -206,7 +213,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/LICENSE.md) file for details
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus-readme.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%skeletonic-stylus?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_large)
 
 ## Acknowledgements
 

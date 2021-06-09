@@ -1,3 +1,10 @@
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .bg-red-50 {
   background-color: #ffebee;
 }
@@ -1522,6 +1529,13 @@
 .cl-blue-grey-900 {
   color: #263238;
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 .bg-tachyons-black {
   background-color: #000;
 }
@@ -2071,6 +2085,13 @@
 :root {
   --cl-washedred: #ffdfdf;
 }
+/*
+ * Skeletonic Stylus Library v1.0.2
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
 :root {
   --cl-antiquewhite: #f0f8ff;
 }
