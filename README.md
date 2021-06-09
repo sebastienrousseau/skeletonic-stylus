@@ -19,7 +19,7 @@ The library provides modular components built for speed, higher performance, wit
 Whether you're looking to integrate a common set of components into an existing website or mobile app, or need more control over the components, we've got you covered.
 
 [![Getting Started](./images/button-primary.svg)](#getting-started)
-[![Download Skeletonic Stylus v1.0.3](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.3.zip)
+[![Download Skeletonic Stylus v1.0.5](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.5.zip)
 
 ## Table of contents
 
@@ -62,8 +62,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | < https://unpkg.com/skeletonic-stylus@1.0.3/css/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.3/css/skeletonic.min.css>  | Yes | Yes |
+| [unpkg](https://unpkg.com/) | < https://unpkg.com/skeletonic-stylus@1.0.5/css/skeletonic.min.css> | Yes | No |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.5/css/skeletonic.min.css>  | Yes | Yes |
 
 #### From GitHub
 
@@ -76,7 +76,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.0.3
+skeletonic-1.0.5
 dist
 ├── README.md
 ├── css
