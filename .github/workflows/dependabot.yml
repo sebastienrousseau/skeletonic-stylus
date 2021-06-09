@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/dist"
     schedule:
       interval: "daily"
     reviewers:
@@ -14,13 +14,13 @@ updates:
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "/dist"
     schedule:
       interval: "weekly"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/dist"
     schedule:
       interval: "weekly"
 

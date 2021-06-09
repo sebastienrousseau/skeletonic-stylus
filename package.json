@@ -64,8 +64,8 @@
         "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --output ${0%.css}.min.css' {} \\;",
         "dev:copyright:insert": "find src/stylus/**/* -name \"*.styl\" -exec sh -c \"cat COPYRIGHT.txt {} >> $$.tmp && mv $$.tmp {}\" \\;",
         "// Production": " --- Production Scripts --- ",
-        "prepare:skeletonic": "npm run build",
-        "publish": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
+        "prepare:skeletonic:stylus": "npm run build",
+        "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
         "test": "echo \"No tests at the moment specified\""
     },
     "devDependencies": {

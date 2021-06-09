@@ -62,7 +62,7 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | < https://unpkg.com/skeletonic-stylus@1.0.5/css/skeletonic.min.css> | Yes | No |
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.5/css/skeletonic.min.css> | Yes | No |
 | [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.5/css/skeletonic.min.css>  | Yes | Yes |
 
 #### From GitHub
