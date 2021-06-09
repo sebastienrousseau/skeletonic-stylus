@@ -8,7 +8,7 @@
 
 [![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
-[![license](https://img.shields.io/github/license/sebastienrousseau/skeletonic-stylus.svg)](https://skeletonic-stylus.github.io/license)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_shield)
 
 ## What is the Skeletonic Stylus Library?
 
