@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -205,7 +205,7 @@
   --cl-yellow: #ff0;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -219,7 +219,7 @@
   --link-color-visited: #800080;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -353,7 +353,7 @@
   border-radius: 0 0 1.6 rem 1.6 rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -479,7 +479,7 @@ sub {
   line-height: 2.618rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -501,7 +501,7 @@ sub {
   display: table;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -597,14 +597,14 @@ sub {
   margin: 0 1.618033988749895rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
  * Licensed under the MIT license
  */
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1029,7 +1029,7 @@ sub {
   }
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1376,7 +1376,7 @@ button.warning-outline:hover,
   transition: all 150ms linear;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1397,7 +1397,7 @@ button.warning-outline:hover,
   z-index: 10;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1508,7 +1508,7 @@ code.error {
   color: var(--cl-danger);
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1633,7 +1633,7 @@ hr.hr-icon::after {
   top: 50%;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1766,7 +1766,7 @@ textarea.input-error {
   border-color: var(--cl-danger);
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1779,7 +1779,7 @@ fieldset {
   padding: 1.618rem 0 1.618rem 1.618rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -1793,14 +1793,14 @@ iframe {
   vertical-align: bottom;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
  * Licensed under the MIT license
  */
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2143,7 +2143,7 @@ iframe {
   }
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2181,7 +2181,7 @@ a > span:after {
   transition: transform 0.5s ease;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2220,7 +2220,7 @@ ol ul {
   margin: 1.6rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2443,7 +2443,7 @@ ol ul {
   margin-right: 100%;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2630,7 +2630,7 @@ ol ul {
   padding-right: 100%;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2665,7 +2665,7 @@ th {
   color: var(--cl-white);
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2731,7 +2731,7 @@ th {
   color: var(--cl-warning);
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -2786,7 +2786,7 @@ h6,
   margin-bottom: 0.4rem;
 }
 /*
- * Skeletonic Stylus Library v1.0.5
+ * Skeletonic Stylus Library v1.0.6
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved

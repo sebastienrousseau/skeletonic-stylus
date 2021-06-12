@@ -19,7 +19,7 @@ The library provides modular components built for speed, higher performance, wit
 Whether you're looking to integrate a common set of components into an existing website or mobile app, or need more control over the components, we've got you covered.
 
 [![Getting Started](./images/button-primary.svg)](#getting-started)
-[![Download Skeletonic Stylus v1.0.5](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.5.zip)
+[![Download Skeletonic Stylus v1.0.6](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.6.zip)
 
 ## Table of contents
 
@@ -32,6 +32,7 @@ Whether you're looking to integrate a common set of components into an existing 
       - [From CDN](#from-cdn)
       - [From GitHub](#from-github)
   - [What's included](#whats-included)
+  - [Support for bidirectional languages](#support-for-bidirectional-languages)
   - [Versioning](#versioning)
   - [Built with](#built-with)
   - [Contributing](#contributing)
@@ -62,8 +63,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.5/css/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.5/css/skeletonic.min.css>  | Yes | Yes |
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.6/css/skeletonic.min.css> | Yes | No |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.6/css/skeletonic.min.css>  | Yes | Yes |
 
 #### From GitHub
 
@@ -76,7 +77,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.0.5
+skeletonic-1.0.6
 dist
 ├── README.md
 ├── css
@@ -89,6 +90,9 @@ dist
 │   ├── skeletonic-fonts.css
 │   ├── skeletonic-fonts.css.map
 │   ├── skeletonic-fonts.min.css
+│   ├── skeletonic-hebrew-fonts.css
+│   ├── skeletonic-hebrew-fonts.css.map
+│   ├── skeletonic-hebrew-fonts.min.css
 │   ├── skeletonic.css
 │   ├── skeletonic.css.map
 │   └── skeletonic.min.css
@@ -156,7 +160,8 @@ dist
     ├── fonts
     │   ├── README.md
     │   ├── _contents.styl
-    │   └── font-face.styl
+    │   ├── open-sans-hebrew.styl
+    │   └── open-sans.styl
     ├── layout
     │   ├── README.md
     │   ├── _contents.styl
@@ -174,8 +179,16 @@ dist
         ├── README.md
         ├── _contents.styl
         └── mixins.styl
-15 directories, 81 files
+15 directories, 85 files
 ```
+
+## Support for bidirectional languages
+
+The Skeletonic Stylus Library can display Hebrew text and provides an extension font covering the Hebrew alphabet: [Open Sans Hebrew](https://open-sans.com/hebrew.html).
+
+Simply link the CSS in your HTML document:
+
+`<link rel="stylesheet" type="text/css" href="skeletonic-hebrew-fonts.min.css" />`
 
 ## Versioning
 
@@ -187,6 +200,7 @@ For transparency into our release cycle and in striving to maintain backward com
 - [CSSO](https://github.com/css/csso) - CSSO (CSS Optimizer) is a CSS minifier with structural optimizations.
 - [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 - [NPM](https://www.npmjs.com/about) - npm is the package manager for Node.js.
+- [Open Sans](https://open-sans.com/) - Open Sans is a humanist sans serif typeface designed by Steve Matteson.
 - [PostCSS](https://github.com/postcss/postcss) - PostCSS is a tool for transforming styles with JS plugins.
 - [Stylus Supremacy](https://thisismanta.github.io/stylus-supremacy/) - Stylus Supremacy is a JavaScript library for formatting Stylus files.
 - [Stylus](http://stylus-lang.com/) - Expressive, robust, feature-rich CSS language built for nodejs

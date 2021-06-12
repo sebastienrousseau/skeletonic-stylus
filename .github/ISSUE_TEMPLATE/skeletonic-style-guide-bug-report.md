@@ -23,14 +23,14 @@ If applicable, add screenshots to help explain your problem.
 
 - OS: [e.g. iOS]
 - Browser [e.g. chrome, safari]
-- Skeletonic Stylus Library Version [e.g. 1.0.5]
+- Skeletonic Stylus Library Version [e.g. 1.0.6]
 
 **Smartphone (please complete the following information):**
 
 - Device: [e.g. iPhone6]
 - OS: [e.g. iOS8.1]
 - Browser [e.g. stock browser, safari]
-- Skeletonic Stylus Library Version [e.g. 1.0.5]
+- Skeletonic Stylus Library Version [e.g. 1.0.6]
 
 **Additional context**
 Add any other context about the problem here.
