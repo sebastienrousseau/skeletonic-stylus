@@ -6,6 +6,7 @@
 
 > ⭐ We appreciate your star rating and valuable feedback.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3d54aa6263142c19a640eef423fe341)](https://app.codacy.com/gh/sebastienrousseau/skeletonic-stylus?utm_source=github.com&utm_medium=referral&utm_content=sebastienrousseau/skeletonic-stylus&utm_campaign=Badge_Grade_Settings)
 [![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_shield)
