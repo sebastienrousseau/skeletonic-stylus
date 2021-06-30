@@ -1,5 +1,7 @@
 # Skeletonic Stylus Library Pull Request
 
+![Banner representing the Skeletonic Stylus Library](../../images/skeletonic-stylus-readme.svg)
+
 Create a pull request to help us improve the Skeletonic Stylus Documentation Library
 
 ## Description
