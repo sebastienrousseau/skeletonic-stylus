@@ -6,7 +6,7 @@
 
 Thank you so much for wanting to contribute to the Skeletonic Stylus Library! There are a couple ways to help out.
 
-## Evangelise
+## Evangelize
 
 Just tell people about the Skeletonic Stylus Library. We believe that a bigger, more involved community makes for a better framework, and that better frameworks make the world a better place. We can always use more feedback.
 
@@ -20,15 +20,11 @@ If you encounter a bug that hasn't already been filed, please file a bug report.
 
 Warning us of a bug is possibly the single most valuable contribution you can make to the Skeletonic Stylus Library.
 
-1) Head [here](https://github.com/sebastienrousseau/skeletonic-stylus/issues/new) to submit a new issue.
-
-2) Include a descriptive title that is straight to the point.
-
-3) Write a detailed description on what the issue is all about.
-
-4) Wait for someone to get to the issue and add labels.
-
-5) The issue will be fixed soon!
++   Head [here](https://github.com/sebastienrousseau/skeletonic-stylus/issues/new) to submit a new issue.
++   Include a descriptive title that is straight to the point.
++   Write a detailed description on what the issue is all about.
++   Wait for someone to get to the issue and add labels.
++   The issue will be fixed soon!
 
 ### Code Contributions
 
@@ -44,24 +40,20 @@ Here's how to contribute code for a new feature to the Skeletonic Stylus Library
 
 #### Adding Code
 
-1) Fork the repo.
-
-2) Clone the Skeletonic Stylus Library repo by running: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
-
-3) Install Node.js if you haven't already, and run `npm install`. This installs the required dependencies for building the Skeletonic Stylus Library.
-
-4) Edit files in the `src/` folder. Don't edit any files in the `dist/` folder, this is only for distribution builds, which are automated.
-
-5) Run `npm run build` to trigger builds, and the new distribution files will be in the `dist/` folder ready to go.
++   Fork the repo.
++   Clone the Skeletonic Stylus Library repo by running: `git clone https://github.com/sebastienrousseau/skeletonic-stylus.git`
++   Install Node.js if you haven't already, and run `npm install`. This installs the required dependencies for building the Skeletonic Stylus Library.
++   Edit files in the `src/` folder. Don't edit any files in the `dist/` folder, this is only for distribution builds, which are automated.
++   Run `npm run build` to trigger builds, and the new distribution files will be in the `dist/` folder ready to go.
 
 #### Fixing an Issue
 
 Have you found a solution to an issue? Here is how you can submit your code to the Skeletonic Stylus Library.
 
-1) Fork the repo, and refer above for how to change up code.
++   Fork the repo, and refer above for how to change up code.
 
-2) Head to your local fork of the repo, and click the "New Pull Request" button.
++   Head to your local fork of the repo, and click the "New Pull Request" button.
 
-3) Include a title that is straight to the point.
++   Include a title that is straight to the point.
 
-4) Wait for someone to review the pull request, and then merge your pull request!
++   Wait for someone to review the pull request, and then merge your pull request!

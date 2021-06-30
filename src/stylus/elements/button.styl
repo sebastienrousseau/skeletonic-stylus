@@ -9,7 +9,7 @@
 /* @group Button */
 
 -highlight($strength = .3)
-  box-shadow: s("inset 0 round($gr, 1) px 0 %s", rgba(255, 255, 255, $strength))
+  box-shadow: s("inset 0 " + round($gr, 1) + " px 0 %s", rgba(255, 255, 255, $strength))
 
 button, .button, [type=submit]
   -highlight()
