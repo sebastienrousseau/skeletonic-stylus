@@ -9,7 +9,7 @@
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_shield)
 
-## What is the Skeletonic Stylus Library?
+## What is the Skeletonic Stylus Library
 
 **[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library.
 
@@ -214,9 +214,9 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## Our Values
 
-1. We believe perfection must consider everything.
-2. We take our passion beyond Code into our daily practices.
-3. We are just obsessed about creating and delivering exceptional solutions.
+-   We believe perfection must consider everything.
+-   We take our passion beyond Code into our daily practices.
+-   We are just obsessed about creating and delivering exceptional solutions.
 
 ## Releases
 
