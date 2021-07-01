@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-![Banner representing the Skeletonic Stylus Library](../../images/skeletonic-stylus-readme.svg) 
+![Banner representing the Skeletonic Stylus Library](../../images/skeletonic-stylus-readme.svg)
 
 **Describe the bug**
 A clear and concise description of what the bug is.
