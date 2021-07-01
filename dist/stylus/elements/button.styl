@@ -1,5 +1,5 @@
 /*!
- * Skeletonic Stylus Library v1.0.6
+ * Skeletonic Stylus Library v1.0.7
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
@@ -9,7 +9,7 @@
 /* @group Button */
 
 -highlight($strength = .3)
-  box-shadow: s("inset 0 round($gr, 1) px 0 %s", rgba(255, 255, 255, $strength))
+  box-shadow: s("inset 0 " + round($gr, 1) + " px 0 %s", rgba(255, 255, 255, $strength))
 
 button, .button, [type=submit]
   -highlight()

@@ -4,11 +4,12 @@
 
 > ⭐ We appreciate your star rating and valuable feedback.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3d54aa6263142c19a640eef423fe341)](https://app.codacy.com/gh/sebastienrousseau/skeletonic-stylus?utm_source=github.com&utm_medium=referral&utm_content=sebastienrousseau/skeletonic-stylus&utm_campaign=Badge_Grade_Settings)
 [![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg)](https://www.npmjs.com/package/skeletonic-stylus)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_shield)
 
-## What is the Skeletonic Stylus Library?
+## What is the Skeletonic Stylus Library
 
 **[Skeletonic Stylus Library](https://github.com/sebastienrousseau/skeletonic-stylus)** is a lightweight, intuitive, accessible and ultra-responsive Stylus Library.
 
@@ -17,7 +18,7 @@ The library provides modular components built for speed, higher performance, wit
 Whether you're looking to integrate a common set of components into an existing website or mobile app, or need more control over the components, we've got you covered.
 
 [![Getting Started](./images/button-primary.svg)](#getting-started)
-[![Download Skeletonic Stylus v1.0.6](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.6.zip)
+[![Download Skeletonic Stylus v1.0.7](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.0.7.zip)
 
 ## Table of contents
 
@@ -61,8 +62,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN | URL | HTTPS | Combo |
 |---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.6/css/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.6/css/skeletonic.min.css>  | Yes | Yes |
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.7/css/skeletonic.min.css> | Yes | No |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.7/css/skeletonic.min.css>  | Yes | Yes |
 
 #### From GitHub
 
@@ -75,7 +76,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.0.6
+skeletonic-1.0.7
 dist
 ├── README.md
 ├── css
@@ -213,9 +214,9 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## Our Values
 
-1. We believe perfection must consider everything.
-2. We take our passion beyond Code into our daily practices.
-3. We are just obsessed about creating and delivering exceptional solutions.
+-   We believe perfection must consider everything.
+-   We take our passion beyond Code into our daily practices.
+-   We are just obsessed about creating and delivering exceptional solutions.
 
 ## Releases
 
