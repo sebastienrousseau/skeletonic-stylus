@@ -1,8 +1,6 @@
 # Welcome
 
-![alt text][logo]
-
-[logo]: ./images/skeletonic-stylus.svg "Banner representing the Skeletonic Stylus Library"
+![Banner representing the Skeletonic Stylus Library](./images/skeletonic-stylus.svg)
 
 > ⭐ We appreciate your star rating and valuable feedback.
 
@@ -24,24 +22,24 @@ Whether you're looking to integrate a common set of components into an existing 
 
 ## Table of contents
 
-- [Welcome](#welcome)
-  - [What is the Skeletonic Stylus Library?](#what-is-the-skeletonic-stylus-library)
-  - [Table of contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-    - [Installation](#installation)
-      - [From NPM or YARN](#from-npm-or-yarn)
-      - [From CDN](#from-cdn)
-      - [From GitHub](#from-github)
-  - [What's included](#whats-included)
-  - [Support for bidirectional languages](#support-for-bidirectional-languages)
-  - [Versioning](#versioning)
-  - [Built with](#built-with)
-  - [Contributing](#contributing)
-  - [Code of Conduct](#code-of-conduct)
-  - [Our Values](#our-values)
-  - [Releases](#releases)
-  - [License](#license)
-  - [Acknowledgements](#acknowledgements)
+-   [Welcome](#welcome)
+-   [What is the Skeletonic Stylus Library?](#what-is-the-skeletonic-stylus-library)
+-   [Table of contents](#table-of-contents)
+-   [Getting Started](#getting-started)
+-   [Installation](#installation)
+-   [From NPM or YARN](#from-npm-or-yarn)
+-   [From CDN](#from-cdn)
+-   [From GitHub](#from-github)
+-   [What's included](#whats-included)
+-   [Support for bidirectional languages](#support-for-bidirectional-languages)
+-   [Versioning](#versioning)
+-   [Built with](#built-with)
+-   [Contributing](#contributing)
+-   [Code of Conduct](#code-of-conduct)
+-   [Our Values](#our-values)
+-   [Releases](#releases)
+-   [License](#license)
+-   [Acknowledgements](#acknowledgements)
 
 ## Getting Started
 
@@ -53,8 +51,8 @@ Whether you're looking to integrate a common set of components into an existing 
 
 To install the Skeletonic Stylus Library, use either npm or yarn as follows:
 
-- `npm install skeletonic-stylus`
-- `yarn add skeletonic-stylus`
+-   `npm install skeletonic-stylus`
+-   `yarn add skeletonic-stylus`
 
 #### From CDN
 
@@ -197,14 +195,14 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Built with
 
-- [CleanCSS](https://github.com/jakubpawlowicz/clean-css) - CleanCSS is a fast and efficient CSS optimizer for Node.js platform and any modern browser.
-- [CSSO](https://github.com/css/csso) - CSSO (CSS Optimizer) is a CSS minifier with structural optimizations.
-- [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-- [NPM](https://www.npmjs.com/about) - npm is the package manager for Node.js.
-- [Open Sans](https://open-sans.com/) - Open Sans is a humanist sans serif typeface designed by Steve Matteson.
-- [PostCSS](https://github.com/postcss/postcss) - PostCSS is a tool for transforming styles with JS plugins.
-- [Stylus Supremacy](https://thisismanta.github.io/stylus-supremacy/) - Stylus Supremacy is a JavaScript library for formatting Stylus files.
-- [Stylus](http://stylus-lang.com/) - Expressive, robust, feature-rich CSS language built for nodejs
+-   [CleanCSS](https://github.com/jakubpawlowicz/clean-css) - CleanCSS is a fast and efficient CSS optimizer for Node.js platform and any modern browser.
+-   [CSSO](https://github.com/css/csso) - CSSO (CSS Optimizer) is a CSS minifier with structural optimizations.
+-   [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+-   [NPM](https://www.npmjs.com/about) - npm is the package manager for Node.js.
+-   [Open Sans](https://open-sans.com/) - Open Sans is a humanist sans serif typeface designed by Steve Matteson.
+-   [PostCSS](https://github.com/postcss/postcss) - PostCSS is a tool for transforming styles with JS plugins.
+-   [Stylus Supremacy](https://thisismanta.github.io/stylus-supremacy/) - Stylus Supremacy is a JavaScript library for formatting Stylus files.
+-   [Stylus](http://stylus-lang.com/) - Expressive, robust, feature-rich CSS language built for nodejs
 
 ## Contributing
 
@@ -222,7 +220,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## Releases
 
-- See [Skeletonic Release](https://github.com/sebastienrousseau/skeletonic-stylus/releases) list.
+-   See [Skeletonic Release](https://github.com/sebastienrousseau/skeletonic-stylus/releases) list.
 
 ## License
 
