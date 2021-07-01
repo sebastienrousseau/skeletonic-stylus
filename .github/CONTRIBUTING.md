@@ -49,9 +49,6 @@ Here's how to contribute code for a new feature to the Skeletonic Stylus Library
 Have you found a solution to an issue? Here is how you can submit your code to the Skeletonic Stylus Library.
 
 +   Fork the repo, and refer above for how to change up code.
-
 +   Head to your local fork of the repo, and click the "New Pull Request" button.
-
 +   Include a title that is straight to the point.
-
 +   Wait for someone to review the pull request, and then merge your pull request!
