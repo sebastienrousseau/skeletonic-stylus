@@ -13,7 +13,6 @@
 #
 
 name: NPM Publish
-description: Automated deployment to NPM
 
 on: [push]
 
