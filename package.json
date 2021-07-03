@@ -70,7 +70,7 @@
         "// Production": " --- Production Scripts --- ",
         "prepare:skeletonic:stylus": "npm run build",
         "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
-        "test": "echo \"No tests at the moment specified\""
+        "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0"
     },
     "devDependencies": {
         "autoprefixer": "^10.2.6",
