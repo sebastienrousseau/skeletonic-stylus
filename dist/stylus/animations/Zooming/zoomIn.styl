@@ -1,0 +1,19 @@
+/*
+ * Skeletonic Stylus Library v1.0.8
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Zoom In Animation */
+@keyframes zoomIn
+  from
+	  opacity: 0
+  	transform: scale3d(.618, .618, .618)
+  50%
+	  opacity: 1
+
+.zoomIn
+  animation-name: zoomIn
+/* @end */

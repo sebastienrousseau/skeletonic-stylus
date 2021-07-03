@@ -1,6 +1,6 @@
 {
     "name": "skeletonic-stylus",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
         "css",
@@ -13,6 +13,9 @@
         "stylus-mixin",
         "stylus"
     ],
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com/"
+    },
     "main": "src/stylus/skeletonic.styl",
     "style": "dist/skeletonic.min.css",
     "filename": "dist/skeletonic.css",
@@ -82,6 +85,9 @@
         "stylus-supremacy": "^2.15.0",
         "stylus": "^0.54.8",
         "tablemark-cli": "^2.0.0"
+    },
+    "dependencies": {
+      "npm": "^7.16.0"
     },
     "pre-commit": "dev:lint:stylus"
 }

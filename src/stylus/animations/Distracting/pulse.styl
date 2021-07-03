@@ -1,0 +1,22 @@
+/*
+ * Skeletonic Stylus Library v1.0.8
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Pulse Animation */
+@keyframes pulse
+  from
+    transform: scale3d(1, 1, 1)
+
+  50%
+    transform: scale3d(1.05, 1.05, 1.05)
+
+  to
+    transform: scale3d(1, 1, 1)
+
+.pulse
+  animation-name: pulse
+/* @end */

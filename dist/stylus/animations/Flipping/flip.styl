@@ -1,0 +1,29 @@
+/*
+ * Skeletonic Stylus Library v1.0.8
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Flip Animation */
+@keyframes flip
+  from
+    animation-timing-function: ease-out
+    transform: perspective(1618px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg)
+  40%
+    animation-timing-function: ease-out
+    transform: perspective(1618px) scale3d(1, 1, 1) translate3d(0, 0, 161.8px) rotate3d(0, 1, 0, -190deg)
+  60%
+    animation-timing-function: ease-in
+    transform: perspective(1618px) scale3d(1, 1, 1) translate3d(0, 0, 161.8px) rotate3d(0, 1, 0, -170deg)
+  80%
+    animation-timing-function: ease-in
+    transform: perspective(1618px) scale3d(1, 1, 1) translate3d(0, 0, 161.8px) rotate3d(0, 1, 0, -150deg)
+  to
+    animation-timing-function: ease-in
+    transform: perspective(1618px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg)
+
+.flip
+  animation-name: flip
+/* @end */

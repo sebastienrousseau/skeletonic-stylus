@@ -1,0 +1,21 @@
+/*
+ * Skeletonic Stylus Library v1.0.8
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Fade In Right Transition */
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    transform: translateX(16.18vh)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+// Set to apply a fade in right effect to an element.
+.fadeInRight
+  animation-name: fadeInRight
+/* @end */

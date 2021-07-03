@@ -1,20 +1,9 @@
-/*!
- * Skeletonic Stylus Library v1.0.7
+/*
+ * Skeletonic Stylus Library v1.0.8
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2021. All rights reserved
  * Licensed under the MIT license
- */
-
-/**
- * Stylesheet
- *
- * @namespace Skeletonic CSS
- * @version 1.0.7
- * @class Helpers
- *
- * @author Sebastien Rousseau (https://github.com/sebastienrousseau/skeletonic)
- * @license MIT
  */
 
 // Clearfix
@@ -24,6 +13,13 @@
   display: table
 
 // CSS Layout
+.centered,
+[centered]
+  left: 50%
+  position: fixed
+  top: 50%
+  transform: translate(-50%, -50%)
+
 .center,
 [center]
   align-items: center

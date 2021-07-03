@@ -1,0 +1,28 @@
+/*
+ * Skeletonic Stylus Library v1.0.8
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Wobble Animation */
+@keyframes wobble
+  from
+    transform: translate3d(0, 0, 0)
+  16.18%
+    transform: translate3d(-26.18%, 0, 0) rotate3d(0, 0, 1, -6.18deg)
+  30%
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+  46.18%
+    transform: translate3d(-16.18%, 0, 0) rotate3d(0, 0, 1, -3deg)
+  60%
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+  76.18%
+    transform: translate3d(-6.18%, 0, 0) rotate3d(0, 0, 1, -1deg)
+  to
+    transform: translate3d(0, 0, 0)
+
+.wobble
+  animation-name: wobble
+/* @end */
