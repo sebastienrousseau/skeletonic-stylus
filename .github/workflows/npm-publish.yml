@@ -23,6 +23,7 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
+      - run: echo ${{github.ref}}
       - uses: actions/checkout@v2
       - name: Build on Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -40,6 +41,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{github.ref}}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
