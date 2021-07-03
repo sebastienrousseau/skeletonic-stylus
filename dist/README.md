@@ -26,6 +26,7 @@ Whether you're looking to integrate a common set of components into an existing 
 -   [What is the Skeletonic Stylus Library?](#what-is-the-skeletonic-stylus-library)
 -   [Table of contents](#table-of-contents)
 -   [Getting Started](#getting-started)
+-   [Documentation](#documentation)
 -   [Installation](#installation)
 -   [From NPM or YARN](#from-npm-or-yarn)
 -   [From CDN](#from-cdn)
@@ -45,6 +46,10 @@ Whether you're looking to integrate a common set of components into an existing 
 
 [The Skeletonic Stylus Library](https://skeletonicstylus.com) is a collection of components, functions, and mixins made with [Stylus](https://stylus-lang.com/). The components and mixins can be used on their own to build modern web sites and applications, but they are also designed to be used in combination with a wide variety of existing technologies.
 
+### Documentation
+
+You can find the Skeletonic Stylus Documentation at <http://docs.skeletonic.io/>.
+
 ### Installation
 
 #### From NPM or YARN
@@ -60,10 +65,10 @@ A pre-bundled package that contains all compiled CSS, components and mixins need
 
 The following table lists alternate CDN locations where Skeletonic Stylus is hosted.
 
-| CDN | URL | HTTPS | Combo |
-|---|---|---|---|
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.0.9/css/skeletonic.min.css> | Yes | No |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.9/css/skeletonic.min.css>  | Yes | Yes |
+| CDN                                   | URL                                                                           | HTTPS | Combo |
+| ------------------------------------- | ----------------------------------------------------------------------------- | ----- | ----- |
+| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.0.9/css/skeletonic.min.css>            | Yes   | No    |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.0.9/css/skeletonic.min.css> | Yes   | Yes   |
 
 #### From GitHub
 
@@ -71,7 +76,7 @@ Clone the main repository to get all source files including build scripts: `git 
 
 ## What's included
 
-Within the download you'll find all the Stylus source files, compiled and minified CSS bundles as well as [CSS sourcemaps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) grouped into the *dist* folder.
+Within the download you'll find all the Stylus source files, compiled and minified CSS bundles as well as [CSS sourcemaps](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps) grouped into the _dist_ folder.
 
 You'll see something like this:
 
@@ -105,21 +110,63 @@ dist
 └── stylus
     ├── README.md
     ├── animations
+    │   ├── Distracting
+    │   │   ├── bounce.styl
+    │   │   ├── chameleonbackground.styl
+    │   │   ├── chameleontext.styl
+    │   │   ├── flash.styl
+    │   │   ├── heartbeat.styl
+    │   │   ├── jelly.styl
+    │   │   ├── pulse.styl
+    │   │   ├── rubber.styl
+    │   │   ├── shake.styl
+    │   │   ├── swing.styl
+    │   │   ├── tada.styl
+    │   │   └── wobble.styl
+    │   ├── Fading
+    │   │   ├── fadeIn.styl
+    │   │   ├── fadeInDown.styl
+    │   │   ├── fadeInLeft.styl
+    │   │   ├── fadeInRight.styl
+    │   │   ├── fadeInUp.styl
+    │   │   ├── fadeOut.styl
+    │   │   ├── fadeOutDown.styl
+    │   │   ├── fadeOutLeft.styl
+    │   │   ├── fadeOutRight.styl
+    │   │   └── fadeOutUp.styl
+    │   ├── Flipping
+    │   │   ├── flip.styl
+    │   │   ├── flipInHorizontal.styl
+    │   │   ├── flipInVertical.styl
+    │   │   ├── flipOutHorizontal.styl
+    │   │   └── flipOutVertical.styl
+    │   ├── Pop
+    │   │   ├── popIn.styl
+    │   │   └── popOut.styl
     │   ├── README.md
+    │   ├── Rolling
+    │   │   ├── rollIn.styl
+    │   │   └── rollOut.styl
+    │   ├── Rotating
+    │   │   ├── spinLeft.styl
+    │   │   └── spinRight.styl
+    │   ├── Sliding
+    │   │   ├── slideInDown.styl
+    │   │   ├── slideInLeft.styl
+    │   │   ├── slideInRight.styl
+    │   │   ├── slideInUp.styl
+    │   │   ├── slideOutDown.styl
+    │   │   ├── slideOutLeft.styl
+    │   │   ├── slideOutRight.styl
+    │   │   └── slideOutUp.styl
+    │   ├── Vanishing
+    │   │   ├── vanishIn.styl
+    │   │   └── vanishOut.styl
+    │   ├── Zooming
+    │   │   ├── zoomIn.styl
+    │   │   └── zoomOut.styl
     │   ├── _contents.styl
-    │   ├── bounce.styl
-    │   ├── chameleon.styl
-    │   ├── fade-in.styl
-    │   ├── fade-out.styl
-    │   ├── flash.styl
-    │   ├── pop-in.styl
-    │   ├── pulse.styl
-    │   ├── rotation.styl
-    │   ├── shake.styl
-    │   ├── vanish-in.styl
-    │   ├── vanish-out.styl
-    │   ├── wobble.styl
-    │   └── zoom-in.styl
+    │   └── animationsBase.styl
     ├── base
     │   ├── README.md
     │   ├── _contents.styl
@@ -178,7 +225,8 @@ dist
         ├── README.md
         ├── _contents.styl
         └── mixins.styl
-15 directories, 85 files
+
+24 directories, 118 files
 ```
 
 ## Support for bidirectional languages
@@ -232,8 +280,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 [The Skeletonic Stylus Library](https://skeletonicstylus.com) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
 
-[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) |
-|:---:
-[Sebastien Rousseau](https://github.com/sebastienrousseau) |
+[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk) \|
+\|:---:
+[Sebastien Rousseau](https://github.com/sebastienrousseau) \|
 
 Made with ❤ in London. Powered by [Stylus](https://stylus-lang.com/).

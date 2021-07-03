@@ -1,5 +1,5 @@
 {
-    "name": "skeletonic-stylus",
+    "name": "@sebastienrousseau/skeletonic-stylus",
     "version": "1.0.9",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
@@ -14,7 +14,7 @@
         "stylus"
     ],
     "publishConfig": {
-      "registry": "https://npm.pkg.github.com/"
+      "registry": "https://npm.pkg.github.com/@sebastienrousseau"
     },
     "main": "src/stylus/skeletonic.styl",
     "style": "dist/skeletonic.min.css",
