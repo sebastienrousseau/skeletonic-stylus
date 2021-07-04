@@ -55,5 +55,5 @@ jobs:
         registry-url: 'https://npm.pkg.github.com'
         scope: sebastienrousseau
     - run: rm .npmrc && npm install && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
