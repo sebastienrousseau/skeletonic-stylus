@@ -56,4 +56,4 @@ jobs:
         scope: sebastienrousseau
     - run: rm .npmrc && npm install && npm publish --access=public
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        GH_TOKEN: ${{secrets.GH_TOKEN}}
