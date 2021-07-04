@@ -9,23 +9,23 @@
 /* @group Button */
 
 -highlight($strength = .3)
-  box-shadow: s("inset 0 " + round($gr, 1) + " px 0 %s", rgba(255, 255, 255, $strength))
+  box-shadow: s("inset 0 " + round($gr px, 1) + " 0 %s", rgba(255, 255, 255, $strength))
 
 button, .button, [type=submit]
   -highlight()
   background: var(--bg-disable)
   border:0
-  box-shadow: 0 0 0 $gr px var(--cl-white)
+  box-shadow: 0 0 0 round($gr px, 1) var(--cl-white)
   cursor: pointer
   display: inline-block
   font-size: $gr-fsb rem
-  margin-bottom: round($gr, 1) rem
+  margin-bottom: round($gr rem, 1)
   min-width: 27rem
-  padding: round($gr, 1) rem
+  padding: round($gr rem, 1)
   text-align: center
   text-decoration: none
   text-transform: uppercase
-  transition: all 150ms linear ease-in-out
+  transition-timing-function: ease-in-out
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -135,7 +135,7 @@ button, .button, [type=submit]
   border-radius: .3rem
   cursor: pointer
   display: inline-block
-  font-size: golden-fsb rem
+  font-size: $gr-fsb
   line-height: 60px
   min-height: 60px
   min-width: 60px

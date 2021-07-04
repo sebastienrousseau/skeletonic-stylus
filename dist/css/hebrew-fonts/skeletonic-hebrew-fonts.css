@@ -1,0 +1,183 @@
+/*
+ * Skeletonic Stylus Library v1.0.9
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Open Sans Hebrew (Hebrew) Font Face */
+
+/** Begin Open Sans Hebrew Regular */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 400;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.svg#OpenSansHebrewRegular")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.eot");
+}
+
+/* End Open Sans Hebrew Regular */
+
+/* Begin Open Sans Hebrew Italic */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 400;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.svg#OpenSansHebrewItalic")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.eot");
+}
+
+/* End Open Sans Hebrew Italic */
+
+/* Begin Open Sans Hebrew Light */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 300;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.svg#OpenSansHebrewLight")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.eot");
+}
+
+/* End Open Sans Hebrew Light */
+
+/* Begin Open Sans Hebrew Light Italic */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 300;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.svg#OpenSansHebrewLightItalic")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.eot");
+}
+
+/* End Open Sans Hebrew Light Italic */
+
+/* Begin Open Sans Hebrew Semi Bold */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 600;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.svg#OpenSansHebrewSemibold")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.eot");
+}
+
+/* End Open Sans Hebrew Semi Bold */
+
+/* Begin Open Sans Hebrew Semi Bold Italic */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 600;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.svg#OpenSansHebrewSemiboldItalic")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.eot");
+}
+
+/* End Open Sans Hebrew Semi Bold Italic */
+
+/* Begin Open Sans Hebrew Bold */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 700;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.svg#OpenSansHebrewBold")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.eot");
+}
+
+/* End Open Sans Hebrew Bold */
+
+/* Begin Open Sans Hebrew Bold Italic */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 700;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.svg#OpenSansHebrewBoldItalic")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.eot");
+}
+
+/* End Open Sans Hebrew Bold Italic */
+
+/* Begin Open Sans Hebrew Extra Bold */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 800;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.svg#OpenSansHebrewExtrabold")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.eot");
+}
+
+/* End Open Sans Hebrew Extra Bold */
+
+/* Begin Open Sans Hebrew Extra Bold Italic */
+@font-face {
+  font-family: "Open Sans Hebrew";
+  font-weight: 800;
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.woff")
+      format("woff"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.ttf")
+      format("truetype"),
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.svg#OpenSansHebrewExtraboldItalic")
+      format("svg");
+  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.eot");
+}
+
+/* End Open Sans Hebrew Extra Bold Italic */
+
+/* @end */
+
+/*# sourceMappingURL=skeletonic-hebrew-fonts.css.map */

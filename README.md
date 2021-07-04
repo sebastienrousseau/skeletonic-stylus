@@ -84,25 +84,47 @@ skeletonic-1.0.9
 dist
 ├── README.md
 ├── css
-│   ├── skeletonic-animations.css
-│   ├── skeletonic-animations.css.map
-│   ├── skeletonic-animations.min.css
-│   ├── skeletonic-colors.css
-│   ├── skeletonic-colors.css.map
-│   ├── skeletonic-colors.min.css
-│   ├── skeletonic-fonts.css
-│   ├── skeletonic-fonts.css.map
-│   ├── skeletonic-fonts.min.css
-│   ├── skeletonic-hebrew-fonts.css
-│   ├── skeletonic-hebrew-fonts.css.map
-│   ├── skeletonic-hebrew-fonts.min.css
-│   ├── skeletonic.css
-│   ├── skeletonic.css.map
-│   └── skeletonic.min.css
+│   ├── animations
+│   │   ├── skeletonic-animations-report.txt
+│   │   ├── skeletonic-animations.css
+│   │   ├── skeletonic-animations.css.map
+│   │   └── skeletonic-animations.min.css
+│   ├── core
+│   │   ├── skeletonic-report.txt
+│   │   ├── skeletonic.css
+│   │   ├── skeletonic.css.map
+│   │   └── skeletonic.min.css
+│   ├── fonts
+│   │   ├── skeletonic-fonts-report.txt
+│   │   ├── skeletonic-fonts.css
+│   │   ├── skeletonic-fonts.css.map
+│   │   └── skeletonic-fonts.min.css
+│   ├── hebrew-fonts
+│   │   ├── skeletonic-hebrew-fonts-report.txt
+│   │   ├── skeletonic-hebrew-fonts.css
+│   │   ├── skeletonic-hebrew-fonts.css.map
+│   │   └── skeletonic-hebrew-fonts.min.css
+│   └── palettes
+│       ├── material
+│       │   ├── skeletonic-material-report.txt
+│       │   ├── skeletonic-material.css
+│       │   ├── skeletonic-material.css.map
+│       │   └── skeletonic-material.min.css
+│       ├── tachyons
+│       │   ├── skeletonic-tachyons-report.txt
+│       │   ├── skeletonic-tachyons.css
+│       │   ├── skeletonic-tachyons.css.map
+│       │   └── skeletonic-tachyons.min.css
+│       └── websafe
+│           ├── skeletonic-websafe-report.txt
+│           ├── skeletonic-websafe.css
+│           ├── skeletonic-websafe.css.map
+│           └── skeletonic-websafe.min.css
 ├── filesize-report.txt
 ├── images
 │   ├── button-primary.svg
 │   ├── button-secondary.svg
+│   ├── skeletonic-logo.svg
 │   ├── skeletonic-stylus-readme.svg
 │   └── skeletonic-stylus.svg
 ├── package.json
@@ -205,8 +227,11 @@ dist
     ├── fonts
     │   ├── README.md
     │   ├── _contents.styl
-    │   ├── open-sans-hebrew.styl
     │   └── open-sans.styl
+    ├── hebrew-fonts
+    │   ├── README.md
+    │   ├── _contents.styl
+    │   └── open-sans-hebrew.styl
     ├── layout
     │   ├── README.md
     │   ├── _contents.styl
@@ -225,7 +250,7 @@ dist
         ├── _contents.styl
         └── mixins.styl
 
-24 directories, 118 files
+33 directories, 134 files
 ```
 ### Support for bidirectional languages
 
