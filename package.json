@@ -14,7 +14,7 @@
         "stylus"
     ],
     "publishConfig": {
-      "registry": "https://npm.pkg.github.com/@sebastienrousseau"
+        "registry": "https://npm.pkg.github.com/@sebastienrousseau"
     },
     "main": "src/stylus/skeletonic.styl",
     "style": "dist/skeletonic.min.css",
@@ -46,7 +46,11 @@
     "engines": {
         "node": ">=10"
     },
+    "resolutions": {
+        "yargs-parser": "^20.2.9"
+    },
     "scripts": {
+        "preinstall": "npx npm-force-resolutions",
         "// Build": " --- Build Scripts --- ",
         "build": "rm -rf dist && npm run build:skeletonic:css && npm run dev:copy:stylus && npm run dev:copy:readme && npm run dev:copy:logo && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
         "build:skeletonic:css": "npm run dev:format-stylus && npm run dev:lint:stylus && npm run dev:clean:directory && npm run dev:compile:core && npm run dev:compile:animations && npm run dev:compile:fonts && npm run dev:compile:hebrew-fonts && npm run dev:compile:colors && npm run dev:autoprefix:directory && npm run dev:minify-css && npm run dev:filesizes:package",
@@ -79,15 +83,16 @@
         "cssstats-cli": "^4.0.2",
         "filesizes": "^0.1.2",
         "foreach-cli": "^1.8.1",
+        "postcss": "^8.3.5",
         "postcss-cli": "^8.3.1",
-        "postcss": "^8.3.0",
         "rimraf": "^3.0.2",
-        "stylus-supremacy": "^2.15.0",
         "stylus": "^0.54.8",
-        "tablemark-cli": "^2.0.0"
+        "stylus-supremacy": "^2.15.0",
+        "tablemark-cli": "^2.0.0",
+        "yargs-parser": "^20.2.9"
     },
     "dependencies": {
-      "npm": "^7.16.0"
+        "npm": "^7.19.1"
     },
     "pre-commit": "dev:lint:stylus"
 }
