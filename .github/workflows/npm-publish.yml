@@ -45,6 +45,7 @@ jobs:
       with:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
+        scope: sebastienrousseau
     - run: npm install
     - run: npm publish
       env:
