@@ -129,13 +129,18 @@ yellow      : $yellow
 
 }
 
-for name, color in colors
-    :root
-        --cl-{name}(color)
+:root
+  for name, color in colors
+    --cl-{name}(color)
 
-for bgname, background in backgrounds
-    :root
-        --bg-{bgname}(background)
+  for bgname, background in backgrounds
+    --bg-{bgname}(background)
+
+  for greyname, grey in greys
+    --cl-{greyname}(grey)
+
+  for keywordname, keyword in keywords
+    --cl-{keywordname}(keyword)
 
 for greyname, grey in greys
     .background-color-{greyname}
@@ -143,12 +148,5 @@ for greyname, grey in greys
 
     .border-color-{greyname}
         border: 1px solid (grey)
-
-    :root
-        --cl-{greyname}(grey)
-
-for keywordname, keyword in keywords
-    :root
-        --cl-{keywordname}(keyword)
 
 /* @end */
