@@ -205,35 +205,35 @@
   --link-color-visited: #800080;
 }
 .group::after {
+  clear: both;
   content: "";
   display: table;
-  clear: both;
 }
 .centered,
 [centered] {
+  left: 50%;
   position: fixed;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 .center,
 [center] {
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 .left,
 [left] {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
 }
 .right,
 [right] {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: flex-end;
 }
 .text-left {
@@ -261,8 +261,8 @@
   width: 100%;
 }
 .size-full {
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
 }
 .hidden,
 [hidden] {
@@ -452,9 +452,9 @@ p {
   line-height: 2.62rem;
 }
 sup {
-  top: 0.8em;
   font-size: 1.23rem;
   line-height: 1.99rem;
+  top: 0.8em;
 }
 sub {
   bottom: -0.8em;
@@ -462,11 +462,11 @@ sub {
   line-height: 2.62rem;
 }
 .container {
-  position: relative;
   box-sizing: border-box;
-  width: 96%;
   margin: 0 auto;
   overflow-x: hidden;
+  position: relative;
+  width: 96%;
 }
 .container::after {
   clear: both;
@@ -555,8 +555,8 @@ sub {
 }
 @media only screen and (min-width: 13em) {
   .container {
-    width: 11em;
     margin: 0 auto;
+    width: 11em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -566,8 +566,8 @@ sub {
 }
 @media only screen and (min-width: 14em) {
   .container {
-    width: 12em;
     margin: 0 auto;
+    width: 12em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -577,8 +577,8 @@ sub {
 }
 @media only screen and (min-width: 19em) {
   .container {
-    width: 16em;
     margin: 0 auto;
+    width: 16em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -588,8 +588,8 @@ sub {
 }
 @media only screen and (min-width: 22em) {
   .container {
-    width: 19em;
     margin: 0 auto;
+    width: 19em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -599,8 +599,8 @@ sub {
 }
 @media only screen and (min-width: 24em) {
   .container {
-    width: 21em;
     margin: 0 auto;
+    width: 21em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -610,8 +610,8 @@ sub {
 }
 @media only screen and (min-width: 28em) {
   .container {
-    width: 24em;
     margin: 0 auto;
+    width: 24em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -621,8 +621,8 @@ sub {
 }
 @media only screen and (min-width: 34em) {
   .container {
-    width: 29em;
     margin: 0 auto;
+    width: 29em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -632,8 +632,8 @@ sub {
 }
 @media only screen and (min-width: 35em) {
   .container {
+    margin: 0 auto;
     width: 30em;
-    margin: 0 auto;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -643,8 +643,8 @@ sub {
 }
 @media only screen and (min-width: 38em) {
   .container {
+    margin: 0 auto;
     width: 32em;
-    margin: 0 auto;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -654,8 +654,8 @@ sub {
 }
 @media only screen and (min-width: 38em) {
   .container {
-    width: 33em;
     margin: 0 auto;
+    width: 33em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -665,8 +665,8 @@ sub {
 }
 @media only screen and (min-width: 42em) {
   .container {
-    width: 36em;
     margin: 0 auto;
+    width: 36em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -676,8 +676,8 @@ sub {
 }
 @media only screen and (min-width: 45em) {
   .container {
-    width: 39em;
     margin: 0 auto;
+    width: 39em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -687,8 +687,8 @@ sub {
 }
 @media only screen and (min-width: 47em) {
   .container {
-    width: 41em;
     margin: 0 auto;
+    width: 41em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -698,8 +698,8 @@ sub {
 }
 @media only screen and (min-width: 53em) {
   .container {
-    width: 46em;
     margin: 0 auto;
+    width: 46em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -709,8 +709,8 @@ sub {
 }
 @media only screen and (min-width: 56em) {
   .container {
-    width: 49em;
     margin: 0 auto;
+    width: 49em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -720,8 +720,8 @@ sub {
 }
 @media only screen and (min-width: 60em) {
   .container {
-    width: 52em;
     margin: 0 auto;
+    width: 52em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -731,8 +731,8 @@ sub {
 }
 @media only screen and (min-width: 62em) {
   .container {
-    width: 53em;
     margin: 0 auto;
+    width: 53em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -742,8 +742,8 @@ sub {
 }
 @media only screen and (min-width: 64em) {
   .container {
-    width: 55em;
     margin: 0 auto;
+    width: 55em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -753,8 +753,8 @@ sub {
 }
 @media only screen and (min-width: 68em) {
   .container {
-    width: 58em;
     margin: 0 auto;
+    width: 58em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -764,8 +764,8 @@ sub {
 }
 @media only screen and (min-width: 71em) {
   .container {
-    width: 61em;
     margin: 0 auto;
+    width: 61em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -775,8 +775,8 @@ sub {
 }
 @media only screen and (min-width: 75em) {
   .container {
-    width: 65em;
     margin: 0 auto;
+    width: 65em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -786,8 +786,8 @@ sub {
 }
 @media only screen and (min-width: 80em) {
   .container {
+    margin: 0 auto;
     width: 69em;
-    margin: 0 auto;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -797,8 +797,8 @@ sub {
 }
 @media only screen and (min-width: 82em) {
   .container {
+    margin: 0 auto;
     width: 70em;
-    margin: 0 auto;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -808,8 +808,8 @@ sub {
 }
 @media only screen and (min-width: 82em) {
   .container {
-    width: 71em;
     margin: 0 auto;
+    width: 71em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -819,8 +819,8 @@ sub {
 }
 @media only screen and (min-width: 85em) {
   .container {
-    width: 73em;
     margin: 0 auto;
+    width: 73em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -830,8 +830,8 @@ sub {
 }
 @media only screen and (min-width: 90em) {
   .container {
-    width: 78em;
     margin: 0 auto;
+    width: 78em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -841,8 +841,8 @@ sub {
 }
 @media only screen and (min-width: 94em) {
   .container {
-    width: 81em;
     margin: 0 auto;
+    width: 81em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -852,8 +852,8 @@ sub {
 }
 @media only screen and (min-width: 99em) {
   .container {
-    width: 85em;
     margin: 0 auto;
+    width: 85em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -863,8 +863,8 @@ sub {
 }
 @media only screen and (min-width: 109em) {
   .container {
-    width: 94em;
     margin: 0 auto;
+    width: 94em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -874,8 +874,8 @@ sub {
 }
 @media only screen and (min-width: 113em) {
   .container {
-    width: 97em;
     margin: 0 auto;
+    width: 97em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -885,8 +885,8 @@ sub {
 }
 @media only screen and (min-width: 120em) {
   .container {
-    width: 104em;
     margin: 0 auto;
+    width: 104em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -896,8 +896,8 @@ sub {
 }
 @media only screen and (min-width: 127em) {
   .container {
-    width: 109em;
     margin: 0 auto;
+    width: 109em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -907,8 +907,8 @@ sub {
 }
 @media only screen and (min-width: 151em) {
   .container {
-    width: 130em;
     margin: 0 auto;
+    width: 130em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -918,8 +918,8 @@ sub {
 }
 @media only screen and (min-width: 199em) {
   .container {
-    width: 171em;
     margin: 0 auto;
+    width: 171em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -929,8 +929,8 @@ sub {
 }
 @media only screen and (min-width: 226em) {
   .container {
-    width: 194em;
     margin: 0 auto;
+    width: 194em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -940,8 +940,8 @@ sub {
 }
 @media only screen and (min-width: 254em) {
   .container {
-    width: 219em;
     margin: 0 auto;
+    width: 219em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -951,8 +951,8 @@ sub {
 }
 @media only screen and (min-width: 354em) {
   .container {
-    width: 305em;
     margin: 0 auto;
+    width: 305em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -962,8 +962,8 @@ sub {
 }
 @media only screen and (min-width: 452em) {
   .container {
-    width: 389em;
     margin: 0 auto;
+    width: 389em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -974,26 +974,26 @@ sub {
 button,
 .button,
 [type="submit"] {
-  display: inline-block;
-  min-width: 27rem;
-  margin-bottom: 1.6rem;
-  padding: 1.6rem;
-  transition-timing-function: ease-in-out;
-  border: 0;
   background: var(--bg-disable);
+  border: 0;
   box-shadow: inset 0 1.6px 0 rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 0 1.6px var(--cl-white);
+  cursor: pointer;
+  display: inline-block;
   font-size: 1.62rem;
+  margin-bottom: 1.6rem;
+  min-width: 27rem;
+  padding: 1.6rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
+  transition-timing-function: ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 button:link,
 .button:link,
@@ -1010,35 +1010,35 @@ button:active,
 button.active,
 .button.active,
 [type="submit"].active {
-  transition: all 150ms linear;
-  opacity: 0.85;
   background: var(--cl-grey-1000);
   color: var(--cl-white);
+  opacity: 0.85;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button:hover,
 .button:hover,
 [type="submit"]:hover {
-  transition: all 150ms linear;
   opacity: 0.9;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button:focus,
 .button:focus,
 [type="submit"]:focus {
-  transition: all 150ms linear;
-  opacity: 0.7;
   background: var(--cl-grey-200);
+  opacity: 0.7;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button:disabled,
 .button:disabled,
 [type="submit"]:disabled {
-  transition: all 150ms linear;
-  outline: 0;
   background: var(--cl-grey-700);
   color: var(--cl-white);
   cursor: not-allowed;
+  outline: 0;
+  transition: all 150ms linear;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1047,103 +1047,103 @@ button:disabled,
 button.primary,
 .button.primary,
 [type="submit"].primary {
-  transition: all 150ms linear;
   background: var(--cl-primary);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.primary:hover,
 .button.primary:hover,
 [type="submit"].primary:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.secondary,
 .button.secondary,
 [type="submit"].secondary {
-  transition: all 150ms linear;
   background: var(--cl-secondary);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.secondary:hover,
 .button.secondary:hover,
 [type="submit"].secondary:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.info,
 .button.info,
 [type="submit"].info {
-  transition: all 150ms linear;
   background: var(--cl-info);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.info:hover,
 .button.info:hover,
 [type="submit"].info:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.success,
 .button.success,
 [type="submit"].success {
-  transition: all 150ms linear;
   background: var(--cl-success);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.success:hover,
 .button.success:hover,
 [type="submit"].success:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.error,
 .button.error,
 [type="submit"].error {
-  transition: all 150ms linear;
   background: var(--cl-danger);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.error:hover,
 .button.error:hover,
 [type="submit"].error:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.warning,
 .button.warning,
 [type="submit"].warning {
-  transition: all 150ms linear;
   background: var(--cl-warning);
   color: var(--cl-white);
   cursor: pointer;
+  transition: all 150ms linear;
 }
 button.warning:hover,
 .button.warning:hover,
 [type="submit"].warning:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.link,
 .button.link,
 [type="submit"].link {
-  transition: all 150ms linear;
-  border-color: transparent;
   background: 0 0;
+  border-color: transparent;
   box-shadow: none;
   color: var(--link-color);
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
+  transition: all 150ms linear;
 }
 button.link:visited,
 .button.link:visited,
@@ -1162,9 +1162,9 @@ button.link:hover,
 button.link:focus,
 .button.link:focus,
 [type="submit"].link:focus {
+  color: var(--link-color-focus);
   outline: 1px thin dotted auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  color: var(--link-color-focus);
 }
 .button-group {
   border: 0;
@@ -1173,157 +1173,157 @@ button.link:focus,
   text-rendering: optimizespeed;
 }
 .btn {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  min-width: 60px;
-  min-height: 60px;
-  transition: all 150ms linear;
   border-radius: 0.3rem;
+  cursor: pointer;
+  display: inline-block;
   font-size: 1.62rem;
   line-height: 60px;
+  min-height: 60px;
+  min-width: 60px;
+  position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
+  transition: all 150ms linear;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  z-index: 1;
 }
 .btn:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 .btn-round {
   border-radius: 50%;
 }
 .btn-round:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 .btn-oval {
-  min-width: 9rem;
   border-radius: 61.25rem;
+  min-width: 9rem;
 }
 .btn-oval:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 .btn-outline {
   border: 2px solid transparent;
 }
 .btn-outline:hover {
-  transition: all 150ms linear;
   opacity: 0.5;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 .block {
-  display: block;
   width: 98.7%;
   height: 60px;
-  padding: 0.6rem;
   border: 0;
+  display: block;
   line-height: 60px;
+  padding: 0.6rem;
 }
 button.primary-outline,
 .button.primary-outline,
 [type="submit"].primary-outline {
-  border: 1px solid var(--cl-primary);
   background-color: var(--cl-white);
+  border: 1px solid var(--cl-primary);
   color: var(--cl-primary);
 }
 button.primary-outline:hover,
 .button.primary-outline:hover,
 [type="submit"].primary-outline:hover {
-  transition: all 150ms linear;
-  opacity: 1;
   background-color: var(--bg-primary);
   color: var(--cl-primary);
+  opacity: 1;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.secondary-outline,
 .button.secondary-outline,
 [type="submit"].secondary-outline {
-  border: 1px solid var(--cl-secondary);
   background-color: var(--cl-white);
+  border: 1px solid var(--cl-secondary);
   color: var(--cl-secondary);
 }
 button.secondary-outline:hover,
 .button.secondary-outline:hover,
 [type="submit"].secondary-outline:hover {
-  transition: all 150ms linear;
-  opacity: 1;
   background-color: var(--bg-secondary);
   color: var(--cl-secondary);
+  opacity: 1;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.success-outline,
 .button.success-outline,
 [type="submit"].success-outline {
-  border: 1px solid var(--cl-success);
   background-color: var(--cl-white);
+  border: 1px solid var(--cl-success);
   color: var(--cl-success);
 }
 button.success-outline:hover,
 .button.success-outline:hover,
 [type="submit"].success-outline:hover {
-  transition: all 150ms linear;
-  opacity: 1;
   background-color: var(--bg-success);
   color: var(--cl-success);
+  opacity: 1;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.error-outline,
 .button.error-outline,
 [type="submit"].error-outline {
-  border: 1px solid var(--cl-danger);
   background-color: var(--cl-white);
+  border: 1px solid var(--cl-danger);
   color: var(--cl-danger);
 }
 button.error-outline:hover,
 .button.error-outline:hover,
 [type="submit"].error-outline:hover {
-  transition: all 150ms linear;
-  opacity: 1;
   background-color: var(--bg-danger);
   color: var(--cl-danger);
+  opacity: 1;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 button.warning-outline,
 .button.warning-outline,
 [type="submit"].warning-outline {
-  border: 1px solid var(--cl-warning);
   background-color: var(--cl-white);
+  border: 1px solid var(--cl-warning);
   color: var(--cl-warning);
 }
 button.warning-outline:hover,
 .button.warning-outline:hover,
 [type="submit"].warning-outline:hover {
-  transition: all 150ms linear;
-  opacity: 1;
   background-color: var(--bg-warning);
   color: var(--cl-warning);
+  opacity: 1;
   text-decoration: none;
+  transition: all 150ms linear;
 }
 .bd-clipboard {
-  position: relative;
   float: right;
+  position: relative;
 }
 .button-clipboard {
   display: block;
-  position: absolute;
-  z-index: 10;
-  top: 1.6rem;
-  right: 2.6rem;
+  font-size: 0.65em;
   min-width: auto;
   padding: 0.6rem;
-  font-size: 0.65em;
+  position: absolute;
+  right: 2.6rem;
+  top: 1.6rem;
+  z-index: 10;
 }
 code.error,
 code.info,
@@ -1332,18 +1332,18 @@ code.secondary,
 code.success,
 code.tertiary,
 code.warning {
-  position: relative;
-  margin-top: 0;
   border: 0;
+  margin-top: 0;
+  position: relative;
 }
 code,
 kbd,
 pre,
 samp {
-  padding: 1.618rem;
-  overflow: auto;
   font-family: monospace;
   font-size: 1.62rem;
+  overflow: auto;
+  padding: 1.618rem;
 }
 pre {
   margin-bottom: 0;
@@ -1351,128 +1351,124 @@ pre {
 }
 pre,
 code {
-  display: block;
-  text-align: left;
-  word-wrap: break-word;
-  white-space: pre-wrap;
   direction: ltr;
+  display: block;
   page-break-inside: avoid;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 code {
-  border-top: 0.1rem solid var(--cl-black);
-  border-right: 0.1rem solid var(--cl-black);
   border-bottom: 0.1rem solid var(--cl-black);
   border-left: 0.9rem solid var(--cl-black);
+  border-right: 0.1rem solid var(--cl-black);
+  border-top: 0.1rem solid var(--cl-black);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
 }
 code.primary {
-  border-top: 0.1rem solid var(--cl-primary);
-  border-right: 0.1rem solid var(--cl-primary);
+  background: var(--bg-primary);
   border-bottom: 0.1rem solid var(--cl-primary);
   border-left: 0.9rem solid var(--cl-primary);
-  background: var(--bg-primary);
+  border-right: 0.1rem solid var(--cl-primary);
+  border-top: 0.1rem solid var(--cl-primary);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-primary);
 }
 code.secondary {
-  border-top: 0.1rem solid var(--cl-secondary);
-  border-right: 0.1rem solid var(--cl-secondary);
+  background: var(--bg-secondary);
   border-bottom: 0.1rem solid var(--cl-secondary);
   border-left: 0.9rem solid var(--cl-secondary);
-  background: var(--bg-secondary);
+  border-right: 0.1rem solid var(--cl-secondary);
+  border-top: 0.1rem solid var(--cl-secondary);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-secondary);
 }
 code.tertiary {
-  border-top: 0.1rem solid var(--cl-tertiary);
-  border-right: 0.1rem solid var(--cl-tertiary);
+  background: var(--bg-tertiary);
   border-bottom: 0.1rem solid var(--cl-tertiary);
   border-left: 0.9rem solid var(--cl-tertiary);
-  background: var(--bg-tertiary);
+  border-right: 0.1rem solid var(--cl-tertiary);
+  border-top: 0.1rem solid var(--cl-tertiary);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-tertiary);
 }
 code.success {
-  border-top: 0.1rem solid var(--cl-success);
-  border-right: 0.1rem solid var(--cl-success);
-  border-bottom: 0.1rem solid var(--cl-success);
-  border-left: 0.9rem solid var(--cl-success);
-  border-color: var(--cl-success);
   background: var(--bg-success);
+  border-bottom: 0.1rem solid var(--cl-success);
+  border-color: var(--cl-success);
+  border-left: 0.9rem solid var(--cl-success);
+  border-right: 0.1rem solid var(--cl-success);
+  border-top: 0.1rem solid var(--cl-success);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-success);
 }
 code.info {
-  border-top: 0.1rem solid var(--cl-info);
-  border-right: 0.1rem solid var(--cl-info);
+  background: var(--bg-info);
   border-bottom: 0.1rem solid var(--cl-info);
   border-left: 0.9rem solid var(--cl-info);
-  background: var(--bg-info);
+  border-right: 0.1rem solid var(--cl-info);
+  border-top: 0.1rem solid var(--cl-info);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-info);
 }
 code.warning {
-  border-top: 0.1rem solid var(--cl-warning);
-  border-right: 0.1rem solid var(--cl-warning);
+  background: var(--bg-warning);
   border-bottom: 0.1rem solid var(--cl-warning);
   border-left: 0.9rem solid var(--cl-warning);
-  background: var(--bg-warning);
+  border-right: 0.1rem solid var(--cl-warning);
+  border-top: 0.1rem solid var(--cl-warning);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-warning);
 }
 code.error {
-  border-top: 0.1rem solid var(--cl-danger);
-  border-right: 0.1rem solid var(--cl-danger);
+  background: var(--bg-danger);
   border-bottom: 0.1rem solid var(--cl-danger);
   border-left: 0.9rem solid var(--cl-danger);
-  background: var(--bg-danger);
+  border-right: 0.1rem solid var(--cl-danger);
+  border-top: 0.1rem solid var(--cl-danger);
   box-shadow: 0 12px 30px -9px var(--cl-grey-200);
   color: var(--cl-danger);
 }
 hr {
-  width: 98.382%;
-  border: 0;
   background-color: var(--cl-white);
+  border: 0;
+  width: 98.382%;
 }
 .hr-dashed {
-  position: relative;
-  border: 2px dashed var(--cl-grey-700);
   background: var(--cl-white);
+  border: 2px dashed var(--cl-grey-700);
+  position: relative;
 }
 .hr-dashed::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
-  left: -1px;
   border: 1px solid var(--cl-grey-200);
+  bottom: -1px;
+  content: "";
+  left: -1px;
   pointer-events: none;
+  position: absolute;
+  right: -1px;
+  top: -1px;
 }
 .hr-dotted {
-  border-top: 2px dotted var(--cl-grey-700);
   background-color: transparent;
+  border-top: 2px dotted var(--cl-grey-700);
 }
 .hr-solid {
-  border-top: 2px solid var(--cl-grey-700);
   background-color: transparent;
+  border-top: 2px solid var(--cl-grey-700);
 }
 .hr-text {
-  position: relative;
-  height: 1.5em;
-  border: 0;
-  outline: 0;
-  opacity: 0.5;
   background: var(--cl-white);
+  border: 0;
   color: var(--cl-black);
+  height: 1.5em;
   line-height: 1em;
+  opacity: 0.5;
+  outline: 0;
+  position: relative;
   text-align: center;
 }
 .hr-text::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
   width: 100%;
   height: 1px;
   background: linear-gradient(
@@ -1481,22 +1477,26 @@ hr {
     var(--cl-black),
     transparent
   );
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 50%;
 }
 .hr-text::after {
-  content: attr(data-content);
-  display: inline-block;
-  position: relative;
-  padding: 0 0.5em;
   background-color: var(--cl-white);
   color: var(--cl-black);
+  content: attr(data-content);
+  display: inline-block;
   line-height: 1.5em;
+  padding: 0 0.5em;
+  position: relative;
 }
 .hr-icon {
-  position: relative;
-  height: 20px;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22none%22%20stroke%3D%22%23e5e5e5%22%20stroke-width%3D%222%22%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%227%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
-  background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 20px;
+  position: relative;
 }
 .hr-icon::before {
   right: calc(50% + 25px);
@@ -1506,51 +1506,51 @@ hr {
   width: 100%;
 }
 .hr-rounded {
-  border-top: 8px solid var(--cl-grey-700);
-  border-radius: 5px;
   background-color: transparent;
+  border-radius: 5px;
+  border-top: 8px solid var(--cl-grey-700);
 }
 .hr-small {
-  border-style: none;
   background-color: transparent;
+  border-style: none;
   line-height: 0;
 }
 .hr-small::after {
+  background-color: transparent;
+  border-top: 1px solid var(--cl-grey-700);
   content: "";
   display: inline-block;
-  width: 100px;
   max-width: 100%;
-  border-top: 1px solid var(--cl-grey-700);
-  background-color: transparent;
   vertical-align: top;
+  width: 100px;
 }
 .hr-vertical {
   width: 1px;
   height: 100px;
-  margin-right: auto;
-  margin-left: auto;
-  border-left: 1px solid var(--cl-grey-700);
   background-color: transparent;
+  border-left: 1px solid var(--cl-grey-700);
+  margin-left: auto;
+  margin-right: auto;
 }
 .hr-doubled {
-  border-top: double var(--cl-grey-700) 2px;
   background-color: transparent;
+  border-top: double var(--cl-grey-700) 2px;
 }
 .hr-blurred {
-  height: 0;
-  border: 0;
   background-color: transparent;
+  border: 0;
   box-shadow: 0 0 10px 1px var(--cl-black);
+  height: 0;
 }
 .hr-blurred::after {
   content: "\00a0";
 }
 hr.hr-icon::before,
 hr.hr-icon::after {
+  border-bottom: 1px solid var(--cl-grey-700);
   content: "";
   position: absolute;
   top: 50%;
-  border-bottom: 1px solid var(--cl-grey-700);
 }
 input[type="email"],
 input[type="file"],
@@ -1562,18 +1562,18 @@ input[type="text"],
 input[type="url"],
 select,
 textarea {
-  display: block;
-  width: 100%;
-  margin: 1.618rem 0;
-  padding: 1.618rem 0 1.618rem 0.618rem;
-  transition: all 150ms linear;
+  background: var(--inverted-color);
   border: 1px solid var(--cl-grey-200);
   border-radius: 2px;
-  outline: 0;
-  background: var(--inverted-color);
   color: var(--cl-black);
+  display: block;
   font-family: "Consolas", "Monaco", "Menlo", monospace;
   font-size: 2.01rem;
+  margin: 1.618rem 0;
+  outline: 0;
+  padding: 1.618rem 0 1.618rem 0.618rem;
+  transition: all 150ms linear;
+  width: 100%;
 }
 input[type="email"]:hover,
 input[type="file"]:hover,
@@ -1610,8 +1610,8 @@ textarea:focus {
 .input-primary[type="url"],
 select.input-primary,
 textarea.input-primary {
-  border-color: var(--cl-primary);
   background: var(--bg-primary);
+  border-color: var(--cl-primary);
 }
 .input-secondary[type="email"],
 .input-secondary[type="file"],
@@ -1623,8 +1623,8 @@ textarea.input-primary {
 .input-secondary[type="url"],
 select.input-secondary,
 textarea.input-secondary {
-  border-color: var(--cl-secondary);
   background: var(--bg-secondary);
+  border-color: var(--cl-secondary);
 }
 .input-success[type="email"],
 .input-success[type="file"],
@@ -1636,8 +1636,8 @@ textarea.input-secondary {
 .input-success[type="url"],
 select.input-success,
 textarea.input-success {
-  border-color: var(--cl-success);
   background: var(--bg-success);
+  border-color: var(--cl-success);
 }
 .input-info[type="email"],
 .input-info[type="file"],
@@ -1649,8 +1649,8 @@ textarea.input-success {
 .input-info[type="url"],
 select.input-info,
 textarea.input-info {
-  border-color: var(--cl-info);
   background: var(--bg-info);
+  border-color: var(--cl-info);
 }
 .input-warning[type="email"],
 .input-warning[type="file"],
@@ -1662,8 +1662,8 @@ textarea.input-info {
 .input-warning[type="url"],
 select.input-warning,
 textarea.input-warning {
-  border-color: var(--cl-warning);
   background: var(--bg-warning);
+  border-color: var(--cl-warning);
 }
 .input-error[type="email"],
 .input-error[type="file"],
@@ -1675,138 +1675,138 @@ textarea.input-warning {
 .input-error[type="url"],
 select.input-error,
 textarea.input-error {
-  border-color: var(--cl-danger);
   background: var(--bg-danger);
+  border-color: var(--cl-danger);
 }
 fieldset {
-  min-width: 0;
-  margin: 1.618rem 0;
-  padding: 1.618rem 0 1.618rem 1.618rem;
   border: 1px solid var(--cl-grey-200);
+  margin: 1.618rem 0;
+  min-width: 0;
+  padding: 1.618rem 0 1.618rem 1.618rem;
 }
 img,
 video,
 iframe {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   vertical-align: bottom;
 }
 .link-1 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-1:hover {
   text-decoration: none;
 }
 .link-2 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-2:hover {
   text-decoration: none;
 }
 .link-3 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-3:hover {
   text-decoration: none;
 }
 .link-4 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-4:hover {
   text-decoration: none;
 }
 .link-5 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-5:hover {
   text-decoration: none;
 }
 .link-6 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-6:hover {
   text-decoration: none;
 }
 .link-7 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-7:hover {
   text-decoration: none;
 }
 .link-8 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-8:hover {
   text-decoration: none;
 }
 .link-9 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-9:hover {
   text-decoration: none;
 }
 .link-10 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-10:hover {
   text-decoration: none;
 }
 .link-11 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-11:hover {
   text-decoration: none;
 }
 .link-12 {
+  background-color: transparent;
+  box-shadow: none;
   display: inline-block;
   padding: 10px;
   transition: all 0.4s ease-out;
-  background-color: transparent;
-  box-shadow: none;
 }
 .link-12:hover {
   text-decoration: none;
@@ -1815,12 +1815,12 @@ iframe {
   overflow: hidden;
 }
 .link-1::before {
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 2px;
-  transform: translateX(-100%);
   background: var(--link-color-focus);
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
 }
 .link-1:hover::before {
   transform: translateX(0);
@@ -1829,34 +1829,34 @@ iframe {
   overflow: hidden;
 }
 .link-2::before {
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 2px;
-  transform: translateX(100%);
   background: var(--link-color-focus);
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
 }
 .link-2:hover::before {
   transform: translateX(0);
 }
 .link-3::before {
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 2px;
-  transform: scaleX(0);
   background: var(--link-color-focus);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
 }
 .link-3:hover::before {
   transform: scaleX(1);
 }
 .link-4::before {
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 2px;
-  transform: scaleX(1);
   background: var(--link-color-focus);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(1);
 }
 .link-4:hover::before {
   transform: scaleX(0);
@@ -1874,10 +1874,10 @@ iframe {
 }
 .link-5::before,
 .link-5::after {
-  left: 0;
   width: 100%;
   height: 2px;
   background: var(--link-color-focus);
+  left: 0;
 }
 .link-5:hover::before,
 .link-5:hover::after {
@@ -1896,10 +1896,10 @@ iframe {
 }
 .link-6::before,
 .link-6::after {
-  left: 0;
   width: 100%;
   height: 2px;
   background: var(--link-color-focus);
+  left: 0;
 }
 .link-6:hover::before,
 .link-6:hover::after {
@@ -1926,10 +1926,10 @@ iframe {
 }
 .link-7::before,
 .link-7::after {
-  left: 0;
   width: 100%;
   height: 2px;
   background: var(--link-color-focus);
+  left: 0;
 }
 .link-8 {
   overflow: hidden;
@@ -1944,46 +1944,46 @@ iframe {
 }
 .link-8::before,
 .link-8::after {
-  left: 0;
   width: 100%;
   height: 2px;
   background: var(--link-color-focus);
+  left: 0;
 }
 .link-8:hover::before,
 .link-8:hover::after {
   transform: translateX(0);
 }
 .link-9::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
   width: 100%;
   height: 2px;
+  background: var(--link-color-focus);
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
   transform: translateY(20px);
   transition: opacity 0.4s, transform 0.4s;
-  opacity: 0;
-  background: var(--link-color-focus);
 }
 .link-9:hover::before {
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 .link-10::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
   width: 100%;
   height: 2px;
+  background: var(--link-color-focus);
+  content: "";
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
   transform: translateY(-15px);
   transition: opacity 0.4s, transform 0.4s;
-  opacity: 0;
-  background: var(--link-color-focus);
 }
 .link-10:hover::before {
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 .link-11:hover::before,
 .link-11:hover::after {
@@ -2000,16 +2000,16 @@ iframe {
 }
 .link-12:hover::before,
 .link-12:hover::after {
+  -webkit-animation: main 0.5s;
+          animation: main 0.5s;
   content: "[";
   transform-origin: -20px 50%;
-  -webkit-animation: main 0.5s;
-          animation: main 0.5s;
 }
 .link-12:hover::after {
-  content: "]";
-  transform-origin: 20px 50%;
   -webkit-animation: main 0.5s;
           animation: main 0.5s;
+  content: "]";
+  transform-origin: 20px 50%;
 }
 @-webkit-keyframes main {
   0% {
@@ -2064,14 +2064,14 @@ a:hover {
   text-decoration: underline;
 }
 a:focus {
+  color: var(--link-color-focus);
   outline: 1px thin dotted auto -webkit-focus-ring-color;
   outline-offset: -2px;
-  color: var(--link-color-focus);
 }
 a,
 a > span {
-  position: relative;
   color: inherit;
+  position: relative;
   text-decoration: none;
 }
 a::before,
@@ -2111,8 +2111,8 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin: 1.6rem;
   font-size: 100%;
+  margin: 1.6rem;
 }
 .margin-auto {
   margin: auto;
@@ -2511,11 +2511,11 @@ ol ul {
   padding-right: 100%;
 }
 table {
-  padding-bottom: 25px;
-  empty-cells: show;
-  border-spacing: 0;
-  border-collapse: collapse;
   border: 1px solid var(--cl-black);
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  padding-bottom: 25px;
 }
 thead {
   background-color: var(--cl-black);
@@ -2524,12 +2524,12 @@ thead {
 }
 td,
 th {
-  margin: 0;
-  padding: 6px 12px;
-  overflow: visible;
+  background-color: transparent;
   border-left: 1px solid var(--cl-black);
   border-width: 0 0 0 1px;
-  background-color: transparent;
+  margin: 0;
+  overflow: visible;
+  padding: 6px 12px;
   vertical-align: top;
 }
 td {
@@ -2549,8 +2549,8 @@ th {
   margin-bottom: 1.618rem;
 }
 .card-subtitle {
-  margin-top: -1.618rem;
   margin-bottom: 0;
+  margin-top: -1.618rem;
 }
 .cards {
   display: flex;
@@ -2558,102 +2558,102 @@ th {
   justify-content: space-between;
 }
 .card {
-  position: relative;
-  margin-bottom: 1.618rem;
-  transition: 0.3s;
+  background: transparent;
   border: 1.6px solid var(--cl-grey-300);
   border-radius: 1.618rem;
-  background: transparent;
   box-shadow: 0 3px 9px 0 var(--cl-grey-200);
   color: var(--cl-black);
+  margin-bottom: 1.618rem;
+  position: relative;
+  transition: 0.3s;
 }
 .error {
-  border: 0.0625rem solid var(--cl-danger);
   background: var(--bg-danger);
+  border: 0.0625rem solid var(--cl-danger);
   color: var(--cl-danger);
 }
 .info {
-  border: 0.0625rem solid var(--cl-info);
   background: var(--bg-info);
+  border: 0.0625rem solid var(--cl-info);
   color: var(--cl-info);
 }
 .primary {
-  border: 0.0625rem solid var(--cl-primary);
   background: var(--bg-primary);
+  border: 0.0625rem solid var(--cl-primary);
   color: var(--cl-primary);
 }
 .secondary {
-  border: 0.0625rem solid var(--cl-secondary);
   background: var(--bg-secondary);
+  border: 0.0625rem solid var(--cl-secondary);
   color: var(--cl-secondary);
 }
 .success {
-  border: 0.0625rem solid var(--cl-success);
   background: var(--bg-success);
+  border: 0.0625rem solid var(--cl-success);
   color: var(--cl-success);
 }
 .warning {
-  border: 0.0625rem solid var(--cl-warning);
   background: var(--bg-warning);
+  border: 0.0625rem solid var(--cl-warning);
   color: var(--cl-warning);
 }
 h1,
 .h1 {
-  margin-bottom: 4.4rem;
   font-size: 4.2rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 6.5rem;
+  margin-bottom: 4.4rem;
 }
 h2,
 .h2 {
-  margin-bottom: 2.7rem;
   font-size: 3.3rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 5.2rem;
+  margin-bottom: 2.7rem;
 }
 h3,
 .h3 {
-  margin-bottom: 1.7rem;
   font-size: 2.6rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 4.2rem;
+  margin-bottom: 1.7rem;
 }
 h4,
 .h4 {
-  margin-bottom: 1.1rem;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 3.3rem;
+  margin-bottom: 1.1rem;
 }
 h5,
 .h5 {
-  margin-bottom: 0.7rem;
   font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 2.7rem;
+  margin-bottom: 0.7rem;
 }
 h6,
 .h6 {
-  margin-bottom: 0.4rem;
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.1rem;
   line-height: 2.3rem;
+  margin-bottom: 0.4rem;
 }
 .header {
-  display: block;
-  z-index: 10;
   width: 100%;
-  max-width: 100%;
   height: 60px;
-  margin: 0 auto;
-  overflow: hidden;
   box-shadow: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 10;
 }
 .header span {
   display: none;
@@ -2665,10 +2665,10 @@ h6,
   margin-top: 60px;
 }
 .mainInner {
-  display: table;
-  position: absolute;
   width: 100%;
   height: 100%;
+  display: table;
+  position: absolute;
   text-align: center;
 }
 .mainInner div {
@@ -2679,35 +2679,35 @@ h6,
   vertical-align: middle;
 }
 #sidebar {
-  position: fixed;
-  z-index: 1;
-  left: 0;
   width: 100vw;
   height: 100%;
-  margin-top: 5rem;
-  transform: translateX(-100vw);
   background: var(--cl-white);
+  left: 0;
+  margin-top: 5rem;
+  position: fixed;
+  transform: translateX(-100vw);
+  z-index: 1;
 }
 .nav {
+  border-top: 1px solid var(--cl-black);
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--cl-black);
 }
 .nav li {
-  margin-bottom: 0;
-  padding: 1.6rem;
   border-bottom: 1px solid var(--cl-black);
   color: var(--cl-white);
-  list-style: none;
-  text-transform: uppercase;
   cursor: pointer;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 1.6rem;
+  text-transform: uppercase;
 }
 .nav li a {
-  padding: 1.6rem;
   color: var(--cl-black);
+  cursor: pointer;
+  padding: 1.6rem;
   text-decoration: none;
   text-transform: uppercase;
-  cursor: pointer;
 }
 .nav li:hover {
   background: var(--cl-black);
@@ -2722,9 +2722,9 @@ h6,
   display: none;
 }
 .nav li > ul > li {
+  border-bottom: none;
   margin: 0;
   padding: 1.6rem;
-  border-bottom: none;
 }
 .nav li > ul > li a {
   color: var(--cl-white);
@@ -2746,54 +2746,54 @@ input[type="checkbox"]:checked ~ #sidebar {
   transform: translateX(0);
 }
 input[type="checkbox"] {
-  display: none;
   box-sizing: border-box;
+  display: none;
   transition: all 0.3s;
 }
 .hamburger-toggle {
-  display: block;
-  position: absolute;
-  z-index: 99;
-  top: 22px;
-  left: 15px;
-  box-sizing: border-box;
   width: 22px;
   height: 22px;
-  transition: all 0.3s;
+  box-sizing: border-box;
   cursor: pointer;
+  display: block;
+  left: 15px;
+  position: absolute;
+  top: 22px;
+  transition: all 0.3s;
+  z-index: 99;
 }
 .spinner {
-  position: absolute;
-  box-sizing: border-box;
   width: 100%;
   height: 3px;
-  transition: all 0.3s;
   background-color: var(--cl-black);
+  box-sizing: border-box;
+  position: absolute;
+  transition: all 0.3s;
 }
 .horizontal {
-  position: relative;
   box-sizing: border-box;
-  margin-top: 3px;
   float: left;
+  margin-top: 3px;
+  position: relative;
   transition: all 0.3s;
 }
 .diagonal.part-1 {
-  position: relative;
   box-sizing: border-box;
   float: left;
+  position: relative;
   transition: all 0.3s;
 }
 .diagonal.part-2 {
-  position: relative;
   box-sizing: border-box;
-  margin-top: 3px;
   float: left;
+  margin-top: 3px;
+  position: relative;
   transition: all 0.3s;
 }
 input[type="checkbox"]:checked ~ .hamburger-toggle > .horizontal {
   box-sizing: border-box;
-  transition: all 0.3s;
   opacity: 0;
+  transition: all 0.3s;
 }
 input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-1 {
   box-sizing: border-box;
