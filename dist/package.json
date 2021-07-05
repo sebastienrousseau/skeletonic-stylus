@@ -131,11 +131,8 @@
         "dev:copy:stylus": "cp -R src/stylus dist/",
         "dev:copyright:insert": "find src/stylus/**/* -name \"*.styl\" -exec sh -c \"cat COPYRIGHT.txt {} >> $$.tmp && mv $$.tmp {}\" \\;",
         "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",
-        "dev:format-stylus": "stylus-supremacy format \"src/stylus/**/*.styl\" --options \".stylelintrc.json\" > ./debug/stylus-supremacy-output.log &",
-        "dev:lint:stylus": "stylint src/stylus/**/*.styl --strict --fix",
-        "dev:prettier:css": "prettier --write \"dist/css/*.css\" && stylelint \"dist/css/*.css\" --fix",
         "dev:stylelint:check": "stylelint-config-prettier-check",
-        "dev:minify-css": "find dist/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --stat --output ${0%.css}.min.css' {} \\;",
+
         "// Production": " --- Production Scripts --- ",
         "prepare:skeletonic:stylus": "npm run build",
         "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
