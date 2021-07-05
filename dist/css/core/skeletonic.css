@@ -1004,6 +1004,20 @@ button:visited,
   background: var(--cl-grey-900);
   color: var(--cl-white);
 }
+@media screen and (prefers-reduced-motion: reduce) {
+button:active,
+.button:active,
+[type="submit"]:active,
+button.active,
+.button.active,
+[type="submit"].active {
+  background: var(--cl-grey-1000);
+  color: var(--cl-white);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: none;
+}
+}
 button:active,
 .button:active,
 [type="submit"]:active,
@@ -1016,12 +1030,33 @@ button.active,
   text-decoration: none;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+button:hover,
+.button:hover,
+[type="submit"]:hover, button:focus,
+.button:focus,
+[type="submit"]:focus {
+  opacity: 0.9;
+  text-decoration: none;
+  transition: none;
+}
+}
 button:hover,
 .button:hover,
 [type="submit"]:hover {
   opacity: 0.9;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button:focus,
+.button:focus,
+[type="submit"]:focus {
+  background: var(--cl-grey-200);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: none;
+}
 }
 button:focus,
 .button:focus,
@@ -1030,6 +1065,21 @@ button:focus,
   opacity: 0.7;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button:disabled,
+.button:disabled,
+[type="submit"]:disabled {
+  background: var(--cl-grey-700);
+  color: var(--cl-white);
+  cursor: not-allowed;
+  outline: 0;
+  transition: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 }
 button:disabled,
 .button:disabled,
@@ -1044,6 +1094,16 @@ button:disabled,
       -ms-user-select: none;
           user-select: none;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+button.primary,
+.button.primary,
+[type="submit"].primary {
+  background: var(--cl-primary);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
+}
 button.primary,
 .button.primary,
 [type="submit"].primary {
@@ -1052,12 +1112,35 @@ button.primary,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.primary:hover,
 .button.primary:hover,
-[type="submit"].primary:hover {
+[type="submit"].primary:hover, button.primary:focus,
+.button.primary:focus,
+[type="submit"].primary:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.primary:hover,
+.button.primary:hover,
+[type="submit"].primary:hover, button.primary:focus,
+.button.primary:focus,
+[type="submit"].primary:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.secondary,
+.button.secondary,
+[type="submit"].secondary {
+  background: var(--cl-secondary);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
 }
 button.secondary,
 .button.secondary,
@@ -1067,12 +1150,35 @@ button.secondary,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.secondary:hover,
 .button.secondary:hover,
-[type="submit"].secondary:hover {
+[type="submit"].secondary:hover, button.secondary:focus,
+.button.secondary:focus,
+[type="submit"].secondary:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.secondary:hover,
+.button.secondary:hover,
+[type="submit"].secondary:hover, button.secondary:focus,
+.button.secondary:focus,
+[type="submit"].secondary:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.info,
+.button.info,
+[type="submit"].info {
+  background: var(--cl-info);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
 }
 button.info,
 .button.info,
@@ -1082,12 +1188,35 @@ button.info,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.info:hover,
 .button.info:hover,
-[type="submit"].info:hover {
+[type="submit"].info:hover, button.info:focus,
+.button.info:focus,
+[type="submit"].info:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.info:hover,
+.button.info:hover,
+[type="submit"].info:hover, button.info:focus,
+.button.info:focus,
+[type="submit"].info:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.success,
+.button.success,
+[type="submit"].success {
+  background: var(--cl-success);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
 }
 button.success,
 .button.success,
@@ -1097,12 +1226,35 @@ button.success,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.success:hover,
 .button.success:hover,
-[type="submit"].success:hover {
+[type="submit"].success:hover, button.success:focus,
+.button.success:focus,
+[type="submit"].success:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.success:hover,
+.button.success:hover,
+[type="submit"].success:hover, button.success:focus,
+.button.success:focus,
+[type="submit"].success:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.error,
+.button.error,
+[type="submit"].error {
+  background: var(--cl-danger);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
 }
 button.error,
 .button.error,
@@ -1112,12 +1264,35 @@ button.error,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.error:hover,
 .button.error:hover,
-[type="submit"].error:hover {
+[type="submit"].error:hover, button.error:focus,
+.button.error:focus,
+[type="submit"].error:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.error:hover,
+.button.error:hover,
+[type="submit"].error:hover, button.error:focus,
+.button.error:focus,
+[type="submit"].error:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.warning,
+.button.warning,
+[type="submit"].warning {
+  background: var(--cl-warning);
+  color: var(--cl-white);
+  cursor: pointer;
+  transition: none;
+}
 }
 button.warning,
 .button.warning,
@@ -1127,12 +1302,38 @@ button.warning,
   cursor: pointer;
   transition: all 150ms linear;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.warning:hover,
 .button.warning:hover,
-[type="submit"].warning:hover {
+[type="submit"].warning:hover, button.warning:focus,
+.button.warning:focus,
+[type="submit"].warning:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.warning:hover,
+.button.warning:hover,
+[type="submit"].warning:hover, button.warning:focus,
+.button.warning:focus,
+[type="submit"].warning:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+button.link,
+.button.link,
+[type="submit"].link {
+  background: 0 0;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: none;
+}
 }
 button.link,
 .button.link,
@@ -1172,6 +1373,29 @@ button.link:focus,
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+.btn {
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.62rem;
+  line-height: 60px;
+  min-height: 60px;
+  min-width: 60px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  z-index: 1;
+}
+}
 .btn {
   border-radius: 0.3rem;
   cursor: pointer;
@@ -1193,7 +1417,14 @@ button.link:focus,
   white-space: nowrap;
   z-index: 1;
 }
-.btn:hover {
+@media screen and (prefers-reduced-motion: reduce) {
+.btn:hover, .btn:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+.btn:hover, .btn:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
@@ -1201,7 +1432,14 @@ button.link:focus,
 .btn-round {
   border-radius: 50%;
 }
-.btn-round:hover {
+@media screen and (prefers-reduced-motion: reduce) {
+.btn-round:hover, .btn-round:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+.btn-round:hover, .btn-round:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
@@ -1210,7 +1448,14 @@ button.link:focus,
   border-radius: 61.25rem;
   min-width: 9rem;
 }
-.btn-oval:hover {
+@media screen and (prefers-reduced-motion: reduce) {
+.btn-oval:hover, .btn-oval:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+.btn-oval:hover, .btn-oval:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
@@ -1218,18 +1463,25 @@ button.link:focus,
 .btn-outline {
   border: 2px solid transparent;
 }
-.btn-outline:hover {
+@media screen and (prefers-reduced-motion: reduce) {
+.btn-outline:hover, .btn-outline:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  transition: none;
+}
+}
+.btn-outline:hover, .btn-outline:focus {
   opacity: 0.5;
   text-decoration: none;
   transition: all 150ms linear;
 }
 .block {
-  width: 98.7%;
-  height: 60px;
   border: 0;
   display: block;
+  height: 60px;
   line-height: 60px;
   padding: 0.6rem;
+  width: 98.7%;
 }
 button.primary-outline,
 .button.primary-outline,
@@ -1238,9 +1490,24 @@ button.primary-outline,
   border: 1px solid var(--cl-primary);
   color: var(--cl-primary);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.primary-outline:hover,
 .button.primary-outline:hover,
-[type="submit"].primary-outline:hover {
+[type="submit"].primary-outline:hover, button.primary-outline:focus,
+.button.primary-outline:focus,
+[type="submit"].primary-outline:focus {
+  background-color: var(--bg-primary);
+  color: var(--cl-primary);
+  opacity: 1;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.primary-outline:hover,
+.button.primary-outline:hover,
+[type="submit"].primary-outline:hover, button.primary-outline:focus,
+.button.primary-outline:focus,
+[type="submit"].primary-outline:focus {
   background-color: var(--bg-primary);
   color: var(--cl-primary);
   opacity: 1;
@@ -1254,9 +1521,24 @@ button.secondary-outline,
   border: 1px solid var(--cl-secondary);
   color: var(--cl-secondary);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.secondary-outline:hover,
 .button.secondary-outline:hover,
-[type="submit"].secondary-outline:hover {
+[type="submit"].secondary-outline:hover, button.secondary-outline:focus,
+.button.secondary-outline:focus,
+[type="submit"].secondary-outline:focus {
+  background-color: var(--bg-secondary);
+  color: var(--cl-secondary);
+  opacity: 1;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.secondary-outline:hover,
+.button.secondary-outline:hover,
+[type="submit"].secondary-outline:hover, button.secondary-outline:focus,
+.button.secondary-outline:focus,
+[type="submit"].secondary-outline:focus {
   background-color: var(--bg-secondary);
   color: var(--cl-secondary);
   opacity: 1;
@@ -1270,9 +1552,24 @@ button.success-outline,
   border: 1px solid var(--cl-success);
   color: var(--cl-success);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.success-outline:hover,
 .button.success-outline:hover,
-[type="submit"].success-outline:hover {
+[type="submit"].success-outline:hover, button.success-outline:focus,
+.button.success-outline:focus,
+[type="submit"].success-outline:focus {
+  background-color: var(--bg-success);
+  color: var(--cl-success);
+  opacity: 1;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.success-outline:hover,
+.button.success-outline:hover,
+[type="submit"].success-outline:hover, button.success-outline:focus,
+.button.success-outline:focus,
+[type="submit"].success-outline:focus {
   background-color: var(--bg-success);
   color: var(--cl-success);
   opacity: 1;
@@ -1286,9 +1583,24 @@ button.error-outline,
   border: 1px solid var(--cl-danger);
   color: var(--cl-danger);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.error-outline:hover,
 .button.error-outline:hover,
-[type="submit"].error-outline:hover {
+[type="submit"].error-outline:hover, button.error-outline:focus,
+.button.error-outline:focus,
+[type="submit"].error-outline:focus {
+  background-color: var(--bg-danger);
+  color: var(--cl-danger);
+  opacity: 1;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.error-outline:hover,
+.button.error-outline:hover,
+[type="submit"].error-outline:hover, button.error-outline:focus,
+.button.error-outline:focus,
+[type="submit"].error-outline:focus {
   background-color: var(--bg-danger);
   color: var(--cl-danger);
   opacity: 1;
@@ -1302,9 +1614,24 @@ button.warning-outline,
   border: 1px solid var(--cl-warning);
   color: var(--cl-warning);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 button.warning-outline:hover,
 .button.warning-outline:hover,
-[type="submit"].warning-outline:hover {
+[type="submit"].warning-outline:hover, button.warning-outline:focus,
+.button.warning-outline:focus,
+[type="submit"].warning-outline:focus {
+  background-color: var(--bg-warning);
+  color: var(--cl-warning);
+  opacity: 1;
+  text-decoration: none;
+  transition: none;
+}
+}
+button.warning-outline:hover,
+.button.warning-outline:hover,
+[type="submit"].warning-outline:hover, button.warning-outline:focus,
+.button.warning-outline:focus,
+[type="submit"].warning-outline:focus {
   background-color: var(--bg-warning);
   color: var(--cl-warning);
   opacity: 1;
@@ -1469,8 +1796,6 @@ hr {
   text-align: center;
 }
 .hr-text::before {
-  width: 100%;
-  height: 1px;
   background: linear-gradient(
     to right,
     transparent,
@@ -1478,9 +1803,11 @@ hr {
     transparent
   );
   content: "";
+  height: 1px;
   left: 0;
   position: absolute;
   top: 50%;
+  width: 100%;
 }
 .hr-text::after {
   background-color: var(--cl-white);
@@ -1525,12 +1852,12 @@ hr {
   width: 100px;
 }
 .hr-vertical {
-  width: 1px;
-  height: 100px;
   background-color: transparent;
   border-left: 1px solid var(--cl-grey-700);
+  height: 100px;
   margin-left: auto;
   margin-right: auto;
+  width: 1px;
 }
 .hr-doubled {
   background-color: transparent;
@@ -1551,6 +1878,31 @@ hr.hr-icon::after {
   content: "";
   position: absolute;
   top: 50%;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  background: var(--inverted-color);
+  border: 1px solid var(--cl-grey-200);
+  border-radius: 2px;
+  color: var(--cl-black);
+  display: block;
+  font-family: "Consolas", "Monaco", "Menlo", monospace;
+  font-size: 2.01rem;
+  margin: 1.618rem 0;
+  outline: 0;
+  padding: 1.618rem 0 1.618rem 0.618rem;
+  transition: none;
+  width: 100%;
+}
 }
 input[type="email"],
 input[type="file"],
@@ -1691,6 +2043,15 @@ iframe {
   max-width: 100%;
   vertical-align: bottom;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+.link-1 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
+}
 .link-1 {
   background-color: transparent;
   box-shadow: none;
@@ -1698,8 +2059,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-1:hover {
+.link-1:hover, .link-1:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-2 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-2 {
   background-color: transparent;
@@ -1708,8 +2078,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-2:hover {
+.link-2:hover, .link-2:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-3 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-3 {
   background-color: transparent;
@@ -1718,8 +2097,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-3:hover {
+.link-3:hover, .link-3:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-4 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-4 {
   background-color: transparent;
@@ -1728,8 +2116,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-4:hover {
+.link-4:hover, .link-4:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-5 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-5 {
   background-color: transparent;
@@ -1738,8 +2135,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-5:hover {
+.link-5:hover, .link-5:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-6 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-6 {
   background-color: transparent;
@@ -1748,8 +2154,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-6:hover {
+.link-6:hover, .link-6:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-7 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-7 {
   background-color: transparent;
@@ -1758,8 +2173,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-7:hover {
+.link-7:hover, .link-7:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-8 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-8 {
   background-color: transparent;
@@ -1768,8 +2192,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-8:hover {
+.link-8:hover, .link-8:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-9 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-9 {
   background-color: transparent;
@@ -1778,8 +2211,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-9:hover {
+.link-9:hover, .link-9:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-10 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-10 {
   background-color: transparent;
@@ -1788,8 +2230,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-10:hover {
+.link-10:hover, .link-10:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-11 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-11 {
   background-color: transparent;
@@ -1798,8 +2249,17 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-11:hover {
+.link-11:hover, .link-11:focus {
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-12 {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-block;
+  padding: 10px;
+  transition: none;
+}
 }
 .link-12 {
   background-color: transparent;
@@ -1808,57 +2268,57 @@ iframe {
   padding: 10px;
   transition: all 0.4s ease-out;
 }
-.link-12:hover {
+.link-12:hover, .link-12:focus {
   text-decoration: none;
 }
 .link-1 {
   overflow: hidden;
 }
 .link-1::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   bottom: 0;
+  height: 2px;
   left: 0;
   transform: translateX(-100%);
+  width: 100%;
 }
-.link-1:hover::before {
+.link-1:hover::before, .link-1:focus::before {
   transform: translateX(0);
 }
 .link-2 {
   overflow: hidden;
 }
 .link-2::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   bottom: 0;
+  height: 2px;
   right: 0;
   transform: translateX(100%);
+  width: 100%;
 }
-.link-2:hover::before {
+.link-2:hover::before, .link-2:focus::before {
   transform: translateX(0);
 }
 .link-3::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   bottom: 0;
+  height: 2px;
   left: 0;
   transform: scaleX(0);
+  width: 100%;
 }
-.link-3:hover::before {
+.link-3:hover::before, .link-3:focus::before {
   transform: scaleX(1);
 }
 .link-4::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   bottom: 0;
+  height: 2px;
   left: 0;
   transform: scaleX(1);
+  width: 100%;
 }
-.link-4:hover::before {
+.link-4:hover::before, .link-4:focus::before {
   transform: scaleX(0);
 }
 .link-5 {
@@ -1874,13 +2334,14 @@ iframe {
 }
 .link-5::before,
 .link-5::after {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
+  height: 2px;
   left: 0;
+  width: 100%;
 }
 .link-5:hover::before,
-.link-5:hover::after {
+.link-5:hover::after, .link-5:focus::before,
+.link-5:focus::after {
   transform: translateX(0);
 }
 .link-6 {
@@ -1896,13 +2357,14 @@ iframe {
 }
 .link-6::before,
 .link-6::after {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
+  height: 2px;
   left: 0;
+  width: 100%;
 }
 .link-6:hover::before,
-.link-6:hover::after {
+.link-6:hover::after, .link-6:focus::before,
+.link-6:focus::after {
   transform: translateX(0);
 }
 .link-7 {
@@ -1916,20 +2378,20 @@ iframe {
   top: 0;
   transform: translateX(0) scaleX(0);
 }
-.link-7:hover::before {
+.link-7:hover::before, .link-7:focus::before {
   bottom: 0;
   transform: translateX(0) scaleX(1);
 }
-.link-7:hover::after {
+.link-7:hover::after, .link-7:focus::after {
   top: 0;
   transform: translateX(0) scaleX(1);
 }
 .link-7::before,
 .link-7::after {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
+  height: 2px;
   left: 0;
+  width: 100%;
 }
 .link-8 {
   overflow: hidden;
@@ -1944,49 +2406,79 @@ iframe {
 }
 .link-8::before,
 .link-8::after {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
+  height: 2px;
   left: 0;
+  width: 100%;
 }
 .link-8:hover::before,
-.link-8:hover::after {
+.link-8:hover::after, .link-8:focus::before,
+.link-8:focus::after {
   transform: translateX(0);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 .link-9::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   content: "";
+  height: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transform: translateY(20px);
+  transition: none;
+  width: 100%;
+}
+}
+.link-9::before {
+  background: var(--link-color-focus);
+  content: "";
+  height: 2px;
   left: 0;
   opacity: 0;
   position: absolute;
   top: 100%;
   transform: translateY(20px);
   transition: opacity 0.4s, transform 0.4s;
+  width: 100%;
 }
-.link-9:hover::before {
+.link-9:hover::before, .link-9:focus::before {
   opacity: 1;
   transform: translateY(0);
 }
+@media screen and (prefers-reduced-motion: reduce) {
 .link-10::before {
-  width: 100%;
-  height: 2px;
   background: var(--link-color-focus);
   content: "";
+  height: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-15px);
+  transition: none;
+  width: 100%;
+}
+}
+.link-10::before {
+  background: var(--link-color-focus);
+  content: "";
+  height: 2px;
   left: 0;
   opacity: 0;
   position: absolute;
   top: 100%;
   transform: translateY(-15px);
   transition: opacity 0.4s, transform 0.4s;
+  width: 100%;
 }
-.link-10:hover::before {
+.link-10:hover::before, .link-10:focus::before {
   opacity: 1;
   transform: translateY(0);
 }
 .link-11:hover::before,
-.link-11:hover::after {
+.link-11:hover::after, .link-11:focus::before,
+.link-11:focus::after {
   content: "[";
   transform: translateX(-15px);
 }
@@ -1995,15 +2487,34 @@ iframe {
   transform: translateX(10px);
 }
 .link-12 {
-  width: 100%;
   height: 2px;
+  width: 100%;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-12:hover::before,
+.link-12:hover::after, .link-12:focus::before,
+.link-12:focus::after {
+  -webkit-animation: none;
+          animation: none;
+  content: "[";
+  transform-origin: -20px 50%;
+}
 }
 .link-12:hover::before,
-.link-12:hover::after {
+.link-12:hover::after, .link-12:focus::before,
+.link-12:focus::after {
   -webkit-animation: main 0.5s;
           animation: main 0.5s;
   content: "[";
   transform-origin: -20px 50%;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.link-12:hover::after, .link-12:focus::after {
+  -webkit-animation: none;
+          animation: none;
+  content: "]";
+  transform-origin: 20px 50%;
+}
 }
 .link-12:hover::after {
   -webkit-animation: main 0.5s;
@@ -2073,6 +2584,16 @@ a > span {
   color: inherit;
   position: relative;
   text-decoration: none;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+a::before,
+a::after,
+a > span::before,
+a > span::after {
+  content: "";
+  position: absolute;
+  transition: none;
+}
 }
 a::before,
 a::after,
@@ -2557,6 +3078,18 @@ th {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+.card {
+  background: transparent;
+  border: 1.6px solid var(--cl-grey-300);
+  border-radius: 1.618rem;
+  box-shadow: 0 3px 9px 0 var(--cl-grey-200);
+  color: var(--cl-black);
+  margin-bottom: 1.618rem;
+  position: relative;
+  transition: none;
+}
+}
 .card {
   background: transparent;
   border: 1.6px solid var(--cl-grey-300);
@@ -2646,13 +3179,13 @@ h6,
   margin-bottom: 0.4rem;
 }
 .header {
-  width: 100%;
-  height: 60px;
   box-shadow: none;
   display: block;
+  height: 60px;
   margin: 0 auto;
   max-width: 100%;
   overflow: hidden;
+  width: 100%;
   z-index: 10;
 }
 .header span {
@@ -2665,11 +3198,11 @@ h6,
   margin-top: 60px;
 }
 .mainInner {
-  width: 100%;
-  height: 100%;
   display: table;
+  height: 100%;
   position: absolute;
   text-align: center;
+  width: 100%;
 }
 .mainInner div {
   display: table-cell;
@@ -2679,13 +3212,13 @@ h6,
   vertical-align: middle;
 }
 #sidebar {
-  width: 100vw;
-  height: 100%;
   background: var(--cl-white);
+  height: 100%;
   left: 0;
   margin-top: 5rem;
   position: fixed;
   transform: translateX(-100vw);
+  width: 100vw;
   z-index: 1;
 }
 .nav {
@@ -2709,13 +3242,13 @@ h6,
   text-decoration: none;
   text-transform: uppercase;
 }
-.nav li:hover {
+.nav li:hover, .nav li:focus {
   background: var(--cl-black);
 }
-.nav li:hover a {
+.nav li:hover a, .nav li:focus a {
   color: var(--cl-white);
 }
-.nav li:hover > ul {
+.nav li:hover > ul, .nav li:focus > ul {
   display: block;
 }
 .nav li > ul {
@@ -2730,13 +3263,13 @@ h6,
   color: var(--cl-white);
   text-transform: none;
 }
-.nav li > ul > li a:hover {
+.nav li > ul > li a:hover, .nav li > ul > li a:focus {
   color: var(--cl-black);
 }
-.nav li > ul > li:hover {
+.nav li > ul > li:hover, .nav li > ul > li:focus {
   background: var(--cl-white);
 }
-.nav li > ul > li:hover a {
+.nav li > ul > li:hover a, .nav li > ul > li:focus a {
   color: var(--cl-black);
 }
 .nav ul {
@@ -2745,30 +3278,70 @@ h6,
 input[type="checkbox"]:checked ~ #sidebar {
   transform: translateX(0);
 }
+@media screen and (prefers-reduced-motion: reduce) {
+input[type="checkbox"] {
+  box-sizing: border-box;
+  display: none;
+  transition: none;
+}
+}
 input[type="checkbox"] {
   box-sizing: border-box;
   display: none;
   transition: all 0.3s;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 .hamburger-toggle {
-  width: 22px;
-  height: 22px;
   box-sizing: border-box;
   cursor: pointer;
   display: block;
+  height: 22px;
+  left: 15px;
+  position: absolute;
+  top: 22px;
+  transition: none;
+  width: 22px;
+  z-index: 99;
+}
+}
+.hamburger-toggle {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 22px;
   left: 15px;
   position: absolute;
   top: 22px;
   transition: all 0.3s;
+  width: 22px;
   z-index: 99;
 }
+@media screen and (prefers-reduced-motion: reduce) {
 .spinner {
-  width: 100%;
-  height: 3px;
   background-color: var(--cl-black);
   box-sizing: border-box;
+  height: 3px;
+  position: absolute;
+  transition: none;
+  width: 100%;
+}
+}
+.spinner {
+  background-color: var(--cl-black);
+  box-sizing: border-box;
+  height: 3px;
   position: absolute;
   transition: all 0.3s;
+  width: 100%;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.horizontal {
+  box-sizing: border-box;
+  float: left;
+  margin-top: 3px;
+  position: relative;
+  transition: none;
+}
 }
 .horizontal {
   box-sizing: border-box;
@@ -2777,11 +3350,28 @@ input[type="checkbox"] {
   position: relative;
   transition: all 0.3s;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+.diagonal.part-1 {
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  transition: none;
+}
+}
 .diagonal.part-1 {
   box-sizing: border-box;
   float: left;
   position: relative;
   transition: all 0.3s;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+.diagonal.part-2 {
+  box-sizing: border-box;
+  float: left;
+  margin-top: 3px;
+  position: relative;
+  transition: none;
+}
 }
 .diagonal.part-2 {
   box-sizing: border-box;
@@ -2790,16 +3380,39 @@ input[type="checkbox"] {
   position: relative;
   transition: all 0.3s;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+input[type="checkbox"]:checked ~ .hamburger-toggle > .horizontal {
+  box-sizing: border-box;
+  opacity: 0;
+  transition: none;
+}
+}
 input[type="checkbox"]:checked ~ .hamburger-toggle > .horizontal {
   box-sizing: border-box;
   opacity: 0;
   transition: all 0.3s;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-1 {
+  box-sizing: border-box;
+  margin-top: 8px;
+  transform: rotate(135deg);
+  transition: none;
+}
 }
 input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-1 {
   box-sizing: border-box;
   margin-top: 8px;
   transform: rotate(135deg);
   transition: all 0.3s;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-2 {
+  box-sizing: border-box;
+  margin-top: -9px;
+  transform: rotate(-135deg);
+  transition: none;
+}
 }
 input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-2 {
   box-sizing: border-box;
