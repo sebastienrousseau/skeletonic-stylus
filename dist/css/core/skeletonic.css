@@ -1899,7 +1899,7 @@ textarea {
   font-size: 2.01rem;
   margin: 1.618rem 0;
   outline: 0;
-  padding: 1.618rem 0 1.618rem 0.618rem;
+  padding: 1.62rem 0 1.62rem 0.62rem;
   transition: none;
   width: 100%;
 }
@@ -1923,7 +1923,7 @@ textarea {
   font-size: 2.01rem;
   margin: 1.618rem 0;
   outline: 0;
-  padding: 1.618rem 0 1.618rem 0.618rem;
+  padding: 1.62rem 0 1.62rem 0.62rem;
   transition: all 150ms linear;
   width: 100%;
 }
