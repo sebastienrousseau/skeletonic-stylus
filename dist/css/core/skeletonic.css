@@ -507,51 +507,51 @@ sub {
 }
 .flex-1 {
   flex: 1;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-2 {
   flex: 2;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-3 {
   flex: 3;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-4 {
   flex: 4;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-5 {
   flex: 5;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-6 {
   flex: 6;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-7 {
   flex: 7;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-8 {
   flex: 8;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-9 {
   flex: 9;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-10 {
   flex: 10;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-11 {
   flex: 11;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 .flex-12 {
   flex: 12;
-  margin: 0 1.618033988749895rem;
+  margin: 0 1.62rem;
 }
 @media only screen and (min-width: 13em) {
   .container {
@@ -688,7 +688,7 @@ sub {
 @media only screen and (min-width: 47em) {
   .container {
     margin: 0 auto;
-    width: 41em;
+    width: 40em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -699,7 +699,7 @@ sub {
 @media only screen and (min-width: 53em) {
   .container {
     margin: 0 auto;
-    width: 46em;
+    width: 45em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -710,7 +710,7 @@ sub {
 @media only screen and (min-width: 56em) {
   .container {
     margin: 0 auto;
-    width: 49em;
+    width: 48em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -743,7 +743,7 @@ sub {
 @media only screen and (min-width: 64em) {
   .container {
     margin: 0 auto;
-    width: 55em;
+    width: 54em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -831,7 +831,7 @@ sub {
 @media only screen and (min-width: 90em) {
   .container {
     margin: 0 auto;
-    width: 78em;
+    width: 77em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -886,7 +886,7 @@ sub {
 @media only screen and (min-width: 120em) {
   .container {
     margin: 0 auto;
-    width: 104em;
+    width: 103em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -908,7 +908,7 @@ sub {
 @media only screen and (min-width: 151em) {
   .container {
     margin: 0 auto;
-    width: 130em;
+    width: 129em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -941,7 +941,7 @@ sub {
 @media only screen and (min-width: 254em) {
   .container {
     margin: 0 auto;
-    width: 219em;
+    width: 218em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -952,7 +952,7 @@ sub {
 @media only screen and (min-width: 354em) {
   .container {
     margin: 0 auto;
-    width: 305em;
+    width: 303em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -963,7 +963,7 @@ sub {
 @media only screen and (min-width: 452em) {
   .container {
     margin: 0 auto;
-    width: 389em;
+    width: 387em;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1670,7 +1670,7 @@ samp {
   font-family: monospace;
   font-size: 1.62rem;
   overflow: auto;
-  padding: 1.618rem;
+  padding: 1.62rem;
 }
 pre {
   margin-bottom: 0;
@@ -1759,7 +1759,7 @@ code.error {
 hr {
   background-color: var(--cl-white);
   border: 0;
-  width: 98.382%;
+  width: 98.38%;
 }
 .hr-dashed {
   background: var(--cl-white);
@@ -1897,7 +1897,7 @@ textarea {
   display: block;
   font-family: "Consolas", "Monaco", "Menlo", monospace;
   font-size: 2.01rem;
-  margin: 1.618rem 0;
+  margin: 1.62rem 0;
   outline: 0;
   padding: 1.62rem 0 1.62rem 0.62rem;
   transition: none;
@@ -1921,7 +1921,7 @@ textarea {
   display: block;
   font-family: "Consolas", "Monaco", "Menlo", monospace;
   font-size: 2.01rem;
-  margin: 1.618rem 0;
+  margin: 1.62rem 0;
   outline: 0;
   padding: 1.62rem 0 1.62rem 0.62rem;
   transition: all 150ms linear;
@@ -2032,9 +2032,9 @@ textarea.input-error {
 }
 fieldset {
   border: 1px solid var(--cl-grey-200);
-  margin: 1.618rem 0;
+  margin: 1.62rem 0;
   min-width: 0;
-  padding: 1.618rem 0 1.618rem 1.618rem;
+  padding: 1.62rem 0 1.62rem 1.62rem;
 }
 img,
 video,
@@ -2605,7 +2605,7 @@ a > span::after {
 }
 ul,
 ol {
-  margin: 1.618rem;
+  margin: 1.62rem;
 }
 ul {
   list-style: none outside;
@@ -2617,7 +2617,7 @@ ol,
 ul.square,
 ul.circle,
 ul.disc {
-  margin: 1.618rem;
+  margin: 1.62rem;
 }
 ul.square {
   list-style: square outside;
@@ -3060,18 +3060,18 @@ th {
   color: var(--cl-white);
 }
 .card-content {
-  padding: 1.618rem;
+  padding: 1.62rem;
 }
 .card-body {
   flex: 1 1 auto;
-  padding: 1.618rem;
+  padding: 1.62rem;
 }
 .card-title {
-  margin-bottom: 1.618rem;
+  margin-bottom: 1.62rem;
 }
 .card-subtitle {
   margin-bottom: 0;
-  margin-top: -1.618rem;
+  margin-top: -1.62rem;
 }
 .cards {
   display: flex;
@@ -3082,10 +3082,10 @@ th {
 .card {
   background: transparent;
   border: 1.6px solid var(--cl-grey-300);
-  border-radius: 1.618rem;
+  border-radius: 1.62rem;
   box-shadow: 0 3px 9px 0 var(--cl-grey-200);
   color: var(--cl-black);
-  margin-bottom: 1.618rem;
+  margin-bottom: 1.62rem;
   position: relative;
   transition: none;
 }
@@ -3093,10 +3093,10 @@ th {
 .card {
   background: transparent;
   border: 1.6px solid var(--cl-grey-300);
-  border-radius: 1.618rem;
+  border-radius: 1.62rem;
   box-shadow: 0 3px 9px 0 var(--cl-grey-200);
   color: var(--cl-black);
-  margin-bottom: 1.618rem;
+  margin-bottom: 1.62rem;
   position: relative;
   transition: 0.3s;
 }
