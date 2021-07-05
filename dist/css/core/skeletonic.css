@@ -1371,7 +1371,7 @@ button.link:focus,
   border: 0;
   border-radius: 0;
   letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
+  text-rendering: optimizeSpeed;
 }
 @media screen and (prefers-reduced-motion: reduce) {
 .btn {
