@@ -16,16 +16,12 @@
 
 -   [Welcome to the Skeletonic Stylus Library](#welcome-to-the-skeletonic-stylus-library)
 
-
 -   [Index](#index)
-
 
 -   [The Skeletonic Stylus Library](#the-skeletonic-stylus-library)
 -   [Documentation](#documentation)
 
-
 -   [Installation](#installation)
-
 
 -   [From NPM or YARN](#from-npm-or-yarn)
 -   [From CDN](#from-cdn)
@@ -36,8 +32,8 @@
 -   [Versioning](#versioning)
 -   [Built with](#built-with)
 
-
 -   [Contributing](#contributing)
+
 -   [Code of Conduct](#code-of-conduct)
 -   [Our Values](#our-values)
 -   [Releases](#releases)
