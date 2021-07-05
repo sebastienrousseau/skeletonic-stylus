@@ -74,6 +74,10 @@ tachyons = {
 
 }
 
+:root
+  for name, tachyon in tachyons
+    --cl-{name}(tachyon)
+
 for name, tachyon in tachyons
     .bg-tachyons-{name}
         background-color: (tachyon)
@@ -83,5 +87,4 @@ for name, tachyon in tachyons
 
     :root
         --cl-{name}(tachyon)
-
 /* @end */
