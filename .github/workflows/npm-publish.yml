@@ -46,7 +46,7 @@ jobs:
         node-version: '16.x'
         registry-url: 'https://registry.npmjs.org'
         scope: sebastienrousseau
-    - run: rm .npmrc && npm install && npm publish --access=public
+    - run: npm install && npm publish --access=public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - uses: actions/setup-node@v2
@@ -54,6 +54,6 @@ jobs:
         node-version: '16.x'
         registry-url: 'https://npm.pkg.github.com'
         scope: sebastienrousseau
-    - run: rm .npmrc && npm install && npm publish --access=public
+    - run: npm install && npm publish --access=public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
