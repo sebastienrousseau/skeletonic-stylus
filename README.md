@@ -10,7 +10,7 @@
 ![Banner representing the Skeletonic Stylus Library](./images/skeletonic-stylus.svg)
 
 [![Getting Started](./images/button-primary.svg)](#the-skeletonic-stylus-library)
-[![Download Skeletonic Stylus v1.1.1](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.1.zip)
+[![Download Skeletonic Stylus v1.1.2](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.2.zip)
 
 ## Index
 
@@ -73,8 +73,10 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 
 | CDN                                   | URL                                                                           | HTTPS | Combo |
 | ------------------------------------- | ----------------------------------------------------------------------------- | ----- | ----- |
-| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.1/css/skeletonic.min.css>            | Yes   | No    |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.1/css/skeletonic.min.css> | Yes   | Yes   |
+| [GitHub Packages](https://docs.github.com/en/packages)           | <https://github.com/sebastienrousseau/skeletonic-stylus/packages>            | Yes   | No    |
+| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.2/css/skeletonic.min.css>            | Yes   | No    |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.2/css/skeletonic.min.css> | Yes   | Yes   |
+
 
 ### From GitHub
 
@@ -87,7 +89,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.1.1
+skeletonic-1.1.2
 dist
 ├── README.md
 ├── css
