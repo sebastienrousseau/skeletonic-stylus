@@ -1,6 +1,7 @@
 {
     "name": "@sebastienrousseau/skeletonic-stylus",
-    "version": "1.1.2",
+    "// name": " --- skeletonic-stylus --- ",
+    "version": "1.1.3",
     "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
     "keywords": [
         "css",
@@ -13,9 +14,6 @@
         "stylus-mixin",
         "stylus"
     ],
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/@sebastienrousseau"
-    },
     "main": "src/stylus/skeletonic.styl",
     "style": "dist/css/core/skeletonic.min.css",
     "filename": "dist/css/core/skeletonic.css",
@@ -31,6 +29,9 @@
         "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
     },
     "homepage": "https://skeletonicstylus.com",
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com"
+    },
     "autoupdate": {
         "source": "git",
         "target": "git://github.com/sebastienrousseau/skeletonic-stylus.git",
@@ -124,6 +125,8 @@
         "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",
         "dev:stylelint:check": "stylelint-config-prettier-check",
         "// Production": " --- Production Scripts --- ",
+        "postpublish": "npm run publish-npm",
+        "publish-npm": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'",
         "prepare:skeletonic:stylus": "npm run build",
         "publish:skeletonic:stylus": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
         "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0"
