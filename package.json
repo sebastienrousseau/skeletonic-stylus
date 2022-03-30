@@ -152,7 +152,7 @@
         "stylelint-order": "^5.0.0",
         "stylelint-prettier": "^2.0.0",
         "stylelint-processor-styled-components": "^1.10.0",
-        "stylus": "^0.56.0",
+        "stylus": "^0.57.0",
         "stylus-supremacy": "^2.15.0",
         "tablemark-cli": "^2.0.0"
     },
