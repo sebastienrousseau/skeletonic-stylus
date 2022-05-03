@@ -154,7 +154,7 @@
         "stylelint-processor-styled-components": "^1.10.0",
         "stylus": "^0.57.0",
         "stylus-supremacy": "^2.15.0",
-        "tablemark-cli": "^2.0.0"
+        "tablemark-cli": "^3.0.0"
     },
     "dependencies": {
         "npm": "^8.0.0"
