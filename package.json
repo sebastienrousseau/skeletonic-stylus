@@ -157,7 +157,7 @@
         "tablemark-cli": "^3.0.0"
     },
     "dependencies": {
-        "npm": "^8.0.0"
+        "npm": "^8.18.0"
     },
     "pre-commit": "dev:lint:stylus"
 }
