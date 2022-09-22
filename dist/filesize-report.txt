@@ -21,15 +21,15 @@
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/fonts/skeletonic-fonts-report.txt                │   1.86 kB │          231 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/fonts/skeletonic-fonts.css                       │   6.41 kB │          709 B │
+│ css/fonts/skeletonic-fonts.css                       │   6.41 kB │          708 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/fonts/skeletonic-fonts.css.map                   │   7.87 kB │        1.04 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/fonts/skeletonic-fonts.min.css                   │   4.76 kB │          424 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/hebrew-fonts/skeletonic-hebrew-fonts-report.txt  │   2.07 kB │          241 B │
+│ css/hebrew-fonts/skeletonic-hebrew-fonts-report.txt  │   2.07 kB │          242 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/hebrew-fonts/skeletonic-hebrew-fonts.css         │   7.76 kB │          735 B │
+│ css/hebrew-fonts/skeletonic-hebrew-fonts.css         │   7.76 kB │          734 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/hebrew-fonts/skeletonic-hebrew-fonts.css.map     │   9.22 kB │        1.08 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤

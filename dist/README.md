@@ -22,7 +22,7 @@ The Stylus Skeletonic Library is a lightweight, intuitive, accessible and ultra-
 It is based on the [Skeleton](http://getskeleton.com) framework and is written in [Stylus](http://stylus-lang.com).
 
 [![Getting Started](./images/button-primary.svg)](#the-skeletonic-stylus-library)
-[![Download the Skeletonic Stylus Library v1.1.4](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.4.zip)
+[![Download the Skeletonic Stylus Library v1.1.5](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.5.zip)
 
 ## Index
 
@@ -80,8 +80,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 | CDN                                   | URL                                                                           | HTTPS | Combo |
 | ------------------------------------- | ----------------------------------------------------------------------------- | ----- | ----- |
 | [GitHub Packages](https://docs.github.com/en/packages)           | <https://github.com/sebastienrousseau/skeletonic-stylus/packages>            | Yes   | No    |
-| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.4/css/skeletonic.min.css>            | Yes   | No    |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.4/css/skeletonic.min.css> | Yes   | Yes   |
+| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.5/css/skeletonic.min.css>            | Yes   | No    |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.5/css/skeletonic.min.css> | Yes   | Yes   |
 
 ### From GitHub
 
@@ -94,177 +94,176 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.1.4
+skeletonic-1.1.5
 dist
-├── README.md
-├── css
-│   ├── animations
-│   │   ├── skeletonic-animations-report.txt
-│   │   ├── skeletonic-animations.css
-│   │   ├── skeletonic-animations.css.map
-│   │   └── skeletonic-animations.min.css
-│   ├── core
-│   │   ├── skeletonic-report.txt
-│   │   ├── skeletonic.css
-│   │   ├── skeletonic.css.map
-│   │   └── skeletonic.min.css
-│   ├── fonts
-│   │   ├── skeletonic-fonts-report.txt
-│   │   ├── skeletonic-fonts.css
-│   │   ├── skeletonic-fonts.css.map
-│   │   └── skeletonic-fonts.min.css
-│   ├── hebrew-fonts
-│   │   ├── skeletonic-hebrew-fonts-report.txt
-│   │   ├── skeletonic-hebrew-fonts.css
-│   │   ├── skeletonic-hebrew-fonts.css.map
-│   │   └── skeletonic-hebrew-fonts.min.css
-│   └── palettes
-│       ├── material
-│       │   ├── skeletonic-material-report.txt
-│       │   ├── skeletonic-material.css
-│       │   ├── skeletonic-material.css.map
-│       │   └── skeletonic-material.min.css
-│       ├── tachyons
-│       │   ├── skeletonic-tachyons-report.txt
-│       │   ├── skeletonic-tachyons.css
-│       │   ├── skeletonic-tachyons.css.map
-│       │   └── skeletonic-tachyons.min.css
-│       └── websafe
-│           ├── skeletonic-websafe-report.txt
-│           ├── skeletonic-websafe.css
-│           ├── skeletonic-websafe.css.map
-│           └── skeletonic-websafe.min.css
-├── filesize-report.txt
-├── images
-│   ├── button-primary.svg
-│   ├── button-secondary.svg
-│   ├── skeletonic-logo.svg
-│   ├── skeletonic-stylus-readme.svg
-│   └── skeletonic-stylus.svg
-├── package.json
-└── stylus
-    ├── README.md
-    ├── animations
-    │   ├── Distracting
-    │   │   ├── bounce.styl
-    │   │   ├── chameleonbackground.styl
-    │   │   ├── chameleontext.styl
-    │   │   ├── flash.styl
-    │   │   ├── heartbeat.styl
-    │   │   ├── jelly.styl
-    │   │   ├── pulse.styl
-    │   │   ├── rubber.styl
-    │   │   ├── shake.styl
-    │   │   ├── swing.styl
-    │   │   ├── tada.styl
-    │   │   └── wobble.styl
-    │   ├── Fading
-    │   │   ├── fadeIn.styl
-    │   │   ├── fadeInDown.styl
-    │   │   ├── fadeInLeft.styl
-    │   │   ├── fadeInRight.styl
-    │   │   ├── fadeInUp.styl
-    │   │   ├── fadeOut.styl
-    │   │   ├── fadeOutDown.styl
-    │   │   ├── fadeOutLeft.styl
-    │   │   ├── fadeOutRight.styl
-    │   │   └── fadeOutUp.styl
-    │   ├── Flipping
-    │   │   ├── flip.styl
-    │   │   ├── flipInHorizontal.styl
-    │   │   ├── flipInVertical.styl
-    │   │   ├── flipOutHorizontal.styl
-    │   │   └── flipOutVertical.styl
-    │   ├── Pop
-    │   │   ├── popIn.styl
-    │   │   └── popOut.styl
-    │   ├── README.md
-    │   ├── Rolling
-    │   │   ├── rollIn.styl
-    │   │   └── rollOut.styl
-    │   ├── Rotating
-    │   │   ├── spinLeft.styl
-    │   │   └── spinRight.styl
-    │   ├── Sliding
-    │   │   ├── slideInDown.styl
-    │   │   ├── slideInLeft.styl
-    │   │   ├── slideInRight.styl
-    │   │   ├── slideInUp.styl
-    │   │   ├── slideOutDown.styl
-    │   │   ├── slideOutLeft.styl
-    │   │   ├── slideOutRight.styl
-    │   │   └── slideOutUp.styl
-    │   ├── Vanishing
-    │   │   ├── vanishIn.styl
-    │   │   └── vanishOut.styl
-    │   ├── Zooming
-    │   │   ├── zoomIn.styl
-    │   │   └── zoomOut.styl
-    │   ├── _contents.styl
-    │   └── animationsBase.styl
-    ├── base
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── helpers.styl
-    │   └── reset.styl
-    ├── components
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── card.styl
-    │   ├── header.styl
-    │   └── navbar.styl
-    ├── configurations
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── colors.styl
-    │   └── variables.styl
-    ├── debugging
-    │   ├── base64
-    │   └── images
-    ├── elements
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── button.styl
-    │   ├── clipboard.styl
-    │   ├── code.styl
-    │   ├── divider.styl
-    │   ├── fieldset.styl
-    │   ├── form.styl
-    │   ├── image.styl
-    │   ├── label.styl
-    │   ├── link-effects.styl
-    │   ├── link.styl
-    │   ├── list.styl
-    │   ├── margin.styl
-    │   ├── padding.styl
-    │   └── table.styl
-    ├── fonts
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   └── open-sans.styl
-    ├── hebrew-fonts
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   └── open-sans-hebrew.styl
-    ├── layout
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── container.styl
-    │   ├── grid.styl
-    │   └── media-queries.styl
-    ├── palettes
-    │   ├── README.md
-    │   ├── _contents.styl
-    │   ├── material.styl
-    │   ├── tachyons.styl
-    │   └── websafe.styl
-    ├── skeletonic.styl
-    └── utilities
-        ├── README.md
-        ├── _contents.styl
-        └── mixins.styl
+[ 256]  ./
+├── [ 224]  css/
+│   ├── [ 192]  animations/
+│   │   ├── [2.0K]  skeletonic-animations-report.txt
+│   │   ├── [349K]  skeletonic-animations.css
+│   │   ├── [395K]  skeletonic-animations.css.map
+│   │   └── [110K]  skeletonic-animations.min.css
+│   ├── [ 192]  core/
+│   │   ├── [1.6K]  skeletonic-report.txt
+│   │   ├── [ 48K]  skeletonic.css
+│   │   ├── [ 72K]  skeletonic.css.map
+│   │   └── [ 37K]  skeletonic.min.css
+│   ├── [ 192]  fonts/
+│   │   ├── [1.8K]  skeletonic-fonts-report.txt
+│   │   ├── [6.3K]  skeletonic-fonts.css
+│   │   ├── [7.7K]  skeletonic-fonts.css.map
+│   │   └── [4.7K]  skeletonic-fonts.min.css
+│   ├── [ 192]  hebrew-fonts/
+│   │   ├── [2.0K]  skeletonic-hebrew-fonts-report.txt
+│   │   ├── [7.6K]  skeletonic-hebrew-fonts.css
+│   │   ├── [9.0K]  skeletonic-hebrew-fonts.css.map
+│   │   └── [5.8K]  skeletonic-hebrew-fonts.min.css
+│   └── [ 160]  palettes/
+│       ├── [ 192]  material/
+│       │   ├── [1.9K]  skeletonic-material-report.txt
+│       │   ├── [ 22K]  skeletonic-material.css
+│       │   ├── [ 34K]  skeletonic-material.css.map
+│       │   └── [ 17K]  skeletonic-material.min.css
+│       ├── [ 192]  tachyons/
+│       │   ├── [1.9K]  skeletonic-tachyons-report.txt
+│       │   ├── [8.7K]  skeletonic-tachyons.css
+│       │   ├── [ 13K]  skeletonic-tachyons.css.map
+│       │   └── [6.9K]  skeletonic-tachyons.min.css
+│       └── [ 192]  websafe/
+│           ├── [1.9K]  skeletonic-websafe-report.txt
+│           ├── [4.1K]  skeletonic-websafe.css
+│           ├── [6.2K]  skeletonic-websafe.css.map
+│           └── [3.3K]  skeletonic-websafe.min.css
+├── [ 256]  images/
+│   ├── [ 12K]  button-primary.svg
+│   ├── [6.3K]  button-secondary.svg
+│   ├── [1.4K]  made-with-love.svg
+│   ├── [ 19K]  skeletonic-logo.svg
+│   ├── [294K]  skeletonic-stylus-logo.svg
+│   └── [ 55K]  skeletonic-stylus-readme.svg
+├── [ 480]  stylus/
+│   ├── [ 448]  animations/
+│   │   ├── [ 448]  Distracting/
+│   │   │   ├── [ 402]  bounce.styl
+│   │   │   ├── [1.2K]  chameleonbackground.styl
+│   │   │   ├── [1.2K]  chameleontext.styl
+│   │   │   ├── [ 314]  flash.styl
+│   │   │   ├── [ 462]  heartbeat.styl
+│   │   │   ├── [ 693]  jelly.styl
+│   │   │   ├── [ 389]  pulse.styl
+│   │   │   ├── [ 581]  rubber.styl
+│   │   │   ├── [3.3K]  shake.styl
+│   │   │   ├── [ 500]  swing.styl
+│   │   │   ├── [ 587]  tada.styl
+│   │   │   └── [ 718]  wobble.styl
+│   │   ├── [ 384]  Fading/
+│   │   │   ├── [ 360]  fadeIn.styl
+│   │   │   ├── [ 447]  fadeInDown.styl
+│   │   │   ├── [ 447]  fadeInLeft.styl
+│   │   │   ├── [ 451]  fadeInRight.styl
+│   │   │   ├── [ 436]  fadeInUp.styl
+│   │   │   ├── [ 368]  fadeOut.styl
+│   │   │   ├── [ 452]  fadeOutDown.styl
+│   │   │   ├── [ 452]  fadeOutLeft.styl
+│   │   │   ├── [ 456]  fadeOutRight.styl
+│   │   │   └── [ 441]  fadeOutUp.styl
+│   │   ├── [ 224]  Flipping/
+│   │   │   ├── [1002]  flip.styl
+│   │   │   ├── [ 721]  flipInHorizontal.styl
+│   │   │   ├── [ 713]  flipInVertical.styl
+│   │   │   ├── [ 740]  flipOutHorizontal.styl
+│   │   │   └── [ 513]  flipOutVertical.styl
+│   │   ├── [ 128]  Pop/
+│   │   │   ├── [ 369]  popIn.styl
+│   │   │   └── [ 373]  popOut.styl
+│   │   ├── [ 128]  Rolling/
+│   │   │   ├── [ 414]  rollIn.styl
+│   │   │   └── [ 416]  rollOut.styl
+│   │   ├── [ 128]  Rotating/
+│   │   │   ├── [ 411]  spinLeft.styl
+│   │   │   └── [ 415]  spinRight.styl
+│   │   ├── [ 320]  Sliding/
+│   │   │   ├── [ 457]  slideInDown.styl
+│   │   │   ├── [ 457]  slideInLeft.styl
+│   │   │   ├── [ 461]  slideInRight.styl
+│   │   │   ├── [ 446]  slideInUp.styl
+│   │   │   ├── [ 459]  slideOutDown.styl
+│   │   │   ├── [ 461]  slideOutLeft.styl
+│   │   │   ├── [ 465]  slideOutRight.styl
+│   │   │   └── [ 451]  slideOutUp.styl
+│   │   ├── [ 128]  Vanishing/
+│   │   │   ├── [ 480]  vanishIn.styl
+│   │   │   └── [ 484]  vanishOut.styl
+│   │   ├── [ 128]  Zooming/
+│   │   │   ├── [ 347]  zoomIn.styl
+│   │   │   └── [ 354]  zoomOut.styl
+│   │   ├── [ 189]  README.md
+│   │   ├── [1.9K]  _contents.styl
+│   │   └── [1.4K]  animationsBase.styl
+│   ├── [ 192]  base/
+│   │   ├── [ 161]  README.md
+│   │   ├── [  44]  _contents.styl
+│   │   ├── [2.1K]  helpers.styl
+│   │   └── [1.3K]  reset.styl
+│   ├── [ 224]  components/
+│   │   ├── [ 171]  README.md
+│   │   ├── [  64]  _contents.styl
+│   │   ├── [1.3K]  card.styl
+│   │   ├── [ 555]  header.styl
+│   │   └── [3.0K]  navbar.styl
+│   ├── [ 192]  configurations/
+│   │   ├── [ 185]  README.md
+│   │   ├── [  47]  _contents.styl
+│   │   ├── [3.0K]  colors.styl
+│   │   └── [2.2K]  variables.styl
+│   ├── [ 576]  elements/
+│   │   ├── [ 167]  README.md
+│   │   ├── [ 310]  _contents.styl
+│   │   ├── [6.1K]  button.styl
+│   │   ├── [ 476]  clipboard.styl
+│   │   ├── [3.1K]  code.styl
+│   │   ├── [2.7K]  divider.styl
+│   │   ├── [ 332]  fieldset.styl
+│   │   ├── [3.0K]  form.styl
+│   │   ├── [ 282]  image.styl
+│   │   ├── [ 175]  label.styl
+│   │   ├── [4.4K]  link-effects.styl
+│   │   ├── [ 740]  link.styl
+│   │   ├── [ 546]  list.styl
+│   │   ├── [ 708]  margin.styl
+│   │   ├── [ 679]  padding.styl
+│   │   └── [ 662]  table.styl
+│   ├── [ 160]  fonts/
+│   │   ├── [ 171]  README.md
+│   │   ├── [  25]  _contents.styl
+│   │   └── [6.2K]  open-sans.styl
+│   ├── [ 160]  hebrew-fonts/
+│   │   ├── [ 171]  README.md
+│   │   ├── [  32]  _contents.styl
+│   │   └── [7.5K]  open-sans-hebrew.styl
+│   ├── [ 224]  layout/
+│   │   ├── [ 165]  README.md
+│   │   ├── [  74]  _contents.styl
+│   │   ├── [ 420]  container.styl
+│   │   ├── [ 658]  grid.styl
+│   │   └── [ 762]  media-queries.styl
+│   ├── [ 224]  palettes/
+│   │   ├── [ 181]  README.md
+│   │   ├── [  72]  _contents.styl
+│   │   ├── [5.8K]  material.styl
+│   │   ├── [2.4K]  tachyons.styl
+│   │   └── [5.2K]  websafe.styl
+│   ├── [ 160]  utilities/
+│   │   ├── [ 171]  README.md
+│   │   ├── [  22]  _contents.styl
+│   │   └── [ 405]  mixins.styl
+│   ├── [ 154]  README.md
+│   └── [ 256]  skeletonic.styl
+├── [ 16K]  README.md
+├── [ 11K]  filesize-report.txt
+└── [ 14K]  package.json
 
-33 directories, 134 files
+30 directories, 135 files
 ```
 ### Support for bidirectional languages
 

@@ -22,7 +22,7 @@ The Stylus Skeletonic Library is a lightweight, intuitive, accessible and ultra-
 It is based on the [Skeleton](http://getskeleton.com) framework and is written in [Stylus](http://stylus-lang.com).
 
 [![Getting Started](./images/button-primary.svg)](#the-skeletonic-stylus-library)
-[![Download the Skeletonic Stylus Library v1.1.4](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.4.zip)
+[![Download the Skeletonic Stylus Library v1.1.5](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.5.zip)
 
 ## Index
 
@@ -80,8 +80,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 | CDN                                   | URL                                                                           | HTTPS | Combo |
 | ------------------------------------- | ----------------------------------------------------------------------------- | ----- | ----- |
 | [GitHub Packages](https://docs.github.com/en/packages)           | <https://github.com/sebastienrousseau/skeletonic-stylus/packages>            | Yes   | No    |
-| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.4/css/skeletonic.min.css>            | Yes   | No    |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.4/css/skeletonic.min.css> | Yes   | Yes   |
+| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.5/css/skeletonic.min.css>            | Yes   | No    |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.5/css/skeletonic.min.css> | Yes   | Yes   |
 
 ### From GitHub
 
@@ -94,7 +94,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.1.4
+skeletonic-1.1.5
 dist
 [ 256]  ./
 ├── [ 224]  css/
