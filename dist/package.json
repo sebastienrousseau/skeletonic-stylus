@@ -131,6 +131,7 @@
         "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0"
     },
     "devDependencies": {
+        "@sebastienrousseau/markdownlint-config": "^0.0.1",
         "autoprefixer": "^10.4.12",
         "clean-css-cli": "^5.6.1",
         "csso-cli": "^4.0.1",
