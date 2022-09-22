@@ -37,24 +37,26 @@ jobs:
     env:
       CI: true
 
-  publish:
+  publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '16.x'
-        registry-url: 'https://registry.npmjs.org'
-        scope: sebastienrousseau
-    - uses: pnpm/action-setup@v2.1.0
-      with:
-        version: 6.24.2
-    - name: Set package registry
-      run: pnpm config set registry https://npm.pkg.github.com
-    - name: GitHub package registry authentication
-      run: pnpm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
-    - name: Npm registry authentication
-      run: pnpm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-    - name: Publish the package to GitHub and Npm package registries
-      run: pnpm publish --access=public
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+          scope: sebastienrousseau
+      - run: pnpm ci
+      - run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set package registry
+        run: pnpm config set registry https://npm.pkg.github.com
+      - name: GitHub package registry authentication
+        run: pnpm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+      - name: Npm registry authentication
+        run: pnpm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      - name: Publish the package to GitHub and Npm package registries
+        run: pnpm publish --access=public
