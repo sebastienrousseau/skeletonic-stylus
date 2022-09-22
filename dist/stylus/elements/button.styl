@@ -1,0 +1,231 @@
+/*
+ * Skeletonic Stylus Library v1.1.3
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Button */
+
+-highlight($strength = .3)
+  box-shadow: s("inset 0 " + round($gr px, 1) + " 0 %s", rgba(255, 255, 255, $strength))
+
+button, .button, [type=submit]
+  -highlight()
+  background: var(--bg-disable)
+  border:0
+  cursor: pointer
+  display: inline-block
+  font-size: $gr-fsb rem
+  margin-bottom: round($gr rem, 1)
+  min-width: 27rem
+  padding: round($gr rem, 1)
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  transition-timing-function: ease-in-out
+  user-select: none
+  vertical-align: middle
+  white-space: nowrap
+  &:link, &:visited
+    background: var(--cl-grey-900)
+    color: var(--cl-white)
+  &:active,
+  &.active
+    background: var(--cl-grey-1000)
+    color: var(--cl-white)
+    opacity: .85
+    text-decoration: none
+    transition: all 150ms linear
+  &:hover
+    opacity: .9
+    text-decoration: none
+    transition: all 150ms linear
+  &:focus
+    background: var(--cl-grey-200)
+    opacity: .7
+    text-decoration: none
+    transition: all 150ms linear
+  &:disabled
+    background: var(--cl-grey-700)
+    color: var(--cl-white)
+    cursor: not-allowed
+    outline: 0
+    transition: all 150ms linear
+    user-select: none
+  &.primary
+    background: var(--cl-primary)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.secondary
+    background: var(--cl-secondary)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.info
+    background: var(--cl-info)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.success
+    background: var(--cl-success)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.error
+    background: var(--cl-danger)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.warning
+    background: var(--cl-warning)
+    color: var(--cl-white)
+    cursor: pointer
+    transition: all 150ms linear
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &.link
+    background: 0 0
+    border-color: transparent
+    box-shadow: none
+    color: var(--link-color)
+    cursor: pointer
+    text-decoration: none
+    transition: all 150ms linear
+    &:visited
+      color: var(--link-color-visited)
+    &:active, &:hover
+      color: var(--link-color-hover)
+      text-decoration: underline
+    &:focus
+      color: var(--link-color-focus)
+      outline: 1px thin dotted auto -webkit-focus-ring-color
+      outline-offset: -2px
+.button-group
+  border: 0
+  border-radius: 0
+  letter-spacing: -.31em
+  text-rendering: optimizespeed
+.btn
+  border-radius: .3rem
+  cursor: pointer
+  display: inline-block
+  font-size: $gr-fsb
+  line-height: 60px
+  min-height: 60px
+  min-width: 60px
+  position: relative
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  transition: all 150ms linear
+  user-select: none
+  vertical-align: middle
+  white-space: nowrap
+  z-index: 1
+  &:hover
+    opacity: .5
+    text-decoration: none
+    transition: all 150ms linear
+  &-round
+    border-radius: 50%
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &-oval
+    border-radius: 61.25rem
+    min-width: 9rem
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+  &-outline
+    border: 2px solid transparent
+    &:hover
+      opacity: .5
+      text-decoration: none
+      transition: all 150ms linear
+.block
+  border: 0
+  display: block
+  height: 60px
+  line-height: 60px
+  padding: .6rem
+  width: 98.7%
+button.primary-outline, .button.primary-outline, [type=submit].primary-outline
+	background-color: var(--cl-white)
+	border: 1px solid var(--cl-primary)
+	color: var(--cl-primary)
+button.primary-outline:hover, .button.primary-outline:hover, [type=submit].primary-outline:hover
+	background-color: var(--bg-primary)
+	color: var(--cl-primary)
+	opacity: 1
+	text-decoration: none
+	transition: all 150ms linear
+button.secondary-outline, .button.secondary-outline, [type=submit].secondary-outline
+	background-color: var(--cl-white)
+	border: 1px solid var(--cl-secondary)
+	color: var(--cl-secondary)
+button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].secondary-outline:hover
+	background-color: var(--bg-secondary)
+	color: var(--cl-secondary)
+	opacity: 1
+	text-decoration: none
+	transition: all 150ms linear
+button.success-outline, .button.success-outline, [type=submit].success-outline
+	background-color: var(--cl-white)
+	border: 1px solid var(--cl-success)
+	color: var(--cl-success)
+button.success-outline:hover, .button.success-outline:hover, [type=submit].success-outline:hover
+	background-color: var(--bg-success)
+	color: var(--cl-success)
+	opacity: 1
+	text-decoration: none
+	transition: all 150ms linear
+button.error-outline, .button.error-outline, [type=submit].error-outline
+	background-color: var(--cl-white)
+	border: 1px solid var(--cl-danger)
+	color: var(--cl-danger)
+button.error-outline:hover, .button.error-outline:hover, [type=submit].error-outline:hover
+	background-color: var(--bg-danger)
+	color: var(--cl-danger)
+	opacity: 1
+	text-decoration: none
+	transition: all 150ms linear
+button.warning-outline, .button.warning-outline, [type=submit].warning-outline
+	background-color: var(--cl-white)
+	border: 1px solid var(--cl-warning)
+	color: var(--cl-warning)
+button.warning-outline:hover, .button.warning-outline:hover, [type=submit].warning-outline:hover
+	background-color: var(--bg-warning)
+	color: var(--cl-warning)
+	opacity: 1
+	text-decoration: none
+	transition: all 150ms linear
+
+/* @end */

@@ -1,0 +1,42 @@
+/*
+ * Skeletonic Stylus Library v1.1.3
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Lists */
+ul, ol
+  margin: ($gr)rem
+
+ul
+  list-style: none outside
+
+ol
+  list-style: decimal
+
+ol,
+ul.square,
+ul.circle,
+ul.disc
+
+    margin: ($gr)rem
+
+ul.square
+    list-style: square outside
+
+ul.circle
+    list-style: circle outside
+
+ul.disc
+    list-style: disc outside
+
+ul ul,
+ul ol,
+ol ol,
+ol ul
+    font-size: 100%
+    margin: round($gr, 1) rem
+
+/* @end */

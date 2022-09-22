@@ -1,0 +1,28 @@
+/*
+ * Skeletonic Stylus Library v1.1.3
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Flip Vertical Animation */
+@keyframes flipInVertical
+  from
+    animation-timing-function: ease-in
+    opacity: 0
+    transform: perspective(1618px) rotate3d(1, 0, 0, 90deg)
+  40%
+    animation-timing-function: ease-in
+    transform: perspective(1618px) rotate3d(1, 0, 0, -20deg)
+  60%
+    opacity: 1
+    transform: perspective(1618px) rotate3d(1, 0, 0, 10deg)
+  80%
+    transform: perspective(1618px) rotate3d(1, 0, 0, -5deg)
+  to
+    transform: perspective(1618px)
+
+.flipInVertical
+  animation-name: flipInVertical
+/* @end */
