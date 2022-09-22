@@ -2,7 +2,7 @@
  * Skeletonic Stylus Library v1.1.3
  * https://skeletonicstylus.com
  *
- * Copyright (c) Sebastien Rousseau 2021. All rights reserved
+ * Copyright (c) Sebastien Rousseau 2022. All rights reserved
  * Licensed under the MIT license
  */
 .reverse {
@@ -13,12 +13,6 @@
 }
 .alternate-reverse {
   animation-direction: alternate-reverse;
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.bounce {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .bounce {
   -webkit-animation-name: bounce;
@@ -63,12 +57,6 @@
   to {
     transform: translate3d(0, 25%, 0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.chameleonbackground {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .chameleonbackground {
   -webkit-animation-name: chameleonbackground;
@@ -5498,15 +5486,6 @@
   100% {
     background-image: linear-gradient(135deg, #a80000, #ff5252);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.chameleontext {
-  -webkit-animation: none;
-          animation: none;
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-}
 }
 .chameleontext {
   -webkit-animation-name: chameleontext;
@@ -10940,12 +10919,6 @@
     background-image: linear-gradient(135deg, #a80000, #ff5252);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.flash {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .flash {
   -webkit-animation-name: flash;
           animation-name: flash;
@@ -10994,12 +10967,6 @@
   50% {
     opacity: 1;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.heartbeat {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .heartbeat {
   -webkit-animation-name: heartbeat;
@@ -11104,12 +11071,6 @@
   100% {
     transform: scale(0.75);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.jelly {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .jelly {
   -webkit-animation-name: jelly;
@@ -11255,12 +11216,6 @@
     transform: skewX(-0.2deg) skewY(-0.2deg);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.pulse {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .pulse {
   -webkit-animation-name: pulse;
           animation-name: pulse;
@@ -11319,12 +11274,6 @@
   to {
     transform: scale3d(1, 1, 1);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.rubberBand {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .rubberBand {
   -webkit-animation-name: rubberBand;
@@ -11444,12 +11393,6 @@
   to {
     transform: scale3d(1, 1, 1);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.shake {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .shake {
   -webkit-animation-name: shake;
@@ -12215,12 +12158,6 @@
     transform: translate(0, 0) rotate(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.swing {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .swing {
   -webkit-animation-name: swing;
           animation-name: swing;
@@ -12309,12 +12246,6 @@
   to {
     transform: rotate3d(0, 0, 1, 0deg);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.tada {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .tada {
   -webkit-animation-name: tada;
@@ -12435,12 +12366,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.wobble {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .wobble {
   -webkit-animation-name: wobble;
           animation-name: wobble;
@@ -12560,12 +12485,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeIn {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeIn {
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
@@ -12609,12 +12528,6 @@
   100% {
     opacity: 1;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeInDown {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
@@ -12670,12 +12583,6 @@
     transform: translateY(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeInLeft {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
           animation-name: fadeInLeft;
@@ -12729,12 +12636,6 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeInRight {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
@@ -12790,12 +12691,6 @@
     transform: translateX(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeInUp {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
           animation-name: fadeInUp;
@@ -12850,12 +12745,6 @@
     transform: translateY(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeOut {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeOut {
   -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
@@ -12899,12 +12788,6 @@
   100% {
     opacity: 0;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeOutDown {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .fadeOutDown {
   -webkit-animation-name: fadeOutDown;
@@ -12960,12 +12843,6 @@
     transform: translateY(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeOutLeft {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeOutLeft {
   -webkit-animation-name: fadeOutLeft;
           animation-name: fadeOutLeft;
@@ -13019,12 +12896,6 @@
     opacity: 0;
     transform: translateX(0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeOutRight {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .fadeOutRight {
   -webkit-animation-name: fadeOutRight;
@@ -13080,12 +12951,6 @@
     transform: translateX(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.fadeOutUp {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .fadeOutUp {
   -webkit-animation-name: fadeOutUp;
           animation-name: fadeOutUp;
@@ -13139,12 +13004,6 @@
     opacity: 0;
     transform: translateY(0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.flip {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .flip {
   -webkit-animation-name: flip;
@@ -13310,12 +13169,6 @@
       rotate3d(0, 1, 0, 0deg);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.flipInHorizontal {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .flipInHorizontal {
   -webkit-animation-name: flipInHorizontal;
           animation-name: flipInHorizontal;
@@ -13434,12 +13287,6 @@
   to {
     transform: perspective(1618px);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.flipInVertical {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .flipInVertical {
   -webkit-animation-name: flipInVertical;
@@ -13560,12 +13407,6 @@
     transform: perspective(1618px);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.flipOutHorizontal {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .flipOutHorizontal {
   -webkit-animation-name: flipOutHorizontal;
           animation-name: flipOutHorizontal;
@@ -13685,12 +13526,6 @@
     transform: perspective(1618px);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.flipOutVertical {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .flipOutVertical {
   -webkit-animation-name: flipOutVertical;
           animation-name: flipOutVertical;
@@ -13760,12 +13595,6 @@
     transform: perspective(400px) rotate3d(0, 1, 0, 90.16deg);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.popIn {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .popIn {
   -webkit-animation-name: popIn;
           animation-name: popIn;
@@ -13824,12 +13653,6 @@
   100% {
     transform: scale(1);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.popOut {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .popOut {
   -webkit-animation-name: popOut;
@@ -13890,12 +13713,6 @@
     transform: scale(0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.rollIn {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .rollIn {
   -webkit-animation-name: rollIn;
           animation-name: rollIn;
@@ -13949,12 +13766,6 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.rollOut {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .rollOut {
   -webkit-animation-name: rollOut;
@@ -14010,12 +13821,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.spinLeft {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .spinLeft {
   -webkit-animation-name: spinLeft;
           animation-name: spinLeft;
@@ -14060,12 +13865,6 @@
     transform: rotate(360deg);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.spinRight {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .spinRight {
   -webkit-animation-name: spinRight;
           animation-name: spinRight;
@@ -14109,12 +13908,6 @@
   to {
     transform: rotate(0deg);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.slideInDown {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .slideInDown {
   -webkit-animation-name: slideInDown;
@@ -14165,12 +13958,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.slideInLeft {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .slideInLeft {
   -webkit-animation-name: slideInLeft;
           animation-name: slideInLeft;
@@ -14219,12 +14006,6 @@
   100% {
     transform: translate3d(0, 0, 0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.slideInRight {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .slideInRight {
   -webkit-animation-name: slideInRight;
@@ -14275,12 +14056,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.slideInUp {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .slideInUp {
   -webkit-animation-name: slideInUp;
           animation-name: slideInUp;
@@ -14329,12 +14104,6 @@
   100% {
     transform: translate3d(0, 0, 0);
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.slideOutDown {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .slideOutDown {
   -webkit-animation-name: slideOutDown;
@@ -14385,12 +14154,6 @@
     visibility: hidden;
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.slideOutLeft {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .slideOutLeft {
   -webkit-animation-name: slideOutLeft;
           animation-name: slideOutLeft;
@@ -14439,12 +14202,6 @@
     transform: translate3d(-100%, 0, 0);
     visibility: hidden;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.slideOutRight {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .slideOutRight {
   -webkit-animation-name: slideOutRight;
@@ -14495,12 +14252,6 @@
     visibility: hidden;
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.slideOutUp {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
           animation-name: slideOutUp;
@@ -14549,12 +14300,6 @@
     transform: translate3d(0, -100%, 0);
     visibility: hidden;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.vanishIn {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .vanishIn {
   -webkit-animation-name: vanishIn;
@@ -14630,12 +14375,6 @@
     transform-origin: 50% 50%;
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.vanishOut {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .vanishOut {
   -webkit-animation-name: vanishOut;
           animation-name: vanishOut;
@@ -14710,12 +14449,6 @@
     transform-origin: 50% 50%;
   }
 }
-@media screen and (prefers-reduced-motion: reduce) {
-.zoomIn {
-  -webkit-animation: none;
-          animation: none;
-}
-}
 .zoomIn {
   -webkit-animation-name: zoomIn;
           animation-name: zoomIn;
@@ -14764,12 +14497,6 @@
   50% {
     opacity: 1;
   }
-}
-@media screen and (prefers-reduced-motion: reduce) {
-.zoomOut {
-  -webkit-animation: none;
-          animation: none;
-}
 }
 .zoomOut {
   -webkit-animation-name: zoomOut;
