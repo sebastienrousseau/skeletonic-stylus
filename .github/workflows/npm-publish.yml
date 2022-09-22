@@ -15,45 +15,36 @@
 name: Skeletonic Stylus Release
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
+      - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2.2.2
         with:
-          version: 6.14.6
-      - run: pnpm i
-      - run: pnpm test
-    env:
-      CI: true
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          node-version: 16.x
-          registry-url: https://registry.npmjs.org/
-          scope: sebastienrousseau
-      - run: pnpm ci
-      - run: pnpm publish
+            node-version: ${{ matrix.node-version }}
+            cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Test
+        run: pnpm test
+      - name: Publish
+        if: github.ref == 'refs/heads/main'
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Set package registry
-        run: pnpm config set registry https://npm.pkg.github.com
-      - name: GitHub package registry authentication
-        run: pnpm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
-      - name: Npm registry authentication
-        run: pnpm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-      - name: Publish the package to GitHub and Npm package registries
-        run: pnpm publish --access=public
+
