@@ -1,42 +1,50 @@
-# Welcome to the Skeletonic Stylus Library
+# 📚 The Skeletonic Stylus Library
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3d54aa6263142c19a640eef423fe341)](https://app.codacy.com/gh/sebastienrousseau/skeletonic-stylus?utm_source=github.com&utm_medium=referral&utm_content=sebastienrousseau/skeletonic-stylus&utm_campaign=Badge_Grade_Settings)
-[![npm](https://img.shields.io/npm/v/skeletonic-stylus.svg?style=flat&color=success)](https://www.npmjs.com/package/skeletonic-stylus)
-[![Release Notes](https://img.shields.io/badge/release-notes-success.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/releases/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-success.svg?style=flat)](https://opensource.org/licenses/MIT)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsebastienrousseau%2Fskeletonic-stylus?ref=badge_shield)
-[![npm](https://img.shields.io/npm/dm/skeletonic-stylus.svg?style=flat)](https://www.npmjs.com/package/skeletonic-stylus)
+![Banner representing the Skeletonic Stylus Library][skeletonic stylus library]
 
-![Banner representing the Skeletonic Stylus Library](./images/skeletonic-stylus.svg)
+[![npm](https://img.shields.io/npm/v/@sebastienrousseau/skeletonic-stylus.svg?style=for-the-badge\&color=f14041)](https://www.npmjs.com/package/@sebastienrousseau/skeletonic-stylus)
+![Codacy grade](https://img.shields.io/codacy/grade/b3d54aa6263142c19a640eef423fe341?style=for-the-badge)
+[![Contributors][contributors-shield]](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
+[![Forks][forks-shield]](https://github.com/sebastienrousseau/skeletonic-stylus/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge\&color=ff69b4)](https://opensource.org/licenses/MIT)
+![Made with Love](./images/made-with-love.svg)
+
+**[Website](https://skeletonic.io) • [Documentation](https://docs.skeletonic.io)
+• [Report Bug](https://github.com/sebastienrousseau/skeletonic-stylus/issues)
+• [Request Feature](https://github.com/sebastienrousseau/skeletonic-stylus/issues)
+• [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/master/.github/CONTRIBUTING.md)**
+
+***
+
+## 👋 Welcome to the Skeletonic Stylus Library
+
+The Stylus Skeletonic Library is a lightweight, intuitive, accessible and ultra-responsive Stylus Library.
+It is based on the [Skeleton](http://getskeleton.com) framework and is written in [Stylus](http://stylus-lang.com).
 
 [![Getting Started](./images/button-primary.svg)](#the-skeletonic-stylus-library)
-[![Download Skeletonic Stylus v1.1.3](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.3.zip)
+[![Download the Skeletonic Stylus Library v1.1.4](./images/button-secondary.svg)](https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.4.zip)
 
 ## Index
 
--   [Welcome to the Skeletonic Stylus Library](#welcome-to-the-skeletonic-stylus-library)
-
--   [Index](#index)
-
--   [The Skeletonic Stylus Library](#the-skeletonic-stylus-library)
--   [Documentation](#documentation)
-
--   [Installation](#installation)
-
--   [From NPM or YARN](#from-npm-or-yarn)
--   [From CDN](#from-cdn)
--   [From GitHub](#from-github)
-
--   [What's included](#whats-included)
--   [Support for bidirectional languages](#support-for-bidirectional-languages)
--   [Versioning](#versioning)
--   [Built with](#built-with)
--   [Contributing](#contributing)
--   [Code of Conduct](#code-of-conduct)
--   [Our Values](#our-values)
--   [Releases](#releases)
--   [License](#license)
--   [Acknowledgements](#acknowledgements)
+-   [📚 The Skeletonic Stylus Library](#-the-skeletonic-stylus-library)
+  -   [👋 Welcome to the Skeletonic Stylus Library](#-welcome-to-the-skeletonic-stylus-library)
+  -   [Index](#index)
+  -   [The Skeletonic Stylus Library](#the-skeletonic-stylus-library)
+    -   [Documentation](#documentation)
+  -   [Installation](#installation)
+    -   [From NPM or YARN](#from-npm-or-yarn)
+    -   [From CDN](#from-cdn)
+    -   [From GitHub](#from-github)
+  -   [What's included](#whats-included)
+    -   [Support for bidirectional languages](#support-for-bidirectional-languages)
+    -   [Versioning](#versioning)
+    -   [Built with](#built-with)
+  -   [Contributing](#contributing)
+    -   [Code of Conduct](#code-of-conduct)
+    -   [Our Values](#our-values)
+    -   [Releases](#releases)
+    -   [License](#license)
+    -   [Acknowledgements](#acknowledgements)
 
 ## The Skeletonic Stylus Library
 
@@ -72,8 +80,8 @@ The following table lists alternate CDN locations where Skeletonic Stylus is hos
 | CDN                                   | URL                                                                           | HTTPS | Combo |
 | ------------------------------------- | ----------------------------------------------------------------------------- | ----- | ----- |
 | [GitHub Packages](https://docs.github.com/en/packages)           | <https://github.com/sebastienrousseau/skeletonic-stylus/packages>            | Yes   | No    |
-| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.3/css/skeletonic.min.css>            | Yes   | No    |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.3/css/skeletonic.min.css> | Yes   | Yes   |
+| [unpkg](https://unpkg.com/)           | <https://unpkg.com/skeletonic-stylus@1.1.4/css/skeletonic.min.css>            | Yes   | No    |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.4/css/skeletonic.min.css> | Yes   | Yes   |
 
 ### From GitHub
 
@@ -86,7 +94,7 @@ Within the download you'll find all the Stylus source files, compiled and minifi
 You'll see something like this:
 
 ```bash
-skeletonic-1.1.3
+skeletonic-1.1.4
 dist
 ├── README.md
 ├── css
@@ -314,4 +322,13 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 |[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk)|
 |[Sebastien Rousseau](https://github.com/sebastienrousseau)|
 
-Made with ❤ in London. Powered by [Stylus](https://stylus-lang.com/).
+[contributors-shield]: https://img.shields.io/github/contributors/sebastienrousseau/skeletonic-stylus.svg?style=for-the-badge
+[contributors-url]: https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors
+[skeletonic stylus library]: ./images/skeletonic-stylus-logo.svg "skeletonic stylus library"
+[divider]: https://raw.githubusercontent.com/sebastienrousseau/skeletonic-stylus/master/assets/divider.svg "divider"
+[download]: https://raw.githubusercontent.com/sebastienrousseau/skeletonic-stylus/master/assets/button-secondary.svg
+[forks-shield]: https://img.shields.io/github/forks/sebastienrousseau/skeletonic-stylus.svg?style=for-the-badge
+[forks-url]: https://github.com/sebastienrousseau/skeletonic-stylus/network/members
+[getting started]: https://raw.githubusercontent.com/sebastienrousseau/skeletonic-stylus/master/assets/button-primary.svg
+[issues-shield]: https://img.shields.io/github/issues/sebastienrousseau/skeletonic-stylus.svg?style=for-the-badge
+[issues-url]: https://github.com/sebastienrousseau/skeletonic-stylus/issues
