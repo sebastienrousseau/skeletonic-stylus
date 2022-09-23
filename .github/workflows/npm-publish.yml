@@ -33,8 +33,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-            node-version: ${{ matrix.node-version }}
-            cache: 'pnpm'
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
       - name: Build
@@ -47,4 +47,61 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - name: Enable pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+
+      - name: Build pnpm
+        run: |
+          pnpm build
+
+      # Save the npmjs auth token so that the workflow can publish packages to the registry
+      - name: Configure npm auth token
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > ~/.npmrc
+      - name: Publish packages
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          pnpm -r publish --access public
+
+      # Publish the release to GitHub
+      - name: Publish release
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            packages/*/dist/*.tgz
+            packages/*/dist/*.zip
+          draft: true
+          prerelease: true
+          token: ${{ secrets.GITHUB_TOKEN }}
