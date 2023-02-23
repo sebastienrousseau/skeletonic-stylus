@@ -144,7 +144,7 @@
         "rimraf": "^4.0.4",
         "stylelint": "^14.12.1",
         "stylelint-config-recommended": "^9.0.0",
-        "stylelint-prettier": "^2.0.0",
+        "stylelint-prettier": "^3.0.0",
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-rational-order": "^0.1.2",
         "stylelint-high-performance-animation": "^1.6.0",
