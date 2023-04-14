@@ -1,149 +1,185 @@
-/*
- * Skeletonic Stylus Library v1.1.5
+/**
+ * Skeletonic Stylus Library v1.1.6
  * https://skeletonicstylus.com
  *
- * Copyright (c) Sebastien Rousseau 2022. All rights reserved
+ * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
- */
+ **/
 
-// Clearfix
-.group:after
-  clear: both
-  content: ""
-  display: table
+/* @group Base */
 
-// CSS Layout
+/* Clearfix */
+.group:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* CSS Layout */
 .centered,
-[centered]
-  left: 50%
-  position: fixed
-  top: 50%
-  transform: translate(-50%, -50%)
+[centered] {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .center,
-[center]
-  align-items: center
-  flex-direction: column
-  justify-content: center
+[center] {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .left,
-[left]
-  align-items: flex-start
-  display: flex
-  flex-direction: column
-  justify-content: flex-start
+[left] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 .right,
-[right]
-  align-items: flex-end
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
+[right] {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-// Text
-.text-left
-  align-self: flex-start
-  text-align: left
+/* Text */
+.text-left {
+  align-self: flex-start;
+  text-align: left;
+}
 
-.text-center
-  align-self: center
-  text-align: center
+.text-center {
+  align-self: center;
+  text-align: center;
+}
 
-.text-right
-  align-self: flex-end
-  text-align: right
+.text-right {
+  align-self: flex-end;
+  text-align: right;
+}
 
-.text-uppercase
-  text-transform: uppercase
+.text-uppercase {
+  text-transform: uppercase;
+}
 
-.text-lowercase
-  text-transform: lowercase
+.text-lowercase {
+  text-transform: lowercase;
+}
 
-// Sizing
-.size-full-height
-  min-height: 100vh
+/* Sizing */
+.size-full-height {
+  min-height: 100vh;
+}
 
-.size-full-width
-  width: 100%
+.size-full-width {
+  width: 100%;
+}
 
-.size-full
-  min-height: 100vh
-  width: 100%
+.size-full {
+  min-height: 100vh;
+  width: 100%;
+}
 
-// Visibility
+/* Visibility */
 .hidden,
-[hidden]
-    display: none
+[hidden] {
+  display: none;
+}
 
-// Flexbox Utilities
+/* Flexbox Utilities */
 .flex,
-[flex]
-  display: flex
+[flex] {
+  display: flex;
+}
 
 .justify-start,
-[justify-start]
-  justify-content: flex-start
+[justify-start] {
+  justify-content: flex-start;
+}
 
 .justify-center,
-[justify-center]
-  justify-content: center
+[justify-center] {
+  justify-content: center;
+}
 
 .justify-end,
-[justify-end]
-  justify-content: flex-end
+[justify-end] {
+  justify-content: flex-end;
+}
 
 .align-start,
-[align-start]
-  align-items: flex-start
+[align-start] {
+  align-items: flex-start;
+}
 
 .align-center,
-[align-center]
-  align-items: center
+[align-center] {
+  align-items: center;
+}
 
 .align-end,
-[align-end]
-  align-items: flex-end
+[align-end] {
+  align-items: flex-end;
+}
 
 .direction-vertical,
-[direction-vertical]
-  flex-direction: column
+[direction-vertical] {
+  flex-direction: column;
+}
 
 .direction-horizontal,
-[direction-horizontal]
-  flex-direction: row
+[direction-horizontal] {
+  flex-direction: row;
+}
 
 .capitalized,
-[capitalized]
-  text-transform: capitalize
+[capitalized] {
+  text-transform: capitalize;
+}
 
 .lowercase,
-[lowercase]
-  text-transform: lowercase
+[lowercase] {
+  text-transform: lowercase;
+}
 
 .uppercase,
-[uppercase]
-  text-transform: uppercase
+[uppercase] {
+  text-transform: uppercase;
+}
 
 .italic,
-[italic]
-  font-style: italic
+[italic] {
+  font-style: italic;
+}
 
 .nomargin,
-[nomargin]
-  margin: 0
+[nomargin] {
+  margin: 0;
+}
 
 .nopadding,
-[nopadding]
-  padding: 0
+[nopadding] {
+  padding: 0;
+}
 
 .radius,
-[radius]
-  border-radius: round($gr rem, 1)
+[radius] {
+  border-radius: round($gr rem, 1);
+}
 
 .radius-top,
-[radius-top]
-  border-radius: round($gr rem, 1) round($gr rem, 1) 0 0
+[radius-top] {
+  border-radius: round($gr rem, 1) round($gr rem, 1) 0 0;
+}
 
 .radius-bottom,
-[radius-bottom]
-  border-radius: 0 0 round($gr rem, 1) round($gr rem, 1)
+[radius-bottom] {
+  border-radius: 0 0 round($gr rem, 1) round($gr rem, 1);
+}
+
+/* @end */

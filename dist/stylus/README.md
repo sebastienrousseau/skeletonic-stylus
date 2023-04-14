@@ -1,5 +1,5 @@
-# Categories
+<!-- markdownlint-disable MD033 MD041 -->
 
-![Banner representing the Skeletonic Stylus Library](../../images/skeletonic-stylus-readme.svg)
+<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
 
-Each of the folders are Stylus Categories.
+<!-- markdownlint-enable MD033 MD041 -->
