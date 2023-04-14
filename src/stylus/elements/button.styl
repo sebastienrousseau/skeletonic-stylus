@@ -1,10 +1,10 @@
-/*
- * Skeletonic Stylus Library v1.1.5
+/**
+ * Skeletonic Stylus Library v1.1.6
  * https://skeletonicstylus.com
  *
- * Copyright (c) Sebastien Rousseau 2022. All rights reserved
+ * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
- */
+ **/
 
 /* @group Button */
 
@@ -60,7 +60,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(0, 122, 255, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.secondary
@@ -69,7 +69,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(0, 149, 245, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.info
@@ -78,7 +78,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(52, 199, 89, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.success
@@ -87,7 +87,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(40, 167, 69, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.error
@@ -96,7 +96,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(255, 59, 48, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.warning
@@ -105,7 +105,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      opacity: .5
+      background-color: adjust(rgba(255, 149, 0, 1), 'lightness', -33%)
       text-decoration: none
       transition: all 150ms linear
   &.link
@@ -148,26 +148,26 @@ button, .button, [type=submit]
   white-space: nowrap
   z-index: 1
   &:hover
-    opacity: .5
+    opacity: .9
     text-decoration: none
     transition: all 150ms linear
   &-round
     border-radius: 50%
     &:hover
-      opacity: .5
+      opacity: .9
       text-decoration: none
       transition: all 150ms linear
   &-oval
     border-radius: 61.25rem
     min-width: 9rem
     &:hover
-      opacity: .5
+      opacity: .9
       text-decoration: none
       transition: all 150ms linear
   &-outline
     border: 2px solid transparent
     &:hover
-      opacity: .5
+      opacity: .9
       text-decoration: none
       transition: all 150ms linear
 .block

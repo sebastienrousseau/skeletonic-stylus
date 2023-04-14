@@ -1,0 +1,75 @@
+/*
+ * Skeletonic Stylus Library v1.1.6
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Licensed under the MIT license
+ */
+
+/* @group Cards */
+
+/* Use shorthand properties for padding, margin and border-radius */
+.card-content
+  padding: ($gr)rem
+
+.card-body
+  flex: 1 1 auto
+  padding: ($gr)rem
+
+.card-title
+  margin-bottom: ($gr)rem
+
+.card-subtitle
+  margin-bottom: 0
+  margin-top: -($gr)rem
+
+.card-header
+  background-color: var(--cl-grey-100)
+  border-top-left-radius: ($gr)rem
+  border-top-right-radius: ($gr)rem
+  padding: ($gr)rem
+
+.card-footer
+  background-color: var(--cl-grey-100)
+  border-bottom-left-radius: ($gr)rem
+  border-bottom-right-radius: ($gr)rem
+  padding: ($gr)rem
+
+.cards
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.card-group
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.card
+  background: transparent
+  border: ($gr px) solid var(--cl-grey-300)
+  border-radius: ($gr)rem
+  box-shadow: 0 3px 9px 0 var(--cl-grey-200)
+  color: var(--cl-black)
+  margin-bottom: ($gr)rem
+  position: relative
+  transition: .30s
+
+.card-image
+  border-top-left-radius: ($gr)rem
+  border-top-right-radius: ($gr)rem
+  height: 0
+  overflow: hidden
+  padding-top: 56.25%
+  position: relative
+
+.card-image img
+  height: 100%
+  left: 0
+  object-fit: cover
+  position: absolute
+  top: 0
+  width: 100%
+
+/* @end */
+

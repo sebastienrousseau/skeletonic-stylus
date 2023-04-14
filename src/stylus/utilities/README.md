@@ -1,5 +1,5 @@
-# Utilities
+<!-- markdownlint-disable MD033 MD041 -->
 
-![Banner representing the Skeletonic Stylus Library](../../images/skeletonic-stylus-readme.svg)
+<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
 
-Each of the files in this folder are Stylus Utilities files.
+<!-- markdownlint-enable MD033 MD041 -->

@@ -8,7 +8,7 @@
 # Skeletonic Stylus Library
 # https://skeletonicstylus.com/
 #
-# Copyright (c) Sebastien Rousseau 2022. All rights reserved
+# Copyright (c) Sebastien Rousseau 2023. All rights reserved
 # Licensed under the MIT license
 #
 
@@ -31,7 +31,7 @@ jobs:
         with:
           version: 7
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
@@ -83,6 +83,18 @@ jobs:
       - name: Build pnpm
         run: |
           pnpm build
+
+      # Create a release
+      - name: Create release
+        id: release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: true
 
       # Save the npmjs auth token so that the workflow can publish packages to the registry
       - name: Configure npm auth token

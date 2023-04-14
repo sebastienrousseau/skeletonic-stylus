@@ -1,10 +1,10 @@
-/*
- * Skeletonic Stylus Library v1.1.5
+/**
+ * Skeletonic Stylus Library v1.1.6
  * https://skeletonicstylus.com
  *
- * Copyright (c) Sebastien Rousseau 2022. All rights reserved
+ * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
- */
+ **/
 
 /* @group Navigation */
 
@@ -45,7 +45,7 @@
   background: var(--cl-white)
   height: 100%
   left: 0
-  margin-top: 5 rem
+  padding-top: 5 rem
   position: fixed
   transform: translateX(-100vw)
   width: 100vw
@@ -73,6 +73,7 @@
       text-transform: uppercase
     &:hover
       background: var(--cl-black)
+      cursor: pointer
 
       a
         color: var(--cl-white)
@@ -112,12 +113,17 @@ input[type=checkbox]
   cursor: pointer
   display: block
   height: 22px
-  left: 15px
   position: absolute
   top: 22px
   transition: all .3s
   width: 22px
   z-index: 99
+
+  &-left
+    left: 15px
+
+  &-right
+    right: 15px
 
 .spinner
   background-color: var(--cl-black)
