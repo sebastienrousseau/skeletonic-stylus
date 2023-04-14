@@ -123,7 +123,6 @@
     "dev:copy:stylus": "cp -R src/stylus dist/",
     "dev:copyright:insert": "find src/stylus/**/* -name \"*.styl\" -exec sh -c \"cat COPYRIGHT.txt {} >> $$.tmp && mv $$.tmp {}\" \\;",
     "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",
-    "dev:markdownlint": "npx remark \"*.md\" \"src/**/*.md\" --rc-path ./.remarkrc --quiet",
     "dev:format": "npx prettier --write \"*.md\" \"src/**/*.md\"",
     "// Production": " --- Production Scripts --- ",
     "postpublish": "pnpm run publish-npm",
