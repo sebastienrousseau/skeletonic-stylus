@@ -1,7 +1,9 @@
 @charset "UTF-8";
+@layer skeletonic.reset, skeletonic.tokens, skeletonic.layout, skeletonic.elements, skeletonic.components, skeletonic.utilities;
+@layer skeletonic {
 :root {
-  --cl-primary: #007fff;
-  --cl-secondary: #00bfff;
+  --cl-primary: #006bd6;
+  --cl-secondary: #007ea8;
   --cl-tertiary: #757c8a;
   --cl-disable: #afb1b6;
   --cl-info: #ffbf00;
@@ -113,6 +115,37 @@
   --link-color-focus: #ff0000;
   --link-color-hover: #ff0000;
   --link-color-visited: #80007f;
+}
+:root {
+  --gr: 1.62;
+  --gr-large: 0.62;
+  --gr-medium: 0.5;
+  --gr-small: 0.38;
+  --gr-fsb: 1.62rem;
+  --gr-fsl: 2.01rem;
+  --gr-fsm: 1.62rem;
+  --gr-fss: 1.23rem;
+  --gr-h1: 29.07rem;
+  --gr-h2: 17.97rem;
+  --gr-h3: 11.1rem;
+  --gr-h4: 6.86rem;
+  --gr-h5: 4.24rem;
+  --gr-h6: 2.62rem;
+  --gr-lh: 2.62rem;
+  --gr-lhl: 3.25rem;
+  --gr-lhm: 2.62rem;
+  --gr-lhs: 1.99rem;
+  --focus-ring-color: var(--link-color, #007aff);
+  --background-color: #ffffff;
+  --foreground-color: #000000;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0d0d10;
+    --foreground-color: #f5f5f7;
+    --focus-ring-color: var(--link-color, #4ea1ff);
+  }
 }
 .group::after {
   clear: both;
@@ -936,13 +969,23 @@ button:hover,
   text-decoration: none;
   transition: all 150ms linear;
 }
-button:focus,
-.button:focus,
-[type="submit"]:focus {
+button:focus-visible,
+.button:focus-visible,
+[type="submit"]:focus-visible {
   background: var(--cl-grey-200);
   opacity: 0.7;
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
   text-decoration: none;
   transition: all 150ms linear;
+}
+@media (forced-colors: active) {
+  button:focus-visible,
+  .button:focus-visible,
+  [type="submit"]:focus-visible {
+    outline: 3px solid CanvasText;
+    outline-offset: 2px;
+  }
 }
 button:disabled,
 .button:disabled,
@@ -967,7 +1010,7 @@ button.primary,
 button.primary:hover,
 .button.primary:hover,
 [type="submit"].primary:hover {
-  background-color: #0052ab;
+  background-color: #0052a3;
   text-decoration: none;
   transition: all 150ms linear;
 }
@@ -982,7 +1025,7 @@ button.secondary,
 button.secondary:hover,
 .button.secondary:hover,
 [type="submit"].secondary:hover {
-  background-color: #0064a4;
+  background-color: #005875;
   text-decoration: none;
   transition: all 150ms linear;
 }
@@ -1071,12 +1114,20 @@ button.link:hover,
   color: var(--link-color-hover);
   text-decoration: underline;
 }
-button.link:focus,
-.button.link:focus,
-[type="submit"].link:focus {
+button.link:focus-visible,
+.button.link:focus-visible,
+[type="submit"].link:focus-visible {
   color: var(--link-color-focus);
-  outline: 1px thin dotted auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+@media (forced-colors: active) {
+  button.link:focus-visible,
+  .button.link:focus-visible,
+  [type="submit"].link:focus-visible {
+    outline: 3px solid CanvasText;
+    outline-offset: 2px;
+  }
 }
 .button-group {
   border: 0;
@@ -1498,18 +1549,34 @@ select:hover,
 textarea:hover {
   border-color: var(--cl-grey-200);
 }
-input[type="email"]:focus,
-input[type="file"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="text"]:focus,
-input[type="url"]:focus,
-select:focus,
-textarea:focus {
+input[type="email"]:focus-visible,
+input[type="file"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="password"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="tel"]:focus-visible,
+input[type="text"]:focus-visible,
+input[type="url"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   border-color: var(--cl-black);
-  outline: 0;
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+@media (forced-colors: active) {
+  input[type="email"]:focus-visible,
+  input[type="file"]:focus-visible,
+  input[type="number"]:focus-visible,
+  input[type="password"]:focus-visible,
+  input[type="search"]:focus-visible,
+  input[type="tel"]:focus-visible,
+  input[type="text"]:focus-visible,
+  input[type="url"]:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid CanvasText;
+    outline-offset: 2px;
+  }
 }
 .input-primary[type="email"],
 .input-primary[type="file"],
@@ -1964,10 +2031,16 @@ a:hover {
   color: var(--link-color-hover);
   text-decoration: underline;
 }
-a:focus {
+a:focus-visible {
   color: var(--link-color-focus);
-  outline: 1px thin dotted auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 2px;
+}
+@media (forced-colors: active) {
+  a:focus-visible {
+    outline: 3px solid CanvasText;
+    outline-offset: 2px;
+  }
 }
 a,
 a > span {
@@ -2761,3 +2834,4 @@ input[type="checkbox"]:checked ~ .hamburger-toggle > .diagonal.part-2 {
 }
 
 /*# sourceMappingURL=skeletonic.css.map */
+}

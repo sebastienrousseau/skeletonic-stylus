@@ -24,9 +24,14 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
   &:hover
     border-color: var(--cl-grey-200)
 
-  &:focus
+  &:focus-visible
     border-color: var(--cl-black)
-    outline: 0
+    outline: 2px solid var(--focus-ring-color)
+    outline-offset: 2px
+  @media (forced-colors: active)
+    &:focus-visible
+      outline: 3px solid CanvasText
+      outline-offset: 2px
 
 .input-primary[type=email],
     .input-primary[type=file],

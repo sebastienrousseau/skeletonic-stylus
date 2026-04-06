@@ -11,7 +11,7 @@
 [![npm](https://img.shields.io/npm/v/@sebastienrousseau/skeletonic-stylus.svg?style=for-the-badge\&color=d70015)](https://www.npmjs.com/package/@sebastienrousseau/skeletonic-stylus)
 [![Contributors][contributors-shield]](https://github.com/sebastienrousseau/skeletonic-stylus/graphs/contributors)
 [![Forks][forks-shield]](https://github.com/sebastienrousseau/skeletonic-stylus/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge\&color=ff69b4)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-MIT%20OR%20Apache--2.0-green.svg?style=for-the-badge\&color=ff69b4)](https://opensource.org/licenses/MIT)
 ![Made with Love][4]
 
 **• [Website](https://skeletonic.io) • [Documentation](https://docs.skeletonic.io) • [Report Bug](https://github.com/sebastienrousseau/skeletonic-stylus/issues) • [Request Feature](https://github.com/sebastienrousseau/skeletonic-stylus/issues) • [Contributing Guidelines](https://github.com/sebastienrousseau/skeletonic-stylus/blob/main/CONTRIBUTING.md)**
@@ -35,7 +35,9 @@ with other technologies to build custom components.
   to use and customise.
 - **Extensible**: The components are extensible to suit your needs.
 - **Intuitive**: easy to use and understand.
-- **Lightweight**: 1.1 KB (minified and gzipped).
+- **Lightweight**: 39.9 KB minified / 7.5 KB gzipped / 6.3 KB brotli
+  for the full `skeletonic.min.css` core stylesheet (enforced via
+  [`size-limit`](https://github.com/ai/size-limit) budgets in CI).
 - **Modular**: The components are usable on their own or in combination.
 - **Ultra-responsive**: works on any device, big, or small.
 

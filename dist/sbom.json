@@ -1,0 +1,60 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:c795c56c-0f65-471b-9cc6-bc867efbaf1d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-04-06T18:08:23.764Z",
+    "tools": [
+      {
+        "vendor": "Skeletonic Stylus",
+        "name": "emit-sbom.mjs",
+        "version": "1.0.0"
+      }
+    ],
+    "component": {
+      "bom-ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "type": "library",
+      "name": "@sebastienrousseau/skeletonic-stylus",
+      "version": "1.1.7",
+      "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
+      "licenses": [
+        {
+          "expression": "(MIT OR Apache-2.0)"
+        }
+      ],
+      "purl": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://skeletonicstylus.com"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8bba075fac72da98e91ec0b7c89f94f5d3bd6da0149c5c379e35d8176478df75"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "da197b58def97ada34d1f2c55aacd20221a2d7b0269c59f3003bc9995d66ead4da8a202e5e093a152ba918fafe40a090ca579d68d48ca22a6f62acc84e3393b9"
+        }
+      ]
+    }
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "dependsOn": []
+    }
+  ]
+}

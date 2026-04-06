@@ -47,7 +47,7 @@ pkg.sass = "stylus/skeletonic.styl";
 
 // Belt-and-braces allowlist: if anyone ever runs `npm publish` from the repo
 // root by accident, only these directories ship.
-pkg.files = ["css", "images", "stylus", "README.md", "index.html"];
+pkg.files = ["css", "images", "stylus", "README.md", "index.html", "sbom.json"];
 
 // Consumers don't need build scripts, but a no-op `test` keeps `npm test` from
 // erroring on `npm install` smoke tests.

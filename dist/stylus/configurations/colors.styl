@@ -9,8 +9,10 @@
 /* @group Colors */
 
   // Main colors
-  $primary         = hsl(210, 100%, 50%)
-  $secondary       = hsl(195, 100%, 50%)
+  // Lightness chosen so white text on these backgrounds clears
+  // WCAG 2.2 AA SC 1.4.3 (>=4.5:1 contrast for normal text).
+  $primary         = hsl(210, 100%, 42%)
+  $secondary       = hsl(195, 100%, 33%)
   $tertiary        = hsl(220, 8%, 50%)
   $disable         = hsl(220, 5%, 70%)
   $info            = hsl(45, 100%, 50%)

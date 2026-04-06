@@ -54,3 +54,58 @@
     --link-color-visited: $purple
 
 /* @end */
+
+/* @group CSS Custom Properties Bridge (additive — non-breaking) */
+
+// All Stylus $gr-* compile-time variables are mirrored here as runtime
+// CSS custom properties so consumers can theme without recompiling
+// Stylus. Stylus $vars are kept as the private compile-time aliases
+// for the library's own internal use.
+:root
+  // Color scheme — opt the user agent into automatic light/dark form
+  // controls and scrollbars. CSS Color Module Level 5, universally
+  // supported in 2026.
+  color-scheme: light dark
+
+  // Golden ratio constants
+  --gr: 1.62
+  --gr-large: 0.62
+  --gr-medium: 0.5
+  --gr-small: 0.38
+
+  // Golden ratio font sizes
+  --gr-fsb: 1.62rem
+  --gr-fsl: 2.01rem
+  --gr-fsm: 1.62rem
+  --gr-fss: 1.23rem
+
+  // Golden ratio headers
+  --gr-h1: 29.07rem
+  --gr-h2: 17.97rem
+  --gr-h3: 11.1rem
+  --gr-h4: 6.86rem
+  --gr-h5: 4.24rem
+  --gr-h6: 2.62rem
+
+  // Golden ratio line heights
+  --gr-lh: 2.62rem
+  --gr-lhl: 3.25rem
+  --gr-lhm: 2.62rem
+  --gr-lhs: 1.99rem
+
+  // Focus ring color (WCAG 2.2 SC 2.4.11). Themeable.
+  --focus-ring-color: var(--link-color, #007aff)
+
+  // Surface tokens — light defaults
+  --background-color: #ffffff
+  --foreground-color: #000000
+
+// Dark mode — opt-in via prefers-color-scheme. Consumers who set
+// color-scheme: only light on a parent will not be affected.
+@media (prefers-color-scheme: dark)
+  :root
+    --background-color: #0d0d10
+    --foreground-color: #f5f5f7
+    --focus-ring-color: var(--link-color, #4ea1ff)
+
+/* @end */

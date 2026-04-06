@@ -42,11 +42,17 @@ button, .button, [type=submit]
     opacity: .9
     text-decoration: none
     transition: all 150ms linear
-  &:focus
+  &:focus-visible
     background: var(--cl-grey-200)
     opacity: .7
+    outline: 2px solid var(--focus-ring-color)
+    outline-offset: 2px
     text-decoration: none
     transition: all 150ms linear
+  @media (forced-colors: active)
+    &:focus-visible
+      outline: 3px solid CanvasText
+      outline-offset: 2px
   &:disabled
     background: var(--cl-grey-700)
     color: var(--cl-white)
@@ -60,7 +66,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      background-color: adjust(rgba(0, 122, 255, 1), 'lightness', -33%)
+      background-color: hsl(210, 100%, 32%)
       text-decoration: none
       transition: all 150ms linear
   &.secondary
@@ -69,7 +75,7 @@ button, .button, [type=submit]
     cursor: pointer
     transition: all 150ms linear
     &:hover
-      background-color: adjust(rgba(0, 149, 245, 1), 'lightness', -33%)
+      background-color: hsl(195, 100%, 23%)
       text-decoration: none
       transition: all 150ms linear
   &.info
@@ -121,10 +127,14 @@ button, .button, [type=submit]
     &:active, &:hover
       color: var(--link-color-hover)
       text-decoration: underline
-    &:focus
+    &:focus-visible
       color: var(--link-color-focus)
-      outline: 1px thin dotted auto -webkit-focus-ring-color
-      outline-offset: -2px
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: 2px
+    @media (forced-colors: active)
+      &:focus-visible
+        outline: 3px solid CanvasText
+        outline-offset: 2px
 .button-group
   border: 0
   border-radius: 0

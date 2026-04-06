@@ -1,0 +1,63 @@
+#
+# ____  _        _      _              _        ____  _         _
+#/ ___|| | _____| | ___| |_ ___  _ __ (_) ___  / ___|| |_ _   _| |_   _ ___
+#\___ \| |/ / _ \ |/ _ \ __/ _ \| '_ \| |/ __| \___ \| __| | | | | | | / __|
+# ___) |   <  __/ |  __/ || (_) | | | | | (__   ___) | |_| |_| | | |_| \__ \
+#|____/|_|\_\___|_|\___|\__\___/|_| |_|_|\___| |____/ \__|\__, |_|\__,_|___/
+#                                                         |___/
+# Skeletonic Stylus Library
+# https://skeletonicstylus.com/
+#
+# Copyright (c) Sebastien Rousseau 2023. All rights reserved
+# Licensed under the MIT OR Apache-2.0 license
+#
+# OpenSSF Scorecard supply-chain hygiene check.
+# Runs on push to main and weekly. Publishes results to:
+#   - GitHub code-scanning UI (Security tab)
+#   - https://scorecard.dev (public badge)
+#
+
+name: OpenSSF Scorecard
+
+on:
+  branch_protection_rule:
+  schedule:
+    - cron: '17 4 * * 1'
+  push:
+    branches: [ main ]
+
+permissions: read-all
+
+jobs:
+  analysis:
+    name: Scorecard analysis
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      id-token: write
+      contents: read
+      actions: read
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
+        with:
+          persist-credentials: false
+
+      - name: Run analysis
+        uses: ossf/scorecard-action@ea651e62978af7915d09fe2e282747c798bf2dab  # v2.4.1
+        with:
+          results_file: results.sarif
+          results_format: sarif
+          publish_results: true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
+        with:
+          name: SARIF file
+          path: results.sarif
+          retention-days: 5
+
+      - name: Upload SARIF results to code scanning
+        uses: github/codeql-action/upload-sarif@7fc1baf373eb073c686865bd453d412d506a05a2  # v3.35.1
+        with:
+          sarif_file: results.sarif

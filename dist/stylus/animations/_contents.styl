@@ -6,68 +6,77 @@
  * Licensed under the MIT license
  **/
 
-// Animations Base
-@import 'animationsBase.styl'
+// All animation keyframes and utility classes are gated on
+// prefers-reduced-motion: no-preference. Users who request reduced
+// motion (system preference, accessibility setting, vestibular
+// disorder accommodation) will not receive any of these declarations
+// and the elements they apply to will render statically. Per WCAG 2.2
+// SC 2.3.3 Animation from Interactions.
 
-// Distracting Animations
-@import 'Distracting/bounce.styl'
-@import 'Distracting/chameleonbackground.styl'
-@import 'Distracting/chameleontext.styl'
-@import 'Distracting/flash.styl'
-@import 'Distracting/heartbeat.styl'
-@import 'Distracting/jelly.styl'
-@import 'Distracting/pulse.styl'
-@import 'Distracting/rubber.styl'
-@import 'Distracting/shake.styl'
-@import 'Distracting/swing.styl'
-@import 'Distracting/tada.styl'
-@import 'Distracting/wobble.styl'
+@media (prefers-reduced-motion: no-preference)
 
-// Fading Animations
-@import 'Fading/fadeIn.styl'
-@import 'Fading/fadeInDown.styl'
-@import 'Fading/fadeInLeft.styl'
-@import 'Fading/fadeInRight.styl'
-@import 'Fading/fadeInUp.styl'
-@import 'Fading/fadeOut.styl'
-@import 'Fading/fadeOutDown.styl'
-@import 'Fading/fadeOutLeft.styl'
-@import 'Fading/fadeOutRight.styl'
-@import 'Fading/fadeOutUp.styl'
+  // Animations Base
+  @import 'animationsBase.styl'
 
-// Flipping Animations
-@import 'Flipping/flip.styl'
-@import 'Flipping/flipInHorizontal.styl'
-@import 'Flipping/flipInVertical.styl'
-@import 'Flipping/flipOutHorizontal.styl'
-@import 'Flipping/flipOutVertical.styl'
+  // Distracting Animations
+  @import 'Distracting/bounce.styl'
+  @import 'Distracting/chameleonbackground.styl'
+  @import 'Distracting/chameleontext.styl'
+  @import 'Distracting/flash.styl'
+  @import 'Distracting/heartbeat.styl'
+  @import 'Distracting/jelly.styl'
+  @import 'Distracting/pulse.styl'
+  @import 'Distracting/rubber.styl'
+  @import 'Distracting/shake.styl'
+  @import 'Distracting/swing.styl'
+  @import 'Distracting/tada.styl'
+  @import 'Distracting/wobble.styl'
 
-// Pop Animations
-@import 'Pop/popIn.styl'
-@import 'Pop/popOut.styl'
+  // Fading Animations
+  @import 'Fading/fadeIn.styl'
+  @import 'Fading/fadeInDown.styl'
+  @import 'Fading/fadeInLeft.styl'
+  @import 'Fading/fadeInRight.styl'
+  @import 'Fading/fadeInUp.styl'
+  @import 'Fading/fadeOut.styl'
+  @import 'Fading/fadeOutDown.styl'
+  @import 'Fading/fadeOutLeft.styl'
+  @import 'Fading/fadeOutRight.styl'
+  @import 'Fading/fadeOutUp.styl'
 
-// Rolling Animations
-@import 'Rolling/rollIn.styl'
-@import 'Rolling/rollOut.styl'
+  // Flipping Animations
+  @import 'Flipping/flip.styl'
+  @import 'Flipping/flipInHorizontal.styl'
+  @import 'Flipping/flipInVertical.styl'
+  @import 'Flipping/flipOutHorizontal.styl'
+  @import 'Flipping/flipOutVertical.styl'
 
-// Rotating Animations
-@import 'Rotating/spinLeft.styl'
-@import 'Rotating/spinRight.styl'
+  // Pop Animations
+  @import 'Pop/popIn.styl'
+  @import 'Pop/popOut.styl'
 
-// Sliding Animations
-@import 'Sliding/slideInDown.styl'
-@import 'Sliding/slideInLeft.styl'
-@import 'Sliding/slideInRight.styl'
-@import 'Sliding/slideInUp.styl'
-@import 'Sliding/slideOutDown.styl'
-@import 'Sliding/slideOutLeft.styl'
-@import 'Sliding/slideOutRight.styl'
-@import 'Sliding/slideOutUp.styl'
+  // Rolling Animations
+  @import 'Rolling/rollIn.styl'
+  @import 'Rolling/rollOut.styl'
 
-// Vanishing Animations
-@import 'Vanishing/vanishIn.styl'
-@import 'Vanishing/vanishOut.styl'
+  // Rotating Animations
+  @import 'Rotating/spinLeft.styl'
+  @import 'Rotating/spinRight.styl'
 
-// Zooming Animations
-@import 'Zooming/zoomIn.styl'
-@import 'Zooming/zoomOut.styl'
+  // Sliding Animations
+  @import 'Sliding/slideInDown.styl'
+  @import 'Sliding/slideInLeft.styl'
+  @import 'Sliding/slideInRight.styl'
+  @import 'Sliding/slideInUp.styl'
+  @import 'Sliding/slideOutDown.styl'
+  @import 'Sliding/slideOutLeft.styl'
+  @import 'Sliding/slideOutRight.styl'
+  @import 'Sliding/slideOutUp.styl'
+
+  // Vanishing Animations
+  @import 'Vanishing/vanishIn.styl'
+  @import 'Vanishing/vanishOut.styl'
+
+  // Zooming Animations
+  @import 'Zooming/zoomIn.styl'
+  @import 'Zooming/zoomOut.styl'

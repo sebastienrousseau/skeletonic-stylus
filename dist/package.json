@@ -22,7 +22,7 @@
     "email": "hello@skeletonicstylus.com",
     "url": "https://skeletonicstylus.com"
   },
-  "license": "MIT",
+  "license": "(MIT OR Apache-2.0)",
   "bugs": {
     "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
   },
@@ -39,7 +39,8 @@
     "images",
     "stylus",
     "README.md",
-    "index.html"
+    "index.html",
+    "sbom.json"
   ],
   "scripts": {
     "test": "echo \"No tests in published artefact\" && exit 0"
