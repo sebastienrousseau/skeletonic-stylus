@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.6
+ * Skeletonic Stylus Library v1.1.7
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -8,6 +8,45 @@
 
 /* @group Alerts */
 
+.alert
+  border-radius: .25rem
+  display: block
+  margin-bottom: 1rem
+  padding: 1rem
+
+  &.alert-error
+    background: var(--bg-danger)
+    border: .0625rem solid var(--cl-danger)
+    color: var(--cl-danger)
+
+  &.alert-info
+    background: var(--bg-info)
+    border: .0625rem solid var(--cl-info)
+    color: var(--cl-info)
+
+  &.alert-primary
+    background: var(--bg-primary)
+    border: .0625rem solid var(--cl-primary)
+    color: var(--cl-primary)
+
+  &.alert-secondary
+    background: var(--bg-secondary)
+    border: .0625rem solid var(--cl-secondary)
+    color: var(--cl-secondary)
+
+  &.alert-success
+    background: var(--bg-success)
+    border: .0625rem solid var(--cl-success)
+    color: var(--cl-success)
+
+  &.alert-warning
+    background: var(--bg-warning)
+    border: .0625rem solid var(--cl-warning)
+    color: var(--cl-warning)
+
+// @deprecated since v1.1.7 — bare global alert classes pollute the namespace
+// and collide with button/input modifiers. Migrate to `.alert .alert-*` above.
+// These will be removed in v2.0.0.
 .error
   background: var(--bg-danger)
   border: .0625rem solid var(--cl-danger)
@@ -26,7 +65,7 @@
   color: var(--cl-secondary)
 .success
   background: var(--bg-success)
-  border .0625rem solid var(--cl-success)
+  border: .0625rem solid var(--cl-success)
   color: var(--cl-success)
 .warning
   background: var(--bg-warning)

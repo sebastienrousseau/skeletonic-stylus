@@ -4,7 +4,7 @@
 
 <!-- markdownlint-enable MD033 MD041 -->
 
-# Skeletonic Stylus Library (v1.1.6)
+# Skeletonic Stylus Library (v1.1.7)
 
 ![Skeletonic Stylus Library banner][5]
 
@@ -70,8 +70,8 @@ mixins needed to use is available via the following CDNs:
 | CDN | URL |
 | --- | --- |
 | [GitHub Packages](https://docs.github.com/en/packages) | <https://github.com/sebastienrousseau/skeletonic-stylus/packages> |
-| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.1.6/dist/css/skeletonic.min.css> |
-| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.6/dist/css/skeletonic.min.css> |
+| [unpkg](https://unpkg.com/) | <https://unpkg.com/skeletonic-stylus@1.1.7/dist/css/skeletonic.min.css> |
+| [jsDelivr](https://www.jsdelivr.com/) | <https://cdn.jsdelivr.net/npm/skeletonic-stylus@1.1.7/dist/css/skeletonic.min.css> |
 
 ### Versioning 🚥
 
@@ -111,7 +111,7 @@ A big thank you to all the awesome contributors of
 [3]:  https://github.com/sebastienrousseau/skeletonic-docs
 [4]:  https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/shields/made-with-love.svg
 [5]:  https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/logo/logo-skeletonic-stylus.svg
-[7]:  https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.6.zip
+[7]:  https://github.com/sebastienrousseau/skeletonic-stylus/archive/v1.1.7.zip
 [8]:  https://npmjs.com/
 [9]:  https://yarnpkg.com/
 [10]: https://pnpm.io/

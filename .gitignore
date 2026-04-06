@@ -1,6 +1,7 @@
 # Exclude Directories and package
 *.tgz
 debug
+package/
 
 # Logs
 logs
