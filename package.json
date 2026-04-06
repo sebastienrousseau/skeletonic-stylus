@@ -13,9 +13,9 @@
     "stylus-mixin",
     "stylus"
   ],
-  "main": "src/stylus/skeletonic.styl",
-  "style": "dist/css/core/skeletonic.min.css",
-  "filename": "dist/css/core/skeletonic.css",
+  "main": "stylus/skeletonic.styl",
+  "style": "css/core/skeletonic.min.css",
+  "sass": "stylus/skeletonic.styl",
   "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
   "author": {
     "name": "Sebastien Rousseau",
@@ -34,7 +34,7 @@
   },
   "autoupdate": {
     "source": "git",
-    "target": "git://github.com/sebastienrousseau/skeletonic-stylus.git",
+    "target": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
     "fileMap": [
       {
         "basePath": "dist",
@@ -49,7 +49,8 @@
   },
   "scripts": {
     "// Build": " --- Build Scripts --- ",
-    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && cp package.json dist/package.json && npm pack ./dist",
+    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && pnpm run dev:emit:dist-package && npm pack ./dist",
+    "dev:emit:dist-package": "node ./scripts/emit-dist-package.mjs",
     "// Skeletonic CSS Library": " --- Development Scripts --- ",
     "dev:generate:skeletonic-library": "rm -rf dist && pnpm run dev:generate:animations && pnpm run dev:generate:fonts && pnpm run dev:generate:hebrew-fonts && pnpm run dev:generate:material && pnpm run dev:generate:tachyons && pnpm run dev:generate:websafe && pnpm run dev:generate:skeletonic && pnpm run dev:filesizes:package",
     "// Skeletonic CSS Animations": " --- Development Scripts --- ",
@@ -157,7 +158,6 @@
     "stylus": "^0.59.0",
     "stylus-supremacy": "^2.17.5"
   },
-  "pre-commit": "dev:lint:stylus",
   "pnpm": {
     "overrides": {
       "trim@<0.0.3": ">=0.0.3",
