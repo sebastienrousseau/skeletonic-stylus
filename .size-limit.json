@@ -2,7 +2,7 @@
   {
     "name": "skeletonic.min.css (raw)",
     "path": "dist/css/core/skeletonic.min.css",
-    "limit": "45 KB",
+    "limit": "48 KB",
     "gzip": false,
     "brotli": false
   },

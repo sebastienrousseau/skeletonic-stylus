@@ -26,7 +26,7 @@ for i in (1..12)
         background: var(--link-color-focus)
         bottom: 0
         height: 2px
-        left: 0
+        inset-inline-start: 0
         transform: translateX(-100%)
         width: 100%
     &:hover
@@ -40,7 +40,7 @@ for i in (1..12)
         background: var(--link-color-focus)
         bottom: 0
         height: 2px
-        right: 0
+        inset-inline-end: 0
         transform: translateX(100%)
         width: 100%
     &:hover
@@ -53,7 +53,7 @@ for i in (1..12)
         background: var(--link-color-focus)
         bottom: 0
         height: 2px
-        left: 0
+        inset-inline-start: 0
         transform: scaleX(0)
         width: 100%
     &:hover
@@ -66,7 +66,7 @@ for i in (1..12)
         background: var(--link-color-focus)
         bottom: 0
         height: 2px
-        left: 0
+        inset-inline-start: 0
         transform: scaleX(1)
         width: 100%
     &:hover
@@ -217,5 +217,32 @@ for i in (1..12)
         transform: scaleX(0)
     100%
         transform: scaleX(1)
+
+// RTL — flip directional reveals so semantics ("from the start") are
+// preserved when the inline axis is reversed.
+[dir="rtl"]
+    .link-1:before,
+    .link-5:before,
+    .link-5:after,
+    .link-8:before
+        transform: translateX(100%)
+    .link-2:before,
+    .link-6:before,
+    .link-6:after,
+    .link-8:after
+        transform: translateX(-100%)
+    .link-1:hover:before,
+    .link-2:hover:before,
+    .link-5:hover:before,
+    .link-5:hover:after,
+    .link-6:hover:before,
+    .link-6:hover:after,
+    .link-8:hover:before,
+    .link-8:hover:after
+        transform: translateX(0)
+    .link-11:hover:before
+        transform: translateX(15px)
+    .link-11:hover:after
+        transform: translateX(-10px)
 
 /* @end */

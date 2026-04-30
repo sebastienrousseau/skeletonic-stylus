@@ -7,15 +7,21 @@
  */
 
 /* @group Headings */
-$fontSize = (4.2 3.3 2.6 2.0 1.6 1.3)
-$lineHeight = (6.5 5.2 4.2 3.3 2.7 2.3)
-$mgBottom = (4.4 2.7 1.7 1.1 .7 .4)
+// Sizes and line-heights are sourced from --gr-h1..--gr-h6 and
+// --gr-lh-h1..--gr-lh-h6 (defined in configurations/variables.styl)
+// so consumers can retheme without recompiling Stylus. The Stylus
+// $gr-h* values seed the same numbers and act as the var() fallback.
+$fontSizeFallback   = ($gr-h1 $gr-h2 $gr-h3 $gr-h4 $gr-h5 $gr-h6)
+$lineHeightFallback = ($gr-lh-h1 $gr-lh-h2 $gr-lh-h3 $gr-lh-h4 $gr-lh-h5 $gr-lh-h6)
+$mgBottom           = (4.4 2.7 1.7 1.1 .7 .4)
+
 for index in (0..5)
-    h{index+1},
-    .h{index+1}
-        font-size: $fontSize[index]rem
+    $level = index + 1
+    h{$level},
+    .h{$level}
+        font-size: 'var(--gr-h%s, %s)' % ($level $fontSizeFallback[index])
         font-weight: 500
         letter-spacing: -.1rem
-        line-height: $lineHeight[index]rem
+        line-height: 'var(--gr-lh-h%s, %s)' % ($level $lineHeightFallback[index])
         margin-bottom: $mgBottom[index]rem
 /* @end */
