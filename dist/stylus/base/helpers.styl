@@ -18,7 +18,7 @@
 /* CSS Layout */
 .centered,
 [centered] {
-  left: 50%;
+  inset-inline-start: 50%;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -48,9 +48,10 @@
 }
 
 /* Text */
+.text-start,
 .text-left {
   align-self: flex-start;
-  text-align: left;
+  text-align: start;
 }
 
 .text-center {
@@ -58,9 +59,10 @@
   text-align: center;
 }
 
+.text-end,
 .text-right {
   align-self: flex-end;
-  text-align: right;
+  text-align: end;
 }
 
 .text-uppercase {

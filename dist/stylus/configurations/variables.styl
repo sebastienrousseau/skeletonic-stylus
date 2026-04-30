@@ -23,13 +23,16 @@
   $gr-fsm     = round(2 * $gr-fsb * $gr-medium, 2)rem // 1.62rem
   $gr-fss     = round(2 * $gr-fsb * $gr-small, 2)rem //  1.23rem
 
-  // Golden Ratio Headers (h1, h2, h3, h4, h5, h6)
-  $gr-h1      = round($gr-fsb * ($gr ** 6), 2)rem // 29.07rem
-  $gr-h2      = round($gr-fsb * ($gr ** 5), 2)rem // 17.97rem
-  $gr-h3      = round($gr-fsb * ($gr ** 4), 2)rem // 11.1rem
-  $gr-h4      = round($gr-fsb * ($gr ** 3), 2)rem // 6.86rem
-  $gr-h5      = round($gr-fsb * ($gr ** 2), 2)rem // 4.24rem
-  $gr-h6      = round($gr-fsb * ($gr ** 1), 2)rem // 2.62rem
+  // Heading scale — consumed by components/header.styl and exposed
+  // as --gr-h1..--gr-h6 for runtime overrides. The earlier Φⁿ ladder
+  // produced unusably large values (h1 ≈ 29rem); this scale uses a
+  // ~1.27 ratio (musical minor-third), grounded so h6 ≥ body size.
+  $gr-h1      = 4.2rem
+  $gr-h2      = 3.3rem
+  $gr-h3      = 2.6rem
+  $gr-h4      = 2.0rem
+  $gr-h5      = 1.6rem
+  $gr-h6      = 1.3rem
 
   // Golden Ratio Line Heights
   $gr-lh      = round($gr-fsb * ($gr ** 1), 2)rem // 2.62rem
@@ -37,13 +40,14 @@
   $gr-lhm     = round($gr-fsm * ($gr ** 1), 2)rem // 2.62rem
   $gr-lhs     = round($gr-fss * ($gr ** 1), 2)rem // 1.99rem
 
-  // Golden Ratio Line Height Headers
-  $gr-lh-h1   = round($gr-fsb * ($gr ** 2), 2)rem // 4.24rem
-  $gr-lh-h2   = round($gr-fsb * ($gr ** 3), 2)rem // 6.86rem
-  $gr-lh-h3   = round($gr-fsb * ($gr ** 4), 2)rem // 11.1rem
-  $gr-lh-h4   = round($gr-fsb * ($gr ** 5), 2)rem // 17.97rem
-  $gr-lh-h5   = round($gr-fsb * ($gr ** 6), 2)rem // 29.07rem
-  $gr-lh-h6   = round($gr-fsb * ($gr ** 7), 2)rem // 47.04rem
+  // Heading line heights — paired with $gr-h1..$gr-h6 above. Tuned
+  // for visual rhythm at each step rather than derived from Φⁿ.
+  $gr-lh-h1   = 6.5rem
+  $gr-lh-h2   = 5.2rem
+  $gr-lh-h3   = 4.2rem
+  $gr-lh-h4   = 3.3rem
+  $gr-lh-h5   = 2.7rem
+  $gr-lh-h6   = 2.3rem
 
 // Link Colors
   :root
@@ -79,19 +83,28 @@
   --gr-fsm: 1.62rem
   --gr-fss: 1.23rem
 
-  // Golden ratio headers
-  --gr-h1: 29.07rem
-  --gr-h2: 17.97rem
-  --gr-h3: 11.1rem
-  --gr-h4: 6.86rem
-  --gr-h5: 4.24rem
-  --gr-h6: 2.62rem
+  // Heading sizes — runtime mirrors of $gr-h1..$gr-h6. Override on
+  // any ancestor to retheme without recompiling Stylus.
+  --gr-h1: 4.2rem
+  --gr-h2: 3.3rem
+  --gr-h3: 2.6rem
+  --gr-h4: 2.0rem
+  --gr-h5: 1.6rem
+  --gr-h6: 1.3rem
 
-  // Golden ratio line heights
+  // Body line heights
   --gr-lh: 2.62rem
   --gr-lhl: 3.25rem
   --gr-lhm: 2.62rem
   --gr-lhs: 1.99rem
+
+  // Heading line heights — paired with --gr-h1..--gr-h6 above.
+  --gr-lh-h1: 6.5rem
+  --gr-lh-h2: 5.2rem
+  --gr-lh-h3: 4.2rem
+  --gr-lh-h4: 3.3rem
+  --gr-lh-h5: 2.7rem
+  --gr-lh-h6: 2.3rem
 
   // Focus ring color (WCAG 2.2 SC 2.4.11). Themeable.
   --focus-ring-color: var(--link-color, #007aff)
