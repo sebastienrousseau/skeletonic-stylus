@@ -90,9 +90,12 @@ button, .button, [type=submit]
       background-color: hsl(195, 100%, 23%)
       text-decoration: none
       transition: all 150ms linear
+  // Warning / info / success use light amber, light yellow, light
+  // green tokens. White text on those fails WCAG 2.2 AA (≤ 2.5:1) —
+  // pair with `--cl-black` text instead so the contrast clears.
   &.info
     background: var(--cl-info)
-    color: var(--cl-white)
+    color: var(--cl-black)
     cursor: pointer
     transition: all 150ms linear
     &:hover
@@ -101,7 +104,7 @@ button, .button, [type=submit]
       transition: all 150ms linear
   &.success
     background: var(--cl-success)
-    color: var(--cl-white)
+    color: var(--cl-black)
     cursor: pointer
     transition: all 150ms linear
     &:hover
@@ -119,7 +122,7 @@ button, .button, [type=submit]
       transition: all 150ms linear
   &.warning
     background: var(--cl-warning)
-    color: var(--cl-white)
+    color: var(--cl-black)
     cursor: pointer
     transition: all 150ms linear
     &:hover

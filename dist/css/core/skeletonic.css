@@ -4,7 +4,7 @@
 @layer skeletonic {
 @layer skeletonic.base, skeletonic.layout, skeletonic.elements, skeletonic.components;
 :root {
-  --cl-primary: oklch(0.55 0.2 250);
+  --cl-primary: oklch(0.5 0.2 250);
   --cl-secondary: oklch(0.45 0.15 200);
   --cl-tertiary: oklch(0.6 0.02 250);
   --cl-disable: oklch(0.8 0.01 250);
@@ -757,7 +757,7 @@
   .button.info,
   [type="submit"].info {
     background: var(--cl-info);
-    color: var(--cl-white);
+    color: var(--cl-black);
     cursor: pointer;
     transition: all 150ms linear;
   }
@@ -772,7 +772,7 @@
   .button.success,
   [type="submit"].success {
     background: var(--cl-success);
-    color: var(--cl-white);
+    color: var(--cl-black);
     cursor: pointer;
     transition: all 150ms linear;
   }
@@ -802,7 +802,7 @@
   .button.warning,
   [type="submit"].warning {
     background: var(--cl-warning);
-    color: var(--cl-white);
+    color: var(--cl-black);
     cursor: pointer;
     transition: all 150ms linear;
   }
@@ -2579,12 +2579,12 @@
   .badge.success {
     background: var(--cl-success);
     border-color: var(--cl-success);
-    color: var(--cl-white);
+    color: var(--cl-black);
   }
   .badge.warning {
     background: var(--cl-warning);
     border-color: var(--cl-warning);
-    color: var(--cl-white);
+    color: var(--cl-black);
   }
   .badge.danger,
   .badge.error {

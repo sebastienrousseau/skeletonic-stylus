@@ -24,14 +24,17 @@
     background: var(--cl-secondary)
     border-color: var(--cl-secondary)
     color: var(--cl-white)
+  // Light status backgrounds (success green, warning amber, info
+  // yellow) need DARK text to clear WCAG 2.2 AA 4.5:1 — white on
+  // these tokens lands at 1.9–2.5:1.
   &.success
     background: var(--cl-success)
     border-color: var(--cl-success)
-    color: var(--cl-white)
+    color: var(--cl-black)
   &.warning
     background: var(--cl-warning)
     border-color: var(--cl-warning)
-    color: var(--cl-white)
+    color: var(--cl-black)
   &.danger,
   &.error
     background: var(--cl-danger)

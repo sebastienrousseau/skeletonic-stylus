@@ -11,7 +11,10 @@
   // Main colors
   // Lightness chosen so white text on these backgrounds clears
   // WCAG 2.2 AA SC 1.4.3 (>=4.5:1 contrast for normal text).
-  $primary         = oklch(0.55 0.2 250) // Blue
+  // Bumped to oklch L=0.50 (was 0.55) so .btn-outline text and
+  // any `color: var(--cl-primary)` on a white surface clears
+  // WCAG 2.2 AA 4.5:1 instead of stalling at 4.42:1.
+  $primary         = oklch(0.50 0.2 250) // Blue
   $secondary       = oklch(0.45 0.15 200) // Teal/Cyan
   $tertiary        = oklch(0.6 0.02 250) // Muted Blue-Grey
   $disable         = oklch(0.8 0.01 250) // Muted Grey
