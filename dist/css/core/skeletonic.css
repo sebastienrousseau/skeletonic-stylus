@@ -509,417 +509,33 @@ sub {
   flex: 12;
   margin: 0 1.62rem;
 }
-@media only screen and (min-width: 13em) {
+.container {
+  margin: 0 auto;
+  width: 96%;
+}
+@media (min-width: 30em) {
   .container {
-    margin: 0 auto;
-    width: 11em;
+    max-width: 28rem;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 14em) {
+@media (min-width: 48em) {
   .container {
-    margin: 0 auto;
-    width: 12em;
+    max-width: 44rem;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 19em) {
+@media (min-width: 64em) {
   .container {
-    margin: 0 auto;
-    width: 16em;
+    max-width: 60rem;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 22em) {
+@media (min-width: 80em) {
   .container {
-    margin: 0 auto;
-    width: 19em;
+    max-width: 72rem;
   }
 }
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 24em) {
+@media (min-width: 96em) {
   .container {
-    margin: 0 auto;
-    width: 21em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 28em) {
-  .container {
-    margin: 0 auto;
-    width: 24em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 34em) {
-  .container {
-    margin: 0 auto;
-    width: 29em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 35em) {
-  .container {
-    margin: 0 auto;
-    width: 30em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 38em) {
-  .container {
-    margin: 0 auto;
-    width: 32em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 38em) {
-  .container {
-    margin: 0 auto;
-    width: 33em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 42em) {
-  .container {
-    margin: 0 auto;
-    width: 36em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 45em) {
-  .container {
-    margin: 0 auto;
-    width: 39em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 47em) {
-  .container {
-    margin: 0 auto;
-    width: 40em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 53em) {
-  .container {
-    margin: 0 auto;
-    width: 45em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 56em) {
-  .container {
-    margin: 0 auto;
-    width: 48em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 60em) {
-  .container {
-    margin: 0 auto;
-    width: 52em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 62em) {
-  .container {
-    margin: 0 auto;
-    width: 53em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 64em) {
-  .container {
-    margin: 0 auto;
-    width: 54em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 68em) {
-  .container {
-    margin: 0 auto;
-    width: 58em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 71em) {
-  .container {
-    margin: 0 auto;
-    width: 61em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 75em) {
-  .container {
-    margin: 0 auto;
-    width: 65em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 80em) {
-  .container {
-    margin: 0 auto;
-    width: 69em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 82em) {
-  .container {
-    margin: 0 auto;
-    width: 70em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 82em) {
-  .container {
-    margin: 0 auto;
-    width: 71em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 85em) {
-  .container {
-    margin: 0 auto;
-    width: 73em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 90em) {
-  .container {
-    margin: 0 auto;
-    width: 77em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 94em) {
-  .container {
-    margin: 0 auto;
-    width: 81em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 99em) {
-  .container {
-    margin: 0 auto;
-    width: 85em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 109em) {
-  .container {
-    margin: 0 auto;
-    width: 94em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 113em) {
-  .container {
-    margin: 0 auto;
-    width: 97em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 120em) {
-  .container {
-    margin: 0 auto;
-    width: 103em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 127em) {
-  .container {
-    margin: 0 auto;
-    width: 109em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 151em) {
-  .container {
-    margin: 0 auto;
-    width: 129em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 199em) {
-  .container {
-    margin: 0 auto;
-    width: 171em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 226em) {
-  .container {
-    margin: 0 auto;
-    width: 194em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 254em) {
-  .container {
-    margin: 0 auto;
-    width: 218em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 354em) {
-  .container {
-    margin: 0 auto;
-    width: 303em;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
-@media only screen and (min-width: 452em) {
-  .container {
-    margin: 0 auto;
-    width: 387em;
+    max-width: 84rem;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1546,17 +1162,18 @@ input[type="text"],
 input[type="url"],
 select,
 textarea {
-  background: var(--inverted-color);
-  border: 1px solid var(--cl-grey-200);
-  border-radius: 2px;
-  color: var(--cl-black);
+  background: var(--background-color);
+  border: 1px solid var(--cl-grey-300);
+  border-radius: 0.375rem;
+  color: var(--foreground-color);
   display: block;
-  font-family: "Consolas", "Monaco", "Menlo", monospace;
-  font-size: 2.01rem;
-  margin: 1.62rem 0;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
   outline: 0;
-  padding: 1.62rem 0 1.62rem 0.62rem;
-  transition: all 150ms linear;
+  padding: 0.625rem 0.75rem;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
   width: 100%;
 }
 input[type="email"]:hover,
@@ -2854,13 +2471,52 @@ th {
   color: var(--cl-warning);
 }
 .badge {
+  align-items: center;
   background: transparent;
-  border: 1.6px solid var(--cl-grey-300);
-  border-radius: 1rem;
-  color: var(--cl-black);
-  font-size: 1.62rem;
-  padding: 1rem;
+  border: 1px solid var(--cl-grey-300);
+  border-radius: 9999px;
+  color: var(--foreground-color);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  min-height: 1.5rem;
+  padding: 0.25rem 0.625rem;
   text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.badge.primary {
+  background: var(--cl-primary);
+  border-color: var(--cl-primary);
+  color: var(--cl-white);
+}
+.badge.secondary {
+  background: var(--cl-secondary);
+  border-color: var(--cl-secondary);
+  color: var(--cl-white);
+}
+.badge.success {
+  background: var(--cl-success);
+  border-color: var(--cl-success);
+  color: var(--cl-white);
+}
+.badge.warning {
+  background: var(--cl-warning);
+  border-color: var(--cl-warning);
+  color: var(--cl-white);
+}
+.badge.danger,
+.badge.error {
+  background: var(--cl-danger);
+  border-color: var(--cl-danger);
+  color: var(--cl-white);
+}
+.badge.info {
+  background: var(--cl-info);
+  border-color: var(--cl-info);
+  color: var(--cl-black);
 }
 .card-content {
   padding: 1.62rem;
