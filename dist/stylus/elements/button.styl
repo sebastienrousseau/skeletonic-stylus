@@ -19,8 +19,12 @@ button, .button, [type=submit]
   display: inline-block
   font-size: $gr-fsb rem
   margin-bottom: round($gr rem, 1)
-  min-width: 27rem
-  padding: round($gr rem, 1)
+  // Floor the touch target at WCAG 2.5.8 enhanced (44 px) without
+  // forcing the chunky 27rem default that prevented .button-group
+  // from laying out horizontally in any normal content column.
+  min-width: 6rem
+  min-height: 2.75rem
+  padding: 0.75rem 1.5rem
   text-align: center
   text-decoration: none
   text-transform: uppercase
@@ -135,11 +139,17 @@ button, .button, [type=submit]
       &:focus-visible
         outline: 3px solid CanvasText
         outline-offset: 2px
+// Modern flex layout — replaces a pre-flexbox letter-spacing: -.31em
+// hack that left buttons stacking vertically because they couldn't
+// negotiate space along the inline axis.
 .button-group
-  border: 0
-  border-radius: 0
-  letter-spacing: -.31em
-  text-rendering: optimizespeed
+  display: inline-flex
+  flex-wrap: wrap
+  gap: 0.5rem
+  align-items: center
+  & > .button,
+  & > button
+    margin-bottom: 0
 .btn
   border-radius: .3rem
   cursor: pointer
@@ -180,13 +190,14 @@ button, .button, [type=submit]
       opacity: .9
       text-decoration: none
       transition: all 150ms linear
+// Full-width call-to-action variant. Use as a modifier on .button
+// (e.g. <a class="button primary block">). Width was 98.7% which
+// left a visible gap on the trailing edge — fixed to 100%.
 .block
   border: 0
   display: block
-  height: 60px
-  line-height: 60px
-  padding: .6rem
-  width: 98.7%
+  padding: 0.75rem 1.5rem
+  width: 100%
 button.primary-outline, .button.primary-outline, [type=submit].primary-outline
   background-color: var(--cl-white)
   border: 1px solid var(--cl-primary)
