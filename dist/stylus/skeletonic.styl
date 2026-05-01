@@ -1,16 +1,24 @@
 @charset "UTF-8"
 
-// Configurations
+@css {
+  @layer skeletonic.base, skeletonic.layout, skeletonic.elements, skeletonic.components;
+}
+
+// Configurations (Variables & Colors)
 @import "configurations/_contents.styl"
 
 // Base
-@import "base/_contents.styl"
+@layer skeletonic.base
+  @import "base/_contents.styl"
 
 // Layout
-@import "layout/_contents.styl"
+@layer skeletonic.layout
+  @import "layout/_contents.styl"
 
 // Elements
-@import "elements/_contents.styl"
+@layer skeletonic.elements
+  @import "elements/_contents.styl"
 
 // Components
-@import "components/_contents.styl"
+@layer skeletonic.components
+  @import "components/_contents.styl"

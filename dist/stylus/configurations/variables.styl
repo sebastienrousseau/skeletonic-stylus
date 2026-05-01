@@ -110,15 +110,15 @@
   --focus-ring-color: var(--link-color, #007aff)
 
   // Surface tokens — light defaults
-  --background-color: #ffffff
-  --foreground-color: #000000
+  --background-color: oklch(1 0 0)
+  --foreground-color: oklch(0 0 0)
 
 // Dark mode — opt-in via prefers-color-scheme. Consumers who set
 // color-scheme: only light on a parent will not be affected.
 @media (prefers-color-scheme: dark)
   :root
-    --background-color: #0d0d10
-    --foreground-color: #f5f5f7
-    --focus-ring-color: var(--link-color, #4ea1ff)
+    --background-color: oklch(0.15 0.01 250)
+    --foreground-color: oklch(0.98 0.01 250)
+    --focus-ring-color: var(--link-color, oklch(0.7 0.2 250))
 
 /* @end */

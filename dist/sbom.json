@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:2d5ba186-e9f8-4d47-969c-ad67ac9636b3",
+  "serialNumber": "urn:uuid:367df0ca-55a8-485f-96c6-1b6b6cd14a41",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-05-01T19:46:55.367Z",
+    "timestamp": "2026-05-01T21:38:00.713Z",
     "tools": [
       {
         "vendor": "Skeletonic Stylus",
@@ -13,17 +13,17 @@
       }
     ],
     "component": {
-      "bom-ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "bom-ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@2.0.0",
       "type": "library",
       "name": "@sebastienrousseau/skeletonic-stylus",
-      "version": "1.1.7",
+      "version": "2.0.0",
       "description": "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs. Proudly made with Stylus ❤",
       "licenses": [
         {
           "expression": "(MIT OR Apache-2.0)"
         }
       ],
-      "purl": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "purl": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@2.0.0",
       "externalReferences": [
         {
           "type": "website",
@@ -41,11 +41,11 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "a4bd3949ca522b9fbb7a273bc083a134b14a31e565e40df9cb4f1feb8824150f"
+          "content": "1004fa4dddc7d9c209a697d0b79a859ff49d24527b32d5477092c54aaa323850"
         },
         {
           "alg": "SHA-512",
-          "content": "5a627a03cc0214e49adad839f3dfa7509dcf3a19297ce4ea4468731560d2b14e301e5a28a52f2ea23e076811d33938cfebb1c0c732496e6608d1464072256b5b"
+          "content": "92ef6337169ff5db9bf364a641095c121ba853d51dc339864b3f9538a0ead3cc3a61aaa82559921aea9f9ba55532bb66c49f40e30b654f3f13bdad6171a0bb12"
         }
       ]
     }
@@ -53,7 +53,7 @@
   "components": [],
   "dependencies": [
     {
-      "ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7",
+      "ref": "pkg:npm/%40sebastienrousseau/skeletonic-stylus@2.0.0",
       "dependsOn": []
     }
   ]
