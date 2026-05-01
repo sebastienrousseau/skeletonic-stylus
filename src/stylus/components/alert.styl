@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -9,10 +9,19 @@
 /* @group Alerts */
 
 .alert
-  border-radius: .25rem
+  border-radius: .38rem
   display: block
-  margin-bottom: 1rem
-  padding: 1rem
+  margin-bottom: 1.62rem
+  padding: 1.62rem
+  position: relative
+  transition: transform 0.2s ease
+
+  // Native :has() selector for 2026 logic
+  // If the alert contains a link, give it a pointer cursor and hover effect
+  &:has(a)
+    cursor: pointer
+    &:hover
+      transform: translateY(-2px)
 
   &.alert-error
     background: var(--bg-danger)
@@ -43,33 +52,5 @@
     background: var(--bg-warning)
     border: .0625rem solid var(--cl-warning)
     color: var(--cl-warning)
-
-// @deprecated since v1.1.7 — bare global alert classes pollute the namespace
-// and collide with button/input modifiers. Migrate to `.alert .alert-*` above.
-// These will be removed in v2.0.0.
-.error
-  background: var(--bg-danger)
-  border: .0625rem solid var(--cl-danger)
-  color: var(--cl-danger)
-.info
-  background: var(--bg-info)
-  border: .0625rem solid var(--cl-info)
-  color: var(--cl-info)
-.primary
-  background: var(--bg-primary)
-  border: .0625rem solid var(--cl-primary)
-  color: var(--cl-primary)
-.secondary
-  background: var(--bg-secondary)
-  border: .0625rem solid var(--cl-secondary)
-  color: var(--cl-secondary)
-.success
-  background: var(--bg-success)
-  border: .0625rem solid var(--cl-success)
-  color: var(--cl-success)
-.warning
-  background: var(--bg-warning)
-  border: .0625rem solid var(--cl-warning)
-  color: var(--cl-warning)
 
 /* @end */

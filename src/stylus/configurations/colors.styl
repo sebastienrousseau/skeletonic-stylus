@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -11,61 +11,60 @@
   // Main colors
   // Lightness chosen so white text on these backgrounds clears
   // WCAG 2.2 AA SC 1.4.3 (>=4.5:1 contrast for normal text).
-  $primary         = hsl(210, 100%, 42%)
-  $secondary       = hsl(195, 100%, 33%)
-  $tertiary        = hsl(220, 8%, 50%)
-  $disable         = hsl(220, 5%, 70%)
-  $info            = hsl(45, 100%, 50%)
-  $inverse         = hsl(0, 0%, 100%)
-  $link            = hsl(210, 100%, 50%)
-  $danger          = hsl(0, 100%, 50%)
-  $success         = hsl(120, 60%, 50%)
-  $warning         = hsl(40, 100%, 50%)
+  $primary         = oklch(0.55 0.2 250) // Blue
+  $secondary       = oklch(0.45 0.15 200) // Teal/Cyan
+  $tertiary        = oklch(0.6 0.02 250) // Muted Blue-Grey
+  $disable         = oklch(0.8 0.01 250) // Muted Grey
+  $info            = oklch(0.85 0.15 100) // Yellow/Gold
+  $inverse         = oklch(1 0 0) // White
+  $link            = oklch(0.6 0.25 250) // Bright Blue
+  $danger          = oklch(0.6 0.25 20) // Red
+  $success         = oklch(0.7 0.2 140) // Green
+  $warning         = oklch(0.8 0.15 80) // Orange/Amber
 
   // Main background colors — pale tints of the corresponding `--cl-*`
   // brand colour so .alert-{primary,secondary,…} and code.{primary,…}
-  // render as readable tinted callouts. $bg-primary used to be pure
-  // white, which made primary/secondary alerts invisible.
-  $bg-primary      = hsl(210, 100%, 94%)
-  $bg-secondary    = hsl(195, 100%, 94%)
-  $bg-tertiary     = hsl(220, 8%, 94%)
-  $bg-disable      = hsl(0, 0%, 90%)
-  $bg-info         = hsl(213, 100%, 94%)
-  $bg-inverse      = hsl(0, 0%, 0%)
-  $bg-link         = hsl(200, 100%, 94%)
-  $bg-danger       = hsl(356, 100%, 92%)
-  $bg-success      = hsl(124, 54%, 89%)
-  $bg-warning      = hsl(37, 100%, 92%)
+  // render as readable tinted callouts.
+  $bg-primary      = oklch(0.96 0.02 250)
+  $bg-secondary    = oklch(0.96 0.02 200)
+  $bg-tertiary     = oklch(0.96 0.01 250)
+  $bg-disable      = oklch(0.92 0 0)
+  $bg-info         = oklch(0.96 0.05 100)
+  $bg-inverse      = oklch(0 0 0)
+  $bg-link         = oklch(0.96 0.03 250)
+  $bg-danger       = oklch(0.94 0.03 20)
+  $bg-success      = oklch(0.94 0.03 140)
+  $bg-warning      = oklch(0.94 0.03 80)
 
-  // Basic grey colors
-  $grey-100       = hsl(240, 20%, 97%)
-  $grey-200       = hsl(240, 5%, 87%)
-  $grey-300       = hsl(240, 3%, 77%)
-  $grey-400       = hsl(240, 2%, 67%)
-  $grey-500       = hsl(240, 1%, 57%)
-  $grey-600       = hsl(240, 1%, 47%)
-  $grey-700       = hsl(240, 2%, 37%)
-  $grey-800       = hsl(240, 2%, 27%)
-  $grey-900       = hsl(240, 3%, 17%)
-  $grey-1000      = hsl(240, 8%, 7%)
+  // Basic grey colors (Perceptually uniform steps)
+  $grey-100       = oklch(0.98 0.01 250)
+  $grey-200       = oklch(0.9 0.01 250)
+  $grey-300       = oklch(0.8 0.01 250)
+  $grey-400       = oklch(0.7 0.01 250)
+  $grey-500       = oklch(0.6 0.01 250)
+  $grey-600       = oklch(0.5 0.01 250)
+  $grey-700       = oklch(0.4 0.01 250)
+  $grey-800       = oklch(0.3 0.01 250)
+  $grey-900       = oklch(0.2 0.01 250)
+  $grey-1000      = oklch(0.1 0.01 250)
 
-  // Basic color keyword
-  $aqua           = hsl(180, 100%, 50%)
-  $black          = hsl(0, 0%, 0%)
-  $blue           = hsl(220, 100%, 50%)
-  $fuchsia        = hsl(300, 100%, 50%)
-  $green          = hsl(120, 100%, 30%)
-  $grey           = hsl(0, 0%, 50%)
-  $lime           = hsl(120, 100%, 50%)
-  $maroon         = hsl(0, 100%, 25%)
-  $navy           = hsl(220, 100%, 25%)
-  $olive          = hsl(60, 100%, 30%)
-  $purple         = hsl(300, 100%, 25%)
-  $red            = hsl(0, 100%, 50%)
-  $silver         = hsl(0, 0%, 75%)
-  $teal           = hsl(180, 100%, 30%)
-  $white          = hsl(0, 0%, 100%)
-  $yellow         = hsl(60, 100%, 50%)
+  // Basic color keywords (OKLCH approximations)
+  $aqua           = oklch(0.85 0.15 200)
+  $black          = oklch(0 0 0)
+  $blue           = oklch(0.5 0.25 250)
+  $fuchsia        = oklch(0.6 0.25 320)
+  $green          = oklch(0.5 0.2 140)
+  $grey           = oklch(0.6 0 0)
+  $lime           = oklch(0.8 0.25 140)
+  $maroon         = oklch(0.3 0.15 20)
+  $navy           = oklch(0.3 0.15 250)
+  $olive          = oklch(0.4 0.15 100)
+  $purple         = oklch(0.4 0.2 300)
+  $red            = oklch(0.6 0.25 20)
+  $silver         = oklch(0.8 0 0)
+  $teal           = oklch(0.4 0.15 200)
+  $white          = oklch(1 0 0)
+  $yellow         = oklch(0.9 0.2 100)
 
 colors = {
 

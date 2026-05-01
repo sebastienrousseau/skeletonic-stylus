@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -8,34 +8,49 @@
 
 /* @group Cards */
 
+.card
+  background: var(--background-color, oklch(1 0 0))
+  border: .0625rem solid var(--cl-grey-300)
+  border-radius: ($gr)rem
+  box-shadow: 0 3px 9px 0 var(--cl-grey-200)
+  color: var(--foreground-color, oklch(0 0 0))
+  container-type: inline-size
+  display: grid
+  margin-bottom: ($gr)rem
+  overflow: hidden
+  position: relative
+  transition: .3s ease-in-out
+
+  &:hover
+    box-shadow: 0 5px 15px 0 var(--cl-grey-300)
+
 .card-content
+  display: grid
+  gap: 1rem
   padding: ($gr)rem
 
+// Intrinsic Responsiveness via Container Queries
+@container (min-width: 400px)
+  .card-content
+    grid-template-columns: 1fr 1fr
+    gap: 2rem
+
 .card-body
-  flex: 1 1 auto
   padding: ($gr)rem
 
 .card-title
-  margin-bottom: ($gr)rem
+  font-size: var(--gr-h4)
+  font-weight: 700
+  margin-bottom: 0
 
 .card-subtitle
-  margin-bottom: 0
-  margin-top: -($gr)rem
+  color: var(--cl-grey-600)
+  font-size: var(--gr-fss)
+  margin-top: -0.5rem
 
 .cards
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-
-.card
-  background: transparent
-  border: round($gr px, 1) solid var(--cl-grey-300)
-  border-radius: ($gr)rem
-  box-shadow: 0 3px 9px 0 var(--cl-grey-200)
-  color: var(--cl-black)
-  margin-bottom: ($gr)rem
-  position: relative
-  transition: .30s ease-in-out
-
+  display: grid
+  gap: var(--gr-fsb)
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
 
 /* @end */

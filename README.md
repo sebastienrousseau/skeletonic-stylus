@@ -4,7 +4,7 @@
 
 <!-- markdownlint-enable MD033 MD041 -->
 
-# Skeletonic Stylus Library (v1.1.7)
+# Skeletonic Stylus Library (v2.0.0)
 
 ![Skeletonic Stylus Library banner][5]
 
@@ -21,25 +21,16 @@
 ## Overview 📖
 
 The [Skeletonic Stylus Library][0] is a lightweight and modular
-[Stylus][15] Library. It contains a suite of components and mixins
-optimised for mobile and web application design and development. You can
-use them to build responsive and fast web interfaces or combine them
-with other technologies to build custom components.
+[Stylus][15] Library. Reimagined for 2026, it combines the expressiveness of Stylus with the power of native modern CSS features.
 
 ## Features ✨
 
-- **Accessible**: The code is designed with accessibility in mind for
-  users with disabilities and for users who use assistive technologies.
-- **Comprehensive UI components**: It provides a wide range of UI
-  components, including buttons, forms, tables, and more that are easy
-  to use and customise.
-- **Extensible**: The components are extensible to suit your needs.
-- **Intuitive**: easy to use and understand.
-- **Lightweight**: 39.9 KB minified / 7.5 KB gzipped / 6.3 KB brotli
-  for the full `skeletonic.min.css` core stylesheet (enforced via
-  [`size-limit`](https://github.com/ai/size-limit) budgets in CI).
-- **Modular**: The components are usable on their own or in combination.
-- **Ultra-responsive**: works on any device, big, or small.
+- **2026 Standards Ready**: Built-in support for **CSS Grid**, **OKLCH Color Spaces**, **Container Queries**, and the **`:has()`** selector.
+- **Cascade Layers (`@layer`)**: Native support for CSS Cascade Layers to ensure zero-conflict specificity management.
+- **Modern Motion**: Integrated utilities for the **View Transitions API** and **Scroll-Driven Animations**.
+- **Accessible**: WCAG 2.2 compliant out of the box with enhanced focus indicators and high-contrast mode support.
+- **Lightweight**: Optimized for speed and performance, keeping the footprint minimal while delivering maximum power.
+- **Ultra-responsive**: Truly responsive components that adapt to their container, not just the viewport.
 
 ### Documentation 📚
 

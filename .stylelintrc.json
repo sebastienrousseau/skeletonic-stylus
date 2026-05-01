@@ -57,7 +57,8 @@
       "vw",
       "vh",
       "deg",
-      "s"
+      "s",
+      "fr"
     ],
     "unit-no-unknown": true,
     "value-no-vendor-prefix": true

@@ -1,25 +1,54 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Grid */
+/* @group Grid (Native CSS Grid) */
+
+// Main Grid Container
+.grid
+  display: grid
+  gap: var(--gr-fsb, 1.62rem)
+
+// Grid Columns (1-12)
+for i in (1..12)
+  .grid-cols-{i}
+    grid-template-columns: repeat(i, minmax(0, 1fr))
+
+// Column Spanning (1-12)
+for i in (1..12)
+  .col-span-{i}
+    grid-column: span i / span i
+
+// Gap Utilities
+.gap-0
+  gap: 0
+.gap-xs
+  gap: 0.5rem
+.gap-sm
+  gap: 1rem
+.gap-md
+  gap: 1.62rem
+.gap-lg
+  gap: 2rem
+.gap-xl
+  gap: 4rem
+
+/* @end */
+
+/* @group Legacy Flexbox Grid (Deprecated in v2.0.0) */
+
 .grid-flex
     display: flex
     flex-wrap: wrap
 
 .row
-  position: relative
+  display: flex
+  flex-wrap: wrap
   width: 100%
-  &:after
-    clear: both
-    content: ''
-    display: table
-  &-wrap
-    padding: 0
   &-top
     align-items: flex-start
   &-bottom
@@ -30,12 +59,10 @@
     align-items: stretch
   &-baseline
     align-items: baseline
-  &-no-padding
-    padding: 0
 
 for i in (1..12)
   .flex-{i}
-    flex:i
-    margin: 0 ($gr)rem
+    flex: i
+    margin: 0 (1.62)rem
 
 /* @end */
