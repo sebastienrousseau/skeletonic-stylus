@@ -8,17 +8,18 @@
 
 /* @group Input */
 input[type=email], input[type=file], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea
-  background: var(--inverted-color)
-  border: 1px solid var(--cl-grey-200)
-  border-radius: 2px
-  color: var(--cl-black)
+  background: var(--background-color)
+  border: 1px solid var(--cl-grey-300)
+  border-radius: .375rem
+  color: var(--foreground-color)
   display: block
-  font-family: "Consolas", "Monaco", "Menlo", monospace
-  font-size: $gr-fsl rem
-  margin: ($gr)rem  0
+  font-family: inherit
+  font-size: 1rem
+  line-height: 1.5
+  margin: 0 0 1rem 0
   outline: 0
-  padding: 1.62rem 0 1.62rem .62rem
-  transition: all 150ms linear
+  padding: .625rem .75rem
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out
   width: 100%
 
   &:hover

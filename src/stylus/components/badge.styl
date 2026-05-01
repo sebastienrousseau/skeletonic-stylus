@@ -1,8 +1,44 @@
+/* @group Badge */
 .badge
+  align-items: center
   background: transparent
-  border: round($gr px, 1) solid var(--cl-grey-300)
-  color: var(--cl-black)
-  font-size: $gr-fsb rem
-  padding: round($gr-fsb - 1)rem
+  border: 1px solid var(--cl-grey-300)
+  border-radius: 9999px
+  color: var(--foreground-color)
+  display: inline-flex
+  font-size: .75rem
+  font-weight: 600
+  justify-content: center
+  line-height: 1
+  min-height: 1.5rem
+  padding: .25rem .625rem
   text-align: center
-  border-radius: round($gr-fsb - 1)rem
+  vertical-align: middle
+  white-space: nowrap
+
+  &.primary
+    background: var(--cl-primary)
+    border-color: var(--cl-primary)
+    color: var(--cl-white)
+  &.secondary
+    background: var(--cl-secondary)
+    border-color: var(--cl-secondary)
+    color: var(--cl-white)
+  &.success
+    background: var(--cl-success)
+    border-color: var(--cl-success)
+    color: var(--cl-white)
+  &.warning
+    background: var(--cl-warning)
+    border-color: var(--cl-warning)
+    color: var(--cl-white)
+  &.danger,
+  &.error
+    background: var(--cl-danger)
+    border-color: var(--cl-danger)
+    color: var(--cl-white)
+  &.info
+    background: var(--cl-info)
+    border-color: var(--cl-info)
+    color: var(--cl-black)
+/* @end */
