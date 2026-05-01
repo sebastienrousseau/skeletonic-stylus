@@ -14,21 +14,29 @@
 button, .button, [type=submit]
   -highlight()
   background: var(--bg-disable)
-  border:0
+  border: 0
+  border-radius: .375rem
   cursor: pointer
-  display: inline-block
-  font-size: $gr-fsb rem
-  margin-bottom: round($gr rem, 1)
-  // Floor the touch target at WCAG 2.5.8 enhanced (44 px) without
-  // forcing the chunky 27rem default that prevented .button-group
-  // from laying out horizontally in any normal content column.
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  font-family: inherit
+  // 1rem base — the previous 1.62rem (≈ 26 px) was the cause of the
+  // "huge buttons with label not fitting" bug. Pair with a 44 px
+  // touch target (WCAG 2.5.8 enhanced) and modest letter-spacing
+  // for the uppercase label.
+  font-size: 1rem
+  font-weight: 600
+  letter-spacing: .02em
+  line-height: 1
+  margin: 0
   min-width: 6rem
   min-height: 2.75rem
-  padding: 0.75rem 1.5rem
+  padding: .75rem 1.25rem
   text-align: center
   text-decoration: none
   text-transform: uppercase
-  transition-timing-function: ease-in-out
+  transition: background-color 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out
   user-select: none
   vertical-align: middle
   white-space: nowrap
