@@ -12,10 +12,10 @@
   --cl-danger: #ff0000;
   --cl-success: #33cc33;
   --cl-warning: #ffaa00;
-  --bg-primary: #ffffff;
-  --bg-secondary: #2a2a2d;
-  --bg-tertiary: #434347;
-  --bg-disable: #999999;
+  --bg-primary: #e0f0ff;
+  --bg-secondary: #e0f7ff;
+  --bg-tertiary: #eeeff1;
+  --bg-disable: #e6e6e6;
   --bg-info: #e0eeff;
   --bg-inverse: #000000;
   --bg-link: #e0f5ff;
@@ -1149,13 +1149,18 @@ button.link:focus-visible,
   margin-bottom: 0;
 }
 .btn {
+  align-items: center;
+  background: var(--cl-primary);
+  border: 0;
   border-radius: 0.3rem;
+  color: var(--cl-white);
   cursor: pointer;
-  display: inline-block;
-  font-size: 1.62rem;
-  line-height: 60px;
-  min-height: 60px;
-  min-width: 60px;
+  display: inline-flex;
+  font-size: 1rem;
+  justify-content: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0.5rem 1rem;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -1171,15 +1176,13 @@ button.link:focus-visible,
 .btn:hover {
   opacity: 0.9;
   text-decoration: none;
-  transition: all 150ms linear;
 }
 .btn-round {
   border-radius: 50%;
+  padding: 0.5rem;
 }
 .btn-round:hover {
   opacity: 0.9;
-  text-decoration: none;
-  transition: all 150ms linear;
 }
 .btn-oval {
   border-radius: 61.25rem;
@@ -1187,16 +1190,16 @@ button.link:focus-visible,
 }
 .btn-oval:hover {
   opacity: 0.9;
-  text-decoration: none;
-  transition: all 150ms linear;
 }
 .btn-outline {
-  border: 2px solid transparent;
+  background: transparent;
+  border: 2px solid var(--cl-primary);
+  color: var(--cl-primary);
 }
 .btn-outline:hover {
-  opacity: 0.9;
-  text-decoration: none;
-  transition: all 150ms linear;
+  background: var(--cl-primary);
+  color: var(--cl-white);
+  opacity: 1;
 }
 .block {
   border: 0;
@@ -1693,6 +1696,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-1:hover {
@@ -1703,6 +1707,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-2:hover {
@@ -1713,6 +1718,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-3:hover {
@@ -1723,6 +1729,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-4:hover {
@@ -1733,6 +1740,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-5:hover {
@@ -1743,6 +1751,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-6:hover {
@@ -1753,6 +1762,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-7:hover {
@@ -1763,6 +1773,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-8:hover {
@@ -1773,6 +1784,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-9:hover {
@@ -1783,6 +1795,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-10:hover {
@@ -1793,6 +1806,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-11:hover {
@@ -1803,6 +1817,7 @@ iframe {
   box-shadow: none;
   display: inline-block;
   padding: 10px;
+  position: relative;
   transition: all 0.4s ease-out;
 }
 .link-12:hover {
@@ -1814,9 +1829,12 @@ iframe {
 .link-1::before {
   background: var(--link-color-focus);
   bottom: 0;
+  content: "";
   height: 2px;
   inset-inline-start: 0;
+  position: absolute;
   transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
   width: 100%;
 }
 .link-1:hover::before {
@@ -1828,9 +1846,12 @@ iframe {
 .link-2::before {
   background: var(--link-color-focus);
   bottom: 0;
+  content: "";
   height: 2px;
   inset-inline-end: 0;
+  position: absolute;
   transform: translateX(100%);
+  transition: transform 0.4s ease-out;
   width: 100%;
 }
 .link-2:hover::before {
@@ -1839,9 +1860,12 @@ iframe {
 .link-3::before {
   background: var(--link-color-focus);
   bottom: 0;
+  content: "";
   height: 2px;
   inset-inline-start: 0;
+  position: absolute;
   transform: scaleX(0);
+  transition: transform 0.4s ease-out;
   width: 100%;
 }
 .link-3:hover::before {
@@ -1850,9 +1874,12 @@ iframe {
 .link-4::before {
   background: var(--link-color-focus);
   bottom: 0;
+  content: "";
   height: 2px;
   inset-inline-start: 0;
+  position: absolute;
   transform: scaleX(1);
+  transition: transform 0.4s ease-out;
   width: 100%;
 }
 .link-4:hover::before {
@@ -1863,17 +1890,23 @@ iframe {
 }
 .link-5::before {
   bottom: 0;
+  content: "";
+  position: absolute;
   transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
 }
 .link-5::after {
+  content: "";
+  position: absolute;
   top: 0;
   transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
 }
 .link-5::before,
 .link-5::after {
   background: var(--link-color-focus);
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
 }
 .link-5:hover::before,
@@ -1885,17 +1918,23 @@ iframe {
 }
 .link-6::before {
   bottom: 0;
+  content: "";
+  position: absolute;
   transform: translateX(100%);
+  transition: transform 0.4s ease-out;
 }
 .link-6::after {
+  content: "";
+  position: absolute;
   top: 0;
   transform: translateX(100%);
+  transition: transform 0.4s ease-out;
 }
 .link-6::before,
 .link-6::after {
   background: var(--link-color-focus);
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
 }
 .link-6:hover::before,
@@ -1907,25 +1946,29 @@ iframe {
 }
 .link-7::before {
   bottom: 0;
-  transform: translateX(0) scaleX(0);
+  content: "";
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
 }
 .link-7::after {
+  content: "";
+  position: absolute;
   top: 0;
-  transform: translateX(0) scaleX(0);
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
 }
 .link-7:hover::before {
-  bottom: 0;
-  transform: translateX(0) scaleX(1);
+  transform: scaleX(1);
 }
 .link-7:hover::after {
-  top: 0;
-  transform: translateX(0) scaleX(1);
+  transform: scaleX(1);
 }
 .link-7::before,
 .link-7::after {
   background: var(--link-color-focus);
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
 }
 .link-8 {
@@ -1933,17 +1976,23 @@ iframe {
 }
 .link-8::before {
   bottom: 0;
+  content: "";
+  position: absolute;
   transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
 }
 .link-8::after {
+  content: "";
+  position: absolute;
   top: 0;
   transform: translateX(100%);
+  transition: transform 0.4s ease-out;
 }
 .link-8::before,
 .link-8::after {
   background: var(--link-color-focus);
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
 }
 .link-8:hover::before,
@@ -1954,7 +2003,7 @@ iframe {
   background: var(--link-color-focus);
   content: "";
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   opacity: 0;
   position: absolute;
   top: 100%;
@@ -1970,7 +2019,7 @@ iframe {
   background: var(--link-color-focus);
   content: "";
   height: 2px;
-  left: 0;
+  inset-inline-start: 0;
   opacity: 0;
   position: absolute;
   top: 100%;
@@ -1982,29 +2031,40 @@ iframe {
   opacity: 1;
   transform: translateY(0);
 }
-.link-11:hover::before,
-.link-11:hover::after {
+.link-11::before,
+.link-11::after {
+  color: var(--link-color-focus);
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-out, content 0s;
+}
+.link-11:hover::before {
   content: "[";
-  transform: translateX(-15px);
+  transform: translateY(-50%) translateX(-15px);
 }
 .link-11:hover::after {
   content: "]";
-  transform: translateX(10px);
+  transform: translateY(-50%) translateX(15px);
 }
-.link-12 {
-  height: 2px;
-  width: 100%;
+.link-12::before,
+.link-12::after {
+  color: var(--link-color-focus);
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
 }
-.link-12:hover::before,
-.link-12:hover::after {
-  animation: main 0.5s;
+.link-12:hover::before {
   content: "[";
-  transform-origin: -20px 50%;
+  transform: translateY(-50%) translateX(-12px) scaleX(1);
 }
 .link-12:hover::after {
-  animation: main 0.5s;
   content: "]";
-  transform-origin: 20px 50%;
+  transform: translateY(-50%) translateX(12px) scaleX(1);
 }
 [dir="rtl"] .link-1::before,
 [dir="rtl"] .link-5::before,
@@ -2029,42 +2089,16 @@ iframe {
   transform: translateX(0);
 }
 [dir="rtl"] .link-11:hover::before {
-  transform: translateX(15px);
+  transform: translateY(-50%) translateX(15px);
 }
 [dir="rtl"] .link-11:hover::after {
-  transform: translateX(-10px);
+  transform: translateY(-50%) translateX(-15px);
 }
-@keyframes main {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
+[dir="rtl"] .link-12:hover::before {
+  transform: translateY(-50%) translateX(12px) scaleX(1);
 }
-@keyframes main {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-@keyframes main {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-@keyframes main {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
+[dir="rtl"] .link-12:hover::after {
+  transform: translateY(-50%) translateX(-12px) scaleX(1);
 }
 a:link {
   color: var(--link-color);
