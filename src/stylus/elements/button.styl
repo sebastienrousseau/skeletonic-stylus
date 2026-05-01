@@ -150,14 +150,23 @@ button, .button, [type=submit]
   & > .button,
   & > button
     margin-bottom: 0
+// `.btn` is the shape system. It pairs with the `.button.<colour>`
+// brand modifiers but ALSO ships a visible default — primary brand
+// background, white text — so a bare `<button class="btn">` is a
+// usable, on-brand button instead of an invisible browser default.
 .btn
+  align-items: center
+  background: var(--cl-primary)
+  border: 0
   border-radius: .3rem
+  color: var(--cl-white)
   cursor: pointer
-  display: inline-block
-  font-size: $gr-fsb
-  line-height: 60px
-  min-height: 60px
-  min-width: 60px
+  display: inline-flex
+  font-size: 1rem
+  justify-content: center
+  min-height: 2.75rem
+  min-width: 2.75rem
+  padding: 0.5rem 1rem
   position: relative
   text-align: center
   text-decoration: none
@@ -170,26 +179,24 @@ button, .button, [type=submit]
   &:hover
     opacity: .9
     text-decoration: none
-    transition: all 150ms linear
   &-round
     border-radius: 50%
+    padding: 0.5rem
     &:hover
       opacity: .9
-      text-decoration: none
-      transition: all 150ms linear
   &-oval
     border-radius: 61.25rem
     min-width: 9rem
     &:hover
       opacity: .9
-      text-decoration: none
-      transition: all 150ms linear
   &-outline
-    border: 2px solid transparent
+    background: transparent
+    border: 2px solid var(--cl-primary)
+    color: var(--cl-primary)
     &:hover
-      opacity: .9
-      text-decoration: none
-      transition: all 150ms linear
+      background: var(--cl-primary)
+      color: var(--cl-white)
+      opacity: 1
 // Full-width call-to-action variant. Use as a modifier on .button
 // (e.g. <a class="button primary block">). Width was 98.7% which
 // left a visible gap on the trailing edge — fixed to 100%.

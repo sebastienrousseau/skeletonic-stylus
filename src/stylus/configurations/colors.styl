@@ -22,11 +22,14 @@
   $success         = hsl(120, 60%, 50%)
   $warning         = hsl(40, 100%, 50%)
 
-  // Main background colors
-  $bg-primary      = hsl(0, 0%, 100%)
-  $bg-secondary    = hsl(240, 3%, 17%)
-  $bg-tertiary     = hsl(240, 3%, 27%)
-  $bg-disable      = hsl(0, 0%, 60%)
+  // Main background colors — pale tints of the corresponding `--cl-*`
+  // brand colour so .alert-{primary,secondary,…} and code.{primary,…}
+  // render as readable tinted callouts. $bg-primary used to be pure
+  // white, which made primary/secondary alerts invisible.
+  $bg-primary      = hsl(210, 100%, 94%)
+  $bg-secondary    = hsl(195, 100%, 94%)
+  $bg-tertiary     = hsl(220, 8%, 94%)
+  $bg-disable      = hsl(0, 0%, 90%)
   $bg-info         = hsl(213, 100%, 94%)
   $bg-inverse      = hsl(0, 0%, 0%)
   $bg-link         = hsl(200, 100%, 94%)
