@@ -11,6 +11,7 @@
 .grid
   display: grid
   gap: 2rem
+  container-type: inline-size
 
   &.masonry
     grid-template-rows: masonry
@@ -20,9 +21,14 @@ for i in (1..12)
   .grid-cols-{i}
     grid-template-columns: repeat(i, minmax(0, 1fr))
 
-// Responsive overrides (Mobile-first)
-@media (max-width: 48em)
-  .grid-cols-2, .grid-cols-3
+// Container Query Overrides (2026 Standard)
+@container (max-width: 48em)
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6
     grid-template-columns: 1fr
+
 
 /* @end */

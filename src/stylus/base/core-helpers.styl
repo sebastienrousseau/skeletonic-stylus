@@ -10,22 +10,41 @@
 
 /* Visibility */
 .hidden,
-[hidden] {
-  display: none;
-}
+[hidden]
+  display: none
 
 /* Flexbox Utilities (Core) */
 .flex,
-[flex] {
-  display: flex;
-}
+[flex]
+  display: flex
+  gap: var(--gr)rem
 
 .center,
-[center] {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+[center]
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: var(--gr)rem
+
+/* Modern Layout Primitives (2026) */
+.stack
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  gap: var(--gr)rem
+
+.auto-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr))
+  gap: var(--gr)rem
+
+.full-bleed
+  width: 100vw
+  position: relative
+  left: 50%
+  right: 50%
+  margin-left: -50vw
+  margin-right: -50vw
 
 /* @end */

@@ -97,13 +97,34 @@
   .flex,
   [flex] {
     display: flex;
+    gap: var(--gr) rem;
   }
   .center,
   [center] {
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: var(--gr) rem;
     justify-content: center;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gr) rem;
+    justify-content: flex-start;
+  }
+  .auto-grid {
+    display: grid;
+    gap: var(--gr) rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+  .full-bleed {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
   }
   html {
     display: block;
