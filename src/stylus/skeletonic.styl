@@ -1,7 +1,15 @@
 @charset "UTF-8"
 
+/**
+ * Skeletonic Stylus Library - Core v2.1.0
+ * https://skeletonicstylus.com
+ *
+ * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Licensed under the MIT license
+ **/
+
 @css {
-  @layer skeletonic.base, skeletonic.layout, skeletonic.elements, skeletonic.components;
+  @layer skeletonic.base, skeletonic.layout;
 }
 
 // Configurations (Variables & Colors)
@@ -14,11 +22,3 @@
 // Layout
 @layer skeletonic.layout
   @import "layout/_contents.styl"
-
-// Elements
-@layer skeletonic.elements
-  @import "elements/_contents.styl"
-
-// Components
-@layer skeletonic.components
-  @import "components/_contents.styl"

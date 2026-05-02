@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v2.0.0
+ * Skeletonic Stylus Library v2.1.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -8,154 +8,33 @@
 
 /* @group Colors */
 
-  // Main colors
-  // Lightness chosen so white text on these backgrounds clears
-  // WCAG 2.2 AA SC 1.4.3 (>=4.5:1 contrast for normal text).
-  // Bumped to oklch L=0.50 (was 0.55) so .btn-outline text and
-  // any `color: var(--cl-primary)` on a white surface clears
-  // WCAG 2.2 AA 4.5:1 instead of stalling at 4.42:1.
-  $primary         = oklch(0.50 0.2 250) // Blue
-  $secondary       = oklch(0.45 0.15 200) // Teal/Cyan
-  $tertiary        = oklch(0.6 0.02 250) // Muted Blue-Grey
-  $disable         = oklch(0.8 0.01 250) // Muted Grey
-  $info            = oklch(0.85 0.15 100) // Yellow/Gold
-  $inverse         = oklch(1 0 0) // White
-  $link            = oklch(0.6 0.25 250) // Bright Blue
-  // Bumped to L=0.55 (was 0.60) so white text on `.button.error` /
-  // `.badge.danger` / etc. clears WCAG 2.2 AA 4.5:1 instead of
-  // stalling at 4.37 : 1.
-  $danger          = oklch(0.55 0.25 20) // Red
-  $success         = oklch(0.7 0.2 140) // Green
-  $warning         = oklch(0.8 0.15 80) // Orange/Amber
-
-  // Main background colors — pale tints of the corresponding `--cl-*`
-  // brand colour so .alert-{primary,secondary,…} and code.{primary,…}
-  // render as readable tinted callouts.
-  $bg-primary      = oklch(0.96 0.02 250)
-  $bg-secondary    = oklch(0.96 0.02 200)
-  $bg-tertiary     = oklch(0.96 0.01 250)
-  $bg-disable      = oklch(0.92 0 0)
-  $bg-info         = oklch(0.96 0.05 100)
-  $bg-inverse      = oklch(0 0 0)
-  $bg-link         = oklch(0.96 0.03 250)
-  $bg-danger       = oklch(0.94 0.03 20)
-  $bg-success      = oklch(0.94 0.03 140)
-  $bg-warning      = oklch(0.94 0.03 80)
-
-  // Basic grey colors (Perceptually uniform steps)
-  $grey-100       = oklch(0.98 0.01 250)
-  $grey-200       = oklch(0.9 0.01 250)
-  $grey-300       = oklch(0.8 0.01 250)
-  $grey-400       = oklch(0.7 0.01 250)
-  $grey-500       = oklch(0.6 0.01 250)
-  $grey-600       = oklch(0.5 0.01 250)
-  $grey-700       = oklch(0.4 0.01 250)
-  $grey-800       = oklch(0.3 0.01 250)
-  $grey-900       = oklch(0.2 0.01 250)
-  $grey-1000      = oklch(0.1 0.01 250)
-
-  // Basic color keywords (OKLCH approximations)
-  $aqua           = oklch(0.85 0.15 200)
-  $black          = oklch(0 0 0)
-  $blue           = oklch(0.5 0.25 250)
-  $fuchsia        = oklch(0.6 0.25 320)
-  $green          = oklch(0.5 0.2 140)
-  $grey           = oklch(0.6 0 0)
-  $lime           = oklch(0.8 0.25 140)
-  $maroon         = oklch(0.3 0.15 20)
-  $navy           = oklch(0.3 0.15 250)
-  $olive          = oklch(0.4 0.15 100)
-  $purple         = oklch(0.4 0.2 300)
-  $red            = oklch(0.6 0.25 20)
-  $silver         = oklch(0.8 0 0)
-  $teal           = oklch(0.4 0.15 200)
-  $white          = oklch(1 0 0)
-  $yellow         = oklch(0.9 0.2 100)
-
-colors = {
-
-  primary      : $primary
-  secondary    : $secondary
-  tertiary     : $tertiary
-  disable      : $disable
-  info         : $info
-  inverse      : $white
-  link         : $link
-  danger       : $danger
-  success      : $success
-  warning      : $warning
-
-}
-
-backgrounds = {
-
-  primary   : $bg-primary
-  secondary : $bg-secondary
-  tertiary  : $bg-tertiary
-  disable   : $bg-disable
-  info      : $bg-info
-  inverse   : $bg-inverse
-  link      : $bg-link
-  danger    : $bg-danger
-  success   : $bg-success
-  warning   : $bg-warning
-
-}
-
-greys = {
-
-  grey-100  : $grey-100
-  grey-200  : $grey-200
-  grey-300  : $grey-300
-  grey-400  : $grey-400
-  grey-500  : $grey-500
-  grey-600  : $grey-600
-  grey-700  : $grey-700
-  grey-800  : $grey-800
-  grey-900  : $grey-900
-  grey-1000 : $grey-1000
-
-}
-
-keywords = {
-
-aqua        : $aqua
-black       : $black
-blue        : $blue
-fuchsia     : $fuchsia
-green       : $green
-grey        : $grey
-lime        : $lime
-maroon      : $maroon
-navy        : $navy
-olive       : $olive
-purple      : $purple
-red         : $red
-silver      : $silver
-teal        : $teal
-white       : $white
-yellow      : $yellow
-
-}
-
 :root
-  for name, color in colors
-    --cl-{name}(color)
+  // 2026 Semantic Color Tokens using light-dark()
+  // This allows the library to switch modes with zero extra CSS rules.
+  --cl-primary: light-dark(oklch(0.40 0.2 250), oklch(0.7 0.16 250))
+  --cl-secondary: light-dark(oklch(0.38 0.15 200), oklch(0.65 0.12 200))
+  --cl-success: light-dark(oklch(0.7 0.2 140), oklch(0.75 0.15 140))
+  --cl-info: light-dark(oklch(0.85 0.15 100), oklch(0.88 0.12 100))
+  --cl-warning: light-dark(oklch(0.8 0.15 80), oklch(0.82 0.12 80))
+  --cl-danger: light-dark(oklch(0.55 0.25 20), oklch(0.65 0.20 20))
 
-  for bgname, background in backgrounds
-    --bg-{bgname}(background)
+  // Background tints (for alerts, cards, etc)
+  --bg-primary: light-dark(oklch(0.96 0.02 250), oklch(0.18 0.04 250))
+  --bg-secondary: light-dark(oklch(0.96 0.02 200), oklch(0.18 0.04 200))
+  --bg-success: light-dark(oklch(0.94 0.03 140), oklch(0.18 0.04 140))
+  --bg-info: light-dark(oklch(0.96 0.05 100), oklch(0.18 0.04 100))
+  --bg-warning: light-dark(oklch(0.94 0.03 80), oklch(0.18 0.04 80))
+  --bg-danger: light-dark(oklch(0.94 0.03 20), oklch(0.18 0.04 20))
 
-  for greyname, grey in greys
-    --cl-{greyname}(grey)
-
-  for keywordname, keyword in keywords
-    --cl-{keywordname}(keyword)
-
-for greyname, grey in greys
-    .background-color-{greyname}
-        background-color: (grey)
-
-    .border-color-{greyname}
-        border: 1px solid (grey)
+  // Grey scale (using light-dark to invert automatically)
+  --cl-grey-100: light-dark(oklch(0.98 0.01 250), oklch(0.15 0.01 250))
+  --cl-grey-200: light-dark(oklch(0.9 0.01 250), oklch(0.25 0.01 250))
+  --cl-grey-300: light-dark(oklch(0.8 0.01 250), oklch(0.35 0.01 250))
+  --cl-grey-400: light-dark(oklch(0.7 0.01 250), oklch(0.45 0.01 250))
+  --cl-grey-500: light-dark(oklch(0.6 0.01 250), oklch(0.55 0.01 250))
+  --cl-grey-600: light-dark(oklch(0.5 0.01 250), oklch(0.65 0.01 250))
+  --cl-grey-700: light-dark(oklch(0.4 0.01 250), oklch(0.75 0.01 250))
+  --cl-grey-800: light-dark(oklch(0.3 0.01 250), oklch(0.85 0.01 250))
+  --cl-grey-900: light-dark(oklch(0.2 0.01 250), oklch(0.95 0.01 250))
 
 /* @end */

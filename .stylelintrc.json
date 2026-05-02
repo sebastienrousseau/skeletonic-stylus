@@ -41,7 +41,32 @@
     "order/properties-alphabetical-order": true,
     "order/properties-order": [],
     "plugin/no-low-performance-animation-properties": null,
-    "property-no-unknown": true,
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "light-dark",
+          "oklch"
+        ]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "masonry-auto-flow",
+          "position-anchor",
+          "inset-area",
+          "position-try-options",
+          "view-transition-name",
+          "scroll-timeline-name",
+          "scroll-timeline-axis",
+          "animation-timeline",
+          "animation-range",
+          "container-type"
+        ]
+      }
+    ],
     "property-no-vendor-prefix": true,
     "selector-class-pattern": "[a-z-]+",
     "selector-id-pattern": "[a-z-]+",

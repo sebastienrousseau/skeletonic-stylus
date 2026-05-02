@@ -1,68 +1,54 @@
 /**
- * Skeletonic Stylus Library v2.0.0
+ * Skeletonic Stylus Library v2.1.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Grid (Native CSS Grid) */
+/* @group Grid (2026 Standards) */
 
-// Main Grid Container
+// Core Grid Container
 .grid
   display: grid
   gap: var(--gr-fsb, 1.62rem)
 
-// Grid Columns (1-12)
+  // Native Masonry (CSS Grid Level 3)
+  &.masonry
+    grid-template-rows: masonry
+    masonry-auto-flow: packed
+
+// Subgrid Support
+.subgrid
+  display: grid
+  grid-template-columns: subgrid
+  grid-template-rows: subgrid
+
+// 12-Column Scale
 for i in (1..12)
   .grid-cols-{i}
     grid-template-columns: repeat(i, minmax(0, 1fr))
 
-// Column Spanning (1-12)
+// Responsive Span (Mobile-first)
 for i in (1..12)
   .col-span-{i}
     grid-column: span i / span i
 
-// Gap Utilities
-.gap-0
-  gap: 0
-.gap-xs
-  gap: 0.5rem
-.gap-sm
-  gap: 1rem
-.gap-md
-  gap: 1.62rem
-.gap-lg
-  gap: 2rem
-.gap-xl
-  gap: 4rem
-
 /* @end */
 
-/* @group Legacy Flexbox Grid (Deprecated in v2.0.0) */
+/* @group Container Queries (Bento Layouts) */
 
-.grid-flex
-    display: flex
-    flex-wrap: wrap
+// Bento Grid Support
+// Allows components to adapt based on their parent container's width.
+.bento-container
+  container-type: inline-size
+  display: grid
+  gap: 1rem
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
 
-.row
-  display: flex
-  flex-wrap: wrap
-  width: 100%
-  &-top
-    align-items: flex-start
-  &-bottom
-    align-items: flex-end
-  &-center
-    align-items: center
-  &-stretch
-    align-items: stretch
-  &-baseline
-    align-items: baseline
-
-for i in (1..12)
-  .flex-{i}
-    flex: i
-    margin: 0 (1.62)rem
+@container (min-width: 40rem)
+  .bento-item-featured
+    grid-column: span 2
+    grid-row: span 2
 
 /* @end */

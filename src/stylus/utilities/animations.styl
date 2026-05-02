@@ -1,22 +1,20 @@
 /**
- * Skeletonic Stylus Library v2.0.0
+ * Skeletonic Stylus Library v2.1.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Modern Motion Utilities (2026 Standards) */
+/* @group Modern Motion & States (2026) */
 
-// View Transitions API Utilities
-// Enables seamless page transitions without JavaScript.
+// View Transitions API
 .view-transition-name
   for name in (root, header, main, footer, article, section)
     &-{name}
       view-transition-name: name
 
-// Scroll-Driven Animation Utilities
-// Native CSS scroll-timeline and view-timeline.
+// Scroll-Driven Animations
 .scroll-timeline
   scroll-timeline-name: --page-scroll
   scroll-timeline-axis: block
@@ -26,22 +24,40 @@
   animation-range: entry 10% cover 30%
   animation-fill-mode: both
 
-// Entrance / Exit Defaults (High performance)
-.fade-in
-  animation: fade-in 0.3s ease-out both
-.fade-out
-  animation: fade-out 0.3s ease-in both
+// Skeleton Loader Utility
+// High-performance animated shimmer for loading states.
+.skeleton
+  animation: skeleton-shimmer 1.5s infinite linear
+  background: linear-gradient(90deg, var(--cl-grey-200) 25%, var(--cl-grey-100) 50%, var(--cl-grey-200) 75%)
+  background-size: 200% 100%
+  border-radius: .25rem
+  color: transparent !important
+  cursor: default
+  pointer-events: none
+  user-select: none
 
-@keyframes fade-in
-  from
-    opacity: 0
-  to
-    opacity: 1
+  &.circle
+    border-radius: 50%
+  &.text
+    height: 1em
+    margin-bottom: .5em
+    width: 100%
 
-@keyframes fade-out
-  from
-    opacity: 1
-  to
-    opacity: 0
+@keyframes skeleton-shimmer
+  0%
+    background-position: 200% 0
+  100%
+    background-position: -200% 0
+
+// Anchor Positioning Utilities (Native Floating UI)
+// tether an element to an anchor without JavaScript.
+.anchor-tether
+  position: absolute
+  position-anchor: --anchor-target
+  inset-area: block-end center
+  position-try-options: flip-block, flip-inline
+
+.anchor-target
+  anchor-name: --anchor-target
 
 /* @end */
