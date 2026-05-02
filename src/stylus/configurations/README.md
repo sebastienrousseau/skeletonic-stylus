@@ -1,5 +1,8 @@
-<!-- markdownlint-disable MD033 MD041 -->
+# Configurations Module
 
-<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
+The Configurations module defines the global state of the library, including the design tokens, color engine, and fluid typography variables.
 
-<!-- markdownlint-enable MD033 MD041 -->
+## Key Features
+
+- **Colors:** Leveraging `oklch()` and `light-dark()` for 2026-standard mode awareness.
+- **Variables:** Design tokens for the Golden Ratio scale and breakpoint definitions.

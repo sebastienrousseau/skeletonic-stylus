@@ -1,8 +1,8 @@
 /**
  * Skeletonic Stylus Library v2.0.0
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -16,12 +16,23 @@ dialog.modal
   box-shadow: 0 1rem 3rem rgba(0,0,0,0.2)
   color: var(--foreground-color)
   max-width: 90%
+  opacity: 1
   padding: 2.62rem
+  transition: opacity 0.5s ease, transform 0.5s ease, display 0.5s allow-discrete
   width: 50rem
+
+  @starting-style
+    opacity: 0
+    transform: translateY(-20px)
 
   &::backdrop
     background: rgba(0, 0, 0, 0.5)
     backdrop-filter: blur(4px)
+    opacity: 1
+    transition: opacity 0.5s ease, display 0.5s allow-discrete
+
+    @starting-style
+      opacity: 0
 
   .modal-header
     border-bottom: .1rem solid var(--cl-grey-200)

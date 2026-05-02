@@ -1,69 +1,42 @@
 /**
  * Skeletonic Stylus Library v2.0.0
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Margins */
 
-// Standard Golden Ratio Spacing Scale (rem-based)
-// xs: ~0.38rem (small)
-// sm: ~0.62rem (large)
-// md: 1.62rem (base)
-// lg: ~2.62rem (base * gr)
-// xl: ~4.24rem (base * gr^2)
+// Standard Golden Ratio Spacing Scale (Balanced)
+$mg-xs = 0.382rem
+$mg-sm = 0.618rem
+$mg-md = 1rem
+$mg-lg = 1.618rem
+$mg-xl = 2.618rem
+$mg-xxl = 4.236rem
 
-.margin-xs
-  margin: var(--gr-small)rem
-.margin-sm
-  margin: var(--gr-large)rem
-.margin-md
-  margin: var(--gr-fsb)rem
-.margin-lg
-  margin: calc(var(--gr-fsb) * var(--gr))rem
-.margin-xl
-  margin: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.m-0 { margin: 0 !important; }
 
-.margin-top-xs
-  margin-top: var(--gr-small)rem
-.margin-top-sm
-  margin-top: var(--gr-large)rem
-.margin-top-md
-  margin-top: var(--gr-fsb)rem
-.margin-top-lg
-  margin-top: calc(var(--gr-fsb) * var(--gr))rem
-.margin-top-xl
-  margin-top: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.margin-xs { margin: $mg-xs; }
+.margin-sm { margin: $mg-sm; }
+.margin-md { margin: $mg-md; }
+.margin-lg { margin: $mg-lg; }
+.margin-xl { margin: $mg-xl; }
+.margin-xxl { margin: $mg-xxl; }
 
-.margin-bottom-xs
-  margin-bottom: var(--gr-small)rem
-.margin-bottom-sm
-  margin-bottom: var(--gr-large)rem
-.margin-bottom-md
-  margin-bottom: var(--gr-fsb)rem
-.margin-bottom-lg
-  margin-bottom: calc(var(--gr-fsb) * var(--gr))rem
-.margin-bottom-xl
-  margin-bottom: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.mt-xs { margin-top: $mg-xs; }
+.mt-sm { margin-top: $mg-sm; }
+.mt-md { margin-top: $mg-md; }
+.mt-lg { margin-top: $mg-lg; }
+.mt-xl { margin-top: $mg-xl; }
+.mt-xxl { margin-top: $mg-xxl; }
 
-// Logical (start/end) — auto-flip in RTL.
-.margin-start-xs
-  margin-inline-start: var(--gr-small)rem
-.margin-start-sm
-  margin-inline-start: var(--gr-large)rem
-.margin-start-md
-  margin-inline-start: var(--gr-fsb)rem
-
-.margin-end-xs
-  margin-inline-end: var(--gr-small)rem
-.margin-end-sm
-  margin-inline-end: var(--gr-large)rem
-.margin-end-md
-  margin-inline-end: var(--gr-fsb)rem
-
-.margin-auto
-  margin: auto
+.mb-xs { margin-bottom: $mg-xs; }
+.mb-sm { margin-bottom: $mg-sm; }
+.mb-md { margin-bottom: $mg-md; }
+.mb-lg { margin-bottom: $mg-lg; }
+.mb-xl { margin-bottom: $mg-xl; }
+.mb-xxl { margin-bottom: $mg-xxl; }
 
 /* @end */

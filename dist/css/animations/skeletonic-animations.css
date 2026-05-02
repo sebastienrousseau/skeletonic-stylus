@@ -1,10 +1,10 @@
 @layer skeletonic.reset, skeletonic.tokens, skeletonic.layout, skeletonic.elements, skeletonic.components, skeletonic.utilities;
 @layer skeletonic {
 /**
- * Skeletonic Stylus Library v1.1.7
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 @media (prefers-reduced-motion: no-preference) {

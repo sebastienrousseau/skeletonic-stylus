@@ -1,31 +1,18 @@
 /**
- * Skeletonic Stylus Library v1.1.7
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Media Queries */
-//
-// Five-step container ladder. Replaces the previous 38-step ladder
-// which emitted ~3 KB of `.container { width: … }` rules without
-// matching any sensible design system. The new sizes track the
-// canonical mobile / tablet / laptop / desktop / wide-desktop
-// viewports almost every team already designs for.
-//
-// Container queries are now baseline; for component-level
-// responsiveness, prefer `@container (min-width: …)`. These rules
-// only constrain the page-level `.container` so prose stays a
-// readable measure.
-//
-// `:root { scroll-behavior: smooth }` used to be emitted INSIDE the
-// loop, so 38 redundant copies. Now emitted once, gated behind
-// prefers-reduced-motion.
+/* @group Media Queries (2026 Core) */
 
+// Responsive Containers (Native-first)
 .container
   margin: 0 auto
   width: 96%
+  max-width: 84rem
 
 @media (min-width: 30em)
   .container { max-width: 28rem }
@@ -37,9 +24,5 @@
   .container { max-width: 72rem }
 @media (min-width: 96em)
   .container { max-width: 84rem }
-
-@media (prefers-reduced-motion: no-preference)
-  :root
-    scroll-behavior: smooth
 
 /* @end */

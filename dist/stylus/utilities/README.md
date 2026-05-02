@@ -1,5 +1,8 @@
-<!-- markdownlint-disable MD033 MD041 -->
+# Utilities Module
 
-<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
+The Utilities module provides modern motion effects and specialized layout logic.
 
-<!-- markdownlint-enable MD033 MD041 -->
+## Key Features
+
+- **Animations:** Anchor Positioning and Skeleton Loader utilities.
+- **Mixins:** Reusable logic for focus rings, high contrast mode, and more.

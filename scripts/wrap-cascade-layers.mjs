@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
  * Wraps a compiled CSS file in a single @layer skeletonic { … } block
  * with sub-layer ordering pre-declared at the top:

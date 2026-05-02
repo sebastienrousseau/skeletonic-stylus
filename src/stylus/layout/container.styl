@@ -1,23 +1,15 @@
 /**
- * Skeletonic Stylus Library v1.1.7
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Container */
+/* @group Container (2026 Core) */
 .container
-  box-sizing: border-box
-  margin: 0 auto
-  overflow-x: hidden
-  position: relative
-  width: 96%
-  &:after
-        clear: both
-
-.container:after, .container:before
-    content: ""
-    display: table
+  margin-inline: auto
+  padding-inline: var(--gr-fsb)
+  width: min(100%, 84rem)
 
 /* @end */

@@ -1,66 +1,56 @@
 /**
  * Skeletonic Stylus Library v2.0.0
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Paddings */
 
-// Standard Golden Ratio Spacing Scale (rem-based)
-// xs: ~0.38rem (small)
-// sm: ~0.62rem (large)
-// md: 1.62rem (base)
-// lg: ~2.62rem (base * gr)
-// xl: ~4.24rem (base * gr^2)
+// Standard Golden Ratio Spacing Scale (Balanced)
+$pd-xs = 0.382rem
+$pd-sm = 0.618rem
+$pd-md = 1rem
+$pd-lg = 1.618rem
+$pd-xl = 2.618rem
+$pd-xxl = 4.236rem
 
-.padding-xs
-  padding: var(--gr-small)rem
-.padding-sm
-  padding: var(--gr-large)rem
-.padding-md
-  padding: var(--gr-fsb)rem
-.padding-lg
-  padding: calc(var(--gr-fsb) * var(--gr))rem
-.padding-xl
-  padding: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.p-0 { padding: 0 !important; }
 
-.padding-top-xs
-  padding-top: var(--gr-small)rem
-.padding-top-sm
-  padding-top: var(--gr-large)rem
-.padding-top-md
-  padding-top: var(--gr-fsb)rem
-.padding-top-lg
-  padding-top: calc(var(--gr-fsb) * var(--gr))rem
-.padding-top-xl
-  padding-top: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.padding-xs { padding: $pd-xs; }
+.padding-sm { padding: $pd-sm; }
+.padding-md { padding: $pd-md; }
+.padding-lg { padding: $pd-lg; }
+.padding-xl { padding: $pd-xl; }
+.padding-xxl { padding: $pd-xxl; }
 
-.padding-bottom-xs
-  padding-bottom: var(--gr-small)rem
-.padding-bottom-sm
-  padding-bottom: var(--gr-large)rem
-.padding-bottom-md
-  padding-bottom: var(--gr-fsb)rem
-.padding-bottom-lg
-  padding-bottom: calc(var(--gr-fsb) * var(--gr))rem
-.padding-bottom-xl
-  padding-bottom: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
+.pt-xs { padding-top: $pd-xs; }
+.pt-sm { padding-top: $pd-sm; }
+.pt-md { padding-top: $pd-md; }
+.pt-lg { padding-top: $pd-lg; }
+.pt-xl { padding-top: $pd-xl; }
+.pt-xxl { padding-top: $pd-xxl; }
 
-// Logical (start/end) — auto-flip in RTL.
-.padding-start-xs
-  padding-inline-start: var(--gr-small)rem
-.padding-start-sm
-  padding-inline-start: var(--gr-large)rem
-.padding-start-md
-  padding-inline-start: var(--gr-fsb)rem
+.pb-xs { padding-bottom: $pd-xs; }
+.pb-sm { padding-bottom: $pd-sm; }
+.pb-md { padding-bottom: $pd-md; }
+.pb-lg { padding-bottom: $pd-lg; }
+.pb-xl { padding-bottom: $pd-xl; }
+.pb-xxl { padding-bottom: $pd-xxl; }
 
-.padding-end-xs
-  padding-inline-end: var(--gr-small)rem
-.padding-end-sm
-  padding-inline-end: var(--gr-large)rem
-.padding-end-md
-  padding-inline-end: var(--gr-fsb)rem
+.px-xs { padding-left: $pd-xs; padding-right: $pd-xs; }
+.px-sm { padding-left: $pd-sm; padding-right: $pd-sm; }
+.px-md { padding-left: $pd-md; padding-right: $pd-md; }
+.px-lg { padding-left: $pd-lg; padding-right: $pd-lg; }
+.px-xl { padding-left: $pd-xl; padding-right: $pd-xl; }
+.px-xxl { padding-left: $pd-xxl; padding-right: $pd-xxl; }
+
+.py-xs { padding-top: $pd-xs; padding-bottom: $pd-xs; }
+.py-sm { padding-top: $pd-sm; padding-bottom: $pd-sm; }
+.py-md { padding-top: $pd-md; padding-bottom: $pd-md; }
+.py-lg { padding-top: $pd-lg; padding-bottom: $pd-lg; }
+.py-xl { padding-top: $pd-xl; padding-bottom: $pd-xl; }
+.py-xxl { padding-top: $pd-xxl; padding-bottom: $pd-xxl; }
 
 /* @end */

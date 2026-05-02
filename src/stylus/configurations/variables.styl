@@ -1,15 +1,15 @@
 /**
- * Skeletonic Stylus Library v2.1.0
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Variables */
 
-  // Font Family
-  $font = "Open Sans", system-ui, -apple-system, sans-serif
+  // Font Family (Apple-inspired system stack)
+  $font = "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 
   // Golden Ratios
   $gr         = 1.62
@@ -17,28 +17,28 @@
   $gr-small   = round(1 - $gr-large, 2)
   $gr-medium  = round((($gr-large + $gr-small) / 2), 2)
 
-  // Fluid Typography Scale (2026 Standard)
-  // Uses clamp() to smoothly transition between mobile and desktop sizes.
+  // Fluid Typography Scale (Apple-style Refinement)
   // formula: clamp(min, preferred, max)
-  $gr-fsb     = clamp(1.0rem, 0.5vw + 0.8rem, 1.62rem)
-  $gr-fsl     = clamp(1.2rem, 1vw + 1rem, 2.01rem)
-  $gr-fss     = clamp(0.8rem, 0.3vw + 0.7rem, 1.23rem)
+  $gr-fsb     = clamp(1.0625rem, 0.5vw + 0.9rem, 1.25rem) // ~17px to 20px base
+  $gr-fsl     = clamp(1.25rem, 1vw + 1rem, 1.5rem)
+  $gr-fss     = clamp(0.75rem, 0.3vw + 0.7rem, 0.875rem)
 
-  // Fluid Heading scale
-  $gr-h1      = clamp(2.5rem, 5vw + 1rem, 5.3rem)
-  $gr-h2      = clamp(2.0rem, 4vw + 1rem, 4.2rem)
-  $gr-h3      = clamp(1.75rem, 3vw + 1rem, 3.3rem)
-  $gr-h4      = clamp(1.5rem, 2vw + 1rem, 2.6rem)
-  $gr-h5      = clamp(1.25rem, 1vw + 1rem, 2.0rem)
-  $gr-h6      = clamp(1.0rem, 0.5vw + 0.9rem, 1.6rem)
+  // Apple-grade Fluid Heading scale
+  // Tighter tracking and responsive scaling
+  $gr-h1      = clamp(2.5rem, 8vw, 4.5rem)
+  $gr-h2      = clamp(2rem, 5vw, 3rem)
+  $gr-h3      = clamp(1.5rem, 3vw, 1.875rem)
+  $gr-h4      = clamp(1.25rem, 2vw, 1.5rem)
+  $gr-h5      = clamp(1.125rem, 1vw, 1.25rem)
+  $gr-h6      = clamp(1rem, 0.5vw + 0.9rem, 1.125rem)
 
-  // Heading line heights
-  $gr-lh-h1   = 1.2
-  $gr-lh-h2   = 1.2
-  $gr-lh-h3   = 1.3
-  $gr-lh-h4   = 1.4
-  $gr-lh-h5   = 1.5
-  $gr-lh-h6   = 1.6
+  // Refined line heights
+  $gr-lh-h1   = 1.1
+  $gr-lh-h2   = 1.1
+  $gr-lh-h3   = 1.2
+  $gr-lh-h4   = 1.3
+  $gr-lh-h5   = 1.4
+  $gr-lh-h6   = 1.5
 
 /* @end */
 
@@ -72,14 +72,13 @@
   --gr-lh-h6: $gr-lh-h6
 
   // 2026 Color System: light-dark() integration
-  // This eliminates the need for large @media (prefers-color-scheme) blocks.
   --cl-white: oklch(1 0 0)
   --cl-black: oklch(0 0 0)
-  --background-color: light-dark(oklch(1 0 0), oklch(0.15 0.01 250))
-  --foreground-color: light-dark(oklch(0 0 0), oklch(0.98 0.01 250))
-  --cl-surface: light-dark(oklch(0.98 0.01 250), oklch(0.2 0.02 250))
+  --background-color: light-dark(oklch(1 0 0), oklch(0.05 0.01 250))
+  --foreground-color: light-dark(oklch(0.11 0.01 250), oklch(0.95 0.01 250))
+  --cl-surface: light-dark(oklch(0.98 0.01 250), oklch(0.12 0.02 250))
 
-  --link-color: light-dark(oklch(0.5 0.25 250), oklch(0.72 0.20 250))
+  --link-color: #0056b3
   --focus-ring-color: var(--link-color)
 
   // Breakpoints

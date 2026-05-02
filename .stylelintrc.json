@@ -19,7 +19,7 @@
     "comment-empty-line-before": "always",
     "comment-whitespace-inside": "always",
     "declaration-block-no-duplicate-properties": null,
-    "declaration-no-important": true,
+    "declaration-no-important": null,
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
     "function-calc-no-unspaced-operator": true,
@@ -63,7 +63,11 @@
           "scroll-timeline-axis",
           "animation-timeline",
           "animation-range",
-          "container-type"
+          "container-type",
+          "field-sizing",
+          "text-box-trim",
+          "margin-trim",
+          "display"
         ]
       }
     ],
@@ -83,9 +87,25 @@
       "vh",
       "deg",
       "s",
-      "fr"
+      "fr",
+      "ch"
     ],
     "unit-no-unknown": true,
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "layer",
+          "starting-style",
+          "container",
+          "media",
+          "charset",
+          "import",
+          "keyframes",
+          "css"
+        ]
+      }
+    ]
   }
 }

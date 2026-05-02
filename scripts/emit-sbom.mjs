@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
  * Emits dist/sbom.json — a minimal CycloneDX 1.5 Software Bill of Materials
  * for the published artifact.
@@ -42,7 +42,7 @@ if (!existsSync(srcManifest)) {
 const pkg = JSON.parse(readFileSync(srcManifest, "utf8"));
 
 // Build a purl per https://github.com/package-url/purl-spec
-// e.g. pkg:npm/%40sebastienrousseau/skeletonic-stylus@1.1.7
+// e.g. pkg:npm/%40sebastienrousseau/skeletonic-stylus@2.0.0
 const [scope, bareName] = pkg.name.startsWith("@")
   ? pkg.name.slice(1).split("/")
   : [null, pkg.name];

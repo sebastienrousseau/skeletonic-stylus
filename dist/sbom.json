@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:195a824f-7b89-4f65-8340-bc32d2983d01",
+  "serialNumber": "urn:uuid:a33e6f79-90b9-4108-824c-5180f67469b2",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-05-02T10:01:29.314Z",
+    "timestamp": "2026-05-02T12:57:03.244Z",
     "tools": [
       {
         "vendor": "Skeletonic Stylus",
@@ -27,7 +27,7 @@
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://skeletonicstylus.com"
+          "url": "https://docs.skeletonic.io"
         },
         {
           "type": "vcs",
@@ -41,11 +41,11 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "c8d4c05e69b1f0a70edc4ac534f7b559dfaa472ea271d023cd7eaa825136964f"
+          "content": "7e4c3ccc01793b48c3aec5be478c39990a3b8c67a04e0d252a7347adbd22fb49"
         },
         {
           "alg": "SHA-512",
-          "content": "311b867949422f93771db634aac3197433e1a23c25667a3f39616766f72c4e0dd02ef00d1a2af1edd138705d80f6d0c1ca61eccd2e190be1b6d406bf841e7ed8"
+          "content": "550d8d2ba687c2af9633d7159e1f92fbc74953cfda03c33d21d3d654bf339b5e7834cf96caf8964176f0aab43adf24cdc8a979fe364e655542aa6f3a43d9a318"
         }
       ]
     }

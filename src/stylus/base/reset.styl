@@ -1,8 +1,8 @@
 /**
- * Skeletonic Stylus Library v1.1.7
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -16,12 +16,27 @@ html
 
 body
   background-color: var(--background-color)
-  color: var(--cl-black)
+  color: var(--foreground-color)
   font-family: 'Open Sans', sans-serif
-  font-size: $gr-fsb
+  font-size: var(--gr-fsb)
   font-weight: 400
-  line-height: $gr-lh
+  line-height: 1.5
   word-wrap: break-word
+
+// 2026 Core Accessibility: Global Focus Management
+// Ensuring interactive elements have a clear :focus-visible style.
+:focus-visible
+  outline: 2px solid var(--focus-ring-color)
+  outline-offset: 4px
+
+// Global Accessibility: Motion Sensitivity
+// Respect User Preferences for reduced motion.
+@media (prefers-reduced-motion: reduce)
+  *
+    animation-duration: 0.01ms !important
+    animation-iteration-count: 1 !important
+    transition-duration: 0.01ms !important
+    scroll-behavior: auto !important
 
 a,
 abbr,
@@ -94,32 +109,43 @@ video
   word-break: break-word
 
 b,
-body,
 strong
-  color: var(--cl-black)
+  font-weight: 700
 
 code, kbd, pre, samp
-    margin: round($gr rem, 1) 0
+    margin: 1.62rem 0
 
 em, i
   font-style: italic
-  line-height: $gr-lh
 
 small
-  font-size: $gr-fss
-  line-height: $gr-lhs
+  font-size: var(--gr-fss)
+  line-height: 1.3
 
 p
-  line-height: $gr-lh
+  line-height: 1.5
+  margin-bottom: 1.62rem
+  max-width: 65ch // Optimal reading length
 
 sup
-  font-size: $gr-fss
-  line-height: $gr-lhs
+  font-size: var(--gr-fss)
   top: .8em
 
 sub
   bottom: -.8em
-  font-size: $gr-fss
-  line-height: $gr-lh
+  font-size: var(--gr-fss)
+
+// Accessibility Helper: Visually Hidden
+// Hides content visually while keeping it available for screen readers.
+.visually-hidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  white-space: nowrap
+  width: 1px
 
 /* @end */

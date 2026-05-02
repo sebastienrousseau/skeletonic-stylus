@@ -1,54 +1,28 @@
 /**
- * Skeletonic Stylus Library v2.1.0
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Grid (2026 Standards) */
 
-// Core Grid Container
 .grid
   display: grid
-  gap: var(--gr-fsb, 1.62rem)
+  gap: 2rem
 
-  // Native Masonry (CSS Grid Level 3)
   &.masonry
     grid-template-rows: masonry
-    masonry-auto-flow: packed
+    align-items: start
 
-// Subgrid Support
-.subgrid
-  display: grid
-  grid-template-columns: subgrid
-  grid-template-rows: subgrid
-
-// 12-Column Scale
 for i in (1..12)
   .grid-cols-{i}
     grid-template-columns: repeat(i, minmax(0, 1fr))
 
-// Responsive Span (Mobile-first)
-for i in (1..12)
-  .col-span-{i}
-    grid-column: span i / span i
-
-/* @end */
-
-/* @group Container Queries (Bento Layouts) */
-
-// Bento Grid Support
-// Allows components to adapt based on their parent container's width.
-.bento-container
-  container-type: inline-size
-  display: grid
-  gap: 1rem
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
-
-@container (min-width: 40rem)
-  .bento-item-featured
-    grid-column: span 2
-    grid-row: span 2
+// Responsive overrides (Mobile-first)
+@media (max-width: 48em)
+  .grid-cols-2, .grid-cols-3
+    grid-template-columns: 1fr
 
 /* @end */

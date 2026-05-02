@@ -1,56 +1,27 @@
 /**
  * Skeletonic Stylus Library v2.0.0
- * https://skeletonicstylus.com
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Cards */
 
 .card
-  background: var(--background-color, oklch(1 0 0))
-  border: .0625rem solid var(--cl-grey-300)
-  border-radius: ($gr)rem
-  box-shadow: 0 3px 9px 0 var(--cl-grey-200)
-  color: var(--foreground-color, oklch(0 0 0))
-  container-type: inline-size
-  display: grid
-  margin-bottom: ($gr)rem
-  overflow: hidden
-  position: relative
-  transition: .3s ease-in-out
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: 1.5rem
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)
+  padding: 2.62rem
+  transition: transform 0.3s ease, box-shadow 0.3s ease
 
   &:hover
-    box-shadow: 0 5px 15px 0 var(--cl-grey-300)
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)
+    transform: translateY(-2px)
 
-.card-content
-  display: grid
-  gap: 1rem
-  padding: ($gr)rem
-
-// Intrinsic Responsiveness via Container Queries
-@container (min-width: 400px)
-  .card-content
-    grid-template-columns: 1fr 1fr
-    gap: 2rem
-
-.card-body
-  padding: ($gr)rem
-
-.card-title
-  font-size: var(--gr-h4)
-  font-weight: 700
-  margin-bottom: 0
-
-.card-subtitle
-  color: var(--cl-grey-600)
-  font-size: var(--gr-fss)
-  margin-top: -0.5rem
-
-.cards
-  display: grid
-  gap: var(--gr-fsb)
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+  &.primary
+    background-color: var(--bg-primary)
+    border-color: var(--cl-primary)
 
 /* @end */

@@ -1,4 +1,5 @@
 # Exclude Directories and package
+dist
 *.tgz
 debug
 package/

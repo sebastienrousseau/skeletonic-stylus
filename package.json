@@ -19,14 +19,14 @@
   "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
   "author": {
     "name": "Sebastien Rousseau",
-    "email": "hello@skeletonicstylus.com",
-    "url": "https://skeletonicstylus.com"
+    "email": "hello@skeletonic.io",
+    "url": "https://skeletonic.io"
   },
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
     "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
   },
-  "homepage": "https://skeletonicstylus.com",
+  "homepage": "https://docs.skeletonic.io",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -120,9 +120,17 @@
     "dev:autoprefixer:skeletonic": "postcss --use autoprefixer --verbose --no-map.inline dist/css/core/skeletonic.css -r",
     "dev:minimize:skeletonic": "find dist/css/core/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'npx csso {} --stat --output ${0%.css}.min.css' {} \\;",
     "dev:filesizes:skeletonic": "filesizes dist/css/core/ > dist/css/core/skeletonic-report.txt",
+    "// Skeletonic CSS UI Addon": " --- Development Scripts --- ",
+    "dev:generate:skeletonic-ui": "pnpm run dev:format:skeletonic-ui && pnpm run dev:create:skeletonic-ui && pnpm run dev:prettier:skeletonic-ui && pnpm run dev:autoprefixer:skeletonic-ui && pnpm run dev:minimize:skeletonic-ui && pnpm run dev:filesizes:skeletonic-ui",
+    "dev:format:skeletonic-ui": "mkdir -p debug/core && npx stylus-supremacy format ./src/stylus/skeletonic-ui.styl --options .stylelintrc.json > ./debug/core/skeletonic-ui-output.log",
+    "dev:lint:skeletonic-ui": "npx stylint ./src/stylus/skeletonic-ui.styl --strict --fix",
+    "dev:create:skeletonic-ui": "stylus ./src/stylus/skeletonic-ui.styl -o ./dist/css/core/skeletonic-ui.css",
+    "dev:prettier:skeletonic-ui": "npx prettier --write \"dist/css/core/skeletonic-ui.css\" && stylelint \"dist/css/core/skeletonic-ui.css\" --fix",
+    "dev:autoprefixer:skeletonic-ui": "postcss --use autoprefixer --verbose --no-map.inline dist/css/core/skeletonic-ui.css -r",
+    "dev:minimize:skeletonic-ui": "find dist/css/core/ -iname 'skeletonic-ui.css' -exec sh -c 'npx csso {} --stat --output ${0%.css}.min.css' {} \\;",
+    "dev:filesizes:skeletonic-ui": "filesizes dist/css/core/ > dist/css/core/skeletonic-ui-report.txt",
     "// Skeletonic CSS Maintenance": " --- Development Scripts --- ",
-    "dev:clean:directory": "rimraf \"dist/css\"",
-    "dev:copy:logo": "cp -R images/ dist/images/",
+    "dev:clean:directory": "rimraf dist debug",
     "dev:copy:readme": "cp README.md dist/",
     "dev:copy:index": "cp index.html dist/",
     "dev:copy:stylus": "cp -R src/stylus dist/",
