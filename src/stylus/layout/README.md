@@ -1,6 +1,7 @@
 # Layout Module
 
-The Layout module implements high-performance positioning systems using native CSS Grid Level 3 and Container Queries.
+The Layout module implements high-performance positioning systems using native
+CSS Grid Level 3 and Container Queries.
 
 ## Key Features
 

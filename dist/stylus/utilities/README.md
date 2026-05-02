@@ -1,6 +1,7 @@
 # Utilities Module
 
-The Utilities module provides modern motion effects and specialized layout logic.
+The Utilities module provides modern motion effects and specialized layout
+logic.
 
 ## Key Features
 

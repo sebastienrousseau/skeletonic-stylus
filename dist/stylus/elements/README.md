@@ -1,6 +1,7 @@
 # Elements Module
 
-The Elements module provides standard styles for base HTML tags, enhanced with 2026 ergonomic features.
+The Elements module provides standard styles for base HTML tags, enhanced with
+2026 ergonomic features.
 
 ## Included Elements
 

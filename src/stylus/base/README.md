@@ -1,6 +1,7 @@
 # Base Module
 
-The Base module provides the essential foundation for Skeletonic Stylus, including the universal reset and core helper utilities.
+The Base module provides the essential foundation for Skeletonic Stylus,
+including the universal reset and core helper utilities.
 
 ## Files
 

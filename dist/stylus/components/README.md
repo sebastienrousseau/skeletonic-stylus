@@ -1,6 +1,7 @@
 # Components Module
 
-The Components module contains high-level UI patterns designed for rapid prototyping and production-ready interfaces.
+The Components module contains high-level UI patterns designed for rapid
+prototyping and production-ready interfaces.
 
 ## Included Components
 
