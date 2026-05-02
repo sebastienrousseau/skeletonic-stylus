@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 The Configurations module defines the global state of the library, including the
 design tokens, color engine, and fluid typography variables.
 
-## Key Features
+**Key Features**
 
 - **Colors:** Leveraging `oklch()` and `light-dark()` for 2026-standard mode
   awareness.

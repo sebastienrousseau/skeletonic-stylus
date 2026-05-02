@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 The Layout module implements high-performance positioning systems using native
 CSS Grid Level 3 and Container Queries.
 
-## Key Features
+**Key Features**
 
 - **Grid Core:** Masonry and Subgrid support.
 - **Bento Grid:** Asymmetric layouts using `@container`.

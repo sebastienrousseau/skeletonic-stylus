@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 The Elements module provides standard styles for base HTML tags, enhanced with
 2026 ergonomic features.
 
-## Included Elements
+**Included Elements**
 
 - **Button:** Highly accessible, responsive buttons.
 - **Code:** Naked and status-aware code blocks.

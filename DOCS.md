@@ -1,17 +1,17 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 Welcome to the definitive guide for **Skeletonic Stylus**, the high-performance,
 native-first CSS engine for the 2026 web.
 
 ---
 
-## 1. Core Architecture
+**1. Core Architecture**
 
 Skeletonic is built on **CSS Cascade Layers** (`@layer`) to ensure predictable
 specificity and a modular architecture. Canonical documentation can be found at
 [docs.skeletonic.io](https://docs.skeletonic.io).
 
-### CSS Layers
+**CSS Layers**
 
 - `skeletonic.base`: Normalization, Fluid Typography, and Global Focus
   Management.
@@ -21,9 +21,9 @@ specificity and a modular architecture. Canonical documentation can be found at
 
 ---
 
-## 2. Design Tokens (Configurations)
+**2. Design Tokens (Configurations)**
 
-### 2.1 Color Engine
+**2.1 Color Engine**
 
 Skeletonic uses `oklch()` for perceptually uniform colors and `light-dark()` for
 zero-rule mode switching.
@@ -34,7 +34,7 @@ zero-rule mode switching.
 | `--bg-primary` | `.bg-primary`   | Derived background tint using **RCS**. |
 | `--cl-surface` | `.bg-surface`   | Adaptive surface color.                |
 
-### 2.2 Fluid Typography
+**2.2 Fluid Typography**
 
 Uses `clamp()` for smooth scaling without breakpoints.
 
@@ -43,9 +43,9 @@ Uses `clamp()` for smooth scaling without breakpoints.
 
 ---
 
-## 3. Layout System
+**3. Layout System**
 
-### 3.1 Native Masonry Grid
+**3.1 Native Masonry Grid**
 
 Skeletonic implements the 2026 standard for masonry layouts using
 `display: grid-lanes` with a fallback to `grid-template-rows: masonry`.
@@ -58,7 +58,7 @@ Skeletonic implements the 2026 standard for masonry layouts using
 </div>
 ```
 
-### 3.2 Bento Grid
+**3.2 Bento Grid**
 
 Asymmetric layouts using Container Queries for modular, parent-aware
 responsiveness.
@@ -72,9 +72,9 @@ responsiveness.
 
 ---
 
-## 4. Components & Elements
+**4. Components & Elements**
 
-### 4.1 Modal Suite
+**4.1 Modal Suite**
 
 Using the native HTML5 `<dialog>` element with `@starting-style` for smooth
 entry animations.
@@ -88,7 +88,7 @@ entry animations.
 </dialog>
 ```
 
-### 4.2 Auto-Sizing Forms
+**4.2 Auto-Sizing Forms**
 
 Inputs and textareas leverage `field-sizing: content` to automatically grow with
 user input.
@@ -97,7 +97,7 @@ user input.
 <textarea class="w-full" placeholder="This grows as you type..."></textarea>
 ```
 
-### 4.3 Skeleton Loaders
+**4.3 Skeleton Loaders**
 
 High-performance animated shimmers.
 
@@ -106,7 +106,7 @@ High-performance animated shimmers.
 
 ---
 
-## 5. Accessibility Best Practices
+**5. Accessibility Best Practices**
 
 Skeletonic Stylus is **100% WCAG 2.2 AA compliant** by default.
 
@@ -116,21 +116,21 @@ Skeletonic Stylus is **100% WCAG 2.2 AA compliant** by default.
 
 ---
 
-## 6. Optimization
+**6. Optimization**
 
-### Core Bundle: 4.40 kB
+**Core Bundle: 4.40 kB**
 
 The core engine is optimized for **Brotli** and **Gzip** compression, ensuring a
 near-zero impact on your Largest Contentful Paint (LCP).
 
 ---
 
-## 7. Engineering Standards & Provenance
+**7. Engineering Standards & Provenance**
 
 Skeletonic Stylus follows strict commit signing and provenance standards. All
 official releases are signed with verified SSH/GPG keys.
 
-### Contribution Signature
+**Contribution Signature**
 
 We recommend using a consistent signature for commit hygiene:
 

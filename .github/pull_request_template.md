@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 Please include a summary of the changes and the related issue.
 Please also include relevant motivation and context.
 
-## ✅ Checklist
+**✅ Checklist**
 
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code, particularly in hard-to-understand areas

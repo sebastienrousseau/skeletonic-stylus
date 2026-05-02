@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 The Utilities module provides modern motion effects and specialized layout
 logic.
 
-## Key Features
+**Key Features**
 
 - **Animations:** Anchor Positioning and Skeleton Loader utilities.
 - **Mixins:** Reusable logic for focus rings, high contrast mode, and more.

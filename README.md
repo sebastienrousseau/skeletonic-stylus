@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 <p align="center">
   <img src="https://cloudcdn.pro/skeletonic/v1/logos/skeletonic.svg"
@@ -41,7 +41,7 @@
 
 ---
 
-## ⚡ High-Performance Core
+**⚡ High-Performance Core**
 
 Skeletonic Stylus is a hyper-optimized, modular CSS engine designed for the
 high-performance era. It leverages 2026 native features to deliver a complete UI
@@ -53,40 +53,40 @@ foundation in under 5kb.
 
 ---
 
-## 🛠 Features
+**🛠 Features**
 
-### 🌈 2026 Color Engine
+**🌈 2026 Color Engine**
 
 Native `oklch()` and `light-dark()` support. Derives hover and active states
 dynamically via **Relative Color Syntax (RCS)**, ensuring zero extra CSS weight
 for theming.
 
-### 📐 Precision Layouts
+**📐 Precision Layouts**
 
 Built-in support for **Native Grid Masonry** (`grid-lanes`) and **Bento Grids**
 using Container Queries. No JavaScript layout libraries required.
 
-### 🖋 Fluid Typography
+**🖋 Fluid Typography**
 
 Headings and body text scale smoothly between mobile and desktop via native
 `clamp()` functions. No media query hacks, just mathematical precision.
 
-### ♿ Accessibility First
+**♿ Accessibility First**
 
 Enforced `:focus-visible` ring management, `65ch` reading limits, and global
 `prefers-reduced-motion` overrides at the engine level.
 
 ---
 
-## 🚀 Quick Start
+**🚀 Quick Start**
 
-### 1. Installation
+**1. Installation**
 
 ```bash
 pnpm add @sebastienrousseau/skeletonic-stylus
 ```
 
-### 2. Basic Usage
+**2. Basic Usage**
 
 Import the core foundations in your Stylus file:
 
@@ -96,7 +96,7 @@ Import the core foundations in your Stylus file:
 
 ---
 
-## 📊 Performance Benchmarks
+**📊 Performance Benchmarks**
 
 | Metric              | Core Engine | UI Addon    |
 | :------------------ | :---------- | :---------- |
@@ -107,14 +107,14 @@ Import the core foundations in your Stylus file:
 
 ---
 
-## 📖 Documentation
+**📖 Documentation**
 
 For the complete API reference, design tokens, and component library usage, see
 the [Full Documentation](https://docs.skeletonic.io).
 
 ---
 
-## 📄 License
+**📄 License**
 
 Skeletonic Stylus is dual-licensed under **MIT** or **Apache-2.0**.
 

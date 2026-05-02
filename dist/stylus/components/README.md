@@ -1,9 +1,9 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
 The Components module contains high-level UI patterns designed for rapid
 prototyping and production-ready interfaces.
 
-## Included Components
+**Included Components**
 
 - **Alert:** Mode-aware notification boxes.
 - **Badge:** Status indicators and count labels.
