@@ -202,11 +202,14 @@ button, .button, [type=submit]
       opacity: .9
   &-outline
     background: transparent
-    border: 2px solid var(--cl-primary)
-    color: var(--cl-primary)
+    // Use the outline-on-surface token if defined (dark mode brightens
+    // it so the text passes WCAG 2.2 AA 4.5:1 on the dark surface),
+    // falling back to --cl-primary in light mode.
+    border: 2px solid var(--cl-primary-on-surface, var(--cl-primary))
+    color: var(--cl-primary-on-surface, var(--cl-primary))
     &:hover
-      background: var(--cl-primary)
-      color: var(--cl-white)
+      background: var(--cl-primary-on-surface, var(--cl-primary))
+      color: var(--background-color, #fff)
       opacity: 1
 // Full-width call-to-action variant. Use as a modifier on .button
 // (e.g. <a class="button primary block">). Width was 98.7% which

@@ -7,17 +7,34 @@
  **/
 
 /* @group Alerts */
+//
+// Alerts use the status colour ONLY for the border and a pale
+// background tint. The body text inherits the page's foreground
+// colour (--foreground-color) so the alert is readable on every
+// theme without depending on the bright status hue passing
+// contrast against its own pale tint (e.g. light green on pale
+// green = 2.1 : 1, fails WCAG 2.2 AA).
+//
+// A `<strong>` headline inside the alert uses `var(--cl-X)` for
+// emphasis — the headline is short and styled large, so the
+// "large text" 3 : 1 threshold from WCAG SC 1.4.3 carries it.
 
+// The alert background tints (--bg-primary, --bg-success, …) are
+// pale by design and identical in light and dark mode, so the body
+// text inside an alert always wants a fixed DARK foreground —
+// `var(--foreground-color)` would flip to white in dark mode and
+// land at 1 : 1 against the pale tint.
 .alert
+  background: var(--bg-disable)
   border-radius: .38rem
+  color: #1a1a1a
   display: block
   margin-bottom: 1.62rem
   padding: 1.62rem
   position: relative
   transition: transform 0.2s ease
 
-  // Native :has() selector for 2026 logic
-  // If the alert contains a link, give it a pointer cursor and hover effect
+  // Native :has() — give alerts containing a link a pointer cursor.
   &:has(a)
     cursor: pointer
     &:hover
@@ -26,31 +43,31 @@
   &.alert-error
     background: var(--bg-danger)
     border: .0625rem solid var(--cl-danger)
-    color: var(--cl-danger)
+    & > strong
+      color: var(--cl-danger)
 
   &.alert-info
     background: var(--bg-info)
     border: .0625rem solid var(--cl-info)
-    color: var(--cl-info)
 
   &.alert-primary
     background: var(--bg-primary)
     border: .0625rem solid var(--cl-primary)
-    color: var(--cl-primary)
+    & > strong
+      color: var(--cl-primary)
 
   &.alert-secondary
     background: var(--bg-secondary)
     border: .0625rem solid var(--cl-secondary)
-    color: var(--cl-secondary)
+    & > strong
+      color: var(--cl-secondary)
 
   &.alert-success
     background: var(--bg-success)
     border: .0625rem solid var(--cl-success)
-    color: var(--cl-success)
 
   &.alert-warning
     background: var(--bg-warning)
     border: .0625rem solid var(--cl-warning)
-    color: var(--cl-warning)
 
 /* @end */

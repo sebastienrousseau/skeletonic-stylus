@@ -120,5 +120,11 @@
     --background-color: oklch(0.15 0.01 250)
     --foreground-color: oklch(0.98 0.01 250)
     --focus-ring-color: var(--link-color, oklch(0.7 0.2 250))
+    // A separate "outline" tone for use by `.btn-outline` /
+    // body-text links etc. on the dark surface — the regular
+    // `--cl-primary` stays dark so white text on filled
+    // `.button.primary` keeps clearing 4.5:1.
+    --cl-primary-on-surface: oklch(0.78 0.16 250)
+    --link-color: oklch(0.72 0.20 250)
 
 /* @end */

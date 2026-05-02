@@ -11,7 +11,7 @@
   --cl-info: oklch(0.85 0.15 100);
   --cl-inverse: oklch(1 0 0);
   --cl-link: oklch(0.6 0.25 250);
-  --cl-danger: oklch(0.6 0.25 20);
+  --cl-danger: oklch(0.55 0.25 20);
   --cl-success: oklch(0.7 0.2 140);
   --cl-warning: oklch(0.8 0.15 80);
   --bg-primary: oklch(0.96 0.02 250);
@@ -153,6 +153,8 @@
     --background-color: oklch(0.15 0.01 250);
     --foreground-color: oklch(0.98 0.01 250);
     --focus-ring-color: var(--link-color, oklch(0.7 0.2 250));
+    --cl-primary-on-surface: oklch(0.78 0.16 250);
+    --link-color: oklch(0.72 0.2 250);
   }
 }
 @layer skeletonic.base {
@@ -908,12 +910,12 @@
   }
   .btn-outline {
     background: transparent;
-    border: 2px solid var(--cl-primary);
-    color: var(--cl-primary);
+    border: 2px solid var(--cl-primary-on-surface, var(--cl-primary));
+    color: var(--cl-primary-on-surface, var(--cl-primary));
   }
   .btn-outline:hover {
-    background: var(--cl-primary);
-    color: var(--cl-white);
+    background: var(--cl-primary-on-surface, var(--cl-primary));
+    color: var(--background-color, #ffffff);
     opacity: 1;
   }
   .block {
@@ -1065,7 +1067,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-primary);
             border-inline-start: 0.9rem solid var(--cl-primary);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-primary);
+    color: #1a1a1a;
   }
   code.secondary {
     background: var(--bg-secondary);
@@ -1075,7 +1077,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-secondary);
             border-inline-start: 0.9rem solid var(--cl-secondary);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-secondary);
+    color: #1a1a1a;
   }
   code.tertiary {
     background: var(--bg-tertiary);
@@ -1085,7 +1087,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-tertiary);
             border-inline-start: 0.9rem solid var(--cl-tertiary);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-tertiary);
+    color: #1a1a1a;
   }
   code.success {
     background: var(--bg-success);
@@ -1096,7 +1098,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-success);
             border-inline-start: 0.9rem solid var(--cl-success);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-success);
+    color: #1a1a1a;
   }
   code.info {
     background: var(--bg-info);
@@ -1106,7 +1108,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-info);
             border-inline-start: 0.9rem solid var(--cl-info);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-info);
+    color: #1a1a1a;
   }
   code.warning {
     background: var(--bg-warning);
@@ -1116,7 +1118,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-warning);
             border-inline-start: 0.9rem solid var(--cl-warning);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-warning);
+    color: #1a1a1a;
   }
   code.error {
     background: var(--bg-danger);
@@ -1126,7 +1128,7 @@
     -webkit-border-start: 0.9rem solid var(--cl-danger);
             border-inline-start: 0.9rem solid var(--cl-danger);
     box-shadow: 0 12px 30px -9px var(--cl-grey-200);
-    color: var(--cl-danger);
+    color: #1a1a1a;
   }
   hr {
     background-color: transparent;
@@ -1328,6 +1330,7 @@
   textarea.input-primary {
     background: var(--bg-primary);
     border-color: var(--cl-primary);
+    color: #1a1a1a;
   }
   .input-secondary[type="email"],
   .input-secondary[type="file"],
@@ -1341,6 +1344,7 @@
   textarea.input-secondary {
     background: var(--bg-secondary);
     border-color: var(--cl-secondary);
+    color: #1a1a1a;
   }
   .input-success[type="email"],
   .input-success[type="file"],
@@ -1354,6 +1358,7 @@
   textarea.input-success {
     background: var(--bg-success);
     border-color: var(--cl-success);
+    color: #1a1a1a;
   }
   .input-info[type="email"],
   .input-info[type="file"],
@@ -1367,6 +1372,7 @@
   textarea.input-info {
     background: var(--bg-info);
     border-color: var(--cl-info);
+    color: #1a1a1a;
   }
   .input-warning[type="email"],
   .input-warning[type="file"],
@@ -1380,6 +1386,7 @@
   textarea.input-warning {
     background: var(--bg-warning);
     border-color: var(--cl-warning);
+    color: #1a1a1a;
   }
   .input-error[type="email"],
   .input-error[type="file"],
@@ -1393,6 +1400,7 @@
   textarea.input-error {
     background: var(--bg-danger);
     border-color: var(--cl-danger);
+    color: #1a1a1a;
   }
   fieldset {
     border: 1px solid var(--cl-grey-200);
@@ -2506,7 +2514,9 @@
 }
 @layer skeletonic.components {
   .alert {
+    background: var(--bg-disable);
     border-radius: 0.38rem;
+    color: #1a1a1a;
     display: block;
     margin-bottom: 1.62rem;
     padding: 1.62rem;
@@ -2522,32 +2532,35 @@
   .alert.alert-error {
     background: var(--bg-danger);
     border: 0.0625rem solid var(--cl-danger);
+  }
+  .alert.alert-error > strong {
     color: var(--cl-danger);
   }
   .alert.alert-info {
     background: var(--bg-info);
     border: 0.0625rem solid var(--cl-info);
-    color: var(--cl-info);
   }
   .alert.alert-primary {
     background: var(--bg-primary);
     border: 0.0625rem solid var(--cl-primary);
+  }
+  .alert.alert-primary > strong {
     color: var(--cl-primary);
   }
   .alert.alert-secondary {
     background: var(--bg-secondary);
     border: 0.0625rem solid var(--cl-secondary);
+  }
+  .alert.alert-secondary > strong {
     color: var(--cl-secondary);
   }
   .alert.alert-success {
     background: var(--bg-success);
     border: 0.0625rem solid var(--cl-success);
-    color: var(--cl-success);
   }
   .alert.alert-warning {
     background: var(--bg-warning);
     border: 0.0625rem solid var(--cl-warning);
-    color: var(--cl-warning);
   }
   .badge {
     align-items: center;

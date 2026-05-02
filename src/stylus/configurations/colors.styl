@@ -21,7 +21,10 @@
   $info            = oklch(0.85 0.15 100) // Yellow/Gold
   $inverse         = oklch(1 0 0) // White
   $link            = oklch(0.6 0.25 250) // Bright Blue
-  $danger          = oklch(0.6 0.25 20) // Red
+  // Bumped to L=0.55 (was 0.60) so white text on `.button.error` /
+  // `.badge.danger` / etc. clears WCAG 2.2 AA 4.5:1 instead of
+  // stalling at 4.37 : 1.
+  $danger          = oklch(0.55 0.25 20) // Red
   $success         = oklch(0.7 0.2 140) // Green
   $warning         = oklch(0.8 0.15 80) // Orange/Amber
 
