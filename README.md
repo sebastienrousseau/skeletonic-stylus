@@ -1,9 +1,5 @@
 <!-- markdownlint-disable MD033 MD041 -->
 
-<h1>Skeletonic Stylus</h1>
-
-<!-- markdownlint-disable MD033 MD041 -->
-
 <p align="center">
   <img src="https://cloudcdn.pro/skeletonic/v1/logos/skeletonic.svg"
   alt="Skeletonic Stylus Logo" width="240" />

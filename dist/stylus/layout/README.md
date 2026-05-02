@@ -1,4 +1,4 @@
-# Layout Module
+<!-- markdownlint-disable MD033 MD041 -->
 
 The Layout module implements high-performance positioning systems using native
 CSS Grid Level 3 and Container Queries.

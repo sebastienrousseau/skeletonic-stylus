@@ -5,8 +5,6 @@
   alt="Skeletonic Stylus Logo" width="240" />
 </p>
 
-<h1 align="center">Skeletonic Stylus</h1>
-
 <p align="center">
   <strong>The world’s first CSS engine built for the 2026 browser
   standard.</strong>

@@ -1,7 +1,5 @@
 <!-- markdownlint-disable MD033 MD041 -->
 
-<h1>Elements Module</h1>
-
 The Elements module provides standard styles for base HTML tags, enhanced with
 2026 ergonomic features.
 

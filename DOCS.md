@@ -1,7 +1,5 @@
 <!-- markdownlint-disable MD033 MD041 -->
 
-<h1 align="center">Skeletonic Stylus Documentation</h1>
-
 Welcome to the definitive guide for **Skeletonic Stylus**, the high-performance,
 native-first CSS engine for the 2026 web.
 
