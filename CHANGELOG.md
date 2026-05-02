@@ -3,11 +3,12 @@
 All notable changes to **`@sebastienrousseau/skeletonic-stylus`** are
 documented in this file. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this
-project adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
+project adheres to
+[Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [2.0.0] — 2026-05-02
+**[2.0.0] — 2026-05-02**
 
 The "2026 baseline" major release. Every modern CSS feature that
 shipped in the 2024–2026 Baseline window is now part of the library's
@@ -15,7 +16,7 @@ foundation. Class names that consumers were already using are
 preserved; the underlying tokens, layout primitives, and motion
 utilities are fundamentally new.
 
-### Added
+**Added**
 
 - **Modular core / UI split.** `dist/css/core/skeletonic.min.css`
   ships only tokens + reset + layout primitives (4.4 kB raw / 1.4 kB
@@ -58,7 +59,7 @@ utilities are fundamentally new.
   `--provenance` from a public GitHub Actions workflow with
   `id-token: write`, signed by Sigstore.
 
-### Changed
+**Changed**
 
 - **Tarball layout.** `npm pack ./dist` now publishes the *contents*
   of `dist/`. Public CDN URLs drop the legacy `/dist/` segment:
@@ -82,7 +83,7 @@ utilities are fundamentally new.
   large Φⁿ values (h1 ≈ 29 rem); v2 uses a 1.27 (musical minor
   third) ratio.
 
-### Removed
+**Removed**
 
 - `.flex-1`…`.flex-12` legacy flexbox grid (replaced by `.grid` +
   `.grid-cols-N`).
@@ -92,7 +93,7 @@ utilities are fundamentally new.
   paragraphs to clear Codacy's first-heading rule; document
   hierarchy preserved via `**` styling and `---` thematic breaks).
 
-### Migration
+**Migration**
 
 | v1.x → v2.0 |
 | --- |
@@ -100,7 +101,7 @@ utilities are fundamentally new.
 | `.padding-3` → `.padding-md` |
 | `.margin-bottom-5` → `.margin-bottom-lg` |
 | `.alert.primary` → `.alert .alert-primary` |
-| `.../dist/css/skeletonic.min.css` (CDN URL) → `.../css/core/skeletonic.min.css` |
+| `.../dist/css/skeletonic.min.css` → `.../css/core/skeletonic.min.css` |
 | `!important` overrides → unlayered CSS (drop the `!important`) |
 
 Most colour tokens (`--cl-primary`, `--bg-success`, `$grey-500`)
@@ -108,7 +109,7 @@ keep their names but resolve to OKLCH values. Visual output is
 close to v1.1.7 but not pixel-identical — audit any screenshots in
 your design system.
 
-### Quality gates
+**Quality gates**
 
 - Compiled core bundle: **4.4 kB raw / 1.6 kB gzip / 1.4 kB brotli**
   — under the 10 / 8 kB CI ceilings.
@@ -120,11 +121,11 @@ your design system.
 
 ---
 
-## [1.1.7] — 2026-04
+**[1.1.7] — 2026-04**
 
 The "release-readiness" pass: a11y, supply chain, repo hygiene.
 
-### Added
+**Added**
 
 - RTL via logical properties (95 declarations).
 - `--gr-h1`…`--gr-h6` heading tokens consumed by `<h1>`–`<h6>`.
@@ -135,7 +136,7 @@ The "release-readiness" pass: a11y, supply chain, repo hygiene.
 - CycloneDX SBOM in the npm tarball.
 - `size-limit` budgets enforced in CI.
 
-### Fixed
+**Fixed**
 
 - `$primary` / `$secondary` darkened for AA contrast against white
   text.
@@ -143,7 +144,7 @@ The "release-readiness" pass: a11y, supply chain, repo hygiene.
 
 ---
 
-## [1.1.6] and earlier
+**[1.1.6] and earlier**
 
 Internal cleanup, dependency bumps, and palette additions. See the
 [GitHub Releases page](https://github.com/sebastienrousseau/skeletonic-stylus/releases)
