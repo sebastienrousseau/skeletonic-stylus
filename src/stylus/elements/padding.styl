@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -8,30 +8,59 @@
 
 /* @group Paddings */
 
-  $range = 0, .8129237073, 1.3154105296, 2.1283342369, 3.4439065322, 5.572240769, 9.0165708237, 14.5888115927, 23.6064912503, 38.195302843, 61.804697157, 100
+// Standard Golden Ratio Spacing Scale (rem-based)
+// xs: ~0.38rem (small)
+// sm: ~0.62rem (large)
+// md: 1.62rem (base)
+// lg: ~2.62rem (base * gr)
+// xl: ~4.24rem (base * gr^2)
 
-  for $length, i in $range
-      .padding-{i}
-        padding: ($length)%
+.padding-xs
+  padding: var(--gr-small)rem
+.padding-sm
+  padding: var(--gr-large)rem
+.padding-md
+  padding: var(--gr-fsb)rem
+.padding-lg
+  padding: calc(var(--gr-fsb) * var(--gr))rem
+.padding-xl
+  padding: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      .padding-top-{i}
-        padding-top: ($length)%
+.padding-top-xs
+  padding-top: var(--gr-small)rem
+.padding-top-sm
+  padding-top: var(--gr-large)rem
+.padding-top-md
+  padding-top: var(--gr-fsb)rem
+.padding-top-lg
+  padding-top: calc(var(--gr-fsb) * var(--gr))rem
+.padding-top-xl
+  padding-top: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      .padding-bottom-{i}
-        padding-bottom: ($length)%
+.padding-bottom-xs
+  padding-bottom: var(--gr-small)rem
+.padding-bottom-sm
+  padding-bottom: var(--gr-large)rem
+.padding-bottom-md
+  padding-bottom: var(--gr-fsb)rem
+.padding-bottom-lg
+  padding-bottom: calc(var(--gr-fsb) * var(--gr))rem
+.padding-bottom-xl
+  padding-bottom: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      // Logical (start/end) — auto-flip in RTL.
-      .padding-start-{i}
-        padding-inline-start: ($length)%
+// Logical (start/end) — auto-flip in RTL.
+.padding-start-xs
+  padding-inline-start: var(--gr-small)rem
+.padding-start-sm
+  padding-inline-start: var(--gr-large)rem
+.padding-start-md
+  padding-inline-start: var(--gr-fsb)rem
 
-      .padding-end-{i}
-        padding-inline-end: ($length)%
-
-      // Physical (left/right) — kept for explicit visual control.
-      .padding-left-{i}
-        padding-left: ($length)%
-
-      .padding-right-{i}
-        padding-right: ($length)%
+.padding-end-xs
+  padding-inline-end: var(--gr-small)rem
+.padding-end-sm
+  padding-inline-end: var(--gr-large)rem
+.padding-end-md
+  padding-inline-end: var(--gr-fsb)rem
 
 /* @end */

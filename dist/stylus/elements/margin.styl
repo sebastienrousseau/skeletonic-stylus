@@ -1,5 +1,5 @@
 /**
- * Skeletonic Stylus Library v1.1.7
+ * Skeletonic Stylus Library v2.0.0
  * https://skeletonicstylus.com
  *
  * Copyright (c) Sebastien Rousseau 2023. All rights reserved
@@ -8,33 +8,62 @@
 
 /* @group Margins */
 
-  $range = 0, .8129237073, 1.3154105296, 2.1283342369, 3.4439065322, 5.572240769, 9.0165708237, 14.5888115927, 23.6064912503, 38.195302843, 61.804697157, 100
+// Standard Golden Ratio Spacing Scale (rem-based)
+// xs: ~0.38rem (small)
+// sm: ~0.62rem (large)
+// md: 1.62rem (base)
+// lg: ~2.62rem (base * gr)
+// xl: ~4.24rem (base * gr^2)
 
-  for $length, i in $range
-      .margin-auto
-	      margin: auto
+.margin-xs
+  margin: var(--gr-small)rem
+.margin-sm
+  margin: var(--gr-large)rem
+.margin-md
+  margin: var(--gr-fsb)rem
+.margin-lg
+  margin: calc(var(--gr-fsb) * var(--gr))rem
+.margin-xl
+  margin: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      .margin-{i}
-        margin: ($length)%
+.margin-top-xs
+  margin-top: var(--gr-small)rem
+.margin-top-sm
+  margin-top: var(--gr-large)rem
+.margin-top-md
+  margin-top: var(--gr-fsb)rem
+.margin-top-lg
+  margin-top: calc(var(--gr-fsb) * var(--gr))rem
+.margin-top-xl
+  margin-top: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      .margin-top-{i}
-        margin-top: ($length)%
+.margin-bottom-xs
+  margin-bottom: var(--gr-small)rem
+.margin-bottom-sm
+  margin-bottom: var(--gr-large)rem
+.margin-bottom-md
+  margin-bottom: var(--gr-fsb)rem
+.margin-bottom-lg
+  margin-bottom: calc(var(--gr-fsb) * var(--gr))rem
+.margin-bottom-xl
+  margin-bottom: calc(var(--gr-fsb) * var(--gr) * var(--gr))rem
 
-      .margin-bottom-{i}
-        margin-bottom: ($length)%
+// Logical (start/end) — auto-flip in RTL.
+.margin-start-xs
+  margin-inline-start: var(--gr-small)rem
+.margin-start-sm
+  margin-inline-start: var(--gr-large)rem
+.margin-start-md
+  margin-inline-start: var(--gr-fsb)rem
 
-      // Logical (start/end) — auto-flip in RTL.
-      .margin-start-{i}
-        margin-inline-start: ($length)%
+.margin-end-xs
+  margin-inline-end: var(--gr-small)rem
+.margin-end-sm
+  margin-inline-end: var(--gr-large)rem
+.margin-end-md
+  margin-inline-end: var(--gr-fsb)rem
 
-      .margin-end-{i}
-        margin-inline-end: ($length)%
-
-      // Physical (left/right) — kept for explicit visual control.
-      .margin-left-{i}
-        margin-left: ($length)%
-
-      .margin-right-{i}
-        margin-right: ($length)%
+.margin-auto
+  margin: auto
 
 /* @end */
