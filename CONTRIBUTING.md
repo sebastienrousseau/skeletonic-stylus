@@ -27,7 +27,7 @@ make Skeletonic Stylus Library better. If you have ideas, suggestions, or
 questions about Skeletonic Stylus Library, we'd love to hear them. Here's how
 you can provide feedback:
 
-- Click [here][2] to submit a new feedback.
+- Submit your [new feedback][2].
 - Use a descriptive title that clearly summarizes your feedback.
 - Provide a detailed description of the issue or suggestion.
 - Be patient while we review and respond to your feedback.
@@ -37,7 +37,7 @@ you can provide feedback:
 If you encounter a bug while using the Skeletonic Stylus Library, please let us
 know so we can fix it. Here's how you can submit a bug report:
 
-- Click [here][2] to submit a new issue.
+- Submit a [new issue][2].
 
 - Use a descriptive title that clearly summarizes the bug.
 

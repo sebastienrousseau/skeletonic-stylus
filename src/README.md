@@ -1,5 +1,8 @@
-<!-- markdownlint-disable MD033 MD041 -->
+# Skeletonic Stylus Source
 
-<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
+The source directory contains the complete technical foundation of the
+Skeletonic Stylus library.
 
-<!-- markdownlint-enable MD033 MD041 -->
+## Directory Structure
+
+- `stylus/`: The complete set of Stylus source files and design tokens.

@@ -100,12 +100,12 @@ Import the core foundations in your Stylus file:
 
 ## 📊 Performance Benchmarks
 
-| Metric              | Core Engine | UI Addon |
-| :------------------ | :---------- | :------- |
-| **Size (Minified)** | **4.4 kB**  | 35.2 kB  |
-| **Size (Brotli)**   | **1.4 kB**  | 8.2 kB   |
+| Metric              | Core Engine | UI Addon   |
+| :------------------ | :---------- | :--------- |
+| **Size (Minified)** | **4.4 kB**  | 35.2 kB    |
+| **Size (Brotli)**   | **1.4 kB**  | 8.2 kB     |
 | **Cascade Layers**  | 2 (@layer)  | 4 (@layer) |
-| **Lighthouse A11y** | **100/100** | **100/100** |
+| **Lighthouse A11y** | **100/100** | **100/100**|
 
 ---
 
