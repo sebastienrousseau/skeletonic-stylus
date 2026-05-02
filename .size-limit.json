@@ -2,21 +2,62 @@
   {
     "name": "skeletonic.min.css (raw)",
     "path": "dist/css/core/skeletonic.min.css",
-    "limit": "48 KB",
+    "limit": "10 KB",
     "gzip": false,
     "brotli": false
   },
   {
     "name": "skeletonic.min.css (gzip)",
     "path": "dist/css/core/skeletonic.min.css",
-    "limit": "10 KB",
+    "limit": "3 KB",
     "gzip": true,
     "brotli": false
   },
   {
     "name": "skeletonic.min.css (brotli)",
     "path": "dist/css/core/skeletonic.min.css",
+    "limit": "2.5 KB",
+    "gzip": false,
+    "brotli": true
+  },
+  {
+    "name": "skeletonic-ui.min.css (raw)",
+    "path": "dist/css/core/skeletonic-ui.min.css",
+    "limit": "48 KB",
+    "gzip": false,
+    "brotli": false
+  },
+  {
+    "name": "skeletonic-ui.min.css (gzip)",
+    "path": "dist/css/core/skeletonic-ui.min.css",
+    "limit": "10 KB",
+    "gzip": true,
+    "brotli": false
+  },
+  {
+    "name": "skeletonic-ui.min.css (brotli)",
+    "path": "dist/css/core/skeletonic-ui.min.css",
     "limit": "8 KB",
+    "gzip": false,
+    "brotli": true
+  },
+  {
+    "name": "core+ui combined (gzip)",
+    "path": [
+      "dist/css/core/skeletonic.min.css",
+      "dist/css/core/skeletonic-ui.min.css"
+    ],
+    "limit": "12 KB",
+    "gzip": true,
+    "brotli": false
+  },
+  {
+    "name": "core+ui combined (brotli)",
+    "path": [
+      "dist/css/core/skeletonic.min.css",
+      "dist/css/core/skeletonic-ui.min.css"
+    ],
+    "limit": "10 KB",
     "gzip": false,
     "brotli": true
   },
@@ -30,8 +71,15 @@
   {
     "name": "skeletonic-animations.min.css (gzip)",
     "path": "dist/css/animations/skeletonic-animations.min.css",
-    "limit": "30 KB",
+    "limit": "10 KB",
     "gzip": true,
     "brotli": false
+  },
+  {
+    "name": "skeletonic-animations.min.css (brotli)",
+    "path": "dist/css/animations/skeletonic-animations.min.css",
+    "limit": "8 KB",
+    "gzip": false,
+    "brotli": true
   }
 ]

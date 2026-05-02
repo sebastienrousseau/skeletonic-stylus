@@ -88,22 +88,31 @@ pnpm add @sebastienrousseau/skeletonic-stylus
 
 **2. Basic Usage**
 
-Import the core foundations in your Stylus file:
+Import the core foundations in your Stylus file (tokens + reset +
+layout primitives only):
 
 ```stylus
-@import "@sebastienrousseau/skeletonic-stylus/core"
+@import "@sebastienrousseau/skeletonic-stylus/stylus/skeletonic"
+```
+
+Or pull in the full UI add-on (buttons, alerts, badges, cards,
+forms — built on top of core):
+
+```stylus
+@import "@sebastienrousseau/skeletonic-stylus/stylus/skeletonic-ui"
 ```
 
 ---
 
 **📊 Performance Benchmarks**
 
-| Metric              | Core Engine | UI Addon   |
-| :------------------ | :---------- | :--------- |
-| **Size (Minified)** | **4.4 kB**  | 35.2 kB    |
-| **Size (Brotli)**   | **1.4 kB**  | 8.2 kB     |
-| **Cascade Layers**  | 2 (@layer)  | 4 (@layer) |
-| **Lighthouse A11y** | **100/100** | **100/100**|
+| Metric              | Core Engine | UI Addon    |
+| :------------------ | :---------- | :---------- |
+| **Size (Minified)** | **4.4 kB**  | 33.6 kB     |
+| **Size (Gzip)**     | **1.6 kB**  | 6.8 kB      |
+| **Size (Brotli)**   | **1.4 kB**  | 5.9 kB      |
+| **Cascade Layers**  | 2 (@layer)  | 4 (@layer)  |
+| **Lighthouse A11y** | **100/100** | **100/100** |
 
 ---
 

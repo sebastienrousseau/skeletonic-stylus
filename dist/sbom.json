@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:c685ffbb-8d51-4029-a8e8-34a6c40f008e",
+  "serialNumber": "urn:uuid:ba47a875-cf79-4279-afd7-b5e35f8a56d0",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-05-02T13:55:08.512Z",
+    "timestamp": "2026-05-02T17:07:21.717Z",
     "tools": [
       {
         "vendor": "Skeletonic Stylus",

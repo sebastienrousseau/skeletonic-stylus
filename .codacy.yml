@@ -1,0 +1,25 @@
+# Codacy repo-level config. Disable the markdownlint coupling that
+# kept firing "Expected: [None]; Actual: ## X" on every README in
+# this repo. The pattern matches markdownlint's MD002 with an
+# undefined `level` parameter (Codacy's default ruleset configures
+# it that way). Repo-local markdownlint (.markdownlint.rc + the
+# @sebastienrousseau/markdownlint-config preset) is the source of
+# truth for markdown style — keeping Codacy's redundant pass off
+# avoids the whack-a-mole on first-heading rules.
+#
+# Markdown style is NOT going un-checked: pnpm run dev:size,
+# pnpm run dev:a11y, and the markdownlint-cli step in the local
+# pre-commit hook continue to enforce style. We're disabling the
+# Codacy WRAPPER around markdownlint, not markdownlint itself.
+engines:
+  markdownlint:
+    enabled: false
+
+# Everything else (ESLint via Codacy, Stylelint, Coverity, Trivy,
+# Semgrep) stays at the defaults — they catch real issues that
+# .markdownlint.rc can't.
+exclude_paths:
+  - dist/**
+  - node_modules/**
+  - debug/**
+  - "*.tgz"
