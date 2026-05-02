@@ -29,14 +29,10 @@ try {
   process.exit(2);
 }
 
-const browser = await chromium.launch({ headless: true });
-let exitCode = 0;
-
-try {
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  await page.goto(pathToFileURL(indexHtml).href);
-
+/**
+ * Runs the Axe-core accessibility audit.
+ */
+async function runA11yAudit(page) {
   console.log("--- Phase 1: Accessibility Audit (Axe-core) ---");
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
@@ -51,12 +47,18 @@ try {
         console.error(`      • ${node.target.join(" ")}`);
       }
     }
-    exitCode = 1;
-  } else {
-    console.log("a11y-test: 100% WCAG 2.2 compliant.");
+    return false;
   }
+  console.log("a11y-test: 100% WCAG 2.2 compliant.");
+  return true;
+}
 
+/**
+ * Runs CSS Unit Assertions.
+ */
+async function runCssTests(page) {
   console.log("\n--- Phase 2: CSS Unit Assertions (100% Coverage) ---");
+  let allPassed = true;
 
   const cssTests = [
     {
@@ -80,11 +82,10 @@ try {
     {
       name: "Core A11y: Focus Management",
       test: async () => {
-        // Find first link and focus it
-        await page.focus('a');
+        await page.focus("a");
         const hasOutline = await page.evaluate(() => {
           const style = window.getComputedStyle(document.activeElement);
-          return style.outlineStyle !== 'none' || style.outlineWidth !== '0px';
+          return style.outlineStyle !== "none" || style.outlineWidth !== "0px";
         });
         return hasOutline;
       }
@@ -97,10 +98,26 @@ try {
       console.log(`[PASS] ${t.name}`);
     } else {
       console.error(`[FAIL] ${t.name}`);
-      exitCode = 1;
+      allPassed = false;
     }
   }
+  return allPassed;
+}
 
+const browser = await chromium.launch({ headless: true });
+let exitCode = 0;
+
+try {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto(pathToFileURL(indexHtml).href);
+
+  const a11yOk = await runA11yAudit(page);
+  const cssOk = await runCssTests(page);
+
+  if (!a11yOk || !cssOk) {
+    exitCode = 1;
+  }
 } catch (err) {
   console.error(`test-runner: runtime error: ${err.message}`);
   exitCode = 2;

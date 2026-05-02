@@ -2,7 +2,8 @@
 
 ## 📝 Description
 
-Please include a summary of the changes and the related issue. Please also include relevant motivation and context.
+Please include a summary of the changes and the related issue.
+Please also include relevant motivation and context.
 
 ## ✅ Checklist
 
@@ -15,5 +16,5 @@ Please include a summary of the changes and the related issue. Please also inclu
 - [ ] Any dependent changes have been merged and published in downstream modules
 
 ---
-THE ARCHITECT ᛫ Sebastien Rousseau ᛫ https://sebastienrousseau.com
-THE ENGINE ᛞ EUXIS ᛫ Enterprise Unified Execution Intelligence System ᛫ https://euxis.co
+THE ARCHITECT ᛫ Sebastien Rousseau ᛫ <https://sebastienrousseau.com>
+THE ENGINE ᛞ EUXIS ᛫ Enterprise Unified Execution Intelligence System ᛫ <https://euxis.co>

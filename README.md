@@ -1,11 +1,11 @@
+# Skeletonic Stylus
+
 <!-- markdownlint-disable MD033 MD041 -->
 
 <p align="center">
   <img src="https://cloudcdn.pro/skeletonic/v1/logos/skeletonic.svg"
   alt="Skeletonic Stylus Logo" width="240" />
 </p>
-
-<h1 align="center">Skeletonic Stylus</h1>
 
 <p align="center">
   <strong>The world’s first CSS engine built for the 2026 browser
@@ -100,12 +100,12 @@ Import the core foundations in your Stylus file:
 
 ## 📊 Performance Benchmarks
 
-| Metric              | Core Engine | UI Addon   |
-| :------------------ | :---------- | :--------- |
-| **Size (Minified)** | **4.4 kB**  | 35.2 kB    |
-| **Size (Brotli)**   | **1.4 kB**  | 8.2 kB     |
-| **Cascade Layers**  | 2 (@layer)  | 4 (@layer) |
-| **Lighthouse A11y** | **100/100** | **100/100**|
+| Metric              | Core Engine | UI Addon    |
+| :------------------ | :---------- | :---------- |
+| **Size (Minified)** | **4.4 kB**  | 35.2 kB     |
+| **Size (Brotli)**   | **1.4 kB**  | 8.2 kB      |
+| **Cascade Layers**  | 2 (@layer)  | 4 (@layer)  |
+| **Lighthouse A11y** | **100/100** | **100/100** |
 
 ---
 

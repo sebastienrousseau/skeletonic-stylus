@@ -1,4 +1,4 @@
-# Skeletonic Stylus Documentation (v2.0.0)
+# Skeletonic Stylus Documentation
 
 Welcome to the definitive guide for **Skeletonic Stylus**, the high-performance,
 native-first CSS engine for the 2026 web.
@@ -122,6 +122,22 @@ Skeletonic Stylus is **100% WCAG 2.2 AA compliant** by default.
 
 The core engine is optimized for **Brotli** and **Gzip** compression, ensuring a
 near-zero impact on your Largest Contentful Paint (LCP).
+
+---
+
+## 7. Engineering Standards & Provenance
+
+Skeletonic Stylus follows strict commit signing and provenance standards. All
+official releases are signed with verified SSH/GPG keys.
+
+### Contribution Signature
+
+We recommend using a consistent signature for commit hygiene:
+
+```text
+THE ARCHITECT ᛫ Sebastien Rousseau ᛫ <https://sebastienrousseau.com>
+THE ENGINE ᛞ EUXIS ᛫ Enterprise Intelligence ᛫ <https://euxis.co>
+```
 
 ---
 
