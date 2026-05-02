@@ -5,9 +5,7 @@
   ],
   "plugins": [
     "stylelint-order",
-    "stylelint-config-rational-order/plugin",
-    "stylelint-high-performance-animation",
-    "stylelint-prettier"
+    "stylelint-high-performance-animation"
   ],
   "rules": {
     "prettier/prettier": true,
