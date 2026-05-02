@@ -1,4 +1,6 @@
-# Utilities Module
+<!-- markdownlint-disable MD033 MD041 -->
+
+<h1>Utilities Module</h1>
 
 The Utilities module provides modern motion effects and specialized layout
 logic.

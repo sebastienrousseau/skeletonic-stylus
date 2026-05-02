@@ -1,4 +1,6 @@
-# Skeletonic Stylus
+<!-- markdownlint-disable MD033 MD041 -->
+
+<h1>Skeletonic Stylus</h1>
 
 <!-- markdownlint-disable MD033 MD041 -->
 

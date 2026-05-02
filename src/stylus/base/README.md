@@ -1,4 +1,6 @@
-# Base Module
+<!-- markdownlint-disable MD033 MD041 -->
+
+<h1>Base Module</h1>
 
 The Base module provides the essential foundation for Skeletonic Stylus,
 including the universal reset and core helper utilities.

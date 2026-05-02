@@ -1,4 +1,6 @@
-# Components Module
+<!-- markdownlint-disable MD033 MD041 -->
+
+<h1>Components Module</h1>
 
 The Components module contains high-level UI patterns designed for rapid
 prototyping and production-ready interfaces.
