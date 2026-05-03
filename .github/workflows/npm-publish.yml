@@ -84,8 +84,13 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
         with:
-          node-version: 20
+          node-version: 22
           registry-url: "https://registry.npmjs.org/"
+
+      # Trusted Publishing requires npm CLI >= 11.5.1 (the OIDC client).
+      # Node 22 ships npm 10.x, so install the latest npm explicitly.
+      - name: Upgrade npm to latest (Trusted Publishing OIDC support)
+        run: npm install -g npm@latest
 
       - name: Download build artifact
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093  # v4
@@ -98,9 +103,14 @@ jobs:
           mkdir -p dist
           tar -xzf *.tgz --strip-components=1 -C dist
 
-      - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # No NODE_AUTH_TOKEN — npm CLI exchanges the GitHub OIDC token
+      # for a short-lived publish credential via Trusted Publishing.
+      # Configure once on npmjs.com:
+      #   package → Settings → Trusted Publishers → GitHub Actions
+      #     org/user:  sebastienrousseau
+      #     repo:      skeletonic-stylus
+      #     workflow:  npm-publish.yml
+      - name: Publish to npm via Trusted Publishing (OIDC)
         run: npm publish ./dist --access public --provenance
 
       - name: Verify CDN availability (jsDelivr + unpkg)
