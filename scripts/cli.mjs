@@ -194,12 +194,16 @@ function cmdAdd(name) {
   const cwd = process.cwd();
   const targetDir = join(cwd, "styles", "components");
   const targetFile = join(targetDir, `${name}.styl`);
-  if (existsSync(targetFile)) {
-    fail(`${relPath(targetFile)} already exists. Refusing to overwrite.`);
-    return 1;
-  }
   ensureDir(targetDir);
-  writeFileSync(targetFile, readFileSync(src, "utf8"), "utf8");
+  try {
+    writeFileSync(targetFile, readFileSync(src, "utf8"), { encoding: "utf8", flag: "wx" });
+  } catch (err) {
+    if (err.code === "EEXIST") {
+      fail(`${relPath(targetFile)} already exists. Refusing to overwrite.`);
+      return 1;
+    }
+    throw err;
+  }
   ok(`copied ${name}.styl → ${relPath(targetFile)}`);
   return 0;
 }

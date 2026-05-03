@@ -67,7 +67,13 @@ console.log("\n\x1b[1mverify-release\x1b[0m — pre-release gate\n");
   );
   record("dist/package.json strips dev fields", !["devDependencies", "pnpm", "autoupdate"].some(k => k in dist));
   record("dist/package.json files[] declared", Array.isArray(dist.files) && dist.files.length > 0, dist.files?.join(", "));
-  record("repository URL contains GitHub owner/repo", /github\.com\/sebastienrousseau\/skeletonic-stylus/.test(dist.repository), dist.repository);
+  const repoUrl = (typeof dist.repository === "string" ? dist.repository : dist.repository?.url || "").replace(/^git\+/, "").replace(/\.git$/, "");
+  let repoOk = false;
+  try {
+    const u = new URL(repoUrl);
+    repoOk = u.hostname === "github.com" && u.pathname === "/sebastienrousseau/skeletonic-stylus";
+  } catch { /* malformed URL → fail gate */ }
+  record("repository URL is github.com/sebastienrousseau/skeletonic-stylus", repoOk, repoUrl);
   record("publishConfig.access = public", dist.publishConfig?.access === "public");
   record("license is OSI-recognised", /MIT|Apache|BSD|ISC/i.test(dist.license || ""), dist.license);
 }
