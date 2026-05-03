@@ -84,13 +84,13 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
         with:
-          node-version: 22
+          # Node 24 ships npm 11.12+ which already meets Trusted
+          # Publishing's >= 11.5.1 OIDC-client minimum, so no in-place
+          # `npm install -g npm@latest` upgrade is needed.  Avoiding
+          # that step also sidesteps a known npm-self-upgrade race
+          # where arborist drops `promise-retry` mid-rebuild.
+          node-version: 24
           registry-url: "https://registry.npmjs.org/"
-
-      # Trusted Publishing requires npm CLI >= 11.5.1 (the OIDC client).
-      # Node 22 ships npm 10.x, so install the latest npm explicitly.
-      - name: Upgrade npm to latest (Trusted Publishing OIDC support)
-        run: npm install -g npm@latest
 
       - name: Download build artifact
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093  # v4
