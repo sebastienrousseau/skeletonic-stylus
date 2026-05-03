@@ -1,0 +1,39 @@
+/**
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT license
+ **/
+
+/* @group Tooltip (2026 Standard) */
+
+// Native Zero-JS Tooltip using Popover API and Anchor Positioning
+// Usage:
+// <button anchor="my-btn" popovertarget="my-tip">Hover me</button>
+// <div id="my-tip" popover anchor="my-btn" class="tooltip">Tooltip content</div>
+
+[popover].tooltip
+  anchor-name: --tooltip-anchor // Fallback/Internal
+  background: var(--cl-black)
+  border-radius: .25rem
+  border: none
+  color: var(--cl-white)
+  font-size: .875rem
+  margin: 0
+  padding: .5rem .75rem
+  position: absolute
+  position-anchor: --tooltip-anchor
+  top: anchor(bottom)
+  left: anchor(center)
+  transform: translateX(-50%) translateY(.5rem)
+  white-space: nowrap
+
+  // Starting style for smooth entry
+  @starting-style
+    opacity: 0
+    transform: translateX(-50%) translateY(0)
+
+  transition: opacity .2s ease, transform .2s ease, display .2s ease allow-discrete
+
+/* @end */

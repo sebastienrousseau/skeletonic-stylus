@@ -15,12 +15,18 @@
   --cl-warning: light-dark(oklch(.8 .15 80), oklch(.82 .12 80))
   --cl-danger: light-dark(oklch(.55 .25 20), oklch(.65 .20 20))
 
-  @css {
-    /* Background tints (using Relative Color Syntax - 2026 Standard) */
-    --bg-primary: oklch(from var(--cl-primary) calc(l + .5) c h / .1);
-    --bg-secondary: oklch(from var(--cl-secondary) calc(l + .5) c h / .1);
-    --bg-success: oklch(from var(--cl-success) calc(l + .2) c h / .1);
-  }
+  /* Background tints. Concrete light-dark() pairs (no relative-color
+     syntax) so older Chromium / pa11y / WAVE can resolve them — the
+     fallback to `transparent` was making `.alert-warning` and
+     `.alert-danger` register 1.21:1 contrast in WCAG audits.
+     Each tint pairs a near-white tint of the brand hue with a near-
+     black tint at the same hue + chroma for dark mode. */
+  --bg-primary: light-dark(oklch(.96 .03 250), oklch(.18 .04 250))
+  --bg-secondary: light-dark(oklch(.96 .03 200), oklch(.18 .04 200))
+  --bg-success: light-dark(oklch(.96 .03 140), oklch(.18 .04 140))
+  --bg-info: light-dark(oklch(.96 .04 100), oklch(.18 .04 100))
+  --bg-warning: light-dark(oklch(.96 .04 80), oklch(.18 .04 80))
+  --bg-danger: light-dark(oklch(.96 .03 20), oklch(.18 .04 20))
 
   --cl-grey-100: light-dark(oklch(.98 .01 250), oklch(.15 .01 250))
   --cl-grey-200: light-dark(oklch(.9 .01 250), oklch(.25 .01 250))

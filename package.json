@@ -48,7 +48,7 @@
   },
   "scripts": {
     "// Build": " --- Build Scripts --- ",
-    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
+    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
     "verify": "node ./scripts/verify-release.mjs",
     "verify:cdn": "node ./scripts/verify-cdn.mjs",
     "dev:emit:dist-package": "node ./scripts/emit-dist-package.mjs",
@@ -136,6 +136,7 @@
     "dev:copy:readme": "cp README.md dist/",
     "dev:copy:index": "cp index.html dist/",
     "dev:copy:stylus": "cp -R src/stylus dist/",
+    "dev:copy:cli": "mkdir -p dist/scripts && cp scripts/cli.mjs dist/scripts/cli.mjs && chmod +x dist/scripts/cli.mjs",
     "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",
     "dev:format": "npx prettier --write \"*.md\" \"src/**/*.md\"",
     "// Production": " --- Production Scripts --- ",

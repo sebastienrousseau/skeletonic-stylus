@@ -1,0 +1,61 @@
+/**
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT license
+ **/
+
+/* @group Accordion (2026 Standard) */
+
+// Native Zero-JS Accordion
+// Leveraging @interpolate-size for smooth height: auto transitions
+details.accordion
+  background: var(--cl-surface)
+  border-radius: .5rem
+  border: 1px solid var(--cl-grey-200)
+  margin-bottom: 1rem
+  overflow: hidden
+  @css {
+    transition: interpolate-size .3s ease;
+  }
+
+  &[open]
+    summary
+      border-bottom: 1px solid var(--cl-grey-200)
+      &::after
+        transform: rotate(180deg)
+
+  summary
+    align-items: center
+    cursor: pointer
+    display: flex
+    font-weight: 600
+    justify-content: space-between
+    list-style: none
+    padding: 1rem 1.5rem
+    transition: background-color .2s ease
+
+    &::-webkit-details-marker
+      display: none
+
+    &:hover
+      background-color: var(--cl-grey-100)
+
+    &::after
+      content: "↓"
+      font-family: monospace
+      transition: transform .3s ease
+
+  .content
+    padding: 1.5rem
+    // Pre-flight for smooth transition
+    height: 0
+    opacity: 0
+    transition: height .3s ease, opacity .3s ease, padding .3s ease
+
+  &[open] .content
+    height: auto
+    opacity: 1
+
+/* @end */

@@ -31,7 +31,8 @@ const pkg = JSON.parse(readFileSync(srcManifest, "utf8"));
 pkg.main = "stylus/skeletonic.styl";
 pkg.style = "css/core/skeletonic.min.css";
 pkg.sass = "stylus/skeletonic.styl";
-pkg.files = ["css", "stylus", "README.md", "index.html", "sbom.json"];
+pkg.files = ["css", "stylus", "scripts/cli.mjs", "README.md", "index.html", "sbom.json"];
+pkg.bin = { skeletonic: "scripts/cli.mjs" };
 pkg.scripts = { test: 'echo "No tests in published artefact" && exit 0' };
 
 // 3. Emit

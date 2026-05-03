@@ -9,14 +9,29 @@
 /* @group Navigation */
 
 .navbar
+  background: var(--cl-surface)
   box-shadow: none
   display: block
   height: 60px
   margin: 0 auto
   max-width: 100%
   overflow: hidden
+  position: sticky
+  top: 0
   width: 100%
   z-index: 10
+  // Scroll-driven shadow animation
+  animation: navbar-scroll both
+  animation-timeline: scroll()
+  animation-range: 0 100px
+
+@keyframes navbar-scroll
+  to
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1)
+    @css {
+      background: color-mix(in oklch, var(--cl-surface), transparent 5%);
+      backdrop-filter: blur(10px);
+    }
 
   span
     display: none

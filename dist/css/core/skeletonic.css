@@ -19,18 +19,21 @@
   --cl-warning: light-dark(oklch(0.8 0.15 80), oklch(0.82 0.12 80));
   --cl-danger: light-dark(oklch(0.55 0.25 20), oklch(0.65 0.2 20));
 
-  /* Background tints (using Relative Color Syntax - 2026 Standard) */
-  --bg-primary: oklch(from var(--cl-primary) calc(l + 0.5) c h / 0.1);
-  --bg-secondary: oklch(from var(--cl-secondary) calc(l + 0.5) c h / 0.1);
-  --bg-success: oklch(from var(--cl-success) calc(l + 0.2) c h / 0.1);
+  /* Background tints. Concrete light-dark() pairs (no relative-color
+     syntax) so older Chromium / pa11y / WAVE can resolve them — the
+     fallback to `transparent` was making `.alert-warning` and
+     `.alert-danger` register 1.21:1 contrast in WCAG audits.
+     Each tint pairs a near-white tint of the brand hue with a near-
+     black tint at the same hue + chroma for dark mode. */
+  --bg-primary: light-dark(oklch(0.96 0.03 250), oklch(0.18 0.04 250));
+  --bg-secondary: light-dark(oklch(0.96 0.03 200), oklch(0.18 0.04 200));
+  --bg-success: light-dark(oklch(0.96 0.03 140), oklch(0.18 0.04 140));
+  --bg-info: light-dark(oklch(0.96 0.04 100), oklch(0.18 0.04 100));
+  --bg-warning: light-dark(oklch(0.96 0.04 80), oklch(0.18 0.04 80));
+  --bg-danger: light-dark(oklch(0.96 0.03 20), oklch(0.18 0.04 20));
   --cl-grey-100: light-dark(oklch(0.98 0.01 250), oklch(0.15 0.01 250));
   --cl-grey-200: light-dark(oklch(0.9 0.01 250), oklch(0.25 0.01 250));
 }
-
-/* Background tints (using Relative Color Syntax - 2026 Standard) */
---bg-primary: oklch(from var(--cl-primary) calc(l + 0.5) c h / 0.1);
---bg-secondary: oklch(from var(--cl-secondary) calc(l + 0.5) c h / 0.1);
---bg-success: oklch(from var(--cl-success) calc(l + 0.2) c h / 0.1);
 .text-primary {
   color: var(--cl-primary);
 }
@@ -80,7 +83,11 @@
   --background-color: light-dark(oklch(1 0 0), oklch(0.05 0.01 250));
   --foreground-color: light-dark(oklch(0.11 0.01 250), oklch(0.95 0.01 250));
   --cl-surface: light-dark(oklch(0.98 0.01 250), oklch(0.12 0.02 250));
-  --link-color: #0056b3;
+  --link-color: light-dark(#0056b3, #66b2ff);
+  --link-color-visited: light-dark(#5a3a8c, #b89bf0);
+  --link-color-hover: light-dark(#003d7a, #99ccff);
+  --link-color-focus: light-dark(#003d7a, #99ccff);
+  --link-color-active: light-dark(#003d7a, #99ccff);
   --focus-ring-color: var(--link-color);
   --bp-sm: 30em;
   --bp-md: 48em;
@@ -130,11 +137,15 @@
     display: block;
     font-family: sans-serif;
     font-size: 100%;
+
+    interpolate-size: allow-keywords;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
        -moz-text-size-adjust: 100%;
             text-size-adjust: 100%;
   }
+
+  interpolate-size: allow-keywords;
   body {
     background-color: var(--background-color);
     color: var(--foreground-color);

@@ -22,12 +22,14 @@
 // The alert background tints (--bg-primary, --bg-success, …) are
 // pale by design and identical in light and dark mode, so the body
 // text inside an alert always wants a fixed DARK foreground —
-// `var(--foreground-color)` would flip to white in dark mode and
-// land at 1 : 1 against the pale tint.
+// In light mode: dark ink on the pale tinted bg.
+// In dark mode: light ink on the deep tinted bg.
+// light-dark() guarantees both branches resolve cleanly under
+// `:root { color-scheme: light dark }` (declared in colors.styl).
 .alert
   background: var(--bg-disable)
   border-radius: .38rem
-  color: #1a1a1a
+  color: light-dark(#1a1a1a, #f5f5f5)
   display: block
   margin-bottom: 1.62rem
   padding: 1.62rem

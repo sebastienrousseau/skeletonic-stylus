@@ -72,9 +72,12 @@ button, .button, [type=submit]
     outline: 0
     transition: all 150ms linear
     user-select: none
+  // Dark-mode brand colours are LIGHTER than the light-mode pair —
+  // white text on those fails WCAG AA (2.66 : 1). Swap to black ink
+  // in dark mode where the bg is a light tint.
   &.primary
     background: var(--cl-primary)
-    color: var(--cl-white)
+    color: light-dark(var(--cl-white), var(--cl-black))
     cursor: pointer
     transition: all 150ms linear
     &:hover
@@ -83,7 +86,7 @@ button, .button, [type=submit]
       transition: all 150ms linear
   &.secondary
     background: var(--cl-secondary)
-    color: var(--cl-white)
+    color: light-dark(var(--cl-white), var(--cl-black))
     cursor: pointer
     transition: all 150ms linear
     &:hover
@@ -170,7 +173,9 @@ button, .button, [type=submit]
   background: var(--cl-primary)
   border: 0
   border-radius: .3rem
-  color: var(--cl-white)
+  // Same dark-mode swap as `.button.primary`: dark-mode --cl-primary
+  // is a light blue and white on light blue fails AA (2.66 : 1).
+  color: light-dark(var(--cl-white), var(--cl-black))
   cursor: pointer
   display: inline-flex
   font-size: 1rem
@@ -219,8 +224,12 @@ button, .button, [type=submit]
   display: block
   padding: .75rem 1.5rem
   width: 100%
+// Outline variants. In light mode the bg is white, the border + text
+// are the dark brand colour. In dark mode the bg should be dark so
+// the lighter dark-mode brand colour reaches AA against it. Use
+// light-dark() so a single declaration covers both.
 button.primary-outline, .button.primary-outline, [type=submit].primary-outline
-  background-color: var(--cl-white)
+  background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-primary)
   color: var(--cl-primary)
 button.primary-outline:hover, .button.primary-outline:hover, [type=submit].primary-outline:hover
@@ -230,7 +239,7 @@ button.primary-outline:hover, .button.primary-outline:hover, [type=submit].prima
   text-decoration: none
   transition: all 150ms linear
 button.secondary-outline, .button.secondary-outline, [type=submit].secondary-outline
-  background-color: var(--cl-white)
+  background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-secondary)
   color: var(--cl-secondary)
 button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].secondary-outline:hover
@@ -240,7 +249,7 @@ button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].s
   text-decoration: none
   transition: all 150ms linear
 button.success-outline, .button.success-outline, [type=submit].success-outline
-  background-color: var(--cl-white)
+  background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-success)
   color: var(--cl-success)
 button.success-outline:hover, .button.success-outline:hover, [type=submit].success-outline:hover

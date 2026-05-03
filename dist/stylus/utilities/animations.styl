@@ -60,4 +60,14 @@
 .anchor-target
   anchor-name: --anchor-target
 
+/* Modern Easing Functions (2026 Spring Physics) */
+:root
+  @css {
+    /* Spring: stiffness=100, damping=10 */
+    --ease-spring-bout: linear(0, 0.47, 0.82, 1.04, 1.13, 1.14, 1.09, 1.03, 0.98, 0.96, 0.97, 1);
+    /* Spring: stiffness=100, damping=20 */
+    --ease-spring-elastic: linear(0, 0.36, 0.63, 0.82, 0.95, 1.02, 1.05, 1.05, 1.03, 1.01, 1, 1);
+  }
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1)
+
 /* @end */

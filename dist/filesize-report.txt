@@ -3,29 +3,29 @@
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ filesize-report.txt                                  │       0 B │           20 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/animations/skeletonic-animations-report.txt      │   2.01 kB │          236 B │
+│ css/animations/skeletonic-animations-report.txt      │   2.01 kB │          239 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/animations/skeletonic-animations.css             │    305 kB │         7.9 kB │
+│ css/animations/skeletonic-animations.css             │    308 kB │        8.27 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/animations/skeletonic-animations.css.map         │    405 kB │        9.48 kB │
+│ css/animations/skeletonic-animations.css.map         │    408 kB │        9.93 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/animations/skeletonic-animations.min.css         │    218 kB │        6.73 kB │
+│ css/animations/skeletonic-animations.min.css         │    220 kB │        7.08 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic-report.txt                       │   1.68 kB │          227 B │
+│ css/core/skeletonic-report.txt                       │   1.68 kB │          229 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/core/skeletonic-ui-report.txt                    │   2.73 kB │          291 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic-ui.css                           │   49.2 kB │        7.72 kB │
+│ css/core/skeletonic-ui.css                           │   57.6 kB │        8.85 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic-ui.css.map                       │   69.8 kB │        10.5 kB │
+│ css/core/skeletonic-ui.css.map                       │   80.8 kB │          12 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic-ui.min.css                       │   34.5 kB │           7 kB │
+│ css/core/skeletonic-ui.min.css                       │   40.4 kB │        7.85 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic.css                              │   6.72 kB │        2.09 kB │
+│ css/core/skeletonic.css                              │   7.28 kB │        2.36 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic.css.map                          │   9.21 kB │        2.78 kB │
+│ css/core/skeletonic.css.map                          │   9.86 kB │        3.08 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ css/core/skeletonic.min.css                          │   4.69 kB │        1.76 kB │
+│ css/core/skeletonic.min.css                          │   4.98 kB │        1.81 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 │ css/fonts/skeletonic-fonts-report.txt                │   1.86 kB │          235 B │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
@@ -68,7 +68,7 @@
 │ css/palettes/websafe/skeletonic-websafe.min.css      │    3.5 kB │        1.32 kB │
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
 ├──────────────────────────────────────────────────────┼───────────┼────────────────┤
-│ Total files: 33                                      │   1.28 MB │        82.8 kB │
+│ Total files: 33                                      │   1.31 MB │        88.1 kB │
 └──────────────────────────────────────────────────────┴───────────┴────────────────┘
 
 

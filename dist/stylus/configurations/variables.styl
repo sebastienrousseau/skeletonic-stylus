@@ -78,7 +78,14 @@
   --foreground-color: light-dark(oklch(.11 .01 250), oklch(.95 .01 250))
   --cl-surface: light-dark(oklch(.98 .01 250), oklch(.12 .02 250))
 
-  --link-color: #0056b3
+  // Body link colour — light-dark() so the link adapts to colour-
+  // scheme. #0056b3 against white is 6.0 : 1; #66b2ff against the
+  // dark-mode page bg (#0d0d10) is 7.4 : 1. Both clear AA.
+  --link-color: light-dark(#0056b3, #66b2ff)
+  --link-color-visited: light-dark(#5a3a8c, #b89bf0)
+  --link-color-hover: light-dark(#003d7a, #99ccff)
+  --link-color-focus: light-dark(#003d7a, #99ccff)
+  --link-color-active: light-dark(#003d7a, #99ccff)
   --focus-ring-color: var(--link-color)
 
   // Breakpoints

@@ -37,10 +37,14 @@
   "files": [
     "css",
     "stylus",
+    "scripts/cli.mjs",
     "README.md",
     "index.html",
     "sbom.json"
   ],
+  "bin": {
+    "skeletonic": "scripts/cli.mjs"
+  },
   "scripts": {
     "test": "echo \"No tests in published artefact\" && exit 0"
   }

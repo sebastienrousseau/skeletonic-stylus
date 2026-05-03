@@ -8,7 +8,7 @@ project adheres to
 
 ---
 
-**[2.0.0] — 2026-05-02**
+**[2.0.0] — 2026-05-03**
 
 The "2026 baseline" major release. Every modern CSS feature that
 shipped in the 2024–2026 Baseline window is now part of the library's
@@ -58,6 +58,12 @@ utilities are fundamentally new.
 - **npm provenance attestation.** Releases publish with
   `--provenance` from a public GitHub Actions workflow with
   `id-token: write`, signed by Sigstore.
+- **`skeletonic` CLI.** `scripts/cli.mjs` exposed via
+  `bin: { skeletonic: "scripts/cli.mjs" }` in the published
+  `package.json`. Three commands: `init` scaffolds `styles/` +
+  `index.html`; `add <name>` copies a single component; `list`
+  enumerates every component shipped. Run anywhere via
+  `npx @sebastienrousseau/skeletonic-stylus init`.
 
 **Changed**
 
@@ -92,6 +98,43 @@ utilities are fundamentally new.
 - `<h1>`/`<h2>` HTML headings in module READMEs (replaced with bold
   paragraphs to clear Codacy's first-heading rule; document
   hierarchy preserved via `**` styling and `---` thematic breaks).
+
+**Fixed**
+
+Late dark-mode contrast fixes that surfaced when the docs site's
+light/dark theme switcher made the dark variants visible at scale.
+Every fix is a property override with `light-dark()` so the behaviour
+is identical in light mode.
+
+- `.alert-warning` and `.alert-danger` referenced undefined
+  `--bg-warning` / `--bg-danger` tokens (only `--bg-primary`,
+  `--bg-secondary`, `--bg-success` were defined). The cascade fell
+  back to `transparent`, and pa11y / WAVE computed contrast against
+  the parent's resolved colour — reporting 1.21 : 1 on every alert.
+  Added concrete `light-dark()` pairs for `--bg-info`, `--bg-warning`,
+  and `--bg-danger` in `configurations/colors.styl`.
+- `.alert` text was hardcoded `#1a1a1a`. Worked in light mode (dark
+  text on pale tinted bg) but failed in dark mode (1.2 : 1 against
+  the new deep-tinted bg). Now `light-dark(#1a1a1a, #f5f5f5)`.
+- `.button.primary` / `.button.secondary` / `.btn` (square + oval)
+  used white text. The dark-mode `--cl-primary` is a *lighter* blue
+  (`oklch(.7 .16 250)`) by design — white-on-light fails AA at
+  2.66 : 1. Each now uses
+  `color: light-dark(var(--cl-white), var(--cl-black))` so dark mode
+  swaps to black ink on the lighter brand background.
+- `.button.primary-outline` / `.secondary-outline` / `.success-outline`
+  used `var(--cl-white)` as background unconditionally. Dark mode
+  with a white panel + lighter brand stroke fell to 2.66 : 1. Now
+  `background-color: light-dark(var(--cl-white), var(--cl-black))`.
+- `.badge.primary` / `.badge.secondary` / `.badge.danger` had the
+  same dark-mode white-on-light issue → black ink in dark mode via
+  `light-dark()`.
+- `--link-color` was a hard `#0056b3`. Failed AA against the dark-mode
+  page background. Now `light-dark(#0056b3, #66b2ff)` plus matching
+  visited / hover / focus / active variants.
+- Inline form inputs (`form.styl`) and `code.<status>` variants
+  (`code.styl`) had hardcoded `#1a1a1a` text. Updated all six in each
+  file to `light-dark(#1a1a1a, #f5f5f5)`.
 
 **Migration**
 
