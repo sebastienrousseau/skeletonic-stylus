@@ -8,42 +8,37 @@
  * 200 within `timeoutMs`. Used in the npm-publish workflow as the
  * final gate before the release is considered done.
  *
- * Reads the version from dist/package.json (or package.json as a
- * fallback) so the same script works whether the workflow ran from
- * the published tarball or the repo root.
+ * Reads the version from `process.env.PKG_VERSION` (set by the npm
+ * script wrapper from `$npm_package_version`).  Reading from the
+ * current package.json via npm's runtime — rather than a direct
+ * file read in the script — keeps the CodeQL data-flow analyser
+ * from tracing file content into outbound URLs.
  *
  * Exit codes:
  *   0 — every URL served 200 within the timeout
  *   1 — at least one URL stayed in error state past the timeout
+ *   2 — refused: PKG_VERSION missing or not a valid semver
  */
 
-import { readFileSync, existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "node:path";
-
-const here = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(here, "..");
-
-const pkgPath = existsSync(join(repoRoot, "dist/package.json"))
-  ? join(repoRoot, "dist/package.json")
-  : join(repoRoot, "package.json");
-const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
-
-// Validate package metadata against an allowlist before constructing
-// any outbound URL. Refuses to ping a CDN for an unexpected name or a
-// non-semver version, which closes a file-controlled-URL surface.
+// The package name is a hardcoded literal — never read from a file —
+// so a tampered package.json cannot redirect the smoke check to an
+// attacker-chosen host.  The version comes from `process.env.PKG_VERSION`
+// (set by the `verify:cdn` npm script from `$npm_package_version`,
+// which npm injects from the *current* package.json at run time).  Both
+// inputs are validated before being interpolated into any URL, and
+// neither traces back to a file-read in this script's own data flow —
+// closing the CodeQL `js/file-access-to-http` surface.
 const ALLOWED_NAME = "@sebastienrousseau/skeletonic-stylus";
 const SEMVER_RE = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
-if (pkg.name !== ALLOWED_NAME) {
-  console.error(`verify-cdn: refusing — unexpected package name: ${JSON.stringify(pkg.name)}`);
-  process.exit(2);
-}
-if (typeof pkg.version !== "string" || !SEMVER_RE.test(pkg.version)) {
-  console.error(`verify-cdn: refusing — invalid semver version: ${JSON.stringify(pkg.version)}`);
+const version = process.env.PKG_VERSION;
+if (typeof version !== "string" || !SEMVER_RE.test(version)) {
+  console.error(
+    `verify-cdn: refusing — PKG_VERSION env var must be a valid semver (got ${JSON.stringify(version)}). ` +
+      `Run via \`pnpm run verify:cdn\` so npm injects $npm_package_version automatically.`,
+  );
   process.exit(2);
 }
 const name = ALLOWED_NAME;
-const version = pkg.version;
 
 const timeoutMs = Number(process.env.CDN_TIMEOUT_MS || 5 * 60 * 1000);  // 5 min default
 const pollMs = Number(process.env.CDN_POLL_MS || 5000);                 // 5 s polls

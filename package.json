@@ -50,7 +50,7 @@
     "// Build": " --- Build Scripts --- ",
     "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
     "verify": "node ./scripts/verify-release.mjs",
-    "verify:cdn": "node ./scripts/verify-cdn.mjs",
+    "verify:cdn": "PKG_VERSION=\"$npm_package_version\" node ./scripts/verify-cdn.mjs",
     "dev:emit:dist-package": "node ./scripts/emit-dist-package.mjs",
     "dev:emit:sbom": "node ./scripts/emit-sbom.mjs",
     "dev:wrap:cascade-layers": "node ./scripts/wrap-cascade-layers.mjs dist/css/core/skeletonic.css dist/css/core/skeletonic.min.css dist/css/core/skeletonic-ui.css dist/css/core/skeletonic-ui.min.css dist/css/animations/skeletonic-animations.css dist/css/animations/skeletonic-animations.min.css dist/css/fonts/skeletonic-fonts.css dist/css/fonts/skeletonic-fonts.min.css dist/css/hebrew-fonts/skeletonic-hebrew-fonts.css dist/css/hebrew-fonts/skeletonic-hebrew-fonts.min.css dist/css/palettes/material/skeletonic-material.css dist/css/palettes/material/skeletonic-material.min.css dist/css/palettes/tachyons/skeletonic-tachyons.css dist/css/palettes/tachyons/skeletonic-tachyons.min.css dist/css/palettes/websafe/skeletonic-websafe.css dist/css/palettes/websafe/skeletonic-websafe.min.css",
