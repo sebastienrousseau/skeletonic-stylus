@@ -1,5 +1,14 @@
-<!-- markdownlint-disable MD033 MD041 -->
+<!-- markdownlint-disable MD033 MD036 MD041 -->
 
-<img src="https://raw.githubusercontent.com/sebastienrousseau/vault/main/assets/skeletonic/icon/ico-skeletonic.svg" alt="skeletonic logo" width="261" align="right" />
+The Elements module provides standard styles for base HTML tags, enhanced with
+2026 ergonomic features.
 
-<!-- markdownlint-enable MD033 MD041 -->
+**Included Elements**
+
+- **Button:** Highly accessible, responsive buttons.
+- **Code:** Naked and status-aware code blocks.
+- **Form:** Standardized form controls.
+- **Table:** Minimal, readable data tables.
+- **Link:** Native-first link effects.
+- **Spacing:** Golden Ratio-based Margin and Padding utilities.
+- **Layout:** Dividers and Image handling.

@@ -1,8 +1,10 @@
+@layer skeletonic.reset, skeletonic.tokens, skeletonic.layout, skeletonic.elements, skeletonic.components, skeletonic.utilities;
+@layer skeletonic {
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -12,7 +14,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 400;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Regular-webfont.woff")
       format("woff"),
@@ -29,7 +32,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 400;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Italic-webfont.woff")
       format("woff"),
@@ -46,7 +50,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 300;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Light-webfont.woff")
       format("woff"),
@@ -63,7 +68,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 300;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-LightItalic-webfont.woff")
       format("woff"),
@@ -80,7 +86,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 600;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Semibold-webfont.woff")
       format("woff"),
@@ -97,7 +104,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 600;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-SemiboldItalic-webfont.woff")
       format("woff"),
@@ -114,7 +122,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 700;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-Bold-webfont.woff")
       format("woff"),
@@ -131,7 +140,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 700;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic-webfont.woff")
       format("woff"),
@@ -148,7 +158,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 800;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBold-webfont.woff")
       format("woff"),
@@ -165,7 +176,8 @@
 @font-face {
   font-family: "Open Sans Hebrew";
   font-weight: 800;
-  src: url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.eot?#iefix")
+  src:
+    url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.eot?#iefix")
       format("embedded-opentype"),
     url("https://open-sans.com/fonts/OpenSansHebrew/OpenSansHebrew-ExtraBoldItalic-webfont.woff")
       format("woff"),
@@ -181,3 +193,4 @@
 /* @end */
 
 /*# sourceMappingURL=skeletonic-hebrew-fonts.css.map */
+}

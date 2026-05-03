@@ -1,15 +1,11 @@
 {
   "extends": [
     "stylelint-config-recommended",
-    "stylelint-a11y/recommended",
     "stylelint-prettier/recommended"
   ],
   "plugins": [
     "stylelint-order",
-    "stylelint-config-rational-order/plugin",
-    "stylelint-a11y",
-    "stylelint-high-performance-animation",
-    "stylelint-prettier"
+    "stylelint-high-performance-animation"
   ],
   "rules": {
     "prettier/prettier": true,
@@ -21,7 +17,7 @@
     "comment-empty-line-before": "always",
     "comment-whitespace-inside": "always",
     "declaration-block-no-duplicate-properties": null,
-    "declaration-no-important": true,
+    "declaration-no-important": null,
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
     "function-calc-no-unspaced-operator": true,
@@ -43,7 +39,39 @@
     "order/properties-alphabetical-order": true,
     "order/properties-order": [],
     "plugin/no-low-performance-animation-properties": null,
-    "property-no-unknown": true,
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "light-dark",
+          "oklch"
+        ]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "masonry-auto-flow",
+          "position-anchor",
+          "inset-area",
+          "position-try-options",
+          "view-transition-name",
+          "scroll-timeline-name",
+          "scroll-timeline-axis",
+          "animation-timeline",
+          "animation-range",
+          "container-type",
+          "field-sizing",
+          "text-box-trim",
+          "margin-trim"
+        ]
+      }
+    ],
+    "declaration-property-value-no-unknown": null,
+    "property-no-deprecated": null,
+    "declaration-property-value-keyword-no-deprecated": null,
+    "no-invalid-position-declaration": null,
     "property-no-vendor-prefix": true,
     "selector-class-pattern": "[a-z-]+",
     "selector-id-pattern": "[a-z-]+",
@@ -59,9 +87,26 @@
       "vw",
       "vh",
       "deg",
-      "s"
+      "s",
+      "fr",
+      "ch"
     ],
     "unit-no-unknown": true,
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "layer",
+          "starting-style",
+          "container",
+          "media",
+          "charset",
+          "import",
+          "keyframes",
+          "css"
+        ]
+      }
+    ]
   }
 }

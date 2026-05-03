@@ -1,8 +1,8 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -17,5 +17,77 @@ pxtorem($px, $base)
     return (round($px / $base))em
   else
     return 0
+
+/* @end */
+
+/* @group Accessibility Mixins (WCAG 2.2) */
+
+// focus-ring()
+// WCAG 2.2 SC 2.4.11 Focus Appearance compliant focus indicator.
+// 2px outer ring + 2px offset gives a 3:1 contrast contour against
+// most backgrounds; the forced-colors override falls back to system
+// CanvasText so Windows High Contrast Mode users still see the focus.
+focus-ring($color = var(--focus-ring-color), $offset = 2px, $width = 2px)
+  outline: $width solid $color
+  outline-offset: $offset
+  @media (forced-colors: active)
+    outline: 3px solid CanvasText
+    outline-offset: 2px
+
+// sr-only()
+// Visually hides content while keeping it accessible to screen readers.
+// The classic "clip" pattern, kept for legacy compatibility, plus the
+// modern clip-path inset(50%) for browsers that have dropped clip.
+sr-only()
+  border: 0
+  clip: rect(0 0 0 0)
+  clip-path: inset(50%)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  white-space: nowrap
+  width: 1px
+
+// skip-link()
+// Renders a "skip to main content" link off-screen until focused.
+// Apply to an <a href="#main"> at the top of the document.
+skip-link()
+  background: var(--cl-black)
+  color: var(--cl-white)
+  font-weight: 700
+  inset-inline-start: 0
+  padding: 1rem 2rem
+  position: absolute
+  text-decoration: none
+  top: -40rem
+  z-index: 9999
+  &:focus,
+  &:focus-visible
+    top: 0
+
+// no-motion-preference()
+// Wraps a block in @media (prefers-reduced-motion: no-preference) so
+// motion-sensitive users automatically opt out. Use this around any
+// transition: / animation: declaration.
+no-motion-preference()
+  @media (prefers-reduced-motion: no-preference)
+    {block}
+
+// reduced-motion()
+// Inverse of no-motion-preference() — provide an alternate, low-motion
+// styling for users who request reduced motion (WCAG 2.3.3).
+reduced-motion()
+  @media (prefers-reduced-motion: reduce)
+    {block}
+
+// forced-colors-mode()
+// Override styling when the user is in Windows High Contrast Mode or
+// any other forced-colors environment. Use to map your custom colors
+// to system colors (CanvasText, Highlight, etc.).
+forced-colors-mode()
+  @media (forced-colors: active)
+    {block}
 
 /* @end */

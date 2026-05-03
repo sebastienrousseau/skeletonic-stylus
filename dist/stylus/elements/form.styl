@@ -1,32 +1,57 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Input */
 input[type=email], input[type=file], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea
-  background: var(--inverted-color)
-  border: 1px solid var(--cl-grey-200)
-  border-radius: 2px
-  color: var(--cl-black)
+  background: var(--background-color)
+  border: 1px solid var(--cl-grey-300)
+  border-radius: .375rem
+  color: var(--foreground-color)
   display: block
-  font-family: "Consolas", "Monaco", "Menlo", monospace
-  font-size: $gr-fsl rem
-  margin: ($gr)rem  0
+  field-sizing: content // 2026 Native Auto-resize
+  font-family: inherit
+  font-size: 1rem
+  line-height: 1.5
+  margin: 0 0 1rem
   outline: 0
-  padding: 1.62rem 0 1.62rem .62rem
-  transition: all 150ms linear
+  padding: .625rem .75rem
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out
   width: 100%
 
   &:hover
     border-color: var(--cl-grey-200)
 
-  &:focus
+  &:focus-visible
     border-color: var(--cl-black)
-    outline: 0
+    outline: 2px solid var(--focus-ring-color)
+    outline-offset: 2px
+
+// 2026 Native Customizable Select
+select
+  appearance: base-select
+
+@css {
+  select::picker(select) {
+    background-color: var(--cl-surface);
+    border: 1px solid var(--cl-grey-200);
+    border-radius: .5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+  }
+}
+
+// Native Zero-JS Switch
+input[type="checkbox"][role="switch"]
+  @import "toggle"
+  @media (forced-colors: active)
+    &:focus-visible
+      outline: 3px solid CanvasText
+      outline-offset: 2px
 
 .input-primary[type=email],
     .input-primary[type=file],
@@ -40,6 +65,7 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-primary
     background var(--bg-primary)
     border-color var(--cl-primary)
+    color: light-dark(#1a1a1a, #f5f5f5)
 
 .input-secondary[type=email],
     .input-secondary[type=file],
@@ -53,6 +79,7 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-secondary
     background var(--bg-secondary)
     border-color var(--cl-secondary)
+    color: light-dark(#1a1a1a, #f5f5f5)
 
 
 .input-success[type=email],
@@ -67,6 +94,7 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-success
     background var(--bg-success)
     border-color var(--cl-success)
+    color: light-dark(#1a1a1a, #f5f5f5)
 
 .input-info[type=email],
     .input-info[type=file],
@@ -80,6 +108,7 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-info
     background var(--bg-info)
     border-color var(--cl-info)
+    color: light-dark(#1a1a1a, #f5f5f5)
 
 .input-warning[type=email],
     .input-warning[type=file],
@@ -93,6 +122,7 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-warning
     background var(--bg-warning)
     border-color var(--cl-warning)
+    color: light-dark(#1a1a1a, #f5f5f5)
 
 .input-error[type=email],
     .input-error[type=file],
@@ -106,4 +136,5 @@ input[type=email], input[type=file], input[type=number], input[type=password], i
     textarea.input-error
     background var(--bg-danger)
     border-color var(--cl-danger)
+    color: light-dark(#1a1a1a, #f5f5f5)
 /* @end */

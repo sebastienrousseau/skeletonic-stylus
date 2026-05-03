@@ -1,0 +1,46 @@
+/**
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT license
+ **/
+
+/* @group Dropdown (2026 Standard) */
+
+// Native Zero-JS Dropdown Menu
+[popover].dropdown
+  background: var(--cl-surface)
+  border-radius: .5rem
+  border: 1px solid var(--cl-grey-200)
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1)
+  margin: 0
+  min-width: 12rem
+  padding: .5rem
+  position: absolute
+  position-anchor: --dropdown-anchor
+  top: anchor(bottom)
+  left: anchor(start)
+  transform: translateY(.5rem)
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+  li
+    border-radius: .25rem
+    cursor: pointer
+    padding: .5rem 1rem
+    transition: background-color .2s ease
+
+    &:hover
+      background-color: var(--cl-grey-100)
+
+  @starting-style
+    opacity: 0
+    transform: translateY(0)
+
+  transition: opacity .2s ease, transform .2s ease, display .2s ease allow-discrete
+
+/* @end */

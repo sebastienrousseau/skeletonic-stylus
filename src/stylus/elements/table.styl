@@ -1,8 +1,8 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -16,13 +16,14 @@ table
 
 thead
   background-color: var(--cl-black)
-  text-align: left
+  text-align: start
   vertical-align: top
 
 td, th
   background-color: transparent
-  border-left: 1px solid var(--cl-black)
-  border-width: 0 0 0 1px
+  border-inline-start: 1px solid var(--cl-black)
+  border-block-width: 0
+  border-inline-end-width: 0
   margin: 0
   overflow: visible
   padding: 6px 12px

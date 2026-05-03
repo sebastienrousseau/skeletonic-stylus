@@ -1,20 +1,25 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Link Effects */
 
 // Common Link Effects Styles
+//
+// Each link must be a positioning context for its absolutely-positioned
+// pseudo-element underline / bracket, and must clip the off-canvas
+// starting state so the reveal is hidden until :hover.
 for i in (1..12)
   .link-{i}
     background-color: transparent
     box-shadow: none
     display: inline-block
     padding: 10px
+    position: relative
     transition: all .4s ease-out
     &:hover
         text-decoration: none
@@ -25,13 +30,16 @@ for i in (1..12)
     &:before
         background: var(--link-color-focus)
         bottom: 0
-        height: 2px
-        left: 0
+        content: ''
+        height: 3px
+        inset-inline-start: 0
+        position: absolute
         transform: translateX(-100%)
+        transition: transform .4s ease-out
         width: 100%
     &:hover
         &:before
-            transform translateX(0)
+            transform: translateX(0)
 
 // Underline Right to Left
 .link-2
@@ -39,9 +47,12 @@ for i in (1..12)
     &:before
         background: var(--link-color-focus)
         bottom: 0
-        height: 2px
-        right: 0
+        content: ''
+        height: 3px
+        inset-inline-end: 0
+        position: absolute
         transform: translateX(100%)
+        transition: transform .4s ease-out
         width: 100%
     &:hover
         &:before
@@ -52,9 +63,12 @@ for i in (1..12)
     &:before
         background: var(--link-color-focus)
         bottom: 0
-        height: 2px
-        left: 0
+        content: ''
+        height: 3px
+        inset-inline-start: 0
+        position: absolute
         transform: scaleX(0)
+        transition: transform .4s ease-out
         width: 100%
     &:hover
         &:before
@@ -65,9 +79,12 @@ for i in (1..12)
     &:before
         background: var(--link-color-focus)
         bottom: 0
-        height: 2px
-        left: 0
+        content: ''
+        height: 3px
+        inset-inline-start: 0
+        position: absolute
         transform: scaleX(1)
+        transition: transform .4s ease-out
         width: 100%
     &:hover
         &:before
@@ -78,15 +95,21 @@ for i in (1..12)
     overflow: hidden
     &:before
         bottom: 0
+        content: ''
+        position: absolute
         transform: translateX(-100%)
+        transition: transform .4s ease-out
     &:after
+        content: ''
+        position: absolute
         top: 0
         transform: translateX(-100%)
+        transition: transform .4s ease-out
 
 .link-5:before, .link-5:after
     background: var(--link-color-focus)
     height: 2px
-    left: 0
+    inset-inline-start: 0
     width: 100%
 
 .link-5:hover:before, .link-5:hover:after
@@ -97,15 +120,21 @@ for i in (1..12)
     overflow: hidden
     &:before
         bottom: 0
+        content: ''
+        position: absolute
         transform: translateX(100%)
+        transition: transform .4s ease-out
     &:after
+        content: ''
+        position: absolute
         top: 0
         transform: translateX(100%)
+        transition: transform .4s ease-out
 
 .link-6:before, .link-6:after
     background: var(--link-color-focus)
     height: 2px
-    left: 0
+    inset-inline-start: 0
     width: 100%
 
 .link-6:hover:before, .link-6:hover:after
@@ -116,21 +145,25 @@ for i in (1..12)
     overflow: hidden
     &:before
         bottom: 0
-        transform: translateX(0) scaleX(0)
+        content: ''
+        position: absolute
+        transform: scaleX(0)
+        transition: transform .4s ease-out
     &:after
+        content: ''
+        position: absolute
         top: 0
-        transform: translateX(0) scaleX(0)
+        transform: scaleX(0)
+        transition: transform .4s ease-out
     &:hover:before
-        bottom: 0
-        transform: translateX(0) scaleX(1)
+        transform: scaleX(1)
     &:hover:after
-        top: 0
-        transform: translateX(0) scaleX(1)
+        transform: scaleX(1)
 
 .link-7:before, .link-7:after
     background: var(--link-color-focus)
     height: 2px
-    left: 0
+    inset-inline-start: 0
     width: 100%
 
 // Top/Bottom Opposite Start
@@ -138,15 +171,21 @@ for i in (1..12)
     overflow: hidden
     &:before
         bottom: 0
+        content: ''
+        position: absolute
         transform: translateX(-100%)
+        transition: transform .4s ease-out
     &:after
+        content: ''
+        position: absolute
         top: 0
         transform: translateX(100%)
+        transition: transform .4s ease-out
 
 .link-8:before, .link-8:after
     background: var(--link-color-focus)
     height: 2px
-    left: 0
+    inset-inline-start: 0
     width: 100%
 
 .link-8:hover:before, .link-8:hover:after
@@ -158,7 +197,7 @@ for i in (1..12)
       background: var(--link-color-focus)
       content: ''
       height: 2px
-      left: 0
+      inset-inline-start: 0
       opacity: 0
       position: absolute
       top: 100%
@@ -176,7 +215,7 @@ for i in (1..12)
       background: var(--link-color-focus)
       content: ''
       height: 2px
-      left: 0
+      inset-inline-start: 0
       opacity: 0
       position: absolute
       top: 100%
@@ -188,34 +227,70 @@ for i in (1..12)
             opacity: 1
             transform: translateY(0)
 
-// Expanding Brackets
+// Expanding Brackets — `[ … ]` flares out on hover.
 .link-11
-    &:hover:before,
-    &:hover:after
+    &:before,
+    &:after
+        color: var(--link-color-focus)
+        content: ''
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        transition: transform .3s ease-out, content 0s
+    &:hover:before
         content: '['
-        transform: translateX(-15px)
+        transform: translateY(-50%) translateX(-15px)
     &:hover:after
         content: ']'
-        transform: translateX(10px)
+        transform: translateY(-50%) translateX(15px)
 
-// Shrinking Brackets
+// Shrinking Brackets — `[ … ]` snap into place.
 .link-12
-    height: 2px
-    width: 100%
-    &:hover:before,
-    &:hover:after
-        animation: main .5s
+    &:before,
+    &:after
+        color: var(--link-color-focus)
+        content: ''
+        position: absolute
+        top: 50%
+        transform: translateY(-50%) scaleX(0)
+        transform-origin: center
+        transition: transform .3s ease-out
+    &:hover:before
         content: '['
-        transform-origin: -20px 50%
+        transform: translateY(-50%) translateX(-12px) scaleX(1)
     &:hover:after
-        animation: main .5s
         content: ']'
-        transform-origin: 20px 50%
+        transform: translateY(-50%) translateX(12px) scaleX(1)
 
-@keyframes main
-    0%
-        transform: scaleX(0)
-    100%
-        transform: scaleX(1)
+// RTL — flip directional reveals so semantics ("from the start") are
+// preserved when the inline axis is reversed.
+[dir="rtl"]
+    .link-1:before,
+    .link-5:before,
+    .link-5:after,
+    .link-8:before
+        transform: translateX(100%)
+    .link-2:before,
+    .link-6:before,
+    .link-6:after,
+    .link-8:after
+        transform: translateX(-100%)
+    .link-1:hover:before,
+    .link-2:hover:before,
+    .link-5:hover:before,
+    .link-5:hover:after,
+    .link-6:hover:before,
+    .link-6:hover:after,
+    .link-8:hover:before,
+    .link-8:hover:after
+        transform: translateX(0)
+    .link-11:hover:before
+        transform: translateY(-50%) translateX(15px)
+    .link-11:hover:after
+        transform: translateY(-50%) translateX(-15px)
+    .link-12:hover:before
+        transform: translateY(-50%) translateX(12px) scaleX(1)
+    .link-12:hover:after
+        transform: translateY(-50%) translateX(-12px) scaleX(1)
 
 /* @end */

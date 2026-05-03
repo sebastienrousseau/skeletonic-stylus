@@ -1,8 +1,8 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
@@ -16,10 +16,14 @@ a
   &:active, &:hover
     color: var(--link-color-hover)
     text-decoration: underline
-  &:focus
+  &:focus-visible
     color: var(--link-color-focus)
-    outline: 1px thin dotted auto -webkit-focus-ring-color
-    outline-offset: -2px
+    outline: 2px solid var(--focus-ring-color)
+    outline-offset: 2px
+  @media (forced-colors: active)
+    &:focus-visible
+      outline: 3px solid CanvasText
+      outline-offset: 2px
 a, a > span
     color: inherit
     position: relative

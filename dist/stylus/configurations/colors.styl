@@ -1,151 +1,46 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
- * Licensed under the MIT license
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  **/
 
 /* @group Colors */
 
-  // Main colors
-  $primary         = hsl(210, 100%, 50%)
-  $secondary       = hsl(195, 100%, 50%)
-  $tertiary        = hsl(220, 8%, 50%)
-  $disable         = hsl(220, 5%, 70%)
-  $info            = hsl(45, 100%, 50%)
-  $inverse         = hsl(0, 0%, 100%)
-  $link            = hsl(210, 100%, 50%)
-  $danger          = hsl(0, 100%, 50%)
-  $success         = hsl(120, 60%, 50%)
-  $warning         = hsl(40, 100%, 50%)
-
-  // Main background colors
-  $bg-primary      = hsl(0, 0%, 100%)
-  $bg-secondary    = hsl(240, 3%, 17%)
-  $bg-tertiary     = hsl(240, 3%, 27%)
-  $bg-disable      = hsl(0, 0%, 60%)
-  $bg-info         = hsl(213, 100%, 94%)
-  $bg-inverse      = hsl(0, 0%, 0%)
-  $bg-link         = hsl(200, 100%, 94%)
-  $bg-danger       = hsl(356, 100%, 92%)
-  $bg-success      = hsl(124, 54%, 89%)
-  $bg-warning      = hsl(37, 100%, 92%)
-
-  // Basic grey colors
-  $grey-100       = hsl(240, 20%, 97%)
-  $grey-200       = hsl(240, 5%, 87%)
-  $grey-300       = hsl(240, 3%, 77%)
-  $grey-400       = hsl(240, 2%, 67%)
-  $grey-500       = hsl(240, 1%, 57%)
-  $grey-600       = hsl(240, 1%, 47%)
-  $grey-700       = hsl(240, 2%, 37%)
-  $grey-800       = hsl(240, 2%, 27%)
-  $grey-900       = hsl(240, 3%, 17%)
-  $grey-1000      = hsl(240, 8%, 7%)
-
-  // Basic color keyword
-  $aqua           = hsl(180, 100%, 50%)
-  $black          = hsl(0, 0%, 0%)
-  $blue           = hsl(220, 100%, 50%)
-  $fuchsia        = hsl(300, 100%, 50%)
-  $green          = hsl(120, 100%, 30%)
-  $grey           = hsl(0, 0%, 50%)
-  $lime           = hsl(120, 100%, 50%)
-  $maroon         = hsl(0, 100%, 25%)
-  $navy           = hsl(220, 100%, 25%)
-  $olive          = hsl(60, 100%, 30%)
-  $purple         = hsl(300, 100%, 25%)
-  $red            = hsl(0, 100%, 50%)
-  $silver         = hsl(0, 0%, 75%)
-  $teal           = hsl(180, 100%, 30%)
-  $white          = hsl(0, 0%, 100%)
-  $yellow         = hsl(60, 100%, 50%)
-
-colors = {
-
-  primary      : $primary
-  secondary    : $secondary
-  tertiary     : $tertiary
-  disable      : $disable
-  info         : $info
-  inverse      : $white
-  link         : $link
-  danger       : $danger
-  success      : $success
-  warning      : $warning
-
-}
-
-backgrounds = {
-
-  primary   : $bg-primary
-  secondary : $bg-secondary
-  tertiary  : $bg-tertiary
-  disable   : $bg-disable
-  info      : $bg-info
-  inverse   : $bg-inverse
-  link      : $bg-link
-  danger    : $bg-danger
-  success   : $bg-success
-  warning   : $bg-warning
-
-}
-
-greys = {
-
-  grey-100  : $grey-100
-  grey-200  : $grey-200
-  grey-300  : $grey-300
-  grey-400  : $grey-400
-  grey-500  : $grey-500
-  grey-600  : $grey-600
-  grey-700  : $grey-700
-  grey-800  : $grey-800
-  grey-900  : $grey-900
-  grey-1000 : $grey-1000
-
-}
-
-keywords = {
-
-aqua        : $aqua
-black       : $black
-blue        : $blue
-fuchsia     : $fuchsia
-green       : $green
-grey        : $grey
-lime        : $lime
-maroon      : $maroon
-navy        : $navy
-olive       : $olive
-purple      : $purple
-red         : $red
-silver      : $silver
-teal        : $teal
-white       : $white
-yellow      : $yellow
-
-}
-
 :root
-  for name, color in colors
-    --cl-{name}(color)
+  --cl-primary: light-dark(oklch(.40 .2 250), oklch(.7 .16 250))
+  --cl-secondary: light-dark(oklch(.38 .15 200), oklch(.65 .12 200))
+  --cl-success: light-dark(oklch(.7 .2 140), oklch(.75 .15 140))
+  --cl-info: light-dark(oklch(.85 .15 100), oklch(.88 .12 100))
+  --cl-warning: light-dark(oklch(.8 .15 80), oklch(.82 .12 80))
+  --cl-danger: light-dark(oklch(.55 .25 20), oklch(.65 .20 20))
 
-  for bgname, background in backgrounds
-    --bg-{bgname}(background)
+  /* Background tints. Concrete light-dark() pairs (no relative-color
+     syntax) so older Chromium / pa11y / WAVE can resolve them — the
+     fallback to `transparent` was making `.alert-warning` and
+     `.alert-danger` register 1.21:1 contrast in WCAG audits.
+     Each tint pairs a near-white tint of the brand hue with a near-
+     black tint at the same hue + chroma for dark mode. */
+  --bg-primary: light-dark(oklch(.96 .03 250), oklch(.18 .04 250))
+  --bg-secondary: light-dark(oklch(.96 .03 200), oklch(.18 .04 200))
+  --bg-success: light-dark(oklch(.96 .03 140), oklch(.18 .04 140))
+  --bg-info: light-dark(oklch(.96 .04 100), oklch(.18 .04 100))
+  --bg-warning: light-dark(oklch(.96 .04 80), oklch(.18 .04 80))
+  --bg-danger: light-dark(oklch(.96 .03 20), oklch(.18 .04 20))
 
-  for greyname, grey in greys
-    --cl-{greyname}(grey)
+  --cl-grey-100: light-dark(oklch(.98 .01 250), oklch(.15 .01 250))
+  --cl-grey-200: light-dark(oklch(.9 .01 250), oklch(.25 .01 250))
 
-  for keywordname, keyword in keywords
-    --cl-{keywordname}(keyword)
+/* Utility Classes */
+.text-primary { color: var(--cl-primary); }
+.text-secondary { color: var(--cl-secondary); }
+.text-white { color: var(--cl-white); }
+.text-black { color: var(--cl-black); }
 
-for greyname, grey in greys
-    .background-color-{greyname}
-        background-color: (grey)
-
-    .border-color-{greyname}
-        border: 1px solid (grey)
+.bg-primary { background-color: var(--bg-primary); }
+.bg-surface { background-color: var(--cl-surface); }
+.bg-black { background-color: var(--cl-black); }
+.bg-white { background-color: var(--cl-white); }
+.bg-soft { background-color: var(--cl-grey-100); }
 
 /* @end */

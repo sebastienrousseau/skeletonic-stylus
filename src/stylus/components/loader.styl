@@ -1,0 +1,36 @@
+/**
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT license
+ **/
+
+/* @group Loader */
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.loader
+  animation: spin 1s linear infinite
+  border: .4rem solid var(--cl-grey-200)
+  border-radius: 50%
+  border-top: .4rem solid var(--cl-primary)
+  display: inline-block
+  height: 3rem
+  width: 3rem
+
+  &-sm
+    border-width: .2rem
+    height: 1.62rem
+    width: 1.62rem
+
+  &-lg
+    border-width: .6rem
+    height: 5rem
+    width: 5rem
+
+/* @end */

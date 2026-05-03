@@ -1,29 +1,56 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Paddings */
 
-  $range = 0, .8129237073, 1.3154105296, 2.1283342369, 3.4439065322, 5.572240769, 9.0165708237, 14.5888115927, 23.6064912503, 38.195302843, 61.804697157, 100
+// Standard Golden Ratio Spacing Scale (Balanced)
+$pd-xs = .382rem
+$pd-sm = .618rem
+$pd-md = 1rem
+$pd-lg = 1.618rem
+$pd-xl = 2.618rem
+$pd-xxl = 4.236rem
 
-  for $length, i in $range
-      .padding-{i}
-        padding: ($length)%
+.p-0 { padding: 0 !important; }
 
-      .padding-top-{i}
-        padding-top: ($length)%
+.padding-xs { padding: $pd-xs; }
+.padding-sm { padding: $pd-sm; }
+.padding-md { padding: $pd-md; }
+.padding-lg { padding: $pd-lg; }
+.padding-xl { padding: $pd-xl; }
+.padding-xxl { padding: $pd-xxl; }
 
-      .padding-bottom-{i}
-        padding-bottom: ($length)%
+.pt-xs { padding-top: $pd-xs; }
+.pt-sm { padding-top: $pd-sm; }
+.pt-md { padding-top: $pd-md; }
+.pt-lg { padding-top: $pd-lg; }
+.pt-xl { padding-top: $pd-xl; }
+.pt-xxl { padding-top: $pd-xxl; }
 
-      .padding-left-{i}
-        padding-left: ($length)%
+.pb-xs { padding-bottom: $pd-xs; }
+.pb-sm { padding-bottom: $pd-sm; }
+.pb-md { padding-bottom: $pd-md; }
+.pb-lg { padding-bottom: $pd-lg; }
+.pb-xl { padding-bottom: $pd-xl; }
+.pb-xxl { padding-bottom: $pd-xxl; }
 
-      .padding-right-{i}
-        padding-right: ($length)%
+.px-xs { padding-left: $pd-xs; padding-right: $pd-xs; }
+.px-sm { padding-left: $pd-sm; padding-right: $pd-sm; }
+.px-md { padding-left: $pd-md; padding-right: $pd-md; }
+.px-lg { padding-left: $pd-lg; padding-right: $pd-lg; }
+.px-xl { padding-left: $pd-xl; padding-right: $pd-xl; }
+.px-xxl { padding-left: $pd-xxl; padding-right: $pd-xxl; }
+
+.py-xs { padding-top: $pd-xs; padding-bottom: $pd-xs; }
+.py-sm { padding-top: $pd-sm; padding-bottom: $pd-sm; }
+.py-md { padding-top: $pd-md; padding-bottom: $pd-md; }
+.py-lg { padding-top: $pd-lg; padding-bottom: $pd-lg; }
+.py-xl { padding-top: $pd-xl; padding-bottom: $pd-xl; }
+.py-xxl { padding-top: $pd-xxl; padding-bottom: $pd-xxl; }
 
 /* @end */

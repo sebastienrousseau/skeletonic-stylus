@@ -1,15 +1,15 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Clipboard */
 
 .bd-clipboard
-  float: right
+  float: inline-end
   position: relative
 
 .button-clipboard
@@ -18,7 +18,7 @@
     min-width: auto
     padding: (round($gr, 1) - 1) rem
     position: absolute
-    right: (round($gr, 1) + 1)rem
+    inset-inline-end: (round($gr, 1) + 1)rem
     top: round($gr, 1)rem
     z-index: 10
 

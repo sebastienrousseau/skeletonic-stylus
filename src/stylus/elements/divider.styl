@@ -1,28 +1,28 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Divider */
 hr
-  background-color: var(--cl-white)
+  background-color: transparent
   border: 0
-  width: (100% - ($gr))
+  border-top: 1px solid var(--cl-grey-300)
+  margin: 2rem 0
+  width: 100%
 	&.hr-dashed
-		background: var(--cl-white)
-		border: 2px dashed var(--cl-grey-700)
+		background: transparent
+		border: 0
+		border-top: 2px dashed var(--cl-grey-700)
 		position: relative
 		&:after
-			border: 1px solid var(--cl-grey-200)
-			bottom: -1px
 			content: ''
-			left: -1px
 			pointer-events: none
 			position: absolute
-			right: -1px
+			inset-inline-end: -1px
 			top: -1px
 	&.hr-dotted
 		background-color: transparent
@@ -44,7 +44,7 @@ hr
 			background: linear-gradient(to right, transparent, var(--cl-black), transparent)
 			content: ''
 			height: 1px
-			left: 0
+			inset-inline-start: 0
 			position: absolute
 			top: 50%
 			width: 100%
@@ -63,7 +63,7 @@ hr
 		height: 20px
 		position: relative
 		&::before
-			right: calc(50%+25px)
+			inset-inline-end: calc(50%+25px)
 			width: 100%
 		&::after
 			width: 100%
@@ -85,10 +85,9 @@ hr
 			width: 100px
 	&.hr-vertical
 		background-color: transparent
-		border-left: 1px solid var(--cl-grey-700)
+		border-inline-start: 1px solid var(--cl-grey-700)
 		height: 100px
-		margin-left: auto
-		margin-right: auto
+		margin-inline: auto
 		width: 1px
 	&.hr-doubled
 		background-color: transparent

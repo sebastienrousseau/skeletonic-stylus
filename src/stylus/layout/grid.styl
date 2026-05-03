@@ -1,41 +1,34 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
-/* @group Grid */
-.grid-flex
-    display: flex
-    flex-wrap: wrap
+/* @group Grid (2026 Standards) */
 
-.row
-  position: relative
-  width: 100%
-  $:after
-    clear: both
-    content: ''
-    display: table
-  &-wrap
-    padding: 0
-  &-top
-    align-items: flex-start
-  &-bottom
-    align-items: flex-end
-  &-center
-    align-items: center
-  &-stretch
-    align-items: stretch
-  &-baseline
-    align-items: baseline
-  &-no-padding
-    padding: 0
+.grid
+  display: grid
+  gap: 2rem
+  container-type: inline-size
+
+  &.masonry
+    grid-template-rows: masonry
+    align-items: start
 
 for i in (1..12)
-  .flex-{i}
-    flex:i
-    margin: 0 ($gr)rem
+  .grid-cols-{i}
+    grid-template-columns: repeat(i, minmax(0, 1fr))
+
+// Container Query Overrides (2026 Standard)
+@container (max-width: 48em)
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5,
+  .grid-cols-6
+    grid-template-columns: 1fr
+
 
 /* @end */

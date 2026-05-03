@@ -1,41 +1,27 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Cards */
 
-.card-content
-  padding: ($gr)rem
-
-.card-body
-  flex: 1 1 auto
-  padding: ($gr)rem
-
-.card-title
-  margin-bottom: ($gr)rem
-
-.card-subtitle
-  margin-bottom: 0
-  margin-top: -($gr)rem
-
-.cards
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
-
 .card
-  background: transparent
-  border: round($gr px, 1) solid var(--cl-grey-300)
-  border-radius: ($gr)rem
-  box-shadow: 0 3px 9px 0 var(--cl-grey-200)
-  color: var(--cl-black)
-  margin-bottom: ($gr)rem
-  position: relative
-  transition: .30s ease-in-out
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: 1.5rem
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .05), 0 2px 4px -1px rgba(0, 0, 0, .03)
+  padding: 2.62rem
+  transition: transform .3s ease, box-shadow .3s ease
 
+  &:hover
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .05), 0 10px 10px -5px rgba(0, 0, 0, .02)
+    transform: translateY(-2px)
+
+  &.primary
+    background-color: var(--bg-primary)
+    border-color: var(--cl-primary)
 
 /* @end */

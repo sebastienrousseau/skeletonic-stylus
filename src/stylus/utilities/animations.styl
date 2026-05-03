@@ -1,0 +1,73 @@
+/**
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT license
+ **/
+
+/* @group Modern Motion & States (2026) */
+
+// View Transitions API
+.view-transition-name
+  for name in (root, header, main, footer, article, section)
+    &-{name}
+      view-transition-name: name
+
+// Scroll-Driven Animations
+.scroll-timeline
+  scroll-timeline-name: --page-scroll
+  scroll-timeline-axis: block
+
+.animate-on-scroll
+  animation-timeline: view()
+  animation-range: entry 10% cover 30%
+  animation-fill-mode: both
+
+// Skeleton Loader Utility
+// High-performance animated shimmer for loading states.
+.skeleton
+  animation: skeleton-shimmer 1.5s infinite linear
+  background: linear-gradient(90deg, var(--cl-grey-200) 25%, var(--cl-grey-100) 50%, var(--cl-grey-200) 75%)
+  background-size: 200% 100%
+  border-radius: .25rem
+  color: transparent !important
+  cursor: default
+  pointer-events: none
+  user-select: none
+
+  &.circle
+    border-radius: 50%
+  &.text
+    height: 1em
+    margin-bottom: .5em
+    width: 100%
+
+@keyframes skeleton-shimmer
+  0%
+    background-position: 200% 0
+  100%
+    background-position: -200% 0
+
+// Anchor Positioning Utilities (Native Floating UI)
+// tether an element to an anchor without JavaScript.
+.anchor-tether
+  position: absolute
+  position-anchor: --anchor-target
+  inset-area: block-end center
+  position-try-options: flip-block, flip-inline
+
+.anchor-target
+  anchor-name: --anchor-target
+
+/* Modern Easing Functions (2026 Spring Physics) */
+:root
+  @css {
+    /* Spring: stiffness=100, damping=10 */
+    --ease-spring-bout: linear(0, 0.47, 0.82, 1.04, 1.13, 1.14, 1.09, 1.03, 0.98, 0.96, 0.97, 1);
+    /* Spring: stiffness=100, damping=20 */
+    --ease-spring-elastic: linear(0, 0.36, 0.63, 0.82, 0.95, 1.02, 1.05, 1.05, 1.03, 1.01, 1, 1);
+  }
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1)
+
+/* @end */

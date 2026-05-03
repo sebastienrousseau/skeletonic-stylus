@@ -1,32 +1,42 @@
 /**
- * Skeletonic Stylus Library v1.1.6
- * https://skeletonicstylus.com
+ * Skeletonic Stylus Library v2.0.0
+ * https://skeletonic.io
  *
- * Copyright (c) Sebastien Rousseau 2023. All rights reserved
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
  * Licensed under the MIT license
  **/
 
 /* @group Margins */
 
-  $range = 0, .8129237073, 1.3154105296, 2.1283342369, 3.4439065322, 5.572240769, 9.0165708237, 14.5888115927, 23.6064912503, 38.195302843, 61.804697157, 100
+// Standard Golden Ratio Spacing Scale (Balanced)
+$mg-xs = .382rem
+$mg-sm = .618rem
+$mg-md = 1rem
+$mg-lg = 1.618rem
+$mg-xl = 2.618rem
+$mg-xxl = 4.236rem
 
-  for $length, i in $range
-      .margin-auto
-	      margin: auto
+.m-0 { margin: 0 !important; }
 
-      .margin-{i}
-        margin: ($length)%
+.margin-xs { margin: $mg-xs; }
+.margin-sm { margin: $mg-sm; }
+.margin-md { margin: $mg-md; }
+.margin-lg { margin: $mg-lg; }
+.margin-xl { margin: $mg-xl; }
+.margin-xxl { margin: $mg-xxl; }
 
-      .margin-top-{i}
-        margin-top: ($length)%
+.mt-xs { margin-top: $mg-xs; }
+.mt-sm { margin-top: $mg-sm; }
+.mt-md { margin-top: $mg-md; }
+.mt-lg { margin-top: $mg-lg; }
+.mt-xl { margin-top: $mg-xl; }
+.mt-xxl { margin-top: $mg-xxl; }
 
-      .margin-bottom-{i}
-        margin-bottom: ($length)%
-
-      .margin-left-{i}
-        margin-left: ($length)%
-
-      .margin-right-{i}
-        margin-right: ($length)%
+.mb-xs { margin-bottom: $mg-xs; }
+.mb-sm { margin-bottom: $mg-sm; }
+.mb-md { margin-bottom: $mg-md; }
+.mb-lg { margin-bottom: $mg-lg; }
+.mb-xl { margin-bottom: $mg-xl; }
+.mb-xxl { margin-bottom: $mg-xxl; }
 
 /* @end */
