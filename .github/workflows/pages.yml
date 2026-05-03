@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install Playwright Chromium for a11y test
+        run: pnpm exec playwright install --with-deps chromium
+
       - name: Build
         run: pnpm run build
 

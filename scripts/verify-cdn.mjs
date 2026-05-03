@@ -28,7 +28,22 @@ const pkgPath = existsSync(join(repoRoot, "dist/package.json"))
   ? join(repoRoot, "dist/package.json")
   : join(repoRoot, "package.json");
 const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
-const { name, version } = pkg;
+
+// Validate package metadata against an allowlist before constructing
+// any outbound URL. Refuses to ping a CDN for an unexpected name or a
+// non-semver version, which closes a file-controlled-URL surface.
+const ALLOWED_NAME = "@sebastienrousseau/skeletonic-stylus";
+const SEMVER_RE = /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
+if (pkg.name !== ALLOWED_NAME) {
+  console.error(`verify-cdn: refusing — unexpected package name: ${JSON.stringify(pkg.name)}`);
+  process.exit(2);
+}
+if (typeof pkg.version !== "string" || !SEMVER_RE.test(pkg.version)) {
+  console.error(`verify-cdn: refusing — invalid semver version: ${JSON.stringify(pkg.version)}`);
+  process.exit(2);
+}
+const name = ALLOWED_NAME;
+const version = pkg.version;
 
 const timeoutMs = Number(process.env.CDN_TIMEOUT_MS || 5 * 60 * 1000);  // 5 min default
 const pollMs = Number(process.env.CDN_POLL_MS || 5000);                 // 5 s polls

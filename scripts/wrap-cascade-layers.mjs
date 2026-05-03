@@ -23,7 +23,7 @@
  * Cross-platform: pure Node, no shell, runs on macOS / Linux / WSL.
  */
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { argv, exit } from "node:process";
 
 const targets = argv.slice(2);
@@ -39,13 +39,16 @@ const layerOrder =
 
 let failed = 0;
 for (const target of targets) {
-  if (!existsSync(target)) {
-    console.error(`wrap-cascade-layers: file not found: ${target}`);
+  let css;
+  try {
+    css = readFileSync(target, "utf8");
+  } catch (err) {
+    console.error(
+      `wrap-cascade-layers: cannot read ${target}: ${err.code || err.message}`,
+    );
     failed++;
     continue;
   }
-
-  const css = readFileSync(target, "utf8");
 
   // Idempotency guard — never double-wrap.
   if (css.includes("@layer skeletonic.reset")) {
