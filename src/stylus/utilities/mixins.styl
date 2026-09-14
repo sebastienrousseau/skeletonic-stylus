@@ -11,12 +11,17 @@
 // Variables
 $base--font-size ?= 17px
 
-// Convert px to rem/em
-pxtorem($px, $base)
-  if ((unit($px) == '' || unit($px) == 'px') && ($px != 0))
-    return (round($px / $base))em
-  else
-    return 0
+// Flexbox Centering Utility
+flex-center($inline = false)
+  align-items: center
+  display: $inline ? inline-flex : flex
+  justify-content: center
+
+// Text Ellipsis Truncate Utility
+text-truncate()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
 
 /* @end */
 

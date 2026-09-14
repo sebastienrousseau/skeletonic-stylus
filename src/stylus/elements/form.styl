@@ -45,96 +45,38 @@ select
   }
 }
 
-// Native Zero-JS Switch
-input[type="checkbox"][role="switch"]
-  @import "toggle"
-  @media (forced-colors: active)
-    &:focus-visible
-      outline: 3px solid CanvasText
-      outline-offset: 2px
+// Brand & Status Input Variants
+.input-primary,
+.input-secondary,
+.input-success,
+.input-info,
+.input-warning,
+.input-error
+  color: light-dark(#1a1a1a, #f5f5f5)
 
-.input-primary[type=email],
-    .input-primary[type=file],
-    .input-primary[type=number],
-    .input-primary[type=password],
-    .input-primary[type=search],
-    .input-primary[type=tel],
-    .input-primary[type=text],
-    .input-primary[type=url],
-    select.input-primary,
-    textarea.input-primary
-    background var(--bg-primary)
-    border-color var(--cl-primary)
-    color: light-dark(#1a1a1a, #f5f5f5)
+.input-primary
+  background: var(--bg-primary)
+  border-color: var(--cl-primary)
 
-.input-secondary[type=email],
-    .input-secondary[type=file],
-    .input-secondary[type=number],
-    .input-secondary[type=password],
-    .input-secondary[type=search],
-    .input-secondary[type=tel],
-    .input-secondary[type=text],
-    .input-secondary[type=url],
-    select.input-secondary,
-    textarea.input-secondary
-    background var(--bg-secondary)
-    border-color var(--cl-secondary)
-    color: light-dark(#1a1a1a, #f5f5f5)
+.input-secondary
+  background: var(--bg-secondary)
+  border-color: var(--cl-secondary)
 
+.input-success
+  background: var(--bg-success)
+  border-color: var(--cl-success)
 
-.input-success[type=email],
-    .input-success[type=file],
-    .input-success[type=number],
-    .input-success[type=password],
-    .input-success[type=search],
-    .input-success[type=tel],
-    .input-success[type=text],
-    .input-success[type=url],
-    select.input-success,
-    textarea.input-success
-    background var(--bg-success)
-    border-color var(--cl-success)
-    color: light-dark(#1a1a1a, #f5f5f5)
+.input-info
+  background: var(--bg-info)
+  border-color: var(--cl-info)
 
-.input-info[type=email],
-    .input-info[type=file],
-    .input-info[type=number],
-    .input-info[type=password],
-    .input-info[type=search],
-    .input-info[type=tel],
-    .input-info[type=text],
-    .input-info[type=url],
-    select.input-info,
-    textarea.input-info
-    background var(--bg-info)
-    border-color var(--cl-info)
-    color: light-dark(#1a1a1a, #f5f5f5)
+.input-warning
+  background: var(--bg-warning)
+  border-color: var(--cl-warning)
 
-.input-warning[type=email],
-    .input-warning[type=file],
-    .input-warning[type=number],
-    .input-warning[type=password],
-    .input-warning[type=search],
-    .input-warning[type=tel],
-    .input-warning[type=text],
-    .input-warning[type=url],
-    select.input-warning,
-    textarea.input-warning
-    background var(--bg-warning)
-    border-color var(--cl-warning)
-    color: light-dark(#1a1a1a, #f5f5f5)
+.input-error
+  background: var(--bg-danger)
+  border-color: var(--cl-danger)
 
-.input-error[type=email],
-    .input-error[type=file],
-    .input-error[type=number],
-    .input-error[type=password],
-    .input-error[type=search],
-    .input-error[type=tel],
-    .input-error[type=text],
-    .input-error[type=url],
-    select.input-error,
-    textarea.input-error
-    background var(--bg-danger)
-    border-color var(--cl-danger)
-    color: light-dark(#1a1a1a, #f5f5f5)
 /* @end */
+

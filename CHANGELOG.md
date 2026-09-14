@@ -43,6 +43,14 @@ project adheres to
   - **Rotating Spins**: `spinIn`, `spinOut`, `spinInCCW`, `spinOutCCW` combining rotation with scale and fade.
   - **Wiggle**: Classic rotational rocking animation (`.wiggle`).
   - **Motion Modifiers**: Comprehensive easing classes (`.linear`, `.ease`, `.easeIn`, `.easeOut`, `.easeInOut`, `.bounceIn`, `.bounceOut`, `.bounceInOut`), speed/duration classes (`.fast`, `.slow`, `.duration-100`..`1000`), delay classes (`.delay-100`..`1000`), child stagger sequence (`.stagger`), play states (`.paused`, `.running`, `.is-animating`), and fill modes.
+- **Codebase Optimization & Complexity Reduction**:
+  - **Selector Deduplication**: Refactored `form.styl` by flattening repetitive `[type=...]` selectors across all 6 color variants and removing nested `@import "toggle"`.
+  - **Button Refactoring**: Removed redundant `cursor` and `transition` overrides across brand variants in `button.styl`.
+  - **Golden Ratio Scale Loops**: Rewrote `margin.styl` and `padding.styl` using clean dictionary iteration, cutting file lengths by over 50% and removing curly-brace syntax.
+  - **Collision Prevention**: Scoped `toggle.styl` to checkbox inputs (`input[type="checkbox"].toggle`, `[role="switch"]`) to eliminate collision with `.toggle` buttons in `toggle-group.styl`.
+  - **Modular Card Primitives**: Added standard `.card-header`, `.card-title`, `.card-description`, `.card-content`, and `.card-footer` subcomponents to `card.styl`.
+  - **Unified Helpers**: Resolved `.center` collision between flex centering in `core-helpers.styl` and text centering in `helpers.styl` by introducing `.text-center`, `.text-left`, `.text-right`.
+  - **Utilities Cleanup**: Enhanced `mixins.styl` with `flex-center()` and `text-truncate()`; removed redundant `.skeleton` duplicate definition from `utilities/animations.styl`.
 
 
 **Security**

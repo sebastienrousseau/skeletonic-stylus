@@ -78,60 +78,41 @@ button, .button, [type=submit]
   &.primary
     background: var(--cl-primary)
     color: light-dark(var(--cl-white), var(--cl-black))
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: hsl(210, 100%, 32%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.secondary
     background: var(--cl-secondary)
     color: light-dark(var(--cl-white), var(--cl-black))
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: hsl(195, 100%, 23%)
-      text-decoration: none
-      transition: all 150ms linear
+
   // Warning / info / success use light amber, light yellow, light
   // green tokens. White text on those fails WCAG 2.2 AA (≤ 2.5:1) —
   // pair with `--cl-black` text instead so the contrast clears.
   &.info
     background: var(--cl-info)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(52, 199, 89, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.success
     background: var(--cl-success)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(40, 167, 69, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.error
     background: var(--cl-danger)
     color: var(--cl-white)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(255, 59, 48, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.warning
     background: var(--cl-warning)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(255, 149, 0, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
   &.link
     background: 0 0
     border-color: transparent
