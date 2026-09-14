@@ -1,605 +1,850 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en">
   <head>
-    <title>Skeletonic Stylus — 2026 Native CSS Engine & Design System</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Complete showcase and living specification for Skeletonic Stylus: 35 modern UI primitives, Foundation Motion UI animations, and hyper-optimized 2026 native CSS engine." />
+    <title>Skeletonic Stylus — Modern CSS Engine & Design System</title>
+    <meta
+      name="description"
+      content="Production-grade, lightweight, accessible Stylus component suite built for 2026. 35 modern primitives inspired by shadcn/ui, Foundation Motion UI transitions, fluid typography, and OKLCH color engine with zero runtime JavaScript."
+    />
+    <link rel="icon" href="https://skeletonic.io/favicon.ico" />
 
-    <!-- JSON-LD Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareSourceCode",
-      "name": "Skeletonic Stylus",
-      "description": "A lightweight, intuitive, and accessible native CSS engine.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web",
-      "license": "https://opensource.org/licenses/MIT",
-      "version": "2.0.2"
-    }
-    </script>
-
-    <!-- CSS Assets (Pure Library Bundles) -->
-    <link rel="stylesheet" href="./css/fonts/skeletonic-fonts.min.css" />
-    <link rel="stylesheet" href="./css/core/skeletonic.min.css" />
-    <link rel="stylesheet" href="./css/core/skeletonic-ui.min.css" />
-    <link rel="stylesheet" href="./css/animations/skeletonic-animations.min.css" />
+    <!-- Core & UI Component Bundles -->
+    <link rel="stylesheet" href="css/core/skeletonic.min.css" />
+    <link rel="stylesheet" href="css/core/skeletonic-ui.min.css" />
+    <link rel="stylesheet" href="css/animations/skeletonic-animations.min.css" />
 
     <style>
-      /* Page-specific showcase layout helpers */
-      html { scroll-behavior: smooth; }
-      .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-      .anim-box { border: 1px solid var(--cl-grey-200); border-radius: .5rem; padding: 1.25rem; text-align: center; cursor: pointer; transition: background-color .15s ease; }
-      .anim-box:hover { background-color: var(--cl-grey-100); }
+      :root {
+        --canvas-bg: light-dark(oklch(.99 .004 250), oklch(.09 .015 250));
+        --canvas-card: light-dark(oklch(1 0 0), oklch(.13 .02 250));
+      }
+      body {
+        background-color: var(--canvas-bg);
+        color: var(--foreground-color);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: light-dark(rgba(255, 255, 255, .85), rgba(15, 17, 23, .85));
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--cl-border);
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .25rem .75rem;
+        border-radius: 9999px;
+        background: var(--cl-muted);
+        border: 1px solid var(--cl-border);
+        font-size: .8125rem;
+        font-weight: 500;
+        color: var(--foreground-color);
+        text-decoration: none;
+        transition: all .15s ease;
+      }
+      .hero-badge:hover {
+        border-color: var(--cl-grey-400);
+      }
+      .cli-box {
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        background: var(--canvas-card);
+        border: 1px solid var(--cl-border);
+        border-radius: .5rem;
+        padding: .5rem .75rem .5rem 1rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: .875rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+      }
+      .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid var(--cl-border);
+        border-radius: .375rem;
+        padding: .25rem .5rem;
+        font-size: .75rem;
+        cursor: pointer;
+        color: var(--foreground-color);
+        transition: all .15s ease;
+      }
+      .copy-btn:hover {
+        background: var(--cl-muted);
+      }
+      .trust-metric {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .trust-metric-val {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -.02em;
+      }
+      .trust-metric-lbl {
+        font-size: .8125rem;
+        color: var(--cl-muted-foreground);
+      }
+      .code-panel {
+        background: light-dark(#f8fafc, #090a0f);
+        border: 1px solid var(--cl-border);
+        border-radius: .5rem;
+        padding: 1rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: .8125rem;
+        overflow-x: auto;
+      }
+      .anim-card {
+        border: 1px solid var(--cl-border);
+        border-radius: .5rem;
+        background: var(--canvas-card);
+        padding: 1.25rem 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all .2s ease;
+        user-select: none;
+      }
+      .anim-card:hover {
+        border-color: var(--cl-ring);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+        transform: translateY(-2px);
+      }
+      .tab-nav {
+        display: flex;
+        border-bottom: 1px solid var(--cl-border);
+        margin-bottom: 1.5rem;
+      }
+      .tab-nav-btn {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding: .5rem 1rem;
+        font-size: .875rem;
+        font-weight: 500;
+        color: var(--cl-muted-foreground);
+        cursor: pointer;
+        transition: all .15s ease;
+      }
+      .tab-nav-btn.active {
+        color: var(--foreground-color);
+        border-bottom-color: var(--cl-ring);
+      }
     </style>
   </head>
-  <body class="bg-white text-black p-0 antialiased">
+  <body>
+    <!-- Top Global Sticky Navbar -->
+    <header class="site-header">
+      <div class="container flex flex-between flex-middle" style="height: 3.75rem;">
+        <div class="flex flex-middle" style="gap: 1.5rem;">
+          <a href="#" class="flex flex-middle no-underline" style="gap: .625rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="bold text-lg" style="letter-spacing: -.02em;">Skeletonic</span>
+            <span class="badge sm" style="font-size: .6875rem;">v2.0.2</span>
+          </a>
 
-    <!-- Top Navigation Bar -->
-    <nav class="navbar bg-white flex flex-middle z-top fixed">
-      <div class="container flex flex-between flex-middle">
-        <a href="#hero" class="bold no-underline text-black tracking-tight flex flex-middle" style="gap: .5rem;">
-          <span class="badge primary">v2.0.2</span>
-          <span>Skeletonic Stylus</span>
-        </a>
-        <div class="flex flex-middle" style="gap: 1.5rem; font-size: .875rem;">
-          <a href="#components" class="text-black no-underline">Components (35)</a>
-          <a href="#forms" class="text-black no-underline">Forms</a>
-          <a href="#feedback" class="text-black no-underline">Feedback</a>
-          <a href="#overlays" class="text-black no-underline">Overlays</a>
-          <a href="#animations" class="text-black no-underline">Motion UI</a>
-          <a href="https://github.com/sebastienrousseau/skeletonic-stylus" target="_blank" rel="noreferrer" class="button primary sm">GitHub</a>
+          <nav class="hide-sm flex flex-middle" style="gap: 1.25rem; font-size: .875rem;">
+            <a href="#featured" class="no-underline text-black">Showcase</a>
+            <a href="#components" class="no-underline text-black">Components</a>
+            <a href="#motion" class="no-underline text-black">Motion UI</a>
+            <a href="#dialogs" class="no-underline text-black">Dialogs</a>
+          </nav>
         </div>
-      </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header id="hero" class="hero bg-primary center py-xxl" style="margin-top: 3.5rem;">
-      <div class="container py-xl">
-        <div class="center mb-lg">
-          <img src="https://cloudcdn.pro/skeletonic/v1/logos/skeletonic.svg" alt="Skeletonic Logo" class="w-240 mx-auto">
+        <div class="flex flex-middle" style="gap: .75rem;">
+          <!-- Quick Search Dialog Trigger -->
+          <button
+            type="button"
+            class="button secondary sm flex flex-middle"
+            style="gap: .5rem; font-size: .8125rem; font-weight: normal; text-transform: none;"
+            onclick="document.getElementById('demo-command').showModal()"
+            aria-label="Search documentation and components"
+          >
+            <span>Search...</span>
+            <kbd class="kbd sm">⌘K</kbd>
+          </button>
+
+          <!-- Light/Dark Mode Switcher -->
+          <button
+            type="button"
+            id="theme-toggle"
+            class="button secondary sm"
+            style="min-width: 2.25rem; padding: 0 .6rem;"
+            aria-label="Toggle Color Theme"
+            onclick="toggleTheme()"
+          >
+            <span id="theme-icon">◐</span>
+          </button>
+
+          <!-- GitHub Repo Link -->
+          <a
+            href="https://github.com/sebastienrousseau/skeletonic-stylus"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button secondary sm flex flex-middle no-underline hide-sm"
+            style="gap: .375rem; font-size: .8125rem; font-weight: 500; text-transform: none;"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
         </div>
-        <h1 class="mb-md">Native by Design. 2026 Standard.</h1>
-        <p class="mx-auto max-w-800 mb-lg opacity-80" style="font-size: 1.125rem;">
-          Hyper-optimized, modular CSS engine with 35 shadcn-grade zero-JS primitives, Motion UI transitions, fluid typography, and OKLCH color tokens under CSS Cascade Layers.
-        </p>
-        <div class="flex flex-center flex-middle mb-xl" style="gap: 1rem;">
-          <button class="button primary" onclick="document.getElementById('demo-modal').showModal()">Launch Modal</button>
-          <button class="button secondary" onclick="document.getElementById('demo-sheet').showModal()">Open Sheet Drawer</button>
-          <button class="button info" onclick="document.getElementById('demo-command').showModal()">Command Palette</button>
-        </div>
-        <!-- Breadcrumb Demo -->
-        <nav class="breadcrumb flex flex-center" aria-label="Breadcrumb">
-          <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="#hero" class="breadcrumb-link">Home</a></li>
-            <li class="breadcrumb-separator">/</li>
-            <li class="breadcrumb-item"><a href="#components" class="breadcrumb-link">Design System</a></li>
-            <li class="breadcrumb-separator">/</li>
-            <li class="breadcrumb-item"><span class="breadcrumb-page" aria-current="page">Living Demo</span></li>
-          </ol>
-        </nav>
       </div>
     </header>
 
-    <main class="container py-xxl">
+    <main>
+      <!-- Hero Section -->
+      <section class="py-xxl" style="border-bottom: 1px solid var(--cl-border); text-align: center;">
+        <div class="container" style="max-width: 52rem;">
+          <a href="#components" class="hero-badge mb-lg">
+            <span class="badge primary sm" style="font-size: .6875rem;">New v2.0.2</span>
+            <span>35 modern UI primitives & Foundation Motion UI &rarr;</span>
+          </a>
 
-      <!-- ========================================== -->
-      <!-- SECTION 1: ACTIONS, BUTTONS & TOGGLE GROUPS -->
-      <!-- ========================================== -->
-      <section id="components" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Actions & Buttons</h2>
-          <p class="opacity-70">Every button style adheres to WCAG 2.2 AA contrast standards with accessible focus rings.</p>
-        </div>
+          <h1 class="bold mb-md" style="letter-spacing: -.03em; line-height: 1.15;">
+            The Modern CSS Engine for High-Velocity Web Apps.
+          </h1>
 
-        <div class="card mb-xl">
-          <div class="card-header">
-            <h3 class="card-title">Button Variants & Shapes</h3>
-            <p class="card-description">Brand and status styles with native hover states and disabled modes.</p>
-          </div>
-          <div class="card-content">
-            <div class="flex flex-wrap flex-middle mb-lg" style="gap: .75rem;">
-              <button class="button primary">Primary</button>
-              <button class="button secondary">Secondary</button>
-              <button class="button success">Success</button>
-              <button class="button warning">Warning</button>
-              <button class="button error">Error</button>
-              <button class="button info">Info</button>
-              <button class="button link">Link Button</button>
-              <button class="button" disabled>Disabled</button>
-            </div>
-
-            <div class="separator mb-lg"></div>
-
-            <h4 class="mb-md">Connected Button Groups & Toggle Groups</h4>
-            <div class="flex flex-wrap flex-middle" style="gap: 2rem;">
-              <div>
-                <span class="block mb-xs text-xs semibold opacity-70">BUTTON GROUP (HORIZONTAL)</span>
-                <div class="button-group">
-                  <button class="button primary">Years</button>
-                  <button class="button primary active">Months</button>
-                  <button class="button primary">Days</button>
-                </div>
-              </div>
-
-              <div>
-                <span class="block mb-xs text-xs semibold opacity-70">TOGGLE GROUP (MULTI-SELECT)</span>
-                <div class="toggle-group toggle-group-connected">
-                  <button class="toggle toggle-outline active" aria-pressed="true"><b>B</b></button>
-                  <button class="toggle toggle-outline" aria-pressed="false"><i>I</i></button>
-                  <button class="toggle toggle-outline" aria-pressed="false"><u>U</u></button>
-                  <button class="toggle toggle-outline" aria-pressed="false"><s>S</s></button>
-                </div>
-              </div>
-
-              <div>
-                <span class="block mb-xs text-xs semibold opacity-70">KEYBOARD SHORTCUTS</span>
-                <p class="flex flex-middle" style="gap: .375rem; margin: 0;">
-                  Press <kbd class="kbd">⌘</kbd> <kbd class="kbd">K</kbd> for command palette or <kbd class="kbd">Esc</kbd> to dismiss.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- SECTION 2: FORMS, INPUTS & SELECTION CONTROLS -->
-      <!-- ========================================== -->
-      <section id="forms" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Forms & Selection Controls</h2>
-          <p class="opacity-70">Pure CSS form inputs, custom checkboxes, native radio groups, switches, and sliders.</p>
-        </div>
-
-        <div class="grid grid-cols-2" style="gap: 2rem;">
-          <!-- Column 1: Text Inputs, Select & OTP -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Text Inputs & Custom Select</h3>
-            </div>
-            <div class="card-content">
-              <label class="block mb-xs semibold text-sm" for="demo-email">Email Address</label>
-              <input id="demo-email" type="email" placeholder="name@company.com" class="mb-md" />
-
-              <label class="block mb-xs semibold text-sm" for="demo-select">Framework Selector</label>
-              <select id="demo-select" class="select mb-md">
-                <option>Skeletonic Stylus 2.0 (Active)</option>
-                <option>Vanilla CSS</option>
-                <option>Sass / SCSS</option>
-              </select>
-
-              <label class="block mb-xs semibold text-sm" for="demo-textarea">Auto-growing Textarea (field-sizing: content)</label>
-              <textarea id="demo-textarea" placeholder="Type multi-line message here to watch it automatically resize..." class="mb-md"></textarea>
-
-              <label class="block mb-xs semibold text-sm">Input OTP / PIN Verification Slots</label>
-              <div class="input-otp">
-                <div class="input-otp-group">
-                  <div class="input-otp-slot active">4<span class="input-otp-caret"></span></div>
-                  <div class="input-otp-slot">2</div>
-                  <div class="input-otp-slot">8</div>
-                </div>
-                <span class="input-otp-separator">-</span>
-                <div class="input-otp-group">
-                  <div class="input-otp-slot">9</div>
-                  <div class="input-otp-slot">1</div>
-                  <div class="input-otp-slot">0</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 2: Checkbox, Radio, Switch, Slider -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Checkboxes, Radios, Switches & Slider</h3>
-            </div>
-            <div class="card-content flex flex-column" style="gap: 1.5rem;">
-              <div>
-                <span class="block mb-xs semibold text-sm">Custom Accessible Checkboxes</span>
-                <div class="flex flex-column" style="gap: .75rem;">
-                  <label class="checkbox-field" for="sync-check">
-                    <input type="checkbox" class="checkbox" id="sync-check" checked />
-                    <span>Auto-sync with remote repository</span>
-                  </label>
-                  <label class="checkbox-field" for="indeterminate-check">
-                    <input type="checkbox" class="checkbox" id="indeterminate-check" />
-                    <span>Enable experimental features (Indeterminate)</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <span class="block mb-xs semibold text-sm">Custom Radio Group</span>
-                <div class="radio-group radio-group-row">
-                  <label class="radio-field">
-                    <input type="radio" name="plan" class="radio" checked />
-                    <span>Standard</span>
-                  </label>
-                  <label class="radio-field">
-                    <input type="radio" name="plan" class="radio" />
-                    <span>Enterprise</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <span class="block mb-xs semibold text-sm">Toggle Switches</span>
-                <div class="flex flex-middle" style="gap: 1.5rem;">
-                  <label class="switch-field">
-                    <input type="checkbox" class="switch sm" checked />
-                    <span class="text-sm">Small</span>
-                  </label>
-                  <label class="switch-field">
-                    <input type="checkbox" class="switch" checked />
-                    <span class="text-sm">Default</span>
-                  </label>
-                  <label class="switch-field">
-                    <input type="checkbox" class="switch lg switch-success" checked />
-                    <span class="text-sm">Large Success</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <div class="slider-group">
-                  <div class="slider-header">
-                    <label for="demo-range">Performance Slider</label>
-                    <span class="slider-value">85%</span>
-                  </div>
-                  <input id="demo-range" type="range" class="slider slider-success" value="85" min="0" max="100" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- SECTION 3: FEEDBACK, STATUS & SKELETONS -->
-      <!-- ========================================== -->
-      <section id="feedback" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Feedback, Status & Loaders</h2>
-          <p class="opacity-70">Alerts, notification toasts, badges, progress bars, and placeholder skeletons.</p>
-        </div>
-
-        <div class="grid grid-cols-2" style="gap: 2rem;" class="mb-xl">
-          <!-- Alerts & Badges -->
-          <div class="flex flex-column" style="gap: 1rem;">
-            <div class="alert alert-primary">
-              <strong>Info:</strong> CSS Cascade Layers are activated. Unlayered consumer rules will naturally override.
-            </div>
-            <div class="alert alert-success">
-              <strong>Success:</strong> 18 of 18 release verification gates passed cleanly!
-            </div>
-            <div class="alert alert-warning">
-              <strong>Warning:</strong> Deprecated properties will be pruned in upcoming major iterations.
-            </div>
-            <div class="alert alert-error">
-              <strong>Error:</strong> Network connectivity blocked in sandboxed execution mode.
-            </div>
-            <div class="flex flex-wrap flex-middle" style="gap: .5rem;">
-              <span class="badge primary">Primary</span>
-              <span class="badge secondary">Secondary</span>
-              <span class="badge success">Active</span>
-              <span class="badge warning">Pending</span>
-              <span class="badge danger">Rejected</span>
-              <span class="badge info">Beta</span>
-            </div>
-          </div>
-
-          <!-- Toasts, Progress & Skeletons -->
-          <div class="flex flex-column" style="gap: 1rem;">
-            <!-- Static Toast Preview -->
-            <div class="toast toast-success">
-              <div class="toast-content">
-                <p class="toast-title">Deployment Complete</p>
-                <p class="toast-description">Version 2.0.2 successfully compiled to production artifacts.</p>
-              </div>
-              <button class="toast-action">View Logs</button>
-            </div>
-
-            <!-- Progress Bars -->
-            <div class="flex flex-column" style="gap: .75rem;">
-              <label class="text-xs semibold opacity-70">BUILD PROGRESS (DETERMINATE 75%)</label>
-              <progress class="progress success" value="75" max="100"></progress>
-              <label class="text-xs semibold opacity-70">SYNC PROGRESS (INDETERMINATE)</label>
-              <progress class="progress"></progress>
-            </div>
-
-            <!-- Skeletons & Spinners -->
-            <div class="card padding-md">
-              <div class="flex flex-middle mb-md" style="gap: 1rem;">
-                <div class="loader loader-sm"></div>
-                <span class="text-sm">Fetching remote data...</span>
-              </div>
-              <div class="skeleton skeleton-shimmer title"></div>
-              <div class="skeleton skeleton-shimmer text"></div>
-              <div class="skeleton skeleton-shimmer text w-70"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- SECTION 4: DATA DISPLAY, MEDIA & CARDS -->
-      <!-- ========================================== -->
-      <section id="data-display" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Data Display & Media</h2>
-          <p class="opacity-70">Avatars, avatar groups, aspect ratio containers, scroll areas, and pure CSS carousels.</p>
-        </div>
-
-        <div class="grid grid-cols-2" style="gap: 2rem;" class="mb-xl">
-          <!-- Avatars & Aspect Ratio -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Avatars & Responsive Aspect Ratio</h3>
-            </div>
-            <div class="card-content">
-              <div class="flex flex-middle mb-lg" style="gap: 1.5rem;">
-                <div class="avatar sm">
-                  <span class="avatar-fallback">SM</span>
-                </div>
-                <div class="avatar">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=128&h=128&q=80" alt="Avatar" class="avatar-image" />
-                  <span class="avatar-status online"></span>
-                </div>
-                <div class="avatar lg">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=128&h=128&q=80" alt="Avatar" class="avatar-image" />
-                  <span class="avatar-status busy"></span>
-                </div>
-                <div class="avatar-group">
-                  <div class="avatar"><span class="avatar-fallback">SR</span></div>
-                  <div class="avatar"><span class="avatar-fallback">AG</span></div>
-                  <div class="avatar"><span class="avatar-fallback">+5</span></div>
-                </div>
-              </div>
-
-              <div class="separator-label">16 / 9 Aspect Ratio Video Box</div>
-              <div class="aspect-ratio ratio-16-9 radius overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Sample 16:9 banner" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Pure CSS Carousel & Scroll Area -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">CSS Scroll-Snap Carousel & Scroll Area</h3>
-            </div>
-            <div class="card-content">
-              <div class="carousel carousel-cols-2 mb-lg">
-                <div class="carousel-content" tabindex="0" role="region" aria-label="Showcase carousel slides">
-                  <div class="carousel-item">
-                    <div class="card padding-md bg-primary">
-                      <h4>Slide 1</h4>
-                      <p class="text-sm">Zero-JS scroll snapping with native gestures.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card padding-md bg-secondary">
-                      <h4>Slide 2</h4>
-                      <p class="text-sm">Smooth hardware-accelerated transitions.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card padding-md">
-                      <h4>Slide 3</h4>
-                      <p class="text-sm">Seamless multi-column layout support.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="separator-label">Styled Scroll Area</div>
-              <div class="scroll-area radius" tabindex="0" role="region" aria-label="Changelog scroll area" style="height: 120px; border: 1px solid var(--cl-grey-200); padding: .75rem;">
-                <p class="text-sm mb-xs"><b>Native CSS scrollbar-color and thin widths:</b></p>
-                <p class="text-xs opacity-70">
-                  Skeletonic Stylus designs lightweight custom scrollbars that blend gracefully in both light and dark modes without JavaScript listeners or heavy DOM clones.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Empty State Showcase -->
-        <div class="empty mb-xl">
-          <div class="empty-icon">📂</div>
-          <h3 class="empty-title">No Previous Deployments Found</h3>
-          <p class="empty-description">Get started by building your application with the official Skeletonic CLI.</p>
-          <div class="empty-actions">
-            <button class="button primary sm">Create Project</button>
-            <button class="button sm">Read Guide</button>
-          </div>
-        </div>
-
-        <!-- Pagination Showcase -->
-        <nav class="pagination flex flex-center" aria-label="Pagination">
-          <ul class="pagination-list">
-            <li class="pagination-item"><a href="#data-display" class="pagination-prev">Previous</a></li>
-            <li class="pagination-item"><a href="#data-display" class="pagination-link">1</a></li>
-            <li class="pagination-item"><a href="#data-display" class="pagination-link active">2</a></li>
-            <li class="pagination-item"><a href="#data-display" class="pagination-link">3</a></li>
-            <li class="pagination-item"><span class="pagination-ellipsis">&hellip;</span></li>
-            <li class="pagination-item"><a href="#data-display" class="pagination-link">10</a></li>
-            <li class="pagination-item"><a href="#data-display" class="pagination-next">Next</a></li>
-          </ul>
-        </nav>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- SECTION 5: OVERLAYS, MODALS & DIALOGS -->
-      <!-- ========================================== -->
-      <section id="overlays" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Overlays, Drawers & Popovers</h2>
-          <p class="opacity-70">Native HTML5 &lt;dialog&gt; and Popover APIs with discrete `@starting-style` transitions.</p>
-        </div>
-
-        <div class="grid grid-cols-3" style="gap: 1.5rem;" class="mb-xl">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Modal Dialog</h4>
-              <p class="card-description">Centered dialog with backdrop blur.</p>
-            </div>
-            <div class="card-footer">
-              <button class="button primary w-full" onclick="document.getElementById('demo-modal').showModal()">Open Modal</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Sliding Sheet (Drawer)</h4>
-              <p class="card-description">Right/left sliding drawer with smooth reveal.</p>
-            </div>
-            <div class="card-footer">
-              <button class="button secondary w-full" onclick="document.getElementById('demo-sheet').showModal()">Open Sheet</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Command Palette</h4>
-              <p class="card-description">Fast search and navigation palette.</p>
-            </div>
-            <div class="card-footer">
-              <button class="button info w-full" onclick="document.getElementById('demo-command').showModal()">Open Command</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Accordion Demo -->
-        <div class="mb-xl">
-          <details class="accordion">
-            <summary>Zero-JS Smooth Accordion (CSS interpolate-size)</summary>
-            <div class="content">
-              <p class="text-sm opacity-80" style="margin: 0;">
-                By utilizing the modern CSS <code>interpolate-size: allow-keywords</code> rule, Skeletonic expands from <code>height: 0</code> to <code>height: auto</code> smoothly without calculating scrollHeight in JavaScript.
-              </p>
-            </div>
-          </details>
-          <details class="accordion">
-            <summary>Accessibility & Keyboard Navigation</summary>
-            <div class="content">
-              <p class="text-sm opacity-80" style="margin: 0;">
-                Full native keyboard accessibility is built in. Press Tab to focus, Space or Enter to expand or collapse.
-              </p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- ========================================== -->
-      <!-- SECTION 6: FOUNDATION MOTION UI ANIMATIONS -->
-      <!-- ========================================== -->
-      <section id="animations" class="mb-xxl">
-        <div class="mb-lg">
-          <h2>Motion UI Animations & Transitions</h2>
-          <p class="opacity-70">
-            Hardware-accelerated CSS animations inspired by Foundation Motion UI. Click any card below to replay its animation!
+          <p class="text-lg opacity-80 mb-xl" style="max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            A lightweight, accessible, zero-JS Stylus design system built for 2026. Featuring OKLCH color spaces, native cascade layers, fluid typography, and 35 production primitives.
           </p>
-        </div>
 
-        <div class="showcase-grid mb-xl">
-          <div class="anim-box" onclick="triggerAnim(this, 'wiggle')">
-            <div class="bold mb-xs">.wiggle</div>
-            <span class="text-xs opacity-70">Gentle rotational rocking</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'bounce')">
-            <div class="bold mb-xs">.bounce</div>
-            <span class="text-xs opacity-70">Spring bounce entrance</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'pulse')">
-            <div class="bold mb-xs">.pulse</div>
-            <span class="text-xs opacity-70">Rhythmic heartbeat pulse</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'rubberBand')">
-            <div class="bold mb-xs">.rubberBand</div>
-            <span class="text-xs opacity-70">Elastic stretch & snap</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'shake')">
-            <div class="bold mb-xs">.shake</div>
-            <span class="text-xs opacity-70">Horizontal tremor shake</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'spinIn')">
-            <div class="bold mb-xs">.spinIn</div>
-            <span class="text-xs opacity-70">Clockwise 360° spin in</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'spinInCCW')">
-            <div class="bold mb-xs">.spinInCCW</div>
-            <span class="text-xs opacity-70">Counter-clockwise spin in</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'hingeInFromTop')">
-            <div class="bold mb-xs">.hingeInFromTop</div>
-            <span class="text-xs opacity-70">3D top perspective swing</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'hingeInFromLeft')">
-            <div class="bold mb-xs">.hingeInFromLeft</div>
-            <span class="text-xs opacity-70">3D left door swing</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'hingeInFromMiddleY')">
-            <div class="bold mb-xs">.hingeInFromMiddleY</div>
-            <span class="text-xs opacity-70">3D vertical flip</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'tada')">
-            <div class="bold mb-xs">.tada</div>
-            <span class="text-xs opacity-70">Celebration pop & shake</span>
-          </div>
-          <div class="anim-box" onclick="triggerAnim(this, 'jelly')">
-            <div class="bold mb-xs">.jelly</div>
-            <span class="text-xs opacity-70">Gelatin squash & wobble</span>
-          </div>
-        </div>
-
-        <div class="card padding-lg">
-          <div class="flex flex-between flex-middle mb-md" style="flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <h4 class="mb-xs">Staggered Child Sequence (.stagger)</h4>
-              <p class="text-sm opacity-70">Children automatically cascade with incremental animation delays.</p>
+          <!-- Primary Hero Actions -->
+          <div class="flex flex-center flex-middle flex-wrap mb-xl" style="gap: 1rem;">
+            <a href="#featured" class="button primary">
+              <span>Explore Live Showcase</span>
+              <span style="margin-left: .5rem;">&rarr;</span>
+            </a>
+            <a href="#components" class="button secondary">
+              <span>Browse 35 Primitives</span>
+            </a>
+            <div class="cli-box">
+              <span>pnpm add @sebastienrousseau/skeletonic-stylus</span>
+              <button
+                type="button"
+                class="copy-btn"
+                onclick="copyCliCommand(this, 'pnpm add @sebastienrousseau/skeletonic-stylus')"
+                aria-label="Copy install command"
+              >
+                Copy
+              </button>
             </div>
-            <button type="button" class="button secondary sm" onclick="triggerStagger()">Trigger Stagger Effect</button>
           </div>
-          <div id="stagger-demo" class="stagger flex flex-wrap" style="gap: .75rem;">
-            <span class="badge primary">Item 1 (delay .05s)</span>
-            <span class="badge secondary">Item 2 (delay .10s)</span>
-            <span class="badge success">Item 3 (delay .15s)</span>
-            <span class="badge warning">Item 4 (delay .20s)</span>
-            <span class="badge danger">Item 5 (delay .25s)</span>
-            <span class="badge info">Item 6 (delay .30s)</span>
+
+          <!-- Proof Metrics -->
+          <div class="grid grid-cols-4 pt-lg" style="gap: 1.5rem; border-top: 1px solid var(--cl-border);">
+            <div class="trust-metric">
+              <span class="trust-metric-val">&lt; 5 kB</span>
+              <span class="trust-metric-lbl">Core CSS Bundle</span>
+            </div>
+            <div class="trust-metric">
+              <span class="trust-metric-val">0 ms</span>
+              <span class="trust-metric-lbl">JavaScript Runtime</span>
+            </div>
+            <div class="trust-metric">
+              <span class="trust-metric-val">100%</span>
+              <span class="trust-metric-lbl">WCAG 2.2 AA Compliant</span>
+            </div>
+            <div class="trust-metric">
+              <span class="trust-metric-val">35</span>
+              <span class="trust-metric-lbl">Modular Primitives</span>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Featured Interactive Showcase (Realistic Dashboard Widget) -->
+      <section id="featured" class="py-xxl" style="border-bottom: 1px solid var(--cl-border);">
+        <div class="container">
+          <div class="mb-xl flex flex-between flex-middle flex-wrap" style="gap: 1rem;">
+            <div>
+              <span class="badge primary sm mb-xs">Featured Live Demo</span>
+              <h2 class="bold mb-xs" style="letter-spacing: -.02em;">Interactive Dashboard Composition</h2>
+              <p class="opacity-70 text-sm">Real-world components orchestrated with zero external JavaScript dependencies.</p>
+            </div>
+            <div class="flex flex-middle" style="gap: .5rem;">
+              <button type="button" class="tab-nav-btn active" id="btn-preview" onclick="switchFeaturedTab('preview')">Preview</button>
+              <button type="button" class="tab-nav-btn" id="btn-code" onclick="switchFeaturedTab('code')">Code</button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Live Preview -->
+          <div id="tab-preview">
+            <div class="grid grid-cols-3" style="gap: 1.5rem;">
+              <!-- Widget 1: Account Settings & Identity -->
+              <div class="card">
+                <div class="card-header">
+                  <div class="flex flex-middle" style="gap: .75rem;">
+                    <div class="avatar avatar-md">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Profile" />
+                      <span class="avatar-presence online" role="status" aria-label="Online"></span>
+                    </div>
+                    <div>
+                      <h3 class="card-title">Account Settings</h3>
+                      <p class="card-description">Personalize profile and workspace identity.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-content flex flex-column" style="gap: 1rem;">
+                  <div>
+                    <label class="block mb-xs semibold text-xs" for="widget-email">Email Address</label>
+                    <input id="widget-email" type="email" value="alex.morgan@company.io" placeholder="name@company.com" />
+                  </div>
+                  <div>
+                    <label class="block mb-xs semibold text-xs" for="widget-framework">Design Framework</label>
+                    <select id="widget-framework" class="select">
+                      <option>Skeletonic Stylus 2.0 (Active)</option>
+                      <option>Native Cascade Layers</option>
+                      <option>OKLCH Monochromatic</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block mb-xs semibold text-xs" for="widget-bio">Workspace Description</label>
+                    <textarea id="widget-bio" rows="2" placeholder="Describe your team mission...">Building next-gen digital experiences using zero-runtime CSS.</textarea>
+                  </div>
+                  <div class="flex flex-between flex-middle pt-xs">
+                    <label class="switch-field" for="widget-notifications">
+                      <input type="checkbox" class="switch sm" id="widget-notifications" checked />
+                      <span class="text-xs semibold">Instant Security Alerts</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="button" class="button primary sm w-full">Save Changes</button>
+                </div>
+              </div>
+
+              <!-- Widget 2: Security & Multi-factor Verification -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Security & Preferences</h3>
+                  <p class="card-description">Custom accessible checkboxes, radios, and OTP pins.</p>
+                </div>
+                <div class="card-content flex flex-column" style="gap: 1.25rem;">
+                  <div>
+                    <span class="block mb-xs semibold text-xs">Two-Factor Authentication (OTP)</span>
+                    <div class="input-otp">
+                      <div class="input-otp-group">
+                        <div class="input-otp-slot active">7<span class="input-otp-caret"></span></div>
+                        <div class="input-otp-slot">4</div>
+                        <div class="input-otp-slot">2</div>
+                      </div>
+                      <span class="input-otp-separator">-</span>
+                      <div class="input-otp-group">
+                        <div class="input-otp-slot">9</div>
+                        <div class="input-otp-slot">1</div>
+                        <div class="input-otp-slot">8</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span class="block mb-xs semibold text-xs">Repository Sync Rules</span>
+                    <div class="flex flex-column" style="gap: .75rem;">
+                      <label class="checkbox-field" for="check-sync">
+                        <input type="checkbox" class="checkbox" id="check-sync" checked />
+                        <span class="text-xs">Auto-sync with remote origin</span>
+                      </label>
+                      <label class="checkbox-field" for="check-audit">
+                        <input type="checkbox" class="checkbox" id="check-audit" checked />
+                        <span class="text-xs">Verify automated SBOM hashes</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span class="block mb-xs semibold text-xs">Access Tier</span>
+                    <div class="radio-group radio-group-row">
+                      <label class="radio-field" for="tier-pro">
+                        <input type="radio" name="access-tier" class="radio" id="tier-pro" checked />
+                        <span class="text-xs">Professional</span>
+                      </label>
+                      <label class="radio-field" for="tier-team">
+                        <input type="radio" name="access-tier" class="radio" id="tier-team" />
+                        <span class="text-xs">Enterprise</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex flex-between flex-middle mb-xs">
+                      <span class="text-xs semibold">Replication Bandwidth</span>
+                      <span class="text-xs opacity-60" id="slider-val">80%</span>
+                    </div>
+                    <input
+                      type="range"
+                      class="slider"
+                      min="0"
+                      max="100"
+                      value="80"
+                      oninput="document.getElementById('slider-val').textContent = this.value + '%'"
+                      aria-label="Replication Bandwidth"
+                    />
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="button" class="button secondary sm w-full">Update Rules</button>
+                </div>
+              </div>
+
+              <!-- Widget 3: Live System Status & Feedback -->
+              <div class="card">
+                <div class="card-header">
+                  <div class="flex flex-between flex-middle">
+                    <h3 class="card-title">System Status</h3>
+                    <span class="badge success sm">All Systems Normal</span>
+                  </div>
+                  <p class="card-description">Telemetry, progress monitoring, and banners.</p>
+                </div>
+                <div class="card-content flex flex-column" style="gap: 1.25rem;">
+                  <div>
+                    <div class="flex flex-between flex-middle mb-xs text-xs">
+                      <span class="semibold">Cloud Storage Capacity</span>
+                      <span class="opacity-70">75% (750 MB / 1 GB)</span>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Cloud Storage Capacity" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Alert notification with 4.5:1 compliant contrast -->
+                  <div class="alert alert-info mb-none" style="padding: 1rem;">
+                    <strong class="block mb-xs text-xs">Cascade Layers Active:</strong>
+                    <span class="text-xs">All bundles compiled under <code>@layer skeletonic.*</code> to isolate specificity.</span>
+                  </div>
+
+                  <!-- Toast Notification Card -->
+                  <div class="toast show" style="position: static; transform: none; width: 100%;">
+                    <div class="toast-title text-xs">Artifact Generated</div>
+                    <div class="toast-description text-xs">Production build packaged into <code>dist/</code> without errors.</div>
+                  </div>
+
+                  <!-- Skeleton Loading Preview Toggle -->
+                  <div>
+                    <div class="flex flex-between flex-middle mb-xs">
+                      <span class="text-xs semibold">Skeleton Placeholder Demo</span>
+                      <button type="button" class="button link sm p-none" onclick="toggleSkeletonDemo(this)" style="font-size: .75rem; text-transform: none;">Toggle Skeleton</button>
+                    </div>
+                    <div id="skeleton-container" class="flex flex-column" style="gap: .5rem;">
+                      <div class="flex flex-middle" style="gap: .75rem;">
+                        <div class="avatar avatar-sm">
+                          <span class="avatar-fallback text-xs">SR</span>
+                        </div>
+                        <div>
+                          <div class="bold text-xs">Sebastien Rousseau</div>
+                          <div class="text-xs opacity-60">Lead Maintainer</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="button" class="button secondary sm w-full" onclick="document.getElementById('demo-sheet').showModal()">Open Side Drawer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content: Markup Code -->
+          <div id="tab-code" style="display: none;">
+            <div class="code-panel">
+              <pre><code>&lt;!-- Form Input &amp; Select with Visible 1px Borders --&gt;
+&lt;label class="block mb-xs semibold text-xs" for="email"&gt;Email Address&lt;/label&gt;
+&lt;input id="email" type="email" placeholder="name@company.com" /&gt;
+
+&lt;label class="block mb-xs semibold text-xs" for="framework"&gt;Framework Selector&lt;/label&gt;
+&lt;select id="framework" class="select"&gt;
+  &lt;option&gt;Skeletonic Stylus 2.0 (Active)&lt;/option&gt;
+  &lt;option&gt;Vanilla CSS&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Accessible Custom Checkbox (24px min-height target) --&gt;
+&lt;label class="checkbox-field" for="sync"&gt;
+  &lt;input type="checkbox" class="checkbox" id="sync" checked /&gt;
+  &lt;span&gt;Auto-sync with remote repository&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- OTP Slots --&gt;
+&lt;div class="input-otp"&gt;
+  &lt;div class="input-otp-group"&gt;
+    &lt;div class="input-otp-slot active"&gt;4&lt;span class="input-otp-caret"&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="input-otp-slot"&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 35 Components Catalog -->
+      <section id="components" class="py-xxl" style="border-bottom: 1px solid var(--cl-border);">
+        <div class="container">
+          <div class="mb-xl">
+            <span class="badge secondary sm mb-xs">Design System Primitives</span>
+            <h2 class="bold mb-xs" style="letter-spacing: -.02em;">35 Modern UI Primitives</h2>
+            <p class="opacity-70 text-sm">Every element complies with WCAG 2.2 AA accessibility and modern HTML5 specifications.</p>
+          </div>
+
+          <div class="grid grid-cols-2" style="gap: 2rem;">
+            <!-- Category 1: Navigation & Breadcrumbs -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Navigation &amp; Breadcrumbs</h3>
+                <p class="card-description">Structured wayfinding with semantic markup.</p>
+              </div>
+              <div class="card-content flex flex-column" style="gap: 1.5rem;">
+                <!-- Breadcrumbs -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Breadcrumb Navigation</span>
+                  <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol class="breadcrumb-list">
+                      <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home</a></li>
+                      <li class="breadcrumb-separator">/</li>
+                      <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Components</a></li>
+                      <li class="breadcrumb-separator">/</li>
+                      <li class="breadcrumb-item"><span class="breadcrumb-page">Breadcrumb</span></li>
+                    </ol>
+                  </nav>
+                </div>
+
+                <!-- Tabs -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Segmented Tabs</span>
+                  <div class="tabs">
+                    <div class="tabs-list" role="tablist">
+                      <button type="button" class="tabs-trigger active" role="tab" aria-selected="true">Account</button>
+                      <button type="button" class="tabs-trigger" role="tab" aria-selected="false">Password</button>
+                      <button type="button" class="tabs-trigger" role="tab" aria-selected="false">API Keys</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Pagination Controller</span>
+                  <nav class="pagination" aria-label="Pagination">
+                    <ul class="pagination-content">
+                      <li class="pagination-item"><a href="#" class="pagination-prev">Previous</a></li>
+                      <li class="pagination-item"><a href="#" class="pagination-link">1</a></li>
+                      <li class="pagination-item"><a href="#" class="pagination-link active">2</a></li>
+                      <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+                      <li class="pagination-item"><span class="pagination-ellipsis">&hellip;</span></li>
+                      <li class="pagination-item"><a href="#" class="pagination-next">Next</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Overlays, Popovers & Tooltips -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Overlays, Popovers &amp; Tooltips</h3>
+                <p class="card-description">Zero-JS dropdowns, hover cards, and popup dialogs.</p>
+              </div>
+              <div class="card-content flex flex-column" style="gap: 1.5rem;">
+                <!-- Buttons triggering native dialogs -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Native Dialog Triggers</span>
+                  <div class="flex flex-wrap" style="gap: .75rem;">
+                    <button type="button" class="button primary sm" onclick="document.getElementById('demo-modal').showModal()">Launch Modal</button>
+                    <button type="button" class="button secondary sm" onclick="document.getElementById('demo-sheet').showModal()">Slide Sheet Drawer</button>
+                    <button type="button" class="button secondary sm" onclick="document.getElementById('demo-command').showModal()">Open Command Palette</button>
+                  </div>
+                </div>
+
+                <!-- Hover Card & Tooltips -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Hover Card &amp; CSS Tooltip</span>
+                  <div class="flex flex-middle" style="gap: 1.5rem;">
+                    <div class="hover-card">
+                      <a href="#" class="button link sm p-none">@skeletonic-css</a>
+                      <div class="hover-card-content">
+                        <div class="bold mb-xs text-xs">Skeletonic Stylus</div>
+                        <p class="text-xs opacity-70 mb-none">Ultra-responsive CSS engine with 35 primitives and OKLCH color spaces.</p>
+                      </div>
+                    </div>
+
+                    <span class="tooltip tooltip-top" data-tooltip="Verified accessibility standard">
+                      <span class="badge success sm">WCAG 2.2 AA</span>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Accordion -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Zero-JS Native Accordion</span>
+                  <div class="accordion">
+                    <details class="accordion-item" open>
+                      <summary class="accordion-trigger"><span>What makes Skeletonic Stylus 2.0 unique?</span></summary>
+                      <div class="accordion-content">
+                        <p class="text-xs opacity-70 mb-none">It compiles to native CSS with Cascade Layers, OKLCH color spaces, and 0ms JavaScript runtime overhead.</p>
+                      </div>
+                    </details>
+                    <details class="accordion-item">
+                      <summary class="accordion-trigger"><span>Is it compatible with Sass or Tailwind?</span></summary>
+                      <div class="accordion-content">
+                        <p class="text-xs opacity-70 mb-none">Yes! All compiled stylesheets are wrapped in `@layer skeletonic`, allowing seamless coexistence with any external framework without specificity conflicts.</p>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Buttons, Groups & Shortcuts -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Buttons, Groups &amp; Shortcuts</h3>
+                <p class="card-description">Stateful buttons, segmented groups, and keyboard shortcuts.</p>
+              </div>
+              <div class="card-content flex flex-column" style="gap: 1.5rem;">
+                <div>
+                  <span class="block mb-xs semibold text-xs">Button Styles</span>
+                  <div class="flex flex-wrap flex-middle" style="gap: .75rem;">
+                    <button type="button" class="button primary sm">Primary</button>
+                    <button type="button" class="button secondary sm">Secondary</button>
+                    <button type="button" class="button success sm">Success</button>
+                    <button type="button" class="button error sm">Danger</button>
+                    <button type="button" class="button link sm">Link Button</button>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="block mb-xs semibold text-xs">Connected Button Group</span>
+                  <div class="button-group">
+                    <button type="button" class="button secondary sm active">Weekly</button>
+                    <button type="button" class="button secondary sm">Monthly</button>
+                    <button type="button" class="button secondary sm">Annual</button>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="block mb-xs semibold text-xs">Multi-Select Toggle Group &amp; Kbd</span>
+                  <div class="flex flex-between flex-middle flex-wrap" style="gap: 1rem;">
+                    <div class="toggle-group">
+                      <button type="button" class="toggle-group-item active" aria-label="Bold"><b>B</b></button>
+                      <button type="button" class="toggle-group-item" aria-label="Italic"><i>I</i></button>
+                      <button type="button" class="toggle-group-item" aria-label="Underline"><u>U</u></button>
+                    </div>
+
+                    <div class="flex flex-middle opacity-70 text-xs" style="gap: .375rem;">
+                      <span>Quick commands:</span>
+                      <kbd class="kbd">⌘</kbd>
+                      <kbd class="kbd">S</kbd>
+                      <span>to save</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4: Media, Avatars & Scroll-Snap Carousel -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Media, Avatars &amp; Carousel</h3>
+                <p class="card-description">Aspect ratios, avatar fallbacks, and pure CSS scroll snapping.</p>
+              </div>
+              <div class="card-content flex flex-column" style="gap: 1.5rem;">
+                <!-- Avatar Group -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Avatar Suite with Fallbacks</span>
+                  <div class="avatar-group">
+                    <div class="avatar avatar-sm"><span class="avatar-fallback">AG</span></div>
+                    <div class="avatar avatar-sm"><span class="avatar-fallback">SR</span></div>
+                    <div class="avatar avatar-sm"><span class="avatar-fallback">JD</span></div>
+                    <div class="avatar avatar-sm"><span class="avatar-fallback">+4</span></div>
+                  </div>
+                </div>
+
+                <!-- CSS Carousel -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">CSS Scroll-Snap Carousel</span>
+                  <div class="carousel carousel-cols-2">
+                    <div class="carousel-content" tabindex="0" role="region" aria-label="Media carousel slides">
+                      <div class="carousel-item">
+                        <div class="card padding-md bg-primary" style="border-radius: .5rem;">
+                          <div class="bold text-xs mb-xs">Slide 1</div>
+                          <p class="text-xs mb-none">Zero-JS hardware acceleration.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="card padding-md bg-secondary" style="border-radius: .5rem;">
+                          <div class="bold text-xs mb-xs">Slide 2</div>
+                          <p class="text-xs mb-none">Multi-column gestures.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="card padding-md" style="border-radius: .5rem;">
+                          <div class="bold text-xs mb-xs">Slide 3</div>
+                          <p class="text-xs mb-none">Native snap alignment.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Scroll Area -->
+                <div>
+                  <span class="block mb-xs semibold text-xs">Themed Scroll Area</span>
+                  <div class="scroll-area radius" tabindex="0" role="region" aria-label="Changelog" style="height: 5.5rem; border: 1px solid var(--cl-border); padding: .75rem;">
+                    <p class="text-xs opacity-70 mb-none">
+                      Skeletonic Stylus features custom scrollbars styled via <code>scrollbar-color</code> and <code>scrollbar-width: thin</code>. They adapt effortlessly across light and dark color schemes without adding script overhead.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Motion UI Playground -->
+      <section id="motion" class="py-xxl" style="border-bottom: 1px solid var(--cl-border);">
+        <div class="container">
+          <div class="mb-xl flex flex-between flex-middle flex-wrap" style="gap: 1rem;">
+            <div>
+              <span class="badge primary sm mb-xs">Animation System</span>
+              <h2 class="bold mb-xs" style="letter-spacing: -.02em;">Foundation Motion UI Engine</h2>
+              <p class="opacity-70 text-sm">3D perspective hinges, rotational spins, and delightful micro-interactions.</p>
+            </div>
+            <button type="button" class="button secondary sm" onclick="triggerAllAnims()">Replay All Animations</button>
+          </div>
+
+          <div class="grid grid-cols-4 mb-xl" style="gap: 1rem;">
+            <div class="anim-card" onclick="triggerAnim(this, 'hingeInFromTop')">
+              <div class="bold text-xs mb-xs">.hingeInFromTop</div>
+              <span class="text-xs opacity-60">3D Door Swing In</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'hingeOutToBottom')">
+              <div class="bold text-xs mb-xs">.hingeOutToBottom</div>
+              <span class="text-xs opacity-60">3D Dropdown Exit</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'spinIn')">
+              <div class="bold text-xs mb-xs">.spinIn</div>
+              <span class="text-xs opacity-60">Clockwise 360&deg; Spin</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'spinInCCW')">
+              <div class="bold text-xs mb-xs">.spinInCCW</div>
+              <span class="text-xs opacity-60">Counter-Clockwise Spin</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'wiggle')">
+              <div class="bold text-xs mb-xs">.wiggle</div>
+              <span class="text-xs opacity-60">Attention Rocker</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'bounce')">
+              <div class="bold text-xs mb-xs">.bounce</div>
+              <span class="text-xs opacity-60">Elastic Spring</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'pulse')">
+              <div class="bold text-xs mb-xs">.pulse</div>
+              <span class="text-xs opacity-60">Heartbeat Scale</span>
+            </div>
+            <div class="anim-card" onclick="triggerAnim(this, 'jelly')">
+              <div class="bold text-xs mb-xs">.jelly</div>
+              <span class="text-xs opacity-60">Gelatin Squash</span>
+            </div>
+          </div>
+
+          <!-- Stagger Cascade Card -->
+          <div class="card">
+            <div class="flex flex-between flex-middle mb-md flex-wrap" style="gap: 1rem;">
+              <div>
+                <h4 class="card-title text-sm mb-xs">Staggered Child Sequence (.stagger)</h4>
+                <p class="card-description text-xs">Children cascade automatically with incremental animation delays.</p>
+              </div>
+              <button type="button" class="button secondary sm" onclick="triggerStagger()">Trigger Stagger Effect</button>
+            </div>
+            <div id="stagger-demo" class="stagger flex flex-wrap" style="gap: .75rem;">
+              <span class="badge primary">Item 1 (delay .05s)</span>
+              <span class="badge secondary">Item 2 (delay .10s)</span>
+              <span class="badge success">Item 3 (delay .15s)</span>
+              <span class="badge warning">Item 4 (delay .20s)</span>
+              <span class="badge danger">Item 5 (delay .25s)</span>
+              <span class="badge info">Item 6 (delay .30s)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overlay Dialogs Documentation -->
+      <section id="dialogs" class="py-xxl" style="border-bottom: 1px solid var(--cl-border);">
+        <div class="container">
+          <div class="mb-xl">
+            <span class="badge secondary sm mb-xs">HTML5 Native Standard</span>
+            <h2 class="bold mb-xs" style="letter-spacing: -.02em;">Top-Layer Dialogs &amp; Drawers</h2>
+            <p class="opacity-70 text-sm">Discrete transitions powered by CSS <code>@starting-style</code> with zero JavaScript layering.</p>
+          </div>
+
+          <div class="grid grid-cols-3" style="gap: 1.5rem;">
+            <div class="card text-center">
+              <h3 class="card-title mb-xs">Modal Dialog</h3>
+              <p class="card-description mb-md">Centered top-layer modal with backdrop blur.</p>
+              <button type="button" class="button primary sm w-full" onclick="document.getElementById('demo-modal').showModal()">Launch Modal</button>
+            </div>
+
+            <div class="card text-center">
+              <h3 class="card-title mb-xs">Slide-In Sheet Drawer</h3>
+              <p class="card-description mb-md">Right edge drawer with escape trapping.</p>
+              <button type="button" class="button secondary sm w-full" onclick="document.getElementById('demo-sheet').showModal()">Open Sheet</button>
+            </div>
+
+            <div class="card text-center">
+              <h3 class="card-title mb-xs">Command Palette</h3>
+              <p class="card-description mb-md">Quick navigation with ⌘K keyboard shortcut.</p>
+              <button type="button" class="button secondary sm w-full" onclick="document.getElementById('demo-command').showModal()">Open Palette</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="center py-xxl" style="border-top: 1px solid var(--cl-grey-200);">
-      <div class="container center">
-        <p class="mb-md opacity-70">Skeletonic Stylus v2.0.2 &bull; Licensed under MIT &bull; 100% Native 2026 Engine</p>
-        <div class="flex flex-center flex-middle opacity-60" style="gap: 2rem; font-size: .875rem;">
-          <a href="https://github.com/sebastienrousseau/skeletonic-stylus" class="text-black no-underline">GitHub</a>
-          <a href="https://skeletonic.io" class="text-black no-underline">Website</a>
-          <a href="#hero" class="text-black no-underline">Back to Top ↑</a>
+    <footer class="py-xl text-center" style="border-top: 1px solid var(--cl-border); font-size: .8125rem;">
+      <div class="container">
+        <p class="mb-sm opacity-70">
+          Skeletonic Stylus v2.0.2 &bull; Licensed under MIT or Apache-2.0 &bull; Built with Stylus &amp; OKLCH
+        </p>
+        <div class="flex flex-center flex-middle" style="gap: 1.5rem;">
+          <a href="https://github.com/sebastienrousseau/skeletonic-stylus" target="_blank" rel="noopener noreferrer" class="no-underline text-black">GitHub</a>
+          <a href="https://docs.skeletonic.io" target="_blank" rel="noopener noreferrer" class="no-underline text-black">Documentation</a>
+          <a href="https://skeletonic.io" target="_blank" rel="noopener noreferrer" class="no-underline text-black">Website</a>
+          <a href="#" class="no-underline text-black">Back to top &uarr;</a>
         </div>
       </div>
     </footer>
 
     <!-- ========================================== -->
-    <!-- OVERLAYS & DIALOGS -->
+    <!-- OVERLAYS & DIALOGS (HTML5 Top Layer) -->
     <!-- ========================================== -->
 
     <!-- Native Modal Dialog -->
     <dialog id="demo-modal" class="modal">
       <div class="modal-header">
-        <h3>The 2026 Native Modal Standard</h3>
+        <h3 class="bold text-lg">The 2026 Native Modal Standard</h3>
       </div>
-      <p class="mb-md">This modal is rendered in the top-layer using the native HTML5 &lt;dialog&gt; API and animates smoothly via <code>@starting-style</code> with zero JavaScript rendering libraries.</p>
+      <p class="mb-lg text-sm opacity-80">
+        This modal is rendered in the top-layer using the native HTML5 <code>&lt;dialog&gt;</code> API and animates smoothly via <code>@starting-style</code> with zero JavaScript rendering libraries.
+      </p>
       <div class="modal-footer">
-        <button class="button secondary" onclick="this.closest('dialog').close()">Close Modal</button>
+        <button type="button" class="button secondary sm" onclick="this.closest('dialog').close()">Close Dialog</button>
       </div>
     </dialog>
 
@@ -613,13 +858,13 @@
         <p class="text-sm opacity-80">This drawer slides smoothly from the right viewport edge. It includes backdrop dimming, touch safety, and keyboard escape trapping.</p>
         <div class="separator my-md"></div>
         <div class="flex flex-column" style="gap: .75rem;">
+          <a href="#featured" class="button link" onclick="this.closest('dialog').close()">Jump to Showcase</a>
           <a href="#components" class="button link" onclick="this.closest('dialog').close()">Jump to Components</a>
-          <a href="#forms" class="button link" onclick="this.closest('dialog').close()">Jump to Forms</a>
-          <a href="#animations" class="button link" onclick="this.closest('dialog').close()">Jump to Motion UI</a>
+          <a href="#motion" class="button link" onclick="this.closest('dialog').close()">Jump to Motion UI</a>
         </div>
       </div>
       <div class="sheet-footer">
-        <button class="button primary w-full" onclick="this.closest('dialog').close()">Dismiss Drawer</button>
+        <button type="button" class="button primary w-full sm" onclick="this.closest('dialog').close()">Dismiss Drawer</button>
       </div>
     </dialog>
 
@@ -631,16 +876,16 @@
       <div class="command-list">
         <div class="command-group">
           <div class="command-group-heading">Navigation</div>
-          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#components'">
-            <span>Components Overview</span>
-            <span class="command-shortcut">⌘C</span>
-          </div>
-          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#forms'">
-            <span>Forms & Inputs</span>
+          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#featured'">
+            <span>Featured Showcase</span>
             <span class="command-shortcut">⌘F</span>
           </div>
-          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#animations'">
-            <span>Motion UI Playground</span>
+          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#components'">
+            <span>Components Catalog</span>
+            <span class="command-shortcut">⌘C</span>
+          </div>
+          <div class="command-item" onclick="this.closest('dialog').close(); location.href='#motion'">
+            <span>Motion UI Engine</span>
             <span class="command-shortcut">⌘M</span>
           </div>
         </div>
@@ -654,13 +899,56 @@
       </div>
     </dialog>
 
-    <!-- Helper script for interactive animation testing -->
+    <!-- Interactive Scripts -->
     <script>
+      // 1. Copy CLI command
+      function copyCliCommand(btn, text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.style.color = 'var(--cl-primary)';
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.style.color = '';
+          }, 2000);
+        });
+      }
+
+      // 2. Showcase tab switching
+      function switchFeaturedTab(tab) {
+        const previewEl = document.getElementById('tab-preview');
+        const codeEl = document.getElementById('tab-code');
+        const btnPrev = document.getElementById('btn-preview');
+        const btnCode = document.getElementById('btn-code');
+
+        if (tab === 'preview') {
+          previewEl.style.display = 'block';
+          codeEl.style.display = 'none';
+          btnPrev.classList.add('active');
+          btnCode.classList.remove('active');
+        } else {
+          previewEl.style.display = 'none';
+          codeEl.style.display = 'block';
+          btnPrev.classList.remove('active');
+          btnCode.classList.add('active');
+        }
+      }
+
+      // 3. Trigger animations
       function triggerAnim(el, animName) {
         el.classList.remove(animName);
-        void el.offsetWidth; // Trigger reflow
+        void el.offsetWidth;
         el.classList.add(animName);
       }
+
+      function triggerAllAnims() {
+        const cards = document.querySelectorAll('.anim-card');
+        cards.forEach(card => {
+          const name = card.querySelector('.bold').textContent.replace('.', '').trim();
+          triggerAnim(card, name);
+        });
+      }
+
       function triggerStagger() {
         const badges = document.querySelectorAll('#stagger-demo .badge');
         badges.forEach(el => {
@@ -669,9 +957,59 @@
           el.classList.add('fadeInDown');
         });
       }
-      // Set indeterminate state on checkbox demo
-      const indCheck = document.getElementById('indeterminate-check');
-      if (indCheck) indCheck.indeterminate = true;
+
+      // 4. Skeleton Demo Toggle
+      let isSkeleton = false;
+      function toggleSkeletonDemo(btn) {
+        const container = document.getElementById('skeleton-container');
+        isSkeleton = !isSkeleton;
+        if (isSkeleton) {
+          container.innerHTML = `
+            <div class="flex flex-middle" style="gap: .75rem;">
+              <div class="skeleton" style="width: 2rem; height: 2rem; border-radius: 9999px;"></div>
+              <div class="flex flex-column" style="gap: .375rem; flex: 1;">
+                <div class="skeleton" style="height: .75rem; width: 60%; border-radius: .25rem;"></div>
+                <div class="skeleton" style="height: .625rem; width: 40%; border-radius: .25rem;"></div>
+              </div>
+            </div>
+          `;
+          btn.textContent = 'Restore Content';
+        } else {
+          container.innerHTML = `
+            <div class="flex flex-middle" style="gap: .75rem;">
+              <div class="avatar avatar-sm">
+                <span class="avatar-fallback text-xs">SR</span>
+              </div>
+              <div>
+                <div class="bold text-xs">Sebastien Rousseau</div>
+                <div class="text-xs opacity-60">Lead Maintainer</div>
+              </div>
+            </div>
+          `;
+          btn.textContent = 'Toggle Skeleton';
+        }
+      }
+
+      // 5. Theme Switcher
+      function toggleTheme() {
+        const currentScheme = document.documentElement.style.colorScheme;
+        const newScheme = currentScheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.style.colorScheme = newScheme;
+        document.getElementById('theme-icon').textContent = newScheme === 'dark' ? '☀' : '◐';
+      }
+
+      // 6. Global ⌘K Key Listener
+      document.addEventListener('keydown', e => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          const cmd = document.getElementById('demo-command');
+          if (cmd.open) {
+            cmd.close();
+          } else {
+            cmd.showModal();
+          }
+        }
+      });
     </script>
   </body>
 </html>
