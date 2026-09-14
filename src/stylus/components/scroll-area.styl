@@ -1,0 +1,52 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Scroll Area (2026 Standard) */
+
+.scroll-area
+  overflow: auto
+  position: relative
+  scrollbar-color: var(--cl-grey-300) transparent
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    height: 8px
+    width: 8px
+
+  &::-webkit-scrollbar-track
+    background: transparent
+    border-radius: 9999px
+
+  &::-webkit-scrollbar-thumb
+    background-clip: content-box
+    background-color: var(--cl-grey-300)
+    border: 2px solid transparent
+    border-radius: 9999px
+
+    &:hover
+      background-color: var(--cl-grey-400)
+
+  &::-webkit-scrollbar-corner
+    background: transparent
+
+  // Directional variants
+  &.scroll-area-horizontal
+    overflow-x: auto
+    overflow-y: hidden
+
+  &.scroll-area-vertical
+    overflow-x: hidden
+    overflow-y: auto
+
+  // Invisible scrollbar variant
+  &.scroll-area-hidden
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+      display: none

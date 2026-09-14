@@ -1,0 +1,106 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Carousel (2026 Standard) */
+
+.carousel
+  position: relative
+  width: 100%
+
+.carousel-content
+  display: flex
+  gap: 1rem
+  -ms-overflow-style: none
+  overflow-x: auto
+  overscroll-behavior-x: contain
+  padding: .25rem 0
+  scroll-behavior: smooth
+  scroll-snap-type: x mandatory
+  scrollbar-width: none
+
+  &::-webkit-scrollbar
+    display: none
+
+.carousel-item
+  flex: 0 0 100%
+  min-width: 0
+  scroll-snap-align: start
+  scroll-snap-stop: always
+
+// Multi-item viewports
+.carousel.carousel-cols-2 .carousel-item
+  flex: 0 0 calc(50% - .5rem)
+
+.carousel.carousel-cols-3 .carousel-item
+  flex: 0 0 calc(33.333% - .67rem)
+
+.carousel.carousel-cols-4 .carousel-item
+  flex: 0 0 calc(25% - .75rem)
+
+// Carousel navigation buttons
+.carousel-previous,
+.carousel-next
+  align-items: center
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-300)
+  border-radius: 9999px
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1)
+  color: var(--foreground-color)
+  cursor: pointer
+  display: inline-flex
+  height: 2.25rem
+  justify-content: center
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  transition: background-color .15s ease, transform .15s ease
+  width: 2.25rem
+  z-index: 10
+
+  &:hover
+    background-color: var(--cl-grey-100)
+    transform: translateY(-50%) scale(1.05)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+  &:disabled
+    cursor: not-allowed
+    opacity: .4
+
+.carousel-previous
+  left: -1rem
+
+.carousel-next
+  right: -1rem
+
+// Indicators
+.carousel-indicators
+  display: flex
+  gap: .5rem
+  justify-content: center
+  margin-top: 1rem
+
+.carousel-dot
+  background-color: var(--cl-grey-300)
+  border: none
+  border-radius: 9999px
+  cursor: pointer
+  height: .5rem
+  padding: 0
+  transition: all .2s ease
+  width: .5rem
+
+  &.active
+    background-color: var(--cl-primary)
+    width: 1.5rem
+
+@media (prefers-reduced-motion: reduce)
+  .carousel-content
+    scroll-behavior: auto

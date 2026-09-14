@@ -1,0 +1,78 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Toggle & Toggle Group (2026 Standard) */
+
+.toggle,
+button.toggle
+  align-items: center
+  background: transparent
+  border: 1px solid transparent
+  border-radius: .38rem
+  color: inherit
+  cursor: pointer
+  display: inline-flex
+  font-size: .875rem
+  font-weight: 500
+  gap: .5rem
+  height: 2.25rem
+  justify-content: center
+  padding: 0 .75rem
+  transition: background-color .15s ease, color .15s ease
+  user-select: none
+  vertical-align: middle
+
+  &:hover
+    background-color: var(--cl-grey-100)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+  &.active,
+  &[aria-pressed='true'],
+  &[data-state='on']
+    background-color: var(--cl-grey-200)
+    color: var(--foreground-color)
+
+  &.toggle-outline
+    border-color: var(--cl-grey-300)
+
+    &.active,
+    &[aria-pressed='true'],
+    &[data-state='on']
+      background-color: var(--cl-grey-100)
+      border-color: var(--cl-grey-400)
+
+  // Sizes
+  &.sm
+    font-size: .75rem
+    height: 1.875rem
+    padding: 0 .5rem
+
+  &.lg
+    font-size: 1rem
+    height: 2.75rem
+    padding: 0 1rem
+
+.toggle-group
+  align-items: center
+  display: inline-flex
+  gap: .25rem
+
+  &.toggle-group-connected
+    gap: 0
+
+    & > .toggle:not(:first-child)
+      border-bottom-left-radius: 0
+      border-top-left-radius: 0
+      margin-left: -1px
+
+    & > .toggle:not(:last-child)
+      border-bottom-right-radius: 0
+      border-top-right-radius: 0

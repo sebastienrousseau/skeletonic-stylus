@@ -1,0 +1,84 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Progress */
+
+progress,
+.progress
+  appearance: none
+  background-color: var(--cl-grey-100)
+  border: none
+  border-radius: 9999px
+  display: block
+  height: .5rem
+  overflow: hidden
+  width: 100%
+
+  // Sizes
+  &.sm
+    height: .25rem
+
+  &.lg
+    height: .75rem
+
+  &.xl
+    height: 1rem
+
+  // WebKit styling
+  &::-webkit-progress-bar
+    background-color: var(--cl-grey-100)
+    border-radius: 9999px
+
+  &::-webkit-progress-value
+    background-color: var(--cl-primary)
+    border-radius: 9999px
+    transition: width .3s ease
+
+  // Firefox styling
+  &::-moz-progress-bar
+    background-color: var(--cl-primary)
+    border-radius: 9999px
+    transition: width .3s ease
+
+  // Color variants
+  &.success
+    &::-webkit-progress-value
+      background-color: var(--cl-success)
+    &::-moz-progress-bar
+      background-color: var(--cl-success)
+
+  &.warning
+    &::-webkit-progress-value
+      background-color: var(--cl-warning)
+    &::-moz-progress-bar
+      background-color: var(--cl-warning)
+
+  &.danger
+    &::-webkit-progress-value
+      background-color: var(--cl-danger)
+    &::-moz-progress-bar
+      background-color: var(--cl-danger)
+
+  &.secondary
+    &::-webkit-progress-value
+      background-color: var(--cl-secondary)
+    &::-moz-progress-bar
+      background-color: var(--cl-secondary)
+
+  // Indeterminate state animation
+  &:indeterminate
+    background-size: 200% 100%
+    animation: progress-indeterminate 1.5s infinite linear
+
+@keyframes progress-indeterminate
+  0%
+    background-position: 200% 0
+  100%
+    background-position: -200% 0
+
+/* @end */

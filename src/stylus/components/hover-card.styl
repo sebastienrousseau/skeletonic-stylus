@@ -1,0 +1,62 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Hover Card (2026 Standard) */
+
+.hover-card
+  display: inline-block
+  position: relative
+
+.hover-card-trigger
+  cursor: pointer
+  display: inline-flex
+
+.hover-card-content
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: .38rem
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1)
+  color: var(--foreground-color)
+  left: 50%
+  max-width: calc(100vw - 2rem)
+  opacity: 0
+  padding: 1rem
+  pointer-events: none
+  position: absolute
+  top: 100%
+  transform: translateX(-50%) translateY(.5rem)
+  transition: opacity .15s ease, transform .15s ease, visibility .15s ease
+  visibility: hidden
+  width: 20rem
+  z-index: 50
+
+  &.hover-card-left
+    left: 0
+    transform: translateY(.5rem)
+
+  &.hover-card-right
+    left: auto
+    right: 0
+    transform: translateY(.5rem)
+
+.hover-card:hover > .hover-card-content,
+.hover-card:focus-within > .hover-card-content
+  opacity: 1
+  pointer-events: auto
+  transform: translateX(-50%) translateY(0)
+  visibility: visible
+
+  &.hover-card-left
+    transform: translateY(0)
+
+  &.hover-card-right
+    transform: translateY(0)
+
+@media (prefers-reduced-motion: reduce)
+  .hover-card-content
+    transition: none

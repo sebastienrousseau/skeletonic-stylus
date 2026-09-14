@@ -1,0 +1,83 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Pagination */
+
+nav.pagination,
+.pagination
+  align-items: center
+  display: flex
+  justify-content: center
+  width: 100%
+
+  ul,
+  ol
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+    gap: .25rem
+    list-style: none
+    margin: 0
+    padding: 0
+
+  .pagination-item
+    display: inline-flex
+
+  .pagination-link,
+  .pagination-prev,
+  .pagination-next
+    align-items: center
+    background-color: transparent
+    border: 1px solid transparent
+    border-radius: .375rem
+    color: var(--foreground-color)
+    cursor: pointer
+    display: inline-flex
+    font-size: .875rem
+    font-weight: 500
+    height: 2.25rem
+    justify-content: center
+    line-height: 1
+    min-width: 2.25rem
+    padding: 0 .75rem
+    text-decoration: none
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease
+    user-select: none
+
+    &:hover
+      background-color: var(--cl-grey-100)
+
+    &:focus-visible
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: 2px
+
+    &.active,
+    &[aria-current="page"]
+      background-color: var(--cl-surface)
+      border-color: var(--cl-grey-200)
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+      font-weight: 600
+
+    &.disabled,
+    &:disabled,
+    &[aria-disabled="true"]
+      cursor: not-allowed
+      opacity: .4
+      pointer-events: none
+
+  .pagination-ellipsis
+    align-items: center
+    color: var(--foreground-color)
+    display: inline-flex
+    height: 2.25rem
+    justify-content: center
+    min-width: 2.25rem
+    opacity: .5
+    user-select: none
+
+/* @end */

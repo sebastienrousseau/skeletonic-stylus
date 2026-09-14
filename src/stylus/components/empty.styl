@@ -1,0 +1,57 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Empty State (2026 Standard) */
+
+.empty,
+.empty-state
+  align-items: center
+  background-color: transparent
+  border: 1px dashed var(--cl-grey-300)
+  border-radius: .5rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 3rem 1.5rem
+  text-align: center
+
+  &.empty-solid
+    background-color: var(--cl-grey-100)
+    border-style: solid
+
+.empty-icon
+  align-items: center
+  background-color: var(--cl-grey-100)
+  border-radius: 9999px
+  color: var(--cl-grey-500)
+  display: inline-flex
+  font-size: 1.5rem
+  height: 3.5rem
+  justify-content: center
+  margin-bottom: 1rem
+  width: 3.5rem
+
+.empty-title
+  color: var(--foreground-color)
+  font-size: 1.125rem
+  font-weight: 600
+  line-height: 1.5rem
+  margin: 0 0 .5rem
+
+.empty-description
+  color: var(--cl-grey-600)
+  font-size: .875rem
+  line-height: 1.4
+  margin: 0 0 1.5rem
+  max-width: 28rem
+
+.empty-actions
+  align-items: center
+  display: flex
+  gap: .75rem
+  justify-content: center

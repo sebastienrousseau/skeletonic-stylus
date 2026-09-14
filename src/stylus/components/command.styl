@@ -1,0 +1,111 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Command (2026 Standard) */
+
+.command,
+dialog.command
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: .5rem
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1)
+  color: var(--foreground-color)
+  display: flex
+  flex-direction: column
+  max-width: 36rem
+  overflow: hidden
+  padding: 0
+  width: 100%
+
+dialog.command
+  margin: auto
+  position: fixed
+  transition: opacity .2s ease, transform .2s ease, display .2s allow-discrete
+
+  @starting-style
+    opacity: 0
+    transform: scale(.95)
+
+  &::backdrop
+    background: rgba(0, 0, 0, .5)
+    backdrop-filter: blur(4px)
+
+.command-input-wrapper
+  align-items: center
+  border-bottom: 1px solid var(--cl-grey-200)
+  display: flex
+  gap: .5rem
+  padding: 0 1rem
+
+.command-input
+  background: transparent
+  border: none
+  color: inherit
+  font-size: .875rem
+  height: 3rem
+  outline: none
+  width: 100%
+
+  &::placeholder
+    color: var(--cl-grey-500)
+
+.command-list
+  max-height: 20rem
+  overflow-x: hidden
+  overflow-y: auto
+  padding: .5rem
+  scrollbar-width: thin
+
+.command-empty
+  color: var(--cl-grey-500)
+  font-size: .875rem
+  padding: 2rem 0
+  text-align: center
+
+.command-group
+  padding: .25rem 0
+
+.command-group-heading
+  color: var(--cl-grey-500)
+  font-size: .75rem
+  font-weight: 600
+  letter-spacing: .05em
+  padding: .5rem .75rem .25rem
+  text-transform: uppercase
+
+.command-item
+  align-items: center
+  border-radius: .25rem
+  cursor: pointer
+  display: flex
+  font-size: .875rem
+  gap: .5rem
+  padding: .5rem .75rem
+  transition: background-color .15s ease
+  user-select: none
+
+  &:hover,
+  &.selected,
+  &[aria-selected='true']
+    background-color: var(--cl-grey-100)
+
+  &.disabled,
+  &[aria-disabled='true']
+    cursor: not-allowed
+    opacity: .5
+    pointer-events: none
+
+.command-shortcut
+  color: var(--cl-grey-500)
+  font-size: .75rem
+  letter-spacing: .1em
+  margin-left: auto
+
+@media (prefers-reduced-motion: reduce)
+  dialog.command
+    transition: none

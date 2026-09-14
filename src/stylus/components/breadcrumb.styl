@@ -1,0 +1,74 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Breadcrumb */
+
+nav.breadcrumb,
+.breadcrumb
+  display: block
+
+  ol,
+  ul
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+    gap: .5rem
+    list-style: none
+    margin: 0
+    padding: 0
+
+  .breadcrumb-item
+    align-items: center
+    display: inline-flex
+    font-size: .875rem
+    gap: .5rem
+    line-height: 1.25
+
+  .breadcrumb-link
+    color: var(--foreground-color)
+    opacity: .7
+    text-decoration: none
+    transition: opacity .15s ease, color .15s ease
+
+    &:hover
+      opacity: 1
+      text-decoration: underline
+
+    &:focus-visible
+      border-radius: .25rem
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: 2px
+
+  .breadcrumb-page,
+  [aria-current="page"]
+    color: var(--foreground-color)
+    font-weight: 600
+    opacity: 1
+    pointer-events: none
+
+  .breadcrumb-separator
+    color: var(--cl-grey-200)
+    display: inline-flex
+    font-size: .875rem
+    user-select: none
+
+    &::after
+      content: "/"
+
+    &.chevron::after
+      content: "›"
+
+  .breadcrumb-ellipsis
+    align-items: center
+    color: var(--foreground-color)
+    display: inline-flex
+    justify-content: center
+    opacity: .5
+    user-select: none
+
+/* @end */

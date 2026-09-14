@@ -1,0 +1,149 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Toast (2026 Standard) */
+
+.toast-container,
+.toast-viewport
+  bottom: 1.5rem
+  display: flex
+  flex-direction: column
+  gap: .75rem
+  max-width: 26rem
+  pointer-events: none
+  position: fixed
+  right: 1.5rem
+  width: calc(100% - 3rem)
+  z-index: 100
+
+  &.toast-top-right
+    bottom: auto
+    top: 1.5rem
+
+  &.toast-top-left
+    bottom: auto
+    left: 1.5rem
+    right: auto
+    top: 1.5rem
+
+  &.toast-bottom-left
+    left: 1.5rem
+    right: auto
+
+  &.toast-top-center
+    bottom: auto
+    left: 50%
+    right: auto
+    top: 1.5rem
+    transform: translateX(-50%)
+
+  &.toast-bottom-center
+    bottom: 1.5rem
+    left: 50%
+    right: auto
+    transform: translateX(-50%)
+
+.toast,
+dialog.toast,
+[popover].toast
+  align-items: flex-start
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: .38rem
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1)
+  color: var(--foreground-color)
+  display: flex
+  gap: .75rem
+  margin: 0
+  padding: 1rem
+  pointer-events: auto
+  position: relative
+  transition: transform .25s ease, opacity .25s ease, display .25s allow-discrete
+  width: 100%
+
+  @starting-style
+    opacity: 0
+    transform: translateY(1rem) scale(.95)
+
+  // Status variants
+  &.toast-success
+    border-left: 4px solid var(--cl-success)
+
+  &.toast-warning
+    border-left: 4px solid var(--cl-warning)
+
+  &.toast-danger,
+  &.toast-error
+    border-left: 4px solid var(--cl-danger)
+
+  &.toast-info
+    border-left: 4px solid var(--cl-info)
+
+.toast-content
+  display: flex
+  flex: 1
+  flex-direction: column
+  gap: .25rem
+
+.toast-title
+  font-size: .875rem
+  font-weight: 600
+  line-height: 1.25rem
+  margin: 0
+
+.toast-description
+  font-size: .8125rem
+  line-height: 1.25rem
+  margin: 0
+  opacity: .8
+
+.toast-action
+  align-self: center
+  background: transparent
+  border: 1px solid var(--cl-grey-300)
+  border-radius: .25rem
+  color: inherit
+  cursor: pointer
+  font-size: .75rem
+  font-weight: 600
+  padding: .375rem .75rem
+  transition: background-color .15s ease
+
+  &:hover
+    background-color: var(--cl-grey-100)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+.toast-close
+  align-self: flex-start
+  background: transparent
+  border: none
+  border-radius: .25rem
+  color: inherit
+  cursor: pointer
+  font-size: 1rem
+  line-height: 1
+  opacity: .6
+  padding: .25rem
+  transition: opacity .15s ease
+
+  &:hover
+    opacity: 1
+
+  &:focus-visible
+    opacity: 1
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+@media (prefers-reduced-motion: reduce)
+  .toast,
+  dialog.toast,
+  [popover].toast
+    transition: none

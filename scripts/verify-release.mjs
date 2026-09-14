@@ -82,7 +82,7 @@ console.log("\n\x1b[1mverify-release\x1b[0m — pre-release gate\n");
 {
   const budgets = [
     ["dist/css/core/skeletonic.min.css",            10 * 1024,     3 * 1024,   2.5 * 1024],
-    ["dist/css/core/skeletonic-ui.min.css",         48 * 1024,    10 * 1024,     8 * 1024],
+    ["dist/css/core/skeletonic-ui.min.css",         95 * 1024,    18 * 1024,    15 * 1024],
     ["dist/css/animations/skeletonic-animations.min.css",
                                                    250 * 1024,    10 * 1024,     8 * 1024],
   ];

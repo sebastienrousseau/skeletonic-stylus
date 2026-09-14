@@ -1,0 +1,75 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Skeleton (2026 Standard) */
+
+@keyframes skeleton-pulse
+  0%,
+  100%
+    opacity: 1
+  50%
+    opacity: .4
+
+@keyframes skeleton-shimmer
+  0%
+    background-position: 200% 0
+  100%
+    background-position: -200% 0
+
+.skeleton
+  animation: skeleton-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite
+  background-color: var(--cl-grey-200)
+  border-radius: .25rem
+  display: block
+
+  // Shimmer wave variant
+  &.skeleton-shimmer
+    animation: skeleton-shimmer 1.6s ease-in-out infinite
+    background: linear-gradient(90deg, var(--cl-grey-200) 0%, var(--cl-grey-100) 50%, var(--cl-grey-200) 100%)
+    background-size: 200% 100%
+
+  // Primitives
+  &.text,
+  &.skeleton-text
+    height: 1rem
+    margin-bottom: .5rem
+    width: 100%
+
+  &.title,
+  &.skeleton-title
+    height: 1.5rem
+    margin-bottom: .75rem
+    width: 60%
+
+  &.avatar,
+  &.skeleton-avatar
+    border-radius: 9999px
+    flex-shrink: 0
+    height: 2.5rem
+    width: 2.5rem
+
+  &.button,
+  &.skeleton-button
+    border-radius: .38rem
+    height: 2.25rem
+    width: 6rem
+
+  &.card,
+  &.skeleton-card
+    border-radius: .5rem
+    height: 12rem
+    width: 100%
+
+  &.rounded-full
+    border-radius: 9999px
+
+@media (prefers-reduced-motion: reduce)
+  .skeleton,
+  .skeleton.skeleton-shimmer
+    animation: none
+    opacity: .6

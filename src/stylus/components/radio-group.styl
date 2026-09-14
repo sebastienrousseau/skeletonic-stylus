@@ -1,0 +1,79 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Radio Group (2026 Standard) */
+
+.radio-group
+  display: flex
+  flex-direction: column
+  gap: .75rem
+
+  &.radio-group-row
+    flex-direction: row
+    gap: 1.25rem
+
+input[type='radio'].radio,
+.radio
+  -webkit-appearance: none
+  appearance: none
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-300)
+  border-radius: 9999px
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+  cursor: pointer
+  display: inline-block
+  flex-shrink: 0
+  height: 1.125rem
+  margin: 0
+  padding: 0
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease
+  vertical-align: middle
+  width: 1.125rem
+
+  &:checked
+    background-color: var(--cl-primary)
+    border-color: var(--cl-primary)
+    box-shadow: inset 0 0 0 3px var(--background-color)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+  &:disabled
+    cursor: not-allowed
+    opacity: .5
+
+  // Sizes
+  &.sm
+    height: .875rem
+    width: .875rem
+
+    &:checked
+      box-shadow: inset 0 0 0 2px var(--background-color)
+
+  &.lg
+    height: 1.375rem
+    width: 1.375rem
+
+    &:checked
+      box-shadow: inset 0 0 0 4px var(--background-color)
+
+// Radio with label layout
+.radio-field,
+label.radio-label
+  align-items: center
+  cursor: pointer
+  display: inline-flex
+  font-size: .875rem
+  gap: .5rem
+  line-height: 1.25rem
+  user-select: none
+
+  &:has(input:disabled)
+    cursor: not-allowed
+    opacity: .5

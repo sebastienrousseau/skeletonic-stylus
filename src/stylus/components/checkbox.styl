@@ -1,0 +1,74 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Checkbox (2026 Standard) */
+
+input[type='checkbox'].checkbox,
+.checkbox
+  -webkit-appearance: none
+  appearance: none
+  background-color: var(--background-color)
+  background-position: center
+  background-repeat: no-repeat
+  background-size: 70% 70%
+  border: 1px solid var(--cl-grey-300)
+  border-radius: .25rem
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+  cursor: pointer
+  display: inline-block
+  flex-shrink: 0
+  height: 1.125rem
+  margin: 0
+  padding: 0
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease
+  vertical-align: middle
+  width: 1.125rem
+
+  &:checked
+    background-color: var(--cl-primary)
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E")
+    border-color: var(--cl-primary)
+
+  &:indeterminate
+    background-color: var(--cl-primary)
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
+    border-color: var(--cl-primary)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+  &:disabled
+    cursor: not-allowed
+    opacity: .5
+
+  // Sizes
+  &.sm
+    border-radius: .1875rem
+    height: .875rem
+    width: .875rem
+
+  &.lg
+    border-radius: .3125rem
+    height: 1.375rem
+    width: 1.375rem
+
+// Checkbox with label layout
+.checkbox-field,
+label.checkbox-label
+  align-items: center
+  cursor: pointer
+  display: inline-flex
+  font-size: .875rem
+  gap: .5rem
+  line-height: 1.25rem
+  user-select: none
+
+  &:has(input:disabled)
+    cursor: not-allowed
+    opacity: .5

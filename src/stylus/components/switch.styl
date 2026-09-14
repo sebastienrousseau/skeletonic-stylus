@@ -1,0 +1,116 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Switch (2026 Standard) */
+
+input[type='checkbox'].switch,
+button[role='switch'].switch,
+.switch
+  -webkit-appearance: none
+  appearance: none
+  background-color: var(--cl-grey-300)
+  border: none
+  border-radius: 9999px
+  box-sizing: border-box
+  cursor: pointer
+  display: inline-block
+  flex-shrink: 0
+  height: 1.5rem
+  margin: 0
+  padding: 0
+  position: relative
+  transition: background-color .2s ease
+  vertical-align: middle
+  width: 2.5rem
+
+  &::after
+    background-color: #ffffff
+    border-radius: 9999px
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
+    content: ''
+    height: 1.25rem
+    left: .125rem
+    position: absolute
+    top: .125rem
+    transition: transform .2s cubic-bezier(.4, 0, .2, 1)
+    width: 1.25rem
+
+  &:checked,
+  &[aria-checked='true'],
+  &[data-state='checked']
+    background-color: var(--cl-primary)
+
+    &::after
+      transform: translateX(1rem)
+
+  &:focus-visible
+    outline: 2px solid var(--cl-primary)
+    outline-offset: 2px
+
+  &:disabled,
+  &[aria-disabled='true']
+    cursor: not-allowed
+    opacity: .5
+
+  // Sizes
+  &.sm
+    height: 1.125rem
+    width: 1.875rem
+
+    &::after
+      height: .875rem
+      width: .875rem
+
+    &:checked,
+    &[aria-checked='true']
+      &::after
+        transform: translateX(.75rem)
+
+  &.lg
+    height: 1.875rem
+    width: 3.25rem
+
+    &::after
+      height: 1.625rem
+      width: 1.625rem
+
+    &:checked,
+    &[aria-checked='true']
+      &::after
+        transform: translateX(1.375rem)
+
+  // Status variants
+  &.switch-success
+    &:checked,
+    &[aria-checked='true']
+      background-color: var(--cl-success)
+
+  &.switch-warning
+    &:checked,
+    &[aria-checked='true']
+      background-color: var(--cl-warning)
+
+  &.switch-danger
+    &:checked,
+    &[aria-checked='true']
+      background-color: var(--cl-danger)
+
+// Switch with label field
+.switch-field,
+label.switch-label
+  align-items: center
+  cursor: pointer
+  display: inline-flex
+  font-size: .875rem
+  gap: .75rem
+  line-height: 1.25rem
+  user-select: none
+
+  &:has(input:disabled)
+    cursor: not-allowed
+    opacity: .5

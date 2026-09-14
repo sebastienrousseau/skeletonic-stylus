@@ -10,6 +10,35 @@ project adheres to
 
 **[2.0.2] — 2026-08-05**
 
+**Added**
+
+- **Expanded Modern Component Suite (35 UI Primitives)**: Implemented 25 new modern accessible components inspired by shadcn/ui:
+  - `aspect-ratio`: Responsive aspect-ratio containers (`16/9`, `4/3`, `1/1`, `21/9`, etc.).
+  - `avatar`: Rounded/square avatars, fallbacks, presence status indicators, and stacked avatar groups.
+  - `breadcrumb`: Semantic accessible breadcrumb navigation with slash and chevron separators.
+  - `button-group`: Connected horizontal and vertical button groups with border deduplication.
+  - `carousel`: Pure CSS scroll-snap carousel with responsive item columns, navigation, and indicators.
+  - `checkbox`: Custom accessible checkbox with SVG checkmark and indeterminate state.
+  - `command`: Modern command palette search modal and quick menu primitives.
+  - `empty`: Zero-data placeholders and empty state screens.
+  - `hover-card`: Interactive preview card triggered on hover or focus-within.
+  - `input-otp`: PIN and one-time password segmented entry slots with blinking caret animation.
+  - `kbd`: Inline keyboard shortcuts with monospace font stack and tactile borders.
+  - `pagination`: Semantic pagination controls, active state, and ellipsis.
+  - `popover`: Native HTML5 `[popover]` floating cards with `@starting-style` transitions.
+  - `progress`: Native `progress` and `.progress` bars with color variants and indeterminate state.
+  - `radio-group`: Custom accessible radio controls with row and column layouts.
+  - `scroll-area`: Custom styled lightweight scrollbars with horizontal, vertical, and hidden modes.
+  - `select`: Styled native select element with custom dropdown chevron and floating menus.
+  - `separator`: Accessible horizontal and vertical dividers with optional label text.
+  - `sheet`: Sliding dialog drawers (left, right, top, bottom) with `@starting-style`.
+  - `skeleton`: Content loading placeholder blocks with pulse and shimmer wave animations.
+  - `slider`: Custom styled native range sliders with track, thumb, focus rings, and value display.
+  - `switch`: iOS and shadcn styled toggle switches with smooth sliding thumb animations.
+  - `tabs`: Accessible tab lists, active pill triggers, underline variant, and tab panels.
+  - `toast`: Non-intrusive notification toasts with title, description, actions, and status borders.
+  - `toggle-group`: Single and multi-selection toggle button bars.
+
 **Security**
 
 - Bump `postcss` to `8.5.23` to address sourceMappingURL resolution advisory (GHSA-fxqj-rqcc-2cmp).
