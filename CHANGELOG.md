@@ -8,6 +8,23 @@ project adheres to
 
 ---
 
+**[2.0.2] — 2026-08-05**
+
+**Security**
+
+- Bump `postcss` to `8.5.23` to address sourceMappingURL resolution advisory (GHSA-fxqj-rqcc-2cmp).
+- Harden dependency override bounds across `brace-expansion`, `fast-uri`, and `js-yaml`.
+
+---
+
+**[2.0.1] — 2026-08-04**
+
+**Changed**
+
+- Consolidate open Dependabot dependency updates and bump GitHub Actions workflows to Node 24 runtime.
+
+---
+
 **[2.0.0] — 2026-05-03**
 
 The "2026 baseline" major release. Every modern CSS feature that
@@ -196,5 +213,7 @@ original v1.0.0 release (2018).
 
 ---
 
+[2.0.2]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.2
+[2.0.1]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.1
 [2.0.0]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.0
 [1.1.7]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v1.1.7

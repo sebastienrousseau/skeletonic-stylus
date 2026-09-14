@@ -135,7 +135,7 @@ console.log("\n\x1b[1mverify-release\x1b[0m — pre-release gate\n");
 
 // ─── 5. Tarball validity ─────────────────────────────────────────────
 {
-  const tgz = sh("ls *.tgz 2>/dev/null").trim().split("\n").filter(Boolean).find(f => f.includes("skeletonic-stylus"));
+  const tgz = (sh("ls *.tgz 2>/dev/null") || "").trim().split("\n").filter(Boolean).find(f => f.includes("skeletonic-stylus"));
   if (!tgz) {
     record("tarball produced", false, "run `pnpm build` first");
   } else {

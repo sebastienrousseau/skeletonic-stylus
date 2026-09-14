@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:b627b5e7-42fb-46ea-b81e-9f5872cd538b",
+  "serialNumber": "urn:uuid:a9b5bac7-ad54-400c-a846-1787c66befa4",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-14T13:24:16.980Z",
+    "timestamp": "2026-09-14T19:37:21.266Z",
     "tools": [
       {
         "vendor": "Skeletonic Stylus",
@@ -41,11 +41,11 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "2f800f1830a47f355935be97bff4bb1e927581593826dd6e920271d6d05e8c89"
+          "content": "2e48dfc379247abaf7be8b3a1388efed1b2c2040e4be4fc8d94ea59d78237123"
         },
         {
           "alg": "SHA-512",
-          "content": "3e62491b2e2692bd25569fd019a0ce8cdb8fbe58186b828808d87cf2b17b1bdad8780d8215ea33b14969f9b3840e66f6a604e56ddae0a422181b35f453be1481"
+          "content": "a15e3edb5c89fdb8d2bd5963fee7fa741b1f420b3779e84c498936d4af8d200960772dca46fa50d3085884bf5418b642743976d8d1adacd92b9666988e2f1f45"
         }
       ]
     }

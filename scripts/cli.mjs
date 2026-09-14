@@ -105,7 +105,7 @@ function listComponents() {
   const dir = componentsDir();
   if (!dir) return [];
   return readdirSync(dir)
-    .filter((f) => f.endsWith(".styl"))
+    .filter((f) => f.endsWith(".styl") && !f.startsWith("_"))
     .map((f) => f.replace(/\.styl$/, ""))
     .sort();
 }
