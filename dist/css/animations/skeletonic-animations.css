@@ -52,7 +52,22 @@
   .vanishOut,
   .wobble,
   .zoomIn,
-  .zoomOut {
+  .zoomOut,
+  .hingeInFromBottom,
+  .hingeInFromLeft,
+  .hingeInFromMiddleX,
+  .hingeInFromMiddleY,
+  .hingeInFromRight,
+  .hingeInFromTop,
+  .hingeOutToBottom,
+  .hingeOutToLeft,
+  .hingeOutToRight,
+  .hingeOutToTop,
+  .spinIn,
+  .spinInCCW,
+  .spinOut,
+  .spinOutCCW,
+  .wiggle {
     animation-fill-mode: both;
   }
   .bounce,
@@ -95,7 +110,22 @@
   .vanishOut,
   .wobble,
   .zoomIn,
-  .zoomOut {
+  .zoomOut,
+  .hingeInFromBottom,
+  .hingeInFromLeft,
+  .hingeInFromMiddleX,
+  .hingeInFromMiddleY,
+  .hingeInFromRight,
+  .hingeInFromTop,
+  .hingeOutToBottom,
+  .hingeOutToLeft,
+  .hingeOutToRight,
+  .hingeOutToTop,
+  .spinIn,
+  .spinInCCW,
+  .spinOut,
+  .spinOutCCW,
+  .wiggle {
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
   }
@@ -147,7 +177,22 @@
   .vanishOut,
   .wobble,
   .zoomIn,
-  .zoomOut {
+  .zoomOut,
+  .hingeInFromBottom,
+  .hingeInFromLeft,
+  .hingeInFromMiddleX,
+  .hingeInFromMiddleY,
+  .hingeInFromRight,
+  .hingeInFromTop,
+  .hingeOutToBottom,
+  .hingeOutToLeft,
+  .hingeOutToRight,
+  .hingeOutToTop,
+  .spinIn,
+  .spinInCCW,
+  .spinOut,
+  .spinOutCCW,
+  .wiggle {
     animation-iteration-count: 1;
   }
   .chameleonbackground,
@@ -10142,6 +10187,81 @@
       transform: translate3d(0, 0, 0);
     }
   }
+  .wiggle {
+    animation-name: wiggle;
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-7deg);
+    }
+    40% {
+      transform: rotate(7deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    80% {
+      transform: rotate(4deg);
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-7deg);
+    }
+    40% {
+      transform: rotate(7deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    80% {
+      transform: rotate(4deg);
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-7deg);
+    }
+    40% {
+      transform: rotate(7deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    80% {
+      transform: rotate(4deg);
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-7deg);
+    }
+    40% {
+      transform: rotate(7deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    80% {
+      transform: rotate(4deg);
+    }
+  }
   .fadeIn {
     animation-name: fadeIn;
   }
@@ -10983,6 +11103,446 @@
       transform: perspective(400px) rotate3d(0, 1, 0, 90.16deg);
     }
   }
+  .hingeInFromTop {
+    animation-name: hingeInFromTop;
+    transform-origin: top;
+  }
+  @keyframes hingeInFromTop {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromTop {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromTop {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromTop {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  .hingeInFromBottom {
+    animation-name: hingeInFromBottom;
+    transform-origin: bottom;
+  }
+  @keyframes hingeInFromBottom {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromBottom {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromBottom {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromBottom {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  .hingeInFromLeft {
+    animation-name: hingeInFromLeft;
+    transform-origin: left;
+  }
+  @keyframes hingeInFromLeft {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromLeft {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromLeft {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromLeft {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  .hingeInFromRight {
+    animation-name: hingeInFromRight;
+    transform-origin: right;
+  }
+  @keyframes hingeInFromRight {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromRight {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromRight {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromRight {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  .hingeInFromMiddleX {
+    animation-name: hingeInFromMiddleX;
+    transform-origin: center;
+  }
+  @keyframes hingeInFromMiddleX {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromMiddleX {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromMiddleX {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  @keyframes hingeInFromMiddleX {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+  }
+  .hingeInFromMiddleY {
+    animation-name: hingeInFromMiddleY;
+    transform-origin: center;
+  }
+  @keyframes hingeInFromMiddleY {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromMiddleY {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromMiddleY {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  @keyframes hingeInFromMiddleY {
+    from {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+  }
+  .hingeOutToTop {
+    animation-name: hingeOutToTop;
+    transform-origin: top;
+  }
+  @keyframes hingeOutToTop {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+  }
+  @keyframes hingeOutToTop {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+  }
+  @keyframes hingeOutToTop {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+  }
+  @keyframes hingeOutToTop {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(-90deg);
+    }
+  }
+  .hingeOutToBottom {
+    animation-name: hingeOutToBottom;
+    transform-origin: bottom;
+  }
+  @keyframes hingeOutToBottom {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+  }
+  @keyframes hingeOutToBottom {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+  }
+  @keyframes hingeOutToBottom {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+  }
+  @keyframes hingeOutToBottom {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateX(90deg);
+    }
+  }
+  .hingeOutToLeft {
+    animation-name: hingeOutToLeft;
+    transform-origin: left;
+  }
+  @keyframes hingeOutToLeft {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+  }
+  @keyframes hingeOutToLeft {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+  }
+  @keyframes hingeOutToLeft {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+  }
+  @keyframes hingeOutToLeft {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(90deg);
+    }
+  }
+  .hingeOutToRight {
+    animation-name: hingeOutToRight;
+    transform-origin: right;
+  }
+  @keyframes hingeOutToRight {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+  }
+  @keyframes hingeOutToRight {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+  }
+  @keyframes hingeOutToRight {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+  }
+  @keyframes hingeOutToRight {
+    from {
+      opacity: 1;
+      transform: perspective(2000px) rotateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(2000px) rotateY(-90deg);
+    }
+  }
   .popIn {
     animation-name: popIn;
   }
@@ -11231,6 +11791,178 @@
     }
     to {
       transform: rotate(0deg);
+    }
+  }
+  .spinIn {
+    animation-name: spinIn;
+  }
+  @keyframes spinIn {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes spinIn {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes spinIn {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  @keyframes spinIn {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  .spinOut {
+    animation-name: spinOut;
+  }
+  @keyframes spinOut {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOut {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOut {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOut {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(360deg) scale(0.7);
+    }
+  }
+  .spinInCCW {
+    animation-name: spinInCCW;
+  }
+  @keyframes spinInCCW {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes spinInCCW {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes spinInCCW {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  @keyframes spinInCCW {
+    from {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-360deg) scale(1);
+    }
+  }
+  .spinOutCCW {
+    animation-name: spinOutCCW;
+  }
+  @keyframes spinOutCCW {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(-360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOutCCW {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(-360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOutCCW {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(-360deg) scale(0.7);
+    }
+  }
+  @keyframes spinOutCCW {
+    from {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotate(-360deg) scale(0.7);
     }
   }
   .slideInDown {
@@ -11740,6 +12472,128 @@
       opacity: 0;
       transform: scale3d(0.62, 0.62, 0.62);
     }
+  }
+  .linear {
+    animation-timing-function: linear;
+  }
+  .ease {
+    animation-timing-function: ease;
+  }
+  .ease-in,
+  .easeIn {
+    animation-timing-function: ease-in;
+  }
+  .ease-out,
+  .easeOut {
+    animation-timing-function: ease-out;
+  }
+  .ease-in-out,
+  .easeInOut {
+    animation-timing-function: ease-in-out;
+  }
+  .bounce-in,
+  .bounceIn {
+    animation-timing-function: cubic-bezier(0.48, 1.75, 0.42, 0.88);
+  }
+  .bounce-out,
+  .bounceOut {
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .bounce-in-out,
+  .bounceInOut {
+    animation-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  }
+  .fast {
+    animation-duration: 0.3s;
+  }
+  .slow {
+    animation-duration: 1.5s;
+  }
+  .duration-100 {
+    animation-duration: 0.1s;
+  }
+  .duration-200 {
+    animation-duration: 0.2s;
+  }
+  .duration-300 {
+    animation-duration: 0.3s;
+  }
+  .duration-500 {
+    animation-duration: 0.5s;
+  }
+  .duration-700 {
+    animation-duration: 0.7s;
+  }
+  .duration-1000 {
+    animation-duration: 1s;
+  }
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  .delay-700 {
+    animation-delay: 0.7s;
+  }
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+  .stagger > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .stagger > *:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .stagger > *:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .stagger > *:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .stagger > *:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .stagger > *:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  .stagger > *:nth-child(7) {
+    animation-delay: 0.35s;
+  }
+  .stagger > *:nth-child(8) {
+    animation-delay: 0.4s;
+  }
+  .infinite {
+    animation-iteration-count: infinite;
+  }
+  .once {
+    animation-iteration-count: 1;
+  }
+  .paused,
+  .is-paused {
+    animation-play-state: paused;
+  }
+  .running,
+  .is-animating {
+    animation-play-state: running;
+  }
+  .fill-forwards {
+    animation-fill-mode: forwards;
+  }
+  .fill-backwards {
+    animation-fill-mode: backwards;
+  }
+  .fill-both {
+    animation-fill-mode: both;
+  }
+  .fill-none {
+    animation-fill-mode: none;
   }
 }
 

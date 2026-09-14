@@ -1,0 +1,22 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Hinge In From Middle X Animation (Motion UI) */
+@keyframes hingeInFromMiddleX
+  from
+    opacity: 0
+    transform: perspective(2000px) rotateX(-90deg)
+
+  to
+    opacity: 1
+    transform: perspective(2000px) rotateX(0)
+
+.hingeInFromMiddleX
+  animation-name: hingeInFromMiddleX
+  transform-origin: center
+/* @end */

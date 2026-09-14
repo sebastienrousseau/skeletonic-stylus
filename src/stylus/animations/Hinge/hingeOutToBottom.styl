@@ -1,0 +1,22 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Hinge Out To Bottom Animation (Motion UI) */
+@keyframes hingeOutToBottom
+  from
+    opacity: 1
+    transform: perspective(2000px) rotateX(0)
+
+  to
+    opacity: 0
+    transform: perspective(2000px) rotateX(90deg)
+
+.hingeOutToBottom
+  animation-name: hingeOutToBottom
+  transform-origin: bottom
+/* @end */

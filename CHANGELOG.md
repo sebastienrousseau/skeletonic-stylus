@@ -38,6 +38,12 @@ project adheres to
   - `tabs`: Accessible tab lists, active pill triggers, underline variant, and tab panels.
   - `toast`: Non-intrusive notification toasts with title, description, actions, and status borders.
   - `toggle-group`: Single and multi-selection toggle button bars.
+- **Motion UI Animations & Modifiers Suite**: Integrated transition and animation system inspired by Foundation Motion UI:
+  - **Hinge Transitions**: 10 3D perspective hinge animations (`hingeInFromTop`, `hingeInFromBottom`, `hingeInFromLeft`, `hingeInFromRight`, `hingeInFromMiddleX`, `hingeInFromMiddleY`, `hingeOutToTop`, `hingeOutToBottom`, `hingeOutToLeft`, `hingeOutToRight`).
+  - **Rotating Spins**: `spinIn`, `spinOut`, `spinInCCW`, `spinOutCCW` combining rotation with scale and fade.
+  - **Wiggle**: Classic rotational rocking animation (`.wiggle`).
+  - **Motion Modifiers**: Comprehensive easing classes (`.linear`, `.ease`, `.easeIn`, `.easeOut`, `.easeInOut`, `.bounceIn`, `.bounceOut`, `.bounceInOut`), speed/duration classes (`.fast`, `.slow`, `.duration-100`..`1000`), delay classes (`.delay-100`..`1000`), child stagger sequence (`.stagger`), play states (`.paused`, `.running`, `.is-animating`), and fill modes.
+
 
 **Security**
 
