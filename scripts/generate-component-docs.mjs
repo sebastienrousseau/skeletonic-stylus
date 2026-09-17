@@ -20,7 +20,7 @@ import { mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { categories, components } from "./components-manifest.mjs";
+import { categories, components, guides } from "./components-manifest.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const stylusDir = join(root, "src/stylus/components");
@@ -73,9 +73,11 @@ const escapeHtml = s =>
 /** YAML-safe double-quoted scalar. */
 const yamlString = s => `"${s.replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`;
 
+const pages = [...components, ...guides];
+
 const byCategory = categories.map(cat => ({
   ...cat,
-  items: components.filter(c => c.category === cat.slug).sort((a, b) => a.name.localeCompare(b.name)),
+  items: pages.filter(c => c.category === cat.slug).sort((a, b) => a.name.localeCompare(b.name)),
 }));
 
 /**
@@ -160,7 +162,7 @@ ${sidebar(component.slug)}
   <header class="docs-header">
     <h1>${escapeHtml(component.name)}</h1>
     <p class="docs-tagline">${escapeHtml(component.tagline)}</p>
-    <p class="docs-source">Source: <code>src/stylus/components/${component.slug}.styl</code></p>
+    <p class="docs-source">Source: <code>${component.source ?? `src/stylus/components/${component.slug}.styl`}</code></p>
   </header>
 ${examplesHtml(component)}
 </article>
@@ -227,11 +229,11 @@ ${groups}
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
-for (const component of components) {
+for (const component of [...components, ...guides]) {
   writeFileSync(join(outDir, `${component.slug}.md`), page(component), "utf8");
 }
 writeFileSync(join(outDir, "index.md"), indexPage(), "utf8");
 
 console.log(
-  `generate-component-docs: wrote ${components.length} component pages + index (all ${onDisk.size} library components documented).`,
+  `generate-component-docs: wrote ${components.length} component pages + ${guides.length} guide(s) + index (all ${onDisk.size} library components documented).`,
 );

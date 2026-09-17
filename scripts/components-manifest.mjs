@@ -760,3 +760,47 @@ export const components = [
     ],
   },
 ];
+
+/**
+ * Reference pages for API that is not a component.
+ *
+ * `components` is validated one-to-one against src/stylus/components/. The
+ * utilities live in src/stylus/base/ and src/stylus/elements/ and have no
+ * stylesheet of their own to match, so they are listed here instead — but they
+ * still need documenting, because an undocumented utility is one nobody uses.
+ */
+export const guides = [
+  {
+    slug: "utilities",
+    name: "Utilities",
+    category: "layout",
+    tagline: "Layout, spacing and alignment helpers on the golden-ratio scale.",
+    source: "src/stylus/base/helpers.styl, src/stylus/elements/padding.styl",
+    examples: [
+      {
+        title: "Flex",
+        description:
+          "<code>.flex</code> makes a row; <code>.flex-column</code>, <code>.flex-wrap</code>, <code>.flex-middle</code> (align), <code>.flex-between</code> and <code>.flex-center</code> (justify) adjust it.",
+        markup: `<div class="flex flex-middle flex-between padding-md">
+  <span class="badge primary">Left</span>
+  <span class="badge secondary">Right</span>
+</div>`,
+      },
+      {
+        title: "Gap",
+        description:
+          "<code>.gap-xs</code> through <code>.gap-xxl</code> space the children of a flex or grid container, on the same golden-ratio scale as padding and margin: .382, .618, 1, 1.618, 2.618 and 4.236rem. <code>.gap-x-*</code> and <code>.gap-y-*</code> set one axis; <code>.gap-0</code> removes it.",
+        markup: `<div class="flex gap-xs"><span class="badge">xs</span><span class="badge">xs</span></div>
+<div class="flex gap-md"><span class="badge">md</span><span class="badge">md</span></div>
+<div class="flex gap-xl"><span class="badge">xl</span><span class="badge">xl</span></div>`,
+      },
+      {
+        title: "Padding and margin",
+        description:
+          "<code>.padding-*</code>, <code>.px-*</code>, <code>.py-*</code>, <code>.pt-*</code>, <code>.pb-*</code> and the matching <code>.margin-*</code>, <code>.mt-*</code>, <code>.mb-*</code> use the same six steps. <code>.p-0</code> and <code>.m-0</code> reset.",
+        markup: `<div class="card padding-sm">padding-sm</div>
+<div class="card padding-lg">padding-lg</div>`,
+      },
+    ],
+  },
+];

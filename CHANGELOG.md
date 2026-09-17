@@ -12,6 +12,9 @@ project adheres to
 
 **Added**
 
+- **A `Utilities` reference page** documenting the flex, gap, padding and margin
+  helpers. The `.gap-*` utilities below are new API, and an undocumented utility
+  is one nobody uses.
 - **`.gap-*` utilities** on the same golden-ratio scale as the padding and
   margin utilities. Without them there was no way to space the children of a
   `.flex` or grid container except an inline `style` attribute, which any
@@ -67,6 +70,11 @@ project adheres to
   name, matching dropdown and popover.
 - **`.command-shortcut` failed 4.5:1 in dark mode**; it moves one step along the
   grey ramp, which raises contrast in both schemes.
+- **The showcase mixed two colour systems.** The vendored theme carries its own
+  hex palette with no relationship to the library's OKLCH tokens, so a blue
+  theme button in the header sat beside a teal library button in the example
+  under it. The theme's tokens now derive from the library's, which is the
+  palette a site about the library should be showing.
 - **Site navigation dead-ended on every page but the landing one.** The header
   and footer links were fragment-only (`#overview`), which resolve against the
   current page; once the site had more than one page they pointed at anchors

@@ -173,3 +173,29 @@ button.card {
   width: 100%;
   transform: none;
 }
+
+/* ---------------------------------------------------------------------------
+ * One palette.
+ *
+ * The vendored theme ships its own hex palette — `--primary: #1641bd` in light,
+ * `#69adff` in dark — with no relationship to the library's OKLCH tokens. The
+ * page therefore mixed two colour systems: a blue theme button in the header
+ * beside a teal library button in the example below it, with nothing tying them
+ * together.
+ *
+ * On a site whose entire purpose is to show the library, the library's palette
+ * is the one that should win. Mapping the theme's tokens onto it makes the page
+ * a single system, and costs nothing at runtime — `light-dark()` already
+ * resolves per scheme, so the theme's separate light and dark blocks are no
+ * longer needed to keep the accent in step.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --primary: var(--cl-primary);
+  /* Hover moves toward the far end of the grey ramp, which is dark in light
+     mode and light in dark mode — conventional in both without a second rule. */
+  --primary-hover: color-mix(in oklch, var(--cl-primary) 80%, var(--cl-grey-1000));
+  --primary-ink: light-dark(var(--cl-white), var(--cl-black));
+  --primary-glow: color-mix(in srgb, var(--cl-primary) 25%, transparent);
+  --accent: var(--cl-secondary);
+}
