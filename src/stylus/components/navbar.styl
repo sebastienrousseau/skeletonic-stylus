@@ -122,7 +122,15 @@ input[type="checkbox"]:checked
   & ~ #sidebar
     transform: translateX(0)
 
-input[type=checkbox]
+// Scoped to the checkbox that actually drives the sidebar.
+//
+// This was a bare `input[type=checkbox]`, which hid *every* checkbox on the
+// page — the library's own `.toggle` element included, and any plain checkbox
+// in a consumer's markup. Specificity did not save them: this rule lives in
+// `@layer skeletonic.components`, which is declared after
+// `@layer skeletonic.elements`, and a later layer wins whatever the selector
+// weight. `:has()` narrows it to the control that owns a `#sidebar` sibling.
+input[type=checkbox]:has(~ #sidebar)
   box-sizing: border-box
   display: none
   transition: all .3s

@@ -104,7 +104,10 @@ button, .button, [type=submit]
 
   &.error
     background: var(--cl-danger)
-    color: var(--cl-white)
+    // --cl-danger is dark in light mode but light in dark mode, so a fixed
+    // white label clears 4.5:1 in one scheme and fails it in the other. Same
+    // treatment as `.secondary` above.
+    color: light-dark(var(--cl-white), var(--cl-black))
     &:hover
       background-color: adjust(rgba(255, 59, 48, 1), 'lightness', -33%)
 

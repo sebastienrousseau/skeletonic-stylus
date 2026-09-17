@@ -8,8 +8,20 @@
 
 /* @group Clipboard */
 
+// A positioning context around the block being copied.
+//
+// This used to be `float: inline-end` with the button absolutely positioned
+// inside it. A floated box whose only child is absolutely positioned has zero
+// width, so `inset-inline-end` measured from an empty edge and pushed the
+// button off the start of the viewport on narrow screens. Wrapping the block
+// instead gives the button something real to sit in the corner of.
+//
+// Usage:
+//   <div class="bd-clipboard">
+//     <button class="button-clipboard">Copy</button>
+//     <pre><code>...</code></pre>
+//   </div>
 .bd-clipboard
-  float: inline-end
   position: relative
 
 .button-clipboard
