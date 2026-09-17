@@ -67,3 +67,25 @@
   [popover].popover,
   .popover-content
     transition: none
+
+// Anchor positioning, on the popover form only.
+//
+// `.popover-content` shares the appearance rules above but is an in-flow panel,
+// so it must not be positioned against an anchor. Without this block the
+// popover kept `position: absolute` with no offsets and stayed wherever it sat
+// in the source — typically far below the control that opened it.
+//
+// Usage:
+//   <button class="popover-trigger" popovertarget="tip">Details</button>
+//   <div id="tip" popover class="popover">...</div>
+[popover].popover
+  position-anchor: --popover-anchor
+  top: anchor(bottom)
+  left: anchor(start)
+  transform: translateY(.5rem)
+  @starting-style
+    transform: translateY(0) scale(.96)
+
+// The trigger half of the anchor pair.
+.popover-trigger
+  anchor-name: --popover-anchor

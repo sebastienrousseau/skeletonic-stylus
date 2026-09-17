@@ -81,3 +81,11 @@ nav.pagination,
     user-select: none
 
 /* @end */
+
+// Opt out of the uppercase label set on the `button` element in
+// elements/button.styl. These are buttons for semantics — operable, in the tab
+// order — but they read as page numbers, and shouting them is wrong.
+.pagination-link,
+.pagination-prev,
+.pagination-next
+  text-transform: none

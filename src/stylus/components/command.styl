@@ -109,3 +109,9 @@ dialog.command
 @media (prefers-reduced-motion: reduce)
   dialog.command
     transition: none
+
+// Opt out of the uppercase label set on the `button` element in
+// elements/button.styl. These are buttons for semantics — operable, in the tab
+// order — but they read as menu entries, and shouting them is wrong.
+.command-item
+  text-transform: none

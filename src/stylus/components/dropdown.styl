@@ -44,3 +44,16 @@
   transition: opacity .2s ease, transform .2s ease, display .2s ease allow-discrete
 
 /* @end */
+
+// The trigger half of the anchor pair.
+//
+// `position-anchor: --dropdown-anchor` above needs some element to declare that
+// name; nothing did, so every dropdown fell back to the top layer's default
+// placement — floating far from the button that opened it. Put this class on
+// the control that owns the menu.
+//
+// Usage:
+//   <button class="dropdown-trigger" popovertarget="menu">Actions</button>
+//   <div id="menu" popover class="dropdown">...</div>
+.dropdown-trigger
+  anchor-name: --dropdown-anchor
