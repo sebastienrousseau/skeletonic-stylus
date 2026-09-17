@@ -14,7 +14,6 @@
 // <div id="my-tip" popover anchor="my-btn" class="tooltip">Tooltip content</div>
 
 [popover].tooltip
-  anchor-name: --tooltip-anchor // Fallback/Internal
   background: var(--cl-black)
   border-radius: .25rem
   border: none
@@ -37,3 +36,12 @@
   transition: opacity .2s ease, transform .2s ease, display .2s ease allow-discrete
 
 /* @end */
+
+// The trigger half of the anchor pair.
+//
+// The tooltip used to declare `anchor-name` on itself as well as
+// `position-anchor`, which is circular: `anchor(bottom)` and `anchor(center)`
+// resolved against the tooltip's own box, so it never sat near the control that
+// opened it. The name belongs on the trigger.
+.tooltip-trigger
+  anchor-name: --tooltip-anchor

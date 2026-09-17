@@ -36,3 +36,32 @@ for name, val in $padding-spacings
     padding-bottom: val
 
 /* @end */
+
+/* @group Gaps */
+
+// Flex and grid gaps on the same golden-ratio scale as the padding and margin
+// utilities. Without these there is no way to space the children of a `.flex`
+// or grid container except an inline `style` attribute, which any consumer
+// shipping a `style-src 'self'` Content Security Policy — this project's own
+// showcase included — silently drops.
+$gap-spacings = {
+  xs: .382rem,
+  sm: .618rem,
+  md: 1rem,
+  lg: 1.618rem,
+  xl: 2.618rem,
+  xxl: 4.236rem
+}
+
+.gap-0
+  gap: 0
+
+for name, val in $gap-spacings
+  .gap-{name}
+    gap: val
+  .gap-x-{name}
+    column-gap: val
+  .gap-y-{name}
+    row-gap: val
+
+/* @end */

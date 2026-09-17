@@ -101,7 +101,10 @@ dialog.command
     pointer-events: none
 
 .command-shortcut
-  color: var(--cl-grey-500)
+  // grey-500 sits mid-ramp and fails 4.5:1 against the palette surface in dark
+  // mode. grey-600 is darker in light and lighter in dark, so it gains contrast
+  // on both.
+  color: var(--cl-grey-600)
   font-size: .75rem
   letter-spacing: .1em
   margin-left: auto
