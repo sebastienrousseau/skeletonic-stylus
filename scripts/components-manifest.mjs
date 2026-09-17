@@ -422,8 +422,8 @@ export const components = [
     examples: [
       {
         title: "Default",
-        description: 'The <code>popovertarget</code> attribute does the work; the browser handles the top layer and light dismiss.',
-        markup: `<button type="button" class="button secondary sm" popovertarget="doc-popover">Open popover</button>
+        description: 'The <code>popovertarget</code> attribute does the work; the browser handles the top layer and light dismiss. Put <code>.popover-trigger</code> on the control so the panel anchors beneath it.',
+        markup: `<button type="button" class="button secondary sm popover-trigger" popovertarget="doc-popover">Open popover</button>
 <div id="doc-popover" popover class="popover">
   <div class="popover-header">
     <h4 class="popover-title">Cascade layers</h4>
@@ -442,8 +442,8 @@ export const components = [
     examples: [
       {
         title: "Action menu",
-        description: "Items reuse <code>.command-item</code> so menus and palettes stay visually consistent.",
-        markup: `<button type="button" class="button secondary sm" popovertarget="doc-dropdown">Actions</button>
+        description: "Put <code>.dropdown-trigger</code> on the control that owns the menu — it declares the anchor the menu positions against. Items reuse <code>.command-item</code> so menus and palettes stay consistent.",
+        markup: `<button type="button" class="button secondary sm dropdown-trigger" popovertarget="doc-dropdown">Actions</button>
 <div id="doc-dropdown" popover class="dropdown">
   <button type="button" class="command-item">Duplicate</button>
   <button type="button" class="command-item">Archive</button>

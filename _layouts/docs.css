@@ -169,6 +169,11 @@
 .docs-preview > .tabs,
 .docs-preview > input[type="range"] {
   flex: 1 1 100%;
+  /* A flex item defaults to `min-width: auto`, which refuses to shrink below
+     its content. The carousel's track is wider than the page, so the item grew
+     to fit it and pushed past the viewport at every width instead of letting
+     the track scroll inside. */
+  min-width: 0;
 }
 
 .docs-preview .navbar {
@@ -266,14 +271,51 @@
 }
 
 /*
- * The syntax highlighter emits TextMate scope names as class names, and some of
- * them contain the word `block` — `<span class="meta tag block any html">`. The
- * library ships a `.block { display: block }` utility, which matched those
- * tokens and put `<`, `div` and the attributes on separate lines. Every token
- * inside a code sample is inline, whatever its scope happens to be called.
+ * The syntax highlighter emits TextMate scope names as class names, and three
+ * of them collide with real library classes: `block`, `separator` and `text`.
+ * A token called `<span class="punctuation separator key-value html">` was
+ * picking up the separator component — `height: 1px; width: 100%;
+ * background: var(--cl-grey-200)` — so every `=` in every sample rendered as a
+ * grey bar. `block` split tags across lines and `text` forced tokens to
+ * `height: 1rem; width: 100%`.
+ *
+ * Listing the three would be whack-a-mole: the highlighter's scope vocabulary
+ * and the library's class vocabulary are both open sets, and the next component
+ * named `.tag`, `.string` or `.comment` would collide silently. Everything the
+ * library could apply to a token is reverted here, except `color` — which is
+ * the highlighting itself, and the only thing these spans exist to carry.
  */
-.docs-main pre code span {
+.docs-main pre code span,
+.docs-main pre code span::before,
+.docs-main pre code span::after {
   display: inline;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  position: static;
+  transform: none;
+  animation: none;
+  transition: none;
+  float: none;
+  flex: none;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  text-decoration: none;
+  vertical-align: baseline;
+  opacity: 1;
+  visibility: visible;
+  content: normal;
 }
 
 /* The theme sizes h1 for a hero. A reference page is not a hero. */
@@ -287,4 +329,21 @@
 .docs-main .docs-index-group h2 {
   font-size: 1.375rem;
   line-height: 1.2;
+}
+
+/* Sidebar links are navigation, not prose: a visited entry turning purple made
+   the list look randomly coloured as you worked through the components. */
+.docs-sidebar a:link,
+.docs-sidebar a:visited {
+  color: var(--cl-link, currentColor);
+}
+
+.docs-sidebar a[aria-current="page"]:link,
+.docs-sidebar a[aria-current="page"]:visited {
+  color: inherit;
+}
+
+.docs-index-item a:link,
+.docs-index-item a:visited {
+  color: var(--cl-link, currentColor);
 }

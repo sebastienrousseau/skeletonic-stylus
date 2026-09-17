@@ -362,7 +362,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
       <div class="card text-left demo-card">
         <h3>Popover &amp; Dropdown</h3>
         <p class="card-description">Native <code>[popover]</code> surfaces in the top layer — no positioning library, no script.</p>
-        <button type="button" class="button secondary sm" popovertarget="demo-popover">Open popover</button>
+        <button type="button" class="button secondary sm popover-trigger" popovertarget="demo-popover">Open popover</button>
         <div id="demo-popover" popover class="popover">
           <div class="popover-header">
             <h4 class="popover-title">Cascade layers</h4>
@@ -370,7 +370,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           </div>
           <div class="popover-body">Override any token without a specificity fight.</div>
         </div>
-        <button type="button" class="button secondary sm" popovertarget="demo-dropdown">Open dropdown</button>
+        <button type="button" class="button secondary sm dropdown-trigger" popovertarget="demo-dropdown">Open dropdown</button>
         <div id="demo-dropdown" popover class="dropdown">
           <button type="button" class="command-item">Duplicate</button>
           <button type="button" class="command-item">Archive</button>
