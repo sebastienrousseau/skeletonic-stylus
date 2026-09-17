@@ -24,7 +24,7 @@
 .skeleton
   animation: skeleton-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite
   background-color: var(--cl-grey-200)
-  border-radius: .25rem
+  border-radius: var(--radius-sm)
   display: block
 
   // Shimmer wave variant
@@ -48,25 +48,25 @@
 
   &.avatar,
   &.skeleton-avatar
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
     flex-shrink: 0
     height: 2.5rem
     width: 2.5rem
 
   &.button,
   &.skeleton-button
-    border-radius: .38rem
+    border-radius: var(--radius-md)
     height: 2.25rem
     width: 6rem
 
   &.card,
   &.skeleton-card
-    border-radius: .5rem
+    border-radius: var(--radius-lg)
     height: 12rem
     width: 100%
 
   &.rounded-full
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
 
 @media (prefers-reduced-motion: reduce)
   .skeleton,

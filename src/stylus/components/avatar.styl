@@ -11,7 +11,7 @@
 .avatar
   align-items: center
   background-color: var(--cl-grey-100)
-  border-radius: 9999px
+  border-radius: var(--radius-pill)
   display: inline-flex
   flex-shrink: 0
   height: 2.5rem
@@ -40,7 +40,7 @@
 
   // Square / Rounded variant
   &.rounded
-    border-radius: .5rem
+    border-radius: var(--radius-lg)
 
   img,
   .avatar-image
@@ -64,7 +64,7 @@
   // Presence status indicator
   .avatar-status
     border: 2px solid var(--background-color)
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
     bottom: 0
     height: .75rem
     position: absolute

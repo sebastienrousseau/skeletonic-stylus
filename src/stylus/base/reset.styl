@@ -20,7 +20,11 @@ html
 body
   background-color: var(--background-color)
   color: var(--foreground-color)
-  font-family: 'Open Sans', sans-serif
+  // The host platform's own interface font. 'Open Sans' was hardcoded here even
+  // though the library ships it as an optional module, so the core could not be
+  // used without it and no consumer could opt out. Import the fonts module to
+  // get Open Sans back.
+  font-family: var(--font-system)
   font-size: var(--gr-fsb)
   font-weight: 400
   line-height: 1.5

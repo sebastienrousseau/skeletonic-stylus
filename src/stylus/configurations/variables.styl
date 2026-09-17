@@ -50,6 +50,36 @@
   // Golden ratio constants
   --gr: 1.62
 
+  /* ---------------------------------------------------------------------
+   * Design tokens.
+   *
+   * Radius had grown to 21 distinct values across the library — `.35rem`,
+   * `.375rem`, `.38rem`, `.3rem`, `.4rem` and `5px` all sat within a couple of
+   * pixels of each other, which is accretion rather than a scale. Components
+   * refer to these five instead, so the library's softness is one decision in
+   * one place.
+   * ------------------------------------------------------------------- */
+  --radius-sm: .375rem    // 6px  — badges, inline code, small chips
+  --radius-md: .625rem    // 10px — buttons, inputs, selects, menu items
+  --radius-lg: .875rem    // 14px — cards, popovers, dropdowns, toasts
+  --radius-xl: 1.25rem    // 20px — modals, sheets
+  --radius-pill: 62.4375rem
+
+  /* Control geometry. A control is 44px tall by default, the WCAG 2.5.8
+   * enhanced target size, and the small and large steps stay either side of it
+   * rather than each component inventing its own height. */
+  --control-height-sm: 2.125rem   // 34px
+  --control-height: 2.75rem       // 44px
+  --control-height-lg: 3.25rem    // 52px
+  --control-padding-x: 1.5rem
+  --control-padding-x-sm: 1rem
+  --control-padding-x-lg: 2rem
+
+  /* The system UI stack. Matches the host platform's own interface font, which
+   * is what makes an interface read as native rather than as a web page.
+   * 'Open Sans' remains available through the optional fonts module. */
+  --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+
   // Fluid Font Sizes
   --gr-fsb: $gr-fsb
   --gr-fsl: $gr-fsl

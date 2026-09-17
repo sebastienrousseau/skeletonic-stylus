@@ -15,7 +15,7 @@ button, .button, [type=submit]
   -highlight()
   background: var(--bg-disable)
   border: 0
-  border-radius: .375rem
+  border-radius: var(--radius-md)
   cursor: pointer
   display: inline-flex
   align-items: center
@@ -23,19 +23,17 @@ button, .button, [type=submit]
   font-family: inherit
   // 1rem base — the previous 1.62rem (≈ 26 px) was the cause of the
   // "huge buttons with label not fitting" bug. Pair with a 44 px
-  // touch target (WCAG 2.5.8 enhanced) and modest letter-spacing
-  // for the uppercase label.
+  // touch target (WCAG 2.5.8 enhanced). Labels are sentence case: an
+  // interface that shouts every action reads as a web page, not as an app.
   font-size: 1rem
   font-weight: 600
-  letter-spacing: .02em
   line-height: 1
   margin: 0
   min-width: 6rem
-  min-height: 2.75rem
-  padding: .75rem 1.25rem
+  min-height: var(--control-height)
+  padding: .75rem var(--control-padding-x)
   text-align: center
   text-decoration: none
-  text-transform: uppercase
   transition: background-color 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out
   user-select: none
   vertical-align: middle
@@ -156,7 +154,7 @@ button, .button, [type=submit]
   align-items: center
   background: var(--cl-primary)
   border: 0
-  border-radius: .3rem
+  border-radius: var(--radius-sm)
   // Same dark-mode swap as `.button.primary`: dark-mode --cl-primary
   // is a light blue and white on light blue fails AA (2.66 : 1).
   color: light-dark(var(--cl-white), var(--cl-black))
@@ -170,7 +168,6 @@ button, .button, [type=submit]
   position: relative
   text-align: center
   text-decoration: none
-  text-transform: uppercase
   transition: all 150ms linear
   user-select: none
   vertical-align: middle
@@ -185,7 +182,7 @@ button, .button, [type=submit]
     &:hover
       opacity: .9
   &-oval
-    border-radius: 61.25rem
+    border-radius: var(--radius-pill)
     min-width: 9rem
     &:hover
       opacity: .9

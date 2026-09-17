@@ -13,7 +13,7 @@ progress,
   appearance: none
   background-color: var(--cl-grey-100)
   border: none
-  border-radius: 9999px
+  border-radius: var(--radius-pill)
   display: block
   height: .5rem
   overflow: hidden
@@ -32,17 +32,17 @@ progress,
   // WebKit styling
   &::-webkit-progress-bar
     background-color: var(--cl-grey-100)
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
 
   &::-webkit-progress-value
     background-color: var(--cl-primary)
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
     transition: width .3s ease
 
   // Firefox styling
   &::-moz-progress-bar
     background-color: var(--cl-primary)
-    border-radius: 9999px
+    border-radius: var(--radius-pill)
     transition: width .3s ease
 
   // Color variants
