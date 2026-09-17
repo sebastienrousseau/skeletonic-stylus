@@ -1,0 +1,157 @@
+{{#extends "base"}}
+{{#block "main"}}
+<section id="hero" class="hero-section">
+  <div class="container hero-container text-center">
+    <!-- Prominent Official Skull Logo -->
+    <div class="hero-logo-wrapper mb-md">
+      <img src="{{site_path}}assets/logo.svg" alt="Skeletonic Stylus Official Skull Logo" class="hero-skull-logo" width="130" height="130" />
+    </div>
+
+    <div class="pill-badge">
+      <span class="pill-tag">NEW</span>
+      <span class="pill-text">v2.0.2 with 35 UI Primitives &middot; Motion UI Engine &middot; OKLCH Colors</span>
+    </div>
+
+    <h1 class="hero-title">{{headline}}</h1>
+    <p class="hero-lead">{{lead}}</p>
+
+    <div class="hero-cta-group">
+      <a class="btn btn-primary btn-lg" href="#quickstart">Quick Start</a>
+      <a class="btn btn-secondary btn-lg" href="https://github.com/sebastienrousseau/skeletonic-stylus" target="_blank" rel="noopener">Star on GitHub</a>
+    </div>
+
+    <!-- Authentic 4-Pane TMUX IDE Terminal Preview Grid (Voxt Signature Standard) -->
+    <figure id="ai-ide" class="terminal-preview-card" aria-label="Skeletonic Stylus 4-Pane Terminal IDE Preview">
+      <figcaption class="terminal-header">
+        <div class="window-dots">
+          <span class="dot dot-red" aria-hidden="true"></span>
+          <span class="dot dot-yellow" aria-hidden="true"></span>
+          <span class="dot dot-green" aria-hidden="true"></span>
+        </div>
+        <div class="terminal-tab-bar font-mono">
+          <span class="tmux-win-badge">[skeletonic]</span>
+          <span class="tab-item active-tab">0:components* (35)</span>
+          <span class="tab-item">1:forms</span>
+          <span class="tab-item">2:motion-ui</span>
+        </div>
+        <div class="terminal-actions">
+          <span class="badge-status font-mono">&bull; Stylus 2.0 Edition 2026 (Prefix + i)</span>
+        </div>
+      </figcaption>
+
+      <div class="tmux-grid">
+        <!-- Pane 1: Component Explorer (Left 20%) -->
+        <div class="tmux-pane pane-explorer font-mono">
+          <div class="pane-header">
+            <span class="pane-title">1: Primitives (35)</span>
+            <span class="pane-badge">src/stylus</span>
+          </div>
+          <div class="pane-content explorer-content text-left">
+            <div class="tree-node dir">&blacktriangledown; components/</div>
+            <div class="tree-node file active">&blacktriangleright; input-otp.styl</div>
+            <div class="tree-node file">&nbsp;&nbsp;select.styl</div>
+            <div class="tree-node file">&nbsp;&nbsp;switch.styl</div>
+            <div class="tree-node file">&nbsp;&nbsp;sheet.styl</div>
+            <div class="tree-node file">&nbsp;&nbsp;command.styl</div>
+            <div class="tree-node dir">&blacktriangledown; animations/</div>
+            <div class="tree-node file">&nbsp;&nbsp;hingeInFromTop.styl</div>
+            <div class="tree-node file">&nbsp;&nbsp;spinIn.styl</div>
+          </div>
+        </div>
+
+        <!-- Center Column: Pane 2 (Editor Top) + Pane 3 (Terminal Bottom) -->
+        <div class="tmux-center-col">
+          <!-- Pane 2: Editor (Stylus 2026 Engine) -->
+          <div class="tmux-pane pane-editor font-mono">
+            <div class="pane-header">
+              <span class="pane-title">2: Stylus Cascade Layers</span>
+              <span class="pane-file">src/stylus/skeletonic.styl</span>
+            </div>
+            <div class="pane-content editor-content text-left" tabindex="0" role="region" aria-label="Stylus Code Editor">
+              <pre class="editor-code font-mono"><code><span class="code-comment">// 2026 Native Cascade Layers &amp; OKLCH Color Engine</span>
+<span class="code-kw">@layer</span> <span class="code-fn">skeletonic.core</span>, <span class="code-fn">skeletonic.ui</span>, <span class="code-fn">skeletonic.motion</span>;
+
+<span class="code-kw">:root</span>
+  --cl-border: <span class="code-type">light-dark</span>(oklch(.84 .01 250), oklch(.32 .01 250))
+  --cl-ring:   <span class="code-type">light-dark</span>(oklch(.40 .20 250), oklch(.70 .16 250))
+
+<span class="code-fn">input[type="email"]</span>, <span class="code-fn">select</span>, <span class="code-fn">textarea</span>
+  border: 1px solid var(--cl-border)
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+  border-radius: .375rem</code></pre>
+            </div>
+          </div>
+
+          <!-- Pane 3: Integrated Shell / Test Runner -->
+          <div class="tmux-pane pane-terminal font-mono">
+            <div class="pane-header">
+              <span class="pane-title">3: Shell / Verification Gates</span>
+              <span class="pane-badge">idle</span>
+            </div>
+            <div class="pane-content terminal-content font-mono text-left" tabindex="0" role="region" aria-label="Integrated Terminal">
+              <div class="cli-line"><span class="mcp-tl-ps">$ </span>pnpm run verify &amp;&amp; pnpm audit --prod</div>
+              <div class="cli-out">&nbsp;&nbsp;&check; 18/18 pre-release gates passed &middot; 0 vulnerabilities</div>
+              <div class="cli-out cli-ok">test result: ok. 100% WCAG 2.2 AA compliant; 0 errors; 0 warnings</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 4: Live UI Preview (Right 24%) -->
+        <div class="tmux-pane pane-ai font-mono">
+          <div class="pane-header">
+            <span class="pane-title">4: Live UI Preview</span>
+            <span class="pane-badge ai-badge">Live Widget</span>
+          </div>
+          <div class="pane-content ai-content font-mono text-left" tabindex="0" role="region" aria-label="Live UI Preview Panel">
+            <div class="ai-prompt"><span class="ai-sym">&gt;</span> Preview: Account Settings</div>
+            <div class="ai-tool" style="margin-top: .5rem;">
+              <input type="email" value="alex@company.io" aria-label="Preview Email Input" style="height: 30px; background: var(--bg-card); color: var(--fg); border: 1px solid var(--border); border-radius: .25rem; padding: .25rem .5rem; font-size: .75rem; width: 100%; margin-bottom: .5rem; display: block; box-sizing: border-box;" readonly />
+              <span class="select-field" style="margin-bottom: .5rem;">
+                <select class="select sm" aria-label="Preview Framework Select" style="height: 30px; background: var(--bg-card); color: var(--fg); border: 1px solid var(--border); border-radius: .25rem; font-size: .75rem; width: 100%; display: block; box-sizing: border-box;">
+                  <option>Skeletonic 2.0</option>
+                </select>
+              </span>
+              <div class="flex flex-between flex-middle" style="font-size: .6875rem;">
+                <span>2FA Shield:</span>
+                <span class="badge-status">&bull; ACTIVE</span>
+              </div>
+            </div>
+            <div class="ai-res" style="margin-top: .5rem;">&check; Visible 1px border rendered</div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- Main Markdown Body Content Inserted by SSG -->
+{{!content}}
+
+<!-- Overlays and Dialogs -->
+<dialog id="demo-modal" class="modal">
+  <div class="modal-header">
+    <h3 class="bold text-lg">Native HTML5 Modal Standard</h3>
+  </div>
+  <p class="mb-lg text-sm opacity-80">
+    This modal renders in the top-layer using the native HTML5 &lt;dialog&gt; API and animates smoothly via @starting-style with zero JavaScript layering.
+  </p>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-sm" onclick="this.closest('dialog').close()">Close Dialog</button>
+  </div>
+</dialog>
+
+<dialog id="demo-sheet" class="sheet">
+  <div class="sheet-header">
+    <h3 class="sheet-title">Slide-In Sheet Drawer</h3>
+    <p class="sheet-description">Discrete display and transform transitions on HTML5 dialog.</p>
+  </div>
+  <div class="mb-lg">
+    <p class="text-sm opacity-80">This drawer slides smoothly from the right viewport edge. It includes backdrop dimming, touch safety, and keyboard escape trapping.</p>
+  </div>
+  <div class="sheet-footer">
+    <button type="button" class="btn btn-primary w-full btn-sm" onclick="this.closest('dialog').close()">Dismiss Drawer</button>
+  </div>
+</dialog>
+
+{{/block}}
+{{/extends}}

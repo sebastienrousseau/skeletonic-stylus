@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{language}}" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               base-uri 'self';
+               object-src 'none';
+               script-src 'self' 'unsafe-inline';
+               style-src 'self' 'unsafe-inline';
+               img-src 'self' data:;
+               font-src 'self';
+               connect-src 'self';
+               manifest-src 'self';"
+    />
+
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{permalink}}" />
+    <meta property="og:image" content="{{site_url}}images/screenshot.png" />
+    <meta property="og:image:width" content="1500" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="{{title}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:image" content="{{site_url}}images/screenshot.png" />
+
+    <link rel="canonical" href="{{permalink}}" />
+    <link rel="icon" href="{{site_path}}favicon.ico" sizes="any" />
+    <link rel="icon" href="{{site_path}}assets/logo.svg" type="image/svg+xml" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#090a0f" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "{{site_url}}#software",
+          "name": "{{name}}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Linux, macOS, Windows",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "{{description}}",
+          "softwareVersion": "v2.0.2",
+          "author": {
+            "@type": "Person",
+            "name": "{{author}}",
+            "url": "{{site_url}}"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "{{permalink}}#webpage",
+          "url": "{{permalink}}",
+          "name": "{{title}}",
+          "description": "{{description}}",
+          "inLanguage": "{{language}}"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Skeletonic Stylus library bundles. These are emitted by the Stylus
+         build, not by the generator, so they sit beside the theme stylesheet
+         rather than in it and must load first: the theme overrides them. -->
+    <link rel="stylesheet" href="{{site_path}}css/core/skeletonic.min.css" />
+    <link rel="stylesheet" href="{{site_path}}css/core/skeletonic-ui.min.css" />
+    <link rel="stylesheet" href="{{site_path}}css/animations/skeletonic-animations.min.css" />
+
+    <link rel="stylesheet" href="{{site_path}}styles.css" />
+    <link rel="stylesheet" href="{{site_path}}showcase.css" />
+
+    <script src="{{site_path}}theme-init.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    {{> header}}
+    <main id="main" role="main">
+      {{#block "main"}}{{/block}}
+    </main>
+    {{> footer}}
+    <script src="{{site_path}}main.js" defer></script>
+  </body>
+</html>

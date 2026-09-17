@@ -1,5 +1,7 @@
 # Exclude Directories and package
 dist
+public/
+.ssg*
 *.tgz
 debug
 package/

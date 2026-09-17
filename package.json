@@ -48,7 +48,7 @@
   },
   "scripts": {
     "// Build": " --- Build Scripts --- ",
-    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:copy:index && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
+    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:build:ssg && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
     "verify": "node ./scripts/verify-release.mjs",
     "verify:cdn": "PKG_VERSION=\"$npm_package_version\" node ./scripts/verify-cdn.mjs",
     "dev:emit:dist-package": "node ./scripts/emit-dist-package.mjs",
@@ -133,8 +133,8 @@
     "dev:filesizes:skeletonic-ui": "filesizes dist/css/core/ > dist/css/core/skeletonic-ui-report.txt",
     "// Skeletonic CSS Maintenance": " --- Development Scripts --- ",
     "dev:clean:directory": "rimraf dist debug",
+    "dev:build:ssg": "node ./scripts/build-ssg.mjs",
     "dev:copy:readme": "cp README.md dist/",
-    "dev:copy:index": "cp index.html dist/",
     "dev:copy:stylus": "cp -R src/stylus dist/",
     "dev:copy:cli": "mkdir -p dist/scripts && cp scripts/cli.mjs dist/scripts/cli.mjs && chmod +x dist/scripts/cli.mjs",
     "dev:filesizes:package": "filesizes dist/ > dist/filesize-report.txt",

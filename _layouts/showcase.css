@@ -1,0 +1,46 @@
+/* SPDX-License-Identifier: Apache-2.0 OR MIT */
+
+/*
+ * Skeletonic overrides for the Voxt theme.
+ *
+ * `_layouts/styles.css` is vendored byte-for-byte from the upstream theme so it
+ * can be re-pulled without a merge, which means nothing project-specific may go
+ * in it. This file holds the difference, and it is deliberately small.
+ *
+ * Most of it repairs one collision: the showcase loads the Skeletonic library
+ * as well as the theme, and both define `.btn` and style bare headings. The
+ * library ships inside `@layer skeletonic`, so an unlayered declaration here
+ * beats it whatever the specificity — but the theme's own rules are unlayered
+ * too, and they must keep winning. Every reset below is therefore wrapped in
+ * `:where()`, which contributes zero specificity: it only fills the gaps the
+ * theme left silent and the library filled in on its behalf.
+ */
+
+/* The library sets `text-transform: uppercase` on `.btn`. The theme's chrome —
+   header actions, hero calls to action, card footers — is written in sentence
+   case, and every `.btn` on this page comes from theme markup; the library's
+   own demo buttons use `.button`. */
+:where(.btn) {
+  text-transform: none;
+}
+
+/* The theme leaves these headings to inherit `html { line-height: 1.6 }` and
+   sets letter-spacing only where it wants it. The library declares both on bare
+   h2/h3/h4, which tightens theme headings it was never measured against. */
+:where(.section-title, .card h3, .footer-col h4) {
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+/* Hero mark. The theme's hero opens on a wide photograph; this showcase opens
+   on the project logo, so the figure is sized here rather than inline on the
+   element, which keeps the markup free of a style attribute. */
+.hero-logo-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.hero-skull-logo {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+}

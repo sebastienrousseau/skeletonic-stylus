@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Placeholder profile portrait">
+  <defs>
+    <linearGradient id="avatar-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#69adff"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <clipPath id="avatar-clip"><circle cx="50" cy="50" r="50"/></clipPath>
+  </defs>
+  <g clip-path="url(#avatar-clip)">
+    <rect width="100" height="100" fill="url(#avatar-bg)"/>
+    <circle cx="50" cy="38" r="17" fill="#f9fafb" opacity=".95"/>
+    <path d="M50 60c-18 0-32 11-35 27v13h70V87c-3-16-17-27-35-27z" fill="#f9fafb" opacity=".95"/>
+  </g>
+</svg>
