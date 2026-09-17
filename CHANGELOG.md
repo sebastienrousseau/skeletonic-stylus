@@ -29,6 +29,25 @@ project adheres to
 
 **Fixed**
 
+- **Every interactive demo on the showcase was inert.** The page ships a strict
+  `script-src 'self'` (cargo-ssg extracts inline `<script>` blocks to hashed
+  files under `_csp/`), and that policy refuses to compile inline event-handler
+  attributes. All six `onclick=` demos — the modal, the drawer, and all four
+  Motion UI cards — did nothing when clicked, silently. They are now wired
+  through delegated listeners in the extracted script, and the dialogs close via
+  `<form method="dialog">`, so the strict policy is kept rather than relaxed.
+- **The Motion UI cards were clickable `<div>`s**, unreachable by keyboard. They
+  are `<button>`s now.
+- **Demo cards had no vertical rhythm.** The theme's `.card` is a plain block
+  written for a heading and a paragraph; the showcase stacks several live
+  primitives inside one, so they sat flush against each other.
+- **Eleven primitives had no demo at all** despite the "35 Modern UI Primitives"
+  heading: popover, dropdown, command, loader, skeleton, empty, aspect-ratio and
+  navbar now have live demos in a new *Overlays, States & Layout Primitives*
+  section.
+- **`scripts/lint-content.mjs` false-positived inside `<script>`.** CommonMark
+  raw-text blocks (`<script>`, `<style>`, `<textarea>`) end at their closing tag,
+  not at a blank line, so blank lines there are harmless.
 - **RSS feed and sitemap entries were skipped entirely.** `content/index.md`
   declared `permalink: /`; cargo-ssg only derives an absolute permalink for a
   page that declares none, so `/` failed URL validation and took the feed's

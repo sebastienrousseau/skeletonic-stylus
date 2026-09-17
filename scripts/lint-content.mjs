@@ -23,11 +23,23 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith(".md"))) {
   const start = lines[0]?.trim() === "---" ? lines.indexOf("---", 1) + 1 : 0;
 
   let inPre = false;
+  // CommonMark HTML block type 1 — <script>, <style>, <textarea> — ends only at
+  // its closing tag. A blank line inside one is not a break, so flagging it is
+  // a false positive that pushes authors into contorting perfectly good code.
+  // <pre> is type 1 too, but a blank line there still changes what renders, so
+  // it keeps its own check below.
+  let inRawText = null;
+  const RAW_TEXT = ["script", "style", "textarea"];
+
   for (let i = start; i < lines.length; i += 1) {
     const line = lines[i];
     if (line.includes("<pre")) inPre = true;
+    if (inRawText === null) {
+      const opened = RAW_TEXT.find(t => line.includes(`<${t}`) && !line.includes(`</${t}>`));
+      if (opened) inRawText = opened;
+    }
 
-    if (line.trim() === "") {
+    if (line.trim() === "" && inRawText === null) {
       const next = lines[i + 1] ?? "";
       const indent = next.length - next.trimStart().length;
       if (inPre) {
@@ -37,6 +49,7 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith(".md"))) {
       }
     }
 
+    if (inRawText !== null && line.includes(`</${inRawText}>`)) inRawText = null;
     if (line.includes("</pre>")) inPre = false;
   }
 }
