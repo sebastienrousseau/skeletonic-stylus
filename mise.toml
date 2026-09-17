@@ -1,0 +1,13 @@
+# Tool versions for this repository.
+#
+# `ssg` (cargo-ssg) generates the showcase site during `pnpm build`. Without it
+# on PATH, scripts/build-ssg.mjs falls back to the committed index.html, which
+# references generated assets (styles.*.css, main.*.js, _csp/*) that the
+# fallback never produces — the page ships unstyled and the a11y gate fails.
+# CI installs it from this file via jdx/mise-action.
+#
+# Node is deliberately absent: .github/workflows/npm-publish.yml builds across a
+# Node 20/22/24 matrix, and pinning a version here would override that matrix.
+
+[tools]
+"cargo:ssg" = "0.0.63"

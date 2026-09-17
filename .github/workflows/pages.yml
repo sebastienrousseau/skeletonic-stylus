@@ -38,6 +38,14 @@ jobs:
       - name: Install Playwright Chromium for a11y test
         run: pnpm exec playwright install --with-deps chromium
 
+      # Installs `ssg` (cargo-ssg) pinned in mise.toml. Without it on PATH the
+      # build falls back to the committed index.html, whose generated assets the
+      # fallback never produces, and the a11y gate fails.
+      - name: Install ssg from mise.toml
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c  # v4.3.0
+        with:
+          cache: true
+
       - name: Build
         run: pnpm run build
 
