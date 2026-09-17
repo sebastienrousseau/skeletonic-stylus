@@ -27,7 +27,7 @@
 /* The theme leaves these headings to inherit `html { line-height: 1.6 }` and
    sets letter-spacing only where it wants it. The library declares both on bare
    h2/h3/h4, which tightens theme headings it was never measured against. */
-:where(.section-title, .card h3, .footer-col h4) {
+:where(.section-title, .card h3, .footer-col h3) {
   letter-spacing: inherit;
   line-height: inherit;
 }
@@ -128,4 +128,18 @@ button.card {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* The footer's column headings moved from h4 to h3 so a reference page — whose
+   deepest heading is h2 — does not skip a level on the way into the footer.
+   The theme styles them by tag at `.footer-col h4`, and styles.css is vendored
+   byte-for-byte, so the rule is restated here against the new tag rather than
+   edited upstream. */
+.footer-col h3 {
+  margin-bottom: 0.75rem;
+  color: var(--fg-subtle);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

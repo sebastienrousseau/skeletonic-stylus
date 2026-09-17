@@ -7,10 +7,10 @@
  */
 
 import { createServer } from "node:http";
-import { existsSync } from "node:fs";
+import { existsSync, readdirSync, statSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { dirname, extname, join, normalize, resolve } from "node:path";
+import { dirname, extname, join, normalize, relative, resolve, sep } from "node:path";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(here, "..");
@@ -226,22 +226,29 @@ const schemes = [{ name: "light", page }];
 const { context: darkContext, page: darkPage } = await openShowcase("dark");
 schemes.push({ name: "dark", page: darkPage });
 
+/**
+ * Runs the audit on whatever page each scheme is currently showing.
+ *
+ * `label` names the page in the output, because the reference is now dozens of
+ * pages and "1 violation type" is useless without knowing where.
+ */
+const auditCurrentPages = async label => {
 for (const scheme of schemes) {
   const results = await new AxeBuilder({ page: scheme.page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
     .analyze();
 
   if (results.violations.length > 0) {
-    console.error(`- ${scheme.name} theme: ${results.violations.length} violation type(s)`);
+    console.error(`- ${scheme.name} theme ${label}: ${results.violations.length} violation type(s)`);
     results.violations.forEach(v => {
       console.error(`- [${v.impact}] ${v.id}: ${v.help}`);
       v.nodes.slice(0, 1).forEach(n => console.error(`  at ${n.target.join(" ")}`));
     });
     exitCode = 1;
   } else if (results.incomplete.length === 0) {
-    console.log(`a11y-test: ${scheme.name} theme is 100% WCAG 2.2 compliant.`);
+    console.log(`a11y-test: ${scheme.name} ${label} is 100% WCAG 2.2 compliant.`);
   } else {
-    console.log(`a11y-test: ${scheme.name} theme has no WCAG 2.2 violations.`);
+    console.log(`a11y-test: ${scheme.name} ${label} has no WCAG 2.2 violations.`);
   }
 
   // Axe declines to rule on some nodes rather than passing or failing them:
@@ -251,7 +258,7 @@ for (const scheme of schemes) {
   // that cannot be measured, or that measures below the threshold, fails.
   for (const item of results.incomplete) {
     if (item.id !== "color-contrast") {
-      console.warn(`  ? ${scheme.name}: ${item.id} needs review (${item.nodes.length} node(s))`);
+      console.warn(`  ? ${scheme.name} ${label}: ${item.id} needs review (${item.nodes.length} node(s))`);
       item.nodes.slice(0, 3).forEach(n => console.warn(`      at ${n.target.join(" ")}`));
       if (item.nodes.length > 3) console.warn(`      ...and ${item.nodes.length - 3} more`);
       continue;
@@ -261,19 +268,56 @@ for (const scheme of schemes) {
       const target = node.target.join(" ");
       const measured = await measureContrast(scheme.page, target);
       if (!measured) {
-        console.error(`  [FAIL] ${scheme.name}: ${target} — contrast could not be measured`);
+        console.error(`  [FAIL] ${scheme.name} ${label}: ${target} — contrast could not be measured`);
         exitCode = 1;
         continue;
       }
       const { ratio, required, fg, bg } = measured;
       if (ratio + 0.005 < required) {
-        console.error(`  [FAIL] ${scheme.name}: ${target} — ${ratio.toFixed(2)}:1 (needs ${required}:1, ${fg} on ${bg})`);
+        console.error(`  [FAIL] ${scheme.name} ${label}: ${target} — ${ratio.toFixed(2)}:1 (needs ${required}:1, ${fg} on ${bg})`);
         exitCode = 1;
       } else {
-        console.log(`  [PASS] ${scheme.name}: ${target} — ${ratio.toFixed(2)}:1 (needs ${required}:1), measured directly`);
+        console.log(`  [PASS] ${scheme.name} ${label}: ${target} — ${ratio.toFixed(2)}:1 (needs ${required}:1), measured directly`);
       }
     }
   }
+}
+};
+
+await auditCurrentPages("/");
+
+// Every generated page is audited, not just the landing page. The component
+// reference is where the library's own markup is on display, so an unaudited
+// reference is the one place a contrast or target-size regression would hide.
+// The two contexts are reused and simply navigated, which keeps this to a
+// couple of seconds per page rather than a browser launch each time.
+const pagePaths = (function walk(dir) {
+  const found = [];
+  for (const entry of readdirSync(dir)) {
+    if (entry.startsWith(".")) continue;
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) found.push(...walk(full));
+    else if (entry === "index.html") {
+      const rel = relative(distDir, full).split(sep).join("/");
+      if (rel !== "index.html") found.push(`/${rel}`);
+    }
+  }
+  return found;
+})(distDir).sort();
+
+if (pagePaths.length > 0) {
+  console.log(`\na11y-test: auditing ${pagePaths.length} further page(s) in both schemes...`);
+  for (const path of pagePaths) {
+    for (const scheme of schemes) {
+      await scheme.page.goto(`${origin}${path}`, { waitUntil: "networkidle" });
+    }
+    await auditCurrentPages(path.replace(/index\.html$/, ""));
+  }
+}
+
+// Phases 2 and 3 assert on the landing page, so put it back.
+for (const scheme of schemes) {
+  await scheme.page.goto(`${origin}/index.html`, { waitUntil: "networkidle" });
 }
 
 await darkContext.close();

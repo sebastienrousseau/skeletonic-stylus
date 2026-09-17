@@ -144,6 +144,40 @@ if (existsSync(newsSitemap)) {
   console.log("fix-ssg-seo: dropped placeholder news-sitemap.xml (this site publishes no news).");
 }
 
+// Every generated page gets its own copy of the site-level SEO artefacts —
+// `<page>/sitemap.xml`, `robots.txt`, `rss.xml`, `news-sitemap.xml` — one set
+// per page. They are meaningless at a sub-path (a crawler reads robots.txt and
+// the sitemap from the origin root, not from /components/badge/), they carry
+// the same skipped-entry defects the root copies had, and with a page per
+// component there are now hundreds of them being published and shipped in the
+// npm tarball. Only the root copies are kept.
+const PER_PAGE_SEO = new Set(["sitemap.xml", "robots.txt", "rss.xml", "news-sitemap.xml", "manifest.json"]);
+
+function pruneNestedSeo(dir) {
+  let pruned = 0;
+  for (const entry of readdirSync(dir)) {
+    if (entry.startsWith(".")) continue;
+    const path = join(dir, entry);
+    if (statSync(path).isDirectory()) {
+      pruned += pruneNestedSeo(path);
+    } else if (PER_PAGE_SEO.has(entry)) {
+      rmSync(path);
+      pruned += 1;
+    }
+  }
+  return pruned;
+}
+
+let nestedPruned = 0;
+for (const entry of readdirSync(outputDir)) {
+  if (entry.startsWith(".")) continue;
+  const path = join(outputDir, entry);
+  if (statSync(path).isDirectory()) nestedPruned += pruneNestedSeo(path);
+}
+if (nestedPruned > 0) {
+  console.log(`fix-ssg-seo: pruned ${nestedPruned} per-page SEO artefact(s) from sub-paths.`);
+}
+
 // The feed's item link, guid and self link have to be written as absolute URLs
 // in front matter — cargo-ssg only derives them for a page that declares no
 // permalink at all, and this one does. That duplicates the domain outside
