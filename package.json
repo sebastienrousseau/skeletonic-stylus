@@ -48,7 +48,7 @@
   },
   "scripts": {
     "// Build": " --- Build Scripts --- ",
-    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:build:ssg && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && npm pack ./dist",
+    "build": "pnpm run dev:generate:skeletonic-library && pnpm run dev:copy:stylus && pnpm run dev:build:ssg && pnpm run dev:copy:readme && pnpm run dev:copy:cli && pnpm run dev:emit:sbom && pnpm run dev:emit:dist-package && pnpm run dev:size && pnpm run dev:a11y && pnpm run dev:layout && npm pack ./dist",
     "verify": "node ./scripts/verify-release.mjs",
     "verify:cdn": "PKG_VERSION=\"$npm_package_version\" node ./scripts/verify-cdn.mjs",
     "dev:emit:dist-package": "node ./scripts/emit-dist-package.mjs",
@@ -141,7 +141,8 @@
     "dev:format": "npx prettier --write \"*.md\" \"src/**/*.md\"",
     "dev:test:cli": "node --test scripts/test-cli.mjs",
     "// Production": " --- Production Scripts --- ",
-    "test": "pnpm run dev:lint:stylus && pnpm run dev:test:cli"
+    "test": "pnpm run dev:lint:stylus && pnpm run dev:test:cli",
+    "dev:layout": "node ./scripts/layout-audit.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
