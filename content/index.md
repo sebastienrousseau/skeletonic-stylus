@@ -68,11 +68,11 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
   <div class="container">
     <h2 class="section-title text-center">Interactive Dashboard &amp; Forms Showcase</h2>
     <p class="section-desc text-center">Crisp, visible form controls, custom selects, segmented OTP slots, and accessible toggles.</p>
-    <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+    <div class="demo-grid">
       <!-- Widget 1: Account Settings -->
       <div class="card text-left">
         <div class="card-header">
-          <div class="flex flex-middle" style="gap: .75rem;">
+          <div class="flex flex-middle gap-sm">
             <div class="avatar avatar-md">
               <img src="/assets/avatar.svg" alt="Portrait of Alex Morgan" width="100" height="100" />
               <span class="avatar-presence online" role="status" aria-label="Online"></span>
@@ -83,7 +83,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             </div>
           </div>
         </div>
-        <div class="card-content flex flex-column" style="gap: 1rem;">
+        <div class="card-content flex flex-column gap-md">
           <div>
             <label class="block mb-xs semibold text-xs" for="widget-email">Email Address</label>
             <input id="widget-email" type="email" value="alex.morgan@company.io" placeholder="name@company.com" />
@@ -109,7 +109,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             </label>
           </div>
         </div>
-        <div class="card-footer" style="margin-top: 1rem;">
+        <div class="card-footer mt-md">
           <button type="button" class="btn btn-primary btn-sm w-full">Save Changes</button>
         </div>
       </div>
@@ -119,7 +119,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           <h3 class="card-title">Security &amp; Preferences</h3>
           <p class="card-description">Custom accessible checkboxes, radios, and OTP pins.</p>
         </div>
-        <div class="card-content flex flex-column" style="gap: 1.25rem;">
+        <div class="card-content flex flex-column gap-md">
           <div>
             <span class="block mb-xs semibold text-xs">Two-Factor Authentication (OTP)</span>
             <div class="input-otp">
@@ -138,7 +138,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           </div>
           <div>
             <span class="block mb-xs semibold text-xs">Repository Sync Rules</span>
-            <div class="flex flex-column" style="gap: .75rem;">
+            <div class="flex flex-column gap-sm">
               <label class="checkbox-field">
                 <input type="checkbox" class="checkbox" id="check-sync" checked aria-label="Auto-sync with remote origin" />
                 <span class="text-xs">Auto-sync with remote origin</span>
@@ -178,7 +178,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             />
           </div>
         </div>
-        <div class="card-footer" style="margin-top: 1rem;">
+        <div class="card-footer mt-md">
           <button type="button" class="btn btn-secondary btn-sm w-full">Update Rules</button>
         </div>
       </div>
@@ -191,25 +191,23 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           </div>
           <p class="card-description">Telemetry, progress monitoring, and banners.</p>
         </div>
-        <div class="card-content flex flex-column" style="gap: 1.25rem;">
+        <div class="card-content flex flex-column gap-md">
           <div>
             <div class="flex flex-between flex-middle mb-xs text-xs">
               <span class="semibold">Cloud Storage Capacity</span>
               <span class="opacity-70">75% (750 MB / 1 GB)</span>
             </div>
-            <div class="progress" role="progressbar" aria-label="Cloud Storage Capacity" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar" style="width: 75%;"></div>
-            </div>
+            <progress class="progress" value="75" max="100" aria-label="Cloud Storage Capacity">75%</progress>
           </div>
-          <div class="alert alert-info mb-none" style="padding: 1rem;">
+          <div class="alert alert-info mb-none padding-md">
             <strong class="block mb-xs text-xs">Cascade Layers Active:</strong>
             <span class="text-xs">All bundles compiled under <code>@layer skeletonic.*</code> to isolate specificity.</span>
           </div>
-          <div class="toast show" style="position: static; transform: none; width: 100%;">
+          <div class="toast show demo-toast-inline">
             <div class="toast-title text-xs">Artifact Generated</div>
             <div class="toast-description text-xs">Production build packaged into <code>dist/</code> without errors.</div>
           </div>
-          <div class="flex flex-middle" style="gap: .75rem;">
+          <div class="flex flex-middle gap-sm">
             <div class="avatar avatar-sm">
               <span class="avatar-fallback text-xs">SR</span>
             </div>
@@ -219,7 +217,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             </div>
           </div>
         </div>
-        <div class="card-footer" style="margin-top: 1rem;">
+        <div class="card-footer mt-md">
           <button type="button" class="btn btn-secondary btn-sm w-full" data-dialog="demo-sheet">Open Side Drawer</button>
         </div>
       </div>
@@ -231,7 +229,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
   <div class="container">
     <h2 class="section-title text-center">35 Modern UI Primitives</h2>
     <p class="section-desc text-center">Every element complies with WCAG 2.2 AA accessibility and modern HTML5 specifications.</p>
-    <div class="grid-2x2" style="margin-top: 2rem;">
+    <div class="grid-2x2 mt-xl">
       <!-- Category 1: Navigation -->
       <div class="card text-left">
         <h3 class="card-title">Navigation &amp; Breadcrumbs</h3>
@@ -266,11 +264,11 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
       <div class="card text-left">
         <h3 class="card-title">Overlays &amp; Tooltips</h3>
         <p class="card-description mb-md">Zero-JS hover cards, tooltips, and top-layer dialogs.</p>
-        <div class="flex flex-wrap mb-md" style="gap: .75rem;">
+        <div class="flex flex-wrap mb-md gap-sm">
           <button type="button" class="btn btn-primary btn-sm" data-dialog="demo-modal">Launch Modal</button>
           <button type="button" class="btn btn-secondary btn-sm" data-dialog="demo-sheet">Slide Sheet</button>
         </div>
-        <div class="flex flex-middle mb-md" style="gap: 1.5rem;">
+        <div class="flex flex-middle mb-md gap-lg">
           <div class="hover-card">
             <a href="#" class="btn btn-outline btn-sm">@skeletonic-css</a>
             <div class="hover-card-content">
@@ -295,7 +293,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
       <div class="card text-left">
         <h3 class="card-title">Buttons, Groups &amp; Shortcuts</h3>
         <p class="card-description mb-md">Stateful buttons, segmented groups, and keyboard shortcuts.</p>
-        <div class="flex flex-wrap flex-middle mb-md" style="gap: .5rem;">
+        <div class="flex flex-wrap flex-middle mb-md gap-sm">
           <button type="button" class="btn btn-primary btn-sm">Primary</button>
           <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
           <button type="button" class="btn btn-outline btn-sm">Outline</button>
@@ -305,13 +303,13 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           <button type="button" class="button secondary sm">Monthly</button>
           <button type="button" class="button secondary sm">Annual</button>
         </div>
-        <div class="flex flex-between flex-middle flex-wrap" style="gap: 1rem;">
+        <div class="flex flex-between flex-middle flex-wrap gap-md">
           <div class="toggle-group">
             <button type="button" class="toggle active" aria-label="Bold"><b>B</b></button>
             <button type="button" class="toggle" aria-label="Italic"><i>I</i></button>
             <button type="button" class="toggle" aria-label="Underline"><u>U</u></button>
           </div>
-          <div class="flex flex-middle opacity-70 text-xs" style="gap: .375rem;">
+          <div class="flex flex-middle opacity-70 text-xs gap-xs">
             <span>Shortcuts:</span>
             <kbd class="kbd">⌘</kbd>
             <kbd class="kbd">S</kbd>
@@ -331,20 +329,20 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
         <div class="carousel carousel-cols-2 mb-md">
           <div class="carousel-content" tabindex="0" role="region" aria-label="Media carousel slides">
             <div class="carousel-item">
-              <div class="card padding-md bg-primary" style="border-radius: .5rem;">
+              <div class="card padding-md bg-primary demo-rounded">
                 <div class="bold text-xs mb-xs">Slide 1</div>
                 <p class="text-xs mb-none">Zero-JS scroll snapping.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="card padding-md bg-secondary" style="border-radius: .5rem;">
+              <div class="card padding-md bg-secondary demo-rounded">
                 <div class="bold text-xs mb-xs">Slide 2</div>
                 <p class="text-xs mb-none">Hardware acceleration.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="scroll-area radius" tabindex="0" role="region" aria-label="Changelog" style="height: 4.5rem; border: 1px solid var(--border); padding: .75rem;">
+        <div class="scroll-area radius demo-scroll-box" tabindex="0" role="region" aria-label="Changelog">
           <p class="text-xs opacity-70 mb-none">
             Skeletonic Stylus features custom scrollbars styled via <code>scrollbar-color</code> and <code>scrollbar-width: thin</code>.
           </p>
@@ -448,7 +446,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
   <div class="container text-center">
     <h2 class="section-title">Foundation Motion UI Engine</h2>
     <p class="section-desc">3D perspective hinges, rotational spins, and delightful micro-interactions.</p>
-    <div class="grid-2x2" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <div class="grid-2x2 mt-xl mb-xl">
       <button type="button" class="card anim-demo" data-anim="hingeInFromTop">
         <div class="bold text-xs mb-xs">.hingeInFromTop</div>
         <span class="text-xs opacity-60">3D Door Swing In</span>

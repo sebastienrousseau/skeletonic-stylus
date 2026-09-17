@@ -12,6 +12,14 @@ project adheres to
 
 **Added**
 
+- **`.gap-*` utilities** on the same golden-ratio scale as the padding and
+  margin utilities. Without them there was no way to space the children of a
+  `.flex` or grid container except an inline `style` attribute, which any
+  consumer shipping `style-src 'self'` silently drops.
+- **`scripts/css-validate.mjs`** checks every compiled declaration in a real
+  browser and fails the build on anything discarded at parse time or invalidated
+  after `var()` substitution. It is what found the two bugs above; 6,739
+  declarations now pass.
 - **A component reference at `/components/`**, one page per primitive, in the
   shape a CSS library's documentation needs: a category sidebar, and for each
   example prose, the component rendered live, and the exact markup to copy. The
@@ -40,6 +48,25 @@ project adheres to
 
 **Fixed**
 
+- **Eight custom properties were referenced but never defined.** `--cl-grey-600`,
+  `--cl-grey-700`, `--cl-grey-900`, `--cl-grey-1000`, `--cl-tertiary`,
+  `--bg-tertiary`, `--bg-disable` and `--font` had no declaration anywhere, so
+  the 21 rules using them were invalid at computed-value time and fell back to
+  their initial values. `button:link`, `button:active`, `button:disabled`, every
+  `hr` variant and `code.tertiary` had no background or border at all — in every
+  project consuming the library, not just this site.
+- **`.flex`, `.center`, `.stack` and `[flex]` had no gap.**
+  `gap: var(--gr)rem` compiles to `gap: var(--gr) rem`, and `--gr` is the
+  unitless number `1.62`, so the value resolved to `1.62 rem` — not a length.
+  The declaration was invalid at computed-value time and gap fell back to
+  `normal`. The library's primary layout helper has been silently spacing
+  nothing.
+- **Tooltips anchored to themselves.** `[popover].tooltip` declared both
+  `anchor-name` and `position-anchor` with the same ident, so `anchor(bottom)`
+  resolved against the tooltip's own box. `.tooltip-trigger` now carries the
+  name, matching dropdown and popover.
+- **`.command-shortcut` failed 4.5:1 in dark mode**; it moves one step along the
+  grey ramp, which raises contrast in both schemes.
 - **Site navigation dead-ended on every page but the landing one.** The header
   and footer links were fragment-only (`#overview`), which resolve against the
   current page; once the site had more than one page they pointed at anchors

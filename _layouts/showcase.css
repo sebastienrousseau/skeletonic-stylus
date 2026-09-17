@@ -143,3 +143,33 @@ button.card {
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+/* ---------------------------------------------------------------------------
+ * Demo-only presentation.
+ *
+ * These dress an example so it can be seen on a page; they are not library API
+ * and are deliberately named `demo-` so nobody copies them expecting a
+ * component. They exist as classes rather than inline styles because this site
+ * ships `style-src 'self'` with no `'unsafe-hashes'`, which drops every inline
+ * style attribute silently.
+ * ------------------------------------------------------------------------- */
+
+.demo-rounded {
+  border-radius: 0.5rem;
+}
+
+/* A scroll area needs a bounded height before it can scroll; the height is the
+   consumer's choice, so the demo picks one. */
+.demo-scroll-box {
+  height: 4.5rem;
+  padding: 0.618rem;
+  border: 1px solid var(--cl-border);
+}
+
+/* Toasts position themselves over the viewport. Pinned into flow so the example
+   is readable in place. */
+.demo-toast-inline {
+  position: static;
+  width: 100%;
+  transform: none;
+}

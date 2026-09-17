@@ -279,13 +279,15 @@ export const components = [
       {
         title: "Default",
         description:
-          "<code>.navbar</code> is <code>position: sticky</code> and animates its shadow with <code>animation-timeline: scroll()</code>.",
+          "<code>.navbar</code> is a sticky container: it pins to the top and animates its shadow with <code>animation-timeline: scroll()</code>. It does not lay out its own contents \u2014 compose them with the layout and <code>.gap-*</code> utilities, as here. (<code>.nav</code> is a different component: the vertical list used by the off-canvas menu, not a horizontal bar.)",
         markup: `<div class="navbar">
-  <nav class="nav" aria-label="Example">
-    <a href="#navbar">Home</a>
-    <a href="#navbar">Docs</a>
-    <a href="#navbar">API</a>
-  </nav>
+  <div class="flex flex-middle flex-between padding-md">
+    <strong>Acme</strong>
+    <span class="flex flex-middle gap-md">
+      <a href="#navbar">Docs</a>
+      <a href="#navbar">API</a>
+    </span>
+  </div>
 </div>`,
       },
     ],
@@ -459,11 +461,11 @@ export const components = [
     tagline: "Short hint shown on hover or focus.",
     examples: [
       {
-        title: "On a badge",
-        description: 'The text comes from <code>data-tooltip</code>; <code>.tooltip-top</code> sets the side.',
-        markup: `<span class="tooltip tooltip-top" data-tooltip="Verified accessibility standard">
-  <span class="badge success sm">WCAG 2.2 AA</span>
-</span>`,
+        title: "Default",
+        description:
+          'A tooltip is a <code>[popover]</code> anchored to its trigger. Put <code>.tooltip-trigger</code> on the control and point <code>popovertarget</code> at the tip.',
+        markup: `<button type="button" class="button secondary sm tooltip-trigger" popovertarget="doc-tooltip">WCAG 2.2 AA</button>
+<div id="doc-tooltip" popover class="tooltip">Verified accessibility standard</div>`,
       },
     ],
   },
@@ -475,9 +477,9 @@ export const components = [
     examples: [
       {
         title: "Profile preview",
-        description: "Opens on <code>:hover</code> and <code>:focus-within</code>, so keyboard users get it too.",
+        description: "Hover or tab to the trigger to open the panel. It reacts to <code>:hover</code> and <code>:focus-within</code>, so keyboard users get it too.",
         markup: `<div class="hover-card">
-  <a href="#hover-card" class="button secondary sm">@skeletonic-css</a>
+  <a class="hover-card-trigger" href="#hover-card">@skeletonic-css</a>
   <div class="hover-card-content">
     <div class="bold">Skeletonic Stylus</div>
     <p>Ultra-responsive CSS engine with 35 primitives.</p>
@@ -514,7 +516,7 @@ export const components = [
         title: "Static placement",
         description:
           "Toasts normally position themselves; the example is pinned in flow so it can be read here.",
-        markup: `<div class="toast toast-success" style="position: static; transform: none;">
+        markup: `<div class="toast toast-success demo-toast-inline">
   <div class="toast-title">Artifact generated</div>
   <div class="toast-description">Production build packaged into <code>dist/</code>.</div>
 </div>`,
@@ -530,15 +532,13 @@ export const components = [
       {
         title: "With a label",
         description: "Always give the bar an accessible name and the current value.",
-        markup: `<div class="progress" role="progressbar" aria-label="Cloud storage" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar" style="width: 75%;"></div>
-</div>`,
+        markup: `<progress class="progress" value="75" max="100" aria-label="Cloud storage">75%</progress>`,
       },
       {
         title: "Status colours",
         description: "<code>.success</code>, <code>.warning</code>, <code>.danger</code>; sizes <code>.sm</code> to <code>.xl</code>.",
-        markup: `<div class="progress success sm" role="progressbar" aria-label="Passing" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 90%;"></div></div>
-<div class="progress warning" role="progressbar" aria-label="Degraded" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 55%;"></div></div>`,
+        markup: `<progress class="progress success sm" value="90" max="100" aria-label="Passing">90%</progress>
+<progress class="progress warning" value="55" max="100" aria-label="Degraded">55%</progress>`,
       },
     ],
   },
@@ -714,7 +714,7 @@ export const components = [
       {
         title: "Vertical",
         description: 'Focusable and labelled, so keyboard users can scroll it.',
-        markup: `<div class="scroll-area" tabindex="0" role="region" aria-label="Changelog" style="height: 5rem;">
+        markup: `<div class="scroll-area demo-scroll-box" tabindex="0" role="region" aria-label="Changelog">
   <p>Skeletonic Stylus styles its scrollbars with <code>scrollbar-color</code> and <code>scrollbar-width: thin</code>.</p>
   <p>The region scrolls independently of the page.</p>
   <p>It keeps its own focus ring.</p>

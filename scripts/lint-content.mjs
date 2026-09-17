@@ -54,10 +54,30 @@ for (const file of readdirSync(contentDir).filter(f => f.endsWith(".md"))) {
   }
 }
 
+// An inline `style` attribute is inert on this site. cargo-ssg emits
+// `style-src 'self'` with no `'unsafe-hashes'`, so the browser parses the
+// attribute, reports it in the DOM, and then applies none of it — silently.
+// Every gap, width and position written that way was doing nothing: progress
+// bars had no width, toasts stayed fixed-positioned, flex rows sat flush.
+// Presentation belongs in a class.
+const STYLE_ATTR = /\sstyle="[^"]*"/g;
+for (const file of [...readdirSync(contentDir).filter(f => f.endsWith(".md")).map(f => join(contentDir, f)),
+                    join(root, "scripts/components-manifest.mjs")]) {
+  const text = readFileSync(file, "utf8");
+  const lines = text.split("\n");
+  lines.forEach((line, i) => {
+    // The generator's own prose may mention the attribute; only flag real markup.
+    if (!line.includes("<")) return;
+    for (const match of line.matchAll(STYLE_ATTR)) {
+      offences.push(`${file.replace(root + "/", "")}:${i + 1} inline style is dropped by this site's CSP — ${match[0].trim()}`);
+    }
+  });
+}
+
 if (offences.length > 0) {
   console.error("lint-content: raw HTML blocks broken by blank lines:");
   for (const o of offences) console.error(`  - ${o}`);
-  console.error("Remove the blank line, or drop the indentation below 4 spaces.");
+  console.error("Remove the blank line (or drop the indentation below 4 spaces); move inline styles into a class.");
   process.exit(1);
 }
 

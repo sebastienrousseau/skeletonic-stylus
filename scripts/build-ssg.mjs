@@ -64,6 +64,9 @@ if (ssgInstalled) {
   // Regenerates content/components/ from the manifest. Runs before the lint so
   // generated pages are linted too, and before the compile so the reference is
   // always in step with src/stylus/components/.
+  // Re-asserts the library's spacing above the theme's unlayered universal
+  // reset. Must run after the library CSS is compiled and before the site is.
+  execSync("node ./scripts/emit-library-spacing.mjs", { stdio: "inherit", cwd: root });
   execSync("node ./scripts/generate-component-docs.mjs", { stdio: "inherit", cwd: root });
   execSync("node ./scripts/lint-content.mjs", { stdio: "inherit", cwd: root });
   console.log("build-ssg: generating showcase site with cargo-ssg...");
@@ -80,6 +83,7 @@ if (ssgInstalled) {
   cpSync(resolve(root, "_layouts/styles.css"), resolve(root, "public/styles.css"), { force: true });
   cpSync(resolve(root, "_layouts/showcase.css"), resolve(root, "public/showcase.css"), { force: true });
   cpSync(resolve(root, "_layouts/docs.css"), resolve(root, "public/docs.css"), { force: true });
+  cpSync(resolve(root, "_layouts/library-spacing.css"), resolve(root, "public/library-spacing.css"), { force: true });
   cpSync(resolve(root, "_layouts/theme-init.js"), resolve(root, "public/theme-init.js"), { force: true });
   cpSync(resolve(root, "_layouts/main.js"), resolve(root, "public/main.js"), { force: true });
   cpSync(resolve(root, "public/index.html"), resolve(root, "index.html"), { force: true });
