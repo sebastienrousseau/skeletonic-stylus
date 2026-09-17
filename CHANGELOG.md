@@ -8,6 +8,64 @@ project adheres to
 
 ---
 
+**[Unreleased]**
+
+**Added**
+
+- **Static showcase generation via cargo-ssg**: the showcase is now generated
+  from `content/` and `_layouts/` per `ssg.toml` instead of a hand-maintained
+  `index.html`, with `scripts/build-ssg.mjs` driving the build.
+- **`scripts/fix-ssg-seo.mjs`**: rebuilds `sitemap.xml` deterministically from
+  the pages the build actually produced, and drops the placeholder
+  `news-sitemap.xml` this site has no use for.
+- **`scripts/lint-content.mjs`**: fails the build when a blank line inside a
+  raw-HTML block in `content/` would silently ship the markup as escaped text.
+- **`mise.toml`**: pins `cargo:ssg` so contributors and CI build with the same
+  generator. Both workflows install it via `jdx/mise-action`.
+- **Social card**: `images/screenshot.png` with `og:image`, `twitter:image`,
+  dimensions, alt text and JSON-LD — the previous `og:image` was a dead link.
+- **`.select-field`**: additive wrapper that draws the select chevron on the
+  wrapper, so the control sits on a flat, machine-checkable background.
+
+**Fixed**
+
+- **RSS feed and sitemap entries were skipped entirely.** `content/index.md`
+  declared `permalink: /`; cargo-ssg only derives an absolute permalink for a
+  page that declares none, so `/` failed URL validation and took the feed's
+  `channel.link`, the sitemap `<loc>`, `og:url` and `robots.txt` with it.
+- **Clean builds shipped an empty `<urlset>`.** The generator assembles the
+  sitemap by walking the output directory during the compile, before any page
+  is written to it, so CI always published the empty one.
+- **Half the showcase shipped as escaped text**: blank lines inside raw-HTML
+  blocks ended the block, re-parsing the markup as indented code.
+- **The accessibility audit was measuring an unstyled page** — it loaded `dist`
+  over `file://`, where SRI + `crossorigin` make every fingerprinted stylesheet
+  fail CORS, masking real violations behind artefacts.
+- **`.slider` was 20px tall**, below the WCAG 2.2 target-size minimum; base and
+  `.sm` now sit at 24px with the thumb still centred.
+- **`.toggle-group-item` did not exist** in the library, leaving those buttons
+  unstyled at 1.09:1 in light mode.
+- **`dist/` accumulated orphaned fingerprinted assets** on every build and
+  shipped them in the published tarball.
+
+**Changed**
+
+- **Accessibility gate**: audits both colour schemes over HTTP rather than one
+  scheme over `file://`, detects SRI-rejected stylesheets, and measures contrast
+  directly for nodes axe declines to rule on instead of discarding them.
+- **`_layouts/`**: re-vendored from the upstream Voxt theme, with the
+  project-specific delta isolated in `_layouts/showcase.css` so the theme stays
+  re-pullable.
+
+**Removed**
+
+- `scripts/fix-ssg-paths.mjs` and the `dev:copy:index` alias. The path rewrite
+  could not deliver `file://` rendering it promised — SRI and CORS block those
+  assets whatever the href looks like — and it fought the theme's
+  `{{site_path}}` contract.
+
+---
+
 **[2.0.2] — 2026-08-05**
 
 **Added**
