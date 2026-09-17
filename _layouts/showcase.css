@@ -44,3 +44,88 @@
   margin: 0 auto;
   filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
 }
+
+/* ---------------------------------------------------------------------------
+ * Demo cards.
+ *
+ * The theme's `.card` is a plain block, written for a heading and a paragraph.
+ * The showcase puts several live primitives inside one — a breadcrumb, then a
+ * tab strip, then pagination — and block children with no margins sit flush
+ * against each other, which is what made the component grid look squashed.
+ * Giving the card a column gap is the whole fix; it is applied only to cards
+ * that actually hold demos.
+ * ------------------------------------------------------------------------- */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#components .card,
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+/* Demos that are layout in their own right need the full card width; the
+   `align-items: flex-start` above would otherwise shrink them to content. */
+.demo-card > p,
+.demo-card .command,
+.demo-card .empty,
+.demo-card .skeleton,
+.demo-card .aspect-ratio,
+.demo-card .navbar-demo-frame {
+  width: 100%;
+}
+
+/* Segmented groups and button rows wrap instead of running past the card edge. */
+#components .card .button-group,
+#components .card .toggle-group,
+.demo-card .button-group,
+.demo-card .toggle-group {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* The Motion UI triggers are real buttons so they are keyboard reachable and
+   survive the page's `script-src 'self'` policy, which refuses to compile
+   inline handler attributes. Strip the control chrome so they still read as
+   cards. */
+button.card {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* `.navbar` is `position: sticky` and full-bleed by design, so inside a card it
+   needs a bounded context of its own. */
+.navbar-demo-frame {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--cl-border);
+  border-radius: 0.5rem;
+}
+
+.navbar-demo-frame .navbar {
+  position: relative;
+}
+
+.navbar-demo-frame .nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.demo-card .aspect-ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
