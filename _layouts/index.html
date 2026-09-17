@@ -135,9 +135,9 @@
   <p class="mb-lg text-sm opacity-80">
     This modal renders in the top-layer using the native HTML5 &lt;dialog&gt; API and animates smoothly via @starting-style with zero JavaScript layering.
   </p>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary btn-sm" onclick="this.closest('dialog').close()">Close Dialog</button>
-  </div>
+  <form method="dialog" class="modal-footer">
+    <button type="submit" class="btn btn-secondary btn-sm">Close Dialog</button>
+  </form>
 </dialog>
 
 <dialog id="demo-sheet" class="sheet">
@@ -148,9 +148,9 @@
   <div class="mb-lg">
     <p class="text-sm opacity-80">This drawer slides smoothly from the right viewport edge. It includes backdrop dimming, touch safety, and keyboard escape trapping.</p>
   </div>
-  <div class="sheet-footer">
-    <button type="button" class="btn btn-primary w-full btn-sm" onclick="this.closest('dialog').close()">Dismiss Drawer</button>
-  </div>
+  <form method="dialog" class="sheet-footer">
+    <button type="submit" class="btn btn-primary w-full btn-sm">Dismiss Drawer</button>
+  </form>
 </dialog>
 
 {{/block}}

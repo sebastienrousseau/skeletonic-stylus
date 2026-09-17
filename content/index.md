@@ -220,7 +220,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
           </div>
         </div>
         <div class="card-footer" style="margin-top: 1rem;">
-          <button type="button" class="btn btn-secondary btn-sm w-full" onclick="document.getElementById('demo-sheet').showModal()">Open Side Drawer</button>
+          <button type="button" class="btn btn-secondary btn-sm w-full" data-dialog="demo-sheet">Open Side Drawer</button>
         </div>
       </div>
     </div>
@@ -267,8 +267,8 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
         <h3 class="card-title">Overlays &amp; Tooltips</h3>
         <p class="card-description mb-md">Zero-JS hover cards, tooltips, and top-layer dialogs.</p>
         <div class="flex flex-wrap mb-md" style="gap: .75rem;">
-          <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('demo-modal').showModal()">Launch Modal</button>
-          <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('demo-sheet').showModal()">Slide Sheet</button>
+          <button type="button" class="btn btn-primary btn-sm" data-dialog="demo-modal">Launch Modal</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-dialog="demo-sheet">Slide Sheet</button>
         </div>
         <div class="flex flex-middle mb-md" style="gap: 1.5rem;">
           <div class="hover-card">
@@ -354,27 +354,117 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
   </div>
 </section>
 
+<section id="primitives" class="section">
+  <div class="container">
+    <h2 class="section-title text-center">Overlays, States &amp; Layout Primitives</h2>
+    <p class="section-desc text-center">The rest of the suite: native top-layer overlays, loading and empty states, command search and ratio-locked media. Still zero runtime JavaScript — the overlays below are driven by the platform&rsquo;s own <code>popover</code> and <code>dialog</code> APIs.</p>
+    <div class="demo-grid">
+      <div class="card text-left demo-card">
+        <h3>Popover &amp; Dropdown</h3>
+        <p class="card-description">Native <code>[popover]</code> surfaces in the top layer — no positioning library, no script.</p>
+        <button type="button" class="button secondary sm" popovertarget="demo-popover">Open popover</button>
+        <div id="demo-popover" popover class="popover">
+          <div class="popover-header">
+            <h4 class="popover-title">Cascade layers</h4>
+            <p class="popover-description">Everything ships inside <code>@layer skeletonic.*</code>.</p>
+          </div>
+          <div class="popover-body">Override any token without a specificity fight.</div>
+        </div>
+        <button type="button" class="button secondary sm" popovertarget="demo-dropdown">Open dropdown</button>
+        <div id="demo-dropdown" popover class="dropdown">
+          <button type="button" class="command-item">Duplicate</button>
+          <button type="button" class="command-item">Archive</button>
+          <button type="button" class="command-item">Delete</button>
+        </div>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Modal &amp; Sheet</h3>
+        <p class="card-description">Top-layer <code>&lt;dialog&gt;</code> with a backdrop, and a sheet that slides in from the edge.</p>
+        <button type="button" class="button primary sm" data-dialog="demo-modal">Launch modal</button>
+        <button type="button" class="button secondary sm" data-dialog="demo-sheet">Slide sheet in</button>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Command Palette</h3>
+        <p class="card-description">Search scaffold with grouped results and shortcut hints.</p>
+        <div class="command">
+          <div class="command-input-wrapper">
+            <input class="command-input" type="search" placeholder="Search components&hellip;" aria-label="Search components" />
+          </div>
+          <div class="command-list">
+            <div class="command-group">
+              <div class="command-group-heading">Primitives</div>
+              <button type="button" class="command-item selected">Input OTP<span class="command-shortcut">&#8984;1</span></button>
+              <button type="button" class="command-item">Carousel<span class="command-shortcut">&#8984;2</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Loading States</h3>
+        <p class="card-description">A spinner for indeterminate waits, skeletons for known layout.</p>
+        <span class="loader" role="status" aria-label="Loading"></span>
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text"></div>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Empty State</h3>
+        <p class="card-description">The zero-data screen, with room for a recovery action.</p>
+        <div class="empty empty-state">
+          <div class="empty-icon" aria-hidden="true">&#9634;</div>
+          <div class="empty-title">No components yet</div>
+          <div class="empty-description">Scaffold your first one with the CLI.</div>
+          <div class="empty-actions">
+            <button type="button" class="button secondary sm">Add component</button>
+          </div>
+        </div>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Aspect Ratio</h3>
+        <p class="card-description">Ratio-locked containers that never reflow as media loads.</p>
+        <div class="aspect-ratio ratio-16-9">
+          <img src="/assets/logo.svg" alt="Skeletonic logo in a 16:9 container" width="320" height="180" />
+        </div>
+        <p class="text-xs card-description">.ratio-16-9 &middot; also 1:1, 4:3, 21:9, 9:16</p>
+      </div>
+      <div class="card text-left demo-card">
+        <h3>Navbar</h3>
+        <p class="card-description">Sticky application bar with a scroll-driven shadow.</p>
+        <div class="navbar-demo-frame">
+          <div class="navbar">
+            <nav class="nav" aria-label="Component demo">
+              <a href="#primitives">Home</a>
+              <a href="#primitives">Docs</a>
+              <a href="#primitives">API</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="motion" class="section">
   <div class="container text-center">
     <h2 class="section-title">Foundation Motion UI Engine</h2>
     <p class="section-desc">3D perspective hinges, rotational spins, and delightful micro-interactions.</p>
     <div class="grid-2x2" style="margin-top: 2rem; margin-bottom: 2rem;">
-      <div class="card" onclick="triggerAnim(this, 'hingeInFromTop')" style="cursor: pointer;">
+      <button type="button" class="card anim-demo" data-anim="hingeInFromTop">
         <div class="bold text-xs mb-xs">.hingeInFromTop</div>
         <span class="text-xs opacity-60">3D Door Swing In</span>
-      </div>
-      <div class="card" onclick="triggerAnim(this, 'hingeOutToBottom')" style="cursor: pointer;">
+      </button>
+      <button type="button" class="card anim-demo" data-anim="hingeOutToBottom">
         <div class="bold text-xs mb-xs">.hingeOutToBottom</div>
         <span class="text-xs opacity-60">3D Dropdown Exit</span>
-      </div>
-      <div class="card" onclick="triggerAnim(this, 'spinIn')" style="cursor: pointer;">
+      </button>
+      <button type="button" class="card anim-demo" data-anim="spinIn">
         <div class="bold text-xs mb-xs">.spinIn</div>
         <span class="text-xs opacity-60">Clockwise 360&deg; Spin</span>
-      </div>
-      <div class="card" onclick="triggerAnim(this, 'spinInCCW')" style="cursor: pointer;">
+      </button>
+      <button type="button" class="card anim-demo" data-anim="spinInCCW">
         <div class="bold text-xs mb-xs">.spinInCCW</div>
         <span class="text-xs opacity-60">Counter-Clockwise Spin</span>
-      </div>
+      </button>
     </div>
   </div>
 </section>
@@ -425,9 +515,26 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
 </section>
 
 <script>
-  function triggerAnim(el, animName) {
-    el.classList.remove(animName);
-    void el.offsetWidth;
-    el.classList.add(animName);
-  }
+  // Every demo on this page is wired from here rather than from an inline
+  // onclick attribute. cargo-ssg extracts inline <script> blocks to hashed
+  // files under _csp/ and emits `script-src 'self'`, which allows this file to
+  // run but refuses to compile handler attributes — under that policy an
+  // onclick= demo is silently inert, which is how the modal, the drawer and
+  // all four Motion UI cards came to do nothing at all.
+  const replayAnimation = (el, name) => {
+    el.classList.remove(name);
+    void el.offsetWidth; // forces reflow, so re-adding the class restarts it
+    el.classList.add(name);
+  };
+
+  document.addEventListener("click", (event) => {
+    const dialogTrigger = event.target.closest("[data-dialog]");
+    if (dialogTrigger) {
+      document.getElementById(dialogTrigger.dataset.dialog)?.showModal();
+      return;
+    }
+
+    const animTrigger = event.target.closest("[data-anim]");
+    if (animTrigger) replayAnimation(animTrigger, animTrigger.dataset.anim);
+  });
 </script>
