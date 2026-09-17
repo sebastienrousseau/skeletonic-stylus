@@ -182,9 +182,13 @@ const probeOverlays = async () => {
 };
 
 const results = [];
+// One browser for the whole sweep, a context per scheme/width combination.
+// Launching a browser per combination worked but held six of them across the
+// run, which is a lot of memory for no benefit — a context is enough to carry
+// its own colour scheme and viewport.
+const browser = await chromium.launch({ headless: true });
 for (const scheme of SCHEMES) {
   for (const vp of WIDTHS) {
-    const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext({ colorScheme: scheme, viewport: { width: vp.width, height: vp.height } });
     const page = await context.newPage();
     for (const path of pages) {
@@ -192,9 +196,10 @@ for (const scheme of SCHEMES) {
       const findings = [...await page.evaluate(probe), ...await page.evaluate(probeOverlays)];
       for (const f of findings) results.push({ page: path, scheme, vp: vp.name, ...f });
     }
-    await browser.close();
+    await context.close();
   }
 }
+await browser.close();
 server.close();
 
 if (results.length === 0) {

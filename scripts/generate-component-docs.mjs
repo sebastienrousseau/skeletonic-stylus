@@ -20,7 +20,7 @@ import { mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { categories, components, guides } from "./components-manifest.mjs";
+import { categories, components, elements, guides } from "./components-manifest.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const stylusDir = join(root, "src/stylus/components");
@@ -37,6 +37,17 @@ const onDisk = new Set(
 );
 const documented = new Set(components.map(c => c.slug));
 
+// The same one-to-one check over src/stylus/elements/. `margin` and `padding`
+// only generate the spacing utilities, which the Utilities guide covers.
+const UTILITY_ONLY = new Set(["margin", "padding", "link-effects"]);
+const elementsOnDisk = new Set(
+  readdirSync(join(root, "src/stylus/elements"))
+    .filter(f => f.endsWith(".styl") && !f.startsWith("_"))
+    .map(f => f.replace(/\.styl$/, ""))
+    .filter(f => !UTILITY_ONLY.has(f)),
+);
+const elementsDocumented = new Set(elements.map(e => e.slug));
+
 const undocumented = [...onDisk].filter(s => !documented.has(s)).sort();
 const phantom = [...documented].filter(s => !onDisk.has(s)).sort();
 const knownCategories = new Set(categories.map(c => c.slug));
@@ -49,10 +60,18 @@ if (undocumented.length) {
 if (phantom.length) {
   problems.push(`documented components with no stylesheet: ${phantom.join(", ")}`);
 }
+const elementGaps = [...elementsOnDisk].filter(s => !elementsDocumented.has(s)).sort();
+const elementPhantoms = [...elementsDocumented].filter(s => !elementsOnDisk.has(s)).sort();
+if (elementGaps.length) {
+  problems.push(`elements with no documentation page: ${elementGaps.join(", ")}`);
+}
+if (elementPhantoms.length) {
+  problems.push(`documented elements with no stylesheet: ${elementPhantoms.join(", ")}`);
+}
 for (const c of badCategory) {
   problems.push(`${c.slug}: unknown category "${c.category}"`);
 }
-for (const c of components) {
+for (const c of [...components, ...elements, ...guides]) {
   if (!c.examples?.length) problems.push(`${c.slug}: no examples`);
   for (const ex of c.examples ?? []) {
     if (!ex.markup?.trim()) problems.push(`${c.slug}: example "${ex.title}" has no markup`);
@@ -73,7 +92,7 @@ const escapeHtml = s =>
 /** YAML-safe double-quoted scalar. */
 const yamlString = s => `"${s.replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`;
 
-const pages = [...components, ...guides];
+const pages = [...components, ...elements, ...guides];
 
 const byCategory = categories.map(cat => ({
   ...cat,
@@ -229,11 +248,11 @@ ${groups}
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
-for (const component of [...components, ...guides]) {
+for (const component of [...components, ...elements, ...guides]) {
   writeFileSync(join(outDir, `${component.slug}.md`), page(component), "utf8");
 }
 writeFileSync(join(outDir, "index.md"), indexPage(), "utf8");
 
 console.log(
-  `generate-component-docs: wrote ${components.length} component pages + ${guides.length} guide(s) + index (all ${onDisk.size} library components documented).`,
+  `generate-component-docs: wrote ${components.length} component + ${elements.length} element + ${guides.length} guide page(s); every stylesheet in components/ and elements/ is documented.`,
 );

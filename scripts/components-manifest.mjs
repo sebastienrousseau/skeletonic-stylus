@@ -19,6 +19,7 @@ export const categories = [
   { slug: "feedback", name: "Feedback" },
   { slug: "data", name: "Data display" },
   { slug: "layout", name: "Layout" },
+  { slug: "content", name: "Content" },
 ];
 
 export const components = [
@@ -800,6 +801,223 @@ export const guides = [
           "<code>.padding-*</code>, <code>.px-*</code>, <code>.py-*</code>, <code>.pt-*</code>, <code>.pb-*</code> and the matching <code>.margin-*</code>, <code>.mt-*</code>, <code>.mb-*</code> use the same six steps. <code>.p-0</code> and <code>.m-0</code> reset.",
         markup: `<div class="card padding-sm">padding-sm</div>
 <div class="card padding-lg">padding-lg</div>`,
+      },
+    ],
+  },
+];
+
+/**
+ * Reference pages for the styled HTML elements.
+ *
+ * These live in src/stylus/elements/ rather than src/stylus/components/, and
+ * the reference used to cover only the latter — so `button`, `input`,
+ * `textarea`, `label`, `table` and the rest were fully styled but appeared
+ * nowhere, which reads as "the library does not have them". It does.
+ *
+ * Validated against src/stylus/elements/ the same way components are, minus the
+ * files that are pure utility generators and are covered by the Utilities page.
+ */
+export const elements = [
+  {
+    slug: "button",
+    name: "Button",
+    category: "actions",
+    source: "src/stylus/elements/button.styl",
+    tagline: "The button element, in three weights and the status colours.",
+    examples: [
+      {
+        title: "Weights",
+        description: "A bare <code>&lt;button&gt;</code> is already styled; <code>.primary</code> and <code>.secondary</code> change the weight.",
+        markup: `<button type="button" class="button primary">Primary</button>
+<button type="button" class="button secondary">Secondary</button>
+<button type="button" class="button">Default</button>`,
+      },
+      {
+        title: "Status and state",
+        description: "<code>.success</code>, <code>.warning</code>, <code>.error</code>, <code>.info</code>; <code>.active</code> marks a pressed control and <code>disabled</code> is honoured.",
+        markup: `<button type="button" class="button success">Success</button>
+<button type="button" class="button warning">Warning</button>
+<button type="button" class="button error">Error</button>
+<button type="button" class="button" disabled>Disabled</button>`,
+      },
+    ],
+  },
+  {
+    slug: "form",
+    name: "Input and textarea",
+    category: "forms",
+    source: "src/stylus/elements/form.styl",
+    tagline: "Text inputs and textareas, with validation colours.",
+    examples: [
+      {
+        title: "Text inputs",
+        description: "Every text-like <code>input</code> type and <code>textarea</code> is styled without a class.",
+        markup: `<input type="email" placeholder="name@company.com" aria-label="Email" />
+<textarea rows="2" placeholder="Describe your team mission..." aria-label="Description"></textarea>`,
+      },
+      {
+        title: "Validation",
+        description: "<code>.input-success</code>, <code>.input-warning</code>, <code>.input-error</code> and <code>.input-info</code> colour the border.",
+        markup: `<input type="text" class="input-success" value="Available" aria-label="Success" />
+<input type="text" class="input-error" value="Already taken" aria-label="Error" />`,
+      },
+    ],
+  },
+  {
+    slug: "label",
+    name: "Label",
+    category: "forms",
+    source: "src/stylus/elements/label.styl",
+    tagline: "The form label, tied to its control.",
+    examples: [
+      {
+        title: "Default",
+        description: "Point <code>for</code> at the control's <code>id</code> so clicking the text focuses it.",
+        markup: `<label for="doc-label-input">Workspace name</label>
+<input id="doc-label-input" type="text" value="Skeletonic" />`,
+      },
+    ],
+  },
+  {
+    slug: "fieldset",
+    name: "Fieldset",
+    category: "forms",
+    source: "src/stylus/elements/fieldset.styl",
+    tagline: "Groups related controls under one legend.",
+    examples: [
+      {
+        title: "Default",
+        description: "A <code>legend</code> names the group for assistive technology as well as sighted readers.",
+        markup: `<fieldset>
+  <legend>Notifications</legend>
+  <label class="checkbox-field"><input type="checkbox" class="checkbox" checked /><span>Email</span></label>
+  <label class="checkbox-field"><input type="checkbox" class="checkbox" /><span>SMS</span></label>
+</fieldset>`,
+      },
+    ],
+  },
+  {
+    slug: "toggle",
+    name: "Toggle",
+    category: "forms",
+    source: "src/stylus/elements/toggle.styl",
+    tagline: "A checkbox rendered as a sliding switch.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>.toggle</code> on a checkbox; add <code>role=\"switch\"</code> so it is announced as one.",
+        markup: `<input type="checkbox" class="toggle" role="switch" checked aria-label="Enabled" />`,
+      },
+    ],
+  },
+  {
+    slug: "table",
+    name: "Table",
+    category: "content",
+    source: "src/stylus/elements/table.styl",
+    tagline: "Data tables, styled without a class.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>thead</code>, <code>th</code> and <code>td</code> are styled directly; wrap in <code>.table-responsive</code> to scroll on narrow screens.",
+        markup: `<table>
+  <thead><tr><th>Component</th><th>Size</th></tr></thead>
+  <tbody>
+    <tr><td>skeletonic.min.css</td><td>5.21 kB</td></tr>
+    <tr><td>skeletonic-ui.min.css</td><td>86.23 kB</td></tr>
+  </tbody>
+</table>`,
+      },
+    ],
+  },
+  {
+    slug: "code",
+    name: "Code",
+    category: "content",
+    source: "src/stylus/elements/code.styl",
+    tagline: "Inline code and preformatted blocks, with status variants.",
+    examples: [
+      {
+        title: "Inline and block",
+        description: "Bare <code>code</code> is inline; inside <code>pre</code> it becomes a block. <code>.primary</code>, <code>.success</code>, <code>.warning</code> and <code>.error</code> turn it into a callout.",
+        markup: `<p>Install with <code>pnpm add @sebastienrousseau/skeletonic-stylus</code>.</p>
+<code class="success">All 18 release gates passed.</code>`,
+      },
+    ],
+  },
+  {
+    slug: "divider",
+    name: "Divider",
+    category: "content",
+    source: "src/stylus/elements/divider.styl",
+    tagline: "Horizontal rules in several treatments.",
+    examples: [
+      {
+        title: "Variants",
+        description: "<code>.hr-solid</code>, <code>.hr-dashed</code>, <code>.hr-dotted</code>, <code>.hr-rounded</code>, <code>.hr-blurred</code>; <code>.hr-text</code> carries a label.",
+        markup: `<hr class="hr-solid" />
+<hr class="hr-dashed" />
+<hr class="hr-dotted" />`,
+      },
+    ],
+  },
+  {
+    slug: "list",
+    name: "List",
+    category: "content",
+    source: "src/stylus/elements/list.styl",
+    tagline: "Ordered and unordered lists with marker variants.",
+    examples: [
+      {
+        title: "Markers",
+        description: "<code>.disc</code>, <code>.circle</code> and <code>.square</code> set the bullet.",
+        markup: `<ul class="disc"><li>Cascade layers</li><li>OKLCH colour</li></ul>
+<ol><li>Install</li><li>Import</li></ol>`,
+      },
+    ],
+  },
+  {
+    slug: "image",
+    name: "Image",
+    category: "content",
+    source: "src/stylus/elements/image.styl",
+    tagline: "Images are responsive by default.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>img</code> is capped to its container's width and keeps its ratio, so it cannot overflow the layout.",
+        markup: `<img src="/assets/logo.svg" alt="Skeletonic logo" width="160" height="90" />`,
+      },
+    ],
+  },
+  {
+    slug: "link",
+    name: "Link",
+    category: "navigation",
+    source: "src/stylus/elements/link.styl",
+    tagline: "Anchors, with optional hover effects.",
+    examples: [
+      {
+        title: "Default",
+        description: "A bare <code>a</code> is styled; see <code>link-effects.styl</code> for the underline animations.",
+        markup: `<a href="#link">A styled link</a>`,
+      },
+    ],
+  },
+  {
+    slug: "clipboard",
+    name: "Clipboard",
+    category: "actions",
+    source: "src/stylus/elements/clipboard.styl",
+    tagline: "Copy-to-clipboard affordance for a code block.",
+    examples: [
+      {
+        title: "Default",
+        description: "Wrap the block in <code>.bd-clipboard</code>; <code>.button-clipboard</code> sits in its corner. The copying itself is yours to wire up.",
+        markup: `<div class="bd-clipboard">
+  <button type="button" class="button-clipboard">Copy</button>
+  <pre><code>pnpm add @sebastienrousseau/skeletonic-stylus</code></pre>
+</div>`,
       },
     ],
   },

@@ -169,10 +169,13 @@
 .docs-preview > .tabs,
 .docs-preview > input[type="range"] {
   flex: 1 1 100%;
-  /* A flex item defaults to `min-width: auto`, which refuses to shrink below
-     its content. The carousel's track is wider than the page, so the item grew
-     to fit it and pushed past the viewport at every width instead of letting
-     the track scroll inside. */
+}
+
+/* A flex item defaults to `min-width: auto`, which refuses to shrink below its
+   content: the carousel's track and a long line in a `pre` both grew the item
+   until it pushed past the viewport, instead of scrolling inside it. Every
+   child of a preview may shrink. */
+.docs-preview > * {
   min-width: 0;
 }
 
