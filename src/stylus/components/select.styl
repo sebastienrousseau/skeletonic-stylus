@@ -8,6 +8,34 @@
 
 /* @group Select (2026 Standard) */
 
+// Automated contrast checkers cannot resolve the background behind text on an
+// element that carries a background-image, so a select that paints its own
+// chevron reports as unverifiable rather than as passing. `.select-field` wraps
+// the control and draws the chevron on the wrapper instead, which leaves the
+// select on a flat, measurable background. A bare `select.select` keeps its own
+// chevron, so this is additive: existing markup renders exactly as before.
+.select-field
+  display: block
+  position: relative
+  width: 100%
+
+  &::after
+    border-bottom: 2px solid var(--cl-grey-500)
+    border-right: 2px solid var(--cl-grey-500)
+    content: ""
+    height: .4rem
+    pointer-events: none
+    position: absolute
+    right: 1rem
+    top: 50%
+    transform: translateY(-65%) rotate(45deg)
+    width: .4rem
+
+  > select.select,
+  > .select-trigger
+    background-image: none
+
+
 select.select,
 .select-trigger
   -webkit-appearance: none
