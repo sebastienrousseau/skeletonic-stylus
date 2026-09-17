@@ -12,6 +12,17 @@ project adheres to
 
 **Added**
 
+- **A component reference at `/components/`**, one page per primitive, in the
+  shape a CSS library's documentation needs: a category sidebar, and for each
+  example prose, the component rendered live, and the exact markup to copy. The
+  landing page stays a landing page.
+- **`scripts/components-manifest.mjs` and `scripts/generate-component-docs.mjs`**
+  generate those pages and check the manifest against
+  `src/stylus/components/` in *both* directions — a component with no page
+  fails the build, and so does a page for a component that no longer exists.
+  Each example's markup is emitted twice, live and as the code sample, from one
+  string, so the two cannot drift.
+
 - **Static showcase generation via cargo-ssg**: the showcase is now generated
   from `content/` and `_layouts/` per `ssg.toml` instead of a hand-maintained
   `index.html`, with `scripts/build-ssg.mjs` driving the build.
@@ -29,6 +40,21 @@ project adheres to
 
 **Fixed**
 
+- **Site navigation dead-ended on every page but the landing one.** The header
+  and footer links were fragment-only (`#overview`), which resolve against the
+  current page; once the site had more than one page they pointed at anchors
+  that were not there.
+- **The library's `.block` utility was styling the syntax highlighter.** The
+  highlighter emits TextMate scope names as class names, some containing the
+  word `block`, so `display: block` landed on individual code tokens and split
+  `<div class="button-group">` across three lines.
+- **The accessibility gate only ever audited the landing page.** It now audits
+  every generated page in both colour schemes — 74 audits — which is what
+  caught a keyboard-inaccessible scrollable region in the first version of the
+  code blocks.
+- **Per-page SEO artefacts were published for every page**: cargo-ssg writes a
+  `sitemap.xml`, `robots.txt`, `rss.xml` and `news-sitemap.xml` into each page's
+  directory, which is meaningless at a sub-path. 180 of them were being shipped.
 - **Every interactive demo on the showcase was inert.** The page ships a strict
   `script-src 'self'` (cargo-ssg extracts inline `<script>` blocks to hashed
   files under `_csp/`), and that policy refuses to compile inline event-handler
