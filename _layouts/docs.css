@@ -1,0 +1,290 @@
+/* SPDX-License-Identifier: Apache-2.0 OR MIT */
+
+/*
+ * The component reference at /components/.
+ *
+ * Deliberately quieter than the landing page. A reference page is read while
+ * building something else, so the page furniture gets out of the way: no cards
+ * around the examples, no gradients, one accent colour, and a lot of
+ * whitespace. Each example is prose, then the component rendered on the plain
+ * page background, then the exact markup that produced it.
+ *
+ * Colours come from the library's own tokens, so the reference follows the
+ * theme toggle like the rest of the site rather than pinning itself to light.
+ */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 3rem;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+/* --- Sidebar -------------------------------------------------------------- */
+
+.docs-sidebar {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.docs-nav-home {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.docs-nav,
+.docs-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-nav-group + .docs-nav-group {
+  margin-top: 1.25rem;
+}
+
+.docs-nav-heading {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.docs-nav-list a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.docs-nav-list a:hover {
+  background: color-mix(in oklch, currentColor 8%, transparent);
+}
+
+/* The current page, marked semantically rather than with a modifier class, so
+   the styling and the accessibility tree cannot disagree. */
+.docs-nav-list a[aria-current="page"] {
+  font-weight: 600;
+  background: color-mix(in oklch, currentColor 12%, transparent);
+}
+
+/* --- Page header ---------------------------------------------------------- */
+
+.docs-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--cl-border);
+}
+
+.docs-header h1 {
+  margin: 0 0 0.375rem;
+}
+
+.docs-tagline {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  opacity: 0.8;
+}
+
+.docs-source {
+  margin: 0;
+  font-size: 0.8125rem;
+  opacity: 0.7;
+}
+
+/* --- Examples ------------------------------------------------------------- */
+
+.docs-example + .docs-example {
+  margin-top: 3rem;
+}
+
+.docs-example-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.docs-anchor {
+  text-decoration: none;
+}
+
+.docs-anchor::after {
+  content: " #";
+  opacity: 0;
+  font-weight: 400;
+}
+
+.docs-example-title:hover .docs-anchor::after,
+.docs-anchor:focus-visible::after {
+  opacity: 0.5;
+}
+
+.docs-example-description {
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+  opacity: 0.85;
+}
+
+/* The component itself, on the page background rather than inside a card, so
+   what you see is the component and not a container around it. The children
+   are laid out in a wrapping row with a gap, because most examples are several
+   sibling elements that would otherwise sit flush. */
+.docs-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.75rem;
+  border: 1px solid var(--cl-border);
+  border-radius: 0.5rem;
+}
+
+/* Examples whose markup is a single full-width block should fill the preview
+   rather than shrink to content. */
+.docs-preview > .card,
+.docs-preview > .command,
+.docs-preview > .empty,
+.docs-preview > .skeleton,
+.docs-preview > .aspect-ratio,
+.docs-preview > .accordion,
+.docs-preview > .carousel,
+.docs-preview > .scroll-area,
+.docs-preview > .navbar,
+.docs-preview > .progress,
+.docs-preview > .alert,
+.docs-preview > .separator,
+.docs-preview > .slider-group,
+.docs-preview > .tabs,
+.docs-preview > input[type="range"] {
+  flex: 1 1 100%;
+}
+
+.docs-preview .navbar {
+  position: relative;
+}
+
+.docs-preview .aspect-ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Index page ----------------------------------------------------------- */
+
+.docs-index-group + .docs-index-group {
+  margin-top: 2.5rem;
+}
+
+.docs-index-list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.875rem 1.5rem;
+}
+
+.docs-index-item a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.docs-index-tagline {
+  display: block;
+  font-size: 0.8125rem;
+  opacity: 0.75;
+}
+
+/* --- Narrow viewports ----------------------------------------------------- */
+
+@media (max-width: 60rem) {
+  .docs-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .docs-sidebar {
+    position: static;
+    max-height: none;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cl-border);
+  }
+
+  .docs-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+  }
+
+  .docs-nav-group + .docs-nav-group {
+    margin-top: 0;
+  }
+}
+
+/* --- Code blocks ---------------------------------------------------------- */
+
+/*
+ * Markup samples wrap at whitespace and never scroll.
+ *
+ * The library sets `word-break: break-word` on code, which is right for prose
+ * but wrong here: the syntax highlighter wraps every token in its own span, and
+ * break-word then breaks inside them, so `<div class="button-group">` came out
+ * split across three lines. `word-break: normal` confines breaks to real break
+ * opportunities — the spaces between attributes — so a tag never splits.
+ *
+ * Scrolling the block instead would also have fixed the breaking, but a
+ * horizontally scrollable region has to be keyboard reachable to satisfy WCAG
+ * 2.1.1, and the highlighter's <code> cannot carry a tabindex from here. The
+ * audit caught that; wrapping removes the scroll container altogether.
+ *
+ * The library ships inside `@layer skeletonic`, so these unlayered rules win
+ * without needing to out-specify anything.
+ */
+.docs-main pre {
+  max-width: 100%;
+}
+
+.docs-main pre code,
+.docs-main pre code span {
+  white-space: pre-wrap;
+  word-break: normal;
+  word-wrap: normal;
+  overflow-wrap: normal;
+  overflow-x: visible;
+}
+
+/*
+ * The syntax highlighter emits TextMate scope names as class names, and some of
+ * them contain the word `block` — `<span class="meta tag block any html">`. The
+ * library ships a `.block { display: block }` utility, which matched those
+ * tokens and put `<`, `div` and the attributes on separate lines. Every token
+ * inside a code sample is inline, whatever its scope happens to be called.
+ */
+.docs-main pre code span {
+  display: inline;
+}
+
+/* The theme sizes h1 for a hero. A reference page is not a hero. */
+.docs-main .docs-header h1 {
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  line-height: 1.15;
+}
+
+/* The theme sizes h2 for a landing-page section band. The index's category
+   headings are list labels, not banners. */
+.docs-main .docs-index-group h2 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+}
