@@ -105,6 +105,69 @@ for (const rel of TARGETS) {
   }
 }
 
+/**
+ * A declaration that sits outside any rule.
+ *
+ * Where a selector is expected, a declaration puts the CSS parser into error
+ * recovery: it discards everything up to and past the next block, which takes
+ * the following rule with it. This shipped — an `@css { }` wrapper in the reset
+ * emitted `interpolate-size: allow-keywords;` a second time at the top level,
+ * and the browser silently threw away the entire `body` rule beneath it, so the
+ * library's base font-size, colours and line-height never applied anywhere.
+ *
+ * Every declaration this script checks is valid in isolation, so per-declaration
+ * validity cannot see it. It is a structural fault and needs a structural check.
+ */
+function strayDeclarations(css) {
+  const found = [];
+  // Blocks that contain *rules*; a declaration inside one is the fault. Style
+  // rules, @font-face, @property and keyframe selectors all take declarations.
+  const RULE_ONLY = /^@(layer|media|supports|container|scope|document)\b/;
+  const stack = [{ rulesOnly: true }]; // the top level takes rules only
+  let buf = "", line = 1;
+
+  for (let i = 0; i < css.length; i += 1) {
+    const ch = css[i];
+    if (ch === "\n") line += 1;
+
+    if (ch === "{") {
+      const prelude = buf.trim();
+      stack.push({ rulesOnly: RULE_ONLY.test(prelude) });
+      buf = "";
+      continue;
+    }
+    if (ch === "}") {
+      if (stack.length > 1) stack.pop();
+      buf = "";
+      continue;
+    }
+    if (ch === ";") {
+      const text = buf.trim();
+      const here = stack[stack.length - 1];
+      // `@import url(...);` and `@layer a, b;` are statements, not declarations.
+      if (here.rulesOnly && text && !text.startsWith("@") && /^[-a-zA-Z]+\s*:/.test(text)) {
+        found.push({ line, text: text.slice(0, 70) });
+      }
+      buf = "";
+      continue;
+    }
+    buf += ch;
+  }
+  return found;
+}
+
+const structural = [];
+for (const rel of TARGETS) {
+  for (const s of strayDeclarations(stripComments(readFileSync(join(root, rel), "utf8")))) {
+    structural.push({ file: rel, ...s });
+  }
+}
+if (structural.length > 0) {
+  console.error("css-validate: declaration(s) outside any rule — the parser discards the rule that follows:");
+  for (const s of structural) console.error(`  ${s.file}:${s.line}  ${s.text}`);
+  process.exit(1);
+}
+
 const { chromium } = require("playwright");
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
