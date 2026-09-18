@@ -13,7 +13,9 @@ dialog.command
   background-color: var(--background-color)
   border: 1px solid var(--cl-grey-200)
   border-radius: var(--radius-lg)
-  box-shadow: var(--shadow-xl)
+  // Inline in the page, so it sits at panel elevation; the dialog form below
+  // raises it, because a surface over a backdrop is a different thing.
+  box-shadow: var(--shadow-lg)
   color: var(--foreground-color)
   display: flex
   flex-direction: column
@@ -118,3 +120,9 @@ dialog.command
 // order — but they read as menu entries, and shouting them is wrong.
 .command-item
   text-transform: none
+
+// The palette opened as a modal sits above everything else.
+dialog.command
+  box-shadow: var(--shadow-xl)
+
+/* @end */
