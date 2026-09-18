@@ -12,6 +12,27 @@ project adheres to
 
 **Added**
 
+- **Five components**: `collapsible`, `alert-dialog`, `item`, `menubar` and
+  `sidebar` — the shadcn/ui primitives that were both absent here and
+  achievable without JavaScript. The rest stay out on purpose: seven need script
+  to mean anything (combobox, calendar, date-picker, data-table, chart,
+  context-menu, resizable) and seven are shadcn's AI-chat kit rather than
+  general primitives.
+- **Reference pages for the styled HTML elements** — `button`, `input`,
+  `textarea`, `label`, `table`, `fieldset`, `toggle`, `code`, `divider`, `list`,
+  `image` and `clipboard`. These live in `src/stylus/elements/` and the
+  reference only covered `src/stylus/components/`, so the library looked like it
+  lacked controls it has always had. The coverage check now runs over both
+  directories, so an undocumented stylesheet fails the build either way.
+- **Design tokens for radius, control geometry, elevation and motion.** Radius
+  had reached 21 distinct values, six of them within two pixels of each other;
+  shadows ten; and `.15s` and `150ms` were the same duration written two ways
+  across 51 declarations. Five radius steps, one control-height scale with 44px
+  as the default, four elevation steps and four durations now carry the library.
+- **`scripts/layout-audit.mjs`** renders every page at three widths in both
+  colour schemes and fails on content pushed past the viewport, empty examples,
+  overlays opening away from their trigger, and library styling landing on
+  syntax-highlighter tokens.
 - **A `Utilities` reference page** documenting the flex, gap, padding and margin
   helpers. The `.gap-*` utilities below are new API, and an undocumented utility
   is one nobody uses.
@@ -51,6 +72,27 @@ project adheres to
 
 **Fixed**
 
+- **The `body` rule was being deleted by the browser.** An `@css { }` wrapper in
+  the reset emitted `interpolate-size: allow-keywords` a second time as a bare
+  declaration at the top of the layer, and a declaration where a selector is
+  expected puts the parser into error recovery — which discards the rule that
+  follows. Every consumer of this library was getting the UA default 16px
+  instead of the fluid `clamp(1.0625rem, 1.4vw, 1.25rem)` it declares. Three
+  more `@css { }` blocks had the same fault.
+- **The navbar hid every checkbox on the page.** A bare
+  `input[type=checkbox] { display: none }` for its hamburger control sat in
+  `@layer skeletonic.components`, which is declared after
+  `skeletonic.elements` — and a later layer wins whatever the specificity, so
+  the library's own `.toggle` lost to it, as did any plain checkbox in a
+  consumer's markup.
+- **Elevation matched the value a component used to have rather than what it
+  is**: `code` callouts and the slider thumb and active tab pill carried
+  floating-panel and card shadows, and `.command` gave its inline panel the same
+  elevation as its modal form.
+- **The avatar group rendered right to left.** `flex-direction: row-reverse`
+  put the first avatar on top of the stack but reversed the rendered order, so
+  visual order no longer matched DOM order — what a screen reader announces and
+  what the tab sequence follows (WCAG 1.3.2).
 - **Eight custom properties were referenced but never defined.** `--cl-grey-600`,
   `--cl-grey-700`, `--cl-grey-900`, `--cl-grey-1000`, `--cl-tertiary`,
   `--bg-tertiary`, `--bg-disable` and `--font` had no declaration anywhere, so
@@ -130,6 +172,18 @@ project adheres to
 
 **Changed**
 
+- **The system font stack replaces `'Open Sans'` as the default face**, and
+  buttons are sentence case. The reset hardcoded Open Sans even though the
+  library ships it as an optional module, so the core could not be used without
+  it and no consumer could opt out; importing the fonts module brings it back.
+- **Node support is `>=22`.** Node 20 reached end of life on 2026-04-30 and was
+  still in the CI matrix; `engines` claimed `>=18`, EOL since 2025-04-30. The
+  matrix is 22 and 24, and what is tested is what is claimed. Consumers on Node
+  20 will see an engine warning on install.
+- **pnpm is pinned once**, through `packageManager`, and installed standalone in
+  CI so the package manager no longer constrains the Node versions under test.
+  The duplicate `pnpm.overrides` block in `package.json` is retired now that CI
+  reads them from `pnpm-workspace.yaml`.
 - **Accessibility gate**: audits both colour schemes over HTTP rather than one
   scheme over `file://`, detects SRI-rejected stylesheets, and measures contrast
   directly for nodes axe declines to rule on instead of discarding them.
