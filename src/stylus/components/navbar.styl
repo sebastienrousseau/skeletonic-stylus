@@ -136,7 +136,7 @@ input[type="checkbox"]:checked
 input[type=checkbox]:has(~ #sidebar)
   box-sizing: border-box
   display: none
-  transition: all .3s
+  transition: all var(--duration-slow)
 
 .hamburger-toggle
   box-sizing: border-box
@@ -145,7 +145,7 @@ input[type=checkbox]:has(~ #sidebar)
   height: 22px
   position: absolute
   top: 22px
-  transition: all .3s
+  transition: all var(--duration-slow)
   width: 22px
   z-index: 99
 
@@ -160,7 +160,7 @@ input[type=checkbox]:has(~ #sidebar)
   box-sizing: border-box
   height: 3px
   position: absolute
-  transition: all .3s
+  transition: all var(--duration-slow)
   width: 100%
 
 .horizontal
@@ -168,37 +168,37 @@ input[type=checkbox]:has(~ #sidebar)
   float: left
   margin-top: 3px
   position: relative
-  transition: all .3s
+  transition: all var(--duration-slow)
 
 .diagonal
   &.part-1
     box-sizing: border-box
     float: inline-start
     position: relative
-    transition: all .3s
+    transition: all var(--duration-slow)
   &.part-2
     box-sizing: border-box
     float: inline-start
     margin-top: 3px
     position: relative
-    transition: all .3s
+    transition: all var(--duration-slow)
 
 input[type=checkbox]:checked
   & ~ .hamburger-toggle
     & > .horizontal
       box-sizing: border-box
       opacity: 0
-      transition: all .3s
+      transition: all var(--duration-slow)
     & > .diagonal
       &.part-1
         box-sizing: border-box
         margin-top: 8px
         transform: rotate(135deg)
-        transition: all .3s
+        transition: all var(--duration-slow)
       &.part-2
         box-sizing: border-box
         margin-top: -9px
         transform: rotate(-135deg)
-        transition: all .3s
+        transition: all var(--duration-slow)
 
 /* @end */

@@ -46,7 +46,7 @@ nav.pagination,
     min-width: 2.25rem
     padding: 0 .75rem
     text-decoration: none
-    transition: background-color .15s ease, border-color .15s ease, color .15s ease
+    transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease
     user-select: none
 
     &:hover
@@ -60,7 +60,7 @@ nav.pagination,
     &[aria-current="page"]
       background-color: var(--cl-surface)
       border-color: var(--cl-grey-200)
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+      box-shadow: var(--shadow-sm)
       font-weight: 600
 
     &.disabled,

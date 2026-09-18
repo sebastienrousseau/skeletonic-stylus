@@ -13,7 +13,7 @@ dialog.command
   background-color: var(--background-color)
   border: 1px solid var(--cl-grey-200)
   border-radius: var(--radius-lg)
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1)
+  box-shadow: var(--shadow-xl)
   color: var(--foreground-color)
   display: flex
   flex-direction: column
@@ -25,7 +25,7 @@ dialog.command
 dialog.command
   margin: auto
   position: fixed
-  transition: opacity .2s ease, transform .2s ease, display .2s allow-discrete
+  transition: opacity var(--duration-base) ease, transform var(--duration-base) ease, display var(--duration-base) allow-discrete
 
   @starting-style
     opacity: 0
@@ -86,7 +86,7 @@ dialog.command
   font-size: .875rem
   gap: .5rem
   padding: .5rem .75rem
-  transition: background-color .15s ease
+  transition: background-color var(--duration-fast) ease
   user-select: none
 
   &:hover,

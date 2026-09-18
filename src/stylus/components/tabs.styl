@@ -39,7 +39,7 @@
     opacity: .7
     padding: .5rem 1rem
     text-decoration: none
-    transition: background-color .15s ease, color .15s ease, opacity .15s ease
+    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, opacity var(--duration-fast) ease
     white-space: nowrap
 
     &:hover
@@ -52,7 +52,7 @@
     &.active,
     &[aria-selected="true"]
       background-color: var(--background-color)
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+      box-shadow: var(--shadow-md)
       color: var(--foreground-color)
       font-weight: 600
       opacity: 1

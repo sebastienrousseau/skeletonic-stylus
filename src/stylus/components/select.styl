@@ -54,7 +54,7 @@ select.select,
   height: var(--control-height)
   line-height: 1.5
   padding: .625rem 2.5rem .625rem 1rem
-  transition: border-color .15s ease, box-shadow .15s ease
+  transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease
   width: 100%
 
   &:focus,
@@ -83,7 +83,7 @@ select.select,
   background-color: var(--background-color)
   border: 1px solid var(--cl-grey-200)
   border-radius: var(--radius-md)
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1)
+  box-shadow: var(--shadow-lg)
   color: var(--foreground-color)
   max-height: 16rem
   overflow-y: auto
@@ -97,7 +97,7 @@ select.select,
   display: flex
   font-size: .875rem
   padding: .375rem .5rem
-  transition: background-color .15s ease
+  transition: background-color var(--duration-fast) ease
   user-select: none
 
   &:hover,

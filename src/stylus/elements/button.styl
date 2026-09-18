@@ -34,7 +34,7 @@ button, .button, [type=submit]
   padding: .75rem var(--control-padding-x)
   text-align: center
   text-decoration: none
-  transition: background-color 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out
+  transition: background-color var(--duration-fast) ease-out, color var(--duration-fast) ease-out, opacity var(--duration-fast) ease-out
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -47,18 +47,18 @@ button, .button, [type=submit]
     color: var(--cl-white)
     opacity: .85
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   &:hover
     opacity: .9
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   &:focus-visible
     background: var(--cl-grey-200)
     opacity: .7
     outline: 2px solid var(--focus-ring-color)
     outline-offset: 2px
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   @media (forced-colors: active)
     &:focus-visible
       outline: 3px solid CanvasText
@@ -68,7 +68,7 @@ button, .button, [type=submit]
     color: var(--cl-white)
     cursor: not-allowed
     outline: 0
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
     user-select: none
   // Dark-mode brand colours are LIGHTER than the light-mode pair —
   // white text on those fails WCAG AA (2.66 : 1). Swap to black ink
@@ -121,7 +121,7 @@ button, .button, [type=submit]
     color: var(--link-color)
     cursor: pointer
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
     &:visited
       color: var(--link-color-visited)
     &:active, &:hover
@@ -168,7 +168,7 @@ button, .button, [type=submit]
   position: relative
   text-align: center
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -218,7 +218,7 @@ button.primary-outline:hover, .button.primary-outline:hover, [type=submit].prima
   color: var(--cl-primary)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.secondary-outline, .button.secondary-outline, [type=submit].secondary-outline
   background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-secondary)
@@ -228,7 +228,7 @@ button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].s
   color: var(--cl-secondary)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.success-outline, .button.success-outline, [type=submit].success-outline
   background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-success)
@@ -238,7 +238,7 @@ button.success-outline:hover, .button.success-outline:hover, [type=submit].succe
   color: var(--cl-success)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.error-outline, .button.error-outline, [type=submit].error-outline
   background-color: var(--cl-white)
   border: 1px solid var(--cl-danger)
@@ -248,7 +248,7 @@ button.error-outline:hover, .button.error-outline:hover, [type=submit].error-out
   color: var(--cl-danger)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.warning-outline, .button.warning-outline, [type=submit].warning-outline
   background-color: var(--cl-white)
   border: 1px solid var(--cl-warning)
@@ -258,6 +258,6 @@ button.warning-outline:hover, .button.warning-outline:hover, [type=submit].warni
   color: var(--cl-warning)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 
 /* @end */

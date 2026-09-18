@@ -80,6 +80,23 @@
    * 'Open Sans' remains available through the optional fonts module. */
   --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
 
+  /* Elevation. Shadows had accreted to ten near-identical values; these four
+   * steps replace them. Deliberately shallow — a heavy drop shadow is the
+   * quickest way to make an interface look dated. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05)
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .06)
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1)
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1)
+
+  /* Motion. Eight durations were in use, and `.15s` and `150ms` were the same
+   * value written two ways across 51 declarations. */
+  --duration-fast: 150ms
+  --duration-base: 200ms
+  --duration-slow: 300ms
+  --duration-slower: 400ms
+  --ease-standard: cubic-bezier(.4, 0, .2, 1)
+  --ease-out: cubic-bezier(.16, 1, .3, 1)
+
   // Fluid Font Sizes
   --gr-fsb: $gr-fsb
   --gr-fsl: $gr-fsl

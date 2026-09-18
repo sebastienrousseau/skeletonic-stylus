@@ -36,7 +36,7 @@ input[type='range'].slider,
     border: none
     border-radius: var(--radius-pill)
     height: .5rem
-    transition: background-color .15s ease
+    transition: background-color var(--duration-fast) ease
     width: 100%
 
   // Track Firefox
@@ -45,7 +45,7 @@ input[type='range'].slider,
     border: none
     border-radius: var(--radius-pill)
     height: .5rem
-    transition: background-color .15s ease
+    transition: background-color var(--duration-fast) ease
     width: 100%
 
   &::-moz-range-progress
@@ -60,10 +60,10 @@ input[type='range'].slider,
     background-color: var(--background-color)
     border: 2px solid var(--cl-primary)
     border-radius: var(--radius-pill)
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+    box-shadow: var(--shadow-md)
     height: 1.25rem
     margin-top: -.375rem
-    transition: transform .15s ease, box-shadow .15s ease
+    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease
     width: 1.25rem
 
   // Thumb Firefox
@@ -71,29 +71,29 @@ input[type='range'].slider,
     background-color: var(--background-color)
     border: 2px solid var(--cl-primary)
     border-radius: var(--radius-pill)
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+    box-shadow: var(--shadow-md)
     height: 1.25rem
-    transition: transform .15s ease, box-shadow .15s ease
+    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease
     width: 1.25rem
 
   // Interactive states
   &:hover:not(:disabled)
     &::-webkit-slider-thumb
-      box-shadow: 0 0 0 4px rgba(0, 102, 204, .15)
+      box-shadow: unquote('0 0 0 4px color-mix(in oklch, var(--cl-primary) 15%, transparent)')
       transform: scale(1.08)
 
     &::-moz-range-thumb
-      box-shadow: 0 0 0 4px rgba(0, 102, 204, .15)
+      box-shadow: unquote('0 0 0 4px color-mix(in oklch, var(--cl-primary) 15%, transparent)')
       transform: scale(1.08)
 
   &:focus-visible
     &::-webkit-slider-thumb
-      box-shadow: 0 0 0 4px rgba(0, 102, 204, .25)
+      box-shadow: unquote('0 0 0 4px color-mix(in oklch, var(--cl-primary) 25%, transparent)')
       outline: 2px solid var(--cl-primary)
       outline-offset: 2px
 
     &::-moz-range-thumb
-      box-shadow: 0 0 0 4px rgba(0, 102, 204, .25)
+      box-shadow: unquote('0 0 0 4px color-mix(in oklch, var(--cl-primary) 25%, transparent)')
       outline: 2px solid var(--cl-primary)
       outline-offset: 2px
 

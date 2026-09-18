@@ -20,7 +20,7 @@ for i in (1..12)
     display: inline-block
     padding: 10px
     position: relative
-    transition: all .4s ease-out
+    transition: all var(--duration-slower) ease-out
     &:hover
         text-decoration: none
 
@@ -35,7 +35,7 @@ for i in (1..12)
         inset-inline-start: 0
         position: absolute
         transform: translateX(-100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
         width: 100%
     &:hover
         &:before
@@ -52,7 +52,7 @@ for i in (1..12)
         inset-inline-end: 0
         position: absolute
         transform: translateX(100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
         width: 100%
     &:hover
         &:before
@@ -68,7 +68,7 @@ for i in (1..12)
         inset-inline-start: 0
         position: absolute
         transform: scaleX(0)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
         width: 100%
     &:hover
         &:before
@@ -84,7 +84,7 @@ for i in (1..12)
         inset-inline-start: 0
         position: absolute
         transform: scaleX(1)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
         width: 100%
     &:hover
         &:before
@@ -98,13 +98,13 @@ for i in (1..12)
         content: ''
         position: absolute
         transform: translateX(-100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
     &:after
         content: ''
         position: absolute
         top: 0
         transform: translateX(-100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
 
 .link-5:before, .link-5:after
     background: var(--link-color-focus)
@@ -123,13 +123,13 @@ for i in (1..12)
         content: ''
         position: absolute
         transform: translateX(100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
     &:after
         content: ''
         position: absolute
         top: 0
         transform: translateX(100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
 
 .link-6:before, .link-6:after
     background: var(--link-color-focus)
@@ -148,13 +148,13 @@ for i in (1..12)
         content: ''
         position: absolute
         transform: scaleX(0)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
     &:after
         content: ''
         position: absolute
         top: 0
         transform: scaleX(0)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
     &:hover:before
         transform: scaleX(1)
     &:hover:after
@@ -174,13 +174,13 @@ for i in (1..12)
         content: ''
         position: absolute
         transform: translateX(-100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
     &:after
         content: ''
         position: absolute
         top: 0
         transform: translateX(100%)
-        transition: transform .4s ease-out
+        transition: transform var(--duration-slower) ease-out
 
 .link-8:before, .link-8:after
     background: var(--link-color-focus)
@@ -202,7 +202,7 @@ for i in (1..12)
       position: absolute
       top: 100%
       transform: translateY(20px)
-      transition: opacity .4s, transform .4s
+      transition: opacity var(--duration-slower), transform var(--duration-slower)
       width: 100%
     &:hover
         &:before
@@ -220,7 +220,7 @@ for i in (1..12)
       position: absolute
       top: 100%
       transform: translateY(-15px)
-      transition: opacity .4s, transform .4s
+      transition: opacity var(--duration-slower), transform var(--duration-slower)
       width: 100%
     &:hover
         &:before
@@ -236,7 +236,7 @@ for i in (1..12)
         position: absolute
         top: 50%
         transform: translateY(-50%)
-        transition: transform .3s ease-out, content 0s
+        transition: transform var(--duration-slow) ease-out, content 0s
     &:hover:before
         content: '['
         transform: translateY(-50%) translateX(-15px)
@@ -254,7 +254,7 @@ for i in (1..12)
         top: 50%
         transform: translateY(-50%) scaleX(0)
         transform-origin: center
-        transition: transform .3s ease-out
+        transition: transform var(--duration-slow) ease-out
     &:hover:before
         content: '['
         transform: translateY(-50%) translateX(-12px) scaleX(1)
