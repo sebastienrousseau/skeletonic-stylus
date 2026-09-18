@@ -11,9 +11,9 @@
 // Native Zero-JS Dropdown Menu
 [popover].dropdown
   background: var(--cl-surface)
-  border-radius: .5rem
+  border-radius: var(--radius-lg)
   border: 1px solid var(--cl-grey-200)
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1)
+  box-shadow: var(--shadow-lg)
   margin: 0
   min-width: 12rem
   padding: .5rem
@@ -29,10 +29,10 @@
     padding: 0
 
   li
-    border-radius: .25rem
+    border-radius: var(--radius-sm)
     cursor: pointer
     padding: .5rem 1rem
-    transition: background-color .2s ease
+    transition: background-color var(--duration-base) ease
 
     &:hover
       background-color: var(--cl-grey-100)
@@ -41,6 +41,19 @@
     opacity: 0
     transform: translateY(0)
 
-  transition: opacity .2s ease, transform .2s ease, display .2s ease allow-discrete
+  transition: opacity var(--duration-base) ease, transform var(--duration-base) ease, display var(--duration-base) ease allow-discrete
 
 /* @end */
+
+// The trigger half of the anchor pair.
+//
+// `position-anchor: --dropdown-anchor` above needs some element to declare that
+// name; nothing did, so every dropdown fell back to the top layer's default
+// placement — floating far from the button that opened it. Put this class on
+// the control that owns the menu.
+//
+// Usage:
+//   <button class="dropdown-trigger" popovertarget="menu">Actions</button>
+//   <div id="menu" popover class="dropdown">...</div>
+.dropdown-trigger
+  anchor-name: --dropdown-anchor

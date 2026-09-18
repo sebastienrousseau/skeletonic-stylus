@@ -1,0 +1,136 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Motion UI Modifiers */
+
+// Easing classes
+.linear
+  animation-timing-function: linear
+
+.ease
+  animation-timing-function: ease
+
+.ease-in,
+.easeIn
+  animation-timing-function: ease-in
+
+.ease-out,
+.easeOut
+  animation-timing-function: ease-out
+
+.ease-in-out,
+.easeInOut
+  animation-timing-function: ease-in-out
+
+.bounce-in,
+.bounceIn
+  animation-timing-function: cubic-bezier(.48, 1.75, .42, .88)
+
+.bounce-out,
+.bounceOut
+  animation-timing-function: cubic-bezier(.68, -.55, .265, 1.55)
+
+.bounce-in-out,
+.bounceInOut
+  animation-timing-function: cubic-bezier(.87, -.41, .19, 1.44)
+
+// Durations
+.fast
+  animation-duration: .3s
+
+.slow
+  animation-duration: 1.5s
+
+.duration-100
+  animation-duration: .1s
+
+.duration-200
+  animation-duration: .2s
+
+.duration-300
+  animation-duration: .3s
+
+.duration-500
+  animation-duration: .5s
+
+.duration-700
+  animation-duration: .7s
+
+.duration-1000
+  animation-duration: 1s
+
+// Delays
+.delay-100
+  animation-delay: .1s
+
+.delay-200
+  animation-delay: .2s
+
+.delay-300
+  animation-delay: .3s
+
+.delay-500
+  animation-delay: .5s
+
+.delay-700
+  animation-delay: .7s
+
+.delay-1000
+  animation-delay: 1s
+
+// Stagger child sequence
+.stagger > *:nth-child(1)
+  animation-delay: .05s
+
+.stagger > *:nth-child(2)
+  animation-delay: .1s
+
+.stagger > *:nth-child(3)
+  animation-delay: .15s
+
+.stagger > *:nth-child(4)
+  animation-delay: .2s
+
+.stagger > *:nth-child(5)
+  animation-delay: .25s
+
+.stagger > *:nth-child(6)
+  animation-delay: .3s
+
+.stagger > *:nth-child(7)
+  animation-delay: .35s
+
+.stagger > *:nth-child(8)
+  animation-delay: .4s
+
+// State & Iteration
+.infinite
+  animation-iteration-count: infinite
+
+.once
+  animation-iteration-count: 1
+
+.paused,
+.is-paused
+  animation-play-state: paused
+
+.running,
+.is-animating
+  animation-play-state: running
+
+.fill-forwards
+  animation-fill-mode: forwards
+
+.fill-backwards
+  animation-fill-mode: backwards
+
+.fill-both
+  animation-fill-mode: both
+
+.fill-none
+  animation-fill-mode: none

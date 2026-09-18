@@ -1,0 +1,22 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Hinge Out To Top Animation (Motion UI) */
+@keyframes hingeOutToTop
+  from
+    opacity: 1
+    transform: perspective(2000px) rotateX(0)
+
+  to
+    opacity: 0
+    transform: perspective(2000px) rotateX(-90deg)
+
+.hingeOutToTop
+  animation-name: hingeOutToTop
+  transform-origin: top
+/* @end */

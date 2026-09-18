@@ -1,0 +1,55 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Alert dialog */
+
+// A modal that interrupts to confirm something destructive or irreversible.
+// Narrower than a modal because it carries one question, and it deliberately
+// has no dismiss affordance of its own: the caller supplies both answers, so
+// there is no ambiguous way out.
+//
+// Mark it up as <dialog class="alert-dialog" role="alertdialog"> and open it
+// with showModal(); the role is what tells assistive technology this is an
+// interruption rather than an ordinary dialog.
+dialog.alert-dialog
+  background: var(--background-color)
+  border: 0
+  border-radius: var(--radius-xl)
+  box-shadow: var(--shadow-xl)
+  color: var(--foreground-color)
+  max-width: calc(100vw - 2rem)
+  padding: 1.618rem
+  transition: opacity var(--duration-base) var(--ease-standard), display var(--duration-base) allow-discrete
+  width: 26rem
+
+  @starting-style
+    opacity: 0
+
+  &::backdrop
+    background: rgba(0, 0, 0, .5)
+    backdrop-filter: blur(4px)
+    transition: opacity var(--duration-base) var(--ease-standard), display var(--duration-base) allow-discrete
+    @starting-style
+      opacity: 0
+
+  .alert-dialog-title
+    font-size: 1.125rem
+    font-weight: 600
+    margin-bottom: .5rem
+
+  .alert-dialog-description
+    color: var(--cl-grey-600)
+    margin-bottom: 1.618rem
+
+  .alert-dialog-actions
+    display: flex
+    flex-wrap: wrap
+    gap: .618rem
+    justify-content: flex-end
+
+/* @end */

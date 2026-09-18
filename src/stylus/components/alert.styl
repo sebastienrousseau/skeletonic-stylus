@@ -28,13 +28,13 @@
 // `:root { color-scheme: light dark }` (declared in colors.styl).
 .alert
   background: var(--bg-disable)
-  border-radius: .38rem
+  border-radius: var(--radius-md)
   color: light-dark(#1a1a1a, #f5f5f5)
   display: block
   margin-bottom: 1.62rem
   padding: 1.62rem
   position: relative
-  transition: transform .2s ease
+  transition: transform var(--duration-base) ease
 
   // Native :has() — give alerts containing a link a pointer cursor.
   &:has(a)

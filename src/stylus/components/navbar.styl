@@ -27,11 +27,14 @@
 
 @keyframes navbar-scroll
   to
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1)
-    @css {
-      background: color-mix(in oklch, var(--cl-surface), transparent 5%);
-      backdrop-filter: blur(10px);
-    }
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, .1)
+    // `color-mix(in oklch, ...)` is not parseable by Stylus, which is why this
+    // was wrapped in `@css { }` — but that wrapper emitted a second, stray copy
+    // at the top level, and a declaration where a selector is expected makes the
+    // browser discard the rule that follows. `unquote()` passes the value
+    // through literally and stays an ordinary declaration.
+    background: unquote('color-mix(in oklch, var(--cl-surface), transparent 5%)')
+    backdrop-filter: blur(10px)
 
   span
     display: none
@@ -122,10 +125,18 @@ input[type="checkbox"]:checked
   & ~ #sidebar
     transform: translateX(0)
 
-input[type=checkbox]
+// Scoped to the checkbox that actually drives the sidebar.
+//
+// This was a bare `input[type=checkbox]`, which hid *every* checkbox on the
+// page — the library's own `.toggle` element included, and any plain checkbox
+// in a consumer's markup. Specificity did not save them: this rule lives in
+// `@layer skeletonic.components`, which is declared after
+// `@layer skeletonic.elements`, and a later layer wins whatever the selector
+// weight. `:has()` narrows it to the control that owns a `#sidebar` sibling.
+input[type=checkbox]:has(~ #sidebar)
   box-sizing: border-box
   display: none
-  transition: all .3s
+  transition: all var(--duration-slow)
 
 .hamburger-toggle
   box-sizing: border-box
@@ -134,7 +145,7 @@ input[type=checkbox]
   height: 22px
   position: absolute
   top: 22px
-  transition: all .3s
+  transition: all var(--duration-slow)
   width: 22px
   z-index: 99
 
@@ -149,7 +160,7 @@ input[type=checkbox]
   box-sizing: border-box
   height: 3px
   position: absolute
-  transition: all .3s
+  transition: all var(--duration-slow)
   width: 100%
 
 .horizontal
@@ -157,37 +168,37 @@ input[type=checkbox]
   float: left
   margin-top: 3px
   position: relative
-  transition: all .3s
+  transition: all var(--duration-slow)
 
 .diagonal
   &.part-1
     box-sizing: border-box
     float: inline-start
     position: relative
-    transition: all .3s
+    transition: all var(--duration-slow)
   &.part-2
     box-sizing: border-box
     float: inline-start
     margin-top: 3px
     position: relative
-    transition: all .3s
+    transition: all var(--duration-slow)
 
 input[type=checkbox]:checked
   & ~ .hamburger-toggle
     & > .horizontal
       box-sizing: border-box
       opacity: 0
-      transition: all .3s
+      transition: all var(--duration-slow)
     & > .diagonal
       &.part-1
         box-sizing: border-box
         margin-top: 8px
         transform: rotate(135deg)
-        transition: all .3s
+        transition: all var(--duration-slow)
       &.part-2
         box-sizing: border-box
         margin-top: -9px
         transform: rotate(-135deg)
-        transition: all .3s
+        transition: all var(--duration-slow)
 
 /* @end */

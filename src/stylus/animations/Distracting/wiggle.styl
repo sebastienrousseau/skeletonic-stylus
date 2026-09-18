@@ -1,0 +1,25 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Wiggle Animation (Motion UI) */
+@keyframes wiggle
+  0%,
+  100%
+    transform: rotate(0deg)
+  20%
+    transform: rotate(-7deg)
+  40%
+    transform: rotate(7deg)
+  60%
+    transform: rotate(-4deg)
+  80%
+    transform: rotate(4deg)
+
+.wiggle
+  animation-name: wiggle
+/* @end */

@@ -1,0 +1,92 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Sidebar */
+
+// An application sidebar that collapses on narrow viewports.
+//
+// The navbar component already carries an off-canvas #sidebar driven by a
+// checkbox; this is the layout-level companion — a persistent rail beside the
+// content on a wide screen, an off-canvas panel on a phone. Both states are
+// CSS only.
+//
+//   <div class="sidebar-layout">
+//     <aside class="sidebar">...</aside>
+//     <main class="sidebar-content">...</main>
+//   </div>
+.sidebar-layout
+  display: grid
+  grid-template-columns: auto minmax(0, 1fr)
+  min-height: 100%
+
+.sidebar
+  background: var(--cl-surface)
+  border-inline-end: 1px solid var(--cl-grey-200)
+  display: flex
+  flex-direction: column
+  gap: .25rem
+  padding: 1rem
+  width: 16rem
+
+  .sidebar-header,
+  .sidebar-footer
+    padding: .5rem .75rem
+
+  .sidebar-group-label
+    color: var(--cl-grey-600)
+    font-size: .6875rem
+    font-weight: 700
+    letter-spacing: .08em
+    padding: .5rem .75rem .25rem
+    text-transform: uppercase
+
+  .sidebar-item
+    align-items: center
+    border-radius: var(--radius-md)
+    color: inherit
+    display: flex
+    gap: .625rem
+    padding: .5rem .75rem
+    text-decoration: none
+    transition: background-color var(--duration-fast) var(--ease-standard)
+    &:hover
+      background-color: var(--cl-grey-100)
+    &:focus-visible
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: -2px
+    // Marked semantically rather than with a modifier class, so the styling
+    // and the accessibility tree cannot disagree.
+    &[aria-current='page']
+      background-color: var(--cl-grey-100)
+      font-weight: 600
+
+  .sidebar-footer
+    margin-block-start: auto
+
+// Off-canvas below the breakpoint. The rail slides out of the inline-start
+// edge and the content takes the full width.
+@media (max-width: 48rem)
+  .sidebar-layout
+    grid-template-columns: minmax(0, 1fr)
+
+  .sidebar
+    block-size: 100%
+    inset-block-start: 0
+    inset-inline-start: 0
+    position: fixed
+    transform: translateX(-100%)
+    transition: transform var(--duration-slow) var(--ease-standard)
+    z-index: 40
+
+  [dir='rtl'] .sidebar
+    transform: translateX(100%)
+
+  .sidebar.sidebar-open
+    transform: translateX(0)
+
+/* @end */

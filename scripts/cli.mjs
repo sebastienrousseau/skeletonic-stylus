@@ -94,7 +94,7 @@ const STARTER_HTML = `<!doctype html>
 // repo (during development) it's `<pkgRoot>/src/stylus/components/`
 // or `<pkgRoot>/dist/stylus/components/` after a build. Try each.
 function componentsDir() {
-  for (const candidate of ["stylus", "dist/stylus", "src/stylus"]) {
+  for (const candidate of ["stylus", "src/stylus", "dist/stylus"]) {
     const dir = join(pkgRoot, candidate, "components");
     if (existsSync(dir)) return dir;
   }
@@ -105,7 +105,7 @@ function listComponents() {
   const dir = componentsDir();
   if (!dir) return [];
   return readdirSync(dir)
-    .filter((f) => f.endsWith(".styl"))
+    .filter((f) => f.endsWith(".styl") && !f.startsWith("_"))
     .map((f) => f.replace(/\.styl$/, ""))
     .sort();
 }

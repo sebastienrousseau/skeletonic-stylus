@@ -1,0 +1,22 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Hinge Out To Left Animation (Motion UI) */
+@keyframes hingeOutToLeft
+  from
+    opacity: 1
+    transform: perspective(2000px) rotateY(0)
+
+  to
+    opacity: 0
+    transform: perspective(2000px) rotateY(90deg)
+
+.hingeOutToLeft
+  animation-name: hingeOutToLeft
+  transform-origin: left
+/* @end */

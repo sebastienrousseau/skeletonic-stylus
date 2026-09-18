@@ -13,7 +13,9 @@
   --cl-success: light-dark(oklch(.7 .2 140), oklch(.75 .15 140))
   --cl-info: light-dark(oklch(.85 .15 100), oklch(.88 .12 100))
   --cl-warning: light-dark(oklch(.8 .15 80), oklch(.82 .12 80))
-  --cl-danger: light-dark(oklch(.55 .25 20), oklch(.65 .20 20))
+  --cl-danger: light-dark(oklch(.45 .25 20), oklch(.65 .20 20))
+  --cl-tertiary: light-dark(oklch(.38 .13 160), oklch(.65 .11 160))
+  --font: 'Open Sans', sans-serif
 
   /* Background tints. Concrete light-dark() pairs (no relative-color
      syntax) so older Chromium / pa11y / WAVE can resolve them — the
@@ -22,6 +24,8 @@
      Each tint pairs a near-white tint of the brand hue with a near-
      black tint at the same hue + chroma for dark mode. */
   --bg-primary: light-dark(oklch(.96 .03 250), oklch(.18 .04 250))
+  --bg-tertiary: light-dark(oklch(.96 .03 160), oklch(.18 .04 160))
+  --bg-disable: var(--cl-grey-200)
   --bg-secondary: light-dark(oklch(.96 .03 200), oklch(.18 .04 200))
   --bg-success: light-dark(oklch(.96 .03 140), oklch(.18 .04 140))
   --bg-info: light-dark(oklch(.96 .04 100), oklch(.18 .04 100))
@@ -29,7 +33,25 @@
   --bg-danger: light-dark(oklch(.96 .03 20), oklch(.18 .04 20))
 
   --cl-grey-100: light-dark(oklch(.98 .01 250), oklch(.15 .01 250))
-  --cl-grey-200: light-dark(oklch(.9 .01 250), oklch(.25 .01 250))
+  --cl-grey-200: light-dark(oklch(.92 .01 250), oklch(.22 .01 250))
+  --cl-grey-300: light-dark(oklch(.84 .01 250), oklch(.32 .01 250))
+  --cl-grey-400: light-dark(oklch(.70 .01 250), oklch(.45 .01 250))
+  --cl-grey-500: light-dark(oklch(.50 .01 250), oklch(.60 .01 250))
+  // 600-1000 continue the ramp. Components referenced these long before they
+  // existed: `button:link`, `button:active`, `button:disabled`, every `hr`
+  // variant and `code.tertiary` all resolved to an undefined custom property,
+  // which makes the whole declaration invalid at computed-value time — so those
+  // backgrounds and borders were simply absent.
+  --cl-grey-600: light-dark(oklch(.38 .01 250), oklch(.70 .01 250))
+  --cl-grey-700: light-dark(oklch(.30 .01 250), oklch(.78 .01 250))
+  --cl-grey-800: light-dark(oklch(.24 .01 250), oklch(.85 .01 250))
+  --cl-grey-900: light-dark(oklch(.18 .01 250), oklch(.91 .01 250))
+  --cl-grey-1000: light-dark(oklch(.12 .01 250), oklch(.96 .01 250))
+  --cl-border: var(--cl-grey-300)
+  --cl-input: var(--cl-grey-300)
+  --cl-ring: var(--cl-primary)
+  --cl-muted: var(--cl-grey-100)
+  --cl-muted-foreground: var(--cl-grey-500)
 
 /* Utility Classes */
 .text-primary { color: var(--cl-primary); }

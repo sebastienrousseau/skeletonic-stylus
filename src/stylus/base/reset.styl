@@ -13,14 +13,22 @@ html
   font-family: sans-serif
   font-size: 100%
   text-rendering: optimizeLegibility
-  @css {
-    interpolate-size: allow-keywords;
-  }
+  // Written as a plain declaration. Inside an `@css { }` block Stylus emitted it
+  // twice: once correctly inside `html`, and once as a stray declaration at the
+  // top level. A declaration where a selector is expected puts the parser into
+  // error recovery, which discards everything up to and past the next block — so
+  // the entire `body` rule below it was being thrown away, taking the library's
+  // base font-size, colours and line-height with it.
+  interpolate-size: allow-keywords
 
 body
   background-color: var(--background-color)
   color: var(--foreground-color)
-  font-family: 'Open Sans', sans-serif
+  // The host platform's own interface font. 'Open Sans' was hardcoded here even
+  // though the library ships it as an optional module, so the core could not be
+  // used without it and no consumer could opt out. Import the fonts module to
+  // get Open Sans back.
+  font-family: var(--font-system)
   font-size: var(--gr-fsb)
   font-weight: 400
   line-height: 1.5

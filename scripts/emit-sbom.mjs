@@ -33,7 +33,7 @@ if (existsSync(minCss)) {
   const buf = readFileSync(minCss);
   hashes.push(
     { alg: "SHA-256", content: createHash("sha256").update(buf).digest("hex") },
-    { alg: "SHA-512", content: createHash("sha256").update(buf).digest("hex") }
+    { alg: "SHA-512", content: createHash("sha512").update(buf).digest("hex") }
   );
 }
 

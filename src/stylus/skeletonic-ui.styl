@@ -9,7 +9,7 @@
  **/
 
 @css {
-  @layer skeletonic.elements, skeletonic.components;
+  @layer skeletonic.elements, skeletonic.components, skeletonic.utilities;
 }
 
 // Configurations (Variables & Colors)
@@ -28,3 +28,10 @@
 // Components
 @layer skeletonic.components
   @import "components/_contents.styl"
+
+// The utilities layer is declared in the layer order that wrap-cascade-layers
+// emits, but nothing imported it — so `--ease-spring-bout`,
+// `--ease-spring-elastic` and the scroll/anchor helpers were never in any
+// published bundle.
+@layer skeletonic.utilities
+  @import "utilities/_contents.styl"

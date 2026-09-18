@@ -15,7 +15,7 @@ button, .button, [type=submit]
   -highlight()
   background: var(--bg-disable)
   border: 0
-  border-radius: .375rem
+  border-radius: var(--radius-md)
   cursor: pointer
   display: inline-flex
   align-items: center
@@ -23,20 +23,18 @@ button, .button, [type=submit]
   font-family: inherit
   // 1rem base — the previous 1.62rem (≈ 26 px) was the cause of the
   // "huge buttons with label not fitting" bug. Pair with a 44 px
-  // touch target (WCAG 2.5.8 enhanced) and modest letter-spacing
-  // for the uppercase label.
+  // touch target (WCAG 2.5.8 enhanced). Labels are sentence case: an
+  // interface that shouts every action reads as a web page, not as an app.
   font-size: 1rem
   font-weight: 600
-  letter-spacing: .02em
   line-height: 1
   margin: 0
   min-width: 6rem
-  min-height: 2.75rem
-  padding: .75rem 1.25rem
+  min-height: var(--control-height)
+  padding: .75rem var(--control-padding-x)
   text-align: center
   text-decoration: none
-  text-transform: uppercase
-  transition: background-color 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out
+  transition: background-color var(--duration-fast) ease-out, color var(--duration-fast) ease-out, opacity var(--duration-fast) ease-out
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -49,18 +47,18 @@ button, .button, [type=submit]
     color: var(--cl-white)
     opacity: .85
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   &:hover
     opacity: .9
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   &:focus-visible
     background: var(--cl-grey-200)
     opacity: .7
     outline: 2px solid var(--focus-ring-color)
     outline-offset: 2px
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
   @media (forced-colors: active)
     &:focus-visible
       outline: 3px solid CanvasText
@@ -70,7 +68,7 @@ button, .button, [type=submit]
     color: var(--cl-white)
     cursor: not-allowed
     outline: 0
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
     user-select: none
   // Dark-mode brand colours are LIGHTER than the light-mode pair —
   // white text on those fails WCAG AA (2.66 : 1). Swap to black ink
@@ -78,60 +76,44 @@ button, .button, [type=submit]
   &.primary
     background: var(--cl-primary)
     color: light-dark(var(--cl-white), var(--cl-black))
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: hsl(210, 100%, 32%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.secondary
     background: var(--cl-secondary)
     color: light-dark(var(--cl-white), var(--cl-black))
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: hsl(195, 100%, 23%)
-      text-decoration: none
-      transition: all 150ms linear
+
   // Warning / info / success use light amber, light yellow, light
   // green tokens. White text on those fails WCAG 2.2 AA (≤ 2.5:1) —
   // pair with `--cl-black` text instead so the contrast clears.
   &.info
     background: var(--cl-info)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(52, 199, 89, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.success
     background: var(--cl-success)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(40, 167, 69, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.error
     background: var(--cl-danger)
-    color: var(--cl-white)
-    cursor: pointer
-    transition: all 150ms linear
+    // --cl-danger is dark in light mode but light in dark mode, so a fixed
+    // white label clears 4.5:1 in one scheme and fails it in the other. Same
+    // treatment as `.secondary` above.
+    color: light-dark(var(--cl-white), var(--cl-black))
     &:hover
       background-color: adjust(rgba(255, 59, 48, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
+
   &.warning
     background: var(--cl-warning)
     color: var(--cl-black)
-    cursor: pointer
-    transition: all 150ms linear
     &:hover
       background-color: adjust(rgba(255, 149, 0, 1), 'lightness', -33%)
-      text-decoration: none
-      transition: all 150ms linear
   &.link
     background: 0 0
     border-color: transparent
@@ -139,7 +121,7 @@ button, .button, [type=submit]
     color: var(--link-color)
     cursor: pointer
     text-decoration: none
-    transition: all 150ms linear
+    transition: all var(--duration-fast) linear
     &:visited
       color: var(--link-color-visited)
     &:active, &:hover
@@ -172,7 +154,7 @@ button, .button, [type=submit]
   align-items: center
   background: var(--cl-primary)
   border: 0
-  border-radius: .3rem
+  border-radius: var(--radius-sm)
   // Same dark-mode swap as `.button.primary`: dark-mode --cl-primary
   // is a light blue and white on light blue fails AA (2.66 : 1).
   color: light-dark(var(--cl-white), var(--cl-black))
@@ -186,8 +168,7 @@ button, .button, [type=submit]
   position: relative
   text-align: center
   text-decoration: none
-  text-transform: uppercase
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
   user-select: none
   vertical-align: middle
   white-space: nowrap
@@ -201,7 +182,7 @@ button, .button, [type=submit]
     &:hover
       opacity: .9
   &-oval
-    border-radius: 61.25rem
+    border-radius: var(--radius-pill)
     min-width: 9rem
     &:hover
       opacity: .9
@@ -237,7 +218,7 @@ button.primary-outline:hover, .button.primary-outline:hover, [type=submit].prima
   color: var(--cl-primary)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.secondary-outline, .button.secondary-outline, [type=submit].secondary-outline
   background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-secondary)
@@ -247,7 +228,7 @@ button.secondary-outline:hover, .button.secondary-outline:hover, [type=submit].s
   color: var(--cl-secondary)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.success-outline, .button.success-outline, [type=submit].success-outline
   background-color: light-dark(var(--cl-white), var(--cl-black))
   border: 1px solid var(--cl-success)
@@ -257,7 +238,7 @@ button.success-outline:hover, .button.success-outline:hover, [type=submit].succe
   color: var(--cl-success)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.error-outline, .button.error-outline, [type=submit].error-outline
   background-color: var(--cl-white)
   border: 1px solid var(--cl-danger)
@@ -267,7 +248,7 @@ button.error-outline:hover, .button.error-outline:hover, [type=submit].error-out
   color: var(--cl-danger)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 button.warning-outline, .button.warning-outline, [type=submit].warning-outline
   background-color: var(--cl-white)
   border: 1px solid var(--cl-warning)
@@ -277,6 +258,6 @@ button.warning-outline:hover, .button.warning-outline:hover, [type=submit].warni
   color: var(--cl-warning)
   opacity: 1
   text-decoration: none
-  transition: all 150ms linear
+  transition: all var(--duration-fast) linear
 
 /* @end */

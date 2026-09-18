@@ -8,6 +8,258 @@ project adheres to
 
 ---
 
+**[Unreleased]**
+
+**Added**
+
+- **Five components**: `collapsible`, `alert-dialog`, `item`, `menubar` and
+  `sidebar` — the shadcn/ui primitives that were both absent here and
+  achievable without JavaScript. The rest stay out on purpose: seven need script
+  to mean anything (combobox, calendar, date-picker, data-table, chart,
+  context-menu, resizable) and seven are shadcn's AI-chat kit rather than
+  general primitives.
+- **Reference pages for the styled HTML elements** — `button`, `input`,
+  `textarea`, `label`, `table`, `fieldset`, `toggle`, `code`, `divider`, `list`,
+  `image` and `clipboard`. These live in `src/stylus/elements/` and the
+  reference only covered `src/stylus/components/`, so the library looked like it
+  lacked controls it has always had. The coverage check now runs over both
+  directories, so an undocumented stylesheet fails the build either way.
+- **Design tokens for radius, control geometry, elevation and motion.** Radius
+  had reached 21 distinct values, six of them within two pixels of each other;
+  shadows ten; and `.15s` and `150ms` were the same duration written two ways
+  across 51 declarations. Five radius steps, one control-height scale with 44px
+  as the default, four elevation steps and four durations now carry the library.
+- **`scripts/layout-audit.mjs`** renders every page at three widths in both
+  colour schemes and fails on content pushed past the viewport, empty examples,
+  overlays opening away from their trigger, and library styling landing on
+  syntax-highlighter tokens.
+- **A `Utilities` reference page** documenting the flex, gap, padding and margin
+  helpers. The `.gap-*` utilities below are new API, and an undocumented utility
+  is one nobody uses.
+- **`.gap-*` utilities** on the same golden-ratio scale as the padding and
+  margin utilities. Without them there was no way to space the children of a
+  `.flex` or grid container except an inline `style` attribute, which any
+  consumer shipping `style-src 'self'` silently drops.
+- **`scripts/css-validate.mjs`** checks every compiled declaration in a real
+  browser and fails the build on anything discarded at parse time or invalidated
+  after `var()` substitution. It is what found the two bugs above; 6,739
+  declarations now pass.
+- **A component reference at `/components/`**, one page per primitive, in the
+  shape a CSS library's documentation needs: a category sidebar, and for each
+  example prose, the component rendered live, and the exact markup to copy. The
+  landing page stays a landing page.
+- **`scripts/components-manifest.mjs` and `scripts/generate-component-docs.mjs`**
+  generate those pages and check the manifest against
+  `src/stylus/components/` in *both* directions — a component with no page
+  fails the build, and so does a page for a component that no longer exists.
+  Each example's markup is emitted twice, live and as the code sample, from one
+  string, so the two cannot drift.
+
+- **Static showcase generation via cargo-ssg**: the showcase is now generated
+  from `content/` and `_layouts/` per `ssg.toml` instead of a hand-maintained
+  `index.html`, with `scripts/build-ssg.mjs` driving the build.
+- **`scripts/fix-ssg-seo.mjs`**: rebuilds `sitemap.xml` deterministically from
+  the pages the build actually produced, and drops the placeholder
+  `news-sitemap.xml` this site has no use for.
+- **`scripts/lint-content.mjs`**: fails the build when a blank line inside a
+  raw-HTML block in `content/` would silently ship the markup as escaped text.
+- **`mise.toml`**: pins `cargo:ssg` so contributors and CI build with the same
+  generator. Both workflows install it via `jdx/mise-action`.
+- **Social card**: `images/screenshot.png` with `og:image`, `twitter:image`,
+  dimensions, alt text and JSON-LD — the previous `og:image` was a dead link.
+- **`.select-field`**: additive wrapper that draws the select chevron on the
+  wrapper, so the control sits on a flat, machine-checkable background.
+
+**Fixed**
+
+- **The `body` rule was being deleted by the browser.** An `@css { }` wrapper in
+  the reset emitted `interpolate-size: allow-keywords` a second time as a bare
+  declaration at the top of the layer, and a declaration where a selector is
+  expected puts the parser into error recovery — which discards the rule that
+  follows. Every consumer of this library was getting the UA default 16px
+  instead of the fluid `clamp(1.0625rem, 1.4vw, 1.25rem)` it declares. Three
+  more `@css { }` blocks had the same fault.
+- **The navbar hid every checkbox on the page.** A bare
+  `input[type=checkbox] { display: none }` for its hamburger control sat in
+  `@layer skeletonic.components`, which is declared after
+  `skeletonic.elements` — and a later layer wins whatever the specificity, so
+  the library's own `.toggle` lost to it, as did any plain checkbox in a
+  consumer's markup.
+- **Elevation matched the value a component used to have rather than what it
+  is**: `code` callouts and the slider thumb and active tab pill carried
+  floating-panel and card shadows, and `.command` gave its inline panel the same
+  elevation as its modal form.
+- **The avatar group rendered right to left.** `flex-direction: row-reverse`
+  put the first avatar on top of the stack but reversed the rendered order, so
+  visual order no longer matched DOM order — what a screen reader announces and
+  what the tab sequence follows (WCAG 1.3.2).
+- **Eight custom properties were referenced but never defined.** `--cl-grey-600`,
+  `--cl-grey-700`, `--cl-grey-900`, `--cl-grey-1000`, `--cl-tertiary`,
+  `--bg-tertiary`, `--bg-disable` and `--font` had no declaration anywhere, so
+  the 21 rules using them were invalid at computed-value time and fell back to
+  their initial values. `button:link`, `button:active`, `button:disabled`, every
+  `hr` variant and `code.tertiary` had no background or border at all — in every
+  project consuming the library, not just this site.
+- **`.flex`, `.center`, `.stack` and `[flex]` had no gap.**
+  `gap: var(--gr)rem` compiles to `gap: var(--gr) rem`, and `--gr` is the
+  unitless number `1.62`, so the value resolved to `1.62 rem` — not a length.
+  The declaration was invalid at computed-value time and gap fell back to
+  `normal`. The library's primary layout helper has been silently spacing
+  nothing.
+- **Tooltips anchored to themselves.** `[popover].tooltip` declared both
+  `anchor-name` and `position-anchor` with the same ident, so `anchor(bottom)`
+  resolved against the tooltip's own box. `.tooltip-trigger` now carries the
+  name, matching dropdown and popover.
+- **`.command-shortcut` failed 4.5:1 in dark mode**; it moves one step along the
+  grey ramp, which raises contrast in both schemes.
+- **The showcase mixed two colour systems.** The vendored theme carries its own
+  hex palette with no relationship to the library's OKLCH tokens, so a blue
+  theme button in the header sat beside a teal library button in the example
+  under it. The theme's tokens now derive from the library's, which is the
+  palette a site about the library should be showing.
+- **Site navigation dead-ended on every page but the landing one.** The header
+  and footer links were fragment-only (`#overview`), which resolve against the
+  current page; once the site had more than one page they pointed at anchors
+  that were not there.
+- **The library's `.block` utility was styling the syntax highlighter.** The
+  highlighter emits TextMate scope names as class names, some containing the
+  word `block`, so `display: block` landed on individual code tokens and split
+  `<div class="button-group">` across three lines.
+- **The accessibility gate only ever audited the landing page.** It now audits
+  every generated page in both colour schemes — 74 audits — which is what
+  caught a keyboard-inaccessible scrollable region in the first version of the
+  code blocks.
+- **Per-page SEO artefacts were published for every page**: cargo-ssg writes a
+  `sitemap.xml`, `robots.txt`, `rss.xml` and `news-sitemap.xml` into each page's
+  directory, which is meaningless at a sub-path. 180 of them were being shipped.
+- **Every interactive demo on the showcase was inert.** The page ships a strict
+  `script-src 'self'` (cargo-ssg extracts inline `<script>` blocks to hashed
+  files under `_csp/`), and that policy refuses to compile inline event-handler
+  attributes. All six `onclick=` demos — the modal, the drawer, and all four
+  Motion UI cards — did nothing when clicked, silently. They are now wired
+  through delegated listeners in the extracted script, and the dialogs close via
+  `<form method="dialog">`, so the strict policy is kept rather than relaxed.
+- **The Motion UI cards were clickable `<div>`s**, unreachable by keyboard. They
+  are `<button>`s now.
+- **Demo cards had no vertical rhythm.** The theme's `.card` is a plain block
+  written for a heading and a paragraph; the showcase stacks several live
+  primitives inside one, so they sat flush against each other.
+- **Eleven primitives had no demo at all** despite the "35 Modern UI Primitives"
+  heading: popover, dropdown, command, loader, skeleton, empty, aspect-ratio and
+  navbar now have live demos in a new *Overlays, States & Layout Primitives*
+  section.
+- **`scripts/lint-content.mjs` false-positived inside `<script>`.** CommonMark
+  raw-text blocks (`<script>`, `<style>`, `<textarea>`) end at their closing tag,
+  not at a blank line, so blank lines there are harmless.
+- **RSS feed and sitemap entries were skipped entirely.** `content/index.md`
+  declared `permalink: /`; cargo-ssg only derives an absolute permalink for a
+  page that declares none, so `/` failed URL validation and took the feed's
+  `channel.link`, the sitemap `<loc>`, `og:url` and `robots.txt` with it.
+- **Clean builds shipped an empty `<urlset>`.** The generator assembles the
+  sitemap by walking the output directory during the compile, before any page
+  is written to it, so CI always published the empty one.
+- **Half the showcase shipped as escaped text**: blank lines inside raw-HTML
+  blocks ended the block, re-parsing the markup as indented code.
+- **The accessibility audit was measuring an unstyled page** — it loaded `dist`
+  over `file://`, where SRI + `crossorigin` make every fingerprinted stylesheet
+  fail CORS, masking real violations behind artefacts.
+- **`.slider` was 20px tall**, below the WCAG 2.2 target-size minimum; base and
+  `.sm` now sit at 24px with the thumb still centred.
+- **`.toggle-group-item` did not exist** in the library, leaving those buttons
+  unstyled at 1.09:1 in light mode.
+- **`dist/` accumulated orphaned fingerprinted assets** on every build and
+  shipped them in the published tarball.
+
+**Changed**
+
+- **The system font stack replaces `'Open Sans'` as the default face**, and
+  buttons are sentence case. The reset hardcoded Open Sans even though the
+  library ships it as an optional module, so the core could not be used without
+  it and no consumer could opt out; importing the fonts module brings it back.
+- **Node support is `>=22`.** Node 20 reached end of life on 2026-04-30 and was
+  still in the CI matrix; `engines` claimed `>=18`, EOL since 2025-04-30. The
+  matrix is 22 and 24, and what is tested is what is claimed. Consumers on Node
+  20 will see an engine warning on install.
+- **pnpm is pinned once**, through `packageManager`, and installed standalone in
+  CI so the package manager no longer constrains the Node versions under test.
+  The duplicate `pnpm.overrides` block in `package.json` is retired now that CI
+  reads them from `pnpm-workspace.yaml`.
+- **Accessibility gate**: audits both colour schemes over HTTP rather than one
+  scheme over `file://`, detects SRI-rejected stylesheets, and measures contrast
+  directly for nodes axe declines to rule on instead of discarding them.
+- **`_layouts/`**: re-vendored from the upstream Voxt theme, with the
+  project-specific delta isolated in `_layouts/showcase.css` so the theme stays
+  re-pullable.
+
+**Removed**
+
+- `scripts/fix-ssg-paths.mjs` and the `dev:copy:index` alias. The path rewrite
+  could not deliver `file://` rendering it promised — SRI and CORS block those
+  assets whatever the href looks like — and it fought the theme's
+  `{{site_path}}` contract.
+
+---
+
+**[2.0.2] — 2026-08-05**
+
+**Added**
+
+- **Expanded Modern Component Suite (35 UI Primitives)**: Implemented 25 new modern accessible components inspired by shadcn/ui:
+  - `aspect-ratio`: Responsive aspect-ratio containers (`16/9`, `4/3`, `1/1`, `21/9`, etc.).
+  - `avatar`: Rounded/square avatars, fallbacks, presence status indicators, and stacked avatar groups.
+  - `breadcrumb`: Semantic accessible breadcrumb navigation with slash and chevron separators.
+  - `button-group`: Connected horizontal and vertical button groups with border deduplication.
+  - `carousel`: Pure CSS scroll-snap carousel with responsive item columns, navigation, and indicators.
+  - `checkbox`: Custom accessible checkbox with SVG checkmark and indeterminate state.
+  - `command`: Modern command palette search modal and quick menu primitives.
+  - `empty`: Zero-data placeholders and empty state screens.
+  - `hover-card`: Interactive preview card triggered on hover or focus-within.
+  - `input-otp`: PIN and one-time password segmented entry slots with blinking caret animation.
+  - `kbd`: Inline keyboard shortcuts with monospace font stack and tactile borders.
+  - `pagination`: Semantic pagination controls, active state, and ellipsis.
+  - `popover`: Native HTML5 `[popover]` floating cards with `@starting-style` transitions.
+  - `progress`: Native `progress` and `.progress` bars with color variants and indeterminate state.
+  - `radio-group`: Custom accessible radio controls with row and column layouts.
+  - `scroll-area`: Custom styled lightweight scrollbars with horizontal, vertical, and hidden modes.
+  - `select`: Styled native select element with custom dropdown chevron and floating menus.
+  - `separator`: Accessible horizontal and vertical dividers with optional label text.
+  - `sheet`: Sliding dialog drawers (left, right, top, bottom) with `@starting-style`.
+  - `skeleton`: Content loading placeholder blocks with pulse and shimmer wave animations.
+  - `slider`: Custom styled native range sliders with track, thumb, focus rings, and value display.
+  - `switch`: iOS and shadcn styled toggle switches with smooth sliding thumb animations.
+  - `tabs`: Accessible tab lists, active pill triggers, underline variant, and tab panels.
+  - `toast`: Non-intrusive notification toasts with title, description, actions, and status borders.
+  - `toggle-group`: Single and multi-selection toggle button bars.
+- **Motion UI Animations & Modifiers Suite**: Integrated transition and animation system inspired by Foundation Motion UI:
+  - **Hinge Transitions**: 10 3D perspective hinge animations (`hingeInFromTop`, `hingeInFromBottom`, `hingeInFromLeft`, `hingeInFromRight`, `hingeInFromMiddleX`, `hingeInFromMiddleY`, `hingeOutToTop`, `hingeOutToBottom`, `hingeOutToLeft`, `hingeOutToRight`).
+  - **Rotating Spins**: `spinIn`, `spinOut`, `spinInCCW`, `spinOutCCW` combining rotation with scale and fade.
+  - **Wiggle**: Classic rotational rocking animation (`.wiggle`).
+  - **Motion Modifiers**: Comprehensive easing classes (`.linear`, `.ease`, `.easeIn`, `.easeOut`, `.easeInOut`, `.bounceIn`, `.bounceOut`, `.bounceInOut`), speed/duration classes (`.fast`, `.slow`, `.duration-100`..`1000`), delay classes (`.delay-100`..`1000`), child stagger sequence (`.stagger`), play states (`.paused`, `.running`, `.is-animating`), and fill modes.
+- **Codebase Optimization & Complexity Reduction**:
+  - **Selector Deduplication**: Refactored `form.styl` by flattening repetitive `[type=...]` selectors across all 6 color variants and removing nested `@import "toggle"`.
+  - **Button Refactoring**: Removed redundant `cursor` and `transition` overrides across brand variants in `button.styl`.
+  - **Golden Ratio Scale Loops**: Rewrote `margin.styl` and `padding.styl` using clean dictionary iteration, cutting file lengths by over 50% and removing curly-brace syntax.
+  - **Collision Prevention**: Scoped `toggle.styl` to checkbox inputs (`input[type="checkbox"].toggle`, `[role="switch"]`) to eliminate collision with `.toggle` buttons in `toggle-group.styl`.
+  - **Modular Card Primitives**: Added standard `.card-header`, `.card-title`, `.card-description`, `.card-content`, and `.card-footer` subcomponents to `card.styl`.
+  - **Unified Helpers**: Resolved `.center` collision between flex centering in `core-helpers.styl` and text centering in `helpers.styl` by introducing `.text-center`, `.text-left`, `.text-right`.
+  - **Utilities Cleanup**: Enhanced `mixins.styl` with `flex-center()` and `text-truncate()`; removed redundant `.skeleton` duplicate definition from `utilities/animations.styl`.
+
+
+**Security**
+
+- Bump `postcss` to `8.5.23` to address sourceMappingURL resolution advisory (GHSA-fxqj-rqcc-2cmp).
+- Harden dependency override bounds across `brace-expansion`, `fast-uri`, and `js-yaml`.
+
+---
+
+**[2.0.1] — 2026-08-04**
+
+**Changed**
+
+- Consolidate open Dependabot dependency updates and bump GitHub Actions workflows to Node 24 runtime.
+
+---
+
 **[2.0.0] — 2026-05-03**
 
 The "2026 baseline" major release. Every modern CSS feature that
@@ -196,5 +448,7 @@ original v1.0.0 release (2018).
 
 ---
 
+[2.0.2]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.2
+[2.0.1]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.1
 [2.0.0]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.0
 [1.1.7]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v1.1.7

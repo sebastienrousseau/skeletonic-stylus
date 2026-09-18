@@ -1,0 +1,103 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Tabs */
+
+.tabs
+  display: flex
+  flex-direction: column
+  width: 100%
+
+  .tabs-list
+    align-items: center
+    background-color: var(--cl-grey-100)
+    border-radius: var(--radius-lg)
+    display: inline-flex
+    gap: .25rem
+    padding: .25rem
+    user-select: none
+    width: fit-content
+
+  .tab,
+  .tabs-trigger
+    align-items: center
+    background: transparent
+    border: none
+    border-radius: var(--radius-md)
+    color: var(--foreground-color)
+    cursor: pointer
+    display: inline-flex
+    font-size: .875rem
+    font-weight: 500
+    justify-content: center
+    line-height: 1
+    opacity: .7
+    padding: .5rem 1rem
+    text-decoration: none
+    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, opacity var(--duration-fast) ease
+    white-space: nowrap
+
+    &:hover
+      opacity: 1
+
+    &:focus-visible
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: 2px
+
+    &.active,
+    &[aria-selected="true"]
+      background-color: var(--background-color)
+      box-shadow: var(--shadow-sm)
+      color: var(--foreground-color)
+      font-weight: 600
+      opacity: 1
+
+    &:disabled,
+    &[aria-disabled="true"]
+      cursor: not-allowed
+      opacity: .35
+
+  // Underline variant
+  &.tabs-underline
+    .tabs-list
+      background: transparent
+      border-bottom: 1px solid var(--cl-grey-200)
+      border-radius: 0
+      padding: 0
+      width: 100%
+
+    .tab,
+    .tabs-trigger
+      border-bottom: 2px solid transparent
+      border-radius: 0
+      margin-bottom: -1px
+      padding: .75rem 1rem
+
+      &.active,
+      &[aria-selected="true"]
+        background: transparent
+        border-bottom-color: var(--cl-primary)
+        box-shadow: none
+        color: var(--cl-primary)
+
+  .tab-content,
+  .tabs-panel
+    display: none
+    padding: 1.25rem 0
+
+    &.active,
+    &[aria-hidden="false"]
+      display: block
+
+/* @end */
+
+// Opt out of the uppercase label set on the `button` element in
+// elements/button.styl. These are buttons for semantics — operable, in the tab
+// order — but they read as tab labels, and shouting them is wrong.
+.tabs-trigger
+  text-transform: none

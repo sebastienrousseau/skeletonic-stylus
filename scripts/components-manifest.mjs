@@ -1,0 +1,1153 @@
+/**
+ * The source of truth for the component reference at /components/.
+ *
+ * Each entry names a real stylesheet in src/stylus/components/. The generator
+ * (scripts/generate-component-docs.mjs) checks that mapping in both directions,
+ * so a component cannot be shipped without documentation and a page cannot
+ * document a component that no longer exists.
+ *
+ * `markup` is used twice per example: once rendered live, and once escaped into
+ * the code block beneath it. They cannot drift, because they are the same
+ * string.
+ */
+
+export const categories = [
+  { slug: "forms", name: "Forms" },
+  { slug: "actions", name: "Actions" },
+  { slug: "navigation", name: "Navigation" },
+  { slug: "overlays", name: "Overlays" },
+  { slug: "feedback", name: "Feedback" },
+  { slug: "data", name: "Data display" },
+  { slug: "layout", name: "Layout" },
+  { slug: "content", name: "Content" },
+];
+
+export const components = [
+  // --- Forms ---------------------------------------------------------------
+  {
+    slug: "checkbox",
+    name: "Checkbox",
+    category: "forms",
+    tagline: "Accessible checkboxes with a custom mark and an indeterminate state.",
+    examples: [
+      {
+        title: "Default",
+        description: 'Wrap the input and its text in <code>.checkbox-field</code> so the whole label is a hit target.',
+        markup: `<label class="checkbox-field">
+  <input type="checkbox" class="checkbox" checked />
+  <span>Auto-sync with remote origin</span>
+</label>`,
+      },
+      {
+        title: "Sizes",
+        description: "Add <code>.sm</code> or <code>.lg</code> to the input.",
+        markup: `<label class="checkbox-field">
+  <input type="checkbox" class="checkbox sm" checked />
+  <span>Small</span>
+</label>
+<label class="checkbox-field">
+  <input type="checkbox" class="checkbox lg" checked />
+  <span>Large</span>
+</label>`,
+      },
+    ],
+  },
+  {
+    slug: "input-otp",
+    name: "Input OTP",
+    category: "forms",
+    tagline: "Segmented one-time-password entry with a blinking caret.",
+    examples: [
+      {
+        title: "Six digits in two groups",
+        description: 'Each <code>.input-otp-slot</code> is one character; <code>.active</code> carries the caret.',
+        markup: `<div class="input-otp">
+  <div class="input-otp-group">
+    <div class="input-otp-slot active">7<span class="input-otp-caret"></span></div>
+    <div class="input-otp-slot">4</div>
+    <div class="input-otp-slot">2</div>
+  </div>
+  <span class="input-otp-separator">-</span>
+  <div class="input-otp-group">
+    <div class="input-otp-slot">9</div>
+    <div class="input-otp-slot">1</div>
+    <div class="input-otp-slot">8</div>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "radio-group",
+    name: "Radio group",
+    category: "forms",
+    tagline: "Custom radio controls in a column or a row.",
+    examples: [
+      {
+        title: "Column",
+        description: 'Group the fields in <code>.radio-group</code>.',
+        markup: `<div class="radio-group">
+  <label class="radio-field">
+    <input type="radio" name="tier" class="radio" checked />
+    <span>Open source</span>
+  </label>
+  <label class="radio-field">
+    <input type="radio" name="tier" class="radio" />
+    <span>Enterprise</span>
+  </label>
+</div>`,
+      },
+      {
+        title: "Row",
+        description: 'Add <code>.radio-group-row</code> to lay the options out horizontally.',
+        markup: `<div class="radio-group radio-group-row">
+  <label class="radio-field">
+    <input type="radio" name="cadence" class="radio" checked />
+    <span>Weekly</span>
+  </label>
+  <label class="radio-field">
+    <input type="radio" name="cadence" class="radio" />
+    <span>Monthly</span>
+  </label>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "select",
+    name: "Select",
+    category: "forms",
+    tagline: "The native select, with the chevron drawn on a wrapper.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'The chevron lives on <code>.select-field</code> rather than the control, so the control keeps a flat background that contrast tooling can measure.',
+        markup: `<span class="select-field">
+  <select class="select" aria-label="Design framework">
+    <option>Skeletonic Stylus 2.0</option>
+    <option>Native Cascade Layers</option>
+  </select>
+</span>`,
+      },
+    ],
+  },
+  {
+    slug: "slider",
+    name: "Slider",
+    category: "forms",
+    tagline: "Native range input with a 24px target area.",
+    examples: [
+      {
+        title: "With a value read-out",
+        description: 'Pair <code>.slider</code> with <code>.slider-header</code> and <code>.slider-value</code>.',
+        markup: `<div class="slider-group">
+  <div class="slider-header">
+    <span>Compression</span>
+    <span class="slider-value">72</span>
+  </div>
+  <input type="range" class="slider" value="72" aria-label="Compression" />
+</div>`,
+      },
+      {
+        title: "Status colours",
+        description: "<code>.slider-success</code>, <code>.slider-warning</code> and <code>.slider-danger</code> tint the track.",
+        markup: `<input type="range" class="slider slider-success" value="30" aria-label="Success" />
+<input type="range" class="slider slider-warning" value="60" aria-label="Warning" />
+<input type="range" class="slider slider-danger" value="90" aria-label="Danger" />`,
+      },
+    ],
+  },
+  {
+    slug: "switch",
+    name: "Switch",
+    category: "forms",
+    tagline: "Sliding on/off control for settings that apply immediately.",
+    examples: [
+      {
+        title: "Default",
+        description: 'Wrap in <code>.switch-field</code> to make the text part of the target.',
+        markup: `<label class="switch-field">
+  <input type="checkbox" class="switch" checked aria-label="Instant security alerts" />
+  <span>Instant security alerts</span>
+</label>`,
+      },
+      {
+        title: "Status colours",
+        description: "<code>.switch-success</code>, <code>.switch-warning</code>, <code>.switch-danger</code>.",
+        markup: `<input type="checkbox" class="switch switch-success" checked aria-label="Success" />
+<input type="checkbox" class="switch switch-warning" checked aria-label="Warning" />
+<input type="checkbox" class="switch switch-danger" checked aria-label="Danger" />`,
+      },
+    ],
+  },
+
+  {
+    slug: "collapsible",
+    name: "Collapsible",
+    category: "layout",
+    tagline: "A single disclosure, built on native details.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          "The accordion is a stack of these on a shared surface; a collapsible is the one-off, so it carries no border of its own and inherits whatever it sits in. Native <code>&lt;details&gt;</code> means keyboard support and find-in-page come free.",
+        markup: `<details class="collapsible">
+  <summary>Advanced options</summary>
+  <div class="collapsible-content">
+    <p>Everything here is optional.</p>
+  </div>
+</details>`,
+      },
+    ],
+  },
+  {
+    slug: "alert-dialog",
+    name: "Alert dialog",
+    category: "overlays",
+    tagline: "Interrupts to confirm something destructive.",
+    examples: [
+      {
+        title: "Confirm a destructive action",
+        description:
+          'Use <code>role="alertdialog"</code> so assistive technology announces an interruption rather than an ordinary dialog. It has no dismiss affordance of its own on purpose — the caller supplies both answers, so there is no ambiguous way out.',
+        markup: `<button type="button" class="button error" data-dialog="doc-alert">Delete workspace</button>
+<dialog id="doc-alert" class="alert-dialog" role="alertdialog" aria-labelledby="doc-alert-title">
+  <form method="dialog">
+    <h3 id="doc-alert-title" class="alert-dialog-title">Delete this workspace?</h3>
+    <p class="alert-dialog-description">Every component and setting in it goes with it. This cannot be undone.</p>
+    <div class="alert-dialog-actions">
+      <button type="submit" class="button secondary sm">Cancel</button>
+      <button type="submit" class="button error sm">Delete</button>
+    </div>
+  </form>
+</dialog>`,
+      },
+    ],
+  },
+  {
+    slug: "menubar",
+    name: "Menubar",
+    category: "navigation",
+    tagline: "A row of menus, each a native disclosure.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'Each menu is a <code>&lt;details&gt;</code>, so opening, closing and keyboard operation need no script. Note it is deliberately <em>not</em> given <code>role="menubar"</code>: that role requires <code>menuitem</code> children plus roving <code>tabindex</code> and arrow-key handling, none of which CSS can supply. Claiming it would promise a screen-reader user navigation that is not there.',
+        markup: `<nav class="menubar" aria-label="Main">
+  <details class="menubar-menu">
+    <summary>File</summary>
+    <div class="menubar-content">
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">New file</span></span></button>
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">Open&hellip;</span></span></button>
+    </div>
+  </details>
+  <details class="menubar-menu">
+    <summary>Edit</summary>
+    <div class="menubar-content">
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">Undo</span></span></button>
+    </div>
+  </details>
+</nav>`,
+      },
+    ],
+  },
+  {
+    slug: "item",
+    name: "Item",
+    category: "data",
+    tagline: "A list row: media, text, and a trailing value.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          "The pattern <code>.command-item</code> and the dropdown entries are special cases of, exposed on its own so a settings row or a search result need not borrow a menu class to get the same rhythm.",
+        markup: `<div class="item-group">
+  <div class="item">
+    <span class="item-media"><span class="avatar sm"><span class="avatar-fallback">SR</span></span></span>
+    <span class="item-content">
+      <span class="item-title">Sebastien Rousseau</span>
+      <span class="item-description">Lead maintainer</span>
+    </span>
+    <span class="item-trailing">Owner</span>
+  </div>
+</div>`,
+      },
+      {
+        title: "Interactive",
+        description: "Add <code>.item-interactive</code> when the row is a control rather than a record.",
+        markup: `<button type="button" class="item item-interactive">
+  <span class="item-content">
+    <span class="item-title">Appearance</span>
+    <span class="item-description">Theme, density and motion</span>
+  </span>
+  <span class="item-trailing">&rsaquo;</span>
+</button>`,
+      },
+    ],
+  },
+  {
+    slug: "sidebar",
+    name: "Sidebar",
+    category: "layout",
+    tagline: "An application rail that goes off-canvas on a phone.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'A persistent rail beside the content on a wide screen; below 48rem it becomes an off-canvas panel that <code>.sidebar-open</code> slides in. The current entry is marked with <code>aria-current="page"</code>, so the styling and the accessibility tree cannot disagree.',
+        markup: `<div class="sidebar-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><strong>Acme</strong></div>
+    <div class="sidebar-group-label">Workspace</div>
+    <a class="sidebar-item" href="#sidebar" aria-current="page">Overview</a>
+    <a class="sidebar-item" href="#sidebar">Components</a>
+    <a class="sidebar-item" href="#sidebar">Settings</a>
+    <div class="sidebar-footer"><span class="badge secondary">v2.0.2</span></div>
+  </aside>
+  <main class="sidebar-content"><p>Content sits beside the rail.</p></main>
+</div>`,
+      },
+    ],
+  },
+  // --- Actions -------------------------------------------------------------
+  {
+    slug: "button-group",
+    name: "Button group",
+    category: "actions",
+    tagline: "Connected buttons that read as one control.",
+    examples: [
+      {
+        title: "Horizontal",
+        description: 'Borders are de-duplicated between children; <code>.active</code> marks the current choice.',
+        markup: `<div class="button-group">
+  <button type="button" class="button secondary sm active">Weekly</button>
+  <button type="button" class="button secondary sm">Monthly</button>
+  <button type="button" class="button secondary sm">Annual</button>
+</div>`,
+      },
+      {
+        title: "Vertical",
+        description: "Add <code>.button-group-vertical</code>.",
+        markup: `<div class="button-group button-group-vertical">
+  <button type="button" class="button secondary sm">Duplicate</button>
+  <button type="button" class="button secondary sm">Archive</button>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "toggle-group",
+    name: "Toggle group",
+    category: "actions",
+    tagline: "Single or multi-select toggle bar.",
+    examples: [
+      {
+        title: "Text formatting",
+        description: 'Each button is a <code>.toggle</code>; the pressed one carries <code>.active</code>.',
+        markup: `<div class="toggle-group">
+  <button type="button" class="toggle active" aria-label="Bold"><b>B</b></button>
+  <button type="button" class="toggle" aria-label="Italic"><i>I</i></button>
+  <button type="button" class="toggle" aria-label="Underline"><u>U</u></button>
+</div>`,
+      },
+      {
+        title: "Outline and connected",
+        description: "<code>.toggle-outline</code> drops the fill; <code>.toggle-group-connected</code> joins the edges.",
+        markup: `<div class="toggle-group toggle-group-connected">
+  <button type="button" class="toggle toggle-outline active">Grid</button>
+  <button type="button" class="toggle toggle-outline">List</button>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "kbd",
+    name: "Keyboard key",
+    category: "actions",
+    tagline: "Inline keyboard shortcuts with a tactile border.",
+    examples: [
+      {
+        title: "A shortcut",
+        description: 'Use the <code>&lt;kbd&gt;</code> element with <code>.kbd</code>. Sizes: <code>.sm</code>, <code>.lg</code>.',
+        markup: `<span>Save with</span>
+<kbd class="kbd">&#8984;</kbd>
+<kbd class="kbd">S</kbd>`,
+      },
+    ],
+  },
+
+  // --- Navigation ----------------------------------------------------------
+  {
+    slug: "breadcrumb",
+    name: "Breadcrumb",
+    category: "navigation",
+    tagline: "Semantic wayfinding with a slash or chevron separator.",
+    examples: [
+      {
+        title: "Default",
+        description: 'Mark the current page with <code>.breadcrumb-page</code>, not a link.',
+        markup: `<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home</a></li>
+    <li class="breadcrumb-separator">/</li>
+    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Components</a></li>
+    <li class="breadcrumb-separator">/</li>
+    <li class="breadcrumb-item"><span class="breadcrumb-page">Breadcrumb</span></li>
+  </ol>
+</nav>`,
+      },
+    ],
+  },
+  {
+    slug: "navbar",
+    name: "Navbar",
+    category: "navigation",
+    tagline: "Sticky application bar with a scroll-driven shadow.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          "<code>.navbar</code> is a sticky container: it pins to the top and animates its shadow with <code>animation-timeline: scroll()</code>. It does not lay out its own contents \u2014 compose them with the layout and <code>.gap-*</code> utilities, as here. (<code>.nav</code> is a different component: the vertical list used by the off-canvas menu, not a horizontal bar.)",
+        markup: `<div class="navbar">
+  <div class="flex flex-middle flex-between padding-md">
+    <strong>Acme</strong>
+    <span class="flex flex-middle gap-md">
+      <a href="#navbar">Docs</a>
+      <a href="#navbar">API</a>
+    </span>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "pagination",
+    name: "Pagination",
+    category: "navigation",
+    tagline: "Page controls with an ellipsis for elided ranges.",
+    examples: [
+      {
+        title: "Default",
+        description: 'The current page carries <code>.active</code>; gaps use <code>.pagination-ellipsis</code>.',
+        markup: `<nav class="pagination" aria-label="Pagination">
+  <ul class="pagination-content">
+    <li class="pagination-item"><a href="#" class="pagination-prev">Prev</a></li>
+    <li class="pagination-item"><a href="#" class="pagination-link active">1</a></li>
+    <li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
+    <li class="pagination-item"><span class="pagination-ellipsis">&hellip;</span></li>
+    <li class="pagination-item"><a href="#" class="pagination-next">Next</a></li>
+  </ul>
+</nav>`,
+      },
+    ],
+  },
+  {
+    slug: "tabs",
+    name: "Tabs",
+    category: "navigation",
+    tagline: "Tab list with a pill or underline treatment.",
+    examples: [
+      {
+        title: "Pills",
+        description: 'The selected trigger needs both <code>.active</code> and <code>aria-selected="true"</code>.',
+        markup: `<div class="tabs">
+  <div class="tabs-list" role="tablist">
+    <button type="button" class="tabs-trigger active" role="tab" aria-selected="true">Account</button>
+    <button type="button" class="tabs-trigger" role="tab" aria-selected="false">Security</button>
+    <button type="button" class="tabs-trigger" role="tab" aria-selected="false">API keys</button>
+  </div>
+</div>`,
+      },
+      {
+        title: "Underline",
+        description: "Add <code>.tabs-underline</code> to the container.",
+        markup: `<div class="tabs tabs-underline">
+  <div class="tabs-list" role="tablist">
+    <button type="button" class="tabs-trigger active" role="tab" aria-selected="true">Overview</button>
+    <button type="button" class="tabs-trigger" role="tab" aria-selected="false">Usage</button>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "command",
+    name: "Command palette",
+    category: "navigation",
+    tagline: "Grouped search results with shortcut hints.",
+    examples: [
+      {
+        title: "Inline palette",
+        description: 'Results sit in <code>.command-list</code>, grouped by <code>.command-group</code>.',
+        markup: `<div class="command">
+  <div class="command-input-wrapper">
+    <input class="command-input" type="search" placeholder="Search components&hellip;" aria-label="Search components" />
+  </div>
+  <div class="command-list">
+    <div class="command-group">
+      <div class="command-group-heading">Primitives</div>
+      <button type="button" class="command-item selected">Input OTP<span class="command-shortcut">&#8984;1</span></button>
+      <button type="button" class="command-item">Carousel<span class="command-shortcut">&#8984;2</span></button>
+    </div>
+  </div>
+</div>`,
+      },
+    ],
+  },
+
+  // --- Overlays ------------------------------------------------------------
+  {
+    slug: "modal",
+    name: "Modal",
+    category: "overlays",
+    tagline: "Native top-layer dialog with a backdrop.",
+    examples: [
+      {
+        title: "Open and close without script",
+        description:
+          'Open with <code>showModal()</code>, close with a <code>&lt;form method="dialog"&gt;</code> — no event handler is involved in closing.',
+        markup: `<button type="button" class="button primary sm" data-dialog="doc-modal">Launch modal</button>
+<dialog id="doc-modal" class="modal" aria-labelledby="doc-modal-title">
+  <form method="dialog">
+    <div class="modal-header"><h3 id="doc-modal-title">Deploy to production</h3></div>
+    <p>This renders in the browser's top layer.</p>
+    <div class="modal-footer">
+      <button type="submit" class="button secondary sm">Cancel</button>
+      <button type="submit" class="button primary sm">Deploy</button>
+    </div>
+  </form>
+</dialog>`,
+      },
+    ],
+  },
+  {
+    slug: "sheet",
+    name: "Sheet",
+    category: "overlays",
+    tagline: "Dialog that slides in from an edge.",
+    examples: [
+      {
+        title: "From the left",
+        description: "Edge modifiers: <code>.sheet-left</code>, <code>.sheet-top</code>, <code>.sheet-bottom</code>.",
+        markup: `<button type="button" class="button secondary sm" data-dialog="doc-sheet">Open sheet</button>
+<dialog id="doc-sheet" class="sheet sheet-left" aria-labelledby="doc-sheet-title">
+  <form method="dialog">
+    <div class="sheet-header">
+      <h3 id="doc-sheet-title" class="sheet-title">Workspace settings</h3>
+      <p class="sheet-description">Shares the dialog top layer.</p>
+    </div>
+    <div class="sheet-footer">
+      <button type="submit" class="button secondary sm">Close</button>
+    </div>
+  </form>
+</dialog>`,
+      },
+    ],
+  },
+  {
+    slug: "popover",
+    name: "Popover",
+    category: "overlays",
+    tagline: "Native [popover] surface — no positioning library, no script.",
+    examples: [
+      {
+        title: "Default",
+        description: 'The <code>popovertarget</code> attribute does the work; the browser handles the top layer and light dismiss. Put <code>.popover-trigger</code> on the control so the panel anchors beneath it.',
+        markup: `<button type="button" class="button secondary sm popover-trigger" popovertarget="doc-popover">Open popover</button>
+<div id="doc-popover" popover class="popover">
+  <div class="popover-header">
+    <h4 class="popover-title">Cascade layers</h4>
+    <p class="popover-description">Everything ships inside <code>@layer skeletonic.*</code>.</p>
+  </div>
+  <div class="popover-body">Override any token without a specificity fight.</div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "dropdown",
+    name: "Dropdown",
+    category: "overlays",
+    tagline: "A menu built on the same native popover primitive.",
+    examples: [
+      {
+        title: "Action menu",
+        description: "Put <code>.dropdown-trigger</code> on the control that owns the menu — it declares the anchor the menu positions against. Items reuse <code>.command-item</code> so menus and palettes stay consistent.",
+        markup: `<button type="button" class="button secondary sm dropdown-trigger" popovertarget="doc-dropdown">Actions</button>
+<div id="doc-dropdown" popover class="dropdown">
+  <button type="button" class="command-item">Duplicate</button>
+  <button type="button" class="command-item">Archive</button>
+  <button type="button" class="command-item">Delete</button>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "tooltip",
+    name: "Tooltip",
+    category: "overlays",
+    tagline: "Short hint shown on hover or focus.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'A tooltip is a <code>[popover]</code> anchored to its trigger. Put <code>.tooltip-trigger</code> on the control and point <code>popovertarget</code> at the tip.',
+        markup: `<button type="button" class="button secondary sm tooltip-trigger" popovertarget="doc-tooltip">WCAG 2.2 AA</button>
+<div id="doc-tooltip" popover class="tooltip">Verified accessibility standard</div>`,
+      },
+    ],
+  },
+  {
+    slug: "hover-card",
+    name: "Hover card",
+    category: "overlays",
+    tagline: "Richer preview panel revealed on hover or focus-within.",
+    examples: [
+      {
+        title: "Profile preview",
+        description: "Hover or tab to the trigger to open the panel. It reacts to <code>:hover</code> and <code>:focus-within</code>, so keyboard users get it too.",
+        markup: `<div class="hover-card">
+  <a class="hover-card-trigger" href="#hover-card">@skeletonic-css</a>
+  <div class="hover-card-content">
+    <div class="bold">Skeletonic Stylus</div>
+    <p>Ultra-responsive CSS engine with 35 primitives.</p>
+  </div>
+</div>`,
+      },
+    ],
+  },
+
+  // --- Feedback ------------------------------------------------------------
+  {
+    slug: "alert",
+    name: "Alert",
+    category: "feedback",
+    tagline: "Inline banner for status that stays on the page.",
+    examples: [
+      {
+        title: "Variants",
+        description: "<code>.alert-info</code>, <code>.alert-success</code>, <code>.alert-warning</code>, <code>.alert-error</code>.",
+        markup: `<div class="alert alert-info"><strong>Cascade layers active:</strong> all bundles compiled under <code>@layer skeletonic.*</code>.</div>
+<div class="alert alert-success">Production build packaged without errors.</div>
+<div class="alert alert-warning">Two dependencies are behind their latest minor.</div>
+<div class="alert alert-error">The release gate found an unsigned commit.</div>`,
+      },
+    ],
+  },
+  {
+    slug: "toast",
+    name: "Toast",
+    category: "feedback",
+    tagline: "Transient notification with a title and description.",
+    examples: [
+      {
+        title: "Static placement",
+        description:
+          "Toasts normally position themselves; the example is pinned in flow so it can be read here.",
+        markup: `<div class="toast toast-success demo-toast-inline">
+  <div class="toast-title">Artifact generated</div>
+  <div class="toast-description">Production build packaged into <code>dist/</code>.</div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "progress",
+    name: "Progress",
+    category: "feedback",
+    tagline: "Determinate progress with status colours.",
+    examples: [
+      {
+        title: "With a label",
+        description: "Always give the bar an accessible name and the current value.",
+        markup: `<progress class="progress" value="75" max="100" aria-label="Cloud storage">75%</progress>`,
+      },
+      {
+        title: "Status colours",
+        description: "<code>.success</code>, <code>.warning</code>, <code>.danger</code>; sizes <code>.sm</code> to <code>.xl</code>.",
+        markup: `<progress class="progress success sm" value="90" max="100" aria-label="Passing">90%</progress>
+<progress class="progress warning" value="55" max="100" aria-label="Degraded">55%</progress>`,
+      },
+    ],
+  },
+  {
+    slug: "loader",
+    name: "Loader",
+    category: "feedback",
+    tagline: "Spinner for waits of unknown length.",
+    examples: [
+      {
+        title: "Default",
+        description: 'Give it <code>role="status"</code> and a label so assistive tech announces the wait.',
+        markup: `<span class="loader" role="status" aria-label="Loading"></span>`,
+      },
+    ],
+  },
+  {
+    slug: "skeleton",
+    name: "Skeleton",
+    category: "feedback",
+    tagline: "Placeholder blocks for content whose layout is already known.",
+    examples: [
+      {
+        title: "Text block",
+        description: "<code>.skeleton-title</code>, <code>.skeleton-text</code>, <code>.skeleton-avatar</code>, <code>.skeleton-button</code>.",
+        markup: `<div class="skeleton skeleton-title"></div>
+<div class="skeleton skeleton-text"></div>
+<div class="skeleton skeleton-text"></div>`,
+      },
+      {
+        title: "Shimmer",
+        description: "Add <code>.skeleton-shimmer</code> for a travelling highlight instead of a pulse.",
+        markup: `<div class="skeleton skeleton-shimmer skeleton-title"></div>
+<div class="skeleton skeleton-shimmer skeleton-text"></div>`,
+      },
+    ],
+  },
+  {
+    slug: "empty",
+    name: "Empty state",
+    category: "feedback",
+    tagline: "The zero-data screen, with room for a recovery action.",
+    examples: [
+      {
+        title: "Default",
+        description: "Pair the explanation with the action that resolves it.",
+        markup: `<div class="empty empty-state">
+  <div class="empty-icon" aria-hidden="true">&#9634;</div>
+  <div class="empty-title">No components yet</div>
+  <div class="empty-description">Scaffold your first one with the CLI.</div>
+  <div class="empty-actions"><button type="button" class="button secondary sm">Add component</button></div>
+</div>`,
+      },
+    ],
+  },
+
+  // --- Data display --------------------------------------------------------
+  {
+    slug: "avatar",
+    name: "Avatar",
+    category: "data",
+    tagline: "Portraits, initials fallbacks, presence and stacked groups.",
+    examples: [
+      {
+        title: "Fallback initials",
+        description: "Sizes <code>.sm</code>, <code>.lg</code>, <code>.xl</code>; <code>.rounded</code> for a circle.",
+        markup: `<div class="avatar sm"><span class="avatar-fallback">SR</span></div>
+<div class="avatar"><span class="avatar-fallback">AG</span></div>
+<div class="avatar lg"><span class="avatar-fallback">JD</span></div>`,
+      },
+      {
+        title: "Group",
+        description: "<code>.avatar-group</code> overlaps the children.",
+        markup: `<div class="avatar-group">
+  <div class="avatar sm"><span class="avatar-fallback">AG</span></div>
+  <div class="avatar sm"><span class="avatar-fallback">SR</span></div>
+  <div class="avatar sm"><span class="avatar-fallback">+4</span></div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "badge",
+    name: "Badge",
+    category: "data",
+    tagline: "Compact status label.",
+    examples: [
+      {
+        title: "Variants",
+        description: "<code>.primary</code>, <code>.secondary</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code>, <code>.info</code>.",
+        markup: `<span class="badge primary">Primary</span>
+<span class="badge success">Passing</span>
+<span class="badge warning">Deprecated</span>
+<span class="badge danger">Breaking</span>`,
+      },
+    ],
+  },
+  {
+    slug: "card",
+    name: "Card",
+    category: "data",
+    tagline: "Surface with a header, body and footer.",
+    examples: [
+      {
+        title: "Default",
+        description: "Each region is optional; use the ones you need.",
+        markup: `<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Account settings</h3>
+    <p class="card-description">Personalise profile and workspace identity.</p>
+  </div>
+  <div class="card-content">Anything can live in the body.</div>
+  <div class="card-footer"><button type="button" class="button primary sm">Save changes</button></div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "separator",
+    name: "Separator",
+    category: "data",
+    tagline: "Horizontal or vertical divider, optionally labelled.",
+    examples: [
+      {
+        title: "With a label",
+        description: "A bare <code>&lt;hr class=\"separator\"&gt;</code> works too.",
+        markup: `<div class="separator"><span class="separator-label">or</span></div>`,
+      },
+    ],
+  },
+
+  // --- Layout --------------------------------------------------------------
+  {
+    slug: "aspect-ratio",
+    name: "Aspect ratio",
+    category: "layout",
+    tagline: "Ratio-locked container that never reflows as media loads.",
+    examples: [
+      {
+        title: "16:9",
+        description: "Also <code>.ratio-1-1</code>, <code>.ratio-4-3</code>, <code>.ratio-21-9</code>, <code>.ratio-9-16</code>.",
+        markup: `<div class="aspect-ratio ratio-16-9">
+  <img src="/assets/logo.svg" alt="Skeletonic logo" width="320" height="180" />
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "carousel",
+    name: "Carousel",
+    category: "layout",
+    tagline: "Scroll-snap carousel in pure CSS.",
+    examples: [
+      {
+        title: "Two columns",
+        description: 'The track is focusable and labelled so it can be reached and scrolled by keyboard.',
+        markup: `<div class="carousel carousel-cols-2">
+  <div class="carousel-content" tabindex="0" role="region" aria-label="Example slides">
+    <div class="carousel-item"><div class="card">Slide 1</div></div>
+    <div class="carousel-item"><div class="card">Slide 2</div></div>
+    <div class="carousel-item"><div class="card">Slide 3</div></div>
+  </div>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "scroll-area",
+    name: "Scroll area",
+    category: "layout",
+    tagline: "Bounded scroller with a thin custom scrollbar.",
+    examples: [
+      {
+        title: "Vertical",
+        description: 'Focusable and labelled, so keyboard users can scroll it.',
+        markup: `<div class="scroll-area demo-scroll-box" tabindex="0" role="region" aria-label="Changelog">
+  <p>Skeletonic Stylus styles its scrollbars with <code>scrollbar-color</code> and <code>scrollbar-width: thin</code>.</p>
+  <p>The region scrolls independently of the page.</p>
+  <p>It keeps its own focus ring.</p>
+</div>`,
+      },
+    ],
+  },
+  {
+    slug: "accordion",
+    name: "Accordion",
+    category: "layout",
+    tagline: "Disclosure built on native details and summary.",
+    examples: [
+      {
+        title: "Default",
+        description: "Native <code>&lt;details&gt;</code> means keyboard support and find-in-page come for free.",
+        markup: `<div class="accordion">
+  <details class="accordion-item" open>
+    <summary class="accordion-trigger"><span>What makes Skeletonic Stylus unique?</span></summary>
+    <div class="accordion-content"><p>It compiles to native CSS with cascade layers and zero runtime JavaScript.</p></div>
+  </details>
+  <details class="accordion-item">
+    <summary class="accordion-trigger"><span>Does it work with Tailwind?</span></summary>
+    <div class="accordion-content"><p>Yes — everything is scoped inside <code>@layer skeletonic.*</code>.</p></div>
+  </details>
+</nav>`,
+      },
+    ],
+  },
+  {
+    slug: "header",
+    name: "Headings",
+    category: "layout",
+    tagline: "The typographic scale applied to h1–h6.",
+    examples: [
+      {
+        title: "Scale",
+        description: "Sizes are fluid, set with <code>clamp()</code> against the viewport.",
+        markup: `<h3 class="h1">Heading level 1</h3>
+<h3 class="h2">Heading level 2</h3>
+<h3 class="h3">Heading level 3</h3>`,
+      },
+    ],
+  },
+];
+
+/**
+ * Reference pages for API that is not a component.
+ *
+ * `components` is validated one-to-one against src/stylus/components/. The
+ * utilities live in src/stylus/base/ and src/stylus/elements/ and have no
+ * stylesheet of their own to match, so they are listed here instead — but they
+ * still need documenting, because an undocumented utility is one nobody uses.
+ */
+export const guides = [
+  {
+    slug: "utilities",
+    name: "Utilities",
+    category: "layout",
+    tagline: "Layout, spacing and alignment helpers on the golden-ratio scale.",
+    source: "src/stylus/base/helpers.styl, src/stylus/elements/padding.styl",
+    examples: [
+      {
+        title: "Flex",
+        description:
+          "<code>.flex</code> makes a row; <code>.flex-column</code>, <code>.flex-wrap</code>, <code>.flex-middle</code> (align), <code>.flex-between</code> and <code>.flex-center</code> (justify) adjust it.",
+        markup: `<div class="flex flex-middle flex-between padding-md">
+  <span class="badge primary">Left</span>
+  <span class="badge secondary">Right</span>
+</div>`,
+      },
+      {
+        title: "Gap",
+        description:
+          "<code>.gap-xs</code> through <code>.gap-xxl</code> space the children of a flex or grid container, on the same golden-ratio scale as padding and margin: .382, .618, 1, 1.618, 2.618 and 4.236rem. <code>.gap-x-*</code> and <code>.gap-y-*</code> set one axis; <code>.gap-0</code> removes it.",
+        markup: `<div class="flex gap-xs"><span class="badge">xs</span><span class="badge">xs</span></div>
+<div class="flex gap-md"><span class="badge">md</span><span class="badge">md</span></div>
+<div class="flex gap-xl"><span class="badge">xl</span><span class="badge">xl</span></div>`,
+      },
+      {
+        title: "Padding and margin",
+        description:
+          "<code>.padding-*</code>, <code>.px-*</code>, <code>.py-*</code>, <code>.pt-*</code>, <code>.pb-*</code> and the matching <code>.margin-*</code>, <code>.mt-*</code>, <code>.mb-*</code> use the same six steps. <code>.p-0</code> and <code>.m-0</code> reset.",
+        markup: `<div class="card padding-sm">padding-sm</div>
+<div class="card padding-lg">padding-lg</div>`,
+      },
+    ],
+  },
+];
+
+/**
+ * Reference pages for the styled HTML elements.
+ *
+ * These live in src/stylus/elements/ rather than src/stylus/components/, and
+ * the reference used to cover only the latter — so `button`, `input`,
+ * `textarea`, `label`, `table` and the rest were fully styled but appeared
+ * nowhere, which reads as "the library does not have them". It does.
+ *
+ * Validated against src/stylus/elements/ the same way components are, minus the
+ * files that are pure utility generators and are covered by the Utilities page.
+ */
+export const elements = [
+  {
+    slug: "button",
+    name: "Button",
+    category: "actions",
+    source: "src/stylus/elements/button.styl",
+    tagline: "The button element, in three weights and the status colours.",
+    examples: [
+      {
+        title: "Weights",
+        description: "A bare <code>&lt;button&gt;</code> is already styled; <code>.primary</code> and <code>.secondary</code> change the weight.",
+        markup: `<button type="button" class="button primary">Primary</button>
+<button type="button" class="button secondary">Secondary</button>
+<button type="button" class="button">Default</button>`,
+      },
+      {
+        title: "Status and state",
+        description: "<code>.success</code>, <code>.warning</code>, <code>.error</code>, <code>.info</code>; <code>.active</code> marks a pressed control and <code>disabled</code> is honoured.",
+        markup: `<button type="button" class="button success">Success</button>
+<button type="button" class="button warning">Warning</button>
+<button type="button" class="button error">Error</button>
+<button type="button" class="button" disabled>Disabled</button>`,
+      },
+    ],
+  },
+  {
+    slug: "form",
+    name: "Input and textarea",
+    category: "forms",
+    source: "src/stylus/elements/form.styl",
+    tagline: "Text inputs and textareas, with validation colours.",
+    examples: [
+      {
+        title: "Text inputs",
+        description: "Every text-like <code>input</code> type and <code>textarea</code> is styled without a class.",
+        markup: `<input type="email" placeholder="name@company.com" aria-label="Email" />
+<textarea rows="2" placeholder="Describe your team mission..." aria-label="Description"></textarea>`,
+      },
+      {
+        title: "Validation",
+        description: "<code>.input-success</code>, <code>.input-warning</code>, <code>.input-error</code> and <code>.input-info</code> colour the border.",
+        markup: `<input type="text" class="input-success" value="Available" aria-label="Success" />
+<input type="text" class="input-error" value="Already taken" aria-label="Error" />`,
+      },
+    ],
+  },
+  {
+    slug: "label",
+    name: "Label",
+    category: "forms",
+    source: "src/stylus/elements/label.styl",
+    tagline: "The form label, tied to its control.",
+    examples: [
+      {
+        title: "Default",
+        description: "Point <code>for</code> at the control's <code>id</code> so clicking the text focuses it.",
+        markup: `<label for="doc-label-input">Workspace name</label>
+<input id="doc-label-input" type="text" value="Skeletonic" />`,
+      },
+    ],
+  },
+  {
+    slug: "fieldset",
+    name: "Fieldset",
+    category: "forms",
+    source: "src/stylus/elements/fieldset.styl",
+    tagline: "Groups related controls under one legend.",
+    examples: [
+      {
+        title: "Default",
+        description: "A <code>legend</code> names the group for assistive technology as well as sighted readers.",
+        markup: `<fieldset>
+  <legend>Notifications</legend>
+  <label class="checkbox-field"><input type="checkbox" class="checkbox" checked /><span>Email</span></label>
+  <label class="checkbox-field"><input type="checkbox" class="checkbox" /><span>SMS</span></label>
+</fieldset>`,
+      },
+    ],
+  },
+  {
+    slug: "toggle",
+    name: "Toggle",
+    category: "forms",
+    source: "src/stylus/elements/toggle.styl",
+    tagline: "A checkbox rendered as a sliding switch.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>.toggle</code> on a checkbox; add <code>role=\"switch\"</code> so it is announced as one.",
+        markup: `<input type="checkbox" class="toggle" role="switch" checked aria-label="Enabled" />`,
+      },
+    ],
+  },
+  {
+    slug: "table",
+    name: "Table",
+    category: "content",
+    source: "src/stylus/elements/table.styl",
+    tagline: "Data tables, styled without a class.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>thead</code>, <code>th</code> and <code>td</code> are styled directly; wrap in <code>.table-responsive</code> to scroll on narrow screens.",
+        markup: `<table>
+  <thead><tr><th>Component</th><th>Size</th></tr></thead>
+  <tbody>
+    <tr><td>skeletonic.min.css</td><td>5.21 kB</td></tr>
+    <tr><td>skeletonic-ui.min.css</td><td>86.23 kB</td></tr>
+  </tbody>
+</table>`,
+      },
+    ],
+  },
+  {
+    slug: "code",
+    name: "Code",
+    category: "content",
+    source: "src/stylus/elements/code.styl",
+    tagline: "Inline code and preformatted blocks, with status variants.",
+    examples: [
+      {
+        title: "Inline and block",
+        description: "Bare <code>code</code> is inline; inside <code>pre</code> it becomes a block. <code>.primary</code>, <code>.success</code>, <code>.warning</code> and <code>.error</code> turn it into a callout.",
+        markup: `<p>Install with <code>pnpm add @sebastienrousseau/skeletonic-stylus</code>.</p>
+<code class="success">All 18 release gates passed.</code>`,
+      },
+    ],
+  },
+  {
+    slug: "divider",
+    name: "Divider",
+    category: "content",
+    source: "src/stylus/elements/divider.styl",
+    tagline: "Horizontal rules in several treatments.",
+    examples: [
+      {
+        title: "Variants",
+        description: "<code>.hr-solid</code>, <code>.hr-dashed</code>, <code>.hr-dotted</code>, <code>.hr-rounded</code>, <code>.hr-blurred</code>; <code>.hr-text</code> carries a label.",
+        markup: `<hr class="hr-solid" />
+<hr class="hr-dashed" />
+<hr class="hr-dotted" />`,
+      },
+    ],
+  },
+  {
+    slug: "list",
+    name: "List",
+    category: "content",
+    source: "src/stylus/elements/list.styl",
+    tagline: "Ordered and unordered lists with marker variants.",
+    examples: [
+      {
+        title: "Markers",
+        description: "<code>.disc</code>, <code>.circle</code> and <code>.square</code> set the bullet.",
+        markup: `<ul class="disc"><li>Cascade layers</li><li>OKLCH colour</li></ul>
+<ol><li>Install</li><li>Import</li></ol>`,
+      },
+    ],
+  },
+  {
+    slug: "image",
+    name: "Image",
+    category: "content",
+    source: "src/stylus/elements/image.styl",
+    tagline: "Images are responsive by default.",
+    examples: [
+      {
+        title: "Default",
+        description: "<code>img</code> is capped to its container's width and keeps its ratio, so it cannot overflow the layout.",
+        markup: `<img src="/assets/logo.svg" alt="Skeletonic logo" width="160" height="90" />`,
+      },
+    ],
+  },
+  {
+    slug: "link",
+    name: "Link",
+    category: "navigation",
+    source: "src/stylus/elements/link.styl",
+    tagline: "Anchors, with optional hover effects.",
+    examples: [
+      {
+        title: "Default",
+        description: "A bare <code>a</code> is styled; see <code>link-effects.styl</code> for the underline animations.",
+        markup: `<a href="#link">A styled link</a>`,
+      },
+    ],
+  },
+  {
+    slug: "clipboard",
+    name: "Clipboard",
+    category: "actions",
+    source: "src/stylus/elements/clipboard.styl",
+    tagline: "Copy-to-clipboard affordance for a code block.",
+    examples: [
+      {
+        title: "Default",
+        description: "Wrap the block in <code>.bd-clipboard</code>; <code>.button-clipboard</code> sits in its corner. The copying itself is yours to wire up.",
+        markup: `<div class="bd-clipboard">
+  <button type="button" class="button-clipboard">Copy</button>
+  <pre><code>pnpm add @sebastienrousseau/skeletonic-stylus</code></pre>
+</div>`,
+      },
+    ],
+  },
+];

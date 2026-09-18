@@ -1,0 +1,91 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Popover (2026 Standard) */
+
+[popover].popover,
+.popover-content
+  background-color: var(--background-color)
+  border: 1px solid var(--cl-grey-200)
+  border-radius: var(--radius-md)
+  box-shadow: var(--shadow-lg)
+  color: var(--foreground-color)
+  margin: 0
+  max-width: calc(100vw - 2rem)
+  outline: none
+  padding: 1rem
+  position: absolute
+  transition: opacity var(--duration-base) ease, transform var(--duration-base) ease, display var(--duration-base) allow-discrete
+  width: 18rem
+  z-index: 50
+
+  @starting-style
+    opacity: 0
+    transform: scale(.96)
+
+  &::backdrop
+    background: transparent
+
+  &.popover-backdrop::backdrop
+    background: rgba(0, 0, 0, .4)
+
+.popover-header
+  border-bottom: 1px solid var(--cl-grey-200)
+  margin-bottom: .75rem
+  padding-bottom: .5rem
+
+.popover-title
+  font-size: .875rem
+  font-weight: 600
+  line-height: 1.25rem
+  margin: 0
+
+.popover-description
+  color: var(--cl-grey-600)
+  font-size: .8125rem
+  line-height: 1.25rem
+  margin-top: .25rem
+
+.popover-body
+  font-size: .875rem
+  line-height: 1.4
+
+.popover-footer
+  border-top: 1px solid var(--cl-grey-200)
+  display: flex
+  gap: .5rem
+  justify-content: flex-end
+  margin-top: .75rem
+  padding-top: .5rem
+
+@media (prefers-reduced-motion: reduce)
+  [popover].popover,
+  .popover-content
+    transition: none
+
+// Anchor positioning, on the popover form only.
+//
+// `.popover-content` shares the appearance rules above but is an in-flow panel,
+// so it must not be positioned against an anchor. Without this block the
+// popover kept `position: absolute` with no offsets and stayed wherever it sat
+// in the source — typically far below the control that opened it.
+//
+// Usage:
+//   <button class="popover-trigger" popovertarget="tip">Details</button>
+//   <div id="tip" popover class="popover">...</div>
+[popover].popover
+  position-anchor: --popover-anchor
+  top: anchor(bottom)
+  left: anchor(start)
+  transform: translateY(.5rem)
+  @starting-style
+    transform: translateY(0) scale(.96)
+
+// The trigger half of the anchor pair.
+.popover-trigger
+  anchor-name: --popover-anchor

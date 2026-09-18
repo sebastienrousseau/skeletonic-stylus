@@ -1,0 +1,63 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Aspect Ratio (2026 Standard) */
+
+.aspect-ratio
+  aspect-ratio: var(--aspect-ratio, 16 / 9)
+  display: block
+  overflow: hidden
+  position: relative
+  width: 100%
+
+  & > img,
+  & > video,
+  & > iframe,
+  & > picture
+    display: block
+    height: 100%
+    object-fit: cover
+    width: 100%
+
+  &.aspect-ratio-contain
+    & > img,
+    & > video,
+    & > iframe,
+    & > picture
+      object-fit: contain
+
+  // Standard Ratios
+  &.ratio-square,
+  &.ratio-1-1
+    aspect-ratio: 1 / 1
+
+  &.ratio-video,
+  &.ratio-16-9
+    aspect-ratio: 16 / 9
+
+  &.ratio-portrait,
+  &.ratio-9-16
+    aspect-ratio: 9 / 16
+
+  &.ratio-standard,
+  &.ratio-4-3
+    aspect-ratio: 4 / 3
+
+  &.ratio-portrait-standard,
+  &.ratio-3-4
+    aspect-ratio: 3 / 4
+
+  &.ratio-wide,
+  &.ratio-21-9
+    aspect-ratio: 21 / 9
+
+  &.ratio-3-2
+    aspect-ratio: 3 / 2
+
+  &.ratio-2-3
+    aspect-ratio: 2 / 3

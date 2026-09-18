@@ -10,29 +10,30 @@
 
 // Native Zero-JS Switch
 // Usage: <input type="checkbox" role="switch" class="toggle">
-input[type="checkbox"][role="switch"],
-.toggle
+input[type='checkbox'][role='switch'],
+input[type='checkbox'].toggle,
+.switch-toggle
   appearance: none
   background-color: var(--cl-grey-200)
-  border-radius: 2rem
+  border-radius: var(--radius-pill)
   cursor: pointer
   display: inline-block
   height: 1.5rem
   position: relative
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  transition: background-color var(--duration-slow) cubic-bezier(.4, 0, .2, 1)
   vertical-align: middle
   width: 2.75rem
 
   &::before
     background-color: var(--cl-white)
     border-radius: 50%
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
-    content: ""
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2)
+    content: ''
     height: 1.25rem
-    left: 0.125rem
+    left: .125rem
     position: absolute
-    top: 0.125rem
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+    top: .125rem
+    transition: transform var(--duration-slow) cubic-bezier(.4, 0, .2, 1)
     width: 1.25rem
 
   &:checked
@@ -47,6 +48,6 @@ input[type="checkbox"][role="switch"],
 
   &:disabled
     cursor: not-allowed
-    opacity: 0.5
+    opacity: .5
 
 /* @end */

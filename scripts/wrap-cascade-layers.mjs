@@ -66,7 +66,13 @@ for (const target of targets) {
     body = body.slice(charsetMatch[1].length);
   }
 
-  const wrapped = `${charset}${layerOrder}\n@layer skeletonic {\n${body}\n}\n`;
+  const isMin = target.endsWith(".min.css");
+  const order = isMin
+    ? "@layer skeletonic.reset,skeletonic.tokens,skeletonic.layout,skeletonic.elements,skeletonic.components,skeletonic.utilities;"
+    : layerOrder;
+  const wrapped = isMin
+    ? `${charset}${order}@layer skeletonic{${body.trim()}}`
+    : `${charset}${layerOrder}\n@layer skeletonic {\n${body}\n}\n`;
 
   writeFileSync(target, wrapped);
   console.log(`wrap-cascade-layers: wrapped ${target} (${wrapped.length} bytes)`);

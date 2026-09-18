@@ -1,0 +1,209 @@
+/* SPDX-License-Identifier: Apache-2.0 OR MIT */
+
+/*
+ * Skeletonic overrides for the Voxt theme.
+ *
+ * `_layouts/styles.css` is vendored byte-for-byte from the upstream theme so it
+ * can be re-pulled without a merge, which means nothing project-specific may go
+ * in it. This file holds the difference, and it is deliberately small.
+ *
+ * Most of it repairs one collision: the showcase loads the Skeletonic library
+ * as well as the theme, and both define `.btn` and style bare headings. The
+ * library ships inside `@layer skeletonic`, so an unlayered declaration here
+ * beats it whatever the specificity — but the theme's own rules are unlayered
+ * too, and they must keep winning. Every reset below is therefore wrapped in
+ * `:where()`, which contributes zero specificity: it only fills the gaps the
+ * theme left silent and the library filled in on its behalf.
+ */
+
+/* The library sets `text-transform: uppercase` on `.btn`. The theme's chrome —
+   header actions, hero calls to action, card footers — is written in sentence
+   case, and every `.btn` on this page comes from theme markup; the library's
+   own demo buttons use `.button`. */
+:where(.btn) {
+  text-transform: none;
+}
+
+/* The theme leaves these headings to inherit `html { line-height: 1.6 }` and
+   sets letter-spacing only where it wants it. The library declares both on bare
+   h2/h3/h4, which tightens theme headings it was never measured against. */
+:where(.section-title, .card h3, .footer-col h3) {
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+/* Hero mark. The theme's hero opens on a wide photograph; this showcase opens
+   on the project logo, so the figure is sized here rather than inline on the
+   element, which keeps the markup free of a style attribute. */
+.hero-logo-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.hero-skull-logo {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+}
+
+/* ---------------------------------------------------------------------------
+ * Demo cards.
+ *
+ * The theme's `.card` is a plain block, written for a heading and a paragraph.
+ * The showcase puts several live primitives inside one — a breadcrumb, then a
+ * tab strip, then pagination — and block children with no margins sit flush
+ * against each other, which is what made the component grid look squashed.
+ * Giving the card a column gap is the whole fix; it is applied only to cards
+ * that actually hold demos.
+ * ------------------------------------------------------------------------- */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#components .card,
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+/* Demos that are layout in their own right need the full card width; the
+   `align-items: flex-start` above would otherwise shrink them to content. */
+.demo-card > p,
+.demo-card .command,
+.demo-card .empty,
+.demo-card .skeleton,
+.demo-card .aspect-ratio,
+.demo-card .navbar-demo-frame {
+  width: 100%;
+}
+
+/* Segmented groups and button rows wrap instead of running past the card edge. */
+#components .card .button-group,
+#components .card .toggle-group,
+.demo-card .button-group,
+.demo-card .toggle-group {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* The Motion UI triggers are real buttons so they are keyboard reachable and
+   survive the page's `script-src 'self'` policy, which refuses to compile
+   inline handler attributes. Strip the control chrome so they still read as
+   cards. */
+button.card {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* `.navbar` is `position: sticky` and full-bleed by design, so inside a card it
+   needs a bounded context of its own. */
+.navbar-demo-frame {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--cl-border);
+  border-radius: 0.5rem;
+}
+
+.navbar-demo-frame .navbar {
+  position: relative;
+}
+
+.navbar-demo-frame .nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.demo-card .aspect-ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* The footer's column headings moved from h4 to h3 so a reference page — whose
+   deepest heading is h2 — does not skip a level on the way into the footer.
+   The theme styles them by tag at `.footer-col h4`, and styles.css is vendored
+   byte-for-byte, so the rule is restated here against the new tag rather than
+   edited upstream. */
+.footer-col h3 {
+  margin-bottom: 0.75rem;
+  color: var(--fg-subtle);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------------------
+ * Demo-only presentation.
+ *
+ * These dress an example so it can be seen on a page; they are not library API
+ * and are deliberately named `demo-` so nobody copies them expecting a
+ * component. They exist as classes rather than inline styles because this site
+ * ships `style-src 'self'` with no `'unsafe-hashes'`, which drops every inline
+ * style attribute silently.
+ * ------------------------------------------------------------------------- */
+
+.demo-rounded {
+  border-radius: 0.5rem;
+}
+
+/* A scroll area needs a bounded height before it can scroll; the height is the
+   consumer's choice, so the demo picks one. */
+.demo-scroll-box {
+  height: 4.5rem;
+  padding: 0.618rem;
+  border: 1px solid var(--cl-border);
+}
+
+/* Toasts position themselves over the viewport. Pinned into flow so the example
+   is readable in place. */
+.demo-toast-inline {
+  position: static;
+  width: 100%;
+  transform: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * One palette.
+ *
+ * The vendored theme ships its own hex palette — `--primary: #1641bd` in light,
+ * `#69adff` in dark — with no relationship to the library's OKLCH tokens. The
+ * page therefore mixed two colour systems: a blue theme button in the header
+ * beside a teal library button in the example below it, with nothing tying them
+ * together.
+ *
+ * On a site whose entire purpose is to show the library, the library's palette
+ * is the one that should win. Mapping the theme's tokens onto it makes the page
+ * a single system, and costs nothing at runtime — `light-dark()` already
+ * resolves per scheme, so the theme's separate light and dark blocks are no
+ * longer needed to keep the accent in step.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --primary: var(--cl-primary);
+  /* Hover moves toward the far end of the grey ramp, which is dark in light
+     mode and light in dark mode — conventional in both without a second rule. */
+  --primary-hover: color-mix(in oklch, var(--cl-primary) 80%, var(--cl-grey-1000));
+  --primary-ink: light-dark(var(--cl-white), var(--cl-black));
+  --primary-glow: color-mix(in srgb, var(--cl-primary) 25%, transparent);
+  --accent: var(--cl-secondary);
+}
+
+/* `.grid-2x2` is `auto-fit` with a 280px minimum in the theme, so at desktop
+   widths a third column fits and a four-card section renders 3 + 1 orphan.
+   Raising the minimum past a third of the container keeps it to two columns
+   where there is room, and it still collapses to one on a phone. */
+.grid-2x2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}

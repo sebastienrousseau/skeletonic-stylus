@@ -12,13 +12,15 @@
 // Leveraging @interpolate-size for smooth height: auto transitions
 details.accordion
   background: var(--cl-surface)
-  border-radius: .5rem
+  border-radius: var(--radius-lg)
   border: 1px solid var(--cl-grey-200)
   margin-bottom: 1rem
   overflow: hidden
-  @css {
-    transition: interpolate-size .3s ease;
-  }
+  // `interpolate-size: allow-keywords` on html is what makes a keyword height
+  // animatable; the thing to transition is the height itself. This sat in an
+  // `@css { }` block, which emitted a second, stray copy at the top level and
+  // took the rule after it out with it.
+  transition: height var(--duration-slow) ease
 
   &[open]
     summary
@@ -34,7 +36,7 @@ details.accordion
     justify-content: space-between
     list-style: none
     padding: 1rem 1.5rem
-    transition: background-color .2s ease
+    transition: background-color var(--duration-base) ease
 
     &::-webkit-details-marker
       display: none
@@ -45,14 +47,14 @@ details.accordion
     &::after
       content: "↓"
       font-family: monospace
-      transition: transform .3s ease
+      transition: transform var(--duration-slow) ease
 
   .content
     padding: 1.5rem
     // Pre-flight for smooth transition
     height: 0
     opacity: 0
-    transition: height .3s ease, opacity .3s ease, padding .3s ease
+    transition: height var(--duration-slow) ease, opacity var(--duration-slow) ease, padding var(--duration-slow) ease
 
   &[open] .content
     height: auto
