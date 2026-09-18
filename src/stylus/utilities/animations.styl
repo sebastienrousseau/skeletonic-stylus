@@ -9,10 +9,15 @@
 /* @group Modern Motion & States (2026) */
 
 // View Transitions API
+// A parenthesised list is not Stylus `for` syntax; the names go in a list
+// variable. This file had never been compiled — nothing imported it — so the
+// error had never surfaced.
+$view-transition-names = root header main footer article section
+
 .view-transition-name
-  for name in (root, header, main, footer, article, section)
+  for name in $view-transition-names
     &-{name}
-      view-transition-name: name
+      view-transition-name: unquote(name)
 
 // Scroll-Driven Animations
 .scroll-timeline
@@ -30,8 +35,14 @@
 .anchor-tether
   position: absolute
   position-anchor: --anchor-target
-  inset-area: block-end center
-  position-try-options: flip-block, flip-inline
+  // Both properties were renamed during the CSS Anchor Positioning spec's
+  // development: `inset-area` became `position-area`, and
+  // `position-try-options` became `position-try-fallbacks`. Under the old
+  // names the browser dropped them at parse time, so the tether never
+  // positioned and never flipped. Nothing noticed, because this file was not
+  // in any bundle.
+  position-area: block-end center
+  position-try-fallbacks: flip-block, flip-inline
 
 .anchor-target
   anchor-name: --anchor-target
