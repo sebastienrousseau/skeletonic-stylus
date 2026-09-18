@@ -16,9 +16,11 @@ details.accordion
   border: 1px solid var(--cl-grey-200)
   margin-bottom: 1rem
   overflow: hidden
-  @css {
-    transition: interpolate-size .3s ease;
-  }
+  // `interpolate-size: allow-keywords` on html is what makes a keyword height
+  // animatable; the thing to transition is the height itself. This sat in an
+  // `@css { }` block, which emitted a second, stray copy at the top level and
+  // took the rule after it out with it.
+  transition: height .3s ease
 
   &[open]
     summary

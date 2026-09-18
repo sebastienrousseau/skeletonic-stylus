@@ -28,10 +28,13 @@
 @keyframes navbar-scroll
   to
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, .1)
-    @css {
-      background: color-mix(in oklch, var(--cl-surface), transparent 5%);
-      backdrop-filter: blur(10px);
-    }
+    // `color-mix(in oklch, ...)` is not parseable by Stylus, which is why this
+    // was wrapped in `@css { }` — but that wrapper emitted a second, stray copy
+    // at the top level, and a declaration where a selector is expected makes the
+    // browser discard the rule that follows. `unquote()` passes the value
+    // through literally and stays an ordinary declaration.
+    background: unquote('color-mix(in oklch, var(--cl-surface), transparent 5%)')
+    backdrop-filter: blur(10px)
 
   span
     display: none
