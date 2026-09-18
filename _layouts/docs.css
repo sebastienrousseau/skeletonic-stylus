@@ -350,3 +350,16 @@
 .docs-index-item a:visited {
   color: var(--cl-link, currentColor);
 }
+
+/* The sidebar goes off-canvas below 48rem — that is the component working as
+   designed, but an example parked outside the viewport is an example nobody can
+   see. Inside a preview it stays in flow at every width, so the reference shows
+   the rail rather than an empty box. */
+.docs-preview .sidebar {
+  position: static;
+  transform: none;
+}
+
+.docs-preview .sidebar-layout {
+  width: 100%;
+}

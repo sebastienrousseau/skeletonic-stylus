@@ -1,0 +1,47 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Collapsible */
+
+// A single disclosure, built on native <details>. The accordion is a stack of
+// these with a shared surface; a collapsible is the one-off case, so it carries
+// no border or background of its own and inherits whatever it is placed in.
+details.collapsible
+  width: 100%
+
+  summary
+    align-items: center
+    cursor: pointer
+    display: flex
+    font-weight: 600
+    gap: .5rem
+    list-style: none
+    padding: .625rem 0
+    // Safari still paints the default triangle without this.
+    &::-webkit-details-marker
+      display: none
+    &::after
+      content: ''
+      border-bottom: 2px solid currentColor
+      border-right: 2px solid currentColor
+      height: .4rem
+      margin-inline-start: auto
+      transform: rotate(45deg)
+      transition: transform var(--duration-base) var(--ease-standard)
+      width: .4rem
+    &:focus-visible
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: 2px
+
+  &[open] > summary::after
+    transform: rotate(-135deg)
+
+  .collapsible-content
+    padding-bottom: .625rem
+
+/* @end */

@@ -182,6 +182,135 @@ export const components = [
     ],
   },
 
+  {
+    slug: "collapsible",
+    name: "Collapsible",
+    category: "layout",
+    tagline: "A single disclosure, built on native details.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          "The accordion is a stack of these on a shared surface; a collapsible is the one-off, so it carries no border of its own and inherits whatever it sits in. Native <code>&lt;details&gt;</code> means keyboard support and find-in-page come free.",
+        markup: `<details class="collapsible">
+  <summary>Advanced options</summary>
+  <div class="collapsible-content">
+    <p>Everything here is optional.</p>
+  </div>
+</details>`,
+      },
+    ],
+  },
+  {
+    slug: "alert-dialog",
+    name: "Alert dialog",
+    category: "overlays",
+    tagline: "Interrupts to confirm something destructive.",
+    examples: [
+      {
+        title: "Confirm a destructive action",
+        description:
+          'Use <code>role="alertdialog"</code> so assistive technology announces an interruption rather than an ordinary dialog. It has no dismiss affordance of its own on purpose — the caller supplies both answers, so there is no ambiguous way out.',
+        markup: `<button type="button" class="button error" data-dialog="doc-alert">Delete workspace</button>
+<dialog id="doc-alert" class="alert-dialog" role="alertdialog" aria-labelledby="doc-alert-title">
+  <form method="dialog">
+    <h3 id="doc-alert-title" class="alert-dialog-title">Delete this workspace?</h3>
+    <p class="alert-dialog-description">Every component and setting in it goes with it. This cannot be undone.</p>
+    <div class="alert-dialog-actions">
+      <button type="submit" class="button secondary sm">Cancel</button>
+      <button type="submit" class="button error sm">Delete</button>
+    </div>
+  </form>
+</dialog>`,
+      },
+    ],
+  },
+  {
+    slug: "menubar",
+    name: "Menubar",
+    category: "navigation",
+    tagline: "A row of menus, each a native disclosure.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'Each menu is a <code>&lt;details&gt;</code>, so opening, closing and keyboard operation need no script. Note it is deliberately <em>not</em> given <code>role="menubar"</code>: that role requires <code>menuitem</code> children plus roving <code>tabindex</code> and arrow-key handling, none of which CSS can supply. Claiming it would promise a screen-reader user navigation that is not there.',
+        markup: `<nav class="menubar" aria-label="Main">
+  <details class="menubar-menu">
+    <summary>File</summary>
+    <div class="menubar-content">
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">New file</span></span></button>
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">Open&hellip;</span></span></button>
+    </div>
+  </details>
+  <details class="menubar-menu">
+    <summary>Edit</summary>
+    <div class="menubar-content">
+      <button type="button" class="item item-interactive"><span class="item-content"><span class="item-title">Undo</span></span></button>
+    </div>
+  </details>
+</nav>`,
+      },
+    ],
+  },
+  {
+    slug: "item",
+    name: "Item",
+    category: "data",
+    tagline: "A list row: media, text, and a trailing value.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          "The pattern <code>.command-item</code> and the dropdown entries are special cases of, exposed on its own so a settings row or a search result need not borrow a menu class to get the same rhythm.",
+        markup: `<div class="item-group">
+  <div class="item">
+    <span class="item-media"><span class="avatar sm"><span class="avatar-fallback">SR</span></span></span>
+    <span class="item-content">
+      <span class="item-title">Sebastien Rousseau</span>
+      <span class="item-description">Lead maintainer</span>
+    </span>
+    <span class="item-trailing">Owner</span>
+  </div>
+</div>`,
+      },
+      {
+        title: "Interactive",
+        description: "Add <code>.item-interactive</code> when the row is a control rather than a record.",
+        markup: `<button type="button" class="item item-interactive">
+  <span class="item-content">
+    <span class="item-title">Appearance</span>
+    <span class="item-description">Theme, density and motion</span>
+  </span>
+  <span class="item-trailing">&rsaquo;</span>
+</button>`,
+      },
+    ],
+  },
+  {
+    slug: "sidebar",
+    name: "Sidebar",
+    category: "layout",
+    tagline: "An application rail that goes off-canvas on a phone.",
+    examples: [
+      {
+        title: "Default",
+        description:
+          'A persistent rail beside the content on a wide screen; below 48rem it becomes an off-canvas panel that <code>.sidebar-open</code> slides in. The current entry is marked with <code>aria-current="page"</code>, so the styling and the accessibility tree cannot disagree.',
+        markup: `<div class="sidebar-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header"><strong>Acme</strong></div>
+    <div class="sidebar-group-label">Workspace</div>
+    <a class="sidebar-item" href="#sidebar" aria-current="page">Overview</a>
+    <a class="sidebar-item" href="#sidebar">Components</a>
+    <a class="sidebar-item" href="#sidebar">Settings</a>
+    <div class="sidebar-footer"><span class="badge secondary">v2.0.2</span></div>
+  </aside>
+  <main class="sidebar-content"><p>Content sits beside the rail.</p></main>
+</div>`,
+      },
+    ],
+  },
   // --- Actions -------------------------------------------------------------
   {
     slug: "button-group",
@@ -741,7 +870,7 @@ export const components = [
     <summary class="accordion-trigger"><span>Does it work with Tailwind?</span></summary>
     <div class="accordion-content"><p>Yes — everything is scoped inside <code>@layer skeletonic.*</code>.</p></div>
   </details>
-</div>`,
+</nav>`,
       },
     ],
   },

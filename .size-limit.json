@@ -23,7 +23,7 @@
   {
     "name": "skeletonic-ui.min.css (raw)",
     "path": "dist/css/core/skeletonic-ui.min.css",
-    "limit": "95 KB",
+    "limit": "100 KB",
     "gzip": false,
     "brotli": false
   },

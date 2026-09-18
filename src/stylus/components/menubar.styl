@@ -1,0 +1,61 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Menubar */
+
+// A horizontal bar of menus, each a native <details> so it opens, closes and
+// responds to the keyboard without script.
+//
+// Deliberately not an ARIA menubar. `role="menubar"` requires `menuitem`
+// children, roving tabindex and arrow-key navigation — none of which CSS can
+// provide — and axe flags the role without them as a critical violation.
+// Label it as navigation instead:
+//
+//   <nav class="menubar" aria-label="Main">
+//     <details class="menubar-menu">...</details>
+//   </nav>
+.menubar
+  align-items: center
+  display: flex
+  flex-wrap: wrap
+  gap: .125rem
+
+  details.menubar-menu
+    position: relative
+
+    summary
+      border-radius: var(--radius-md)
+      cursor: pointer
+      list-style: none
+      padding: .375rem .75rem
+      transition: background-color var(--duration-fast) var(--ease-standard)
+      white-space: nowrap
+      &::-webkit-details-marker
+        display: none
+      &:hover
+        background-color: var(--cl-grey-100)
+      &:focus-visible
+        outline: 2px solid var(--focus-ring-color)
+        outline-offset: 2px
+
+    &[open] > summary
+      background-color: var(--cl-grey-100)
+
+    .menubar-content
+      background: var(--cl-surface)
+      border: 1px solid var(--cl-grey-200)
+      border-radius: var(--radius-lg)
+      box-shadow: var(--shadow-lg)
+      inset-inline-start: 0
+      min-width: 12rem
+      padding: .375rem
+      position: absolute
+      top: calc(100% + .25rem)
+      z-index: 50
+
+/* @end */

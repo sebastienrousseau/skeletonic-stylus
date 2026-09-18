@@ -1,0 +1,65 @@
+/**
+ * Skeletonic Stylus Library
+ * https://skeletonic.io
+ *
+ * Copyright (c) 2023 - 2026 Skeletonic CSS. All rights reserved
+ * Licensed under the MIT OR Apache-2.0 license
+ **/
+
+/* @group Item */
+
+// A row in a list: media, text, and a trailing action or value. The pattern
+// that .command-item and the dropdown entries are special cases of, exposed on
+// its own so a settings row or a search result does not have to borrow a menu
+// class to get the same rhythm.
+.item
+  align-items: center
+  border-radius: var(--radius-md)
+  display: flex
+  gap: .75rem
+  padding: .625rem .75rem
+  text-align: start
+  width: 100%
+
+  .item-media
+    align-items: center
+    display: flex
+    flex-shrink: 0
+
+  .item-content
+    display: flex
+    flex-direction: column
+    gap: .125rem
+    // Without this a long title refuses to shrink and pushes the trailing
+    // content past the row's edge.
+    min-width: 0
+
+  .item-title
+    font-weight: 600
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  .item-description
+    color: var(--cl-grey-600)
+    font-size: .875rem
+
+  .item-trailing
+    color: var(--cl-grey-600)
+    flex-shrink: 0
+    margin-inline-start: auto
+
+  &.item-interactive
+    cursor: pointer
+    transition: background-color var(--duration-fast) var(--ease-standard)
+    &:hover
+      background-color: var(--cl-grey-100)
+    &:focus-visible
+      outline: 2px solid var(--focus-ring-color)
+      outline-offset: -2px
+
+.item-group
+  display: flex
+  flex-direction: column
+
+/* @end */
