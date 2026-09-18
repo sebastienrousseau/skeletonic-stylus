@@ -86,12 +86,18 @@
 // Avatar Group (stacked avatars)
 .avatar-group
   display: inline-flex
-  flex-direction: row-reverse
-  justify-content: flex-end
 
+  // `flex-direction: row-reverse` used to put the first avatar on top of the
+  // stack, but it also reversed the rendered order: markup reading AG, SR, JD,
+  // +4 displayed as +4, JD, SR, AG. Visual order has to follow DOM order —
+  // it is what a screen reader announces and what the tab sequence follows
+  // (WCAG 1.3.2) — so the overlap simply runs the other way now.
   .avatar
     border: 2px solid var(--background-color)
     margin-left: -.75rem
+
+    &:first-child
+      margin-left: 0
     transition: transform var(--duration-base) ease
 
     &:hover
