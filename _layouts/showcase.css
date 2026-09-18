@@ -199,3 +199,11 @@ button.card {
   --primary-glow: color-mix(in srgb, var(--cl-primary) 25%, transparent);
   --accent: var(--cl-secondary);
 }
+
+/* `.grid-2x2` is `auto-fit` with a 280px minimum in the theme, so at desktop
+   widths a third column fits and a four-card section renders 3 + 1 orphan.
+   Raising the minimum past a third of the container keeps it to two columns
+   where there is room, and it still collapses to one on a phone. */
+.grid-2x2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+}
