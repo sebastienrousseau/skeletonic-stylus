@@ -8,7 +8,29 @@ project adheres to
 
 ---
 
-**[Unreleased]**
+**[3.0.0] — 2026-09-19**
+
+**Breaking changes**
+
+Four defaults changed. Each is deliberate and each is visible without touching
+your markup, which is why this is a major rather than a minor.
+
+- **Node 22 is the floor.** `engines` was `>=18`; Node 18 and 20 are both past
+  end of life. Installing on Node 20 now warns.
+- **The default font is the system stack, not `'Open Sans'`.** Import the fonts
+  module to get the old face back — the library always shipped it as optional,
+  the reset simply ignored that.
+- **Buttons are sentence case.** `text-transform: uppercase` and the letter
+  spacing that went with it are gone.
+- **Radius, elevation and motion are on a token scale.** 21 radius values
+  became five, ten shadows became four, eight durations became four, so
+  individual components move by a pixel or two and some shadows are shallower.
+  Override the tokens in `:root` rather than the components.
+
+Two more changes alter rendering without being defaults you chose: avatar
+groups now stack left to right instead of right to left, and the utilities
+layer is in the bundle for the first time, so `.gap-*`, `.m-*` and `.p-*` take
+effect where they previously did nothing.
 
 **Added**
 
@@ -72,6 +94,35 @@ project adheres to
 
 **Fixed**
 
+- **The documentation site pointed at a hostname that does not exist.**
+  `base_url` was `https://docs.skeletonic.io`, which has no DNS record, so every
+  canonical link, `og:url`, sitemap entry and feed URL published by the last
+  deploy resolved to nothing. The site is `https://docs.skeletonic.com`.
+  cargo-ssg also emits an empty `CNAME` into the output, which GitHub Pages
+  reads as "no custom domain"; `fix-ssg-seo.mjs` now derives that file from
+  `base_url` so the hostname and the URLs in the pages cannot disagree.
+  The project URL stamped into every stylesheet banner, the CLI's `Docs:` line
+  and the package metadata was `https://skeletonic.io`, which still serves a
+  build from an older release; web references now point at `skeletonic.com`,
+  and documentation links at `docs.skeletonic.com`. The package's contact
+  address moved with them: `skeletonic.io` publishes no MX record, so
+  `hello@skeletonic.io` had nowhere to deliver.
+- **The published size figures were wrong, in the flattering direction.** The
+  README advertised a 4.4 kB core and a 33.6 kB UI add-on. Measured on this
+  build they are 6.8 kB and 96.5 kB raw, 1.9 kB and 14.0 kB Brotli. The
+  "100% WCAG 2.2 AA coverage guaranteed" and "Lighthouse 100/100" claims are
+  replaced by the one the build actually establishes: zero axe-core violations
+  across every page in both colour schemes. The showcase carried the same
+  overstatements plus a component count of 35, which has been 40 since the new
+  primitives landed.
+- **The release gate could pass on the wrong tarball.** `verify-release.mjs`
+  took whichever `*.tgz` the shell listed first, so in a working tree still
+  holding a previous release's tarball it reported the layout of a package that
+  was not the one about to ship. It now matches the tarball to the version in
+  `package.json` and fails, naming what it found, when that file is absent.
+- **86 source files stamped the compiled output `v2.0.0`**, and three more
+  carried `v1..8` — a version string a previous search-and-replace had eaten a
+  digit from. All 89 now read the shipping version.
 - **The `body` rule was being deleted by the browser.** An `@css { }` wrapper in
   the reset emitted `interpolate-size: allow-keywords` a second time as a bare
   declaration at the top of the layer, and a declaration where a selector is
@@ -448,6 +499,7 @@ original v1.0.0 release (2018).
 
 ---
 
+[3.0.0]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v3.0.0
 [2.0.2]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.2
 [2.0.1]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.1
 [2.0.0]: https://github.com/sebastienrousseau/skeletonic-stylus/releases/tag/v2.0.0
