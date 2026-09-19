@@ -9,7 +9,7 @@ native-first CSS engine for the 2026 web.
 
 Skeletonic is built on **CSS Cascade Layers** (`@layer`) to ensure predictable
 specificity and a modular architecture. Canonical documentation can be found at
-[docs.skeletonic.io](https://docs.skeletonic.io).
+[docs.skeletonic.com](https://docs.skeletonic.com).
 
 **CSS Layers**
 

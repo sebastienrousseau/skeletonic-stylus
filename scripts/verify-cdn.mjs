@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * Post-publish CDN smoke check. Polls jsDelivr and unpkg for the
  * just-published version and fails if either CDN doesn't serve a

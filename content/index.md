@@ -1,18 +1,18 @@
 ---
 layout: index
 title: Skeletonic Stylus — 2026 Modern CSS Engine & Design System
-description: "A lightweight, accessible, zero-JS Stylus component suite built for 2026. 35 modern primitives, Motion UI transitions, and OKLCH color engine."
+description: "A lightweight, accessible, zero-JS Stylus component suite built for 2026. 40 modern primitives, Motion UI transitions, and OKLCH color engine."
 eyebrow: "Modern CSS Engine & Primitives"
 author: "Sebastien Rousseau"
 name: Skeletonic
 headline: The Modern CSS Engine for High-Velocity Web Apps
-lead: "Hyper-optimized, accessible Stylus component suite built for 2026. Featuring 35 modern primitives inspired by shadcn/ui, Foundation Motion UI transitions, fluid typography, and OKLCH color engine with zero runtime JavaScript."
+lead: "Hyper-optimized, accessible Stylus component suite built for 2026. Featuring 40 modern primitives inspired by shadcn/ui, Foundation Motion UI transitions, fluid typography, and OKLCH color engine with zero runtime JavaScript."
 language: en-GB
-atom_link: https://docs.skeletonic.io/rss.xml
+atom_link: https://docs.skeletonic.com/rss.xml
 item_title: Skeletonic Stylus — 2026 Modern CSS Engine & Design System
-item_description: "A lightweight, accessible, zero-JS Stylus component suite built for 2026. 35 modern primitives, Motion UI transitions, and OKLCH color engine."
-item_link: https://docs.skeletonic.io/
-item_guid: https://docs.skeletonic.io/
+item_description: "A lightweight, accessible, zero-JS Stylus component suite built for 2026. 40 modern primitives, Motion UI transitions, and OKLCH color engine."
+item_link: https://docs.skeletonic.com/
+item_guid: https://docs.skeletonic.com/
 item_pub_date: "Mon, 14 Sep 2026 00:00:00 +0000"
 pub_date: "Mon, 14 Sep 2026 00:00:00 +0000"
 last_build_date: "Mon, 14 Sep 2026 00:00:00 +0000"
@@ -32,7 +32,7 @@ label_theme_dark: "Dark"
     <p class="section-desc">Engineered with CSS Cascade Layers, OKLCH color spaces, and 0ms JavaScript runtime overhead.</p>
     <div class="grid-2x2" id="features">
       <div class="card text-left">
-        <h3>35 Modern UI Primitives</h3>
+        <h3>40 Modern UI Primitives</h3>
         <p>A full suite of accessible UI components inspired by shadcn/ui: from input-otp and custom select to sliding sheets and scroll-snap carousels.</p>
       </div>
       <div class="card text-left">
@@ -92,7 +92,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             <label class="block mb-xs semibold text-xs" for="widget-framework">Design Framework</label>
             <span class="select-field">
               <select id="widget-framework" class="select">
-                <option>Skeletonic Stylus 2.0 (Active)</option>
+                <option>Skeletonic Stylus 3.0 (Active)</option>
                 <option>Native Cascade Layers</option>
                 <option>OKLCH Monochromatic</option>
               </select>
@@ -227,7 +227,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
 
 <section id="components" class="section">
   <div class="container">
-    <h2 class="section-title text-center">35 Modern UI Primitives</h2>
+    <h2 class="section-title text-center">40 Modern UI Primitives</h2>
     <p class="section-desc text-center">Every element complies with WCAG 2.2 AA accessibility and modern HTML5 specifications.</p>
     <div class="grid-2x2 mt-xl">
       <!-- Category 1: Navigation -->
@@ -273,7 +273,7 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
             <a href="#" class="btn btn-outline btn-sm">@skeletonic-css</a>
             <div class="hover-card-content">
               <div class="bold mb-xs text-xs">Skeletonic Stylus</div>
-              <p class="text-xs opacity-70 mb-none">Ultra-responsive CSS engine with 35 primitives and OKLCH color spaces.</p>
+              <p class="text-xs opacity-70 mb-none">Ultra-responsive CSS engine with 40 primitives and OKLCH color spaces.</p>
             </div>
           </div>
           <span class="tooltip tooltip-top" data-tooltip="Verified accessibility standard">
@@ -473,16 +473,16 @@ npx @sebastienrousseau/skeletonic-stylus add button select input-otp
     <p class="section-desc">Strict quality guarantees verified in automated CI and release verification gates.</p>
     <div class="grid-2x2">
       <div class="card text-left">
-        <h3>&lt; 5 kB Core Footprint</h3>
-        <p>Ultra-lean distribution compiled with csso and automated size-limit budgets, guaranteeing instant browser parsing.</p>
+        <h3>1.9 kB Core, Brotli</h3>
+        <p>The core engine is 6.8 kB minified and 1.9 kB over the wire. Compiled with csso and held there by size-limit budgets that fail the build when they are exceeded.</p>
       </div>
       <div class="card text-left">
         <h3>Zero Runtime JavaScript</h3>
         <p>100% pure CSS engine eliminating hydration delays, main thread blocking, and client-side framework overhead.</p>
       </div>
       <div class="card text-left">
-        <h3>100% WCAG 2.2 AA Audited</h3>
-        <p>Pre-release automated testing using Playwright and Axe-core verifying color contrast, focus rings, and touch targets.</p>
+        <h3>Zero Axe-core Violations</h3>
+        <p>Every page of this site is audited with Playwright and Axe-core in both colour schemes on each build, with contrast measured on the rendered pixels rather than inferred.</p>
       </div>
       <div class="card text-left">
         <h3>18 / 18 Pre-Release Verification Gates</h3>

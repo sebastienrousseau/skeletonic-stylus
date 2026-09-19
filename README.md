@@ -25,7 +25,7 @@
       alt="NPM Version"
     />
   </a>
-  <a href="https://docs.skeletonic.io">
+  <a href="https://docs.skeletonic.com">
     <img
       src="https://img.shields.io/badge/docs-100%25-brightgreen?style=flat-square"
       alt="Documentation Coverage"
@@ -43,13 +43,16 @@
 
 **⚡ High-Performance Core**
 
-Skeletonic Stylus is a hyper-optimized, modular CSS engine designed for the
-high-performance era. It leverages 2026 native features to deliver a complete UI
-foundation in under 5kb.
+Skeletonic Stylus is a modular CSS engine built on 2026 native features. Take
+the core on its own for tokens, reset and layout primitives, or add the UI layer
+for the full component set — you pay only for the layer you import.
 
-- **Size:** **4.40 kB** Core Bundle (Raw) / **1.4 kB** (Brotli).
-- **Architecture:** Zero-JS, 100% Native CSS APIs.
-- **Accessibility:** 100% WCAG 2.2 AA coverage guaranteed.
+- **Core:** 6.8 kB raw, 2.3 kB gzip, **1.9 kB Brotli**.
+- **Core + UI (40 components, 16 styled elements):** 103 kB raw, 17.0 kB gzip,
+  **14.7 kB Brotli**.
+- **Architecture:** Zero-JS, 100% native CSS APIs.
+- **Accessibility:** every page of the reference site is audited with axe-core
+  in both colour schemes on each build — currently zero violations.
 
 ---
 
@@ -75,6 +78,23 @@ Headings and body text scale smoothly between mobile and desktop via native
 
 Enforced `:focus-visible` ring management, `65ch` reading limits, and global
 `prefers-reduced-motion` overrides at the engine level.
+
+---
+
+**🧩 Components**
+
+40 components and 16 styled HTML elements, every one of them zero-JavaScript:
+accordion, alert, alert-dialog, avatar, badge, breadcrumb, card, carousel,
+checkbox, collapsible, command, dialog, drawer, dropdown, hover-card, input-otp,
+item, menubar, navbar, pagination, popover, progress, radio-group, select,
+sheet, sidebar, skeleton, slider, switch, table, tabs, toast, toggle-group,
+tooltip and more — plus buttons, inputs, textareas, labels, tables, fieldsets,
+toggles, code blocks, dividers, lists, images and clipboard controls.
+
+Overlays use native CSS anchor positioning, disclosure uses `<details>`, and
+dialogs use `<dialog>`. Nothing here needs a script tag.
+
+[Browse the component reference →](https://docs.skeletonic.com/components/)
 
 ---
 
@@ -106,20 +126,25 @@ forms — built on top of core):
 
 **📊 Performance Benchmarks**
 
-| Metric              | Core Engine | UI Addon    |
+Measured on the v3.0.0 build, with `gzip -9` and `brotli -q 11`:
+
+| Metric              | Core Engine | UI Add-on   |
 | :------------------ | :---------- | :---------- |
-| **Size (Minified)** | **4.4 kB**  | 33.6 kB     |
-| **Size (Gzip)**     | **1.6 kB**  | 6.8 kB      |
-| **Size (Brotli)**   | **1.4 kB**  | 5.9 kB      |
+| **Size (Minified)** | **6.8 kB**  | 96.5 kB     |
+| **Size (Gzip)**     | **2.3 kB**  | 16.2 kB     |
+| **Size (Brotli)**   | **1.9 kB**  | 14.0 kB     |
 | **Cascade Layers**  | 2 (@layer)  | 4 (@layer)  |
-| **Lighthouse A11y** | **100/100** | **100/100** |
+
+The UI add-on carries 40 components and 16 styled elements. Import only the
+components you use if you need it smaller — every stylesheet under
+`stylus/components/` stands alone.
 
 ---
 
 **📖 Documentation**
 
 For the complete API reference, design tokens, and component library usage, see
-the [Full Documentation](https://docs.skeletonic.io).
+the [Full Documentation](https://docs.skeletonic.com).
 
 ---
 

@@ -1,7 +1,7 @@
 site_name = "Skeletonic Stylus"
 site_title = "Skeletonic Stylus — 2026 Modern CSS Engine & Design System"
 site_description = "A lightweight, intuitive, accessible and ultra-responsive Stylus Library to streamline your digital and mobile web development needs."
-base_url = "https://docs.skeletonic.io"
+base_url = "https://docs.skeletonic.com"
 language = "en-GB"
 
 content_dir = "content"

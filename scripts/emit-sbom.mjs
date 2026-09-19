@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * Emits dist/sbom.json — a minimal CycloneDX 1.5 Software Bill of Materials.
  */

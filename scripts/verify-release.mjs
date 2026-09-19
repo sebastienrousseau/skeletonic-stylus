@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * End-to-end pre-release verifier. Runs every gate the GitHub Actions
  * release workflow runs, plus deeper checks for tarball layout,
@@ -135,9 +135,24 @@ console.log("\n\x1b[1mverify-release\x1b[0m — pre-release gate\n");
 
 // ─── 5. Tarball validity ─────────────────────────────────────────────
 {
-  const tgz = (sh("ls *.tgz 2>/dev/null") || "").trim().split("\n").filter(Boolean).find(f => f.includes("skeletonic-stylus"));
+  // Match the tarball to the version under test. A previous release's
+  // tarball lingers in a working tree that has not been cleaned, and
+  // taking whichever one `ls` happened to list first meant this gate could
+  // report "passed" on the layout of a package that is not the one about
+  // to ship.
+  const { version } = JSON.parse(
+    readFileSync(join(repoRoot, "package.json"), "utf8"),
+  );
+  const tarballs = (sh("ls *.tgz 2>/dev/null") || "").trim().split("\n").filter(Boolean);
+  const tgz = tarballs.find(f => f.includes(`skeletonic-stylus-${version}.tgz`));
   if (!tgz) {
-    record("tarball produced", false, "run `pnpm build` first");
+    record(
+      "tarball produced",
+      false,
+      tarballs.length
+        ? `found ${tarballs.join(", ")}, expected v${version} — run \`pnpm build\``
+        : "run `pnpm build` first",
+    );
   } else {
     record("tarball produced", true, tgz);
     const fileList = sh(`tar -tzf "${tgz}"`)?.trim().split("\n") || [];

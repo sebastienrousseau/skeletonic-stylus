@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * `skeletonic` — opinionated project bootstrap.
  *
@@ -175,7 +175,7 @@ async function cmdInit() {
   log(`    3. Add a single component to your project tree:`);
   log(`         ${dim}npx @sebastienrousseau/skeletonic-stylus add card${reset}`);
   log("");
-  log(`  Docs: ${cyan}https://skeletonic.io/${reset}`);
+  log(`  Docs: ${cyan}https://docs.skeletonic.com/${reset}`);
   return 0;
 }
 
@@ -228,7 +228,7 @@ function cmdHelp() {
   log(`    ${cyan}skeletonic --version${reset}     print the package version`);
   log(`    ${cyan}skeletonic --help${reset}        this message`);
   log("");
-  log(`  Docs: https://skeletonic.io/`);
+  log(`  Docs: https://docs.skeletonic.com/`);
   return 0;
 }
 

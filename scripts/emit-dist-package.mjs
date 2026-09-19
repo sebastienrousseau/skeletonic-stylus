@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * Emits dist/package.json with consumer-facing fields and rewritten paths.
  */
