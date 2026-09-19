@@ -132,11 +132,15 @@ jobs:
 
       - name: Verify CDN availability (jsDelivr + unpkg)
         # Polls both CDNs until they serve a 200 for the just-published
-        # version, or fails after a 5 min timeout. Catches the rare case
-        # where npm publish succeeds but the package doesn't propagate
-        # to the CDN. Inlined so the publish job doesn't need a repo
-        # checkout — `dist/package.json` from the artefact has the name
-        # and version we need.
+        # version. Catches the rare case where npm publish succeeds but the
+        # package doesn't propagate to the CDN. Inlined so the publish job
+        # doesn't need a repo checkout — `dist/package.json` from the
+        # artefact has the name and version we need.
+        #
+        # Each URL gets its own budget. A single shared deadline meant a slow
+        # first URL consumed the whole allowance and the remaining three were
+        # reported as timed out without a single request being sent — which is
+        # how v3.0.0 failed this step while all four URLs were in fact live.
         run: |
           node -e '
           const { name, version } = require("./dist/package.json");
@@ -147,9 +151,10 @@ jobs:
             `https://cdn.jsdelivr.net/npm/${name}@${version}/css/core/skeletonic-ui.min.css`,
           ];
           (async () => {
-            const deadline = Date.now() + 5 * 60 * 1000;
+            const PER_URL_MS = 10 * 60 * 1000;
             const failures = [];
             for (const url of urls) {
+              const deadline = Date.now() + PER_URL_MS;
               let ok = false;
               while (Date.now() < deadline) {
                 try {
@@ -158,7 +163,7 @@ jobs:
                 } catch {}
                 await new Promise(r => setTimeout(r, 5000));
               }
-              if (!ok) { console.error(`✗ timeout ${url}`); failures.push(url); }
+              if (!ok) { console.error(`✗ timeout after ${PER_URL_MS / 60000}m ${url}`); failures.push(url); }
             }
             if (failures.length) process.exit(1);
             console.log("All CDN URLs are live.");
