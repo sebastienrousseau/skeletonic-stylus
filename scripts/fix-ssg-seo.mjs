@@ -209,9 +209,16 @@ if (existsSync(feedPath)) {
 // this script just wrote. Derive it from base_url so the two can never drift.
 const cnamePath = join(outputDir, "CNAME");
 const host = new URL(baseUrl).hostname;
-const existingCname = existsSync(cnamePath)
-  ? readFileSync(cnamePath, "utf8").trim()
-  : "";
+// Read it rather than test-then-read: `existsSync` followed by `readFileSync`
+// is two decisions about a file that can change in between, which CodeQL flags
+// as a race (js/file-system-race). The only state worth distinguishing here is
+// "what does it say", and a missing file says nothing.
+let existingCname = "";
+try {
+  existingCname = readFileSync(cnamePath, "utf8").trim();
+} catch {
+  // Absent on a clean build; cargo-ssg writes it empty on an incremental one.
+}
 if (existingCname !== host) {
   writeFileSync(cnamePath, `${host}\n`, "utf8");
   console.log(
