@@ -8,6 +8,18 @@ project adheres to
 
 ---
 
+**[Unreleased]**
+
+**Fixed**
+
+- **The CDN check could fail URLs it never requested.** The publish workflow
+  polled four CDN URLs against one shared five-minute deadline, so a slow first
+  URL consumed the whole budget and the remaining three were reported as timed
+  out without a single request being sent. That is how v3.0.0 failed this step
+  while all four URLs were live. Each URL now has its own ten-minute budget.
+
+---
+
 **[3.0.0] — 2026-09-19**
 
 **Breaking changes**
