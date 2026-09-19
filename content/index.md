@@ -8,11 +8,11 @@ name: Skeletonic
 headline: The Modern CSS Engine for High-Velocity Web Apps
 lead: "Hyper-optimized, accessible Stylus component suite built for 2026. Featuring 35 modern primitives inspired by shadcn/ui, Foundation Motion UI transitions, fluid typography, and OKLCH color engine with zero runtime JavaScript."
 language: en-GB
-atom_link: https://docs.skeletonic.io/rss.xml
+atom_link: https://docs.skeletonic.com/rss.xml
 item_title: Skeletonic Stylus — 2026 Modern CSS Engine & Design System
 item_description: "A lightweight, accessible, zero-JS Stylus component suite built for 2026. 35 modern primitives, Motion UI transitions, and OKLCH color engine."
-item_link: https://docs.skeletonic.io/
-item_guid: https://docs.skeletonic.io/
+item_link: https://docs.skeletonic.com/
+item_guid: https://docs.skeletonic.com/
 item_pub_date: "Mon, 14 Sep 2026 00:00:00 +0000"
 pub_date: "Mon, 14 Sep 2026 00:00:00 +0000"
 last_build_date: "Mon, 14 Sep 2026 00:00:00 +0000"

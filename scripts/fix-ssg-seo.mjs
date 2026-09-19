@@ -201,3 +201,22 @@ if (existsSync(feedPath)) {
     process.exit(1);
   }
 }
+
+// GitHub Pages decides which hostname an artefact answers on from the `CNAME`
+// file at its root. cargo-ssg emits that file but leaves it empty, and an empty
+// CNAME is worse than none: Pages reads it as "no custom domain" and the site
+// falls back to the *.github.io path, breaking every absolute URL the rest of
+// this script just wrote. Derive it from base_url so the two can never drift.
+const cnamePath = join(outputDir, "CNAME");
+const host = new URL(baseUrl).hostname;
+const existingCname = existsSync(cnamePath)
+  ? readFileSync(cnamePath, "utf8").trim()
+  : "";
+if (existingCname !== host) {
+  writeFileSync(cnamePath, `${host}\n`, "utf8");
+  console.log(
+    existingCname
+      ? `fix-ssg-seo: rewrote CNAME from "${existingCname}" to "${host}".`
+      : `fix-ssg-seo: wrote CNAME for ${host}.`,
+  );
+}

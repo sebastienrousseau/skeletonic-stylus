@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Skeletonic Stylus Library
- * https://skeletonic.io
+ * https://skeletonic.com
  *
  * End-to-end pre-release verifier. Runs every gate the GitHub Actions
  * release workflow runs, plus deeper checks for tarball layout,

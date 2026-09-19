@@ -20,14 +20,14 @@
   "repository": "git+https://github.com/sebastienrousseau/skeletonic-stylus.git",
   "author": {
     "name": "Sebastien Rousseau",
-    "email": "hello@skeletonic.io",
-    "url": "https://skeletonic.io"
+    "email": "hello@skeletonic.com",
+    "url": "https://skeletonic.com"
   },
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
     "url": "https://github.com/sebastienrousseau/skeletonic-stylus/issues"
   },
-  "homepage": "https://docs.skeletonic.io",
+  "homepage": "https://docs.skeletonic.com",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
