@@ -1,0 +1,58 @@
+diff --git a/src/utils/getFiles.js b/src/utils/getFiles.js
+index 57fadbca664d5496e1ccff0cb2bf4ccd1da32c68..ba3e6758e1616c5bcf2ff9da57b6d1accdc50347 100644
+--- a/src/utils/getFiles.js
++++ b/src/utils/getFiles.js
+@@ -1,7 +1,7 @@
+ 'use strict'
+ 
+ var fs = require( 'fs' )
+-var glob = require( 'glob' )
++var globSync = require( 'glob' ).globSync
+ var async = require( 'async' )
+ var path = require( 'path' )
+ 
+@@ -16,7 +16,8 @@ var getFiles = function( dir ) {
+ 	}
+ 
+ 	if ( typeof dir === 'string' ) {
+-		return glob( dir, {}, function( err, files ) {
++		// glob 7's callback API is gone; sort to keep glob 7's file order
++		var done = function( err, files ) {
+ 			if ( err ) { throw err }
+ 
+ 			files = files.filter( function( file ) {
+@@ -34,7 +35,8 @@ var getFiles = function( dir ) {
+ 			this.cache.files = files
+ 
+ 			return async.map( this.cache.files, fs.readFile, this.parse.bind( this ) )
+-		}.bind( this ) )
++		}.bind( this )
++		return done( null, globSync( dir ).sort() )
+ 	}
+ 	else if ( dir instanceof Array ) {
+ 
+diff --git a/src/utils/setConfig.js b/src/utils/setConfig.js
+index 68cbd3995cf580a27d6f58f29b5b4d19e3f9feb5..c43ffbcc40e7386ff9bebc83d673e2612c0a64f5 100644
+--- a/src/utils/setConfig.js
++++ b/src/utils/setConfig.js
+@@ -4,7 +4,7 @@ var fs = require( 'fs' )
+ var path = require( 'path' )
+ var userHome = require( 'user-home' )
+ var stripJsonComments = require( 'strip-json-comments' )
+-var Glob = require( 'glob' ).Glob
++var Minimatch = require( 'minimatch' ).Minimatch
+ 
+ // @TODO i just this sloppy just to fix some stuff
+ // comes back and refactor / cleanup
+@@ -140,9 +140,9 @@ var setConfig = function( configpath ) {
+ 	}
+ 
+ 	returnConfig.exclude = ( returnConfig.exclude || [] ).map( function( exclude ) {
+-		return new Glob( exclude, {
++		return new Minimatch( exclude, {
+ 			matchBase: true
+-		} ).minimatch
++		} )
+ 	} )
+ 
+ 	// make sure indentPref is set no matter what

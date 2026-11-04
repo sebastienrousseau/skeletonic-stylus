@@ -10,6 +10,14 @@ project adheres to
 
 **[Unreleased]**
 
+**Security**
+
+- **minimatch 11.0.4 and glob 14.0.3 across the dev toolchain**
+  (GHSA-g3hv-75wg-m249, GHSA-3g3m-2fjr-6pw4). Neither advisory has a fix
+  below those majors. stylint 2.0.0 pinned glob 7.0.4, which cannot run on
+  minimatch 11, so `patches/stylint@2.0.0.patch` moves it to `globSync` and
+  a direct `Minimatch` for its `exclude` rules. Its findings are unchanged.
+
 **Fixed**
 
 - **The CDN check could fail URLs it never requested.** The publish workflow
